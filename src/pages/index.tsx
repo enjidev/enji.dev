@@ -5,8 +5,8 @@ const Index: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>Enji Kusnadi</title>
-        <meta name="description" content="Description" />
+        <title>Enji Kusnadi | Front-End Developer</title>
+        <meta name="description" content="Hi!" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
