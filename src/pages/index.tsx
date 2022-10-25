@@ -10,7 +10,9 @@ const Index: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <h1>Hello, World!</h1>
+        <span>Halo! Nama saya</span>
+        <h1>Enji Kusnadi</h1>
+        <p>Seorang Designer & Developer.</p>
       </main>
     </div>
   );
