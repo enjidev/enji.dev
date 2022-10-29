@@ -8,7 +8,6 @@ const nextConfig = {
     localeDetection: !isDevelopment,
   },
   reactStrictMode: true,
-  swcMinify: true,
 };
 
 module.exports = nextConfig;
