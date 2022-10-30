@@ -3,9 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-  html {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-  }
   body {
     @apply bg-black text-sm text-white;
   }

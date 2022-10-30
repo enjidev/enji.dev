@@ -1,8 +1,14 @@
-import '@/styles/globals.css';
+import RootLayout from '@/components/layouts/Root';
 import type { AppProps } from 'next/app';
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+import '@/styles/globals.css';
+
+function App({ Component, pageProps }: AppProps) {
+  return (
+    <RootLayout>
+      <Component {...pageProps} />
+    </RootLayout>
+  );
 }
 
-export default MyApp;
+export default App;
