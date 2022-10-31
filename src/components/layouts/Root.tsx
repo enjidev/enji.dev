@@ -6,7 +6,11 @@ const _font = Plus_Jakarta_Sans({
 });
 
 const Root = ({ children }: { children: ReactNode }) => {
-  return <div className={_font.className}>{children}</div>;
+  return (
+    <div id="__next-layout" className={_font.className}>
+      {children}
+    </div>
+  );
 };
 
 export default Root;

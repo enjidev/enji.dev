@@ -3,7 +3,7 @@ import Head from 'next/head';
 
 const Index: NextPage = () => {
   return (
-    <div>
+    <>
       <Head>
         <title>Enji • Designer & Developer</title>
         <meta name="description" content="Hi!" />
@@ -14,7 +14,7 @@ const Index: NextPage = () => {
         <h1>Enji Kusnadi</h1>
         <p>Seorang Designer & Developer.</p>
       </main>
-    </div>
+    </>
   );
 };
 
