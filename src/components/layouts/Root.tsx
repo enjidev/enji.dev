@@ -8,7 +8,7 @@ const _font = Plus_Jakarta_Sans({
 const Root = ({ children }: { children: ReactNode }) => {
   return (
     <div id="__next-layout" className={_font.className}>
-      {children}
+      <main>{children}</main>
     </div>
   );
 };

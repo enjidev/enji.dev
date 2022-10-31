@@ -9,11 +9,11 @@ const Index: NextPage = () => {
         <meta name="description" content="Hi!" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
+      <>
         <span>Halo! Nama saya</span>
         <h1>Enji Kusnadi</h1>
         <p>Seorang Designer & Developer.</p>
-      </main>
+      </>
     </>
   );
 };
