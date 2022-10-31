@@ -10,6 +10,6 @@
   }
 
   html {
-    @apply bg-slate-900 text-white;
+    @apply bg-white text-gray-900 dark:bg-slate-900 dark:text-slate-200 dark:[color-scheme:dark];
   }
 }
