@@ -11,7 +11,9 @@ const Index: NextPage = () => {
       </Head>
       <>
         <p>Halo! Saya</p>
-        <h1>Enji Kusnadi, Seorang Designer & Developer.</h1>
+        <h1 className="text-4xl font-extrabold">
+          Enji Kusnadi, Seorang Designer & Developer.
+        </h1>
       </>
     </>
   );

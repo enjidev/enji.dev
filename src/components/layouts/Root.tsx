@@ -1,15 +1,12 @@
-import { Plus_Jakarta_Sans } from '@next/font/google';
+import PlusJakartaSans from '@/components/fonts/PlusJakartaSans';
 import type { ReactNode } from 'react';
-
-const _font = Plus_Jakarta_Sans({
-  subsets: ['latin'],
-});
 
 const Root = ({ children }: { children: ReactNode }) => {
   return (
-    <div id="__next-layout" className={_font.className}>
+    <>
+      <PlusJakartaSans />
       <main>{children}</main>
-    </div>
+    </>
   );
 };
 

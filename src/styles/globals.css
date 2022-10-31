@@ -5,8 +5,7 @@
 @layer base {
   html,
   body,
-  #__next,
-  #__next-layout {
+  #__next {
     @apply h-full;
   }
 
