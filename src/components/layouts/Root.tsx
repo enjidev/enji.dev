@@ -5,7 +5,7 @@ const Root = ({ children }: { children: ReactNode }) => {
   return (
     <>
       <PlusJakartaSans />
-      <main>{children}</main>
+      <main id="__next-layout">{children}</main>
     </>
   );
 };
