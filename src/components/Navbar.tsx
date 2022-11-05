@@ -34,7 +34,15 @@ const Navbar = () => {
     <nav className="flex items-center justify-between py-6 px-2 text-sm md:px-4">
       <div>
         <ul className="flex items-center font-semibold">
-          <li>
+          <li className="hidden md:block">
+            <Link
+              href="/"
+              className="block h-9 px-2 text-2xl font-extrabold text-gray-900"
+            >
+              enji<span className="text-primary-400">dev</span>
+            </Link>
+          </li>
+          <li className="md:hidden">
             <NavItem href="/" title="home" />
           </li>
           <li>
