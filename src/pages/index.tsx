@@ -9,12 +9,12 @@ const Index: NextPage = () => {
         <meta name="description" content="Hi!" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <>
+      <div className="content-wrapper">
         <p>Halo! Saya</p>
         <h1 className="text-4xl font-extrabold">
           Enji Kusnadi, Seorang Designer & Developer.
         </h1>
-      </>
+      </div>
     </>
   );
 };

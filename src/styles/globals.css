@@ -12,4 +12,8 @@
   html {
     @apply bg-white text-gray-900 dark:bg-slate-900 dark:text-slate-200 dark:[color-scheme:dark];
   }
+
+  .content-wrapper {
+    @apply mx-auto max-w-[1280px] px-4 md:px-6;
+  }
 }
