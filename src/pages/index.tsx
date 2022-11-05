@@ -42,9 +42,9 @@ const Index: NextPage = () => {
         <meta name="description" content="Hi!" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <header className="relative border-b border-b-slate-100 pt-32 pb-20 lg:pt-48 lg:pb-28">
+      <header className="relative border-b border-b-slate-100 pt-32 pb-20 lg:pt-36 lg:pb-28">
         <div
-          className="absolute inset-0 z-[-1] bg-slate-100 bg-grid-slate-200 lg:bg-grid-big-slate-200"
+          className="absolute inset-0 z-[-1] bg-slate-100 bg-grid-slate-200 lg:bg-grid-big-slate-200/60"
           style={{
             maskImage: 'radial-gradient(black, transparent)',
             WebkitMaskImage: 'radial-gradient(black, transparent)',
@@ -126,7 +126,7 @@ const Index: NextPage = () => {
       </header>
       <section>
         <div className="content-wrapper">
-          <div className="-mt-8 mb-8 flex flex-col gap-4 lg:-mt-16 lg:flex-row">
+          <div className="-mt-8 mb-8 flex flex-col gap-4 lg:-mt-16 lg:flex-row lg:gap-8">
             <FeaturedCard
               icon={<SparklesIcon className="h-5 w-5 text-[#FFE600]" />}
               title="Clean & Modern Desain"
