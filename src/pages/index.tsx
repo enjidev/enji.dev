@@ -25,7 +25,7 @@ interface FeaturedCardProps {
 const FeaturedCard = ({ icon, title, desc }: FeaturedCardProps) => {
   return (
     <div className="z-10 flex-1 rounded-2xl border border-slate-100 bg-white p-6">
-      <div className="mb-2 flex items-center gap-4 font-bold text-gray-900 lg:flex-col lg:items-start">
+      <div className="mb-1 flex items-center gap-4 font-bold text-gray-900 lg:flex-col lg:items-start">
         {icon}
         <h2 className="">{title}</h2>
       </div>
@@ -128,17 +128,29 @@ const Index: NextPage = () => {
         <div className="content-wrapper">
           <div className="-mt-8 mb-8 flex flex-col gap-4 lg:-mt-16 lg:flex-row lg:gap-8">
             <FeaturedCard
-              icon={<SparklesIcon className="h-5 w-5 text-[#FFE600]" />}
+              icon={
+                <div className="lg:rounded-full lg:bg-[#A199FF] lg:p-4">
+                  <SparklesIcon className="h-5 w-5 text-[#FFC41F] lg:text-[#FFFF00]" />
+                </div>
+              }
               title="Clean & Modern Desain"
               desc="Senang membuat design yang modern, clean serta UI yang intuitif."
             />
             <FeaturedCard
-              icon={<HeartIcon className="h-5 w-5 text-[#FF5A5A]" />}
+              icon={
+                <div className="lg:rounded-full lg:bg-[#FF7DAC] lg:p-4">
+                  <HeartIcon className="h-5 w-5 text-[#FF7DAC] lg:text-white" />
+                </div>
+              }
               title="Detail Oriented"
               desc="Tantangan terbesarnya: aksesibilitas, browser kompatibilitas dan desain responsive."
             />
             <FeaturedCard
-              icon={<BoltIcon className="h-5 w-5 text-[#5096FF]" />}
+              icon={
+                <div className="lg:rounded-full lg:bg-[#BFF4FF] lg:p-4">
+                  <BoltIcon className="h-5 w-5 text-[#5096FF]" />
+                </div>
+              }
               title="Fast & Optimized"
               desc="Penulisan code yang terstruktur, optimal serta efisien."
             />
