@@ -20,9 +20,9 @@ const Index: NextPage = () => {
         <meta name="description" content="Hi!" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <header className="relative py-32">
+      <header className="relative py-32 lg:py-48">
         <div
-          className="absolute inset-0 z-[-1] bg-slate-100 bg-grid-slate-200"
+          className="absolute inset-0 z-[-1] bg-slate-100 bg-grid-slate-200 lg:bg-grid-big-slate-200"
           style={{
             maskImage: 'radial-gradient(black, transparent)',
             WebkitMaskImage: 'radial-gradient(black, transparent)',
@@ -89,14 +89,14 @@ const Index: NextPage = () => {
               </ul>
             </div>
             {/* image */}
-            <div className="absolute right-0 -top-16 hidden lg:block">
+            <div className="absolute right-0 -top-28 hidden lg:block">
               {/* image */}
               <Image
                 alt="me"
                 src="/me.png"
                 height={597}
                 width={467}
-                className="w-96"
+                className="w-[460px]"
                 priority
               />
             </div>
