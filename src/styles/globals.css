@@ -13,6 +13,15 @@
     @apply bg-white text-gray-900 dark:bg-slate-900 dark:text-slate-200 dark:[color-scheme:dark];
   }
 
+  .button,
+  .button-outlined {
+    @apply inline-block rounded-md bg-primary-400 py-2.5 px-4 text-center text-sm font-bold uppercase text-white hover:bg-primary-500;
+  }
+
+  .button-outlined {
+    @apply bg-transparent text-primary-400 hover:bg-transparent hover:text-primary-600;
+  }
+
   .content-wrapper {
     @apply mx-auto max-w-[1280px] px-4 md:px-6;
   }
