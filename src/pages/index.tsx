@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   TypeScriptIcon,
   ReactIcon,
@@ -7,10 +8,31 @@ import {
   NextJsIcon,
   FigmaIcon,
   InkscapeIcon,
+  SparklesIcon,
+  HeartIcon,
+  BoltIcon,
 } from '@/components/Icons';
 
 import type { NextPage } from 'next';
-import Image from 'next/image';
+import type { ReactElement } from 'react';
+
+interface FeaturedCardProps {
+  icon: ReactElement;
+  title: string;
+  desc: string;
+}
+
+const FeaturedCard = ({ icon, title, desc }: FeaturedCardProps) => {
+  return (
+    <div className="z-10 flex-1 rounded-2xl border border-slate-100 bg-white p-6 ">
+      <div className="mb-2 flex items-center gap-4 font-bold lg:flex-col lg:items-start">
+        {icon}
+        <h2 className="">{title}</h2>
+      </div>
+      <div className="text-sm">{desc}</div>
+    </div>
+  );
+};
 
 const Index: NextPage = () => {
   return (
@@ -103,6 +125,27 @@ const Index: NextPage = () => {
           </div>
         </div>
       </header>
+      <section>
+        <div className="content-wrapper">
+          <div className="-mt-8 mb-8 flex flex-col gap-4 lg:-mt-16 lg:flex-row">
+            <FeaturedCard
+              icon={<SparklesIcon className="h-5 w-5 text-[#FFE600]" />}
+              title="Clean & Modern Desain"
+              desc="Senang membuat design yang modern, clean serta UI yang intuitif."
+            />
+            <FeaturedCard
+              icon={<HeartIcon className="h-5 w-5 text-[#FF5A5A]" />}
+              title="Detail Oriented"
+              desc="Tantangan terbesarnya: aksesibilitas, browser kompatibilitas dan desain responsive."
+            />
+            <FeaturedCard
+              icon={<BoltIcon className="h-5 w-5 text-[#5096FF]" />}
+              title="Fast & Optimized"
+              desc="Penulisan code yang terstruktur, optimal serta efisien."
+            />
+          </div>
+        </div>
+      </section>
     </>
   );
 };
