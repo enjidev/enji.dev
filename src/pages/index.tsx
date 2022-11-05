@@ -24,12 +24,12 @@ interface FeaturedCardProps {
 
 const FeaturedCard = ({ icon, title, desc }: FeaturedCardProps) => {
   return (
-    <div className="z-10 flex-1 rounded-2xl border border-slate-100 bg-white p-6 ">
-      <div className="mb-2 flex items-center gap-4 font-bold lg:flex-col lg:items-start">
+    <div className="z-10 flex-1 rounded-2xl border border-slate-100 bg-white p-6">
+      <div className="mb-2 flex items-center gap-4 font-bold text-gray-900 lg:flex-col lg:items-start">
         {icon}
         <h2 className="">{title}</h2>
       </div>
-      <div className="text-sm">{desc}</div>
+      <div className="text-sm text-gray-500">{desc}</div>
     </div>
   );
 };
@@ -42,7 +42,7 @@ const Index: NextPage = () => {
         <meta name="description" content="Hi!" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <header className="relative border-b border-b-slate-100 py-32 lg:py-48">
+      <header className="relative border-b border-b-slate-100 pt-32 pb-20 lg:pt-48 lg:pb-28">
         <div
           className="absolute inset-0 z-[-1] bg-slate-100 bg-grid-slate-200 lg:bg-grid-big-slate-200"
           style={{
@@ -73,7 +73,7 @@ const Index: NextPage = () => {
               </Link>
             </div>
             {/* tech stack */}
-            <div className="mt-32">
+            <div className="mt-32 lg:mt-48">
               <p className="mb-2 text-sm text-gray-400">
                 tech stack/tools favorit saya saat ini:
               </p>
@@ -118,7 +118,7 @@ const Index: NextPage = () => {
                 src="/me.png"
                 height={597}
                 width={467}
-                className="w-[460px]"
+                className="w-[440px]"
                 priority
               />
             </div>
