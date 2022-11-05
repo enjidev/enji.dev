@@ -9,7 +9,10 @@ interface NavItemProps {
 
 const NavItem = ({ href, title }: NavItemProps) => {
   return (
-    <Link href={href} className="block p-2 text-gray-900">
+    <Link
+      href={href}
+      className="flex h-9 items-center rounded-lg px-2 text-gray-900 md:text-base"
+    >
       {title}
     </Link>
   );
@@ -23,7 +26,11 @@ interface NavItemIconProps {
 
 const NavItemIcon = ({ href, icon, title }: NavItemIconProps) => {
   return (
-    <Link href={href} className="block p-2 text-gray-900" aria-label={title}>
+    <Link
+      href={href}
+      className="flex h-9 w-9 items-center justify-center rounded-lg text-gray-900"
+      aria-label={title}
+    >
       {icon}
     </Link>
   );
@@ -37,7 +44,7 @@ const Navbar = () => {
           <li className="hidden md:block">
             <Link
               href="/"
-              className="block h-9 px-2 text-2xl font-extrabold text-gray-900"
+              className="block h-9 rounded-lg px-2 text-2xl font-extrabold text-gray-900"
             >
               enji<span className="text-primary-400">dev</span>
             </Link>
