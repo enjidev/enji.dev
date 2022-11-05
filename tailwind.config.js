@@ -8,6 +8,17 @@ module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
   darkMode: 'class',
   theme: {
+    animationDelay: {
+      100: '100ms',
+      200: '200ms',
+      300: '300ms',
+      400: '400ms',
+      500: '500ms',
+      600: '600ms',
+      700: '700ms',
+      800: '800ms',
+      900: '900ms',
+    },
     extend: {
       colors: {
         primary: {
@@ -21,6 +32,32 @@ module.exports = {
           700: '#441D91',
           800: '#33166D',
           900: '#220E48',
+        },
+      },
+      animation: {
+        'fade-in': 'fade-in 400ms ease-out forwards',
+        'fade-left': 'fade-left 400ms ease-out forwards',
+      },
+      keyframes: {
+        'fade-in': {
+          from: {
+            transform: 'translate3d(0,-2rem,0)',
+            opacity: 0,
+          },
+          to: {
+            transform: 'translate3d(0,0,0)',
+            opacity: 1,
+          },
+        },
+        'fade-left': {
+          from: {
+            transform: 'translate3d(-2rem,0,0)',
+            opacity: 0,
+          },
+          to: {
+            transform: 'translate3d(0,0,0)',
+            opacity: 1,
+          },
         },
       },
     },
@@ -41,6 +78,15 @@ module.exports = {
           }),
         },
         { values: flattenColorPalette(theme('backgroundColor')), type: 'color' }
+      );
+
+      matchUtilities(
+        {
+          'animation-delay': (value) => ({
+            animationDelay: value,
+          }),
+        },
+        { values: theme('animationDelay') }
       );
     },
   ],

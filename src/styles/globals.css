@@ -15,14 +15,28 @@
 
   .button,
   .button-outlined {
-    @apply inline-block rounded-md bg-primary-400 py-2.5 px-4 text-center text-sm font-bold uppercase text-white hover:bg-primary-500;
+    @apply inline-block rounded-md border-2 border-transparent py-2 px-4 text-center text-sm font-bold uppercase tracking-wider;
+  }
+
+  .button {
+    @apply border-primary-300 bg-primary-400 text-white hover:border-primary-400 hover:bg-primary-500;
   }
 
   .button-outlined {
-    @apply bg-transparent text-primary-400 hover:bg-transparent hover:text-primary-600;
+    @apply text-primary-400  hover:text-primary-600;
   }
 
   .content-wrapper {
     @apply mx-auto max-w-[1280px] px-4 md:px-6 lg:px-16 xl:px-6;
+  }
+
+  .animate-fade-in {
+    transform: translate3d(0, -2.5rem, 0);
+    opacity: 0;
+  }
+
+  .animate-fade-left {
+    transform: translate3d(-2.5rem, 0, 0);
+    opacity: 0;
   }
 }

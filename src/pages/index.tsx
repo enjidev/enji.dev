@@ -50,21 +50,21 @@ const Index: NextPage = () => {
             WebkitMaskImage: 'radial-gradient(black, transparent)',
           }}
         ></div>
-        <div className="content-wrapper">
+        <div className="content-wrapper fade-in-start">
           <div className="relative">
             {/* title */}
-            <h1 className="text-gray-600">
-              <span className="mb-3 block text-5xl font-bold md:mb-4 md:text-7xl">
+            <h1 className=" text-gray-600 ">
+              <span className="mb-3 block animate-fade-in text-5xl font-bold md:mb-4 md:text-7xl">
                 hai! saya{' '}
                 <strong className="font-extrabold text-gray-900">énji</strong>,
               </span>
-              <span className="block text-xl md:text-2xl">
+              <span className="block animate-fade-in text-xl animation-delay-100 md:text-2xl">
                 seorang <strong>designer</strong> dan <strong>developer</strong>
                 .
               </span>
             </h1>
             {/* cta */}
-            <div className="mt-8 flex gap-2">
+            <div className="mt-8 flex animate-fade-in gap-2 animation-delay-100">
               <Link href="/" className="button min-w-[128px]">
                 HIRE ME
               </Link>
@@ -74,44 +74,44 @@ const Index: NextPage = () => {
             </div>
             {/* tech stack */}
             <div className="mt-32 lg:mt-48">
-              <p className="mb-2 text-sm text-gray-500">
+              <p className="mb-2 animate-fade-left text-sm text-gray-500 animation-delay-400">
                 tech stack/tools favorit saya saat ini:
               </p>
               <ul className="flex gap-4 text-gray-500">
                 <li>
-                  <div className="hover:text-[#3178C6]">
+                  <div className="animate-fade-left animation-delay-400 hover:text-[#3178C6]">
                     <TypeScriptIcon className="h-6 w-6" />
                   </div>
                 </li>
                 <li>
-                  <div className="hover:text-[#61DAFB]">
+                  <div className="animate-fade-left animation-delay-500 hover:text-[#61DAFB]">
                     <ReactIcon className="h-6 w-6" />
                   </div>
                 </li>
                 <li>
-                  <div className="hover:text-[#06B6D4]">
+                  <div className="animate-fade-left animation-delay-600 hover:text-[#06B6D4]">
                     <TailwindCssIcon className="h-6 w-6" />
                   </div>
                 </li>
                 <li>
-                  <div className="hover:text-[#000000]">
+                  <div className="animate-fade-left animation-delay-700 hover:text-[#000000]">
                     <NextJsIcon className="h-6 w-6" />
                   </div>
                 </li>
                 <li>
-                  <div className="hover:text-[#F24E1E]">
+                  <div className="animate-fade-left animation-delay-800 hover:text-[#F24E1E]">
                     <FigmaIcon className="h-6 w-6" />
                   </div>
                 </li>
                 <li>
-                  <div className="hover:text-[#000000]">
+                  <div className="animate-fade-left animation-delay-900 hover:text-[#000000]">
                     <InkscapeIcon className="h-6 w-6" />
                   </div>
                 </li>
               </ul>
             </div>
             {/* image */}
-            <div className="absolute right-0 -top-28 hidden lg:block">
+            <div className="absolute right-0 -top-28 hidden animate-fade-in animation-delay-100 lg:block">
               {/* image */}
               <Image
                 alt="me"
