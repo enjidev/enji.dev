@@ -8,7 +8,7 @@ const Root = ({ children }: { children: ReactNode }) => {
     <>
       <PlusJakartaSans />
       <Navbar />
-      <main id="__next-layout">{children}</main>
+      <main>{children}</main>
     </>
   );
 };
