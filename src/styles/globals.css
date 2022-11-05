@@ -15,15 +15,19 @@
 
   .button,
   .button-outlined {
-    @apply inline-block rounded-md border-2 border-transparent py-2 px-4 text-center text-sm font-bold uppercase tracking-wider;
+    @apply inline-block rounded-md py-2 px-4 text-center text-sm font-bold uppercase transition duration-150;
   }
 
   .button {
-    @apply border-primary-300 bg-primary-400 text-white hover:border-primary-400 hover:bg-primary-500;
+    @apply border-primary-300 bg-primary-400 text-white highlight-primary-500 hover:bg-primary-500 hover:highlight-primary-600;
   }
 
   .button-outlined {
     @apply text-primary-400  hover:text-primary-600;
+  }
+
+  .button-big {
+    @apply rounded-lg py-3 px-6;
   }
 
   .content-wrapper {
