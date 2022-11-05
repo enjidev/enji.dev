@@ -35,7 +35,7 @@ const Footer = () => {
           </li>
         </ul>
       </section>
-      <small className="flex justify-center font-semibold">
+      <small className="flex justify-center text-sm font-semibold">
         &copy; 2022, Enji Kusnadi
       </small>
     </footer>

@@ -54,7 +54,7 @@ const Index: NextPage = () => {
           <div className="relative">
             {/* title */}
             <h1 className="text-gray-600">
-              <span className="mb-3 block text-5xl font-bold md:mb-6 md:text-7xl">
+              <span className="mb-3 block text-5xl font-bold md:mb-4 md:text-7xl">
                 hai! saya{' '}
                 <strong className="font-extrabold text-gray-900">énji</strong>,
               </span>
@@ -74,10 +74,10 @@ const Index: NextPage = () => {
             </div>
             {/* tech stack */}
             <div className="mt-32 lg:mt-48">
-              <p className="mb-2 text-sm text-gray-400">
+              <p className="mb-2 text-sm text-gray-500">
                 tech stack/tools favorit saya saat ini:
               </p>
-              <ul className="flex gap-4 text-gray-400">
+              <ul className="flex gap-4 text-gray-500">
                 <li>
                   <div className="hover:text-[#3178C6]">
                     <TypeScriptIcon className="h-6 w-6" />
@@ -118,8 +118,7 @@ const Index: NextPage = () => {
                 src="/me.png"
                 height={597}
                 width={467}
-                className="w-[440px]"
-                priority
+                className="aspect-auto w-[440px]"
               />
             </div>
           </div>
