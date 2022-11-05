@@ -42,7 +42,7 @@ const Index: NextPage = () => {
         <meta name="description" content="Hi!" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <header className="relative border-b border-b-slate-100 pt-32 pb-20 lg:pt-36 lg:pb-28">
+      <header className="relative border-b border-b-slate-100 pt-28 pb-20 lg:pt-36 lg:pb-28">
         <div
           className="absolute inset-0 z-[-1] bg-slate-100 bg-grid-slate-200 lg:bg-grid-big-slate-200/60"
           style={{
@@ -73,7 +73,7 @@ const Index: NextPage = () => {
               </Link>
             </div>
             {/* tech stack */}
-            <div className="mt-32 lg:mt-48">
+            <div className="mt-28 lg:mt-48">
               <p className="mb-2 animate-fade-left text-sm text-gray-500 animation-delay-400">
                 tech stack/tools favorit saya saat ini:
               </p>
