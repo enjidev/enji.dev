@@ -20,7 +20,7 @@ const Index: NextPage = () => {
         <meta name="description" content="Hi!" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <header className="relative py-32 lg:py-48">
+      <header className="relative border-b border-b-slate-100 py-32 lg:py-48">
         <div
           className="absolute inset-0 z-[-1] bg-slate-100 bg-grid-slate-200 lg:bg-grid-big-slate-200"
           style={{
