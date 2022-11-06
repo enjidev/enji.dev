@@ -42,11 +42,11 @@
     @apply inline-block rounded-md py-2 px-4 text-center text-sm font-bold uppercase transition duration-150;
 
     &--solid {
-      @apply border-primary-300 bg-primary-400 text-white highlight-primary-500 hover:bg-primary-500 hover:highlight-primary-600;
+      @apply border-primary-300 bg-primary-400 text-white highlight-primary-500 hover:bg-primary-500 hover:highlight-primary-600 dark:border-primary-700 dark:bg-primary-600 dark:highlight-primary-400 dark:hover:bg-primary-500;
     }
 
     &--outlined {
-      @apply text-primary-400  hover:text-primary-600;
+      @apply text-primary-400  hover:text-primary-600 dark:text-primary-300 dark:hover:text-primary-200;
     }
 
     &--big {
