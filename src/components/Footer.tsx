@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 const Footer = () => {
   return (
-    <footer className="border-t border-t-slate-100 py-8 px-4 text-sm text-gray-900">
+    <footer className="border-t border-t-slate-100 py-8 px-4 text-sm text-gray-900 dark:border-t-slate-700 dark:text-slate-200">
       <section className="mb-12 font-semibold">
         <ul className="flex flex-wrap justify-center gap-x-4 gap-y-1">
           <li>
@@ -21,7 +21,7 @@ const Footer = () => {
         </ul>
       </section>
       <section className="mb-2">
-        <ul className="flex justify-center gap-1 text-xs text-gray-500">
+        <ul className="flex justify-center gap-1 text-xs text-gray-500 dark:text-slate-500">
           <li>
             <Link href="/" className="hover:underline">
               Kebijakan Privasi
