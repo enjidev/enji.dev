@@ -29,7 +29,7 @@
   }
 
   :focus-visible {
-    @apply relative rounded-md bg-primary-50/20 outline-2 outline-offset-2 outline-primary-200 [color-scheme:light] dark:outline-primary-50;
+    @apply relative rounded-md bg-primary-50/20 outline-2 outline-offset-2 outline-primary-200 dark:bg-primary-50/[0.05] dark:outline-offset-0 dark:outline-primary-400 dark:[color-scheme:light];
   }
 }
 
