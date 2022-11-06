@@ -19,7 +19,7 @@
   }
 
   .animate-fade-left {
-    transform: translate3d(-2.5rem, 0, 0);
+    transform: translate3d(-1.5rem, 0, 0);
     opacity: 0;
   }
 

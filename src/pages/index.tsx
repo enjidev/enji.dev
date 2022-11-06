@@ -82,32 +82,32 @@ const Index: NextPage = () => {
               </p>
               <ul className="flex gap-4 text-gray-500">
                 <li>
-                  <div className="animate-fade-left transition duration-200 animation-delay-400 hover:text-[#3178C6]">
+                  <div className="animate-fade-left transition duration-200 animation-delay-[400ms] hover:text-[#3178C6]">
                     <TypeScriptIcon className="h-6 w-6" />
                   </div>
                 </li>
                 <li>
-                  <div className="animate-fade-left transition duration-200 animation-delay-500 hover:text-[#61DAFB]">
+                  <div className="animate-fade-left transition duration-200 animation-delay-[430ms] hover:text-[#61DAFB]">
                     <ReactIcon className="h-6 w-6" />
                   </div>
                 </li>
                 <li>
-                  <div className="animate-fade-left transition duration-200 animation-delay-600 hover:text-[#06B6D4]">
+                  <div className="animate-fade-left transition duration-200 animation-delay-[460ms] hover:text-[#06B6D4]">
                     <TailwindCssIcon className="h-6 w-6" />
                   </div>
                 </li>
                 <li>
-                  <div className="animate-fade-left transition duration-200 animation-delay-700 hover:text-[#000000]">
+                  <div className="animate-fade-left transition duration-200 animation-delay-[490ms] hover:text-[#000000]">
                     <NextJsIcon className="h-6 w-6" />
                   </div>
                 </li>
                 <li>
-                  <div className="animate-fade-left transition duration-200 animation-delay-800 hover:text-[#F24E1E]">
+                  <div className="animate-fade-left transition duration-200 animation-delay-[520ms] hover:text-[#F24E1E]">
                     <FigmaIcon className="h-6 w-6" />
                   </div>
                 </li>
                 <li>
-                  <div className="animate-fade-left transition duration-200 animation-delay-900 hover:text-[#000000]">
+                  <div className="animate-fade-left transition duration-200 animation-delay-[550ms] hover:text-[#000000]">
                     <InkscapeIcon className="h-6 w-6" />
                   </div>
                 </li>
