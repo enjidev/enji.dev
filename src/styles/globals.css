@@ -45,4 +45,22 @@
   .button-big {
     @apply rounded-lg py-3 px-6;
   }
+
+  .link {
+    @apply relative;
+
+    &::after {
+      @apply absolute bottom-2 left-0 right-0 z-[-1] mx-auto h-2 w-[60%] origin-bottom scale-y-0 bg-primary-50 transition duration-200 ease-out content-[''];
+    }
+
+    /* active and hover state */
+    &.active,
+    &:hover {
+      @apply text-primary-500;
+
+      &::after {
+        @apply scale-y-100;
+      }
+    }
+  }
 }
