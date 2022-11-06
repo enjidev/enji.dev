@@ -29,7 +29,7 @@ const FeaturedCard = ({ icon, title, desc }: FeaturedCardProps) => {
         {icon}
         <h2 className="">{title}</h2>
       </div>
-      <div className="text-sm text-gray-500 dark:text-slate-500">{desc}</div>
+      <div className="text-sm text-gray-500 dark:text-slate-400">{desc}</div>
     </div>
   );
 };
@@ -80,10 +80,10 @@ const Index: NextPage = () => {
             </div>
             {/* tech stack */}
             <div className="mt-28 lg:mt-48">
-              <p className="mb-2 animate-fade-left text-sm text-gray-500 animation-delay-400 dark:text-slate-500">
+              <p className="mb-2 animate-fade-left text-sm text-gray-600 animation-delay-400 dark:text-slate-400">
                 tech stack/tools favorit saya saat ini:
               </p>
-              <ul className="flex gap-4 text-gray-500">
+              <ul className="flex gap-4 text-gray-500 dark:text-slate-500">
                 <li>
                   <div className="animate-fade-left transition duration-200 animation-delay-[400ms] hover:text-[#3178C6]">
                     <TypeScriptIcon className="h-6 w-6" />

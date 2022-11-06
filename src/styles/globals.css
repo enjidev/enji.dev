@@ -46,7 +46,7 @@
     }
 
     &--outlined {
-      @apply text-primary-400  hover:text-primary-600 dark:text-primary-300 dark:hover:text-primary-200;
+      @apply text-primary-400  hover:text-primary-600 dark:text-primary-200 dark:hover:text-primary-100;
     }
 
     &--big {
