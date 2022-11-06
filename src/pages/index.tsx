@@ -44,27 +44,27 @@ const Index: NextPage = () => {
       </Head>
       <header className="relative border-b border-b-slate-100 pt-28 pb-20 lg:pt-36 lg:pb-28">
         <div
-          className="absolute inset-0 z-[-1] bg-slate-100 bg-grid-slate-200 lg:bg-grid-big-slate-200/60"
+          className="absolute inset-0 z-[-1] bg-slate-100 bg-grid-slate-200 lg:bg-grid-big-slate-200/40"
           style={{
             maskImage: 'radial-gradient(black, transparent)',
             WebkitMaskImage: 'radial-gradient(black, transparent)',
           }}
         ></div>
-        <div className="content-wrapper fade-in-start">
+        <div className="content-wrapper">
           <div className="relative">
             {/* title */}
             <h1 className=" text-gray-600 ">
-              <span className="mb-3 block animate-fade-in text-5xl font-bold md:mb-4 md:text-7xl">
+              <span className="mb-3 block animate-fade-left text-5xl font-bold md:mb-4 md:text-7xl">
                 hai! saya{' '}
                 <strong className="font-extrabold text-gray-900">énji</strong>,
               </span>
-              <span className="block animate-fade-in text-xl animation-delay-100 md:text-2xl">
+              <span className="block animate-fade-left text-xl animation-delay-100 md:text-2xl">
                 seorang <strong>designer</strong> dan <strong>developer</strong>
                 .
               </span>
             </h1>
             {/* cta */}
-            <div className="mt-8 flex animate-fade-in gap-2 animation-delay-100">
+            <div className="mt-8 flex animate-fade-left gap-2 animation-delay-200">
               <Link
                 href="/"
                 className="button button--solid button--big min-w-[128px]"
@@ -114,15 +114,19 @@ const Index: NextPage = () => {
               </ul>
             </div>
             {/* image */}
-            <div className="absolute right-0 -top-28 hidden animate-fade-in animation-delay-100 lg:block">
-              {/* image */}
-              <Image
-                alt="me"
-                src="/me.png"
-                height={597}
-                width={467}
-                className="aspect-auto w-[440px]"
-              />
+            <div className="absolute -top-36 right-0 hidden lg:flex">
+              <div className="relative h-[600px] w-[375px] rounded-b-full bg-primary-400">
+                <div className="absolute right-0 bottom-0">
+                  <Image
+                    alt="Enji Kusnadi Illustration"
+                    src="/me.png"
+                    width={457}
+                    height={526}
+                    className="max-w-none animate-fade-right animation-delay-600"
+                    quality={100}
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>

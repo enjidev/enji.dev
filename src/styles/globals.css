@@ -23,6 +23,11 @@
     opacity: 0;
   }
 
+  .animate-fade-right {
+    transform: translate3d(1rem, 0, 0);
+    opacity: 0;
+  }
+
   :focus-visible {
     @apply relative rounded-md bg-primary-50/20 outline-2 outline-offset-2 outline-primary-200;
   }
