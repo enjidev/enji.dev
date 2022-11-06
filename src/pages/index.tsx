@@ -65,10 +65,13 @@ const Index: NextPage = () => {
             </h1>
             {/* cta */}
             <div className="mt-8 flex animate-fade-in gap-2 animation-delay-100">
-              <Link href="/" className="button button-big min-w-[128px]">
+              <Link
+                href="/"
+                className="button button--solid button--big min-w-[128px]"
+              >
                 Hire Me
               </Link>
-              <Link href="/" className="button-outlined button-big">
+              <Link href="/" className="button button--outlined button--big">
                 Resume
               </Link>
             </div>
