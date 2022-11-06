@@ -5,13 +5,16 @@ import type { ReactElement } from 'react';
 interface NavItemProps {
   href: string;
   title: string;
+  active?: boolean;
 }
 
-const NavItem = ({ href, title }: NavItemProps) => {
+const NavItem = ({ href, title, active = false }: NavItemProps) => {
   return (
     <Link
       href={href}
-      className="flex h-9 items-center rounded-lg px-2 text-gray-900 md:text-base"
+      className={`link flex h-9 items-center rounded-lg px-2 text-gray-900 md:text-base ${
+        active && 'active'
+      }`}
     >
       {title}
     </Link>
@@ -80,7 +83,7 @@ const Navbar = () => {
             />
           </li>
           <li>
-            <div className="h-3 w-[1px] bg-slate-400"></div>
+            <div className="h-3 w-[1px] bg-slate-200"></div>
           </li>
           <li>
             <NavItemIcon
