@@ -47,9 +47,10 @@ const Navbar = () => {
           <li className="hidden md:block">
             <Link
               href="/"
-              className="block h-9 rounded-lg px-2 text-2xl font-extrabold text-gray-900"
+              className="link block h-9 rounded-lg px-2 text-2xl font-extrabold text-gray-900"
             >
-              enji<span className="text-primary-400">dev</span>
+              <span className="text-gray-900">enji</span>
+              <span className="text-primary-400">dev</span>
             </Link>
           </li>
           <li className="md:hidden">
