@@ -13,6 +13,22 @@
     @apply bg-white text-gray-900 dark:bg-slate-900 dark:text-slate-200 dark:[color-scheme:dark];
   }
 
+  .animate-fade-in {
+    transform: translate3d(0, -2.5rem, 0);
+    opacity: 0;
+  }
+
+  .animate-fade-left {
+    transform: translate3d(-2.5rem, 0, 0);
+    opacity: 0;
+  }
+}
+
+@layer components {
+  .content-wrapper {
+    @apply mx-auto max-w-[1280px] px-4 md:px-6 lg:px-16 xl:px-6;
+  }
+
   .button,
   .button-outlined {
     @apply inline-block rounded-md py-2 px-4 text-center text-sm font-bold uppercase transition duration-150;
@@ -28,19 +44,5 @@
 
   .button-big {
     @apply rounded-lg py-3 px-6;
-  }
-
-  .content-wrapper {
-    @apply mx-auto max-w-[1280px] px-4 md:px-6 lg:px-16 xl:px-6;
-  }
-
-  .animate-fade-in {
-    transform: translate3d(0, -2.5rem, 0);
-    opacity: 0;
-  }
-
-  .animate-fade-left {
-    transform: translate3d(-2.5rem, 0, 0);
-    opacity: 0;
   }
 }
