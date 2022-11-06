@@ -22,6 +22,10 @@
     transform: translate3d(-2.5rem, 0, 0);
     opacity: 0;
   }
+
+  :focus-visible {
+    @apply relative rounded-md bg-primary-50/20 outline-2 outline-offset-2 outline-primary-200;
+  }
 }
 
 @layer components {
