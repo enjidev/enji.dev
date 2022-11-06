@@ -46,8 +46,9 @@ module.exports = {
         },
       },
       animation: {
-        'fade-in': 'fade-in 400ms ease-out forwards',
-        'fade-left': 'fade-left 400ms ease-out forwards',
+        'fade-in': 'fade-in 380ms ease-out forwards',
+        'fade-left': 'fade-left 380ms ease-out forwards',
+        'fade-right': 'fade-right 380ms ease-out forwards',
       },
       keyframes: {
         'fade-in': {
@@ -63,6 +64,16 @@ module.exports = {
         'fade-left': {
           from: {
             transform: 'translate3d(-1.5rem,0,0)',
+            opacity: 0,
+          },
+          to: {
+            transform: 'translate3d(0,0,0)',
+            opacity: 1,
+          },
+        },
+        'fade-right': {
+          from: {
+            transform: 'translate3d(1rem,0,0)',
             opacity: 0,
           },
           to: {
