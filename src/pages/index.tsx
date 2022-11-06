@@ -115,7 +115,7 @@ const Index: NextPage = () => {
             </div>
             {/* image */}
             <div className="absolute -top-36 right-0 hidden lg:flex">
-              <div className="relative h-[600px] w-[375px] rounded-b-full bg-primary-400">
+              <div className="relative h-[590px] w-[375px] rounded-b-full bg-primary-400">
                 <div className="absolute right-0 bottom-0">
                   <Image
                     alt="Enji Kusnadi Illustration"
