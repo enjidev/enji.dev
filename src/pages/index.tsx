@@ -62,8 +62,8 @@ const Index: NextPage = () => {
                 ,
               </span>
               <span className="block animate-fade-left text-xl animation-delay-100 md:text-2xl">
-                seorang <strong className="font-extrabold">designer</strong> dan{' '}
-                <strong className="font-extrabold">developer</strong>.
+                seorang <strong className="font-bold">designer</strong> dan{' '}
+                <strong className="font-bold">developer</strong>.
               </span>
             </h1>
             {/* cta */}
