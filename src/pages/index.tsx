@@ -24,7 +24,7 @@ interface FeaturedCardProps {
 
 const FeaturedCard = ({ icon, title, desc }: FeaturedCardProps) => {
   return (
-    <div className="z-10 flex-1 rounded-2xl border border-slate-100 bg-white p-6 dark:border-slate-700 dark:bg-slate-900">
+    <div className="z-10 flex-1 rounded-2xl border border-slate-100 bg-white p-6 dark:border-slate-800 dark:bg-slate-900">
       <div className="mb-1 flex items-center gap-4 font-bold text-gray-900 dark:text-slate-200 lg:flex-col lg:items-start">
         {icon}
         <h2 className="">{title}</h2>
