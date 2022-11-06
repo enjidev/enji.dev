@@ -42,9 +42,9 @@ const Index: NextPage = () => {
         <meta name="description" content="Hi!" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <header className="relative border-b border-b-slate-100 pt-28 pb-20 lg:pt-36 lg:pb-28">
+      <header className="relative z-0 border-b border-b-slate-100 bg-slate-100 pt-28 pb-20 dark:bg-slate-800 lg:pt-36 lg:pb-28">
         <div
-          className="absolute inset-0 z-[-1] bg-slate-100 bg-grid-slate-200 lg:bg-grid-big-slate-200/40"
+          className="absolute inset-0 z-[-1] bg-slate-100 bg-grid-slate-200 dark:bg-slate-800 dark:bg-grid-slate-50/5 lg:bg-grid-big-slate-200/40 lg:dark:bg-grid-big-slate-50/[.03]"
           style={{
             maskImage: 'radial-gradient(black, transparent)',
             WebkitMaskImage: 'radial-gradient(black, transparent)',
@@ -53,10 +53,13 @@ const Index: NextPage = () => {
         <div className="content-wrapper">
           <div className="relative">
             {/* title */}
-            <h1 className=" text-gray-600 ">
+            <h1 className="text-gray-600 dark:text-slate-300">
               <span className="mb-3 block animate-fade-left text-5xl font-bold md:mb-4 md:text-7xl">
                 hai! saya{' '}
-                <strong className="font-extrabold text-gray-900">énji</strong>,
+                <strong className="font-extrabold text-gray-900 dark:text-slate-50">
+                  énji
+                </strong>
+                ,
               </span>
               <span className="block animate-fade-left text-xl animation-delay-100 md:text-2xl">
                 seorang <strong>designer</strong> dan <strong>developer</strong>
@@ -77,7 +80,7 @@ const Index: NextPage = () => {
             </div>
             {/* tech stack */}
             <div className="mt-28 lg:mt-48">
-              <p className="mb-2 animate-fade-left text-sm text-gray-500 animation-delay-400">
+              <p className="mb-2 animate-fade-left text-sm text-gray-500 animation-delay-400 dark:text-slate-500">
                 tech stack/tools favorit saya saat ini:
               </p>
               <ul className="flex gap-4 text-gray-500">
@@ -97,7 +100,7 @@ const Index: NextPage = () => {
                   </div>
                 </li>
                 <li>
-                  <div className="animate-fade-left transition duration-200 animation-delay-[490ms] hover:text-[#000000]">
+                  <div className="animate-fade-left transition duration-200 animation-delay-[490ms] hover:text-[#000000] dark:hover:text-[#FFFFFF]">
                     <NextJsIcon className="h-6 w-6" />
                   </div>
                 </li>
@@ -107,7 +110,7 @@ const Index: NextPage = () => {
                   </div>
                 </li>
                 <li>
-                  <div className="animate-fade-left transition duration-200 animation-delay-[550ms] hover:text-[#000000]">
+                  <div className="animate-fade-left transition duration-200 animation-delay-[550ms] hover:text-[#000000] dark:hover:text-[#FFFFFF]">
                     <InkscapeIcon className="h-6 w-6" />
                   </div>
                 </li>
@@ -115,7 +118,7 @@ const Index: NextPage = () => {
             </div>
             {/* image */}
             <div className="absolute -top-36 right-0 hidden lg:flex">
-              <div className="relative h-[590px] w-[375px] rounded-b-full bg-primary-400">
+              <div className="relative h-[590px] w-[375px] rounded-b-full bg-primary-400 dark:bg-primary-700">
                 <div className="absolute right-0 bottom-0">
                   <Image
                     alt="Enji Kusnadi Illustration"
