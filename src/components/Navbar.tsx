@@ -1,5 +1,12 @@
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { GitHubIcon, LightIcon, TwitterIcon } from '@/components/Icons';
+import { useTheme } from 'next-themes';
+import {
+  DarkIcon,
+  GitHubIcon,
+  LightIcon,
+  TwitterIcon,
+} from '@/components/Icons';
 import type { ReactElement } from 'react';
 
 interface NavItemProps {
@@ -36,6 +43,29 @@ const NavItemIcon = ({ href, icon, title }: NavItemIconProps) => {
     >
       {icon}
     </Link>
+  );
+};
+
+const ThemeToggle = () => {
+  const [mounted, setMounted] = useState(false);
+  const { resolvedTheme, setTheme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  return (
+    <button
+      className="flex h-9 w-9 items-center justify-center rounded-lg text-gray-900"
+      aria-label="Toggle Theme"
+      onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
+    >
+      {mounted && resolvedTheme === 'dark' ? (
+        <LightIcon className="h-5 w-5" />
+      ) : (
+        <DarkIcon className="h-5 w-5" />
+      )}
+    </button>
   );
 };
 
@@ -87,11 +117,7 @@ const Navbar = () => {
             <div className="h-3 w-[1px] bg-slate-200"></div>
           </li>
           <li>
-            <NavItemIcon
-              href="/"
-              icon={<LightIcon className="h-5 w-5" />}
-              title="Toggle Dark Mode"
-            />
+            <ThemeToggle />
           </li>
         </ul>
       </div>
