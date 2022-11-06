@@ -24,12 +24,12 @@ interface FeaturedCardProps {
 
 const FeaturedCard = ({ icon, title, desc }: FeaturedCardProps) => {
   return (
-    <div className="z-10 flex-1 rounded-2xl border border-slate-100 bg-white p-6">
-      <div className="mb-1 flex items-center gap-4 font-bold text-gray-900 lg:flex-col lg:items-start">
+    <div className="z-10 flex-1 rounded-2xl border border-slate-100 bg-white p-6 dark:border-slate-700 dark:bg-slate-900">
+      <div className="mb-1 flex items-center gap-4 font-bold text-gray-900 dark:text-slate-200 lg:flex-col lg:items-start">
         {icon}
         <h2 className="">{title}</h2>
       </div>
-      <div className="text-sm text-gray-500">{desc}</div>
+      <div className="text-sm text-gray-500 dark:text-slate-500">{desc}</div>
     </div>
   );
 };
@@ -42,7 +42,7 @@ const Index: NextPage = () => {
         <meta name="description" content="Hi!" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <header className="relative z-0 border-b border-b-slate-100 bg-slate-100 pt-28 pb-20 dark:bg-slate-800 lg:pt-36 lg:pb-28">
+      <header className="relative z-0 border-b border-b-slate-100 bg-slate-100 pt-28 pb-20 dark:border-b-slate-700 dark:bg-slate-800 lg:pt-36 lg:pb-28">
         <div
           className="absolute inset-0 z-[-1] bg-slate-100 bg-grid-slate-200 dark:bg-slate-800 dark:bg-grid-slate-50/5 lg:bg-grid-big-slate-200/40 lg:dark:bg-grid-big-slate-50/[.03]"
           style={{
