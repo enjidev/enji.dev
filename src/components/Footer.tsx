@@ -21,7 +21,7 @@ const Footer = () => {
         </ul>
       </section>
       <section className="mb-2">
-        <ul className="flex justify-center gap-1 text-xs">
+        <ul className="flex justify-center gap-1 text-xs text-gray-500">
           <li>
             <Link href="/" className="hover:underline">
               Kebijakan Privasi
