@@ -19,7 +19,7 @@ const NavItem = ({ href, title, active = false }: NavItemProps) => {
   return (
     <Link
       href={href}
-      className={`link flex h-9 items-center rounded-lg px-2 text-gray-900 ${
+      className={`link flex h-9 items-center rounded-lg px-2 text-gray-900 dark:text-slate-200 ${
         active && 'active'
       }`}
     >
@@ -38,7 +38,7 @@ const NavItemIcon = ({ href, icon, title }: NavItemIconProps) => {
   return (
     <Link
       href={href}
-      className="flex h-9 w-9 items-center justify-center rounded-lg text-gray-900"
+      className="flex h-9 w-9 items-center justify-center rounded-lg text-gray-900 dark:text-slate-200"
       aria-label={title}
     >
       {icon}
@@ -56,7 +56,7 @@ const ThemeToggle = () => {
 
   return (
     <button
-      className="flex h-9 w-9 items-center justify-center rounded-lg text-gray-900"
+      className="flex h-9 w-9 items-center justify-center rounded-lg text-gray-900 dark:text-slate-200"
       aria-label="Toggle Theme"
       onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
     >
@@ -71,7 +71,7 @@ const ThemeToggle = () => {
 
 const Navbar = () => {
   return (
-    <nav className="flex items-center justify-between border-b border-slate-100 bg-white py-4 px-2 text-sm md:px-4">
+    <nav className="flex items-center justify-between border-b border-slate-100 bg-white py-4 px-2 text-sm dark:border-slate-700 dark:bg-slate-900 md:px-4">
       <div>
         <ul className="flex items-center font-semibold md:gap-2">
           <li className="hidden md:block">
@@ -79,7 +79,7 @@ const Navbar = () => {
               href="/"
               className="link block h-9 rounded-lg px-2 text-2xl font-extrabold text-gray-900"
             >
-              <span className="text-gray-900">enji</span>
+              <span className="text-gray-900 dark:text-slate-200">enji</span>
               <span className="text-primary-400">dev</span>
             </Link>
           </li>
@@ -114,7 +114,7 @@ const Navbar = () => {
             />
           </li>
           <li>
-            <div className="h-3 w-[1px] bg-slate-200"></div>
+            <div className="h-3 w-[1px] bg-slate-200 dark:bg-slate-700"></div>
           </li>
           <li>
             <ThemeToggle />

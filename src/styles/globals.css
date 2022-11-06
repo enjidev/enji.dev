@@ -55,16 +55,16 @@
   }
 
   .link {
-    @apply relative;
+    @apply relative z-0;
 
     &::after {
-      @apply absolute bottom-2 left-0 right-0 z-[-1] mx-auto h-2 w-[60%] origin-bottom scale-y-0 bg-primary-50 transition duration-200 ease-out content-[''];
+      @apply absolute bottom-2 left-0 right-0 z-[-1] mx-auto h-2 w-[60%] origin-bottom scale-y-0 bg-primary-50 transition duration-200 ease-out content-[''] dark:bg-primary-700;
     }
 
     /* active and hover state */
     &.active,
     &:hover {
-      @apply text-primary-500;
+      @apply text-primary-500 dark:text-primary-200;
 
       &::after {
         @apply scale-y-100;
