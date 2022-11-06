@@ -139,8 +139,8 @@ const Index: NextPage = () => {
           <div className="-mt-8 mb-8 flex flex-col gap-4 lg:-mt-16 lg:flex-row lg:gap-8">
             <FeaturedCard
               icon={
-                <div className="lg:rounded-full lg:bg-[#A199FF] lg:p-4">
-                  <SparklesIcon className="h-5 w-5 text-[#FFC41F] lg:text-[#FFFF00]" />
+                <div className="lg:rounded-full lg:bg-[#A199FF] lg:p-4 dark:lg:bg-violet-700">
+                  <SparklesIcon className="h-5 w-5 text-[#FFC41F] lg:text-[#FFFF00] dark:lg:text-white" />
                 </div>
               }
               title="Clean & Modern Desain"
@@ -148,8 +148,8 @@ const Index: NextPage = () => {
             />
             <FeaturedCard
               icon={
-                <div className="lg:rounded-full lg:bg-[#FF7DAC] lg:p-4">
-                  <HeartIcon className="h-5 w-5 text-[#FF7DAC] lg:text-white" />
+                <div className="lg:rounded-full lg:bg-[#FF7DAC] lg:p-4 dark:lg:bg-red-500">
+                  <HeartIcon className="h-5 w-5 text-[#FF7DAC] dark:text-red-500 lg:text-white dark:lg:text-white" />
                 </div>
               }
               title="Detail Oriented"
@@ -157,8 +157,8 @@ const Index: NextPage = () => {
             />
             <FeaturedCard
               icon={
-                <div className="lg:rounded-full lg:bg-[#BFF4FF] lg:p-4">
-                  <BoltIcon className="h-5 w-5 text-[#5096FF]" />
+                <div className="lg:rounded-full lg:bg-[#BFF4FF] lg:p-4 dark:lg:bg-sky-500">
+                  <BoltIcon className="h-5 w-5 text-[#5096FF] dark:lg:text-white" />
                 </div>
               }
               title="Fast & Optimized"
