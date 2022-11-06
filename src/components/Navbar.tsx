@@ -12,7 +12,7 @@ const NavItem = ({ href, title, active = false }: NavItemProps) => {
   return (
     <Link
       href={href}
-      className={`link flex h-9 items-center rounded-lg px-2 text-gray-900 md:text-base ${
+      className={`link flex h-9 items-center rounded-lg px-2 text-gray-900 ${
         active && 'active'
       }`}
     >
@@ -41,9 +41,9 @@ const NavItemIcon = ({ href, icon, title }: NavItemIconProps) => {
 
 const Navbar = () => {
   return (
-    <nav className="flex items-center justify-between border-b border-slate-100 py-6 px-2 text-sm md:px-4">
+    <nav className="flex items-center justify-between border-b border-slate-100 py-4 px-2 text-sm md:px-4">
       <div>
-        <ul className="flex items-center font-semibold">
+        <ul className="flex items-center font-semibold md:gap-2">
           <li className="hidden md:block">
             <Link
               href="/"
