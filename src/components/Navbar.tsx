@@ -41,7 +41,7 @@ const NavItemIcon = ({ href, icon, title }: NavItemIconProps) => {
 
 const Navbar = () => {
   return (
-    <nav className="flex items-center justify-between py-6 px-2 text-sm md:px-4">
+    <nav className="flex items-center justify-between border-b border-slate-100 py-6 px-2 text-sm md:px-4">
       <div>
         <ul className="flex items-center font-semibold">
           <li className="hidden md:block">
