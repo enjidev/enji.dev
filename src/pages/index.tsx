@@ -44,7 +44,7 @@ const Index: NextPage = () => {
       </Head>
       <header className="relative z-0 border-b border-b-slate-100 bg-slate-100 pt-28 pb-20 dark:border-b-slate-700 dark:bg-slate-800 lg:pt-36 lg:pb-28">
         <div
-          className="absolute inset-0 z-[-1] bg-slate-100 bg-grid-slate-200 dark:bg-slate-800 dark:bg-grid-slate-50/5 lg:bg-grid-big-slate-200/40 lg:dark:bg-grid-big-slate-50/[.03]"
+          className="absolute inset-0 z-[-1] bg-slate-100 bg-grid-slate-200 dark:bg-slate-800 dark:bg-grid-slate-50/[0.04] lg:bg-grid-big-slate-200/40 lg:dark:bg-grid-big-slate-50/[.02]"
           style={{
             maskImage: 'radial-gradient(black, transparent)',
             WebkitMaskImage: 'radial-gradient(black, transparent)',
@@ -53,7 +53,7 @@ const Index: NextPage = () => {
         <div className="content-wrapper">
           <div className="relative">
             {/* title */}
-            <h1 className="text-gray-600 dark:text-slate-300">
+            <h1 className="text-gray-600 dark:text-slate-400">
               <span className="mb-3 block animate-fade-left text-5xl font-bold md:mb-4 md:text-7xl">
                 hai! saya{' '}
                 <strong className="font-extrabold text-gray-900 dark:text-slate-50">
@@ -62,8 +62,8 @@ const Index: NextPage = () => {
                 ,
               </span>
               <span className="block animate-fade-left text-xl animation-delay-100 md:text-2xl">
-                seorang <strong>designer</strong> dan <strong>developer</strong>
-                .
+                seorang <strong className="font-extrabold">designer</strong> dan{' '}
+                <strong className="font-extrabold">developer</strong>.
               </span>
             </h1>
             {/* cta */}
@@ -118,7 +118,7 @@ const Index: NextPage = () => {
             </div>
             {/* image */}
             <div className="absolute -top-36 right-0 hidden lg:flex">
-              <div className="relative h-[590px] w-[375px] rounded-b-full bg-primary-400 dark:bg-primary-700">
+              <div className="relative h-[590px] w-[375px] rounded-b-full bg-primary-400 dark:bg-primary-600">
                 <div className="absolute right-0 bottom-0">
                   <Image
                     alt="Enji Kusnadi Illustration"
