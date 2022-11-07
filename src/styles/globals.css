@@ -24,7 +24,7 @@
   }
 
   .animate-fade-right {
-    transform: translate3d(1rem, 0, 0);
+    transform: translate3d(3rem, 0, 0);
     opacity: 0;
   }
 
@@ -39,14 +39,14 @@
   }
 
   .button {
-    @apply inline-block rounded-md py-2 px-4 text-center text-sm font-bold uppercase transition duration-150;
+    @apply inline-flex items-center justify-center gap-1.5 rounded-md border border-transparent py-2 px-4 text-center text-sm font-bold transition duration-150;
 
     &--solid {
-      @apply border-primary-300 bg-primary-400 text-white highlight-primary-500 hover:bg-primary-500 hover:highlight-primary-600 dark:border-primary-700 dark:bg-primary-600 dark:highlight-primary-400 dark:hover:bg-primary-500;
+      @apply bg-primary-400 text-white highlight-primary-300 hover:bg-primary-500 hover:highlight-primary-400 dark:bg-primary-600 dark:highlight-primary-400 dark:hover:bg-primary-500;
     }
 
-    &--outlined {
-      @apply text-primary-400  hover:text-primary-600 dark:text-primary-200 dark:hover:text-primary-100;
+    &--ghost {
+      @apply text-slate-500 hover:text-slate-600 dark:text-slate-400 dark:hover:text-slate-300;
     }
 
     &--big {

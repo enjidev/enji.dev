@@ -48,7 +48,7 @@ module.exports = {
       animation: {
         'fade-in': 'fade-in 380ms ease-out forwards',
         'fade-left': 'fade-left 380ms ease-out forwards',
-        'fade-right': 'fade-right 380ms ease-out forwards',
+        'fade-right': 'fade-right 480ms ease-out forwards',
       },
       keyframes: {
         'fade-in': {
@@ -73,7 +73,7 @@ module.exports = {
         },
         'fade-right': {
           from: {
-            transform: 'translate3d(1rem,0,0)',
+            transform: 'translate3d(3rem,0,0)',
             opacity: 0,
           },
           to: {
