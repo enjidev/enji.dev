@@ -36,13 +36,15 @@ interface NavItemIconProps {
 
 const NavItemIcon = ({ href, icon, title }: NavItemIconProps) => {
   return (
-    <Link
+    <a
       href={href}
       className="flex h-9 w-9 items-center justify-center rounded-lg text-gray-900 dark:text-slate-200"
       aria-label={title}
+      target="_blank"
+      rel="noreferrer"
     >
       {icon}
-    </Link>
+    </a>
   );
 };
 
@@ -101,14 +103,14 @@ const Navbar = () => {
         <ul className="flex items-center gap-2">
           <li>
             <NavItemIcon
-              href="/"
+              href="https://twitter.com/enjidev"
               icon={<TwitterIcon className="h-5 w-5" />}
               title="Twitter"
             />
           </li>
           <li className="hidden sm:block">
             <NavItemIcon
-              href="/"
+              href="https://github.com/enjidev"
               icon={<GitHubIcon className="h-5 w-5" />}
               title="GitHub"
             />
