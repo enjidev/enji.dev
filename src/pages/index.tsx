@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
+import Quote from '@/components/Quote';
 import {
   TypeScriptIcon,
   ReactIcon,
@@ -186,6 +187,13 @@ const Index: NextPage = () => {
               title="Fast & Optimized"
               desc="Penulisan code yang terstruktur, optimal serta efisien."
             />
+          </div>
+        </div>
+      </section>
+      <section className="mb-6">
+        <div className="content-wrapper">
+          <div className="flex items-center justify-center py-8">
+            <Quote />
           </div>
         </div>
       </section>
