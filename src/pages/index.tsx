@@ -25,12 +25,17 @@ interface FeaturedCardProps {
 
 const FeaturedCard = ({ icon, title, desc }: FeaturedCardProps) => {
   return (
-    <div className="z-10 flex-1 rounded-2xl border border-slate-100 bg-white p-6 dark:border-slate-800 dark:bg-slate-900">
-      <div className="mb-1 flex items-center gap-4 font-bold text-gray-900 dark:text-slate-200 lg:flex-col lg:items-start">
-        {icon}
-        <h2 className="">{title}</h2>
+    <div className="relative z-10 flex-1 rounded-2xl border border-slate-100 bg-white p-6 pt-5 dark:border-slate-800 dark:bg-slate-900">
+      <div className="absolute inset-x-0 inset-y-10 z-[-1] border-t border-slate-100 dark:border-slate-800"></div>
+      <div className="absolute inset-y-0 inset-x-10 z-[-1] border-l border-slate-100 dark:border-slate-800"></div>
+      {/* title */}
+      <div className="flex items-center gap-6 rounded-full bg-slate-100 dark:bg-slate-800">
+        <div className="-m-2">{icon}</div>
+        <div className="truncate py-2 pr-4 font-bold">{title}</div>
       </div>
-      <div className="text-sm text-gray-500 dark:text-slate-400">{desc}</div>
+      <div className="pl-10 pt-4 text-sm text-gray-500 dark:text-slate-400">
+        {desc}
+      </div>
     </div>
   );
 };
@@ -157,8 +162,8 @@ const Index: NextPage = () => {
           <div className="-mt-8 mb-8 flex flex-col gap-4 lg:-mt-16 lg:flex-row lg:gap-8">
             <FeaturedCard
               icon={
-                <div className="lg:rounded-full lg:bg-[#A199FF] lg:p-4 dark:lg:bg-violet-700">
-                  <SparklesIcon className="h-5 w-5 text-[#FFC41F] lg:text-[#FFFF00] dark:lg:text-white" />
+                <div className="rounded-full bg-[#A199FF] p-4 dark:bg-violet-700">
+                  <SparklesIcon className="h-5 w-5 text-[#FFFF00] dark:text-white" />
                 </div>
               }
               title="Clean & Modern Desain"
@@ -166,8 +171,8 @@ const Index: NextPage = () => {
             />
             <FeaturedCard
               icon={
-                <div className="lg:rounded-full lg:bg-[#FF7DAC] lg:p-4 dark:lg:bg-red-500">
-                  <HeartIcon className="h-5 w-5 text-[#FF7DAC] dark:text-red-500 lg:text-white dark:lg:text-white" />
+                <div className="rounded-full bg-[#FF7DAC] p-4 dark:bg-red-500">
+                  <HeartIcon className="h-5 w-5 text-white" />
                 </div>
               }
               title="Detail Oriented"
@@ -175,8 +180,8 @@ const Index: NextPage = () => {
             />
             <FeaturedCard
               icon={
-                <div className="lg:rounded-full lg:bg-[#BFF4FF] lg:p-4 dark:lg:bg-sky-500">
-                  <BoltIcon className="h-5 w-5 text-[#5096FF] dark:lg:text-white" />
+                <div className="rounded-full bg-[#BFF4FF] p-4 dark:bg-sky-500">
+                  <BoltIcon className="h-5 w-5 text-[#5096FF] dark:text-white" />
                 </div>
               }
               title="Fast & Optimized"
