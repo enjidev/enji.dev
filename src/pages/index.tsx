@@ -7,11 +7,11 @@ import {
   TailwindCssIcon,
   NextJsIcon,
   FigmaIcon,
-  InkscapeIcon,
   SparklesIcon,
   HeartIcon,
   BoltIcon,
   DocumentIcon,
+  VSCodeIcon,
 } from '@/components/Icons';
 
 import type { NextPage } from 'next';
@@ -87,8 +87,8 @@ const Index: NextPage = () => {
             </div>
             {/* tech stack */}
             <div className="mt-28 lg:mt-48">
-              <p className="mb-2 animate-fade-left text-sm text-gray-600 animation-delay-400 dark:text-slate-400">
-                tech stack/tools favorit saya saat ini:
+              <p className="mb-2.5 animate-fade-left text-sm text-gray-600 animation-delay-400 dark:text-slate-400">
+                tech stack/tools favorit saat ini:
               </p>
               <ul className="flex items-center gap-4 text-gray-500 dark:text-slate-500">
                 <li>
@@ -112,16 +112,16 @@ const Index: NextPage = () => {
                   </div>
                 </li>
                 <li>
-                  <div className="h-3 w-[1px] bg-slate-300 dark:bg-slate-700"></div>
+                  <div className="h-3 w-[1px] animate-fade-left bg-slate-300 animation-delay-[505ms] dark:bg-slate-700"></div>
+                </li>
+                <li>
+                  <div className="animate-fade-left transition duration-200 animation-delay-[520ms] hover:text-[#007ACC]">
+                    <VSCodeIcon className="h-6 w-6" />
+                  </div>
                 </li>
                 <li>
                   <div className="animate-fade-left transition duration-200 animation-delay-[520ms] hover:text-[#F24E1E]">
                     <FigmaIcon className="h-6 w-6" />
-                  </div>
-                </li>
-                <li>
-                  <div className="animate-fade-left transition duration-200 animation-delay-[550ms] hover:text-[#000000] dark:hover:text-[#FFFFFF]">
-                    <InkscapeIcon className="h-6 w-6" />
                   </div>
                 </li>
               </ul>
