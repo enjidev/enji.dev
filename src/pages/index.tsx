@@ -162,8 +162,8 @@ const Index: NextPage = () => {
           <div className="-mt-8 mb-8 flex flex-col gap-4 lg:-mt-16 lg:flex-row lg:gap-8">
             <FeaturedCard
               icon={
-                <div className="rounded-full bg-[#A199FF] p-4 dark:bg-violet-700">
-                  <SparklesIcon className="h-5 w-5 text-[#FFFF00] dark:text-white" />
+                <div className="rounded-full bg-violet-400 p-4 dark:bg-violet-700">
+                  <SparklesIcon className="h-5 w-5 text-white" />
                 </div>
               }
               title="Clean & Modern Desain"
@@ -171,7 +171,7 @@ const Index: NextPage = () => {
             />
             <FeaturedCard
               icon={
-                <div className="rounded-full bg-[#FF7DAC] p-4 dark:bg-red-500">
+                <div className="rounded-full bg-red-400 p-4 dark:bg-red-500">
                   <HeartIcon className="h-5 w-5 text-white" />
                 </div>
               }
@@ -180,8 +180,8 @@ const Index: NextPage = () => {
             />
             <FeaturedCard
               icon={
-                <div className="rounded-full bg-[#BFF4FF] p-4 dark:bg-sky-500">
-                  <BoltIcon className="h-5 w-5 text-[#5096FF] dark:text-white" />
+                <div className="rounded-full bg-sky-400 p-4 dark:bg-sky-600">
+                  <BoltIcon className="h-5 w-5 text-white" />
                 </div>
               }
               title="Fast & Optimized"
