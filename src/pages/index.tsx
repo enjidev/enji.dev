@@ -132,7 +132,7 @@ const Index: NextPage = () => {
               </ul>
             </div>
             {/* image */}
-            <div className="pointer-events-none absolute -top-36 right-0 hidden lg:flex">
+            <div className="pointer-events-none absolute -top-36 right-0 hidden select-none lg:flex">
               <div
                 className="relative h-[590px] w-[603px]"
                 style={{
