@@ -50,7 +50,7 @@ const Footer = () => {
             <div className="font-semibold">
               &copy; {dayjs().format('YYYY')}, Enji Kusnadi
             </div>
-            <section className="group hidden text-gray-500 dark:text-slate-400 md:block">
+            <section className="hidden text-gray-500 dark:text-slate-400 md:block">
               <LastCommit withDot={true} />
             </section>
           </section>

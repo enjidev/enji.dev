@@ -15,7 +15,7 @@ const LastCommit = ({ withDot = false }: LastCommitProps) => {
         href={commit.url}
         target="_blank"
         rel="noreferrer"
-        className="group-hover:underline"
+        className="hover:underline"
       >
         this site has been updated {dayjs(commit.date).fromNow()}.
       </a>
