@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@next/font": "^13.0.0",
+    "@octokit/rest": "^19.0.5",
+    "dayjs": "^1.11.6",
     "next": "13.0.0",
     "next-themes": "^0.2.1",
     "react": "18.2.0",
