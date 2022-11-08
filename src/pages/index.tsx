@@ -14,9 +14,12 @@ import {
   DocumentIcon,
   VSCodeIcon,
 } from '@/components/Icons';
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import type { NextPage } from 'next';
 import type { ReactElement } from 'react';
+import type { GetStaticProps } from 'next';
 
 interface FeaturedCardProps {
   icon: ReactElement;
@@ -43,6 +46,8 @@ const FeaturedCard = ({ icon, title, desc }: FeaturedCardProps) => {
 };
 
 const Index: NextPage = () => {
+  const { t } = useTranslation('common');
+
   return (
     <>
       <Head>
@@ -65,7 +70,7 @@ const Index: NextPage = () => {
             {/* title */}
             <h1 className="text-gray-600 dark:text-slate-400">
               <span className="mb-3 block animate-fade-left text-5xl font-bold md:mb-4 md:text-7xl">
-                hai! saya{' '}
+                {t('hi')}! saya{' '}
                 <strong className="font-extrabold text-gray-900 dark:text-slate-50">
                   énji
                 </strong>
@@ -202,5 +207,11 @@ const Index: NextPage = () => {
     </>
   );
 };
+
+export const getStaticProps: GetStaticProps = async ({ locale }) => ({
+  props: {
+    ...(await serverSideTranslations(locale ?? 'id', ['common'])),
+  },
+});
 
 export default Index;

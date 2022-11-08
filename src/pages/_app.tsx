@@ -1,3 +1,4 @@
+import { appWithTranslation } from 'next-i18next';
 import { ThemeProvider } from 'next-themes';
 import RootLayout from '@/components/layouts/Root';
 import type { AppProps } from 'next/app';
@@ -14,4 +15,4 @@ function App({ Component, pageProps }: AppProps) {
   );
 }
 
-export default App;
+export default appWithTranslation(App);
