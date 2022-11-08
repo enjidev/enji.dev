@@ -9,8 +9,8 @@ const LastCommit = ({ withDot = false }: LastCommitProps) => {
   const { commit, isError } = useLastCommit();
 
   return commit && !isError ? (
-    <div>
-      {withDot && <span className="mr-2">&middot;</span>}
+    <div className="flex gap-2">
+      {withDot && <span>&middot;</span>}
       <a
         href={commit.url}
         target="_blank"
