@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import LastCommit from '@/components/LastCommit';
+import dayjs from '@/utils/dayjs';
 
 const Footer = () => {
   return (
@@ -28,7 +29,7 @@ const Footer = () => {
           </div>
         </section>
         <small className="flex justify-center text-sm font-semibold">
-          &copy; 2022, Enji Kusnadi
+          &copy; {dayjs().format('YYYY')}, Enji Kusnadi
         </small>
       </div>
     </footer>
