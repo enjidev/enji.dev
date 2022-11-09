@@ -5,18 +5,17 @@ const LastCommit = () => {
   const { commit, isError } = useLastCommit();
 
   return commit && !isError ? (
-    <div className="flex gap-2">
-      <a
-        href={commit.url}
-        target="_blank"
-        rel="noreferrer"
-        className="hover:underline"
-      >
-        this site has been updated {dayjs(commit.date).fromNow()}.
-      </a>
-    </div>
+    <a
+      href={commit.url}
+      target="_blank"
+      rel="noreferrer"
+      className="hover:underline"
+    >
+      <span className="hidden sm:inline">this site has been </span>
+      <span>updated {dayjs(commit.date).fromNow()}.</span>
+    </a>
   ) : (
-    <div>&nbsp;</div>
+    <span>&nbsp;</span>
   );
 };
 
