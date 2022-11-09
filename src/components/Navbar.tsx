@@ -58,7 +58,7 @@ const ThemeToggle = () => {
 
   return (
     <button
-      className="flex h-9 w-9 items-center justify-center rounded-lg text-gray-900 dark:text-slate-200"
+      className="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-100 text-gray-900 hover:bg-slate-100 dark:border-slate-800 dark:text-slate-200 dark:hover:bg-slate-800"
       aria-label="Toggle Theme"
       onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
     >
@@ -118,7 +118,7 @@ const Navbar = () => {
           <li>
             <div className="h-3 w-[1px] bg-slate-200 dark:bg-slate-700"></div>
           </li>
-          <li>
+          <li className="mx-2">
             <ThemeToggle />
           </li>
         </ul>
