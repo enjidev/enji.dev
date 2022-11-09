@@ -65,9 +65,9 @@
     }
 
     /* active and hover state */
-    &.active,
+    &--active,
     &:hover {
-      @apply text-primary-500 dark:text-primary-200;
+      @apply text-primary-400 dark:text-primary-200;
 
       &::after {
         @apply scale-y-100;
