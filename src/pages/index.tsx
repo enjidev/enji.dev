@@ -26,7 +26,7 @@ const Index: NextPage = () => {
         <meta name="description" content="Hi!" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <header className="relative z-0 border-b border-b-slate-100 bg-slate-100 pt-28 pb-20 dark:border-slate-800 dark:bg-[#05011E] lg:pt-36 lg:pb-28">
+      <header className="relative z-0 border-b border-b-slate-100 bg-slate-100 pt-20 pb-20 dark:border-slate-800 dark:bg-[#05011E] lg:pt-36 lg:pb-28">
         <div
           className="absolute inset-0 z-[-1] bg-slate-50 bg-grid-slate-200/60 dark:bg-slate-900 dark:bg-grid-slate-50/[0.04] lg:bg-grid-big-slate-200/50 lg:dark:bg-grid-big-slate-50/[.02]"
           style={{
@@ -52,7 +52,7 @@ const Index: NextPage = () => {
                 />
               </div>
               <h1 className="text-slate-600 dark:text-slate-400">
-                <span className="mb-3 block animate-fade-left text-4xl font-bold animation-delay-[60ms] md:mb-4 md:text-7xl">
+                <span className="mb-2 block animate-fade-left text-4xl font-bold animation-delay-[60ms] md:mb-4 md:text-7xl">
                   i&apos;m{' '}
                   <strong className="font-extrabold text-slate-900 dark:text-slate-50">
                     énji
@@ -65,7 +65,7 @@ const Index: NextPage = () => {
               </h1>
             </div>
             {/* cta */}
-            <div className="mt-8 flex gap-2">
+            <div className="mt-4 flex gap-2 md:mt-8">
               <Link
                 href="/"
                 className="button button--solid button--big min-w-[128px] animate-fade-left animation-delay-200"
@@ -81,7 +81,7 @@ const Index: NextPage = () => {
               </Link>
             </div>
             {/* tech stack */}
-            <div className="mt-28 lg:mt-48">
+            <div className="mt-20 lg:mt-36">
               <p className="mb-2.5 animate-fade-left text-sm text-gray-600 animation-delay-400 dark:text-slate-400">
                 current favorite tech stack/tools:
               </p>
