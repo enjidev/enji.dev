@@ -76,7 +76,7 @@ const Navbar = () => {
   return (
     <nav className="flex items-center justify-between border-b border-slate-100 bg-white py-4 px-2 text-sm dark:border-slate-800 dark:bg-slate-900 md:px-4">
       <div>
-        <ul className="flex items-center font-semibold md:gap-2">
+        <ul className="flex items-center font-semibold md:gap-1">
           <li>
             <Link
               href="/"
