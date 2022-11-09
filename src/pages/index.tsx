@@ -41,14 +41,14 @@ const Index: NextPage = () => {
             {/* title */}
             <h1 className="text-gray-600 dark:text-slate-400">
               <span className="mb-3 block animate-fade-left text-5xl font-bold md:mb-4 md:text-7xl">
-                hai! saya{' '}
+                hi! i am{' '}
                 <strong className="font-extrabold text-gray-900 dark:text-slate-50">
                   énji
                 </strong>
                 ,
               </span>
               <span className="block animate-fade-left text-xl animation-delay-100 md:text-2xl">
-                seorang <strong className="font-bold">designer</strong> dan{' '}
+                a <strong className="font-bold">designer</strong> and{' '}
                 <strong className="font-bold">developer</strong>.
               </span>
             </h1>
@@ -58,7 +58,7 @@ const Index: NextPage = () => {
                 href="/"
                 className="button button--solid button--big min-w-[128px] animate-fade-left animation-delay-200"
               >
-                Hubungi Saya
+                Contact Me
               </Link>
               <Link
                 href="/"
@@ -71,7 +71,7 @@ const Index: NextPage = () => {
             {/* tech stack */}
             <div className="mt-28 lg:mt-48">
               <p className="mb-2.5 animate-fade-left text-sm text-gray-600 animation-delay-400 dark:text-slate-400">
-                tech stack/tools favorit saat ini:
+                current favorite tech stack/tools:
               </p>
               <ul className="flex items-center gap-4 text-gray-500 dark:text-slate-500">
                 <li>
