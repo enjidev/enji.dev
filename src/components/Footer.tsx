@@ -9,13 +9,25 @@ const Footer = () => {
         <section className="py-10 font-semibold">
           <ul className="flex flex-wrap justify-center gap-x-4 gap-y-1 lg:gap-x-6">
             <li>
-              <Link href="/">Design Concept</Link>
+              <a
+                href="https://www.figma.com/@enjidev"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Design Concept
+              </a>
             </li>
             <li>
-              <Link href="/">Fonts & Colors</Link>
+              <a
+                href="https://github.com/enjidev/enji.dev"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Source Code
+              </a>
             </li>
             <li>
-              <Link href="/">Source Code</Link>
+              <Link href="/design">Font & Colors</Link>
             </li>
           </ul>
         </section>
