@@ -9,7 +9,7 @@ const LastCommit = () => {
       href={commit.url}
       target="_blank"
       rel="noreferrer"
-      className="animate-fade-right hover:underline"
+      className="animate-fade-in hover:underline"
     >
       <span className="hidden sm:inline">this site has been </span>
       <span>updated {dayjs(commit.date).fromNow()}.</span>

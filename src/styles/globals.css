@@ -18,18 +18,17 @@
   }
 
   .animate-fade-in {
-    transform: translate3d(0, -2.5rem, 0);
     opacity: 0;
   }
 
   .animate-fade-left {
-    transform: translate3d(-1.5rem, 0, 0);
     opacity: 0;
+    transform: translate3d(-1.5rem, 0, 0);
   }
 
   .animate-fade-right {
-    transform: translate3d(3rem, 0, 0);
     opacity: 0;
+    transform: translate3d(3rem, 0, 0);
   }
 
   :focus-visible {

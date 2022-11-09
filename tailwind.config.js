@@ -53,32 +53,30 @@ module.exports = {
       keyframes: {
         'fade-in': {
           from: {
-            transform: 'translate3d(0,-2rem,0)',
             opacity: 0,
           },
           to: {
-            transform: 'translate3d(0,0,0)',
             opacity: 1,
           },
         },
         'fade-left': {
           from: {
-            transform: 'translate3d(-1.5rem,0,0)',
             opacity: 0,
+            transform: 'translate3d(-1.5rem,0,0)',
           },
           to: {
-            transform: 'translate3d(0,0,0)',
             opacity: 1,
+            transform: 'translate3d(0,0,0)',
           },
         },
         'fade-right': {
           from: {
-            transform: 'translate3d(3rem,0,0)',
             opacity: 0,
+            transform: 'translate3d(3rem,0,0)',
           },
           to: {
-            transform: 'translate3d(0,0,0)',
             opacity: 1,
+            transform: 'translate3d(0,0,0)',
           },
         },
       },
