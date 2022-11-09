@@ -20,7 +20,7 @@ const Footer = () => {
             </li>
           </ul>
         </section>
-        <div className="flex justify-between border-t border-slate-100 py-6 text-sm dark:border-slate-800">
+        <div className="flex justify-between border-t border-slate-100 py-6 text-xs dark:border-slate-800">
           <div className="font-semibold">
             &copy; {dayjs().format('YYYY')}, Enji Kusnadi
           </div>
