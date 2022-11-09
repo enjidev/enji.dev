@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useTheme } from 'next-themes';
+import Logo from '@/components/Logo';
 import {
   DarkIcon,
   GitHubIcon,
@@ -82,13 +83,7 @@ const Navbar = () => {
               className="md:link flex h-9 items-center gap-2 rounded-lg px-2 text-2xl font-extrabold text-gray-900"
               aria-label="Home"
             >
-              <div className="inline-flex h-6 w-6 items-center justify-center rounded-md border-2 text-xs text-white">
-                /
-              </div>
-              <div className="-mt-1 hidden md:block">
-                <span className="text-gray-900 dark:text-slate-200">enji</span>
-                <span className="text-primary-400">dev</span>
-              </div>
+              <Logo />
             </Link>
           </li>
           <li>
