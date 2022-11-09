@@ -1,4 +1,3 @@
-import { useRouter } from 'next/router';
 import Link from 'next/link';
 import LastCommit from '@/components/LastCommit';
 import dayjs from '@/utils/dayjs';
