@@ -1,16 +1,11 @@
 import useLastCommit from '@/hooks/useLastCommit';
 import dayjs from '@/utils/dayjs';
 
-interface LastCommitProps {
-  withDot?: boolean;
-}
-
-const LastCommit = ({ withDot = false }: LastCommitProps) => {
+const LastCommit = () => {
   const { commit, isError } = useLastCommit();
 
   return commit && !isError ? (
     <div className="flex gap-2">
-      {withDot && <span>&middot;</span>}
       <a
         href={commit.url}
         target="_blank"
