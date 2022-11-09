@@ -87,13 +87,13 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <NavItem href="/" title="Blog" />
+            <NavItem href="/blog" title="Blog" />
           </li>
           <li>
-            <NavItem href="/" title="Projects" />
+            <NavItem href="/projects" title="Projects" />
           </li>
           <li>
-            <NavItem href="/" title="About" />
+            <NavItem href="/about" title="About" />
           </li>
         </ul>
       </div>
