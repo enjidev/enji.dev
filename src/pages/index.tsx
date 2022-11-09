@@ -22,7 +22,7 @@ const Index: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Enji • Designer & Developer</title>
+        <title>Enji Kusnadi &middot; Creative Developer</title>
         <meta name="description" content="Hi!" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -39,19 +39,31 @@ const Index: NextPage = () => {
         <div className="content-wrapper">
           <div className="relative">
             {/* title */}
-            <h1 className="text-gray-600 dark:text-slate-400">
-              <span className="mb-3 block animate-fade-left text-5xl font-bold md:mb-4 md:text-7xl">
-                hi! i am{' '}
-                <strong className="font-extrabold text-gray-900 dark:text-slate-50">
-                  énji
-                </strong>
-                ,
-              </span>
-              <span className="block animate-fade-left text-xl animation-delay-100 md:text-2xl">
-                a <strong className="font-bold">designer</strong> and{' '}
-                <strong className="font-bold">developer</strong>.
-              </span>
-            </h1>
+            <div className="relative z-10">
+              <div className="flex animate-fade-left items-center gap-2 text-2xl text-slate-500 dark:text-slate-500 md:text-4xl">
+                hi!
+                <Image
+                  className="w-7 md:w-10"
+                  alt="Love-you Gesture"
+                  src="/assets/emojis/love-you-gesture.png"
+                  width={48}
+                  height={48}
+                  priority
+                />
+              </div>
+              <h1 className="text-slate-600 dark:text-slate-400">
+                <span className="mb-3 block animate-fade-left text-4xl font-bold animation-delay-[60ms] md:mb-4 md:text-7xl">
+                  i&apos;m{' '}
+                  <strong className="font-extrabold text-slate-900 dark:text-slate-50">
+                    énji
+                  </strong>{' '}
+                  kusnadi,
+                </span>
+                <span className="block animate-fade-left text-lg animation-delay-100 md:text-2xl">
+                  a <strong className="font-bold">creative developer</strong>.
+                </span>
+              </h1>
+            </div>
             {/* cta */}
             <div className="mt-8 flex gap-2">
               <Link
@@ -110,7 +122,7 @@ const Index: NextPage = () => {
               </ul>
             </div>
             {/* image */}
-            <div className="pointer-events-none absolute -top-36 right-0 hidden select-none lg:block">
+            <div className="pointer-events-none absolute -top-36 right-0 z-0 hidden select-none lg:block">
               <div
                 className="relative h-[590px] w-[603px]"
                 style={{
