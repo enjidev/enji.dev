@@ -76,26 +76,29 @@ const Navbar = () => {
     <nav className="flex items-center justify-between border-b border-slate-100 bg-white py-4 px-2 text-sm dark:border-slate-800 dark:bg-slate-900 md:px-4">
       <div>
         <ul className="flex items-center font-semibold md:gap-2">
-          <li className="hidden md:block">
+          <li>
             <Link
               href="/"
-              className="link block h-9 rounded-lg px-2 text-2xl font-extrabold text-gray-900"
+              className="md:link flex h-9 items-center gap-2 rounded-lg px-2 text-2xl font-extrabold text-gray-900"
+              aria-label="Home"
             >
-              <span className="text-gray-900 dark:text-slate-200">enji</span>
-              <span className="text-primary-400">dev</span>
+              <div className="inline-flex h-6 w-6 items-center justify-center rounded-md border-2 text-xs text-white">
+                /
+              </div>
+              <div className="-mt-1 hidden md:block">
+                <span className="text-gray-900 dark:text-slate-200">enji</span>
+                <span className="text-primary-400">dev</span>
+              </div>
             </Link>
           </li>
-          <li className="md:hidden">
-            <NavItem href="/" title="home" />
+          <li>
+            <NavItem href="/" title="Blog" />
           </li>
           <li>
-            <NavItem href="/" title="blog" />
+            <NavItem href="/" title="Projects" />
           </li>
           <li>
-            <NavItem href="/" title="projects" />
-          </li>
-          <li>
-            <NavItem href="/" title="about" />
+            <NavItem href="/" title="About" />
           </li>
         </ul>
       </div>
