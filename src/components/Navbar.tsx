@@ -20,8 +20,6 @@ const NavLogo = ({ href, title }: NavLogoProps) => {
   const router = useRouter();
   const isActive = router.pathname === href;
 
-  console.log(router.pathname === href);
-
   return (
     <Link
       href={href}
