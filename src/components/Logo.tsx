@@ -14,7 +14,7 @@ const Logo = ({ active = false }: LogoProps) => {
           /
         </div>
       )}
-      <div className="-mt-1 hidden md:block">
+      <div className="-mt-1 hidden text-2xl font-extrabold md:block">
         <span className="text-gray-900 dark:text-slate-200">enji</span>
         <span className="text-primary-400 dark:text-primary-200">dev</span>
       </div>

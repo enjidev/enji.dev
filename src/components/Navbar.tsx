@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { useTheme } from 'next-themes';
 import Logo from '@/components/Logo';
@@ -10,18 +11,44 @@ import {
 } from '@/components/Icons';
 import type { ReactElement } from 'react';
 
+interface NavLogoProps {
+  href: string;
+  title: string;
+}
+
+const NavLogo = ({ href, title }: NavLogoProps) => {
+  const router = useRouter();
+  const isActive = router.pathname === href;
+
+  console.log(router.pathname === href);
+
+  return (
+    <Link
+      href={href}
+      className={`md:link flex h-9 items-center gap-2 rounded-lg px-2 ${
+        isActive && 'md:link--active'
+      }`}
+      aria-label={title}
+    >
+      <Logo active={isActive} />
+    </Link>
+  );
+};
+
 interface NavItemProps {
   href: string;
   title: string;
-  active?: boolean;
 }
 
-const NavItem = ({ href, title, active = false }: NavItemProps) => {
+const NavItem = ({ href, title }: NavItemProps) => {
+  const router = useRouter();
+  const isActive = router.pathname === href;
+
   return (
     <Link
       href={href}
       className={`link flex h-9 items-center rounded-lg px-2 text-gray-900 dark:text-slate-200 ${
-        active && 'active'
+        isActive && 'link--active'
       }`}
     >
       {title}
@@ -78,13 +105,7 @@ const Navbar = () => {
       <div>
         <ul className="flex items-center font-semibold md:gap-1">
           <li>
-            <Link
-              href="/"
-              className="md:link flex h-9 items-center gap-2 rounded-lg px-2 text-2xl font-extrabold text-gray-900"
-              aria-label="Home"
-            >
-              <Logo />
-            </Link>
+            <NavLogo href="/" title="Home" />
           </li>
           <li>
             <NavItem href="/blog" title="Blog" />
