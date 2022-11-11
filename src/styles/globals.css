@@ -25,21 +25,6 @@
     @apply bg-white text-gray-900 dark:bg-slate-900 dark:text-slate-200 dark:[color-scheme:dark];
   }
 
-  .animate-fade-in {
-    opacity: 0;
-  }
-
-  .animate-fade-left {
-    opacity: 0;
-    transform: translate3d(-1.5rem, 0, 0);
-    pointer-events: none;
-  }
-
-  .animate-fade-right {
-    opacity: 0;
-    transform: translate3d(3rem, 0, 0);
-  }
-
   :focus-visible {
     @apply relative rounded-md bg-primary-50/20 outline-2 outline-offset-2 outline-primary-200 dark:bg-primary-50/[0.05] dark:outline-offset-0 dark:outline-primary-400 dark:[color-scheme:light];
   }
