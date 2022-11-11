@@ -21,6 +21,7 @@ const HeaderImage = () => {
             opacity: 1,
             x: 0,
           }}
+          transition={{ type: 'keyframes' }}
         >
           <Image
             alt="Enji Kusnadi Illustration"
