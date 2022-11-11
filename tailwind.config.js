@@ -49,6 +49,7 @@ module.exports = {
         'fade-in': 'fade-in 380ms ease-out forwards',
         'fade-left': 'fade-left 380ms ease-out forwards',
         'fade-right': 'fade-right 480ms ease-out forwards',
+        'fade-out-left': 'fade-out-left 280ms ease-out forwards',
       },
       keyframes: {
         'fade-in': {
@@ -62,11 +63,13 @@ module.exports = {
         'fade-left': {
           from: {
             opacity: 0,
-            transform: 'translate3d(-1.5rem,0,0)',
+            transform: 'translate3d(-1rem,0,0)',
+            pointerEvents: 'none',
           },
           to: {
             opacity: 1,
             transform: 'translate3d(0,0,0)',
+            pointerEvents: 'auto',
           },
         },
         'fade-right': {
@@ -77,6 +80,16 @@ module.exports = {
           to: {
             opacity: 1,
             transform: 'translate3d(0,0,0)',
+          },
+        },
+        'fade-out-left': {
+          from: {
+            opacity: 1,
+            transform: 'translate3d(0,0,0)',
+          },
+          to: {
+            opacity: 0,
+            transform: 'translate3d(-3rem,0,0)',
           },
         },
       },

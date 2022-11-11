@@ -32,6 +32,7 @@
   .animate-fade-left {
     opacity: 0;
     transform: translate3d(-1.5rem, 0, 0);
+    pointer-events: none;
   }
 
   .animate-fade-right {
