@@ -15,13 +15,13 @@ const HeaderImage = () => {
           className="absolute right-0 bottom-0 overflow-hidden"
           initial={{
             opacity: 0,
-            x: 60,
+            x: 64,
           }}
           animate={{
             opacity: 1,
             x: 0,
           }}
-          transition={{ type: 'keyframes' }}
+          transition={{ delay: 0.4 }}
         >
           <Image
             alt="Enji Kusnadi Illustration"

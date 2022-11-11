@@ -1,9 +1,23 @@
+import { motion } from 'framer-motion';
 import Image from 'next/image';
+
+const animation = {
+  hide: { x: -32, opacity: 0 },
+  show: {
+    x: 0,
+    opacity: 1,
+  },
+};
 
 const HeaderTitle = () => {
   return (
     <div>
-      <div className="flex items-center gap-2 text-2xl text-slate-500 dark:text-slate-500 md:text-4xl">
+      <motion.div
+        className="flex items-center gap-2 text-2xl text-slate-500 dark:text-slate-500 md:text-4xl"
+        initial={animation.hide}
+        animate={animation.show}
+        transition={{ delay: 0.1 }}
+      >
         hi!
         <Image
           className="w-7 md:w-10"
@@ -13,18 +27,28 @@ const HeaderTitle = () => {
           height={48}
           priority
         />
-      </div>
+      </motion.div>
       <h1 className="text-slate-600 dark:text-slate-400">
-        <span className="mb-2 block text-4xl font-bold md:mb-4 md:text-7xl">
+        <motion.span
+          className="mb-2 block text-4xl font-bold md:mb-4 md:text-7xl"
+          initial={animation.hide}
+          animate={animation.show}
+          transition={{ delay: 0.2 }}
+        >
           i&apos;m{' '}
           <strong className="font-extrabold text-slate-900 dark:text-slate-50">
             énji
           </strong>{' '}
           kusnadi,
-        </span>
-        <span className="block  text-lg md:text-2xl">
+        </motion.span>
+        <motion.span
+          className="block  text-lg md:text-2xl"
+          initial={animation.hide}
+          animate={animation.show}
+          transition={{ delay: 0.3 }}
+        >
           a <strong className="font-bold">creative developer</strong>.
-        </span>
+        </motion.span>
       </h1>
     </div>
   );

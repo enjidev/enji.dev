@@ -1,25 +1,7 @@
-import { motion } from 'framer-motion';
 import HeaderTitle from '@/components/Header/HeaderTitle';
 import HeaderCta from '@/components/Header/HeaderCta';
 import HeaderImage from '@/components/Header/HeaderImage';
 import HeaderTechStack from '@/components/Header/HeaderTechStack';
-
-const container = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.15,
-    },
-  },
-};
-
-const item = {
-  hidden: { x: -16, opacity: 0 },
-  visible: {
-    x: 0,
-    opacity: 1,
-  },
-};
 
 const Header = () => {
   return (
@@ -34,25 +16,20 @@ const Header = () => {
         }}
       ></div>
       <div className="content-wrapper">
-        <motion.div
-          className="relative"
-          variants={container}
-          initial="hidden"
-          animate="visible"
-        >
-          <motion.div variants={item}>
+        <div className="relative">
+          <div>
             <HeaderTitle />
-          </motion.div>
-          <motion.div variants={item} className="mt-4 md:mt-8">
+          </div>
+          <div className="mt-4 md:mt-8">
             <HeaderCta />
-          </motion.div>
-          <motion.div variants={item} className="mt-20 lg:mt-36">
+          </div>
+          <div className="mt-20 lg:mt-36">
             <HeaderTechStack />
-          </motion.div>
+          </div>
           <div className="pointer-events-none absolute -top-36 right-0 z-0 hidden select-none lg:block">
             <HeaderImage />
           </div>
-        </motion.div>
+        </div>
       </div>
     </header>
   );
