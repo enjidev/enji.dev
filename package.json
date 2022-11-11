@@ -7,9 +7,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lint:style": "prettier --check ."
+    "lint:style": "prettier --check .",
+    "analyze": "cross-env ANALYZE=true yarn build"
   },
   "dependencies": {
+    "@next/bundle-analyzer": "^13.0.3",
     "@next/font": "^13.0.0",
     "@octokit/rest": "^19.0.5",
     "dayjs": "^1.11.6",
@@ -23,6 +25,7 @@
     "@types/react": "18.0.21",
     "@types/react-dom": "18.0.6",
     "autoprefixer": "^10.4.12",
+    "cross-env": "^7.0.3",
     "eslint": "8.25.0",
     "eslint-config-next": "13.0.0",
     "mini-svg-data-uri": "^1.4.4",
