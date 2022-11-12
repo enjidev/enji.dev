@@ -19,14 +19,33 @@ const HeaderTitle = () => {
         transition={{ delay: 0.1 }}
       >
         hi!
-        <Image
-          className="w-7 md:w-10"
-          alt="Love-you Gesture"
-          src="/assets/emojis/love-you-gesture.png"
-          width={48}
-          height={48}
-          priority
-        />
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 16,
+            rotate: 30,
+            transformOrigin: 'right center',
+          }}
+          animate={{
+            opacity: 1,
+            y: 0,
+            rotate: 0,
+          }}
+          transition={{
+            type: 'spring',
+            delay: 0.35,
+            bounce: 0.7,
+            duration: 0.7,
+          }}
+        >
+          <Image
+            className="w-7 md:w-10"
+            alt="Love-you Gesture"
+            src="/assets/emojis/love-you-gesture.png"
+            width={48}
+            height={48}
+          />
+        </motion.div>
       </motion.div>
       <h1 className="text-slate-600 dark:text-slate-400">
         <motion.span
