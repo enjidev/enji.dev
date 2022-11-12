@@ -56,7 +56,7 @@
   }
 
   .button {
-    @apply inline-flex items-center justify-center gap-1.5 rounded-md border border-transparent py-2 px-4 text-center text-sm font-bold transition duration-150;
+    @apply inline-flex h-10 items-center justify-center gap-1.5 rounded-xl border border-transparent px-4 text-center text-sm font-bold transition duration-150;
 
     &--solid {
       @apply bg-primary-400 text-white highlight-primary-300;
@@ -71,7 +71,7 @@
     }
 
     &--big {
-      @apply rounded-lg py-3 px-6;
+      @apply h-12 rounded-xl px-6;
 
       &.button--underline {
         &::after {
