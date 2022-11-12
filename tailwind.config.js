@@ -1,4 +1,5 @@
 const svgToDataUri = require('mini-svg-data-uri');
+const colors = require('tailwindcss/colors');
 const {
   default: flattenColorPalette,
 } = require('tailwindcss/lib/util/flattenColorPalette');
@@ -10,6 +11,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        divider: {
+          light: colors.slate[200],
+          dark: colors.slate[800],
+        },
         primary: {
           50: '#E6D9FF',
           100: '#CAB0FF',

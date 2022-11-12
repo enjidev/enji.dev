@@ -84,7 +84,7 @@ const ThemeToggle = () => {
 
   return (
     <button
-      className="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-100 text-gray-900 hover:bg-slate-100 dark:border-slate-800 dark:text-slate-200 dark:hover:bg-slate-800"
+      className="flex h-9 w-9 items-center justify-center rounded-lg border border-divider-light text-gray-900 hover:bg-slate-100 dark:border-divider-dark dark:text-slate-200 dark:hover:bg-slate-800"
       aria-label="Toggle Theme"
       onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
     >
@@ -99,7 +99,7 @@ const ThemeToggle = () => {
 
 const Navbar = () => {
   return (
-    <nav className="flex items-center justify-between border-b border-slate-100 bg-white py-4 px-2 text-sm dark:border-slate-800 dark:bg-slate-900 md:px-4">
+    <nav className="flex items-center justify-between border-b border-divider-light bg-white py-4 px-2 text-sm dark:border-divider-dark dark:bg-slate-900 md:px-4">
       <div>
         <ul className="flex items-center font-semibold md:gap-1">
           <li>
