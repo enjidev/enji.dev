@@ -64,7 +64,7 @@ const NavItemIcon = ({ href, icon, title }: NavItemIconProps) => {
   return (
     <a
       href={href}
-      className="flex h-9 w-9 items-center justify-center rounded-lg text-gray-900 dark:text-slate-200"
+      className="flex h-9 w-9 items-center justify-center rounded-lg text-gray-800 dark:text-slate-200"
       aria-label={title}
       target="_blank"
       rel="noreferrer"
@@ -84,7 +84,7 @@ const ThemeToggle = () => {
 
   return (
     <button
-      className="flex h-9 w-9 items-center justify-center rounded-lg border border-divider-light text-gray-900 hover:bg-slate-100 dark:border-divider-dark dark:text-slate-200 dark:hover:bg-slate-800"
+      className="flex h-9 w-9 items-center justify-center rounded-lg border border-divider-light text-gray-800 hover:bg-slate-50 dark:border-divider-dark dark:text-slate-200 dark:hover:bg-slate-800/50"
       aria-label="Toggle Theme"
       onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
     >
