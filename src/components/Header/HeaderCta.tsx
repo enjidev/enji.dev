@@ -31,10 +31,7 @@ const ButtonContactMe = () => {
 
 const ButtonResume = () => {
   return (
-    <Link
-      href="/"
-      className="button button--ghost md:button--big button--underline px-2 after:left-2.5 md:px-2"
-    >
+    <Link href="/" className="button button--ghost md:button--big px-2 md:px-2">
       <DocumentIcon className="h-5 w-5" />
       RESUME
     </Link>
