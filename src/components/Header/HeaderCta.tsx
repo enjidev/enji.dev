@@ -108,7 +108,7 @@ const HeaderCta = ({
             className="absolute top-0 left-0"
             initial={{ x: -48, opacity: 0, pointerEvents: 'none' }}
             animate={{ x: 0, opacity: 1, pointerEvents: 'auto' }}
-            transition={{ delay: isFreeAnimationDuration, duration: 0.4 }}
+            transition={{ delay: isFreeAnimationDuration + 0.1, duration: 0.4 }}
           >
             <ButtonResume />
           </motion.div>
