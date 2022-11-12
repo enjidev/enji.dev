@@ -17,7 +17,7 @@ const Header = () => {
       ></div>
       <div className="content-wrapper">
         <div className="relative">
-          <div>
+          <div className="relative z-10">
             <HeaderTitle />
           </div>
           <div className="mt-4 md:mt-8">
