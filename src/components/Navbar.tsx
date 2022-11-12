@@ -102,6 +102,22 @@ const ThemeToggle = () => {
 };
 
 const Navbar = () => {
+  const router = useRouter();
+
+  useEffect(() => {
+    const handleHomeButton = (e: KeyboardEvent) => {
+      if (e.key === '/') {
+        router.push('/');
+      }
+    };
+
+    document.addEventListener('keydown', handleHomeButton);
+
+    return () => {
+      document.removeEventListener('keydown', handleHomeButton);
+    };
+  }, [router]);
+
   return (
     <nav className="flex items-center justify-between border-b border-divider-light bg-white py-4 px-2 text-sm dark:border-divider-dark dark:bg-slate-900 md:px-4">
       <div>
