@@ -157,7 +157,7 @@ const Navbar = () => {
       )}
     >
       <div>
-        <ul className={clsx('flex items-center font-bold', 'md:gap-1')}>
+        <ul className={clsx('flex items-center font-semibold', 'md:gap-1')}>
           <li>
             <NavLogo href="/" title="Home" />
           </li>
