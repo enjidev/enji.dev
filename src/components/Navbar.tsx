@@ -72,10 +72,37 @@ const NavItemIcon = ({ href, icon, title, label }: NavItemIconProps) => {
       target="_blank"
       rel="noreferrer"
     >
-      <span className="flex h-9 w-9 items-center justify-center rounded-xl text-gray-800 dark:text-slate-200">
+      <span className="flex h-9 w-9 items-center justify-center rounded-xl dark:text-slate-200">
         {icon}
       </span>
       {label && <span className="label mt-0.5 mr-2 md:block">{label}</span>}
+    </a>
+  );
+};
+
+interface NavItemIconButtonProps {
+  href: string;
+  icon: ReactElement;
+  title: string;
+  label: string;
+}
+
+const NavItemIconButton = ({
+  href,
+  icon,
+  title,
+  label,
+}: NavItemIconButtonProps) => {
+  return (
+    <a
+      href={href}
+      className="label label--icon"
+      aria-label={title}
+      target="_blank"
+      rel="noreferrer"
+    >
+      {icon}
+      {label}
     </a>
   );
 };
@@ -110,7 +137,7 @@ const Navbar = () => {
   return (
     <nav className="flex items-center justify-between border-b border-divider-light bg-white py-4 px-2 text-sm dark:border-divider-dark dark:bg-slate-900 md:px-4">
       <div>
-        <ul className="flex items-center font-semibold md:gap-1">
+        <ul className="flex items-center font-bold md:gap-1">
           <li>
             <NavLogo href="/" title="Home" />
           </li>
@@ -132,17 +159,17 @@ const Navbar = () => {
             />
           </li>
           <li>
-            <NavItemIcon
+            <NavItemIconButton
               href="https://twitter.com/enjidev"
               icon={<TwitterIcon className="h-5 w-5" />}
               title="Twitter"
-              label="Follow"
+              label="Twitter"
             />
           </li>
           <li>
             <div className="h-3 w-[1px] bg-slate-200 dark:bg-slate-700"></div>
           </li>
-          <li className="mx-2">
+          <li className="mr-2">
             <ThemeToggle />
           </li>
         </ul>
