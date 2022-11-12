@@ -25,7 +25,7 @@ const NavLogo = ({ href, title }: NavLogoProps) => {
   return (
     <Link
       href={href}
-      className={`md:link flex h-9 items-center gap-2 rounded-lg px-2 ${
+      className={`md:link flex h-9 items-center gap-2 rounded-xl px-2 ${
         isActive && 'md:link--active'
       }`}
       aria-label={title}
@@ -47,7 +47,7 @@ const NavItem = ({ href, title }: NavItemProps) => {
   return (
     <Link
       href={href}
-      className={`link flex h-9 items-center justify-center gap-1.5 rounded-lg px-2 text-gray-900 dark:text-slate-200 ${
+      className={`link flex h-9 items-center justify-center gap-1.5 rounded-xl px-2 text-gray-900 dark:text-slate-200 ${
         isActive && 'link--active'
       }`}
     >
@@ -67,12 +67,12 @@ const NavItemIcon = ({ href, icon, title, label }: NavItemIconProps) => {
   return (
     <a
       href={href}
-      className="flex items-center justify-center rounded-lg"
+      className="flex items-center justify-center rounded-xl"
       aria-label={title}
       target="_blank"
       rel="noreferrer"
     >
-      <span className="flex h-9 w-9 items-center justify-center rounded-lg text-gray-800 dark:text-slate-200">
+      <span className="flex h-9 w-9 items-center justify-center rounded-xl text-gray-800 dark:text-slate-200">
         {icon}
       </span>
       {label && <span className="label mt-0.5 mr-2 md:block">{label}</span>}
@@ -90,7 +90,7 @@ const ThemeToggle = () => {
 
   return (
     <button
-      className="flex h-9 w-9 items-center justify-center rounded-lg bg-slate-100 text-gray-800 hover:bg-slate-200 dark:bg-slate-800/50 dark:text-slate-100 dark:hover:bg-slate-700/50"
+      className="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-100 text-gray-800 hover:bg-slate-200 dark:bg-slate-800/50 dark:text-slate-100 dark:hover:bg-slate-700/50"
       aria-label="Toggle Theme"
       onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
     >

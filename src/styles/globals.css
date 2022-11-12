@@ -82,7 +82,7 @@
     @apply relative z-0;
 
     &::after {
-      @apply absolute bottom-2 left-0 right-0 z-[-1] mx-auto h-2 w-[60%] origin-bottom scale-y-0 bg-primary-50 transition duration-200 ease-out content-[''] dark:bg-primary-700;
+      @apply absolute bottom-2 left-0 right-0 z-[-1] mx-auto h-2 w-[60%] origin-bottom scale-y-0 bg-purple-100 transition duration-200 ease-out content-[''] dark:bg-purple-500/20;
     }
 
     /* active and hover state */
