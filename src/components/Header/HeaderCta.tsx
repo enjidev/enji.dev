@@ -48,7 +48,7 @@ const AvailableForHire = () => {
       className={clsx(
         'button button--ghost pointer-events-none gap-2.5 px-2.5 text-primary-400',
         'md:button--big md:px-2.5',
-        'dark:text-slate-200'
+        'dark:text-primary-200'
       )}
     >
       <span className={clsx('relative flex h-2 w-2')}>
