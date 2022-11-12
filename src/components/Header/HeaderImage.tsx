@@ -1,7 +1,9 @@
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import { motion, useAnimationControls } from 'framer-motion';
 
 const HeaderImage = () => {
+  const controls = useAnimationControls();
+
   return (
     <div
       className="relative h-[590px] w-[603px]"
@@ -17,10 +19,7 @@ const HeaderImage = () => {
             opacity: 0,
             x: 64,
           }}
-          animate={{
-            opacity: 1,
-            x: 0,
-          }}
+          animate={controls}
           transition={{ delay: 0.4 }}
         >
           <Image
@@ -30,6 +29,12 @@ const HeaderImage = () => {
             height={526}
             className="max-w-none"
             quality={100}
+            onLoadingComplete={() => {
+              controls.start({
+                opacity: 1,
+                x: 0,
+              });
+            }}
           />
         </motion.div>
       </div>

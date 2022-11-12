@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion, useAnimationControls } from 'framer-motion';
 import Image from 'next/image';
 
 const animation = {
@@ -10,6 +10,8 @@ const animation = {
 };
 
 const HeaderTitle = () => {
+  const controls = useAnimationControls();
+
   return (
     <div>
       <motion.div
@@ -26,11 +28,7 @@ const HeaderTitle = () => {
             rotate: 30,
             transformOrigin: 'right center',
           }}
-          animate={{
-            opacity: 1,
-            y: 0,
-            rotate: 0,
-          }}
+          animate={controls}
           transition={{
             type: 'spring',
             delay: 0.35,
@@ -44,6 +42,13 @@ const HeaderTitle = () => {
             src="/assets/emojis/love-you-gesture.png"
             width={48}
             height={48}
+            onLoadingComplete={() => {
+              controls.start({
+                opacity: 1,
+                y: 0,
+                rotate: 0,
+              });
+            }}
           />
         </motion.div>
       </motion.div>
