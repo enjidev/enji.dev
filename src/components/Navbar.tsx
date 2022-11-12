@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { useTheme } from 'next-themes';
+import useShortcut from '@/hooks/useShortcut';
 import Logo from '@/components/Logo';
 import {
   DarkIcon,
@@ -9,6 +10,7 @@ import {
   LightIcon,
   TwitterIcon,
 } from '@/components/Icons';
+
 import type { ReactElement } from 'react';
 
 interface NavLogoProps {
@@ -102,21 +104,8 @@ const ThemeToggle = () => {
 };
 
 const Navbar = () => {
+  useShortcut('/', () => router.push('/'));
   const router = useRouter();
-
-  useEffect(() => {
-    const handleHomeButton = (e: KeyboardEvent) => {
-      if (e.key === '/') {
-        router.push('/');
-      }
-    };
-
-    document.addEventListener('keydown', handleHomeButton);
-
-    return () => {
-      document.removeEventListener('keydown', handleHomeButton);
-    };
-  }, [router]);
 
   return (
     <nav className="flex items-center justify-between border-b border-divider-light bg-white py-4 px-2 text-sm dark:border-divider-dark dark:bg-slate-900 md:px-4">
