@@ -54,15 +54,13 @@ const HeaderTitle = () => {
       </motion.div>
       <h1 className="text-slate-600 dark:text-slate-400">
         <motion.span
-          className="mb-2 block text-[2.5rem] font-bold leading-none md:mb-4 md:text-7xl"
+          className="mb-2 block text-[2.5rem] font-[1000] leading-none md:mb-4 md:text-7xl"
           initial={animation.hide}
           animate={animation.show}
           transition={{ delay: 0.2 }}
         >
           i&apos;m{' '}
-          <strong className="font-extrabold text-slate-900 dark:text-slate-50">
-            énji
-          </strong>{' '}
+          <strong className="text-slate-900 dark:text-slate-50">énji</strong>{' '}
           kusnadi,
         </motion.span>
         <motion.span
