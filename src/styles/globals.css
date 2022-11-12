@@ -62,6 +62,14 @@
     &--big {
       @apply rounded-lg py-3 px-6;
     }
+
+    &--underline {
+      @apply relative;
+
+      &::after {
+        @apply absolute inset-2 border-b-2 border-dotted border-slate-600/50 content-[''] dark:border-slate-400/50;
+      }
+    }
   }
 
   .link {
