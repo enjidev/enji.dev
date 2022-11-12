@@ -22,24 +22,31 @@
   }
 
   body {
-    @apply bg-white text-gray-900 dark:bg-slate-900 dark:text-slate-200 dark:[color-scheme:dark];
+    @apply bg-white text-gray-900;
+    @apply dark:bg-slate-900 dark:text-slate-200 dark:[color-scheme:dark];
   }
 
   :focus-visible {
-    @apply relative rounded-md bg-primary-50/20 outline-2 outline-offset-2 outline-primary-200 dark:bg-primary-50/[0.05] dark:outline-offset-0 dark:outline-primary-400 dark:[color-scheme:light];
+    @apply relative rounded-md bg-primary-50/20 outline-2 outline-offset-2 outline-primary-200;
+    @apply dark:bg-primary-50/[0.05] dark:outline-offset-0 dark:outline-primary-400 dark:[color-scheme:light];
   }
 }
 
 @layer components {
   .content-wrapper {
-    @apply mx-auto max-w-[1280px] px-4 md:px-6 lg:px-16 xl:px-6;
+    @apply mx-auto max-w-[1280px] px-4;
+    @apply md:px-6 lg:px-16 xl:px-6;
   }
 
   .background-grid {
-    @apply relative z-0 bg-slate-100 dark:bg-[#05011E];
+    @apply relative z-0 bg-slate-100;
+    @apply dark:bg-[#05011E];
 
     &::before {
-      @apply absolute inset-0 z-[-1] bg-slate-50 content-[''] bg-grid-slate-200/60 dark:bg-slate-900 dark:bg-grid-slate-50/[0.04] lg:bg-grid-big-slate-200/50 lg:dark:bg-grid-big-slate-50/[.02];
+      @apply absolute inset-0 z-[-1] bg-slate-50 content-[''] bg-grid-slate-200/60;
+      @apply lg:bg-grid-big-slate-200/50 lg:dark:bg-grid-big-slate-50/[.02];
+      @apply dark:bg-slate-900 dark:bg-grid-slate-50/[0.04];
+
       mask-image: radial-gradient(
         ellipse at 160% center,
         black 40%,
@@ -52,11 +59,15 @@
     @apply inline-flex items-center justify-center gap-1.5 rounded-md border border-transparent py-2 px-4 text-center text-sm font-bold transition duration-150;
 
     &--solid {
-      @apply bg-primary-400 text-white highlight-primary-300 hover:bg-primary-500 hover:highlight-primary-400 dark:bg-primary-600 dark:highlight-primary-400 dark:hover:bg-primary-500;
+      @apply bg-primary-400 text-white highlight-primary-300;
+      @apply hover:bg-primary-500 hover:highlight-primary-400;
+      @apply dark:bg-primary-600 dark:highlight-primary-400 dark:hover:bg-primary-500;
     }
 
     &--ghost {
-      @apply text-slate-600 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-300;
+      @apply text-slate-600;
+      @apply hover:text-slate-700;
+      @apply dark:text-slate-400 dark:hover:text-slate-300;
     }
 
     &--big {
@@ -73,7 +84,8 @@
       @apply relative;
 
       &::after {
-        @apply absolute left-2 right-2 bottom-1 border-b-2 border-dotted border-slate-600/50 content-[''] dark:border-slate-400/50;
+        @apply absolute left-2 right-2 bottom-1 border-b-2 border-dotted border-slate-600/50 content-[''];
+        @apply dark:border-slate-400/50;
       }
     }
   }
@@ -82,13 +94,15 @@
     @apply relative z-0;
 
     &::after {
-      @apply absolute bottom-2 left-0 right-0 z-[-1] mx-auto h-2 w-[60%] origin-bottom scale-y-0 bg-purple-100 transition duration-200 ease-out content-[''] dark:bg-purple-500/20;
+      @apply absolute bottom-2 left-0 right-0 z-[-1] mx-auto h-2 w-[60%] origin-bottom scale-y-0 bg-purple-100 transition duration-200 ease-out content-[''];
+      @apply dark:bg-purple-500/20;
     }
 
     /* active and hover state */
     &--active,
     &:hover {
-      @apply text-primary-400 dark:text-primary-200;
+      @apply text-primary-400;
+      @apply dark:text-primary-200;
 
       &::after {
         @apply scale-y-100;
