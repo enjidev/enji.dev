@@ -85,9 +85,9 @@ const HeaderCta = ({
             variants={isFreeVariants}
             transition={{ delay: isFreeAnimationDuration, duration: 0.4 }}
           >
-            <span className="absolute left-2.5 top-2.5 flex h-2.5 w-2.5">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary-400 opacity-75 dark:bg-primary-300"></span>
-              <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-primary-500 dark:bg-primary-200"></span>
+            <span className="absolute left-3 top-3 flex h-2 w-2">
+              <span className="absolute -top-1 -left-1 inline-flex h-4 w-4 animate-ping rounded-full bg-primary-400 opacity-75 dark:bg-primary-300"></span>
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-primary-500 dark:bg-primary-200"></span>
             </span>
             <div className="button button--ghost button--big pointer-events-none text-primary-400 dark:text-primary-200">
               AVAILABLE FOR HIRE
