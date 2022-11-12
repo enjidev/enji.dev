@@ -95,4 +95,8 @@
       }
     }
   }
+
+  .label {
+    @apply block h-5 rounded-full bg-purple-100 px-2 text-xs font-bold leading-5 text-primary-400 dark:bg-purple-500/20 dark:text-primary-200;
+  }
 }

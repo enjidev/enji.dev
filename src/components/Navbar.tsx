@@ -45,7 +45,7 @@ const NavItem = ({ href, title }: NavItemProps) => {
   return (
     <Link
       href={href}
-      className={`link flex h-9 items-center rounded-lg px-2 text-gray-900 dark:text-slate-200 ${
+      className={`link flex h-9 items-center justify-center gap-1.5 rounded-lg px-2 text-gray-900 dark:text-slate-200 ${
         isActive && 'link--active'
       }`}
     >
@@ -58,18 +58,22 @@ interface NavItemIconProps {
   href: string;
   icon: ReactElement;
   title: string;
+  label?: string;
 }
 
-const NavItemIcon = ({ href, icon, title }: NavItemIconProps) => {
+const NavItemIcon = ({ href, icon, title, label }: NavItemIconProps) => {
   return (
     <a
       href={href}
-      className="flex h-9 w-9 items-center justify-center rounded-lg text-gray-800 dark:text-slate-200"
+      className="flex items-center justify-center rounded-lg"
       aria-label={title}
       target="_blank"
       rel="noreferrer"
     >
-      {icon}
+      <span className="flex h-9 w-9 items-center justify-center rounded-lg text-gray-800 dark:text-slate-200">
+        {icon}
+      </span>
+      {label && <span className="label mt-0.5 mr-2 md:block">{label}</span>}
     </a>
   );
 };
@@ -106,30 +110,28 @@ const Navbar = () => {
             <NavLogo href="/" title="Home" />
           </li>
           <li>
-            <NavItem href="/blog" title="Blog" />
-          </li>
-          <li>
             <NavItem href="/projects" title="Projects" />
           </li>
           <li>
-            <NavItem href="/about" title="About" />
+            <NavItem href="/blog" title="Blog" />
           </li>
         </ul>
       </div>
       <div>
         <ul className="flex items-center gap-2">
-          <li>
-            <NavItemIcon
-              href="https://twitter.com/enjidev"
-              icon={<TwitterIcon className="h-5 w-5" />}
-              title="Twitter"
-            />
-          </li>
           <li className="hidden sm:block">
             <NavItemIcon
               href="https://github.com/enjidev"
               icon={<GitHubIcon className="h-5 w-5" />}
               title="GitHub"
+            />
+          </li>
+          <li>
+            <NavItemIcon
+              href="https://twitter.com/enjidev"
+              icon={<TwitterIcon className="h-5 w-5" />}
+              title="Twitter"
+              label="Follow"
             />
           </li>
           <li>
