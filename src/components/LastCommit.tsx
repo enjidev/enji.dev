@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import useLastCommit from '@/hooks/useLastCommit';
 import dayjs from '@/utils/dayjs';
@@ -11,9 +12,9 @@ const LastCommit = () => {
         href={commit.url}
         target="_blank"
         rel="noreferrer"
-        className="hover:underline"
+        className={clsx('hover:underline')}
       >
-        <span className="hidden sm:inline">this site has been </span>
+        <span className={clsx('hidden', 'sm:inline')}>this site has been </span>
         <span>updated {dayjs(commit.date).fromNow()}.</span>
       </a>
     </motion.div>

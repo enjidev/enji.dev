@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
@@ -25,9 +26,9 @@ const NavLogo = ({ href, title }: NavLogoProps) => {
   return (
     <Link
       href={href}
-      className={`md:link flex h-9 items-center gap-2 rounded-xl px-2 ${
-        isActive && 'md:link--active'
-      }`}
+      className={clsx('flex h-9 items-center gap-2 rounded-xl px-2', [
+        isActive ? 'md:link md:link--active' : 'md:link',
+      ])}
       aria-label={title}
     >
       <Logo active={isActive} />
@@ -47,9 +48,11 @@ const NavItem = ({ href, title }: NavItemProps) => {
   return (
     <Link
       href={href}
-      className={`link flex h-9 items-center justify-center gap-1.5 rounded-xl px-2 text-gray-900 dark:text-slate-200 ${
-        isActive && 'link--active'
-      }`}
+      className={clsx(
+        'flex h-9 items-center justify-center gap-1.5 rounded-xl px-2 text-gray-900',
+        'dark:text-slate-200',
+        [isActive ? 'link link--active' : 'link']
+      )}
     >
       {title}
     </Link>
@@ -67,15 +70,22 @@ const NavItemIcon = ({ href, icon, title, label }: NavItemIconProps) => {
   return (
     <a
       href={href}
-      className="flex items-center justify-center rounded-xl"
+      className={clsx('flex items-center justify-center rounded-xl')}
       aria-label={title}
       target="_blank"
       rel="noreferrer"
     >
-      <span className="flex h-9 w-9 items-center justify-center rounded-xl dark:text-slate-200">
+      <span
+        className={clsx(
+          'flex h-9 w-9 items-center justify-center rounded-xl',
+          'dark:text-slate-200'
+        )}
+      >
         {icon}
       </span>
-      {label && <span className="label mt-0.5 mr-2 md:block">{label}</span>}
+      {label && (
+        <span className={clsx('label mt-0.5 mr-2', 'md:block')}>{label}</span>
+      )}
     </a>
   );
 };
@@ -96,7 +106,7 @@ const NavItemIconButton = ({
   return (
     <a
       href={href}
-      className="label label--icon"
+      className={clsx('label label--icon')}
       aria-label={title}
       target="_blank"
       rel="noreferrer"
@@ -117,14 +127,18 @@ const ThemeToggle = () => {
 
   return (
     <button
-      className="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-100 text-gray-800 hover:bg-slate-200 dark:bg-slate-800/50 dark:text-slate-100 dark:hover:bg-slate-700/50"
+      className={clsx(
+        'flex h-9 w-9 items-center justify-center rounded-xl bg-slate-100 text-gray-800',
+        'hover:bg-slate-200',
+        'dark:bg-slate-800/50 dark:text-slate-100 dark:hover:bg-slate-700/50'
+      )}
       aria-label="Toggle Theme"
       onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
     >
       {mounted && resolvedTheme === 'dark' ? (
-        <LightIcon className="h-5 w-5" />
+        <LightIcon className={clsx('h-5 w-5')} />
       ) : (
-        <DarkIcon className="h-5 w-5" />
+        <DarkIcon className={clsx('h-5 w-5')} />
       )}
     </button>
   );
@@ -135,9 +149,15 @@ const Navbar = () => {
   const router = useRouter();
 
   return (
-    <nav className="flex items-center justify-between border-b border-divider-light bg-white py-4 px-2 text-sm dark:border-divider-dark dark:bg-slate-900 md:px-4">
+    <nav
+      className={clsx(
+        'flex items-center justify-between border-b border-divider-light bg-white px-2 py-4 text-sm',
+        'md:px-4',
+        'dark:border-divider-dark dark:bg-slate-900'
+      )}
+    >
       <div>
-        <ul className="flex items-center font-bold md:gap-1">
+        <ul className={clsx('flex items-center font-bold', 'md:gap-1')}>
           <li>
             <NavLogo href="/" title="Home" />
           </li>
@@ -150,26 +170,28 @@ const Navbar = () => {
         </ul>
       </div>
       <div>
-        <ul className="flex items-center gap-2">
-          <li className="hidden sm:block">
+        <ul className={clsx('flex items-center gap-2')}>
+          <li className={clsx('hidden', 'sm:block')}>
             <NavItemIcon
               href="https://github.com/enjidev"
-              icon={<GitHubIcon className="h-5 w-5" />}
+              icon={<GitHubIcon className={clsx('h-5 w-5')} />}
               title="GitHub"
             />
           </li>
           <li>
             <NavItemIconButton
               href="https://twitter.com/enjidev"
-              icon={<TwitterIcon className="h-5 w-5" />}
+              icon={<TwitterIcon className={clsx('h-5 w-5')} />}
               title="Twitter"
               label="Twitter"
             />
           </li>
           <li>
-            <div className="h-3 w-[1px] bg-slate-200 dark:bg-slate-700"></div>
+            <div
+              className={clsx('h-3 w-[1px] bg-slate-200', 'dark:bg-slate-700')}
+            ></div>
           </li>
-          <li className="mr-2">
+          <li className={clsx('mr-2')}>
             <ThemeToggle />
           </li>
         </ul>

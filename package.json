@@ -14,6 +14,7 @@
     "@next/bundle-analyzer": "^13.0.3",
     "@next/font": "^13.0.0",
     "@octokit/rest": "^19.0.5",
+    "clsx": "^1.2.1",
     "dayjs": "^1.11.6",
     "framer-motion": "^7.6.6",
     "next": "13.0.0",

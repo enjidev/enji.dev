@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import Head from 'next/head';
 import Quote from '@/components/Quote';
 import Header from '@/components/Header';
@@ -16,12 +17,22 @@ const Index: NextPage = () => {
       </Head>
       <Header />
       <section>
-        <div className="content-wrapper">
-          <div className="-mt-8 mb-8 flex flex-col gap-4 lg:-mt-16 lg:flex-row lg:gap-8">
+        <div className={clsx('content-wrapper')}>
+          <div
+            className={clsx(
+              '-mt-8 mb-8 flex flex-col gap-4',
+              'lg:-mt-16 lg:flex-row lg:gap-8'
+            )}
+          >
             <FeaturedCard
               icon={
-                <div className="rounded-full bg-orange-400 p-4 highlight-orange-500 dark:bg-orange-600">
-                  <SparklesIcon className="h-5 w-5 text-white" />
+                <div
+                  className={clsx(
+                    'rounded-full bg-orange-400 p-4 highlight-orange-500',
+                    'dark:bg-orange-600'
+                  )}
+                >
+                  <SparklesIcon className={clsx('h-5 w-5 text-white')} />
                 </div>
               }
               title="Clean & Intuitive"
@@ -29,8 +40,13 @@ const Index: NextPage = () => {
             />
             <FeaturedCard
               icon={
-                <div className="rounded-full bg-pink-400 p-4 highlight-pink-500 dark:bg-pink-600">
-                  <HeartIcon className="h-5 w-5 text-white" />
+                <div
+                  className={clsx(
+                    'rounded-full bg-pink-400 p-4 highlight-pink-500',
+                    'dark:bg-pink-600'
+                  )}
+                >
+                  <HeartIcon className={clsx('h-5 w-5 text-white')} />
                 </div>
               }
               title="Detail Oriented"
@@ -38,8 +54,13 @@ const Index: NextPage = () => {
             />
             <FeaturedCard
               icon={
-                <div className="rounded-full bg-sky-400 p-4 highlight-sky-500 dark:bg-sky-600">
-                  <CodeIcon className="h-5 w-5 text-white" />
+                <div
+                  className={clsx(
+                    'rounded-full bg-sky-400 p-4 highlight-sky-500',
+                    'dark:bg-sky-600'
+                  )}
+                >
+                  <CodeIcon className={clsx('h-5 w-5 text-white')} />
                 </div>
               }
               title="Pretty & Optimized"
@@ -48,9 +69,9 @@ const Index: NextPage = () => {
           </div>
         </div>
       </section>
-      <section className="mb-6">
-        <div className="content-wrapper">
-          <div className="flex items-center justify-center py-8">
+      <section className={clsx('mb-6')}>
+        <div className={clsx('content-wrapper')}>
+          <div className={clsx('flex items-center justify-center py-8')}>
             <Quote />
           </div>
         </div>

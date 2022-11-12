@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import { motion, useAnimationControls } from 'framer-motion';
 import Image from 'next/image';
 
@@ -15,7 +16,11 @@ const HeaderTitle = () => {
   return (
     <div>
       <motion.div
-        className="flex items-center gap-2 text-2xl text-slate-500 dark:text-slate-500 md:text-4xl"
+        className={clsx(
+          'flex items-center gap-2 text-2xl text-slate-500',
+          'md:text-4xl',
+          'dark:text-slate-500'
+        )}
         initial={animation.hide}
         animate={animation.show}
         transition={{ delay: 0.1 }}
@@ -37,7 +42,7 @@ const HeaderTitle = () => {
           }}
         >
           <Image
-            className="w-7 md:w-10"
+            className={clsx('w-7 md:w-10')}
             alt="Love-you Gesture"
             src="/assets/emojis/love-you-gesture.png"
             width={48}
@@ -52,24 +57,29 @@ const HeaderTitle = () => {
           />
         </motion.div>
       </motion.div>
-      <h1 className="text-slate-600 dark:text-slate-400">
+      <h1 className={clsx('text-slate-600', 'dark:text-slate-400')}>
         <motion.span
-          className="mb-2 block text-[2.5rem] font-[1000] leading-none md:mb-4 md:text-7xl"
+          className={clsx(
+            'mb-2 block text-[2.5rem] font-[1000] leading-none',
+            'md:mb-4 md:text-7xl'
+          )}
           initial={animation.hide}
           animate={animation.show}
           transition={{ delay: 0.2 }}
         >
           i&apos;m{' '}
-          <strong className="text-slate-900 dark:text-slate-50">énji</strong>{' '}
+          <strong className={clsx('text-slate-900', 'dark:text-slate-50')}>
+            énji
+          </strong>{' '}
           kusnadi,
         </motion.span>
         <motion.span
-          className="block  text-lg md:text-2xl"
+          className={clsx('block text-lg', 'md:text-2xl')}
           initial={animation.hide}
           animate={animation.show}
           transition={{ delay: 0.3 }}
         >
-          a <strong className="font-bold">creative developer</strong>.
+          a <strong className={clsx('font-bold')}>creative developer</strong>.
         </motion.span>
       </h1>
     </div>
