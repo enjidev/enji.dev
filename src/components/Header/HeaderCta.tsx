@@ -37,7 +37,7 @@ const ButtonResume = () => {
 
 const HeaderCta = ({
   isFree = true,
-  isFreeAnimationDuration = 5,
+  isFreeAnimationDuration = 6,
 }: HeaderCtaProps) => {
   const shouldReduceMotion = useReducedMotion();
 
