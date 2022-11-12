@@ -35,6 +35,19 @@
     @apply mx-auto max-w-[1280px] px-4 md:px-6 lg:px-16 xl:px-6;
   }
 
+  .background-grid {
+    @apply relative z-0 bg-slate-100 dark:bg-[#05011E];
+
+    &::before {
+      @apply absolute inset-0 z-[-1] bg-slate-50 content-[''] bg-grid-slate-200/60 dark:bg-slate-900 dark:bg-grid-slate-50/[0.04] lg:bg-grid-big-slate-200/50 lg:dark:bg-grid-big-slate-50/[.02];
+      mask-image: radial-gradient(
+        ellipse at 160% center,
+        black 40%,
+        transparent
+      );
+    }
+  }
+
   .button {
     @apply inline-flex items-center justify-center gap-1.5 rounded-md border border-transparent py-2 px-4 text-center text-sm font-bold transition duration-150;
 

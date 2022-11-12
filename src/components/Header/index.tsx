@@ -5,16 +5,7 @@ import HeaderTechStack from '@/components/Header/HeaderTechStack';
 
 const Header = () => {
   return (
-    <header className="relative z-0 border-b border-divider-light bg-slate-100 pt-20 pb-20 dark:border-divider-dark dark:bg-[#05011E] lg:pt-36 lg:pb-28">
-      <div
-        className="absolute inset-0 z-[-1] bg-slate-50 bg-grid-slate-200/60 dark:bg-slate-900 dark:bg-grid-slate-50/[0.04] lg:bg-grid-big-slate-200/50 lg:dark:bg-grid-big-slate-50/[.02]"
-        style={{
-          maskImage:
-            'radial-gradient(ellipse at 160% center, black 40%, transparent)',
-          WebkitMaskImage:
-            'radial-gradient(ellipse at 160% center, black 40%, transparent)',
-        }}
-      ></div>
+    <header className="background-grid border-b border-divider-light pt-20 pb-20 dark:border-divider-dark lg:pt-36 lg:pb-28">
       <div className="content-wrapper">
         <div className="relative">
           <div className="relative z-10">
