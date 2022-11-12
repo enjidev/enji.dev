@@ -67,11 +67,11 @@ const HeaderTitle = () => {
           animate={animation.show}
           transition={{ delay: 0.2 }}
         >
-          i&apos;m{' '}
-          <strong className={clsx('text-slate-900', 'dark:text-slate-50')}>
-            énji
+          I&apos;m{' '}
+          <strong className={clsx('text-primary-400', 'dark:text-primary-200')}>
+            Enji
           </strong>{' '}
-          kusnadi,
+          Kusnadi,
         </motion.span>
         <motion.span
           className={clsx('block text-lg', 'md:text-2xl')}

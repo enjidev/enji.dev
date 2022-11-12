@@ -38,7 +38,7 @@ const HeaderTechStack = () => {
         )}
         initial="hide"
         animate="show"
-        transition={{ delayChildren: 0.6, staggerChildren: 0.04 }}
+        transition={{ delayChildren: 0.6, staggerChildren: 0.03 }}
       >
         <motion.li variants={animation}>
           <div className={clsx('transition duration-200 hover:text-[#3178C6]')}>
