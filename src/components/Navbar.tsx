@@ -49,8 +49,7 @@ const NavItem = ({ href, title }: NavItemProps) => {
     <Link
       href={href}
       className={clsx(
-        'flex h-9 items-center justify-center gap-1.5 rounded-xl px-2 text-gray-900',
-        'dark:text-slate-200',
+        'flex h-9 items-center justify-center gap-1.5 rounded-xl px-2',
         [isActive ? 'link link--active' : 'link']
       )}
     >
