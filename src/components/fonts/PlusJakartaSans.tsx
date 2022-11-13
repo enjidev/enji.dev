@@ -4,7 +4,7 @@ const font = Plus_Jakarta_Sans({
   subsets: ['latin'],
 });
 
-const PlusJakartaSans = () => (
+const FontPlusJakartaSans = () => (
   <style global jsx>{`
     html {
       font-family: ${font.style.fontFamily}, sans-serif;
@@ -12,4 +12,4 @@ const PlusJakartaSans = () => (
   `}</style>
 );
 
-export default PlusJakartaSans;
+export default FontPlusJakartaSans;

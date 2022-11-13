@@ -1,4 +1,4 @@
-import PlusJakartaSans from '@/components/fonts/PlusJakartaSans';
+import FontPlusJakartaSans from '@/components/fonts/PlusJakartaSans';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
@@ -7,7 +7,7 @@ import type { ReactNode } from 'react';
 const Root = ({ children }: { children: ReactNode }) => {
   return (
     <>
-      <PlusJakartaSans />
+      <FontPlusJakartaSans />
       <Navbar />
       <main>{children}</main>
       <Footer />
