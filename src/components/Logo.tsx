@@ -6,9 +6,7 @@ interface LogoProps {
 
 const Logo = ({ active = false }: LogoProps) => {
   return (
-    <div
-      className={clsx('flex items-center gap-1.5 font-extrabold leading-none')}
-    >
+    <div className={clsx('flex items-center gap-1.5 font-[1000] leading-none')}>
       <div
         className={clsx(
           'flex h-6 w-6 items-center justify-center rounded-lg border-2',
