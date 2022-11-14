@@ -17,8 +17,8 @@ const HeaderTitle = () => {
     <div>
       <motion.div
         className={clsx(
-          'flex items-center gap-2 text-2xl text-slate-500',
-          'md:text-4xl',
+          'flex items-center gap-1 text-2xl text-slate-500',
+          'md:gap-2 md:text-4xl',
           'dark:text-slate-500'
         )}
         initial={animation.hide}
