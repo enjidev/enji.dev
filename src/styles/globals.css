@@ -40,12 +40,12 @@
 
   .background-grid {
     @apply relative z-0 bg-slate-100;
-    @apply dark:bg-[#05011E];
+    @apply dark:bg-[#0c1222];
 
     &::before {
-      @apply absolute inset-0 z-[-1] bg-slate-50 content-[''] bg-grid-slate-200/60;
+      @apply absolute inset-0 z-[-1] content-[''] bg-grid-slate-200/60;
       @apply lg:bg-grid-big-slate-200/50;
-      @apply dark:bg-slate-900 dark:bg-grid-slate-50/[0.04] dark:lg:bg-grid-big-slate-50/[.02];
+      @apply dark:bg-grid-big-slate-50/[.02];
 
       mask-image: radial-gradient(
         ellipse at 160% center,
