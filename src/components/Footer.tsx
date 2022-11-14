@@ -20,6 +20,9 @@ const Footer = () => {
             )}
           >
             <li>
+              <Link href="/design">Font & Colors</Link>
+            </li>
+            <li>
               <a
                 href="https://www.figma.com/@enjidev"
                 target="_blank"
@@ -36,9 +39,6 @@ const Footer = () => {
               >
                 Source Code
               </a>
-            </li>
-            <li>
-              <Link href="/design">Font & Colors</Link>
             </li>
           </ul>
         </section>
