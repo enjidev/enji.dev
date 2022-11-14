@@ -9,7 +9,7 @@ const Design = () => {
         <meta name="description" content="Hi!" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <PageHeader title="Font & Colors" desc="coming very soon!" />
+      <PageHeader title="Font & Colors" desc="— page is coming very soon!" />
     </>
   );
 };

@@ -161,10 +161,10 @@ const Navbar = () => {
             <NavLogo href="/" title="Home" />
           </li>
           <li>
-            <NavItem href="/projects" title="Projects" />
+            <NavItem href="/services" title="Services" />
           </li>
           <li>
-            <NavItem href="/blog" title="Blog" />
+            <NavItem href="/about" title="About" />
           </li>
         </ul>
       </div>
