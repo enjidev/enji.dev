@@ -6,10 +6,10 @@ type NavMenuColors = 'blue' | 'purple';
 type NavMenuLink = { title: string; href: string };
 
 interface NavLink extends NavMenuLink {
-  colors: NavMenuColors;
+  color: NavMenuColors;
 }
 
-export const NavLink = ({ title, href, colors = 'purple' }: NavLink) => {
+export const NavLink = ({ title, href, color = 'purple' }: NavLink) => {
   const router = useRouter();
   const isActive = router.pathname === href;
 
@@ -17,8 +17,8 @@ export const NavLink = ({ title, href, colors = 'purple' }: NavLink) => {
     <Link
       href={href}
       className={clsx('nav-link', [
-        colors === 'purple' && 'nav-link--purple',
-        colors === 'blue' && 'nav-link--blue',
+        color === 'purple' && 'nav-link--purple',
+        color === 'blue' && 'nav-link--blue',
         isActive && 'nav-link--active',
       ])}
     >

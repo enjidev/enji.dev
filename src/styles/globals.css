@@ -145,7 +145,7 @@
     }
 
     &--blue {
-      @apply bg-blue-50 text-blue-500;
+      @apply bg-blue-50 text-blue-600;
       @apply dark:bg-blue-500/10 dark:text-blue-400;
     }
   }

@@ -13,13 +13,13 @@ const Logo = ({ active = false }: LogoProps) => {
           [
             active
               ? 'border-primary-400 bg-primary-400 dark:border-primary-300 dark:bg-primary-300'
-              : 'border-gray-900 dark:border-slate-200',
+              : 'border-primary-400 dark:border-primary-300',
           ]
         )}
       >
         <div
           className={clsx('h-3 w-0.5 rotate-12 rounded-full', [
-            active ? 'bg-white' : 'bg-gray-900 dark:bg-slate-200',
+            active ? 'bg-white' : 'bg-primary-400 dark:bg-primary-300',
           ])}
         />
       </div>

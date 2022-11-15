@@ -11,44 +11,48 @@ import NavIconTheme from '@/components/Navigation/NavIconTheme';
 import NavLinkSeparator from '@/components/Navigation/NavLinkSeparator';
 
 const NavMainItems = () => {
+  const color = 'purple';
+
   return (
-    <ul className={clsx('flex items-center gap-1 font-bold', 'md:gap-2')}>
+    <ul className={clsx('flex items-center font-bold', 'md:gap-1')}>
       <li>
-        <NavLink title="Projects" href="/projects" colors="blue" />
+        <NavLink title="Projects" href="/projects" color={color} />
       </li>
       <li>
-        <NavLinkSeparator colors="blue" />
+        <NavLinkSeparator color={color} />
       </li>
       <li>
-        <NavLink title="Blog" href="/blog" colors="blue" />
+        <NavLink title="Blog" href="/blog" color={color} />
       </li>
     </ul>
   );
 };
 
 const NavWorkItems = () => {
+  const color = 'blue';
+
   return (
-    <ul className={clsx('flex items-center gap-1 font-bold', 'md:gap-2')}>
+    <ul className={clsx('flex items-center font-bold', 'md:gap-1')}>
       <li>
-        <NavLink title="Skills & Tools" href="/skills" colors="purple" />
+        <NavLink title="Skills & Tools" href="/skills" color={color} />
       </li>
       <li>
-        <NavLinkSeparator colors="purple" />
+        <NavLinkSeparator color={color} />
       </li>
       <li>
-        <NavLink title="Services" href="/services" colors="purple" />
+        <NavLink title="Services" href="/services" color={color} />
       </li>
       <li>
-        <NavLinkSeparator colors="purple" />
+        <NavLinkSeparator color={color} />
       </li>
       <li>
-        <NavLink title="Contact" href="/contact" colors="purple" />
+        <NavLink title="Contact" href="/contact" color={color} />
       </li>
       <li>
-        <NavLinkSeparator colors="purple" />
+        <NavLinkSeparator color={color} />
       </li>
       <li>
-        <NavLink title="FAQ" href="/faq" colors="purple" />
+        <NavLink title="FAQ" href="/faq" color={color} />
       </li>
     </ul>
   );
@@ -70,12 +74,12 @@ const Navbar = () => {
         <NavLogo href="/" title="Home" />
         <NavMainItems />
         <div className="ml-1 block lg:hidden">
-          <NavLinkGroup colors="purple" title="Works" href="/">
+          <NavLinkGroup color="blue" title="Works" href="/">
             <NavWorkItems />
           </NavLinkGroup>
         </div>
         <div className="ml-1 hidden lg:block">
-          <NavLinkGroupVisible colors="purple" title="Works" href="/">
+          <NavLinkGroupVisible color="blue" title="Works" href="/">
             <NavWorkItems />
           </NavLinkGroupVisible>
         </div>

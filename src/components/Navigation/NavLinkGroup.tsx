@@ -8,7 +8,7 @@ type NavMenuLink = { title: string; href: string };
 
 interface NavLinkGroupProps extends NavMenuLink {
   children: React.ReactNode;
-  colors: NavMenuColors;
+  color: NavMenuColors;
 }
 
 const animation = {
@@ -21,15 +21,15 @@ const animationChildren = {
   show: { opacity: 1, y: 0 },
 };
 
-const NavLinkGroup = ({ title, colors, children }: NavLinkGroupProps) => {
+const NavLinkGroup = ({ title, color, children }: NavLinkGroupProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className={clsx('flex items-center gap-2')}>
       <div
         className={clsx('nav-link-group', [
-          colors === 'purple' && 'nav-link-group--purple',
-          colors === 'blue' && 'nav-link-group--blue',
+          color === 'purple' && 'nav-link-group--purple',
+          color === 'blue' && 'nav-link-group--blue',
         ])}
         onClick={() => setIsOpen(!isOpen)}
       >
