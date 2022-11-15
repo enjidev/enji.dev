@@ -40,12 +40,6 @@ const NavWorkItems = () => {
         <NavLinkSeparator color={color} />
       </li>
       <li>
-        <NavLink title="Services" href="/services" color={color} />
-      </li>
-      <li>
-        <NavLinkSeparator color={color} />
-      </li>
-      <li>
         <NavLink title="Contact" href="/contact" color={color} />
       </li>
       <li>
