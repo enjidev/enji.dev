@@ -23,7 +23,7 @@ const Logo = ({ active = false }: LogoProps) => {
           ])}
         />
       </div>
-      <div className={clsx('-mt-1 hidden text-2xl', 'md:block')}>
+      <div className={clsx('-mt-1 hidden text-xl', 'md:block')}>
         <span className={clsx('text-gray-900', 'dark:text-slate-200')}>
           enji
         </span>

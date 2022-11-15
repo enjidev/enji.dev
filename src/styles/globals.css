@@ -27,7 +27,7 @@
   }
 
   :focus-visible {
-    @apply relative rounded-md bg-primary-50/20 outline-2 outline-offset-2 outline-primary-200;
+    @apply relative rounded-xl bg-primary-50/20 outline-2 outline-offset-2 outline-primary-200;
     @apply dark:bg-primary-50/[0.05] dark:outline-offset-0 dark:outline-primary-400 dark:[color-scheme:light];
   }
 }
@@ -90,31 +90,63 @@
     }
   }
 
-  .link {
-    @apply relative z-0;
+  .nav-link {
+    @apply relative flex h-9 items-center rounded-xl px-2 text-xs font-bold;
 
     &::after {
-      @apply absolute bottom-2 left-0 right-0 z-[-1] mx-auto h-2 w-[60%] origin-bottom scale-y-0 bg-purple-100 transition duration-200 ease-out content-[''];
-      @apply dark:bg-purple-500/20;
+      @apply pointer-events-none absolute left-0 right-0 bottom-0 mx-auto h-1 w-2 rounded-full opacity-0 transition content-[''];
     }
 
-    /* active and hover state */
-    &--active,
-    &:hover {
+    &__separator {
+      @apply text-xs font-bold;
+
+      &--purple {
+        @apply text-primary-400;
+        @apply dark:text-purple-400;
+      }
+
+      &--blue {
+        @apply text-blue-600;
+        @apply dark:text-blue-400;
+      }
+    }
+
+    &--purple {
       @apply text-primary-400;
-      @apply dark:text-primary-200;
+      @apply dark:text-purple-400;
 
       &::after {
-        @apply scale-y-100;
+        @apply bg-current;
+      }
+    }
+
+    &--blue {
+      @apply text-blue-600;
+      @apply dark:text-blue-400;
+
+      &::after {
+        @apply bg-current;
+      }
+    }
+
+    &--active {
+      &::after {
+        @apply opacity-100;
       }
     }
   }
 
-  .label {
-    @apply flex h-5 items-center justify-center gap-2 rounded-full bg-purple-100 px-2 text-xs font-bold leading-5 text-primary-400 dark:bg-purple-500/20 dark:text-primary-200;
+  .nav-link-group {
+    @apply flex h-9 cursor-pointer select-none items-center gap-1 rounded-full px-4 pr-3 text-xs font-bold;
 
-    &--icon {
-      @apply h-9 rounded-xl px-4;
+    &--purple {
+      @apply bg-purple-50 text-primary-400;
+      @apply dark:bg-purple-500/10 dark:text-purple-400;
+    }
+
+    &--blue {
+      @apply bg-blue-50 text-blue-500;
+      @apply dark:bg-blue-500/10 dark:text-blue-400;
     }
   }
 }
