@@ -41,8 +41,12 @@
 
 @layer components {
   .content-wrapper {
-    @apply mx-auto max-w-[1280px] px-4;
+    @apply mx-auto max-w-[75rem] px-4;
     @apply md:px-6 lg:px-16 xl:px-6;
+  }
+
+  .content-wrapper-max {
+    @apply mx-auto max-w-[120rem];
   }
 
   .background-grid {
