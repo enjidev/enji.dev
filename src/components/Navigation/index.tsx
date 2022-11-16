@@ -26,7 +26,7 @@ const Navbar = () => {
             <NavLinkSeparator />
           </li>
           <li>
-            <NavLink title="Blog" href="/blog" color="purple" />
+            <NavLink title="Studio" href="/studio" color="purple" />
           </li>
           <li>
             <NavLinkSeparator />
@@ -36,6 +36,7 @@ const Navbar = () => {
               title="Works"
               items={[
                 { title: 'Skills & Tools', href: '/skills' },
+                { title: 'Testimonials', href: '/testimonials' },
                 { title: 'Contact', href: '/contact' },
                 { title: 'FAQ', href: '/faq' },
               ]}

@@ -1,17 +1,17 @@
 import Head from 'next/head';
 import PageHeader from '@/components/PageHeader';
 
-const Blog = () => {
+const Studio = () => {
   return (
     <>
       <Head>
-        <title>Blog &middot; Enji Kusnadi</title>
+        <title>Studio &middot; Enji Kusnadi</title>
         <meta name="description" content="Hi!" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <PageHeader title="Blog" desc="— page is coming very soon!" />
+      <PageHeader title="Studio" desc="— page is coming very soon!" />
     </>
   );
 };
 
-export default Blog;
+export default Studio;
