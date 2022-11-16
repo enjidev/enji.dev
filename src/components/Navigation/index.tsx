@@ -57,6 +57,7 @@ const Navbar = () => {
             href="https://twitter.com/enjidev"
             icon={<TwitterIcon className={clsx('h-5 w-5')} />}
             title="Twitter"
+            label="enjidev"
           />
         </li>
         <li>

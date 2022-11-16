@@ -15,7 +15,7 @@ const NavIconTheme = () => {
     <button
       className={clsx(
         'ml-1 flex h-9 w-9 items-center justify-center rounded-xl bg-slate-100 text-gray-800',
-        'hover:bg-slate-200',
+        'hover:bg-slate-200 sm:ml-0',
         'dark:bg-slate-800/50 dark:text-slate-100 dark:hover:bg-slate-700/50'
       )}
       aria-label="Toggle Theme"
