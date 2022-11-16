@@ -69,9 +69,10 @@ const NavLinkDropdown = ({ title, items }: NavLinkDropdownProps) => {
                       {({ active }) => (
                         <LinkRef
                           href={href}
-                          className={clsx('nav-link nav-link--blue h-8', [
-                            active && 'nav-link--focus',
-                          ])}
+                          className={clsx(
+                            'nav-link nav-link--blue h-8 text-xs',
+                            [active && 'nav-link--focus']
+                          )}
                         >
                           {title}
                         </LinkRef>
