@@ -36,7 +36,7 @@ const Index: NextPage = () => {
                 </div>
               }
               title="Clean & Intuitive"
-              desc="Keep the UI clean with a modern touch without compromising on the UX."
+              desc="Keep the UI clean with a modern touch without compromising UX."
             />
             <FeaturedCard
               icon={
@@ -50,7 +50,7 @@ const Index: NextPage = () => {
                 </div>
               }
               title="Detail Oriented"
-              desc="Attention to ease of access, UI consistency, and improved user experience."
+              desc="Awareness to ease of access, UI consistency, and improved UX."
             />
             <FeaturedCard
               icon={
