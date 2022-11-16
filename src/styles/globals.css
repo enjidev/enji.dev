@@ -91,8 +91,7 @@
   }
 
   .nav-link {
-    @apply flex h-9 items-center gap-1 rounded-xl px-2 text-xs font-semibold;
-    @apply sm:text-[13px];
+    @apply flex h-9 items-center gap-1 rounded-xl px-2 text-[13px] font-semibold;
 
     &__separator {
       @apply text-xs font-bold text-slate-600;
@@ -100,11 +99,12 @@
     }
 
     &--purple {
-      @apply text-primary-400;
+      @apply text-purple-600;
       @apply dark:text-purple-400;
 
-      &::after {
-        @apply bg-current;
+      &:hover {
+        @apply text-purple-700;
+        @apply dark:text-purple-300;
       }
     }
 
@@ -112,8 +112,9 @@
       @apply text-blue-600;
       @apply dark:text-blue-400;
 
-      &::after {
-        @apply bg-current;
+      &:hover {
+        @apply text-blue-700;
+        @apply dark:text-blue-300;
       }
     }
 
