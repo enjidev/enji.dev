@@ -1,27 +1,14 @@
 import clsx from 'clsx';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 
-type NavMenuColors = 'blue' | 'purple';
-type NavMenuLink = { title: string; href: string };
-
-interface NavLink extends NavMenuLink {
-  color: NavMenuColors;
+interface NavLink {
+  title: string;
+  href: string;
 }
 
-export const NavLink = ({ title, href, color = 'purple' }: NavLink) => {
-  const router = useRouter();
-  const isActive = router.pathname === href;
-
+export const NavLink = ({ title, href }: NavLink) => {
   return (
-    <Link
-      href={href}
-      className={clsx('nav-link', [
-        color === 'purple' && 'nav-link--purple',
-        color === 'blue' && 'nav-link--blue',
-        isActive && 'nav-link--active',
-      ])}
-    >
+    <Link href={href} className={clsx('nav-link nav-link--purple')}>
       {title}
     </Link>
   );
