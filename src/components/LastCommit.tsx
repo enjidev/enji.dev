@@ -14,7 +14,7 @@ const LastCommit = () => {
         rel="noreferrer"
         className={clsx('hover:underline')}
       >
-        <span className={clsx('hidden', 'sm:inline')}>this site has been </span>
+        <span className={clsx('hidden', 'sm:inline')}>this site was </span>
         <span>updated {dayjs(commit.date).fromNow()}</span>
       </a>
     </motion.div>
