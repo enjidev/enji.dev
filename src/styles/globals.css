@@ -102,7 +102,8 @@
       @apply text-purple-600;
       @apply dark:text-purple-400;
 
-      &:hover {
+      &:hover,
+      &[aria-expanded='true'] {
         @apply text-purple-700;
         @apply dark:text-purple-300;
       }
@@ -112,7 +113,8 @@
       @apply text-blue-600;
       @apply dark:text-blue-400;
 
-      &:hover {
+      &:hover,
+      &[aria-expanded='true'] {
         @apply text-blue-700;
         @apply dark:text-blue-300;
       }
