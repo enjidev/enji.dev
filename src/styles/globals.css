@@ -27,8 +27,15 @@
   }
 
   :focus-visible {
-    @apply relative rounded-xl bg-primary-50/20 outline-2 outline-offset-2 outline-primary-200;
-    @apply dark:bg-primary-50/[0.05] dark:outline-offset-0 dark:outline-primary-400 dark:[color-scheme:light];
+    @apply relative rounded-xl outline-2 outline-offset-2 outline-primary-200;
+    @apply dark:outline-offset-0 dark:outline-primary-400 dark:[color-scheme:light];
+  }
+
+  .focus-visible--blue {
+    :focus-visible {
+      @apply outline-blue-400;
+      @apply dark:outline-blue-400;
+    }
   }
 }
 

@@ -41,7 +41,7 @@ interface NavLinkDropdownProps {
 
 const NavLinkDropdown = ({ title, items }: NavLinkDropdownProps) => {
   return (
-    <div className="relative">
+    <div className="focus-visible--blue relative">
       <Menu>
         {({ open }) => (
           <>
