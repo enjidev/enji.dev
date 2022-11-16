@@ -72,7 +72,7 @@ const AvailableForHire = () => {
 
 const HeaderCta = ({
   isFree = true,
-  isFreeAnimationDuration = 6,
+  isFreeAnimationDuration = 3.5,
 }: HeaderCtaProps) => {
   const shouldReduceMotion = useReducedMotion();
 
@@ -112,12 +112,12 @@ const HeaderCta = ({
       {isFree ? (
         <motion.div
           variants={animation}
-          transition={{ delay: 0.5 }}
+          transition={{ delay: 1.4 }}
           className={clsx('relative z-10')}
         >
           <motion.div
             variants={isFreeVariants}
-            transition={{ delay: isFreeAnimationDuration, duration: 0.4 }}
+            transition={{ delay: isFreeAnimationDuration + 1.4, duration: 0.4 }}
           >
             <AvailableForHire />
           </motion.div>
@@ -125,7 +125,7 @@ const HeaderCta = ({
             className={clsx('absolute top-0 left-0')}
             initial={{ x: -48, opacity: 0, pointerEvents: 'none' }}
             animate={{ x: 0, opacity: 1, pointerEvents: 'auto' }}
-            transition={{ delay: isFreeAnimationDuration + 0.1, duration: 0.4 }}
+            transition={{ delay: isFreeAnimationDuration + 1.5, duration: 0.4 }}
           >
             <ButtonResume />
           </motion.div>
