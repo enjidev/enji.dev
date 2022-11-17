@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import {
   TypeScriptIcon,
   ReactIcon,
+  FramerMotionIcon,
   TailwindCssIcon,
   NextJsIcon,
   FigmaIcon,
@@ -33,12 +34,12 @@ const HeaderTechStack = () => {
       </motion.p>
       <motion.ul
         className={clsx(
-          'flex items-center gap-4 text-gray-500',
+          'flex items-center gap-3.5 text-gray-500',
           'dark:text-slate-500'
         )}
         initial="hide"
         animate="show"
-        transition={{ delayChildren: 0.6, staggerChildren: 0.03 }}
+        transition={{ delayChildren: 0.6, staggerChildren: 0.025 }}
       >
         <motion.li variants={animation}>
           <div className={clsx('transition duration-200 hover:text-[#3178C6]')}>
@@ -53,6 +54,11 @@ const HeaderTechStack = () => {
         <motion.li variants={animation}>
           <div className={clsx('transition duration-200 hover:text-[#06B6D4]')}>
             <TailwindCssIcon className={clsx('h-6 w-6')} />
+          </div>
+        </motion.li>
+        <motion.li variants={animation}>
+          <div className={clsx('transition duration-200 hover:text-[#0055FF]')}>
+            <FramerMotionIcon className={clsx('h-6 w-6')} />
           </div>
         </motion.li>
         <motion.li variants={animation}>
