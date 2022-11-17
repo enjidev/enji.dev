@@ -4,7 +4,6 @@ import NavIcon from '@/components/Navigation/NavIcon';
 import NavLogo from '@/components/Navigation/NavLogo';
 import NavLink from '@/components/Navigation/NavLink';
 import NavIconTheme from '@/components/Navigation/NavIconTheme';
-import NavLinkSeparator from '@/components/Navigation/NavLinkSeparator';
 import NavLinkDropdown from '@/components/Navigation/NavLinkDropdown';
 
 const Navbar = () => {
@@ -29,13 +28,7 @@ const Navbar = () => {
                 <NavLink title="Projects" href="/projects" color="purple" />
               </li>
               <li>
-                <NavLinkSeparator />
-              </li>
-              <li>
                 <NavLink title="Studio" href="/studio" color="purple" />
-              </li>
-              <li>
-                <NavLinkSeparator />
               </li>
               <li>
                 <NavLinkDropdown

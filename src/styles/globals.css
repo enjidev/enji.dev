@@ -105,11 +105,6 @@
     @apply flex h-9 items-center gap-1 rounded-xl px-2 text-[13px] font-bold;
     @apply dark:font-semibold;
 
-    &__separator {
-      @apply text-xs font-bold text-slate-600;
-      @apply dark:text-slate-400;
-    }
-
     &--purple {
       @apply text-purple-600;
       @apply dark:text-purple-400;
