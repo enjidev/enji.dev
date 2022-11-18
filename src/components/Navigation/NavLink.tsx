@@ -8,7 +8,7 @@ interface NavLink {
 
 export const NavLink = ({ title, href }: NavLink) => {
   return (
-    <Link href={href} className={clsx('nav-link nav-link--purple')}>
+    <Link href={href} className={clsx('nav-link nav-link--primary')}>
       {title}
     </Link>
   );

@@ -46,22 +46,22 @@ const AvailableForHire = () => {
   return (
     <div
       className={clsx(
-        'button button--ghost pointer-events-none gap-2.5 px-2.5 text-primary-400',
+        'button button--ghost pointer-events-none gap-2.5 px-2.5 text-primary-500',
         'md:button--big md:px-2.5',
-        'dark:text-primary-200'
+        'dark:text-primary-400'
       )}
     >
       <span className={clsx('relative flex h-2 w-2')}>
         <span
           className={clsx(
-            'absolute -top-1 -left-1 inline-flex h-4 w-4 animate-ping rounded-full bg-primary-400 opacity-75',
-            'dark:bg-primary-300'
+            'absolute -top-1 -left-1 inline-flex h-4 w-4 animate-ping rounded-full bg-primary-600 opacity-75',
+            'dark:bg-primary-500'
           )}
         ></span>
         <span
           className={clsx(
             'relative inline-flex h-2 w-2 rounded-full bg-primary-500',
-            'dark:bg-primary-200'
+            'dark:bg-primary-400'
           )}
         ></span>
       </span>

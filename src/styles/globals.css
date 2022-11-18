@@ -27,14 +27,12 @@
   }
 
   :focus-visible {
-    @apply relative rounded-xl outline-2 outline-offset-2 outline-primary-200;
-    @apply dark:outline-offset-0 dark:outline-primary-400 dark:[color-scheme:light];
+    @apply relative rounded-xl outline-2 outline-offset-2 outline-primary-400;
   }
 
-  .focus-visible--blue {
+  .focus-visible--secondary {
     :focus-visible {
-      @apply outline-blue-400;
-      @apply dark:outline-blue-400;
+      @apply outline-secondary-400;
     }
   }
 }
@@ -75,9 +73,9 @@
     @apply md:rounded-xl;
 
     &--solid {
-      @apply bg-primary-400 text-white highlight-primary-300;
-      @apply hover:bg-primary-500 hover:highlight-primary-400;
-      @apply dark:bg-primary-600 dark:highlight-primary-400 dark:hover:bg-primary-500;
+      @apply bg-primary-600 text-white;
+      @apply hover:bg-primary-700;
+      @apply dark:bg-primary-700 dark:hover:bg-primary-600;
     }
 
     &--ghost {
@@ -110,25 +108,25 @@
     @apply flex h-9 items-center gap-1 rounded-xl px-2 text-[13px] font-bold;
     @apply dark:font-semibold;
 
-    &--purple {
-      @apply text-purple-600;
-      @apply dark:text-purple-400;
+    &--primary {
+      @apply text-primary-600;
+      @apply dark:text-primary-400;
 
       &:hover,
       &[aria-expanded='true'] {
-        @apply text-purple-700;
-        @apply dark:text-purple-300;
+        @apply text-primary-700;
+        @apply dark:text-primary-300;
       }
     }
 
-    &--blue {
-      @apply text-blue-600;
-      @apply dark:text-blue-400;
+    &--secondary {
+      @apply text-secondary-600;
+      @apply dark:text-secondary-400;
 
       &:hover,
       &[aria-expanded='true'] {
-        @apply text-blue-700;
-        @apply dark:text-blue-300;
+        @apply text-secondary-700;
+        @apply dark:text-secondary-300;
       }
     }
 

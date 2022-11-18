@@ -68,7 +68,7 @@ const HeaderTitle = () => {
           transition={{ delay: 0.2 }}
         >
           I&apos;m{' '}
-          <strong className={clsx('text-primary-400', 'dark:text-primary-200')}>
+          <strong className={clsx('text-primary-600', 'dark:text-primary-500')}>
             Enji
           </strong>{' '}
           Kusnadi,

@@ -11,9 +11,9 @@ const HeroTitle = ({ title, caption, description }: HeroTitleProps) => {
     <div className={clsx('content-wrapper')}>
       <span
         className={clsx(
-          'mb-2 block font-black text-primary-400',
+          'mb-2 block font-black text-primary-600',
           'lg:mb-4',
-          'dark:text-purple-400'
+          'dark:text-primary-400'
         )}
       >
         {caption}

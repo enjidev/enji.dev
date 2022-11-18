@@ -25,10 +25,10 @@ const Navbar = () => {
             <NavLogo href="/" title="Home" />
             <ul className={clsx('flex items-center font-bold', 'md:gap-1')}>
               <li>
-                <NavLink title="Projects" href="/projects" color="purple" />
+                <NavLink title="Projects" href="/projects" />
               </li>
               <li>
-                <NavLink title="Studio" href="/studio" color="purple" />
+                <NavLink title="Studio" href="/studio" />
               </li>
               <li>
                 <NavLinkDropdown
