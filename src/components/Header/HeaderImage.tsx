@@ -33,7 +33,7 @@ const HeaderImage = () => {
             src="/me.png"
             width={457}
             height={526}
-            className={clsx('max-w-none')}
+            className={clsx('max-w-none', 'dark:brightness-[.82]')}
             quality={100}
             onLoadingComplete={() => {
               controls.start({
