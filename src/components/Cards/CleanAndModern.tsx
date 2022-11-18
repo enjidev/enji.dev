@@ -1,7 +1,11 @@
 import clsx from 'clsx';
 import { CalendarIcon } from '@/components/Icons';
 
-export type CleanAndModernState = 'spacing' | 'typography' | 'colors';
+export type CleanAndModernState =
+  | 'spacing'
+  | 'typography'
+  | 'colors'
+  | 'effects';
 
 interface CleanAndModernProps {
   state: Array<CleanAndModernState>;
@@ -11,8 +15,9 @@ const CleanAndModern = ({ state }: CleanAndModernProps) => {
   return (
     <div
       className={clsx(
-        'w-full rounded-xl border transition',
+        'w-full transition',
         'lg:w-96',
+        state.includes('effects') && ['rounded-xl border'],
         state.includes('spacing') && ['p-6'],
         state.includes('typography') ? ['text-sm'] : ['font-serif'],
         state.includes('colors')
@@ -32,7 +37,8 @@ const CleanAndModern = ({ state }: CleanAndModernProps) => {
         <div className={clsx('flex')}>
           <div
             className={clsx(
-              'relative flex h-8 w-8 items-center justify-center rounded-full border-2 transition',
+              'relative flex h-8 w-8 items-center justify-center transition',
+              state.includes('effects') && ['rounded-full border-2'],
               state.includes('spacing') && [''],
               state.includes('typography') && ['font-bold'],
               state.includes('colors')
@@ -51,7 +57,8 @@ const CleanAndModern = ({ state }: CleanAndModernProps) => {
         </div>
         <div
           className={clsx(
-            'rounded-full transition',
+            'transition',
+            state.includes('effects') && ['rounded-full'],
             state.includes('spacing') && ['px-2 py-0.5'],
             state.includes('typography') && ['text-xs font-bold'],
             state.includes('colors')
@@ -99,7 +106,8 @@ const CleanAndModern = ({ state }: CleanAndModernProps) => {
       >
         <div
           className={clsx(
-            'rounded-full transition',
+            'transition',
+            state.includes('effects') && ['rounded-full'],
             state.includes('spacing') && ['px-2 py-0.5'],
             state.includes('typography') && [''],
             state.includes('colors')
@@ -114,7 +122,8 @@ const CleanAndModern = ({ state }: CleanAndModernProps) => {
         </div>
         <div
           className={clsx(
-            'rounded-full transition',
+            'transition',
+            state.includes('effects') && ['rounded-full'],
             state.includes('spacing') && ['px-2 py-0.5'],
             state.includes('typography') && [''],
             state.includes('colors')

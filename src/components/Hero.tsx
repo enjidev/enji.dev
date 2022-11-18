@@ -31,6 +31,12 @@ const content: Array<Content> = [
     title: 'Colors',
     description: 'Choosing a color scheme with sufficient contrast.',
   },
+  {
+    state: 'effects',
+    shows: ['spacing', 'typography', 'colors', 'effects'],
+    title: 'Effects',
+    description: 'Add effects like borders, shadows, rounded corners, etc.',
+  },
 ];
 
 interface HeroButtonProps {
@@ -194,7 +200,7 @@ const Hero = () => {
                     state={
                       currentState
                         ? currentState.shows
-                        : ['spacing', 'typography', 'colors']
+                        : ['spacing', 'typography', 'colors', 'effects']
                     }
                   />
                 </div>
@@ -203,7 +209,7 @@ const Hero = () => {
                     state={
                       currentState
                         ? currentState.shows
-                        : ['spacing', 'typography', 'colors']
+                        : ['spacing', 'typography', 'colors', 'effects']
                     }
                   />
                 </div>
