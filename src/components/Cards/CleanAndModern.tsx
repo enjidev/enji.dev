@@ -14,7 +14,7 @@ const CleanAndModern = ({ state }: CleanAndModernProps) => {
         'w-full rounded-xl border transition',
         'lg:w-96',
         state.includes('spacing') && ['p-6'],
-        state.includes('typography') && ['text-sm'],
+        state.includes('typography') ? ['text-sm'] : ['font-serif'],
         state.includes('colors')
           ? [
               'border-divider-light bg-white',
