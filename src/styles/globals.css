@@ -54,9 +54,8 @@
     @apply dark:bg-[#0c1222];
 
     &::before {
-      @apply absolute inset-0 z-[-1] content-[''] bg-grid-slate-200/90;
-      @apply lg:bg-grid-slate-200/90;
-      @apply dark:bg-grid-slate-50/[.03];
+      @apply absolute inset-0 z-[-1] content-[''] bg-grid-slate-200/80;
+      @apply dark:bg-grid-slate-50/[.025];
 
       mask-image: linear-gradient(transparent, black, transparent);
     }
