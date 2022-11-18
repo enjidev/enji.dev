@@ -14,26 +14,26 @@ type Content = {
 
 const content: Array<Content> = [
   {
-    state: 'spacing',
-    shows: ['spacing'],
-    title: 'Spacing',
-    description: 'Positioning and adding spacing between elements.',
-  },
-  {
     state: 'typography',
-    shows: ['spacing', 'typography'],
+    shows: ['typography'],
     title: 'Typography',
     description: 'Selecting the font type, font size, and font weight.',
   },
   {
+    state: 'spacing',
+    shows: ['typography', 'spacing'],
+    title: 'Spacing',
+    description: 'Positioning and adding spacing between elements.',
+  },
+  {
     state: 'colors',
-    shows: ['spacing', 'typography', 'colors'],
+    shows: ['typography', 'spacing', 'colors'],
     title: 'Colors',
     description: 'Choosing a color scheme with sufficient contrast.',
   },
   {
     state: 'effects',
-    shows: ['spacing', 'typography', 'colors', 'effects'],
+    shows: ['typography', 'spacing', 'colors', 'effects'],
     title: 'Effects',
     description: 'Add effects like borders, shadows, rounded corners, etc.',
   },
@@ -200,7 +200,7 @@ const Hero = () => {
                     state={
                       currentState
                         ? currentState.shows
-                        : ['spacing', 'typography', 'colors', 'effects']
+                        : ['typography', 'spacing', 'colors', 'effects']
                     }
                   />
                 </div>
@@ -209,7 +209,7 @@ const Hero = () => {
                     state={
                       currentState
                         ? currentState.shows
-                        : ['spacing', 'typography', 'colors', 'effects']
+                        : ['typography', 'spacing', 'colors', 'effects']
                     }
                   />
                 </div>
