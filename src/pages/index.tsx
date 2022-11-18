@@ -3,6 +3,8 @@ import Head from 'next/head';
 import Quote from '@/components/Quote';
 import Header from '@/components/Header';
 import FeaturedCard from '@/components/FeaturedCard';
+import HeroTitle from '@/components/HeroTitle';
+import Hero from '@/components/Hero';
 import { SparklesIcon, HeartIcon, CodeIcon } from '@/components/Icons';
 
 import type { NextPage } from 'next';
@@ -20,7 +22,7 @@ const Index: NextPage = () => {
         <div className={clsx('content-wrapper')}>
           <div
             className={clsx(
-              '-mt-8 mb-8 flex flex-col gap-4',
+              '-mt-8 mb-16 flex flex-col gap-4',
               'lg:-mt-16 lg:flex-row lg:gap-8'
             )}
           >
@@ -69,12 +71,15 @@ const Index: NextPage = () => {
           </div>
         </div>
       </section>
-      <section className={clsx('mb-6')}>
+      <section className={clsx('mb-20', 'lg:mb-28')}>
         <div className={clsx('content-wrapper')}>
           <div className={clsx('flex items-center justify-center py-8')}>
             <Quote />
           </div>
         </div>
+      </section>
+      <section className={clsx('mb-96')}>
+        <Hero />
       </section>
     </>
   );
