@@ -112,7 +112,7 @@ const HeroButtonSmall = ({
   );
 };
 const Hero = () => {
-  const [currentState, setCurrentState] = useState<Content>(content[0]);
+  const [currentState, setCurrentState] = useState<Content | null>(null);
 
   return (
     <>
@@ -132,21 +132,23 @@ const Hero = () => {
                 key={item.state}
                 title={item.title}
                 step={i + 1}
-                active={currentState.state === item.state}
+                active={currentState?.state === item.state}
                 onClick={() => setCurrentState(item)}
               />
             ))}
           </div>
-          <div className={clsx('mb-8')}>
-            <p
-              className={clsx(
-                'py-2 text-sm text-slate-600',
-                'dark:text-slate-400'
-              )}
-            >
-              {currentState.description}
-            </p>
-          </div>
+          {currentState && (
+            <div className={clsx('mb-8')}>
+              <p
+                className={clsx(
+                  'py-2 text-sm text-slate-600',
+                  'dark:text-slate-400'
+                )}
+              >
+                {currentState.description}
+              </p>
+            </div>
+          )}
         </div>
       </div>
       <div
@@ -166,7 +168,7 @@ const Hero = () => {
                   title={item.title}
                   desc={item.description}
                   step={i + 1}
-                  active={currentState.state === item.state}
+                  active={currentState?.state === item.state}
                   onClick={() => setCurrentState(item)}
                 />
               ))}
@@ -176,12 +178,29 @@ const Hero = () => {
                 'relative flex flex-1 items-center justify-center'
               )}
             >
-              <div className={clsx('-mt-8 flex gap-8', 'lg:top-8 lg:mt-0')}>
+              <div
+                className={clsx(
+                  '-mt-8 flex gap-4',
+                  'md:gap-6 lg:top-8 lg:mt-0'
+                )}
+              >
                 <div className={clsx('')}>
-                  <CleanAndModern state={currentState.shows} />
+                  <CleanAndModern
+                    state={
+                      currentState
+                        ? currentState.shows
+                        : ['spacing', 'typography', 'colors']
+                    }
+                  />
                 </div>
                 <div className={clsx('hidden', 'sm:block lg:hidden')}>
-                  <CleanAndModern state={currentState.shows} />
+                  <CleanAndModern
+                    state={
+                      currentState
+                        ? currentState.shows
+                        : ['spacing', 'typography', 'colors']
+                    }
+                  />
                 </div>
               </div>
             </div>
