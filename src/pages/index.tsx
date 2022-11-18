@@ -18,11 +18,11 @@ const Index: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <section>
+      <section className={clsx('mb-12', 'md:mb-20')}>
         <div className={clsx('content-wrapper')}>
           <div
             className={clsx(
-              '-mt-8 mb-16 flex flex-col gap-4',
+              '-mt-8 flex flex-col gap-4',
               'lg:-mt-16 lg:flex-row lg:gap-8'
             )}
           >
@@ -71,7 +71,7 @@ const Index: NextPage = () => {
           </div>
         </div>
       </section>
-      <section className={clsx('mb-20', 'lg:mb-28')}>
+      <section className={clsx('mb-12', 'md:mb-24')}>
         <div className={clsx('content-wrapper')}>
           <div className={clsx('flex items-center justify-center py-8')}>
             <Quote />
