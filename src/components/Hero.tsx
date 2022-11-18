@@ -51,17 +51,22 @@ const HeroButton = ({
   return (
     <button
       className={clsx(
-        'flex flex-1 items-center rounded-2xl border-2 border-divider-light bg-white p-4 text-left',
-        'dark:border-divider-dark dark:bg-slate-900',
-        [active && ['border-2 border-purple-400', 'dark:border-purple-900']]
+        'flex flex-1 items-center rounded-2xl border-2 bg-white p-4 text-left',
+        'dark:bg-slate-900',
+        active
+          ? ['border-purple-400', 'dark:border-purple-900']
+          : ['border-divider-light ', 'dark:border-divider-dark']
       )}
       onClick={onClick}
     >
       {step && (
         <div
           className={clsx(
-            'w-24 pr-4 text-center text-7xl font-black text-slate-400',
-            'dark:text-slate-600'
+            'w-24 pr-4 text-center text-7xl font-black',
+            '',
+            active
+              ? ['text-primary-400', 'dark:text-purple-400']
+              : ['text-slate-400', 'dark:text-slate-600']
           )}
         >
           {step}
