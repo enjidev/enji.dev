@@ -15,7 +15,7 @@ const CleanAndModern = ({ state }: CleanAndModernProps) => {
   return (
     <div
       className={clsx(
-        'w-full transition',
+        'w-full',
         'lg:w-96',
         state.includes('effects') && ['rounded-xl border'],
         state.includes('spacing') && ['p-6'],
@@ -37,7 +37,7 @@ const CleanAndModern = ({ state }: CleanAndModernProps) => {
         <div className={clsx('flex')}>
           <div
             className={clsx(
-              'relative flex h-8 w-8 items-center justify-center transition',
+              'relative flex h-8 w-8 items-center justify-center',
               state.includes('effects') && ['rounded-full border-2'],
               state.includes('spacing') && [''],
               state.includes('typography') && ['font-bold'],
@@ -57,7 +57,6 @@ const CleanAndModern = ({ state }: CleanAndModernProps) => {
         </div>
         <div
           className={clsx(
-            'transition',
             state.includes('effects') && ['rounded-full'],
             state.includes('spacing') && ['px-2 py-0.5'],
             state.includes('typography') && ['text-xs font-bold'],
@@ -74,7 +73,6 @@ const CleanAndModern = ({ state }: CleanAndModernProps) => {
       </div>
       <div
         className={clsx(
-          'transition',
           state.includes('spacing') && ['mb-1'],
           state.includes('typography') && ['text-lg font-bold'],
           state.includes('colors')
@@ -86,7 +84,6 @@ const CleanAndModern = ({ state }: CleanAndModernProps) => {
       </div>
       <div
         className={clsx(
-          'transition',
           state.includes('spacing') && ['mb-4'],
           state.includes('typography') && [''],
           state.includes('colors')
@@ -98,7 +95,7 @@ const CleanAndModern = ({ state }: CleanAndModernProps) => {
       </div>
       <div
         className={clsx(
-          'flex transition',
+          'flex',
           state.includes('spacing') && ['mb-6 gap-2'],
           state.includes('typography') && ['text-xs font-bold'],
           state.includes('colors') && ['']
@@ -106,7 +103,6 @@ const CleanAndModern = ({ state }: CleanAndModernProps) => {
       >
         <div
           className={clsx(
-            'transition',
             state.includes('effects') && ['rounded-full'],
             state.includes('spacing') && ['px-2 py-0.5'],
             state.includes('typography') && [''],
@@ -122,7 +118,6 @@ const CleanAndModern = ({ state }: CleanAndModernProps) => {
         </div>
         <div
           className={clsx(
-            'transition',
             state.includes('effects') && ['rounded-full'],
             state.includes('spacing') && ['px-2 py-0.5'],
             state.includes('typography') && [''],
@@ -139,7 +134,7 @@ const CleanAndModern = ({ state }: CleanAndModernProps) => {
       </div>
       <div
         className={clsx(
-          'flex items-center transition',
+          'flex items-center',
           state.includes('spacing') && ['gap-1 '],
           state.includes('typography') && ['text-xs font-medium'],
           state.includes('colors') && ['']
@@ -147,7 +142,7 @@ const CleanAndModern = ({ state }: CleanAndModernProps) => {
       >
         <CalendarIcon
           className={clsx(
-            'h-4 w-4 transition',
+            'h-4 w-4',
             state.includes('spacing') && ['-mt-1'],
             state.includes('typography') && [''],
             state.includes('colors')
@@ -157,7 +152,6 @@ const CleanAndModern = ({ state }: CleanAndModernProps) => {
         />
         <div
           className={clsx(
-            'transition',
             state.includes('spacing') && [''],
             state.includes('typography') && [''],
             state.includes('colors')
