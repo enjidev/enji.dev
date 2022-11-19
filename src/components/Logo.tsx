@@ -12,14 +12,14 @@ const Logo = ({ active = false }: LogoProps) => {
           'flex h-6 w-6 items-center justify-center rounded-lg border-2',
           [
             active
-              ? 'border-primary-600 bg-primary-600 dark:border-primary-500 dark:bg-primary-500'
-              : 'border-primary-600 dark:border-primary-500',
+              ? 'border-primary-600 bg-primary-600 dark:border-primary-400 dark:bg-primary-400'
+              : 'border-primary-600 dark:border-primary-400',
           ]
         )}
       >
         <div
           className={clsx('h-3 w-0.5 rotate-12 rounded-full', [
-            active ? 'bg-white' : 'bg-primary-600 dark:bg-primary-500',
+            active ? 'bg-white' : 'bg-primary-600 dark:bg-primary-400',
           ])}
         />
       </div>
@@ -27,7 +27,7 @@ const Logo = ({ active = false }: LogoProps) => {
         <span className={clsx('text-gray-900', 'dark:text-slate-200')}>
           enji
         </span>
-        <span className={clsx('text-primary-600', 'dark:text-primary-500')}>
+        <span className={clsx('text-primary-600', 'dark:text-primary-400')}>
           dev
         </span>
       </div>

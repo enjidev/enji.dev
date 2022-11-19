@@ -60,7 +60,7 @@ const HeroButton = ({
         'flex flex-1 items-center rounded-2xl border-2 bg-white p-4 text-left',
         'dark:bg-slate-900',
         active
-          ? ['border-primary-400', 'dark:border-primary-400']
+          ? ['border-primary-400', 'dark:border-primary-900']
           : ['border-divider-light ', 'dark:border-divider-dark']
       )}
       onClick={onClick}
@@ -113,12 +113,14 @@ const HeroButtonSmall = ({
       className={clsx('rounded-xl p-2 text-sm', [
         active
           ? ['text-primary-600', 'dark:text-primary-400']
-          : ['text-slate-600', 'dark:text-slate-400'],
+          : ['text-slate-400', 'dark:text-slate-400'],
       ])}
       onClick={onClick}
     >
       <div className={clsx('text-4xl font-black')}>{step}</div>
-      <span className={clsx('font-normal')}>{title}</span>
+      <span className={clsx(['text-slate-500', 'dark:text-slate-400'])}>
+        {title}
+      </span>
     </button>
   );
 };

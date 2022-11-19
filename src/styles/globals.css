@@ -75,7 +75,7 @@
     &--solid {
       @apply bg-primary-600 text-white;
       @apply hover:bg-primary-700;
-      @apply dark:bg-primary-700 dark:hover:bg-primary-600;
+      @apply dark:bg-primary-600 dark:hover:bg-primary-500;
     }
 
     &--ghost {

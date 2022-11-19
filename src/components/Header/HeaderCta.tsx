@@ -55,7 +55,7 @@ const AvailableForHire = () => {
         <span
           className={clsx(
             'absolute -top-1 -left-1 inline-flex h-4 w-4 animate-ping rounded-full bg-primary-600 opacity-75',
-            'dark:bg-primary-500'
+            'dark:bg-primary-300'
           )}
         ></span>
         <span
