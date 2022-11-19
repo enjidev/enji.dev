@@ -30,7 +30,7 @@ const Index: NextPage = () => {
               icon={
                 <div
                   className={clsx(
-                    'rounded-full bg-orange-400 p-4 highlight-orange-500',
+                    'rounded-full bg-orange-400 p-4',
                     'dark:bg-orange-600'
                   )}
                 >
@@ -44,7 +44,7 @@ const Index: NextPage = () => {
               icon={
                 <div
                   className={clsx(
-                    'rounded-full bg-pink-400 p-4 highlight-pink-500',
+                    'rounded-full bg-pink-400 p-4',
                     'dark:bg-pink-600'
                   )}
                 >
@@ -58,7 +58,7 @@ const Index: NextPage = () => {
               icon={
                 <div
                   className={clsx(
-                    'rounded-full bg-sky-400 p-4 highlight-sky-500',
+                    'rounded-full bg-sky-400 p-4',
                     'dark:bg-sky-600'
                   )}
                 >
