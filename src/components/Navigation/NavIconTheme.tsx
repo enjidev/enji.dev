@@ -14,7 +14,7 @@ const NavIconTheme = () => {
   return (
     <button
       className={clsx(
-        'ml-1 flex h-9 w-9 items-center justify-center rounded-xl bg-slate-100 text-gray-800',
+        'ml-1 flex h-9 w-9 items-center justify-center rounded-xl bg-slate-100 text-slate-800',
         'hover:bg-slate-200 sm:ml-0',
         'dark:bg-slate-800/50 dark:text-slate-100 dark:hover:bg-slate-700/50'
       )}

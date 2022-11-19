@@ -24,7 +24,7 @@ const Logo = ({ active = false }: LogoProps) => {
         />
       </div>
       <div className={clsx('-mt-1 hidden text-xl', 'sm:block')}>
-        <span className={clsx('text-gray-900', 'dark:text-slate-200')}>
+        <span className={clsx('text-slate-900', 'dark:text-slate-200')}>
           enji
         </span>
         <span className={clsx('text-primary-600', 'dark:text-primary-400')}>

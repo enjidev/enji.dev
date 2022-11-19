@@ -22,10 +22,7 @@ const HeaderTechStack = () => {
   return (
     <div>
       <motion.p
-        className={clsx(
-          'mb-2.5 text-sm text-gray-600', //
-          'dark:text-slate-400'
-        )}
+        className={clsx('mb-2.5 text-sm text-slate-600', 'dark:text-slate-400')}
         initial={animation.hide}
         animate={animation.show}
         transition={{ delay: 0.6 }}
@@ -34,7 +31,7 @@ const HeaderTechStack = () => {
       </motion.p>
       <motion.ul
         className={clsx(
-          'flex items-center gap-3.5 text-gray-500',
+          'flex items-center gap-3.5 text-slate-500',
           'dark:text-slate-500'
         )}
         initial="hide"

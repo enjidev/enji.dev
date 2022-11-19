@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer
       className={clsx(
-        'border-t border-divider-light bg-white text-sm text-gray-900',
+        'border-t border-divider-light bg-white text-sm text-slate-900',
         'dark:border-divider-dark dark:bg-slate-900 dark:text-slate-200'
       )}
     >
@@ -51,7 +51,7 @@ const Footer = () => {
           <div className={clsx('font-semibold')}>
             &copy; {dayjs().format('YYYY')}, Enji Kusnadi
           </div>
-          <div className={clsx('text-gray-500', 'dark:text-slate-400')}>
+          <div className={clsx('text-slate-500', 'dark:text-slate-400')}>
             <LastCommit />
           </div>
         </div>

@@ -36,7 +36,7 @@ const FeaturedCard = ({ icon, title, desc }: FeaturedCardProps) => {
         <div className={clsx('-m-2')}>{icon}</div>
         <div
           className={clsx(
-            'truncate py-2 pr-4 font-bold text-gray-700',
+            'truncate py-2 pr-4 font-bold text-slate-700',
             'dark:text-slate-300'
           )}
         >
@@ -45,7 +45,7 @@ const FeaturedCard = ({ icon, title, desc }: FeaturedCardProps) => {
       </div>
       <div
         className={clsx(
-          'pb-6 pl-16 pt-4 pr-6 text-sm text-gray-500',
+          'pb-6 pl-16 pt-4 pr-6 text-sm text-slate-500',
           'dark:text-slate-400'
         )}
       >

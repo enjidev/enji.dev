@@ -22,7 +22,7 @@
   }
 
   body {
-    @apply bg-white text-gray-900;
+    @apply bg-white text-slate-900;
     @apply dark:bg-slate-900 dark:text-slate-200 dark:[color-scheme:dark];
   }
 
