@@ -30,8 +30,8 @@ const Index: NextPage = () => {
               icon={
                 <div
                   className={clsx(
-                    'rounded-full bg-orange-400 p-4',
-                    'dark:bg-orange-600'
+                    'rounded-full bg-green-300 p-4',
+                    'dark:bg-green-900'
                   )}
                 >
                   <SparklesIcon className={clsx('h-5 w-5 text-white')} />
@@ -44,8 +44,8 @@ const Index: NextPage = () => {
               icon={
                 <div
                   className={clsx(
-                    'rounded-full bg-pink-400 p-4',
-                    'dark:bg-pink-600'
+                    'rounded-full bg-pink-300 p-4',
+                    'dark:bg-pink-900'
                   )}
                 >
                   <HeartIcon className={clsx('h-5 w-5 text-white')} />
@@ -58,8 +58,8 @@ const Index: NextPage = () => {
               icon={
                 <div
                   className={clsx(
-                    'rounded-full bg-sky-400 p-4',
-                    'dark:bg-sky-600'
+                    'rounded-full bg-sky-300 p-4',
+                    'dark:bg-sky-900'
                   )}
                 >
                   <CodeIcon className={clsx('h-5 w-5 text-white')} />
