@@ -60,7 +60,7 @@ const HeroButton = ({
         'flex flex-1 items-center rounded-2xl border-2 bg-white p-4 text-left',
         'dark:bg-slate-900',
         active
-          ? ['border-primary-400', 'dark:border-primary-900']
+          ? ['border-primary-400', 'dark:border-primary-400']
           : ['border-divider-light ', 'dark:border-divider-dark']
       )}
       onClick={onClick}
