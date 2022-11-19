@@ -131,8 +131,8 @@ const Hero = () => {
     <>
       <div className={clsx('mb-8')}>
         <HeroTitle
-          title="Eye Catching & Minimalist Design."
-          caption="Clean & Modern Style"
+          title="Eye Catching, Modern & Minimalist Design."
+          caption="Clean & Intuitive"
           description="Keep the User Interface clean with a modern touch without
             compromising the User Experience."
         />
