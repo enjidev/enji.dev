@@ -38,17 +38,14 @@ const CleanAndModern = ({ state }: CleanAndModernProps) => {
           <div
             className={clsx(
               'relative flex h-8 w-8 items-center justify-center',
-              state.includes('effects') && ['rounded-full border-2'],
+              state.includes('effects') && ['rounded-full'],
               state.includes('spacing') && [''],
               state.includes('typography') && ['font-bold'],
               state.includes('colors')
-                ? [
-                    'border-white bg-sky-400 text-white',
-                    'dark:border-slate-900',
-                  ]
+                ? ['border-white bg-sky-400 text-white']
                 : [
                     'border-white bg-[#050914] text-white',
-                    'dark:border-[#050914] dark:bg-white dark:text-black',
+                    'dark:bg-white dark:text-black',
                   ]
             )}
           >
