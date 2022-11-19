@@ -1,17 +1,13 @@
 import clsx from 'clsx';
 import { CalendarIcon } from '@/components/Icons';
 
-export type CleanAndModernState =
-  | 'spacing'
-  | 'typography'
-  | 'colors'
-  | 'effects';
+export type TodoItemState = 'spacing' | 'typography' | 'colors' | 'effects';
 
-interface CleanAndModernProps {
-  state: Array<CleanAndModernState>;
+interface TodoItemProps {
+  state: Array<TodoItemState>;
 }
 
-const CleanAndModern = ({ state }: CleanAndModernProps) => {
+const TodoItem = ({ state }: TodoItemProps) => {
   return (
     <div
       className={clsx(
@@ -163,4 +159,4 @@ const CleanAndModern = ({ state }: CleanAndModernProps) => {
   );
 };
 
-export default CleanAndModern;
+export default TodoItem;

@@ -1,13 +1,13 @@
 import clsx from 'clsx';
 import { useState } from 'react';
-import CleanAndModern from '@/components/Cards/CleanAndModern';
+import TodoItem from '@/components/Cards/TodoItem';
 import HeroTitle from '@/components/HeroTitle';
 
-import type { CleanAndModernState } from '@/components/Cards/CleanAndModern';
+import type { TodoItemState } from '@/components/Cards/TodoItem';
 
 type Content = {
-  state: CleanAndModernState;
-  shows: Array<CleanAndModernState>;
+  state: TodoItemState;
+  shows: Array<TodoItemState>;
   title: string;
   description: string;
 };
@@ -198,7 +198,7 @@ const Hero = () => {
                 )}
               >
                 <div className={clsx('')}>
-                  <CleanAndModern
+                  <TodoItem
                     state={
                       currentState
                         ? currentState.shows
@@ -207,7 +207,7 @@ const Hero = () => {
                   />
                 </div>
                 <div className={clsx('hidden', 'sm:block lg:hidden')}>
-                  <CleanAndModern
+                  <TodoItem
                     state={
                       currentState
                         ? currentState.shows
