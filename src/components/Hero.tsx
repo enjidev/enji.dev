@@ -113,17 +113,25 @@ const HeroButtonSmall = ({
       className={clsx('rounded-xl p-2 text-sm', [
         active
           ? ['text-primary-600', 'dark:text-primary-400']
-          : ['text-slate-400', 'dark:text-slate-400'],
+          : ['text-slate-400', 'dark:text-slate-600'],
       ])}
       onClick={onClick}
     >
       <div className={clsx('text-4xl font-black')}>{step}</div>
-      <span className={clsx(['text-slate-500', 'dark:text-slate-400'])}>
+      <span
+        className={clsx(
+          'font-medium',
+          active
+            ? ['text-primary-600', 'dark:text-primary-400']
+            : ['text-slate-500', 'dark:text-slate-400']
+        )}
+      >
         {title}
       </span>
     </button>
   );
 };
+
 const Hero = () => {
   const [currentState, setCurrentState] = useState<Content | null>(null);
 
@@ -139,7 +147,7 @@ const Hero = () => {
       </div>
       <div className={clsx('', 'lg:hidden')}>
         <div className={clsx('content-wrapper mb-4')}>
-          <div className={clsx('-mx-2 mb-2 flex gap-4')}>
+          <div className={clsx('-mx-2 mb-2 flex gap-2')}>
             {content.map((item, i) => (
               <HeroButtonSmall
                 key={item.state}
