@@ -24,7 +24,7 @@ const Footer = () => {
             </li>
             <li>
               <a
-                href="https://www.figma.com/@enjidev"
+                href="https://www.figma.com/community/file/1176392613303840973"
                 target="_blank"
                 rel="noreferrer"
               >
