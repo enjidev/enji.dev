@@ -11,14 +11,13 @@ const TodoItem = ({ state }: TodoItemProps) => {
   return (
     <div
       className={clsx(
-        'border',
-        'w-full',
+        'w-full border p-6',
         'lg:w-96',
         state.includes('effects') && [
           'rounded-xl border-divider-light',
           'dark:border-divider-dark',
         ],
-        state.includes('spacing') && ['p-6'],
+        state.includes('spacing') && [''],
         state.includes('typography') ? ['text-sm'] : ['font-serif'],
         state.includes('colors')
           ? ['bg-white', 'dark:bg-slate-900']
