@@ -78,7 +78,7 @@ const Index: NextPage = () => {
           </div>
         </div>
       </section>
-      <section className={clsx('mb-96')}>
+      <section className={clsx('mb-24', 'lg:mb-36')}>
         <Hero />
       </section>
     </>
