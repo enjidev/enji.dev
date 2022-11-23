@@ -8,7 +8,7 @@ import {
   NextJsIcon,
   FigmaIcon,
   VSCodeIcon,
-} from '@/components/Icons';
+} from '@/components/shared/Icons';
 
 const animation = {
   hide: { x: -8, opacity: 0 },

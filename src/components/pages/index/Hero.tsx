@@ -1,9 +1,9 @@
 import clsx from 'clsx';
 import { useState } from 'react';
-import TodoItem from '@/components/Cards/TodoItem';
-import HeroTitle from '@/components/HeroTitle';
+import TodoItem from '@/components/pages/index/Cards/TodoItem';
+import HeroTitle from '@/components/pages/index/HeroTitle';
 
-import type { TodoItemState } from '@/components/Cards/TodoItem';
+import type { TodoItemState } from '@/components/pages/index/Cards/TodoItem';
 
 type Content = {
   state: TodoItemState;

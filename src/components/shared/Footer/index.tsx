@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import Link from 'next/link';
-import LastCommit from '@/components/LastCommit';
+import LastCommit from '@/components/shared/Footer/LastCommit';
 import dayjs from '@/utils/dayjs';
 
 const Footer = () => {

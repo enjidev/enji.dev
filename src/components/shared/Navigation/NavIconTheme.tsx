@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import { useState, useEffect } from 'react';
 import { useTheme } from 'next-themes';
-import { DarkIcon, LightIcon } from '@/components/Icons';
+import { DarkIcon, LightIcon } from '@/components/shared/Icons';
 
 const NavIconTheme = () => {
   const [mounted, setMounted] = useState(false);

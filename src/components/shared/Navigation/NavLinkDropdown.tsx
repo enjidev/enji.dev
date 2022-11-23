@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { forwardRef } from 'react';
 import { Menu } from '@headlessui/react';
 import Link from 'next/link';
-import { ChevronRightIcon } from '@/components/Icons';
+import { ChevronRightIcon } from '@/components/shared/Icons';
 
 import type { HTMLAttributes, Ref } from 'react';
 import type { UrlObject } from 'url';

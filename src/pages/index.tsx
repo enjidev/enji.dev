@@ -1,11 +1,10 @@
 import clsx from 'clsx';
 import Head from 'next/head';
-import Quote from '@/components/Quote';
-import Header from '@/components/Header';
-import FeaturedCard from '@/components/FeaturedCard';
-import HeroTitle from '@/components/HeroTitle';
-import Hero from '@/components/Hero';
-import { SparklesIcon, HeartIcon, CodeIcon } from '@/components/Icons';
+import Quote from '@/components/pages/index/Quote';
+import Header from '@/components/pages/index/Header';
+import FeaturedCard from '@/components/pages/index/FeaturedCard';
+import Hero from '@/components/pages/index/Hero';
+import { SparklesIcon, HeartIcon, CodeIcon } from '@/components/shared/Icons';
 
 import type { NextPage } from 'next';
 

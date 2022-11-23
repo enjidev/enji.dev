@@ -1,8 +1,8 @@
 import clsx from 'clsx';
-import HeaderTitle from '@/components/Header/HeaderTitle';
-import HeaderCta from '@/components/Header/HeaderCta';
-import HeaderImage from '@/components/Header/HeaderImage';
-import HeaderTechStack from '@/components/Header/HeaderTechStack';
+import HeaderTitle from '@/components/pages/index/Header/HeaderTitle';
+import HeaderCta from '@/components/pages/index/Header/HeaderCta';
+import HeaderImage from '@/components/pages/index/Header/HeaderImage';
+import HeaderTechStack from '@/components/pages/index/Header/HeaderTechStack';
 
 const Header = () => {
   return (

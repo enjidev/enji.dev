@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { QuoteIcon } from '@/components/Icons';
+import { QuoteIcon } from '@/components/shared/Icons';
 
 const Quote = () => {
   return (

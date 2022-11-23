@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import PageHeader from '@/components/PageHeader';
+import PageHeader from '@/components/shared/PageHeader';
 
 const Skills = () => {
   return (

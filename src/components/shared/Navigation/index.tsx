@@ -1,10 +1,10 @@
 import clsx from 'clsx';
-import { GitHubIcon, TwitterIcon } from '@/components/Icons';
-import NavIcon from '@/components/Navigation/NavIcon';
-import NavLogo from '@/components/Navigation/NavLogo';
-import NavLink from '@/components/Navigation/NavLink';
-import NavIconTheme from '@/components/Navigation/NavIconTheme';
-import NavLinkDropdown from '@/components/Navigation/NavLinkDropdown';
+import { GitHubIcon, TwitterIcon } from '@/components/shared/Icons';
+import NavIcon from '@/components/shared/Navigation/NavIcon';
+import NavLogo from '@/components/shared/Navigation/NavLogo';
+import NavLink from '@/components/shared/Navigation/NavLink';
+import NavIconTheme from '@/components/shared/Navigation/NavIconTheme';
+import NavLinkDropdown from '@/components/shared/Navigation/NavLinkDropdown';
 
 const Navbar = () => {
   return (

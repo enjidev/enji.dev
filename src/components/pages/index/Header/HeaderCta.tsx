@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import { motion, useReducedMotion } from 'framer-motion';
 import Link from 'next/link';
-import { DocumentIcon } from '@/components/Icons';
+import { DocumentIcon } from '@/components/shared/Icons';
 
 const animation = {
   hide: {
