@@ -15,17 +15,21 @@ export default function useLastCommit() {
   const [commit, setCommit] = useState<LastCommit>();
 
   useEffect(() => {
+    const abortController = new AbortController();
+
     octokit.rest.repos
       .listCommits({
         owner: 'enjidev',
         repo: 'enji.dev',
         per_page: 1,
+        request: {
+          signal: abortController.signal,
+        },
       })
       .then(
         (res) => {
           const { commit, author, html_url } = res.data[0];
 
-          setIsLoading(false);
           setCommit({
             commiter: author?.login ?? '',
             message: commit.message,
@@ -35,10 +39,18 @@ export default function useLastCommit() {
           });
         },
         (err) => {
-          setIsLoading(false);
-          setIsError(err);
+          if (!abortController.signal.aborted) {
+            setIsError(err);
+          }
         }
-      );
+      )
+      .finally(() => {
+        setIsLoading(false);
+      });
+
+    return () => {
+      abortController.abort();
+    };
   }, []);
 
   return {
