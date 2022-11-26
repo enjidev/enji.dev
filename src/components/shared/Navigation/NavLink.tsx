@@ -4,12 +4,25 @@ import Link from 'next/link';
 interface NavLink {
   title: string;
   href: string;
+  icon?: React.ReactNode;
+  color?: 'primary' | 'secondary';
 }
 
-export const NavLink = ({ title, href }: NavLink) => {
+export const NavLink = ({
+  title,
+  href,
+  icon = null,
+  color = 'primary',
+}: NavLink) => {
   return (
-    <Link href={href} className={clsx('nav-link nav-link--primary')}>
+    <Link
+      href={href}
+      className={clsx('nav-link', [
+        color === 'primary' ? 'nav-link--primary' : 'nav-link--secondary',
+      ])}
+    >
       {title}
+      {icon}
     </Link>
   );
 };
