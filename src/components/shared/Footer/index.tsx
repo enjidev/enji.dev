@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import Link from 'next/link';
-import LastCommit from '@/components/shared/Footer/LastCommit';
+import LastUpdate from '@/components/shared/Footer/LastUpdate';
 import dayjs from '@/utils/dayjs';
 
 const Footer = () => {
@@ -52,7 +52,7 @@ const Footer = () => {
             &copy; {dayjs().format('YYYY')}, Enji Kusnadi
           </div>
           <div className={clsx('text-slate-500', 'dark:text-slate-400')}>
-            <LastCommit />
+            <LastUpdate />
           </div>
         </div>
       </div>
