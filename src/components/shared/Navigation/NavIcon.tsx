@@ -18,7 +18,7 @@ const NavIcon = ({ href, icon, title, label }: NavIconProps) => {
         [
           label && [
             'text-slate-800',
-            'sm:bg-slate-100 sm:pr-4 sm:pl-2',
+            'sm:bg-slate-100 sm:pr-3 sm:pl-1',
             'sm:hover:bg-slate-200',
             'dark:text-slate-100 sm:dark:bg-slate-800/50 sm:dark:hover:bg-slate-700/50',
           ],
