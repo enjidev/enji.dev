@@ -6,17 +6,28 @@ import dayjs from '@/utils/dayjs';
 const LastUpdate = () => {
   const { data, isError } = useLastUpdate();
 
-  return data && !isError ? (
+  return data ? (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-      <a
-        href={data.url}
-        target="_blank"
-        rel="noreferrer"
-        className={clsx('hover:underline')}
-      >
-        <span className={clsx('hidden', 'sm:inline')}>this site was </span>
-        <span>updated {dayjs(data.date).fromNow()}</span>
-      </a>
+      {!isError ? (
+        <a
+          href={data.url}
+          target="_blank"
+          rel="noreferrer"
+          className={clsx('hover:underline')}
+        >
+          <span className={clsx('hidden', 'sm:inline')}>this site was </span>
+          <span>updated {dayjs(data.date).fromNow()}</span>
+        </a>
+      ) : (
+        <a
+          href="https://github.com/enjidev/enji.dev"
+          target="_blank"
+          rel="noreferrer"
+          className={clsx('hover:underline')}
+        >
+          <span>see the recent update on GitHub</span>
+        </a>
+      )}
     </motion.div>
   ) : (
     <span>&nbsp;</span>
