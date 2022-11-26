@@ -10,6 +10,7 @@ import NavLinkExpanded from './NavLinkExpanded';
 const workLinks = [
   { title: 'Skills & Tools', href: '/work/skills-and-tools' },
   { title: 'Testimonials', href: '/work/testimonials' },
+  { title: 'Studio', href: '/work/studio' },
   { title: 'Contact', href: '/work/contact' },
   { title: 'FAQ', href: '/work/faq' },
 ];
@@ -36,7 +37,7 @@ const Navbar = () => {
                 <NavLink title="Projects" href="/projects" />
               </li>
               <li>
-                <NavLink title="Studio" href="/studio" />
+                <NavLink title="Blog" href="/blog" />
               </li>
               <li className={clsx('lg:hidden')}>
                 <NavLinkDropdown title="Work" items={workLinks} />
