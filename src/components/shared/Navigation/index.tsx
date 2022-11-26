@@ -5,6 +5,14 @@ import NavLogo from '@/components/shared/Navigation/NavLogo';
 import NavLink from '@/components/shared/Navigation/NavLink';
 import NavIconTheme from '@/components/shared/Navigation/NavIconTheme';
 import NavLinkDropdown from '@/components/shared/Navigation/NavLinkDropdown';
+import NavLinkExpanded from './NavLinkExpanded';
+
+const workLinks = [
+  { title: 'Skills & Tools', href: '/skills' },
+  { title: 'Testimonials', href: '/testimonials' },
+  { title: 'Contact', href: '/contact' },
+  { title: 'FAQ', href: '/faq' },
+];
 
 const Navbar = () => {
   return (
@@ -23,23 +31,18 @@ const Navbar = () => {
         >
           <div className={clsx('flex', 'md:gap-2')}>
             <NavLogo href="/" title="Home" />
-            <ul className={clsx('flex items-center font-bold', 'md:gap-1')}>
+            <ul className={clsx('flex items-center', 'md:gap-1')}>
               <li>
                 <NavLink title="Projects" href="/projects" />
               </li>
               <li>
                 <NavLink title="Studio" href="/studio" />
               </li>
-              <li>
-                <NavLinkDropdown
-                  title="Works"
-                  items={[
-                    { title: 'Skills & Tools', href: '/skills' },
-                    { title: 'Testimonials', href: '/testimonials' },
-                    { title: 'Contact', href: '/contact' },
-                    { title: 'FAQ', href: '/faq' },
-                  ]}
-                />
+              <li className={clsx('lg:hidden')}>
+                <NavLinkDropdown title="Work" items={workLinks} />
+              </li>
+              <li className={clsx('hidden lg:block')}>
+                <NavLinkExpanded title="Work" items={workLinks} />
               </li>
             </ul>
           </div>

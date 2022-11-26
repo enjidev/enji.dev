@@ -45,7 +45,11 @@ const NavLinkDropdown = ({ title, items }: NavLinkDropdownProps) => {
       <Menu>
         {({ open }) => (
           <>
-            <Menu.Button className={clsx('nav-link nav-link--secondary')}>
+            <Menu.Button
+              className={clsx(
+                'nav-link nav-link--secondary nav-link--label ml-2'
+              )}
+            >
               {title}
               <ChevronRightIcon
                 className={clsx('h-3 w-3 rotate-90', [open && '-rotate-90'])}
@@ -63,23 +67,21 @@ const NavLinkDropdown = ({ title, items }: NavLinkDropdownProps) => {
                   'dark:border-divider-dark dark:bg-slate-900'
                 )}
               >
-                {items.map(({ title, href }) => {
-                  return (
-                    <Menu.Item key={href}>
-                      {({ active }) => (
-                        <LinkRef
-                          href={href}
-                          className={clsx(
-                            'nav-link nav-link--secondary h-8 text-xs',
-                            [active && 'nav-link--focus']
-                          )}
-                        >
-                          {title}
-                        </LinkRef>
-                      )}
-                    </Menu.Item>
-                  );
-                })}
+                {items.map(({ title, href }) => (
+                  <Menu.Item key={href}>
+                    {({ active }) => (
+                      <LinkRef
+                        href={href}
+                        className={clsx(
+                          'nav-link nav-link--secondary h-8 text-xs',
+                          [active && 'nav-link--focus']
+                        )}
+                      >
+                        {title}
+                      </LinkRef>
+                    )}
+                  </Menu.Item>
+                ))}
               </Menu.Items>
             )}
           </>
