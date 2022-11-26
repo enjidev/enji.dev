@@ -8,7 +8,7 @@ import NavLinkDropdown from '@/components/shared/Navigation/NavLinkDropdown';
 import NavLinkExpanded from './NavLinkExpanded';
 
 const workLinks = [
-  { title: 'Skills & Tools', href: '/work/skills' },
+  { title: 'Skills & Tools', href: '/work/skills-and-tools' },
   { title: 'Testimonials', href: '/work/testimonials' },
   { title: 'Contact', href: '/work/contact' },
   { title: 'FAQ', href: '/work/faq' },
