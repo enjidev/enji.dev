@@ -12,9 +12,10 @@ const animation = {
 interface PageHeaderProps {
   title: string;
   desc?: string;
+  context?: string;
 }
 
-const PageHeader = ({ title, desc }: PageHeaderProps) => {
+const PageHeader = ({ title, desc, context }: PageHeaderProps) => {
   return (
     <header
       className={clsx(
@@ -23,6 +24,22 @@ const PageHeader = ({ title, desc }: PageHeaderProps) => {
       )}
     >
       <div className={clsx('content-wrapper')}>
+        {context && (
+          <motion.div
+            initial={animation.hide}
+            animate={animation.show}
+            transition={{ delay: 0 }}
+          >
+            <span
+              className={clsx(
+                'mb-2 block text-base font-bold leading-none text-secondary-600',
+                'dark:text-secondary-400'
+              )}
+            >
+              {context}
+            </span>
+          </motion.div>
+        )}
         <motion.div
           initial={animation.hide}
           animate={animation.show}
