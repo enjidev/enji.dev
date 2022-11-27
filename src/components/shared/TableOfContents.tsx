@@ -46,7 +46,7 @@ interface TableOfContensProps {
 }
 
 const TableOfContents = ({ items = [] }: TableOfContensProps) => {
-  const { currentSlug, scrollProgress } = useScrollSpy('mdx-contents', 32);
+  const { currentSlug, scrollProgress } = useScrollSpy('mdx-contents');
 
   return (
     <div
