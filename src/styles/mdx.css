@@ -21,7 +21,7 @@
     }
 
     h2 {
-      @apply mb-2 mt-10 scroll-mt-8 text-3xl;
+      @apply mb-2 mt-10 scroll-mt-24 text-3xl;
 
       &.with-anchor {
         @apply -ml-12;
@@ -33,7 +33,7 @@
     }
 
     h3 {
-      @apply mb-2 mt-10 scroll-mt-8 text-2xl;
+      @apply mb-2 mt-10 scroll-mt-24 text-2xl;
 
       &.with-anchor {
         @apply -ml-11;

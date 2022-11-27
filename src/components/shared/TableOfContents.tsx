@@ -46,15 +46,10 @@ interface TableOfContensProps {
 }
 
 const TableOfContents = ({ items = [] }: TableOfContensProps) => {
-  const { currentSlug, scrollProgress } = useScrollSpy('mdx-contents');
+  const { currentSlug, scrollProgress } = useScrollSpy('mdx-contents', 96);
 
   return (
-    <div
-      className={clsx(
-        'sticky top-12 w-72 rounded-xl border border-divider-light bg-white p-6',
-        'dark:border-divider-dark dark:bg-slate-900'
-      )}
-    >
+    <div className={clsx('sticky top-24 w-64')}>
       <div
         className={clsx('flex items-center justify-between text-sm font-bold')}
       >

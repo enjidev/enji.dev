@@ -11,7 +11,7 @@ export const H2: NonNullable<MDXComponents['h2']> = ({ children }) => {
     <h2
       id={slug}
       data-ss={slug}
-      data-ss-mt={32}
+      data-ss-mt={96}
       className={clsx('with-anchor group')}
     >
       <a href={`#${slug}`} className={clsx('group-hover:opacity-100')}>
@@ -29,7 +29,7 @@ export const H3: NonNullable<MDXComponents['h3']> = ({ children }) => {
     <h3
       id={slug}
       data-ss={slug}
-      data-ss-mt={32}
+      data-ss-mt={96}
       className={clsx('with-anchor group')}
     >
       <a href={`#${slug}`} className={clsx('group-hover:opacity-100')}>
