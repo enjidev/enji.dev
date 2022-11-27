@@ -12,8 +12,11 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.4",
+    "@mdx-js/loader": "^2.1.5",
+    "@mdx-js/react": "^2.1.5",
     "@next/bundle-analyzer": "^13.0.3",
     "@next/font": "^13.0.0",
+    "@next/mdx": "^13.0.5",
     "@octokit/rest": "^19.0.5",
     "@vercel/analytics": "^0.1.5",
     "clsx": "^1.2.1",

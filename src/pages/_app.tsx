@@ -1,7 +1,9 @@
 import { ThemeProvider } from 'next-themes';
+import { MDXProvider } from '@mdx-js/react';
 import { MotionConfig } from 'framer-motion';
 import RootLayout from '@/components/layouts/Root';
 import { Analytics } from '@vercel/analytics/react';
+import mdxComponents from '@/components/mdx';
 import type { AppProps } from 'next/app';
 
 import '@/styles/globals.css';
@@ -11,10 +13,12 @@ function App({ Component, pageProps }: AppProps) {
     <MotionConfig reducedMotion="user">
       <ThemeProvider attribute="class">
         <RootLayout>
-          <>
-            <Component {...pageProps} />
-            <Analytics />
-          </>
+          <MDXProvider components={mdxComponents}>
+            <>
+              <Component {...pageProps} />
+              <Analytics />
+            </>
+          </MDXProvider>
         </RootLayout>
       </ThemeProvider>
     </MotionConfig>
