@@ -1,0 +1,22 @@
+@tailwind components;
+
+@layer components {
+  .mdx-contents {
+    @apply text-slate-600;
+    @apply dark:text-slate-400;
+
+    h2,
+    h3 {
+      @apply font-bold text-slate-700;
+      @apply dark:text-slate-300;
+    }
+
+    h2 {
+      @apply mb-2 mt-10 scroll-mt-8 text-3xl;
+    }
+
+    h3 {
+      @apply mb-2 mt-10 scroll-mt-8 text-xl;
+    }
+  }
+}
