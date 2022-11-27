@@ -51,7 +51,7 @@ const TableOfContents = ({ items = [] }: TableOfContensProps) => {
   return (
     <div
       className={clsx(
-        'sticky top-8 w-72 rounded-xl border border-divider-light bg-white p-6',
+        'sticky top-12 w-72 rounded-xl border border-divider-light bg-white p-6',
         'dark:border-divider-dark dark:bg-slate-900'
       )}
     >

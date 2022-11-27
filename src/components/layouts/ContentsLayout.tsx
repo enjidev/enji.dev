@@ -30,7 +30,7 @@ const ContentsLayout = ({
               {children}
             </div>
             {tableOfContents.length > 0 && (
-              <div className={clsx('-mt-20 hidden', 'xl:block')}>
+              <div className={clsx('-mt-24 hidden', 'xl:block')}>
                 <TableOfContents items={tableOfContents} />
               </div>
             )}
