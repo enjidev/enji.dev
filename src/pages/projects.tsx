@@ -1,14 +1,10 @@
-import Head from 'next/head';
+import Head from '@/components/meta/Head';
 import PageHeader from '@/components/shared/PageHeader';
 
 const Projects = () => {
   return (
     <>
-      <Head>
-        <title>Projects &middot; Enji Kusnadi</title>
-        <meta name="description" content="Hi!" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <Head title="Projects" description="Projects" />
       <PageHeader title="Projects" desc="— page is coming very soon!" />
     </>
   );
