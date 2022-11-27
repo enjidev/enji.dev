@@ -15,7 +15,7 @@ export default function useScrollSpy(wrapper: string, wrapperOffset = 0) {
     const scrollTop = window.scrollY;
     const elementOffsetTop = wrapperEl.offsetTop + wrapperOffset;
     const elementHeight = wrapperEl.offsetHeight;
-    const elementTop = wrapperEl.getBoundingClientRect().top + wrapperOffset;
+    const elementTop = wrapperEl.getBoundingClientRect().top - wrapperOffset;
 
     // Calculate percentage of the element that's been seen
     const distance = scrollTop - elementOffsetTop;
