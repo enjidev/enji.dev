@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import Head from '@/components/meta/Head';
 import PageHeader from '@/components/shared/PageHeader';
 import TableOfContents from '@/components/shared/TableOfContents';
 import type { TTableOfContentsItem } from '@/types';
@@ -19,17 +20,20 @@ const ContentsLayout = ({
   children,
 }: ContentsLayoutProps) => {
   return (
-    <div className={clsx('')}>
-      <PageHeader title={title} desc={description} />
-      <div className={clsx('content-wrapper')}>
-        <div className={clsx('flex')}>
-          <div className={clsx('flex-1 py-8')}>{children}</div>
-          <div className={clsx('-mt-20')}>
-            <TableOfContents items={tableOfContents} />
+    <>
+      <Head title={title} description={description} />
+      <div className={clsx('')}>
+        <PageHeader title={title} desc={description} />
+        <div className={clsx('content-wrapper')}>
+          <div className={clsx('flex')}>
+            <div className={clsx('flex-1 py-8')}>{children}</div>
+            <div className={clsx('-mt-20')}>
+              <TableOfContents items={tableOfContents} />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
