@@ -17,9 +17,9 @@ const HeaderTitle = () => {
     <div>
       <motion.div
         className={clsx(
-          'flex items-center gap-1 text-2xl text-slate-500',
+          'flex items-center gap-1 text-2xl text-slate-600',
           'md:gap-2 md:text-4xl',
-          'dark:text-slate-500'
+          'dark:text-slate-400'
         )}
         initial={animation.hide}
         animate={animation.show}
@@ -57,7 +57,7 @@ const HeaderTitle = () => {
           />
         </motion.div>
       </motion.div>
-      <h1 className={clsx('text-slate-600', 'dark:text-slate-400')}>
+      <h1 className={clsx('text-slate-700', 'dark:text-slate-300')}>
         <motion.span
           className={clsx(
             'mb-2 block text-[2.5rem] font-[1000] leading-none',

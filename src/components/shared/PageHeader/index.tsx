@@ -31,9 +31,9 @@ const PageHeader = ({ title, desc }: PageHeaderProps) => {
         >
           <h1
             className={clsx(
-              'text-[2.5rem] font-extrabold leading-none text-slate-600',
+              'text-[2.5rem] font-extrabold leading-none text-slate-700',
               'md:text-7xl',
-              'dark:text-slate-400'
+              'dark:text-slate-300'
             )}
           >
             {title}
@@ -47,8 +47,9 @@ const PageHeader = ({ title, desc }: PageHeaderProps) => {
           >
             <p
               className={clsx(
-                'mt-2 text-lg text-slate-500',
-                'md:mt-6 md:text-2xl'
+                'mt-2 text-lg text-slate-600',
+                'md:mt-6 md:text-2xl',
+                'dark:text-slate-400'
               )}
             >
               {desc}
