@@ -53,7 +53,9 @@ const TableOfContents = ({ items = [] }: TableOfContensProps) => {
       <div
         className={clsx('flex items-center justify-between text-sm font-bold')}
       >
-        <span>Table of Contents</span>
+        <span className={clsx('text-slate-700', 'dark:text-slate-300')}>
+          Table of Contents
+        </span>
         <motion.div
           initial={{ x: 16, opacity: 0 }}
           animate={currentSlug ? { x: 0, opacity: 1 } : { x: 16, opacity: 0 }}
