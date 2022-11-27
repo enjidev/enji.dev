@@ -17,22 +17,21 @@ const TableOfContentsLink = ({
 }: TableOfContentsLinkProps) => {
   return (
     <a
-      className={clsx('-ml-[1px] flex border-l p-1 text-[13px]', [
+      className={clsx('flex p-1 text-[13px]', [
         depth === 2 ? ['pl-8 '] : ['pl-4 font-bold', 'dark:font-semibold'],
         active
           ? [
-              'border-primary-600 text-primary-600',
+              'text-primary-600',
               'hover:text-primary-700',
-              'dark:border-primary-400 dark:text-primary-400',
-              'dark:hover:border-primary-300 dark:hover:text-primary-300',
+              'dark:text-primary-400',
+              'dark:hover:text-primary-300',
             ]
           : [
               depth === 2
                 ? ['text-slate-600', 'dark:text-slate-400']
                 : ['text-slate-700', 'dark:text-slate-300'],
-              'border-divider-light',
-              'hover:border-primary-700 hover:text-primary-700',
-              'dark:border-divider-dark dark:hover:border-primary-300 dark:hover:text-primary-300',
+              'hover:text-primary-700',
+              'dark:hover:text-primary-300',
             ],
       ])}
       href={`#${slug}`}
@@ -47,7 +46,7 @@ interface TableOfContensProps {
 }
 
 const TableOfContents = ({ items = [] }: TableOfContensProps) => {
-  const currentSlug = useScrollSpy();
+  const { currentSlug, scrollProgress } = useScrollSpy('mdx-contents', 32);
 
   return (
     <div
@@ -60,25 +59,30 @@ const TableOfContents = ({ items = [] }: TableOfContensProps) => {
         className={clsx('flex items-center justify-between text-sm font-bold')}
       >
         <span>Table of Contents</span>
-        {currentSlug && (
-          <motion.div
-            initial={{ x: 16, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
+        <motion.div
+          initial={{ x: 16, opacity: 0 }}
+          animate={currentSlug ? { x: 0, opacity: 1 } : { x: 16, opacity: 0 }}
+        >
+          <Link
+            href=""
+            className={clsx(
+              'cursor-pointer font-normal text-primary-700',
+              'dark:text-primary-400'
+            )}
           >
-            <Link
-              href=""
-              className={clsx(
-                'cursor-pointer font-normal text-primary-700',
-                'dark:text-primary-400'
-              )}
-            >
-              Scroll to top
-            </Link>
-          </motion.div>
-        )}
+            Scroll to top
+          </Link>
+        </motion.div>
       </div>
 
-      <div className={clsx('mt-4')}>
+      <div className={clsx('relative mt-4')}>
+        <div
+          className={clsx(
+            'absolute top-0 bottom-0 left-0 border-l border-primary-600',
+            'dark:border-primary-400'
+          )}
+          style={{ height: `${scrollProgress}%` }}
+        />
         <ul
           className={clsx(
             'flex flex-col gap-2 border-l border-divider-light',

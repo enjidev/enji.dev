@@ -26,7 +26,9 @@ const ContentsLayout = ({
         <PageHeader title={title} desc={description} />
         <div className={clsx('content-wrapper')}>
           <div className={clsx('flex')}>
-            <div className={clsx('flex-1 py-8')}>{children}</div>
+            <div className={clsx('flex-1 py-8')} id="mdx-contents">
+              {children}
+            </div>
             {tableOfContents.length > 0 && (
               <div className={clsx('-mt-20 hidden', 'xl:block')}>
                 <TableOfContents items={tableOfContents} />
