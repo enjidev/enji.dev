@@ -1,6 +1,9 @@
 import clsx from 'clsx';
-import type { TTableOfContentsItem } from '@/types';
+import { motion } from 'framer-motion';
+import Link from 'next/link';
 import useScrollSpy from '@/hooks/useScrollSpy';
+
+import type { TTableOfContentsItem } from '@/types';
 
 interface TableOfContentsLinkProps extends TTableOfContentsItem {
   active?: boolean;
@@ -53,7 +56,28 @@ const TableOfContents = ({ items = [] }: TableOfContensProps) => {
         'dark:border-divider-dark dark:bg-slate-900'
       )}
     >
-      <span className={clsx('text-sm font-bold')}>Table of Contents</span>
+      <div
+        className={clsx('flex items-center justify-between text-sm font-bold')}
+      >
+        <span>Table of Contents</span>
+        {currentSlug && (
+          <motion.div
+            initial={{ x: 20, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+          >
+            <Link
+              href=""
+              className={clsx(
+                'cursor-pointer font-normal text-primary-700',
+                'dark:text-primary-400'
+              )}
+            >
+              Scroll to top
+            </Link>
+          </motion.div>
+        )}
+      </div>
+
       <div className={clsx('mt-4')}>
         <ul
           className={clsx(
