@@ -1,9 +1,17 @@
 import clsx from 'clsx';
 import type { TTableOfContentsItem } from '@/types';
+import useScrollSpy from '@/hooks/useScrollSpy';
 
-const TableOfContentsLink = ({ title, depth, slug }: TTableOfContentsItem) => {
-  const active = false;
+interface TableOfContentsLinkProps extends TTableOfContentsItem {
+  active?: boolean;
+}
 
+const TableOfContentsLink = ({
+  title,
+  depth,
+  slug,
+  active = false,
+}: TableOfContentsLinkProps) => {
   return (
     <a
       className={clsx('-ml-[1px] flex border-l p-1 text-[13px]', [
@@ -36,6 +44,8 @@ interface TableOfContensProps {
 }
 
 const TableOfContents = ({ items = [] }: TableOfContensProps) => {
+  const currentSlug = useScrollSpy();
+
   return (
     <div
       className={clsx(
@@ -51,10 +61,17 @@ const TableOfContents = ({ items = [] }: TableOfContensProps) => {
             'dark:border-divider-dark'
           )}
         >
-          {items.map((item) => {
+          {items.map(({ title, depth, slug }) => {
+            const isActive = currentSlug ? currentSlug === slug : false;
+
             return (
-              <li key={item.slug}>
-                <TableOfContentsLink {...item} />
+              <li key={slug}>
+                <TableOfContentsLink
+                  title={title}
+                  depth={depth}
+                  slug={slug}
+                  active={isActive}
+                />
               </li>
             );
           })}
