@@ -62,7 +62,7 @@ const TableOfContents = ({ items = [] }: TableOfContensProps) => {
         <span>Table of Contents</span>
         {currentSlug && (
           <motion.div
-            initial={{ x: 20, opacity: 0 }}
+            initial={{ x: 16, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
           >
             <Link
