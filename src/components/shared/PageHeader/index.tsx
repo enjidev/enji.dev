@@ -47,7 +47,7 @@ const PageHeader = ({ title, desc }: PageHeaderProps) => {
             <p
               className={clsx(
                 'mt-2 text-lg text-slate-600',
-                'md:mt-6 md:text-2xl',
+                'md:mt-6 md:text-2xl lg:max-w-[500px] xl:max-w-[700px]',
                 'dark:text-slate-400'
               )}
             >
