@@ -28,7 +28,7 @@ const ContentsLayout = ({
           <div className={clsx('flex')}>
             <div className={clsx('flex-1 py-8')}>{children}</div>
             {tableOfContents.length > 0 && (
-              <div className={clsx('-mt-20')}>
+              <div className={clsx('-mt-20 hidden', 'xl:block')}>
                 <TableOfContents items={tableOfContents} />
               </div>
             )}
