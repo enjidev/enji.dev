@@ -27,9 +27,11 @@ const ContentsLayout = ({
         <div className={clsx('content-wrapper')}>
           <div className={clsx('flex')}>
             <div className={clsx('flex-1 py-8')}>{children}</div>
-            <div className={clsx('-mt-20')}>
-              <TableOfContents items={tableOfContents} />
-            </div>
+            {tableOfContents.length > 0 && (
+              <div className={clsx('-mt-20')}>
+                <TableOfContents items={tableOfContents} />
+              </div>
+            )}
           </div>
         </div>
       </div>
