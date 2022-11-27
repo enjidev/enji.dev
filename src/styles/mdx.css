@@ -16,6 +16,7 @@
         a {
           @apply flex cursor-pointer items-center justify-center rounded-lg border border-divider-light bg-slate-100/50 opacity-0;
           @apply dark:border-divider-dark dark:bg-slate-200/5;
+          @apply focus:opacity-100;
         }
       }
     }
