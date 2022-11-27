@@ -13,7 +13,7 @@ export default function useScrollSpy(wrapper: string, wrapperOffset = 0) {
     // Get the relevant measurements and positions
     const viewportHeight = window.innerHeight;
     const scrollTop = window.scrollY;
-    const elementOffsetTop = wrapperEl.offsetTop + wrapperOffset;
+    const elementOffsetTop = wrapperEl.offsetTop - wrapperOffset;
     const elementHeight = wrapperEl.offsetHeight;
     const elementTop = wrapperEl.getBoundingClientRect().top - wrapperOffset;
 
