@@ -17,6 +17,7 @@ const withLayout = () => {
         <ContentsLayout meta={${JSON.stringify({
           title: data.title,
           description: data.description,
+          caption: data.caption,
           tableOfContents: headings,
         })}}>
           {children}

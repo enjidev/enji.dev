@@ -11,11 +11,11 @@ const animation = {
 
 interface PageHeaderProps {
   title: string;
-  desc?: string;
-  context?: string;
+  description?: string;
+  caption?: string;
 }
 
-const PageHeader = ({ title, desc, context }: PageHeaderProps) => {
+const PageHeader = ({ title, description, caption }: PageHeaderProps) => {
   return (
     <header
       className={clsx(
@@ -24,19 +24,20 @@ const PageHeader = ({ title, desc, context }: PageHeaderProps) => {
       )}
     >
       <div className={clsx('content-wrapper')}>
-        {context && (
+        {caption && (
           <motion.div
             initial={animation.hide}
             animate={animation.show}
             transition={{ delay: 0 }}
           >
             <span
-              className={clsx(
-                'mb-2 block text-base font-bold leading-none text-secondary-600',
-                'dark:text-secondary-400'
-              )}
+              className={clsx('mb-2 block text-base font-bold leading-none', [
+                caption === 'Work'
+                  ? ['text-secondary-600', 'dark:text-secondary-400']
+                  : ['text-primary-600', 'dark:text-primary-400'],
+              ])}
             >
-              {context}
+              {caption}
             </span>
           </motion.div>
         )}
@@ -55,7 +56,7 @@ const PageHeader = ({ title, desc, context }: PageHeaderProps) => {
             {title}
           </h1>
         </motion.div>
-        {desc && (
+        {description && (
           <motion.div
             initial={animation.hide}
             animate={animation.show}
@@ -68,7 +69,7 @@ const PageHeader = ({ title, desc, context }: PageHeaderProps) => {
                 'dark:text-slate-400'
               )}
             >
-              {desc}
+              {description}
             </p>
           </motion.div>
         )}

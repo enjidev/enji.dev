@@ -5,7 +5,10 @@ const Design = () => {
   return (
     <>
       <Head title="Design" description="Design" />
-      <PageHeader title="Fonts & Colors" desc="— page is coming very soon!" />
+      <PageHeader
+        title="Fonts & Colors"
+        description="— page is coming very soon!"
+      />
     </>
   );
 };

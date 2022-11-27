@@ -7,6 +7,7 @@ import type { TTableOfContentsItem } from '@/types';
 interface PageMeta {
   title: string;
   description: string;
+  caption?: string;
   tableOfContents: Array<TTableOfContentsItem>;
 }
 
@@ -16,14 +17,14 @@ interface ContentsLayoutProps {
 }
 
 const ContentsLayout = ({
-  meta: { title, description, tableOfContents },
+  meta: { title, description, caption, tableOfContents },
   children,
 }: ContentsLayoutProps) => {
   return (
     <>
       <Head title={title} description={description} />
       <div className={clsx('')}>
-        <PageHeader title={title} desc={description} />
+        <PageHeader title={title} description={description} caption={caption} />
         <div className={clsx('content-wrapper')}>
           <div className={clsx('flex gap-8', 'xl:gap-24')}>
             <div

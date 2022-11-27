@@ -5,7 +5,11 @@ const Projects = () => {
   return (
     <>
       <Head title="Projects" description="Projects" />
-      <PageHeader title="Projects" desc="— page is coming very soon!" />
+      <PageHeader
+        title="Projects"
+        description="— page is coming very soon!"
+        caption="Personal"
+      />
     </>
   );
 };

@@ -5,7 +5,7 @@ const Contact = () => {
   return (
     <>
       <Head title="Contact" description="Contact" />
-      <PageHeader title="Contact" desc="— page is coming very soon!" />
+      <PageHeader title="Contact" description="— page is coming very soon!" />
     </>
   );
 };
