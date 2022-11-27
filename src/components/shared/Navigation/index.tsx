@@ -17,7 +17,7 @@ const Navbar = () => {
   return (
     <nav
       className={clsx(
-        'border-b border-divider-light bg-white',
+        'z-[1000] border-b border-divider-light bg-white',
         'dark:border-divider-dark dark:bg-slate-900'
       )}
     >
