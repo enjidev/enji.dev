@@ -18,9 +18,8 @@ const PageHeader = ({ title, desc }: PageHeaderProps) => {
   return (
     <header
       className={clsx(
-        'background-grid border-b border-divider-light pt-20 pb-8',
-        'md:pb-20 md:pt-36',
-        'dark:border-divider-dark'
+        'background-grid background-grid--fade-out pt-20 pb-8',
+        'md:pb-20 md:pt-36'
       )}
     >
       <div className={clsx('content-wrapper')}>
