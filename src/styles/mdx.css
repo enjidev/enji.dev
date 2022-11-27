@@ -43,5 +43,10 @@
         }
       }
     }
+
+    hr {
+      @apply mt-12 border-divider-light;
+      @apply dark:border-divider-dark;
+    }
   }
 }
