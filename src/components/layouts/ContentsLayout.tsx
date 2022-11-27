@@ -26,7 +26,10 @@ const ContentsLayout = ({
         <PageHeader title={title} desc={description} />
         <div className={clsx('content-wrapper')}>
           <div className={clsx('flex gap-8', 'xl:gap-24')}>
-            <div className={clsx('mdx-contents flex-1')} id="mdx-contents">
+            <div
+              className={clsx('mdx-contents flex-1 pb-24')}
+              id="mdx-contents"
+            >
               {children}
             </div>
             {tableOfContents.length > 0 && (
