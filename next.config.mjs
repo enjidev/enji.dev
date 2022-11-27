@@ -2,6 +2,7 @@ import bundeAnalyzer from '@next/bundle-analyzer';
 import nextMDX from '@next/mdx';
 import remarkFrontmatter from 'remark-frontmatter';
 import withLayout from './remark/withLayout.mjs';
+import withRestrictedHeading from './remark/withRestrictedHeading.mjs';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -16,7 +17,7 @@ const withBundleAnalyzer = bundeAnalyzer({
 const withMDX = nextMDX({
   extension: /\.mdx?$/,
   options: {
-    remarkPlugins: [remarkFrontmatter, withLayout],
+    remarkPlugins: [remarkFrontmatter, withLayout, withRestrictedHeading],
     rehypePlugins: [],
     providerImportSource: '@mdx-js/react',
   },
