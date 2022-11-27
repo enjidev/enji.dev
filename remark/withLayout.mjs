@@ -2,7 +2,7 @@ import {
   getFrontMatter,
   getHeadings,
   addImport,
-  addExportDefault,
+  addContent,
 } from './utils.mjs';
 
 const withLayout = () => {
@@ -11,9 +11,9 @@ const withLayout = () => {
     const headings = getHeadings(tree);
 
     addImport(tree, 'ContentsLayout', '@/components/layouts/ContentsLayout');
-    addExportDefault(
+    addContent(
       tree,
-      `({ children }) => (
+      `export default ({ children }) => (
         <ContentsLayout meta={${JSON.stringify({
           title: data.title,
           description: data.description,

@@ -25,11 +25,11 @@ export const addImport = (tree, name, location) => {
   });
 };
 
-export const addExportDefault = (tree, content) => {
+export const addContent = (tree, content) => {
   tree.children.push({
     type: 'mdxjsEsm',
     data: {
-      estree: parse(`export default ${content}`),
+      estree: parse(content),
     },
   });
 };
