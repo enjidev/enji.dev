@@ -5,3 +5,9 @@ export type TLastUpdate = {
   date: string;
   url: string;
 };
+
+export type TTableOfContentsItem = {
+  title: string;
+  depth: number;
+  slug: string;
+};

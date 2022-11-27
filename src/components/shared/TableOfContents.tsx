@@ -1,22 +1,13 @@
 import clsx from 'clsx';
+import type { TTableOfContentsItem } from '@/types';
 
-interface TableOfContentsLink {
-  title: string;
-  href: string;
-  active?: boolean;
-  subItem?: boolean;
-}
+const TableOfContentsLink = ({ title, depth, slug }: TTableOfContentsItem) => {
+  const active = false;
 
-const TableOfContentsLink = ({
-  title,
-  href,
-  active = false,
-  subItem = false,
-}: TableOfContentsLink) => {
   return (
     <a
       className={clsx('-ml-[1px] flex border-l p-1 text-[13px]', [
-        subItem ? ['pl-8 '] : ['pl-4 font-bold', 'dark:font-semibold'],
+        depth === 2 ? ['pl-8 '] : ['pl-4 font-bold', 'dark:font-semibold'],
         active
           ? [
               'border-primary-600 text-primary-600',
@@ -25,7 +16,7 @@ const TableOfContentsLink = ({
               'dark:hover:border-primary-300 dark:hover:text-primary-300',
             ]
           : [
-              subItem
+              depth === 2
                 ? ['text-slate-600', 'dark:text-slate-400']
                 : ['text-slate-700', 'dark:text-slate-300'],
               'border-divider-light',
@@ -33,21 +24,15 @@ const TableOfContentsLink = ({
               'dark:border-divider-dark dark:hover:border-primary-300 dark:hover:text-primary-300',
             ],
       ])}
-      href={href}
+      href={`#${slug}`}
     >
       {title}
     </a>
   );
 };
 
-type TOCLink = Omit<TableOfContentsLink, 'subItem'>;
-
 interface TableOfContensProps {
-  items?: Array<
-    TOCLink & {
-      items?: Array<TOCLink>;
-    }
-  >;
+  items: Array<TTableOfContentsItem>;
 }
 
 const TableOfContents = ({ items = [] }: TableOfContensProps) => {
@@ -67,30 +52,9 @@ const TableOfContents = ({ items = [] }: TableOfContensProps) => {
           )}
         >
           {items.map((item) => {
-            const subItems = item.items;
-            const hasSubItems = subItems && subItems.length > 0;
-
             return (
-              <li key={item.href}>
-                <TableOfContentsLink
-                  title={item.title}
-                  href={item.href}
-                  active={item.active}
-                />
-                {hasSubItems && (
-                  <ul className={clsx('mt-2 flex flex-col gap-2')}>
-                    {subItems.map((subItem) => (
-                      <li key={subItem.href}>
-                        <TableOfContentsLink
-                          title={subItem.title}
-                          href={subItem.href}
-                          active={subItem.active}
-                          subItem={true}
-                        />
-                      </li>
-                    ))}
-                  </ul>
-                )}
+              <li key={item.slug}>
+                <TableOfContentsLink {...item} />
               </li>
             );
           })}
