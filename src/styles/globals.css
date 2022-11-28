@@ -173,7 +173,7 @@
   }
 
   .label {
-    @apply relative overflow-hidden rounded-md bg-slate-100 px-3 py-1 pb-1.5 text-sm font-semibold;
+    @apply relative overflow-hidden rounded-md bg-slate-100 px-3 py-1 pb-1.5 text-[13px] font-semibold;
     @apply dark:bg-slate-800;
 
     &__indicator {
