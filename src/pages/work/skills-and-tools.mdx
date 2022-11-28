@@ -5,6 +5,7 @@ caption: Work
 ---
 
 import Labels from '@/components/pages/work/Labels';
+import { VStack } from '@/components/Stack';
 
 I started my career as a web developer about **{new Date().getFullYear() - 2016} years ago**. I've tried some programming languages and tech stack, both Back-End, and Front-End.
 
@@ -16,10 +17,10 @@ I really enjoy creating something that is clean and minimalistic, attractive and
 
 I like when I create websites that have a lot of UI components, such as:
 
-- Web application
-- Dashboard layouts
-- Fancy landing pages
-- And others.
+- Web application,
+- Dashboard layouts,
+- Fancy landing pages,
+- and others.
 
 So, what tools did I feel comfortable using during the website creation?
 
@@ -44,70 +45,68 @@ I present all data in labels and graphs to make it easier to read.
 Programming languages.
 
 <br />
-<Labels
-  title="FE related"
-  items={[
-    { title: 'HTML', indicator: 100 },
-    { title: 'CSS/SCSS', indicator: 100 },
-    { title: 'TypeScript', indicator: 100 },
-    { title: 'JavaScript', indicator: 100 },
-  ]}
-/>
-
-<br />
-<Labels
-  title="BE related"
-  items={[
-    { title: 'PHP', indicator: 25 },
-    { title: 'SQL', indicator: 25 },
-  ]}
-/>
+<VStack spacing={12}>
+  <Labels
+    title="FE related"
+    items={[
+      { title: 'HTML', indicator: 100 },
+      { title: 'CSS/SCSS', indicator: 100 },
+      { title: 'TypeScript', indicator: 100 },
+      { title: 'JavaScript', indicator: 100 },
+    ]}
+  />
+  <Labels
+    title="BE related"
+    items={[
+      { title: 'PHP', indicator: 25 },
+      { title: 'SQL', indicator: 25 },
+    ]}
+  />
+</VStack>
 
 ---
 
 ### Technologies
 
-Modules, libraries, frameworks.
+Modules, libraries, and frameworks.
 
 <br />
-<Labels
-  title="UI related"
-  items={[
-    { title: 'Tailwind CSS', indicator: 100 },
-    { title: 'Material UI', indicator: 75 },
-    { title: 'Chakra UI', indicator: 50 },
-    { title: 'Bootstrap', indicator: 25 },
-    { title: 'Zurb Foundation', indicator: 50 },
-  ]}
-/>
-
-<br />
-<Labels
-  title="FE related"
-  items={[
-    { title: 'React', indicator: 100 },
-    { title: 'Next.js', indicator: 50 },
-    { title: 'Framer Motion', indicator: 50 },
-    { title: 'Storybook', indicator: 50 },
-    { title: 'Framework7', indicator: 50 },
-    { title: 'Redux', indicator: 25 },
-    { title: 'Webpack', indicator: 25 },
-    { title: 'Gulp', indicator: 25 },
-    { title: 'Backbone.js', indicator: 25 },
-    { title: 'Marionette.js', indicator: 25 },
-    { title: 'WordPress', indicator: 25 },
-  ]}
-/>
-
-<br />
-<Labels
-  title="BE related"
-  items={[
-    { title: 'Express', indicator: 25 },
-    { title: 'Redis', indicator: 25 },
-    { title: 'MongoDB', indicator: 25 },
-  ]}
-/>
+<VStack spacing={12}>
+  <Labels
+    title="UI related"
+    items={[
+      { title: 'Tailwind CSS', indicator: 100 },
+      { title: 'Material UI', indicator: 75 },
+      { title: 'Chakra UI', indicator: 50 },
+      { title: 'Bootstrap', indicator: 25 },
+      { title: 'Zurb Foundation', indicator: 50 },
+    ]}
+  />
+  <Labels
+    title="FE related"
+    items={[
+      { title: 'React', indicator: 100 },
+      { title: 'Next.js', indicator: 50 },
+      { title: 'Framer Motion', indicator: 50 },
+      { title: 'Storybook', indicator: 50 },
+      { title: 'Framework7', indicator: 50 },
+      { title: 'Redux', indicator: 25 },
+      { title: 'Webpack', indicator: 25 },
+      { title: 'Gulp', indicator: 25 },
+      { title: 'Backbone.js', indicator: 25 },
+      { title: 'Marionette.js', indicator: 25 },
+      { title: 'WordPress', indicator: 25 },
+    ]}
+  />
+  <Labels
+    title="BE related"
+    items={[
+      { title: 'Express', indicator: 25 },
+      { title: 'Redis', indicator: 25 },
+      { title: 'MongoDB', indicator: 25 },
+    ]}
+  />
+</VStack>
 
 ---
 
@@ -116,22 +115,22 @@ Modules, libraries, frameworks.
 Softwares and Apps.
 
 <br />
-<Labels
-  title="Coder related"
-  items={[
-    { title: 'VS Code', indicator: 100 },
-    { title: 'Node.js', indicator: 100 },
-    { title: 'Git', indicator: 100 },
-    { title: 'Sourcetree', indicator: 50 },
-  ]}
-/>
-
-<br />
-<Labels
-  title="Designer related"
-  items={[
-    { title: 'Figma', indicator: 100 },
-    { title: 'Inkscape', indicator: 50 },
-    { title: 'Photoshop', indicator: 25 },
-  ]}
-/>
+<VStack spacing={12}>
+  <Labels
+    title="Coder related"
+    items={[
+      { title: 'VS Code', indicator: 100 },
+      { title: 'Node.js', indicator: 100 },
+      { title: 'Git', indicator: 100 },
+      { title: 'Sourcetree', indicator: 50 },
+    ]}
+  />
+  <Labels
+    title="Designer related"
+    items={[
+      { title: 'Figma', indicator: 100 },
+      { title: 'Inkscape', indicator: 50 },
+      { title: 'Photoshop', indicator: 25 },
+    ]}
+  />
+</VStack>
