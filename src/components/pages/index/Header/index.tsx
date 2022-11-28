@@ -7,6 +7,7 @@ import HeaderTechStack from '@/components/pages/index/Header/HeaderTechStack';
 const Header = () => {
   return (
     <header
+      id="page-header"
       className={clsx(
         'background-grid background-grid--fade-out pt-36 pb-20',
         'lg:pb-28 lg:pt-52'

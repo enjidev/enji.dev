@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import useScrollTop from '@/hooks/useScrollTop';
+import useOnExit from '@/hooks/useOnExit';
 import { GitHubIcon, TwitterIcon } from '@/components/shared/Icons';
 import NavIcon from '@/components/shared/Navigation/NavIcon';
 import NavLogo from '@/components/shared/Navigation/NavLogo';
@@ -16,6 +17,7 @@ const workLinks = [
 
 const Navbar = () => {
   const position = useScrollTop();
+  const isExit = useOnExit('#page-header');
 
   return (
     <nav className={clsx('fixed right-0 left-0 z-[1000]')}>
@@ -24,7 +26,7 @@ const Navbar = () => {
           'pointer-events-none fixed top-0 left-0 right-0 h-16 border-b border-divider-light backdrop-blur transition',
           'dark:border-divider-dark',
           [
-            position < 400
+            !isExit
               ? ['bg-slate-100/80', 'dark:bg-[#0c1222]/80']
               : ['bg-white/70', 'dark:bg-slate-900/80'],
           ],
