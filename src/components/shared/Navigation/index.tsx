@@ -1,12 +1,12 @@
 import clsx from 'clsx';
-import { useEffect, useState } from 'react';
+import useScrollTop from '@/hooks/useScrollTop';
 import { GitHubIcon, TwitterIcon } from '@/components/shared/Icons';
 import NavIcon from '@/components/shared/Navigation/NavIcon';
 import NavLogo from '@/components/shared/Navigation/NavLogo';
 import NavLink from '@/components/shared/Navigation/NavLink';
 import NavIconTheme from '@/components/shared/Navigation/NavIconTheme';
 import NavLinkDropdown from '@/components/shared/Navigation/NavLinkDropdown';
-import NavLinkExpanded from './NavLinkExpanded';
+import NavLinkExpanded from '@/components/shared/Navigation/NavLinkExpanded';
 
 const workLinks = [
   { title: 'Skills & Tools', href: '/work/skills-and-tools' },
@@ -15,23 +15,7 @@ const workLinks = [
 ];
 
 const Navbar = () => {
-  let [isOpaque, setIsOpaque] = useState(false);
-
-  useEffect(() => {
-    let offset = 10;
-    function onScroll() {
-      if (!isOpaque && window.scrollY > offset) {
-        setIsOpaque(true);
-      } else if (isOpaque && window.scrollY <= offset) {
-        setIsOpaque(false);
-      }
-    }
-    onScroll();
-    document.addEventListener('scroll', onScroll, { passive: true });
-    return () => {
-      document.removeEventListener('scroll', onScroll);
-    };
-  }, [isOpaque]);
+  const position = useScrollTop();
 
   return (
     <nav className={clsx('fixed right-0 left-0 z-[1000]')}>
@@ -39,7 +23,7 @@ const Navbar = () => {
         className={clsx(
           'pointer-events-none fixed top-0 left-0 right-0 h-16 border-b border-divider-light bg-white/60 backdrop-blur transition',
           'dark:border-divider-dark dark:bg-slate-900/80',
-          [isOpaque ? 'opacity-100' : 'opacity-0']
+          [position > 0 ? 'opacity-100' : 'opacity-0']
         )}
       />
       <div className={clsx('content-wrapper-max')}>
