@@ -31,8 +31,8 @@
     }
 
     h2 {
-      @apply mb-6 mt-12 scroll-mt-24 text-2xl;
-      @apply md:text-3xl;
+      @apply mb-4 mt-8 scroll-mt-24 text-2xl;
+      @apply md:mb-6 md:mt-12 md:text-3xl;
 
       &.with-anchor {
         @apply lg:-ml-12;
@@ -44,8 +44,8 @@
     }
 
     h3 {
-      @apply mb-4 mt-12 scroll-mt-24 text-lg;
-      @apply md:text-xl;
+      @apply mb-2 mt-8 scroll-mt-24 text-lg;
+      @apply md:mt-12 md:mb-4 md:text-xl;
 
       &.with-anchor {
         @apply lg:-ml-11;
