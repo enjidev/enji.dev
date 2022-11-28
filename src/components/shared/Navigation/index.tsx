@@ -21,8 +21,13 @@ const Navbar = () => {
     <nav className={clsx('fixed right-0 left-0 z-[1000]')}>
       <div
         className={clsx(
-          'pointer-events-none fixed top-0 left-0 right-0 h-16 border-b border-divider-light bg-white/60 backdrop-blur transition',
-          'dark:border-divider-dark dark:bg-slate-900/80',
+          'pointer-events-none fixed top-0 left-0 right-0 h-16 border-b border-divider-light backdrop-blur transition',
+          'dark:border-divider-dark',
+          [
+            position < 400
+              ? ['bg-slate-100/80', 'dark:bg-[#0c1222]/80']
+              : ['bg-white/70', 'dark:bg-slate-900/80'],
+          ],
           [position > 0 ? 'opacity-100' : 'opacity-0']
         )}
       />

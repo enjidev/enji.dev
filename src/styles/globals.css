@@ -120,9 +120,19 @@
     @apply flex h-9 items-center gap-1 rounded-xl px-2 text-[13px] font-bold;
     @apply dark:font-semibold;
 
-    &--label {
+    &--label& {
       @apply rounded-full bg-slate-100 px-5;
       @apply dark:bg-slate-100/5;
+
+      &--primary {
+        @apply bg-primary-600/[0.08];
+        @apply dark:bg-primary-400/10;
+      }
+
+      &--secondary {
+        @apply bg-secondary-600/[.08];
+        @apply dark:bg-secondary-400/10;
+      }
 
       svg {
         @apply -mr-1;
