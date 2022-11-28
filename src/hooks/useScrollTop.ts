@@ -13,7 +13,7 @@ export default function useScrollTop() {
     return () => {
       document.removeEventListener('scroll', onScroll);
     };
-  }, [scrollPosition]);
+  }, []);
 
   return scrollPosition;
 }

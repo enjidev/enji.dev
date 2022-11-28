@@ -63,7 +63,7 @@ export default function useScrollSpy(wrapper: string, wrapperOffset = 0) {
     return () => {
       document.removeEventListener('scroll', scrollSpy);
     };
-  });
+  }, [scrollSpy]);
 
   return { currentSlug, scrollProgress };
 }
