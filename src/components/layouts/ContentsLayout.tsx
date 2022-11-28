@@ -4,27 +4,34 @@ import PageHeader from '@/components/shared/PageHeader';
 import TableOfContents from '@/components/shared/TableOfContents';
 import type { TTableOfContentsItem } from '@/types';
 
-interface PageMeta {
+interface FrontMatter {
   title: string;
   description: string;
   caption?: string;
-  tableOfContents: Array<TTableOfContentsItem>;
+  pageStatus?: string;
 }
 
 interface ContentsLayoutProps {
-  meta: PageMeta;
+  frontMatter: FrontMatter;
+  tableOfContents: Array<TTableOfContentsItem>;
   children: React.ReactNode;
 }
 
 const ContentsLayout = ({
-  meta: { title, description, caption, tableOfContents },
+  frontMatter: { title, description, caption = '', pageStatus = '' },
+  tableOfContents,
   children,
 }: ContentsLayoutProps) => {
   return (
     <>
       <Head title={title} description={description} />
       <div className={clsx('')}>
-        <PageHeader title={title} description={description} caption={caption} />
+        <PageHeader
+          title={title}
+          description={description}
+          caption={caption}
+          status={pageStatus}
+        />
         <div className={clsx('content-wrapper')}>
           <div className={clsx('flex gap-8', 'xl:gap-24')}>
             <div

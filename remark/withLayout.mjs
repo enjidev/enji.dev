@@ -7,19 +7,17 @@ import {
 
 const withLayout = () => {
   return (tree, file) => {
-    const data = getFrontMatter(file.value);
+    const frontMatter = getFrontMatter(file.value);
     const headings = getHeadings(tree);
 
     addImport(tree, 'ContentsLayout', '@/components/layouts/ContentsLayout');
     addContent(
       tree,
       `export default ({ children }) => (
-        <ContentsLayout meta={${JSON.stringify({
-          title: data.title,
-          description: data.description,
-          caption: data.caption,
-          tableOfContents: headings,
-        })}}>
+        <ContentsLayout 
+          frontMatter={${JSON.stringify(frontMatter)}}
+          tableOfContents={${JSON.stringify(headings)}}
+        >
           {children}
         </ContentsLayout>
       )`
