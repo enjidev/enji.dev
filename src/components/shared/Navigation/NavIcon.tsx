@@ -13,7 +13,7 @@ const NavIcon = ({ href, icon, title, label }: NavIconProps) => {
       href={href}
       className={clsx(
         'flex items-center justify-center rounded-xl',
-        'hover:bg-slate-100',
+        'hover:bg-slate-300/50',
         'dark:hover:bg-slate-800/50',
         [
           label && [
