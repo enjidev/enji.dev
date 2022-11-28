@@ -17,35 +17,37 @@ const FeaturedCard = ({ icon, title, desc }: FeaturedCardProps) => {
     >
       <div
         className={clsx(
-          'absolute inset-x-0 inset-y-10 z-[-1] border-t border-divider-light',
+          'absolute inset-x-0 inset-y-8 z-[-1] border-t border-divider-light',
           'dark:border-divider-dark'
         )}
       ></div>
       <div
         className={clsx(
-          'absolute inset-y-0 inset-x-10 z-[-1] border-l border-divider-light',
+          'absolute inset-y-0 inset-x-8 z-[-1] border-l border-divider-light',
           'dark:border-divider-dark'
         )}
       ></div>
-      <div
-        className={clsx(
-          'mt-5 mr-4 ml-6 flex items-center gap-6 rounded-full bg-slate-100',
-          'dark:bg-slate-800'
-        )}
-      >
-        <div className={clsx('-m-2')}>{icon}</div>
+      <div className={clsx('-mt-0.5')}>
         <div
           className={clsx(
-            'truncate py-2 pr-4 font-bold text-slate-700',
-            'dark:text-slate-300'
+            'mt-4 mr-2 ml-4 flex items-center gap-6 rounded-full bg-slate-100',
+            'dark:bg-slate-800'
           )}
         >
-          {title}
+          <div className={clsx('-m-2')}>{icon}</div>
+          <div
+            className={clsx(
+              'truncate py-2 pr-4 text-sm font-bold text-slate-700',
+              'dark:text-slate-300'
+            )}
+          >
+            {title}
+          </div>
         </div>
       </div>
       <div
         className={clsx(
-          'pb-6 pl-16 pt-4 pr-6 text-sm text-slate-500',
+          'p-4 pl-12 text-[13px] text-slate-600',
           'dark:text-slate-400'
         )}
       >
