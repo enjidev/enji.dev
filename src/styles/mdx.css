@@ -88,7 +88,8 @@
       }
     }
 
-    ul {
+    ul,
+    ol {
       @apply ml-9 mt-6 mb-6;
 
       li {
