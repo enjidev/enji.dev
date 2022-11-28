@@ -74,6 +74,11 @@
       @apply my-8 border-divider-light;
       @apply md:my-12;
       @apply dark:border-divider-dark;
+
+      & + h2,
+      & + h3 {
+        @apply mt-0;
+      }
     }
 
     ul {
