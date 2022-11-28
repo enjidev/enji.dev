@@ -20,7 +20,11 @@ const Navbar = () => {
   const isExit = useOnExit('#page-header');
 
   return (
-    <nav className={clsx('fixed right-0 left-0 z-[1000]')}>
+    <nav
+      className={clsx('fixed right-0 left-0 z-[1000] transition', [
+        position > 0 ? 'translate-y-0' : 'translate-y-2',
+      ])}
+    >
       <div
         className={clsx(
           'pointer-events-none fixed top-0 left-0 right-0 h-16 border-b border-divider-light backdrop-blur transition',
@@ -30,7 +34,11 @@ const Navbar = () => {
               ? ['bg-slate-100/80', 'dark:bg-[#0c1222]/80']
               : ['bg-white/70', 'dark:bg-slate-900/80'],
           ],
-          [position > 0 ? 'opacity-100' : 'opacity-0']
+          [
+            position > 0
+              ? 'translate-y-0 opacity-100'
+              : 'translate-y-2 opacity-0',
+          ]
         )}
       />
       <div className={clsx('content-wrapper-max')}>
