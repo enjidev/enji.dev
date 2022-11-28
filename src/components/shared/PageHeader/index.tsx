@@ -31,11 +31,15 @@ const PageHeader = ({ title, description, caption }: PageHeaderProps) => {
             transition={{ delay: 0 }}
           >
             <span
-              className={clsx('mb-2 block text-base font-bold leading-none', [
-                caption === 'Work'
-                  ? ['text-secondary-600', 'dark:text-secondary-400']
-                  : ['text-primary-600', 'dark:text-primary-400'],
-              ])}
+              className={clsx(
+                'mb-2 block text-sm font-bold leading-none',
+                'md:text-base',
+                [
+                  caption === 'Work'
+                    ? ['text-secondary-600', 'dark:text-secondary-400']
+                    : ['text-primary-600', 'dark:text-primary-400'],
+                ]
+              )}
             >
               {caption}
             </span>
