@@ -10,6 +10,14 @@
       @apply font-bold text-slate-700;
       @apply dark:text-slate-300;
 
+      &:target {
+        animation: heading-target 400ms ease-in-out 600ms 2;
+
+        @apply motion-reduce:animate-none;
+        @apply motion-reduce:text-primary-600;
+        @apply motion-reduce:dark:text-primary-400;
+      }
+
       &.with-anchor {
         @apply flex items-center gap-4;
 
@@ -51,5 +59,11 @@
       @apply mt-12 border-divider-light;
       @apply dark:border-divider-dark;
     }
+  }
+}
+
+@keyframes heading-target {
+  50% {
+    @apply opacity-20;
   }
 }
