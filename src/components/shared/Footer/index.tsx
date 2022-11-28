@@ -7,8 +7,8 @@ const Footer = () => {
   return (
     <footer
       className={clsx(
-        'border-t border-divider-light bg-white text-sm text-slate-900',
-        'dark:border-divider-dark dark:bg-slate-900 dark:text-slate-200'
+        'background-grid background-grid--fade-in border-divider-light pt-8 text-sm text-slate-900',
+        'dark:border-divider-dark dark:text-slate-200'
       )}
     >
       <div className={clsx('content-wrapper')}>
