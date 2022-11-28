@@ -14,7 +14,11 @@ export const H2: NonNullable<MDXComponents['h2']> = ({ children }) => {
       data-ss-mt={96}
       className={clsx('with-anchor group')}
     >
-      <a href={`#${slug}`} className={clsx('group-hover:opacity-100')}>
+      <a
+        href={`#${slug}`}
+        className={clsx('group-hover:opacity-100')}
+        aria-labelledby={slug}
+      >
         <HashtagIcon className={clsx('h-5 w-5')} />
       </a>
       {children}
@@ -32,7 +36,11 @@ export const H3: NonNullable<MDXComponents['h3']> = ({ children }) => {
       data-ss-mt={96}
       className={clsx('with-anchor group')}
     >
-      <a href={`#${slug}`} className={clsx('group-hover:opacity-100')}>
+      <a
+        href={`#${slug}`}
+        className={clsx('group-hover:opacity-100')}
+        aria-labelledby={slug}
+      >
         <HashtagIcon className={clsx('h-5 w-5')} />
       </a>
       {children}
