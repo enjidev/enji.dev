@@ -30,7 +30,7 @@
     }
 
     h2 {
-      @apply mb-4 mt-10 scroll-mt-24 text-2xl;
+      @apply mb-6 mt-12 scroll-mt-24 text-2xl;
       @apply md:text-3xl;
 
       &.with-anchor {
@@ -43,7 +43,7 @@
     }
 
     h3 {
-      @apply mb-4 mt-10 scroll-mt-24 text-lg;
+      @apply mb-6 mt-12 scroll-mt-24 text-lg;
       @apply md:text-xl;
 
       &.with-anchor {
@@ -55,9 +55,39 @@
       }
     }
 
+    p {
+      @apply leading-normal;
+
+      & + p {
+        @apply mt-6;
+      }
+    }
+
+    strong {
+      @apply text-slate-700;
+      @apply dark:text-slate-300;
+    }
+
     hr {
-      @apply mt-12 border-divider-light;
+      @apply my-12 border-divider-light;
       @apply dark:border-divider-dark;
+    }
+
+    ul {
+      @apply ml-16 mt-6 mb-6;
+
+      li {
+        @apply relative leading-normal;
+
+        & + li {
+          @apply mt-1;
+        }
+
+        &::before {
+          @apply absolute -left-6 top-1.5 h-3 w-3 rounded-[4px] bg-slate-500 content-[''];
+          @apply dark:bg-slate-400;
+        }
+      }
     }
   }
 }
