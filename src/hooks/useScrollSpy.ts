@@ -59,7 +59,7 @@ export default function useScrollSpy(wrapper: string, wrapperOffset = 0) {
   useEffect(() => {
     scrollSpy();
 
-    document.addEventListener('scroll', scrollSpy);
+    document.addEventListener('scroll', scrollSpy, { passive: true });
     return () => {
       document.removeEventListener('scroll', scrollSpy);
     };
