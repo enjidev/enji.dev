@@ -44,7 +44,7 @@
     }
 
     h3 {
-      @apply mb-6 mt-12 scroll-mt-24 text-lg;
+      @apply mb-4 mt-12 scroll-mt-24 text-lg;
       @apply md:text-xl;
 
       &.with-anchor {

@@ -20,7 +20,7 @@ const PageHeader = ({ title, description, caption }: PageHeaderProps) => {
     <header
       id="page-header"
       className={clsx(
-        'background-grid background-grid--fade-out z-[900] pt-36 pb-8',
+        'background-grid background-grid--fade-out z-[900] pt-36 pb-16',
         'md:pb-20 md:pt-52'
       )}
     >
