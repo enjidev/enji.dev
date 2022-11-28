@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer
       className={clsx(
-        'background-grid background-grid--fade-in border-divider-light pt-8 text-sm text-slate-900',
+        'background-grid background-grid--fade-in mt-24 border-divider-light pt-8 text-sm text-slate-900',
         'dark:border-divider-dark dark:text-slate-200'
       )}
     >
