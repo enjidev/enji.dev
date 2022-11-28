@@ -8,8 +8,8 @@ const Header = () => {
   return (
     <header
       className={clsx(
-        'background-grid background-grid--fade-out pt-20 pb-20',
-        'lg:pb-28 lg:pt-36'
+        'background-grid background-grid--fade-out pt-36 pb-20',
+        'lg:pb-28 lg:pt-52'
       )}
     >
       <div className={clsx('content-wrapper')}>

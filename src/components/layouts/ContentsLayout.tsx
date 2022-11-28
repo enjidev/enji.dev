@@ -25,13 +25,6 @@ const ContentsLayout = ({
       <Head title={title} description={description} />
       <div className={clsx('')}>
         <PageHeader title={title} description={description} caption={caption} />
-        <div
-          className={clsx(
-            'pointer-events-none fixed top-0 left-0 right-0 hidden h-24 bg-gradient-to-b from-white opacity-100 transition',
-            'lg:block',
-            'dark:from-slate-900'
-          )}
-        />
         <div className={clsx('content-wrapper')}>
           <div className={clsx('flex gap-8', 'xl:gap-24')}>
             <div

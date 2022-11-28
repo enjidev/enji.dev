@@ -15,8 +15,8 @@ const HeaderImage = () => {
     >
       <div
         className={clsx(
-          'absolute top-0 right-0 h-[590px] w-[375px] rounded-b-full bg-white/80',
-          'dark:bg-slate-900/60'
+          'absolute top-0 right-0 h-[590px] w-[375px] rounded-full bg-gradient-to-t from-primary-400/20 via-primary-400/0',
+          'dark:from-primary-600/10 dark:via-primary-600/0'
         )}
       >
         <motion.div

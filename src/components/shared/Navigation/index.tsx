@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import { useEffect, useState } from 'react';
 import { GitHubIcon, TwitterIcon } from '@/components/shared/Icons';
 import NavIcon from '@/components/shared/Navigation/NavIcon';
 import NavLogo from '@/components/shared/Navigation/NavLogo';
@@ -14,17 +15,37 @@ const workLinks = [
 ];
 
 const Navbar = () => {
+  let [isOpaque, setIsOpaque] = useState(false);
+
+  useEffect(() => {
+    let offset = 10;
+    function onScroll() {
+      if (!isOpaque && window.scrollY > offset) {
+        setIsOpaque(true);
+      } else if (isOpaque && window.scrollY <= offset) {
+        setIsOpaque(false);
+      }
+    }
+    onScroll();
+    document.addEventListener('scroll', onScroll, { passive: true });
+    return () => {
+      document.removeEventListener('scroll', onScroll);
+    };
+  }, [isOpaque]);
+
   return (
-    <nav
-      className={clsx(
-        'z-[1000] border-b border-divider-light bg-white',
-        'dark:border-divider-dark dark:bg-slate-900'
-      )}
-    >
+    <nav className={clsx('fixed right-0 left-0 z-[1000]')}>
+      <div
+        className={clsx(
+          'pointer-events-none fixed top-0 left-0 right-0 h-16 border-b border-divider-light bg-white/60 backdrop-blur transition',
+          'dark:border-divider-dark dark:bg-slate-900/80',
+          [isOpaque ? 'opacity-100' : 'opacity-0']
+        )}
+      />
       <div className={clsx('content-wrapper-max')}>
         <div
           className={clsx(
-            'relative z-50 flex items-center justify-between py-4 px-2 text-sm',
+            'relative z-50 flex h-16 items-center justify-between px-2 text-sm',
             'md:px-4'
           )}
         >
