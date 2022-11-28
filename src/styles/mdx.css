@@ -31,7 +31,7 @@
     }
 
     h2 {
-      @apply mb-4 mt-8 scroll-mt-24 text-2xl;
+      @apply mb-6 mt-8 scroll-mt-24 text-2xl;
       @apply md:mb-6 md:mt-12 md:text-3xl;
 
       &.with-anchor {
@@ -44,8 +44,8 @@
     }
 
     h3 {
-      @apply mb-2 mt-8 scroll-mt-24 text-lg;
-      @apply md:mt-12 md:mb-4 md:text-xl;
+      @apply mb-4 mt-8 scroll-mt-24 text-lg;
+      @apply md:mb-4 md:mt-12 md:text-xl;
 
       &.with-anchor {
         @apply lg:-ml-11;
@@ -60,7 +60,8 @@
       @apply leading-normal;
 
       & + p {
-        @apply mt-6;
+        @apply mt-4;
+        @apply md:mt-6;
       }
     }
 
@@ -70,7 +71,8 @@
     }
 
     hr {
-      @apply my-12 border-divider-light;
+      @apply my-8 border-divider-light;
+      @apply md:my-12;
       @apply dark:border-divider-dark;
     }
 
