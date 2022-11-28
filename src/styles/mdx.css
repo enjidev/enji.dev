@@ -22,9 +22,10 @@
         @apply flex items-center gap-4;
 
         a {
-          @apply flex cursor-pointer items-center justify-center rounded-lg border border-divider-light bg-slate-100/50 opacity-0;
+          @apply hidden cursor-pointer items-center justify-center rounded-lg border border-divider-light bg-slate-100/50 opacity-0;
+          @apply lg:flex;
           @apply dark:border-divider-dark dark:bg-slate-200/5;
-          @apply focus:opacity-100;
+          @apply lg:focus:opacity-100;
         }
       }
     }
@@ -34,7 +35,7 @@
       @apply md:text-3xl;
 
       &.with-anchor {
-        @apply -ml-12;
+        @apply lg:-ml-12;
 
         a {
           @apply h-8 w-8;
@@ -47,7 +48,7 @@
       @apply md:text-xl;
 
       &.with-anchor {
-        @apply -ml-11;
+        @apply lg:-ml-11;
 
         a {
           @apply h-7 w-7;
