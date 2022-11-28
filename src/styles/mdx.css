@@ -11,7 +11,7 @@
       @apply dark:text-slate-300;
 
       &:target {
-        animation: heading-target 400ms ease-in-out 600ms 2;
+        animation: heading-target 240ms ease-in-out 700ms 2;
 
         @apply motion-reduce:animate-none;
         @apply motion-reduce:text-primary-600;
