@@ -22,9 +22,11 @@ const ContentsLayout = ({
   tableOfContents,
   children,
 }: ContentsLayoutProps) => {
+  const pageTitle = pageStatus ? `${pageStatus} ${title}` : title;
+
   return (
     <>
-      <Head title={title} description={description} />
+      <Head title={pageTitle} description={description} />
       <div className={clsx('')}>
         <PageHeader
           title={title}
