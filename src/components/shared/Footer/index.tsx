@@ -20,8 +20,8 @@ const Footer = () => {
             )}
           >
             <li>
-              <Link href="/design" className={clsx('block px-2 py-1')}>
-                Font & Colors
+              <Link href="/design-system" className={clsx('block px-2 py-1')}>
+                Design System
               </Link>
             </li>
             <li>
