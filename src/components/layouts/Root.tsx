@@ -1,4 +1,5 @@
 import FontPlusJakartaSans from '@/components/fonts/PlusJakartaSans';
+import FontJetBrainsMono from '@/components/fonts/JetBrainsMono';
 import Navigation from '@/components/shared/Navigation';
 import Footer from '@/components/shared/Footer';
 
@@ -8,6 +9,7 @@ const Root = ({ children }: { children: ReactNode }) => {
   return (
     <>
       <FontPlusJakartaSans />
+      <FontJetBrainsMono />
       <Navigation />
       <main>{children}</main>
       <Footer />
