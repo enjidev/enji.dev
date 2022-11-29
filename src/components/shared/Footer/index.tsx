@@ -15,12 +15,12 @@ const Footer = () => {
         <section className={clsx('py-10 font-semibold')}>
           <ul
             className={clsx(
-              'flex flex-wrap justify-center gap-x-4 gap-y-1',
-              'lg:gap-x-6'
+              'flex flex-wrap justify-center gap-x-2 gap-y-1',
+              'lg:gap-x-4'
             )}
           >
             <li>
-              <Link href="/design" className={clsx('px-2 py-1')}>
+              <Link href="/design" className={clsx('block px-2 py-1')}>
                 Font & Colors
               </Link>
             </li>
@@ -29,7 +29,7 @@ const Footer = () => {
                 href="https://www.figma.com/community/file/1176392613303840973"
                 target="_blank"
                 rel="noreferrer"
-                className={clsx('px-2 py-1')}
+                className={clsx('block px-2 py-1')}
               >
                 Design Concept
               </a>
@@ -39,7 +39,7 @@ const Footer = () => {
                 href="https://github.com/enjidev/enji.dev"
                 target="_blank"
                 rel="noreferrer"
-                className={clsx('px-2 py-1')}
+                className={clsx('block px-2 py-1')}
               >
                 Source Code
               </a>
