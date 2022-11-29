@@ -107,6 +107,10 @@
       }
     }
 
+    pre {
+      @apply my-6 rounded-xl p-4;
+    }
+
     hr {
       @apply my-8 border-divider-light;
       @apply md:my-12;

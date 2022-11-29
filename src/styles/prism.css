@@ -1,0 +1,25 @@
+pre {
+  @apply bg-slate-800 text-[14px] leading-normal;
+
+  code {
+    @apply font-normal text-slate-400;
+  }
+}
+
+.token {
+  &.tag .punctuation {
+    @apply text-slate-500;
+  }
+
+  &.tag {
+    @apply text-green-300;
+  }
+
+  &.attr-name {
+    @apply text-slate-300;
+  }
+
+  &.attr-value {
+    @apply text-blue-400;
+  }
+}

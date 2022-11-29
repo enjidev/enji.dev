@@ -3,6 +3,7 @@ import nextMDX from '@next/mdx';
 import remarkFrontmatter from 'remark-frontmatter';
 import withLayout from './remark/withLayout.mjs';
 import withRestrictedHeading from './remark/withRestrictedHeading.mjs';
+import rehypePrism from 'rehype-prism-plus';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -18,7 +19,7 @@ const withMDX = nextMDX({
   extension: /\.mdx?$/,
   options: {
     remarkPlugins: [remarkFrontmatter, withLayout, withRestrictedHeading],
-    rehypePlugins: [],
+    rehypePlugins: [rehypePrism],
     providerImportSource: '@mdx-js/react',
   },
 });
