@@ -17,7 +17,6 @@
     "@next/bundle-analyzer": "^13.0.3",
     "@next/font": "^13.0.0",
     "@next/mdx": "^13.0.5",
-    "@octokit/rest": "^19.0.5",
     "@vercel/analytics": "^0.1.5",
     "acorn": "^8.8.1",
     "acorn-jsx": "^5.3.2",

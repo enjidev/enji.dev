@@ -1,3 +1,7 @@
+export type TApiError = {
+  error: string;
+};
+
 export type TLastUpdate = {
   commiter: string;
   message: string;

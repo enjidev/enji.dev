@@ -1,13 +1,18 @@
 import useSWR from 'swr';
 import fetcher from '@/utils/fetcher';
-import type { TLastUpdate } from '@/types';
+import type { TLastUpdate, TApiError } from '@/types';
 
 export default function useLastUpdate() {
-  const { data, error } = useSWR<TLastUpdate>('/api/last-update', fetcher);
+  const { data, error } = useSWR<TLastUpdate | TApiError>(
+    '/api/last-update',
+    fetcher
+  );
+
+  const isError: boolean = (data && (data as TApiError).error) || error;
 
   return {
-    data,
-    isLoading: !error && !data,
-    isError: error,
+    data: data as TLastUpdate,
+    isError: isError,
+    isLoading: !isError && !data,
   };
 }
