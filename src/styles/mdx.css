@@ -28,6 +28,10 @@
           @apply lg:focus:opacity-100;
         }
       }
+
+      &:first-child {
+        @apply mt-0;
+      }
     }
 
     h2 {
