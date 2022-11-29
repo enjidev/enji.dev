@@ -20,8 +20,8 @@ const BlogHeader = ({ title, description, status }: BlogHeaderProps) => {
     <header
       id="page-header"
       className={clsx(
-        'background-grid background-grid--fade-out z-[900] mb-10 border-b border-divider-light pt-36 pb-6',
-        'md:mb-0 md:border-none md:pb-20 md:pt-52',
+        'background-grid background-grid--fade-out z-[900] mb-10 border-b border-divider-light pt-32 pb-12',
+        'md:mb-0 md:border-none md:pb-20 md:pt-44',
         'dark:border-divider-dark'
       )}
     >
