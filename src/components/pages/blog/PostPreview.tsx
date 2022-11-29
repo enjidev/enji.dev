@@ -50,9 +50,9 @@ const PostPreview = ({
           {pageStatus && (
             <span
               className={clsx(
-                'ml-2 font-normal text-slate-400',
+                'ml-2 font-normal text-slate-600',
                 'md:ml-2',
-                'dark:text-slate-600'
+                'dark:text-slate-400'
               )}
             >
               {pageStatus}
