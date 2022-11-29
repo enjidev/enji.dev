@@ -20,13 +20,16 @@ const Footer = () => {
             )}
           >
             <li>
-              <Link href="/design">Font & Colors</Link>
+              <Link href="/design" className={clsx('px-2 py-1')}>
+                Font & Colors
+              </Link>
             </li>
             <li>
               <a
                 href="https://www.figma.com/community/file/1176392613303840973"
                 target="_blank"
                 rel="noreferrer"
+                className={clsx('px-2 py-1')}
               >
                 Design Concept
               </a>
@@ -36,6 +39,7 @@ const Footer = () => {
                 href="https://github.com/enjidev/enji.dev"
                 target="_blank"
                 rel="noreferrer"
+                className={clsx('px-2 py-1')}
               >
                 Source Code
               </a>
