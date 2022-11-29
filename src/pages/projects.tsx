@@ -1,14 +1,13 @@
 import Head from '@/components/meta/Head';
-import PageHeader from '@/components/shared/Header/PageHeader';
+import CenteredHeader from '@/components/shared/Header/CenteredHeader';
 
 const Projects = () => {
   return (
     <>
       <Head title="Projects" description="Projects" />
-      <PageHeader
+      <CenteredHeader
         title="Projects"
         description="— page is coming very soon!"
-        caption="Personal"
       />
     </>
   );

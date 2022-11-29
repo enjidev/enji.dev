@@ -1,9 +1,7 @@
 import clsx from 'clsx';
-import Link from 'next/link';
 import Head from '@/components/meta/Head';
-import BlogHeader from '@/components/shared/Header/BlogHeader';
+import CenteredHeader from '@/components/shared/Header/CenteredHeader';
 import { getSortedPostsData } from '@/lib/posts';
-import { ChevronRightIcon } from '@/components/shared/Icons';
 
 import type { GetStaticProps, NextPage } from 'next';
 import type { TPostFrontMatter } from '@/types';
@@ -16,7 +14,7 @@ const Blog: NextPage<BlogProps> = ({ posts }) => {
   return (
     <>
       <Head title="Blog" description="Blog" />
-      <BlogHeader
+      <CenteredHeader
         title="Personal Blog"
         description="All about the detailed tutorials, stories, and tech-related stuff."
       />
