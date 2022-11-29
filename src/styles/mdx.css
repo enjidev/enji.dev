@@ -2,7 +2,7 @@
 
 @layer components {
   .mdx-contents {
-    @apply text-slate-600;
+    @apply w-full text-slate-600;
     @apply dark:text-slate-400;
 
     h2,
@@ -108,7 +108,7 @@
     }
 
     pre {
-      @apply my-6 rounded-xl p-4;
+      @apply my-6 overflow-auto rounded-xl p-4;
     }
 
     hr {
