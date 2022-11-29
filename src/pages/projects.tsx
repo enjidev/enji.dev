@@ -6,8 +6,8 @@ const Projects = () => {
     <>
       <Head title="Projects" description="Projects" />
       <CenteredHeader
-        title="Projects"
-        description="— page is coming very soon!"
+        title="My Projects"
+        description="All about my Front-End related work"
       />
     </>
   );

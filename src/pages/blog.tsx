@@ -16,7 +16,7 @@ const Blog: NextPage<BlogProps> = ({ posts }) => {
       <Head title="Blog" description="Blog" />
       <CenteredHeader
         title="Personal Blog"
-        description="All about the detailed tutorials, stories, and tech-related stuff."
+        description="All about the detailed tutorials, stories, and tech-related stuff"
       />
       <div className={clsx('content-wrapper')}>
         <div
