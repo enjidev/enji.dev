@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import Head from '@/components/meta/Head';
-import PageHeader from '@/components/shared/PageHeader';
+import PageHeader from '@/components/shared/Header/PageHeader';
 import TableOfContents from '@/components/shared/TableOfContents';
 import type { TTableOfContentsItem } from '@/types';
 

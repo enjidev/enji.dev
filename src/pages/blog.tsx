@@ -1,5 +1,5 @@
 import Head from '@/components/meta/Head';
-import PageHeader from '@/components/shared/PageHeader';
+import PageHeader from '@/components/shared/Header/PageHeader';
 import { getSortedPostsData } from '@/lib/posts';
 
 import type { GetStaticProps, NextPage } from 'next';
