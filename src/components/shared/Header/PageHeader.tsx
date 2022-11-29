@@ -60,8 +60,8 @@ const PageHeader = ({
         >
           <h1
             className={clsx(
-              'text-[2.5rem] font-extrabold leading-none text-slate-700',
-              'md:text-7xl',
+              'text-[2.5rem] font-extrabold leading-tight text-slate-700',
+              'md:text-7xl md:leading-snug',
               'dark:text-slate-300'
             )}
           >
