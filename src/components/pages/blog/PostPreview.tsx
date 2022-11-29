@@ -1,32 +1,43 @@
 import clsx from 'clsx';
+import dayjs from '@/utils/dayjs';
 import Link from 'next/link';
 import { ChevronRightIcon } from '@/components/shared/Icons';
 
 import type { TPostFrontMatter } from '@/types';
 
-type PostPreviewProps = Pick<
-  TPostFrontMatter,
-  'title' | 'description' | 'date' | 'slug'
->;
+type PostPreviewProps = TPostFrontMatter & {};
 
-const PostPreview = ({ title, description, date, slug }: PostPreviewProps) => {
+const PostPreview = ({
+  title,
+  description,
+  date,
+  slug,
+  pageLang,
+  pageStatus,
+}: PostPreviewProps) => {
   return (
     <Link
       key={slug}
       href={`blog/${slug}`}
       className={clsx(
-        'block rounded-xl p-4',
+        'block rounded-xl bg-gradient-to-t p-4',
         'md:p-6',
-        'hover:bg-slate-50 dark:hover:bg-slate-800/20'
+        'hover:from-slate-50 hover:via-slate-50/0 dark:hover:from-black/5 dark:hover:via-black/0'
       )}
     >
       <div
         className={clsx(
-          'text-slate mb-2 text-xs text-slate-500',
+          'text-slate mb-2 flex gap-1 text-xs text-slate-500',
           'dark:text-slate-400'
         )}
       >
-        {date}
+        <span>{dayjs(date, 'YYYY-MM-DD').format('MMMM D, YYYY')}</span>
+        {pageLang && pageLang === 'id' && (
+          <>
+            <span>&middot;</span>
+            <span>Bahasa Indonesia</span>
+          </>
+        )}
       </div>
       <div className={clsx('mb-1')}>
         <h2
@@ -36,6 +47,17 @@ const PostPreview = ({ title, description, date, slug }: PostPreviewProps) => {
           )}
         >
           {title}
+          {pageStatus && (
+            <span
+              className={clsx(
+                'ml-2 font-normal text-slate-400',
+                'md:ml-2',
+                'dark:text-slate-600'
+              )}
+            >
+              {pageStatus}
+            </span>
+          )}
         </h2>
       </div>
       <p
