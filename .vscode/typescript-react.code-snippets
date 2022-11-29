@@ -1,0 +1,6 @@
+{
+  "Element with clsx": {
+    "prefix": "cl",
+    "body": ["<${1:div} className={clsx('$2')}>$0</${1:div}>"]
+  }
+}
