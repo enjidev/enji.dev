@@ -17,4 +17,6 @@ export type TPostFrontMatter = {
   description: string;
   slug: string;
   date: string;
+  pageLang: string;
+  pageStatus: string;
 };

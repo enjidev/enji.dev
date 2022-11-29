@@ -27,9 +27,9 @@ const Blog: NextPage<BlogProps> = ({ posts }) => {
         >
           <div className={clsx('md:w-64')}>{/* TODO: Filter Posts */}</div>
           <div className={clsx('flex-1')}>
-            {posts.map(({ slug, title, date, description }) => (
+            {posts.map((post) => (
               <div
-                key={slug}
+                key={post.slug}
                 className={clsx(
                   'mb-8 flex items-start gap-4',
                   'md:mb-4 md:gap-6'
@@ -43,12 +43,7 @@ const Blog: NextPage<BlogProps> = ({ posts }) => {
                   )}
                 />
                 <div className={clsx('flex-1')}>
-                  <PostPreview
-                    title={title}
-                    description={description}
-                    date={date}
-                    slug={slug}
-                  />
+                  <PostPreview {...post} />
                 </div>
               </div>
             ))}
