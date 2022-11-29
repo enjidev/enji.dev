@@ -1,7 +1,15 @@
 import Head from '@/components/meta/Head';
 import PageHeader from '@/components/shared/PageHeader';
+import { getSortedPostsData } from '@/lib/posts';
 
-const Blog = () => {
+import type { GetStaticProps, NextPage } from 'next';
+import type { TPostFrontMatter } from '@/types';
+
+interface BlogProps {
+  posts: Array<TPostFrontMatter>;
+}
+
+const Blog: NextPage<BlogProps> = () => {
   return (
     <>
       <Head title="Blog" description="Blog" />
@@ -12,6 +20,16 @@ const Blog = () => {
       />
     </>
   );
+};
+
+export const getStaticProps: GetStaticProps<BlogProps> = async () => {
+  const allPostsData = getSortedPostsData();
+
+  return {
+    props: {
+      posts: allPostsData,
+    },
+  };
 };
 
 export default Blog;

@@ -11,3 +11,10 @@ export type TTableOfContentsItem = {
   depth: number;
   slug: string;
 };
+
+export type TPostFrontMatter = {
+  title: string;
+  description: string;
+  slug: string;
+  date: string;
+};
