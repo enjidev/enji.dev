@@ -12,7 +12,7 @@ import '@/styles/mdx.css';
 function App({ Component, pageProps }: AppProps) {
   return (
     <MotionConfig reducedMotion="user">
-      <ThemeProvider attribute="class">
+      <ThemeProvider attribute="class" disableTransitionOnChange={true}>
         <RootLayout>
           <MDXProvider components={mdxComponents}>
             <>
