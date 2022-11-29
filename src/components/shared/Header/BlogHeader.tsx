@@ -11,11 +11,10 @@ const animation = {
 
 interface BlogHeaderProps {
   title: string;
-  description?: string;
-  status?: string;
+  description: string;
 }
 
-const BlogHeader = ({ title, description, status }: BlogHeaderProps) => {
+const BlogHeader = ({ title, description }: BlogHeaderProps) => {
   return (
     <header
       id="page-header"
@@ -39,17 +38,6 @@ const BlogHeader = ({ title, description, status }: BlogHeaderProps) => {
             )}
           >
             {title}
-            {status && (
-              <span
-                className={clsx(
-                  'ml-2 align-top text-base font-bold text-slate-400',
-                  'md:ml-4 md:text-2xl',
-                  'dark:text-slate-600'
-                )}
-              >
-                {status}
-              </span>
-            )}
           </h1>
         </motion.div>
         {description && (
