@@ -44,8 +44,8 @@
     }
 
     h3 {
-      @apply mb-4 mt-5 scroll-mt-[86px] text-lg;
-      @apply md:mb-5 md:mt-6 md:text-xl;
+      @apply mb-4 mt-5 scroll-mt-[86px] text-[1.2rem];
+      @apply md:mb-5 md:mt-6 md:text-[1.35rem];
 
       &.with-anchor {
         @apply lg:-ml-11;
