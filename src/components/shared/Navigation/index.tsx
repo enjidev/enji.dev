@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import useScrollTop from '@/hooks/useScrollTop';
 import useOnExit from '@/hooks/useOnExit';
-import { GitHubIcon, TwitterIcon } from '@/components/shared/Icons';
+import { FigmaIcon, GitHubIcon, TwitterIcon } from '@/components/shared/Icons';
 import NavIcon from '@/components/shared/Navigation/NavIcon';
 import NavLogo from '@/components/shared/Navigation/NavLogo';
 import NavLink from '@/components/shared/Navigation/NavLink';
@@ -66,6 +66,13 @@ const Navbar = () => {
             </ul>
           </div>
           <ul className={clsx('flex items-center gap-2')}>
+            <li className={clsx('-mr-1 hidden', 'sm:block')}>
+              <NavIcon
+                href="https://figma.com/@enjidev"
+                icon={<FigmaIcon className={clsx('h-5 w-5')} />}
+                title="Figma"
+              />
+            </li>
             <li className={clsx('hidden', 'sm:block')}>
               <NavIcon
                 href="https://github.com/enjidev"
