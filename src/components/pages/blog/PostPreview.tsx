@@ -19,11 +19,7 @@ const PostPreview = ({
     <Link
       key={slug}
       href={`blog/${slug}`}
-      className={clsx(
-        'block rounded-xl bg-gradient-to-t p-4',
-        'md:p-6',
-        'hover:from-slate-50 hover:via-slate-50/0 dark:hover:from-black/5 dark:hover:via-black/0'
-      )}
+      className={clsx('group block rounded-xl bg-gradient-to-t p-4', 'md:p-6')}
     >
       <div
         className={clsx(
@@ -74,7 +70,8 @@ const PostPreview = ({
           'dark:text-primary-400'
         )}
       >
-        read more <ChevronRightIcon className="mt-1 h-3 w-3" />
+        read more{' '}
+        <ChevronRightIcon className="mt-1 h-3 w-3 transition group-hover:animate-bounce-x" />
       </div>
     </Link>
   );
