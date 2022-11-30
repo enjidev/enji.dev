@@ -22,7 +22,7 @@ interface HeaderCtaProps {
 const ButtonContactMe = () => {
   return (
     <Link
-      href="/contact"
+      href="/work/contact"
       className={clsx('button button--solid min-w-[128px]', 'md:button--big')}
     >
       Contact Me
