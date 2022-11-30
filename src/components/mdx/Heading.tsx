@@ -21,7 +21,7 @@ export const H2: NonNullable<MDXComponents['h2']> = ({ children }) => {
       >
         <HashtagIcon className={clsx('h-5 w-5')} />
       </a>
-      {children}
+      <span>{children}</span>
     </h2>
   );
 };
@@ -43,7 +43,7 @@ export const H3: NonNullable<MDXComponents['h3']> = ({ children }) => {
       >
         <HashtagIcon className={clsx('h-5 w-5')} />
       </a>
-      {children}
+      <span>{children}</span>
     </h3>
   );
 };

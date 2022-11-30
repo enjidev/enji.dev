@@ -10,12 +10,26 @@
       @apply font-extrabold text-slate-700;
       @apply dark:text-slate-300;
 
-      &:target {
-        animation: heading-target 240ms ease-in-out 700ms 2;
+      span {
+        @apply relative;
 
-        @apply motion-reduce:animate-none;
+        &::before {
+          @apply absolute inset-0 -inset-x-2 z-[-1] origin-left scale-x-0 bg-primary-400/60 content-[''];
+          @apply dark:bg-primary-900/60;
+        }
+      }
+
+      &:target {
         @apply motion-reduce:text-primary-600;
         @apply motion-reduce:dark:text-primary-400;
+
+        span {
+          &::before {
+            animation: heading-target 900ms cubic-bezier(0, 0, 0.03, 0.9) 600ms;
+
+            @apply motion-reduce:animate-none;
+          }
+        }
       }
 
       &.with-anchor {
@@ -150,7 +164,26 @@
 }
 
 @keyframes heading-target {
-  50% {
-    @apply opacity-20;
+  0%,
+  44%,
+  88.1%,
+  100% {
+    @apply origin-left;
+  }
+
+  0%,
+  100%,
+  88% {
+    transform: scaleX(0);
+  }
+
+  44.1%,
+  88% {
+    @apply origin-right;
+  }
+
+  33%,
+  44% {
+    transform: scaleX(1);
   }
 }
