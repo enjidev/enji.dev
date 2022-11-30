@@ -5,8 +5,8 @@ caption: Work
 pageStatus: (DRAFT)
 ---
 
-import Labels from '@/components/pages/work/Labels';
-import { VStack } from '@/components/Stack';
+import Labels, { Label } from '@/components/pages/work/Labels';
+import { VStack, HStack } from '@/components/Stack';
 
 I started my career as a web developer about **{new Date().getFullYear() - 2016} years ago**. I've tried some programming languages and tech stack, both Back-End, and Front-End.
 
@@ -34,17 +34,35 @@ The JavaScript superset—TypeScript—has accompanied me for **about {new Date(
 
 ### React
 
-React seems to have become a mandatory library for creating a website.
+&mdash;
+
+### Tailwind CSS
+
+&mdash;
+
+### Framer Motion
+
+&mdash;
+
+### Next.js
+
+&mdash;
 
 ---
 
 ## Detail and Summary
 
-I present all data in labels and graphs to make it easier to read.
+I represent all data in labels to make it easier to read. The **underline indicator** shows how often I used the related item, e.g.:
+
+<br />
+<HStack spacing={8}>
+  <Label title="Frequently Used" />
+  <Label title="Occasionally" indicator={25} />
+</HStack>
+
+---
 
 ### Programming Languages
-
-Programming languages.
 
 <br />
 <VStack spacing={12}>
@@ -69,8 +87,6 @@ Programming languages.
 ---
 
 ### Technologies
-
-Modules, libraries, and frameworks.
 
 <br />
 <VStack spacing={12}>
@@ -112,9 +128,7 @@ Modules, libraries, and frameworks.
 
 ---
 
-### Software and Tools
-
-Softwares and Apps.
+### Softwares and Tools
 
 <br />
 <VStack spacing={12}>
