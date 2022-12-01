@@ -9,13 +9,13 @@ export const Label = ({ indicator, children }: LabelProps) => {
   const percentage = Math.min(100, Math.max(0, indicator));
 
   return (
-    <div className={clsx('label')}>
+    <span className={clsx('label')}>
       <div
         className={clsx('label__indicator')}
         style={{ width: `${percentage}%` }}
       />
       {children}
-    </div>
+    </span>
   );
 };
 
