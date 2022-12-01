@@ -17,8 +17,8 @@ const TableOfContentsLink = ({
 }: TableOfContentsLinkProps) => {
   return (
     <a
-      className={clsx('flex p-1 text-[13px]', [
-        depth === 2 ? ['pl-8 '] : ['pl-4 font-bold', 'dark:font-semibold'],
+      className={clsx('flex p-1 px-2 text-[13px]', [
+        depth === 2 ? ['ml-4'] : ['font-bold', 'dark:font-semibold'],
         active
           ? [
               'text-primary-600',
@@ -66,7 +66,7 @@ const TableOfContents = ({ items = [] }: TableOfContensProps) => {
             <Link
               href=""
               className={clsx(
-                'cursor-pointer font-normal text-primary-700',
+                'cursor-pointer p-1 px-2 font-normal text-primary-700',
                 'dark:text-primary-400'
               )}
             >
@@ -74,21 +74,20 @@ const TableOfContents = ({ items = [] }: TableOfContensProps) => {
             </Link>
           </motion.div>
         </div>
-
-        <div className={clsx('relative mt-4')}>
+        <div
+          className={clsx(
+            'relative mt-4 border-l border-divider-light px-4',
+            'dark:border-divider-dark'
+          )}
+        >
           <div
             className={clsx(
-              'absolute top-0 bottom-0 left-0 border-l border-primary-600',
+              'absolute top-0 bottom-0 left-[-1px] border-l border-primary-600',
               'dark:border-primary-400'
             )}
             style={{ height: `${scrollProgress}%` }}
           />
-          <ul
-            className={clsx(
-              'flex flex-col gap-2 border-l border-divider-light',
-              'dark:border-divider-dark'
-            )}
-          >
+          <ul className={clsx('flex flex-col gap-2')}>
             {items.map(({ title, depth, slug }) => {
               const isActive = currentSlug ? currentSlug === slug : false;
 
