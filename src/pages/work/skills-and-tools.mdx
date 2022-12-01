@@ -5,7 +5,7 @@ caption: Work
 pageStatus: (DRAFT)
 ---
 
-import Labels, { Label } from '@/components/pages/work/Labels';
+import { Label } from '@/components/pages/work/Labels';
 import { VStack, HStack } from '@/components/Stack';
 
 I started my career as a web developer about **{new Date().getFullYear() - 2016} years ago**. I've tried some programming languages and tech stack, both Back-End, and Front-End.
@@ -56,8 +56,8 @@ I represent all data in labels to make it easier to read. The **underline indica
 
 <br />
 <HStack spacing={8}>
-  <Label title="Frequently Used" />
-  <Label title="Occasionally" indicator={25} />
+  <Label indicator={100}>Frequently Used</Label>
+  <Label indicator={25}>Occasionally</Label>
 </HStack>
 
 ---
@@ -66,22 +66,16 @@ I represent all data in labels to make it easier to read. The **underline indica
 
 <br />
 <VStack spacing={12}>
-  <Labels
-    title="FE related"
-    items={[
-      { title: 'TypeScript', indicator: 100 },
-      { title: 'JavaScript', indicator: 100 },
-      { title: 'HTML', indicator: 100 },
-      { title: 'CSS/SCSS', indicator: 100 },
-    ]}
-  />
-  <Labels
-    title="BE related"
-    items={[
-      { title: 'PHP', indicator: 25 },
-      { title: 'SQL', indicator: 25 },
-    ]}
-  />
+  <HStack spacing={8}>
+    <Label indicator={100}>TypeScript</Label>
+    <Label indicator={100}>JavaScript</Label>
+    <Label indicator={100}>HTML</Label>
+    <Label indicator={100}>CSS/SCSS</Label>
+  </HStack>
+  <HStack spacing={8}>
+    <Label indicator={50}>PHP</Label>
+    <Label indicator={25}>SQL</Label>
+  </HStack>
 </VStack>
 
 ---
@@ -90,40 +84,31 @@ I represent all data in labels to make it easier to read. The **underline indica
 
 <br />
 <VStack spacing={12}>
-  <Labels
-    title="UI related"
-    items={[
-      { title: 'Tailwind CSS', indicator: 100 },
-      { title: 'Material UI', indicator: 75 },
-      { title: 'Chakra UI', indicator: 50 },
-      { title: 'Bootstrap', indicator: 25 },
-      { title: 'Zurb Foundation', indicator: 50 },
-    ]}
-  />
-  <Labels
-    title="FE related"
-    items={[
-      { title: 'React', indicator: 100 },
-      { title: 'Next.js', indicator: 50 },
-      { title: 'Framer Motion', indicator: 50 },
-      { title: 'Storybook', indicator: 50 },
-      { title: 'Framework7', indicator: 50 },
-      { title: 'Redux', indicator: 25 },
-      { title: 'Webpack', indicator: 25 },
-      { title: 'Gulp', indicator: 25 },
-      { title: 'Backbone.js', indicator: 25 },
-      { title: 'Marionette.js', indicator: 25 },
-      { title: 'WordPress', indicator: 25 },
-    ]}
-  />
-  <Labels
-    title="BE related"
-    items={[
-      { title: 'Express', indicator: 25 },
-      { title: 'Redis', indicator: 25 },
-      { title: 'MongoDB', indicator: 25 },
-    ]}
-  />
+  <HStack spacing={8}>
+    <Label indicator={100}>Tailwind CSS</Label>
+    <Label indicator={75}>Material UI</Label>
+    <Label indicator={50}>Chakra UI</Label>
+    <Label indicator={50}>Bootstrap</Label>
+    <Label indicator={50}>Zurb Foundation</Label>
+  </HStack>
+  <HStack spacing={8}>
+    <Label indicator={100}>React</Label>
+    <Label indicator={50}>Next.js</Label>
+    <Label indicator={50}>Framer Motion</Label>
+    <Label indicator={50}>Storybook</Label>
+    <Label indicator={50}>Framework7</Label>
+    <Label indicator={25}>Redux</Label>
+    <Label indicator={25}>Webpack</Label>
+    <Label indicator={25}>Gulp</Label>
+    <Label indicator={25}>Backbone.js</Label>
+    <Label indicator={25}>Marionette.js</Label>
+    <Label indicator={25}>WordPress</Label>
+  </HStack>
+  <HStack spacing={8}>
+    <Label indicator={25}>Express</Label>
+    <Label indicator={25}>Redis</Label>
+    <Label indicator={25}>MongoDB</Label>
+  </HStack>
 </VStack>
 
 ---
@@ -132,21 +117,15 @@ I represent all data in labels to make it easier to read. The **underline indica
 
 <br />
 <VStack spacing={12}>
-  <Labels
-    title="Coder related"
-    items={[
-      { title: 'VS Code', indicator: 100 },
-      { title: 'Node.js', indicator: 100 },
-      { title: 'Git', indicator: 100 },
-      { title: 'Sourcetree', indicator: 50 },
-    ]}
-  />
-  <Labels
-    title="Designer related"
-    items={[
-      { title: 'Figma', indicator: 100 },
-      { title: 'Inkscape', indicator: 50 },
-      { title: 'Photoshop', indicator: 25 },
-    ]}
-  />
+  <HStack spacing={8}>
+    <Label indicator={100}>VS Code</Label>
+    <Label indicator={100}>Node.js</Label>
+    <Label indicator={100}>Git</Label>
+    <Label indicator={50}>Sourcetree</Label>
+  </HStack>
+  <HStack spacing={8}>
+    <Label indicator={100}>Figma</Label>
+    <Label indicator={50}>Inkscape</Label>
+    <Label indicator={25}>Photoshop</Label>
+  </HStack>
 </VStack>
