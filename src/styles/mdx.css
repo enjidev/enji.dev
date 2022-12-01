@@ -96,29 +96,29 @@
         @apply mt-4;
         @apply md:mt-5;
       }
+
+      code {
+        @apply font-medium text-slate-700;
+        @apply dark:text-slate-300;
+
+        &::before,
+        &::after {
+          @apply content-['`'];
+        }
+
+        &::before {
+          @apply mr-[-2px];
+        }
+
+        &::after {
+          @apply ml-[-2px];
+        }
+      }
     }
 
     strong {
       @apply font-bold text-slate-700;
       @apply dark:text-slate-300;
-    }
-
-    *:not(pre) + code {
-      @apply font-medium text-slate-700;
-      @apply dark:text-slate-300;
-
-      &::before,
-      &::after {
-        @apply content-['`'];
-      }
-
-      &::before {
-        @apply mr-[-2px];
-      }
-
-      &::after {
-        @apply ml-[-2px];
-      }
     }
 
     pre {
