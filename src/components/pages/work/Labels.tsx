@@ -10,11 +10,12 @@ export const Label = ({ indicator, children }: LabelProps) => {
 
   return (
     <span className={clsx('label')}>
-      <div
+      {children}
+      <span
         className={clsx('label__indicator')}
         style={{ width: `${percentage}%` }}
+        aria-label={`${percentage}%`}
       />
-      {children}
     </span>
   );
 };
