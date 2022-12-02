@@ -30,6 +30,11 @@
   :focus-visible {
     @apply relative rounded-xl outline-2 outline-offset-2 outline-accent-400;
   }
+
+  ::selection {
+    @apply bg-accent-200/60 text-accent-900;
+    @apply dark:bg-accent-400/30 dark:text-accent-100;
+  }
 }
 
 @layer components {
