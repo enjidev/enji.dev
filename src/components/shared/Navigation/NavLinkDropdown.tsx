@@ -63,7 +63,7 @@ const NavLinkDropdown = ({ title, items }: NavLinkDropdownProps) => {
                 initial={'hide'}
                 animate={'show'}
                 className={clsx(
-                  'absolute top-10 z-40 flex w-40 flex-col rounded-xl border border-divider-light bg-white p-2',
+                  'absolute top-11 z-40 flex w-40 flex-col rounded-2xl border border-divider-light bg-white p-2',
                   'dark:border-divider-dark dark:bg-slate-900'
                 )}
               >

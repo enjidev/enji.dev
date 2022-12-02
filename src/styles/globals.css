@@ -167,7 +167,7 @@
     }
 
     &--focus {
-      @apply rounded-md bg-slate-100;
+      @apply rounded-lg bg-slate-100;
       @apply dark:bg-slate-800/50;
     }
   }
