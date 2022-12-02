@@ -1,7 +1,7 @@
 import { ThemeProvider } from 'next-themes';
 import { MDXProvider } from '@mdx-js/react';
 import { MotionConfig as MotionProvider } from 'framer-motion';
-import ColorSchemeProvider from '@/providers/ColorSchemeProvider';
+import ColorAccentProvider from '@/providers/ColorAccentProvider';
 
 import mdxComponents from '@/components/mdx';
 
@@ -13,9 +13,9 @@ const Provider = ({ children }: ProviderProps) => {
   return (
     <MotionProvider reducedMotion="user">
       <ThemeProvider attribute="class" disableTransitionOnChange={true}>
-        <ColorSchemeProvider defaultScheme="violet">
+        <ColorAccentProvider defaultScheme="violet">
           <MDXProvider components={mdxComponents}>{children}</MDXProvider>
-        </ColorSchemeProvider>
+        </ColorAccentProvider>
       </ThemeProvider>
     </MotionProvider>
   );

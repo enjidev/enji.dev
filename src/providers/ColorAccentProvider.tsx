@@ -1,26 +1,26 @@
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 
-interface ColorSchemeProviderProps {
+interface ColorAccentProviderProps {
   defaultScheme?: 'violet' | 'blue';
   children?: React.ReactNode;
 }
 
-const ColorSchemeProvider = ({
+const ColorAccentProvider = ({
   defaultScheme = 'violet',
   children,
-}: ColorSchemeProviderProps) => {
+}: ColorAccentProviderProps) => {
   const { pathname } = useRouter();
 
   useEffect(() => {
-    document.documentElement.setAttribute('data-scheme', defaultScheme);
+    document.documentElement.setAttribute('data-accent', defaultScheme);
 
     if (pathname.includes('/work/')) {
-      document.documentElement.setAttribute('data-scheme', 'blue');
+      document.documentElement.setAttribute('data-accent', 'blue');
     }
   }, [pathname, defaultScheme]);
 
   return <>{children}</>;
 };
 
-export default ColorSchemeProvider;
+export default ColorAccentProvider;
