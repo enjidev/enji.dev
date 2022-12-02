@@ -7,6 +7,15 @@ import rehypePrism from 'rehype-prism-plus';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  redirects: async () => {
+    return [
+      {
+        source: '/work',
+        destination: '/work/skills-and-tools',
+        permanent: false,
+      },
+    ];
+  },
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
   reactStrictMode: true,
 };
