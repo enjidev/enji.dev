@@ -69,6 +69,7 @@ const TableOfContents = ({ items = [] }: TableOfContensProps) => {
                 'cursor-pointer p-1 px-2 font-normal text-primary-700',
                 'dark:text-primary-400'
               )}
+              tabIndex={currentSlug ? 0 : -1}
             >
               Scroll to top
             </Link>
