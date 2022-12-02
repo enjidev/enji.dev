@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 
 interface ColorSchemeProviderProps {
   defaultScheme?: 'violet' | 'blue';
-  children: JSX.Element;
+  children?: React.ReactNode;
 }
 
 const ColorSchemeProvider = ({
@@ -20,7 +20,7 @@ const ColorSchemeProvider = ({
     }
   }, [pathname, defaultScheme]);
 
-  return children;
+  return <>{children}</>;
 };
 
 export default ColorSchemeProvider;
