@@ -41,15 +41,11 @@ interface NavLinkDropdownProps {
 
 const NavLinkDropdown = ({ title, items }: NavLinkDropdownProps) => {
   return (
-    <div className="focus-visible--secondary relative">
+    <div className="relative">
       <Menu>
         {({ open }) => (
           <>
-            <Menu.Button
-              className={clsx(
-                'nav-link nav-link--secondary nav-link--label ml-2'
-              )}
-            >
+            <Menu.Button className={clsx('nav-link nav-link--label ml-2')}>
               {title}
               <ChevronRightIcon
                 className={clsx('h-3 w-3 rotate-90', [open && '-rotate-90'])}
@@ -72,10 +68,9 @@ const NavLinkDropdown = ({ title, items }: NavLinkDropdownProps) => {
                     {({ active }) => (
                       <LinkRef
                         href={href}
-                        className={clsx(
-                          'nav-link nav-link--secondary h-8 text-xs',
-                          [active && 'nav-link--focus']
-                        )}
+                        className={clsx('nav-link h-8 text-xs', [
+                          active && 'nav-link--focus',
+                        ])}
                       >
                         {title}
                       </LinkRef>

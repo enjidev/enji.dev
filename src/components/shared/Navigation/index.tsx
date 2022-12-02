@@ -49,7 +49,7 @@ const Navbar = () => {
             'md:px-4'
           )}
         >
-          <div className={clsx('flex', 'md:gap-2')}>
+          <div className={clsx('flex', 'md:gap-2')} data-scheme="violet">
             <NavLogo href="/" title="Home" />
             <ul className={clsx('flex items-center', 'md:gap-1')}>
               <li>
@@ -58,10 +58,10 @@ const Navbar = () => {
               <li>
                 <NavLink title="Blog" href="/blog" />
               </li>
-              <li className={clsx('lg:hidden')}>
+              <li className={clsx('lg:hidden')} data-scheme="blue">
                 <NavLinkDropdown title="Work" items={workLinks} />
               </li>
-              <li className={clsx('hidden lg:block')}>
+              <li className={clsx('hidden lg:block')} data-scheme="blue">
                 <NavLinkExpanded title="Work" items={workLinks} />
               </li>
             </ul>

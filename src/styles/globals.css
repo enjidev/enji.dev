@@ -30,12 +30,6 @@
   :focus-visible {
     @apply relative rounded-xl outline-2 outline-offset-2 outline-accent-400;
   }
-
-  .focus-visible--secondary {
-    :focus-visible {
-      @apply outline-secondary-400;
-    }
-  }
 }
 
 @layer components {
@@ -117,22 +111,18 @@
   }
 
   .nav-link {
-    @apply flex h-9 items-center gap-1 rounded-xl px-2 text-[13px] font-bold;
-    @apply dark:font-semibold;
+    @apply flex h-9 items-center gap-1 rounded-xl px-2 text-[13px] font-bold text-accent-600;
+    @apply dark:font-semibold dark:text-accent-400;
 
-    &--label& {
-      @apply rounded-full bg-slate-100 px-5;
-      @apply dark:bg-slate-100/5;
+    &:hover,
+    &[aria-expanded='true'] {
+      @apply text-accent-700;
+      @apply dark:text-accent-300;
+    }
 
-      &--primary {
-        @apply bg-accent-600/[0.08];
-        @apply dark:bg-accent-400/10;
-      }
-
-      &--secondary {
-        @apply bg-secondary-600/[.08];
-        @apply dark:bg-secondary-400/10;
-      }
+    &--label {
+      @apply rounded-full bg-slate-100 bg-accent-600/[0.08] px-5;
+      @apply dark:bg-accent-400/10;
 
       svg {
         @apply -mr-1;
@@ -142,28 +132,6 @@
     &__separator {
       @apply -mt-1 text-slate-800;
       @apply dark:text-slate-300;
-    }
-
-    &--primary {
-      @apply text-accent-600;
-      @apply dark:text-accent-400;
-
-      &:hover,
-      &[aria-expanded='true'] {
-        @apply text-accent-700;
-        @apply dark:text-accent-300;
-      }
-    }
-
-    &--secondary {
-      @apply text-secondary-600;
-      @apply dark:text-secondary-400;
-
-      &:hover,
-      &[aria-expanded='true'] {
-        @apply text-secondary-700;
-        @apply dark:text-secondary-300;
-      }
     }
 
     &--focus {

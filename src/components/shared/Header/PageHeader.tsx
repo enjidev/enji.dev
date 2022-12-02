@@ -40,13 +40,9 @@ const PageHeader = ({
           >
             <span
               className={clsx(
-                'mb-2 block text-sm font-bold leading-none',
+                'mb-2 block text-sm font-bold leading-none text-accent-600',
                 'md:text-base',
-                [
-                  caption === 'Work'
-                    ? ['text-secondary-600', 'dark:text-secondary-400']
-                    : ['text-accent-600', 'dark:text-accent-400'],
-                ]
+                'dark:text-accent-400'
               )}
             >
               {caption}

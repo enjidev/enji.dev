@@ -15,10 +15,10 @@ interface NavLinkExpandedProps {
 
 const NavLinkExpanded = ({ title, items }: NavLinkExpandedProps) => {
   return (
-    <div className={clsx('focus-visible--secondary flex')}>
+    <div className={clsx('flex')}>
       <div
         className={clsx(
-          'nav-link nav-link--secondary nav-link--label pointer-events-none ml-2 mr-2'
+          'nav-link nav-link--label pointer-events-none ml-2 mr-2'
         )}
       >
         {title}
@@ -28,13 +28,11 @@ const NavLinkExpanded = ({ title, items }: NavLinkExpandedProps) => {
         {items.map(({ title, href }, idx) => (
           <React.Fragment key={href}>
             <li>
-              <NavLink title={title} href={href} color="secondary" />
+              <NavLink title={title} href={href} />
             </li>
             {idx !== items.length - 1 && (
               <li>
-                <div className="nav-link__separator nav-link--secondary">
-                  &middot;
-                </div>
+                <div className="nav-link__separator">&middot;</div>
               </li>
             )}
           </React.Fragment>

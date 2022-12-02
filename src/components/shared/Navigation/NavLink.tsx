@@ -5,22 +5,11 @@ interface NavLink {
   title: string;
   href: string;
   icon?: React.ReactNode;
-  color?: 'primary' | 'secondary';
 }
 
-export const NavLink = ({
-  title,
-  href,
-  icon = null,
-  color = 'primary',
-}: NavLink) => {
+export const NavLink = ({ title, href, icon = null }: NavLink) => {
   return (
-    <Link
-      href={href}
-      className={clsx('nav-link', [
-        color === 'primary' ? 'nav-link--primary' : 'nav-link--secondary',
-      ])}
-    >
+    <Link href={href} className={clsx('nav-link')}>
       {title}
       {icon}
     </Link>
