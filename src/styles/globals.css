@@ -181,4 +181,19 @@
       @apply dark:bg-slate-600;
     }
   }
+
+  .toc-link {
+    @apply flex p-1 px-2 text-[13px] font-bold text-slate-700 hover:text-primary-700;
+    @apply dark:font-semibold dark:text-slate-300 dark:hover:text-primary-300;
+
+    &--depth-2 {
+      @apply ml-4 font-normal text-slate-600;
+      @apply dark:font-normal dark:text-slate-400;
+    }
+
+    &--active {
+      @apply text-primary-600 hover:text-primary-700;
+      @apply dark:text-primary-400 dark:hover:text-primary-300;
+    }
+  }
 }

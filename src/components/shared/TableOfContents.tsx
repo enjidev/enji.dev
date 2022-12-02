@@ -17,23 +17,10 @@ const TableOfContentsLink = ({
 }: TableOfContentsLinkProps) => {
   return (
     <a
-      className={clsx('flex p-1 px-2 text-[13px]', [
-        depth === 2 ? ['ml-4'] : ['font-bold', 'dark:font-semibold'],
-        active
-          ? [
-              'text-primary-600',
-              'hover:text-primary-700',
-              'dark:text-primary-400',
-              'dark:hover:text-primary-300',
-            ]
-          : [
-              depth === 2
-                ? ['text-slate-600', 'dark:text-slate-400']
-                : ['text-slate-700', 'dark:text-slate-300'],
-              'hover:text-primary-700',
-              'dark:hover:text-primary-300',
-            ],
-      ])}
+      className={clsx('toc-link', {
+        'toc-link--depth-2': depth === 2,
+        'toc-link--active': active,
+      })}
       href={`#${slug}`}
     >
       {title}
