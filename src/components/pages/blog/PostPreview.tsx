@@ -66,8 +66,8 @@ const PostPreview = ({
       </p>
       <div
         className={clsx(
-          'flex items-center gap-1 text-sm font-semibold text-primary-600',
-          'dark:text-primary-400'
+          'flex items-center gap-1 text-sm font-semibold text-accent-600',
+          'dark:text-accent-400'
         )}
       >
         read more{' '}

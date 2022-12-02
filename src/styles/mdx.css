@@ -14,14 +14,14 @@
         @apply relative;
 
         &::before {
-          @apply absolute inset-0 -inset-x-2 z-[-1] origin-left scale-x-0 bg-primary-400/60 content-[''];
-          @apply dark:bg-primary-900/60;
+          @apply absolute inset-0 -inset-x-2 z-[-1] origin-left scale-x-0 bg-accent-400/60 content-[''];
+          @apply dark:bg-accent-900/60;
         }
       }
 
       &:target {
-        @apply motion-reduce:text-primary-600;
-        @apply motion-reduce:dark:text-primary-400;
+        @apply motion-reduce:text-accent-600;
+        @apply motion-reduce:dark:text-accent-400;
 
         span {
           &::before {
@@ -75,8 +75,8 @@
     }
 
     .link {
-      @apply relative inline-flex items-center gap-1 text-primary-600;
-      @apply dark:text-primary-400;
+      @apply relative inline-flex items-center gap-1 text-accent-600;
+      @apply dark:text-accent-400;
 
       &:hover {
         &::after {
@@ -85,7 +85,7 @@
       }
 
       &::after {
-        @apply absolute bottom-1 left-0 right-0 z-[-1] h-2 origin-bottom scale-y-[.4] bg-primary-600/20 transition-transform content-[''];
+        @apply absolute bottom-1 left-0 right-0 z-[-1] h-2 origin-bottom scale-y-[.4] bg-accent-600/20 transition-transform content-[''];
       }
     }
 

@@ -53,8 +53,8 @@ const TableOfContents = ({ items = [] }: TableOfContensProps) => {
             <Link
               href=""
               className={clsx(
-                'cursor-pointer p-1 px-2 font-normal text-primary-700',
-                'dark:text-primary-400'
+                'cursor-pointer p-1 px-2 font-normal text-accent-700',
+                'dark:text-accent-400'
               )}
               tabIndex={currentSlug ? 0 : -1}
             >
@@ -70,8 +70,8 @@ const TableOfContents = ({ items = [] }: TableOfContensProps) => {
         >
           <div
             className={clsx(
-              'absolute top-0 bottom-0 left-[-1px] border-l border-primary-600',
-              'dark:border-primary-400'
+              'absolute top-0 bottom-0 left-[-1px] border-l border-accent-600',
+              'dark:border-accent-400'
             )}
             style={{ height: `${scrollProgress}%` }}
           />

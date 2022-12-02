@@ -60,7 +60,7 @@ const HeroButton = ({
         'flex flex-1 items-center rounded-2xl border-2 bg-white p-4 text-left',
         'dark:bg-slate-900',
         active
-          ? ['border-primary-400', 'dark:border-primary-400']
+          ? ['border-accent-400', 'dark:border-accent-400']
           : ['border-divider-light ', 'dark:border-divider-dark']
       )}
       onClick={onClick}
@@ -71,7 +71,7 @@ const HeroButton = ({
             'w-24 pr-4 text-center text-7xl font-black',
             '',
             active
-              ? ['text-primary-600', 'dark:text-primary-400']
+              ? ['text-accent-600', 'dark:text-accent-400']
               : ['text-slate-400', 'dark:text-slate-600']
           )}
         >
@@ -83,7 +83,7 @@ const HeroButton = ({
           className={clsx(
             'block font-bold ',
             active
-              ? ['text-primary-600', 'dark:text-primary-400']
+              ? ['text-accent-600', 'dark:text-accent-400']
               : ['text-slate-700', 'dark:text-slate-200']
           )}
         >
@@ -112,7 +112,7 @@ const HeroButtonSmall = ({
     <button
       className={clsx('rounded-xl p-2 text-sm', [
         active
-          ? ['text-primary-600', 'dark:text-primary-400']
+          ? ['text-accent-600', 'dark:text-accent-400']
           : ['text-slate-400', 'dark:text-slate-600'],
       ])}
       onClick={onClick}
@@ -122,7 +122,7 @@ const HeroButtonSmall = ({
         className={clsx(
           'font-medium',
           active
-            ? ['text-primary-600', 'dark:text-primary-400']
+            ? ['text-accent-600', 'dark:text-accent-400']
             : ['text-slate-500', 'dark:text-slate-400']
         )}
       >

@@ -2,17 +2,17 @@
 
 @layer base {
   :root {
-    /* primary colors, taken from Tailwind CSS violet colors */
-    --color-primary-50: 245 243 255;
-    --color-primary-100: 237 233 254;
-    --color-primary-200: 221 214 254;
-    --color-primary-300: 196 181 253;
-    --color-primary-400: 167 139 250;
-    --color-primary-500: 139 92 246;
-    --color-primary-600: 124 58 237;
-    --color-primary-700: 109 40 217;
-    --color-primary-800: 91 33 182;
-    --color-primary-900: 76 29 149;
+    /* accent colors, taken from Tailwind CSS violet colors */
+    --color-accent-50: 245 243 255;
+    --color-accent-100: 237 233 254;
+    --color-accent-200: 221 214 254;
+    --color-accent-300: 196 181 253;
+    --color-accent-400: 167 139 250;
+    --color-accent-500: 139 92 246;
+    --color-accent-600: 124 58 237;
+    --color-accent-700: 109 40 217;
+    --color-accent-800: 91 33 182;
+    --color-accent-900: 76 29 149;
 
     /* secondary colors, taken from Tailwind CSS blue colors */
     --color-secondary-50: 239 246 255;

@@ -45,7 +45,7 @@ const PageHeader = ({
                 [
                   caption === 'Work'
                     ? ['text-secondary-600', 'dark:text-secondary-400']
-                    : ['text-primary-600', 'dark:text-primary-400'],
+                    : ['text-accent-600', 'dark:text-accent-400'],
                 ]
               )}
             >
