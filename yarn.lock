@@ -3068,13 +3068,12 @@ swr@^1.3.0:
   resolved "https://registry.yarnpkg.com/swr/-/swr-1.3.0.tgz#c6531866a35b4db37b38b72c45a63171faf9f4e8"
   integrity sha512-dkghQrOl2ORX9HYrMDtPa7LTVHJjCTeZoB1dqTbnnEDlSvN8JEKpYIYurDfvbQFUUS8Cg8PceFVZNkW0KNNYPw==
 
-tailwindcss-accent@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/tailwindcss-accent/-/tailwindcss-accent-1.2.0.tgz#92bdaedd9719596e439be4203fe40c00762aab08"
-  integrity sha512-eKubsZqCupE3JS+6tjp8O5K56fgoWyG6Gda2bJUxaEXPQcwFCP2qt3DdqukfQ5qh2mdn0sAhA91RIctmcZjSsw==
+tailwindcss-accent@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/tailwindcss-accent/-/tailwindcss-accent-2.1.0.tgz#a60da98c8d6cf3ed7b22d1104fb7b95299c03068"
+  integrity sha512-gY4LD8z/J7WSB6BhPi6Zm+qc7F91AbUkfAEIVl5k4rvF07K9WcV35AEelX2v8Arus8+EHKl0aH/7siFf7RSl2A==
   dependencies:
     color-convert "^2.0.1"
-    lodash "^4.17.20"
 
 tailwindcss@^3.1.8:
   version "3.2.4"
