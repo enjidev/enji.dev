@@ -46,6 +46,9 @@ module.exports = {
         { values: flattenColorPalette(theme('backgroundColor')), type: 'color' }
       );
     },
-    require('tailwindcss-accent')({ colors: ['violet', 'blue'] }),
+    require('tailwindcss-accent')({
+      colors: ['violet', 'blue'],
+      root: 'violet',
+    }),
   ],
 };
