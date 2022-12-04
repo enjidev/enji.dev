@@ -1,12 +1,23 @@
 import clsx from 'clsx';
+import Link from 'next/link';
+import { ChevronRightIcon } from '@/components/shared/Icons';
 
 interface SectionTitleProps {
   title: string;
   caption: string;
   description: string | React.ReactNode;
+  button?: {
+    title: string;
+    href: string;
+  };
 }
 
-const SectionTitle = ({ title, caption, description }: SectionTitleProps) => {
+const SectionTitle = ({
+  title,
+  caption,
+  description,
+  button,
+}: SectionTitleProps) => {
   return (
     <div className={clsx('content-wrapper')}>
       <span
@@ -30,6 +41,14 @@ const SectionTitle = ({ title, caption, description }: SectionTitleProps) => {
       <div className={clsx('max-w-md text-slate-600', 'dark:text-slate-400')}>
         {description}
       </div>
+      {button && (
+        <div className={clsx('mt-4', 'md:mt-6')}>
+          <Link href={button.href} className={clsx('button button--soft')}>
+            {button.title}
+            <ChevronRightIcon className="mt-0.5 h-3 w-3" />
+          </Link>
+        </div>
+      )}
     </div>
   );
 };
