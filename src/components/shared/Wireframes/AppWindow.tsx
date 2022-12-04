@@ -76,7 +76,7 @@ const AppWindow = ({ children, type = 'app', browserTabs }: AppWindowProps) => {
           </>
         )}
       </div>
-      <div className={clsx('flex-1')}>{children}</div>
+      <div className={clsx('flex-1 overflow-hidden')}>{children}</div>
     </div>
   );
 };
