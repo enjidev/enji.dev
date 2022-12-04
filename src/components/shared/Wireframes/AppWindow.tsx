@@ -8,7 +8,7 @@ const AppWindow = ({ children }: AppWindowProps) => {
   return (
     <div
       className={clsx(
-        '-mt-[41px] overflow-hidden rounded-xl border border-divider-light bg-white',
+        'overflow-hidden rounded-xl border border-divider-light bg-white',
         'dark:border-divider-dark dark:bg-[#0c1222]'
       )}
     >
