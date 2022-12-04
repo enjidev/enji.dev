@@ -2,6 +2,7 @@ import clsx from 'clsx';
 import { useState } from 'react';
 import TodoItem from '@/components/pages/index/Cards/TodoItem';
 import SectionTitle from '@/components/shared/SectionTitle';
+import SectionContent from '@/components/shared/SectionContent';
 
 import type { TodoItemState } from '@/components/pages/index/Cards/TodoItem';
 
@@ -172,62 +173,50 @@ const Hero = () => {
           )}
         </div>
       </div>
-      <div
-        className={clsx(
-          'background-grid background-grid--fade-out mt-20 border-t border-divider-light',
-          'dark:border-divider-dark'
-        )}
-      >
-        <div className={clsx('content-wrapper pb-20', '')}>
-          <div className={clsx('flex', 'lg:gap-12')}>
+      <SectionContent>
+        <div className={clsx('flex', 'lg:gap-12')}>
+          <div
+            className={clsx('-mt-8 hidden flex-1 flex-col gap-3', 'lg:flex')}
+          >
+            {content.map((item, i) => (
+              <HeroButton
+                key={item.state}
+                title={item.title}
+                desc={item.description}
+                step={i + 1}
+                active={currentState?.state === item.state}
+                onClick={() => setCurrentState(item)}
+              />
+            ))}
+          </div>
+          <div
+            className={clsx('relative flex flex-1 items-center justify-center')}
+          >
             <div
-              className={clsx('-mt-8 hidden flex-1 flex-col gap-3', 'lg:flex')}
+              className={clsx('-mt-8 flex gap-4', 'md:gap-6 lg:top-8 lg:mt-0')}
             >
-              {content.map((item, i) => (
-                <HeroButton
-                  key={item.state}
-                  title={item.title}
-                  desc={item.description}
-                  step={i + 1}
-                  active={currentState?.state === item.state}
-                  onClick={() => setCurrentState(item)}
+              <div className={clsx('')}>
+                <TodoItem
+                  state={
+                    currentState
+                      ? currentState.shows
+                      : ['typography', 'spacing', 'colors', 'effects']
+                  }
                 />
-              ))}
-            </div>
-            <div
-              className={clsx(
-                'relative flex flex-1 items-center justify-center'
-              )}
-            >
-              <div
-                className={clsx(
-                  '-mt-8 flex gap-4',
-                  'md:gap-6 lg:top-8 lg:mt-0'
-                )}
-              >
-                <div className={clsx('')}>
-                  <TodoItem
-                    state={
-                      currentState
-                        ? currentState.shows
-                        : ['typography', 'spacing', 'colors', 'effects']
-                    }
-                  />
-                </div>
-                <div className={clsx('hidden', 'sm:block lg:hidden')}>
-                  <TodoItem
-                    state={
-                      currentState
-                        ? currentState.shows
-                        : ['typography', 'spacing', 'colors', 'effects']
-                    }
-                  />
-                </div>
+              </div>
+              <div className={clsx('hidden', 'sm:block lg:hidden')}>
+                <TodoItem
+                  state={
+                    currentState
+                      ? currentState.shows
+                      : ['typography', 'spacing', 'colors', 'effects']
+                  }
+                />
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </SectionContent>
     </>
   );
 };
