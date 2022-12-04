@@ -87,7 +87,7 @@ const GitHubWireframe = ({ repository, description }: GithubWireframeProps) => {
         <div className={clsx('-mb-[2px] flex h-10')}>
           <div
             className={clsx(
-              'flex items-center gap-1 border-b-[3px] border-amber-500 px-6 dark:border-amber-700'
+              'flex items-center gap-1 border-b-[3px] border-amber-400 px-6 dark:border-amber-900'
             )}
           >
             <SkeletonSmall />

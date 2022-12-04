@@ -10,7 +10,7 @@ interface SkeletonSmallProps {
 export const SkeletonSmall = ({ w = 16 }: SkeletonSmallProps) => {
   return (
     <div
-      className={clsx('h-4 rounded-md bg-slate-200', 'dark:bg-slate-200/10')}
+      className={clsx('h-4 rounded-md bg-slate-200/80', 'dark:bg-slate-100/5')}
       style={{ width: w }}
     />
   );
