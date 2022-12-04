@@ -127,6 +127,26 @@ const GitHubWireframe = ({
             <SkeletonSm w={80} />
           </div>
         </div>
+        <div className={clsx('-mb-[2px] flex h-12')}>
+          <div
+            className={clsx(
+              'flex items-center gap-1 border-b-[3px] border-transparent px-6'
+            )}
+          >
+            <SkeletonSm />
+            <SkeletonSm w={48} />
+          </div>
+        </div>
+        <div className={clsx('-mb-[2px] flex h-12')}>
+          <div
+            className={clsx(
+              'flex items-center gap-1 border-b-[3px] border-transparent px-6'
+            )}
+          >
+            <SkeletonSm />
+            <SkeletonSm w={40} />
+          </div>
+        </div>
       </div>
     </div>
   );
