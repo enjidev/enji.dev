@@ -2,11 +2,16 @@ import clsx from 'clsx';
 import { SkeletonSmall } from '@/components/shared/Wireframes/Skeletons';
 
 interface GithubWireframeProps {
+  author?: string;
   repository: string;
   description: string;
 }
 
-const GitHubWireframe = ({ repository, description }: GithubWireframeProps) => {
+const GitHubWireframe = ({
+  repository,
+  description,
+  author,
+}: GithubWireframeProps) => {
   return (
     <div
       className={clsx(
@@ -15,8 +20,16 @@ const GitHubWireframe = ({ repository, description }: GithubWireframeProps) => {
       )}
     >
       <div className={clsx('flex items-center gap-1')}>
-        <SkeletonSmall />
-        <SkeletonSmall w={96} />
+        <div className={clsx('mr-1')}>
+          <SkeletonSmall />
+        </div>
+        {author ? (
+          <div className={clsx('-mt-0.5 text-blue-700', 'dark:text-blue-500')}>
+            {author}
+          </div>
+        ) : (
+          <SkeletonSmall w={64} />
+        )}
         <div className={clsx('-mt-0.5')}>/</div>
         <div
           className={clsx(
