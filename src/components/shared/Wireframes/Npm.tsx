@@ -86,23 +86,23 @@ const NpmWireframe = ({ packageName, description }: NpmWireframeProps) => {
         </div>
       </div>
       <div className={clsx('mt-4')}>
-        <div className={clsx('text-3xl font-semibold')}>{packageName}</div>
+        <div
+          className={clsx(
+            'mt-8 border-l-4 border-divider-light bg-slate-200/40 p-2 px-4',
+            'dark:border-divider-dark dark:bg-slate-100/5'
+          )}
+        >
+          <p>{description}</p>
+        </div>
         <div
           className={clsx(
             'my-4 border-b border-divider-light',
             'dark:border-divider-dark'
           )}
         />
-        <div
-          className={clsx(
-            'border-l-4 border-divider-light bg-slate-200/40 p-2 px-4',
-            'dark:border-divider-dark dark:bg-slate-100/5'
-          )}
-        >
-          <p>{description}</p>
-        </div>
         <div className={clsx('mt-4 flex flex-col gap-2')}>
           <SkeletonSm w={400} />
+          <SkeletonSm w={200} />
         </div>
       </div>
     </div>
