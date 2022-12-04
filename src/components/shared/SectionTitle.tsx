@@ -1,12 +1,12 @@
 import clsx from 'clsx';
 
-interface HeroTitleProps {
+interface SectionTitleProps {
   title: string;
   caption: string;
   description: string | React.ReactNode;
 }
 
-const HeroTitle = ({ title, caption, description }: HeroTitleProps) => {
+const SectionTitle = ({ title, caption, description }: SectionTitleProps) => {
   return (
     <div className={clsx('content-wrapper')}>
       <span
@@ -34,4 +34,4 @@ const HeroTitle = ({ title, caption, description }: HeroTitleProps) => {
   );
 };
 
-export default HeroTitle;
+export default SectionTitle;

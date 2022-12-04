@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import { useState } from 'react';
 import TodoItem from '@/components/pages/index/Cards/TodoItem';
-import HeroTitle from '@/components/pages/index/HeroTitle';
+import SectionTitle from '@/components/shared/SectionTitle';
 
 import type { TodoItemState } from '@/components/pages/index/Cards/TodoItem';
 
@@ -138,7 +138,7 @@ const Hero = () => {
   return (
     <>
       <div className={clsx('mb-8')}>
-        <HeroTitle
+        <SectionTitle
           title="Eye Catching, Modern & Minimalist Design."
           caption="Clean & Intuitive"
           description="Keep the User Interface clean with a modern touch without
