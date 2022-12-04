@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { SkeletonSmall } from '@/components/shared/Wireframes/Skeletons';
+import { SkeletonSm } from '@/components/shared/Wireframes/Skeletons';
 
 interface GithubWireframeProps {
   author?: string;
@@ -15,20 +15,20 @@ const GitHubWireframe = ({
   return (
     <div
       className={clsx(
-        'bg-white p-8 text-sm text-slate-600',
+        'h-full w-full bg-white p-4 text-sm text-slate-600',
         'dark:bg-slate-900 dark:text-slate-400'
       )}
     >
       <div className={clsx('flex items-center gap-1')}>
         <div className={clsx('mr-1')}>
-          <SkeletonSmall />
+          <SkeletonSm />
         </div>
         {author ? (
           <div className={clsx('-mt-0.5 text-blue-700', 'dark:text-blue-500')}>
             {author}
           </div>
         ) : (
-          <SkeletonSmall w={64} />
+          <SkeletonSm w={64} />
         )}
         <div className={clsx('-mt-0.5')}>/</div>
         <div
@@ -53,17 +53,17 @@ const GitHubWireframe = ({
       </div>
       <div className={clsx('mt-6 flex flex-col gap-3')}>
         <div className={clsx('flex items-center gap-1')}>
-          <SkeletonSmall />
-          <SkeletonSmall w={64} />
+          <SkeletonSm />
+          <SkeletonSm w={64} />
         </div>
         <div className={clsx('flex items-center gap-3')}>
           <div className={clsx('flex items-center gap-1')}>
-            <SkeletonSmall />
-            <SkeletonSmall w={48} />
+            <SkeletonSm />
+            <SkeletonSm w={48} />
           </div>
           <div className={clsx('flex items-center gap-1')}>
-            <SkeletonSmall />
-            <SkeletonSmall w={56} />
+            <SkeletonSm />
+            <SkeletonSm w={56} />
           </div>
         </div>
       </div>
@@ -75,8 +75,8 @@ const GitHubWireframe = ({
           )}
         >
           <div className={clsx('flex items-center gap-1')}>
-            <SkeletonSmall />
-            <SkeletonSmall w={48} />
+            <SkeletonSm />
+            <SkeletonSm w={48} />
           </div>
         </div>
         <div
@@ -86,45 +86,45 @@ const GitHubWireframe = ({
           )}
         >
           <div className={clsx('flex items-center gap-1')}>
-            <SkeletonSmall />
-            <SkeletonSmall w={64} />
+            <SkeletonSm />
+            <SkeletonSm w={64} />
           </div>
         </div>
       </div>
       <div
         className={clsx(
-          'mt-6 flex border-b border-divider-light',
+          'mt-4 flex border-b border-divider-light',
           'dark:border-divider-dark'
         )}
       >
-        <div className={clsx('-mb-[2px] flex h-10')}>
+        <div className={clsx('-mb-[2px] flex h-12')}>
           <div
             className={clsx(
               'flex items-center gap-1 border-b-[3px] border-amber-400 px-6 dark:border-amber-900'
             )}
           >
-            <SkeletonSmall />
-            <SkeletonSmall w={32} />
+            <SkeletonSm />
+            <SkeletonSm w={32} />
           </div>
         </div>
-        <div className={clsx('-mb-[2px] flex h-10')}>
+        <div className={clsx('-mb-[2px] flex h-12')}>
           <div
             className={clsx(
               'flex items-center gap-1 border-b-[3px] border-transparent px-6'
             )}
           >
-            <SkeletonSmall />
-            <SkeletonSmall w={40} />
+            <SkeletonSm />
+            <SkeletonSm w={40} />
           </div>
         </div>
-        <div className={clsx('-mb-[2px] flex h-10')}>
+        <div className={clsx('-mb-[2px] flex h-12')}>
           <div
             className={clsx(
               'flex items-center gap-1 border-b-[3px] border-transparent px-6'
             )}
           >
-            <SkeletonSmall />
-            <SkeletonSmall w={80} />
+            <SkeletonSm />
+            <SkeletonSm w={80} />
           </div>
         </div>
       </div>
