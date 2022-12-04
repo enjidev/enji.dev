@@ -38,9 +38,9 @@ const SectionTitle = ({
       >
         {title}
       </h2>
-      <div className={clsx('max-w-md text-slate-600', 'dark:text-slate-400')}>
+      <p className={clsx('max-w-lg text-slate-600', 'dark:text-slate-400')}>
         {description}
-      </div>
+      </p>
       {button && (
         <div className={clsx('mt-4', 'md:mt-6')}>
           <Link href={button.href} className={clsx('button button--soft')}>
