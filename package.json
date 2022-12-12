@@ -18,6 +18,7 @@
     "@next/font": "^13.0.0",
     "@next/mdx": "^13.0.5",
     "@vercel/analytics": "^0.1.5",
+    "@vercel/og": "^0.0.21",
     "acorn": "^8.8.1",
     "acorn-jsx": "^5.3.2",
     "clsx": "^1.2.1",
