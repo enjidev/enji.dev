@@ -6,9 +6,13 @@ import type { TTableOfContentsItem } from '@/types';
 
 interface FrontMatter {
   title: string;
+  date: string;
+  pageLang: string;
+  tags: Array<string>;
   description: string;
   caption?: string;
   pageStatus?: string;
+  type?: 'post' | 'page';
 }
 
 interface ContentsLayoutProps {
@@ -18,15 +22,27 @@ interface ContentsLayoutProps {
 }
 
 const ContentsLayout = ({
-  frontMatter: { title, description, caption = '', pageStatus = '' },
+  frontMatter: {
+    title,
+    date,
+    pageLang: lang,
+    tags,
+    description,
+    caption = '',
+    pageStatus = '',
+    type = 'page',
+  },
   tableOfContents,
   children,
 }: ContentsLayoutProps) => {
-  const pageTitle = pageStatus ? `${pageStatus} ${title}` : title;
-
   return (
     <>
-      <Head title={pageTitle} description={description} />
+      <Head
+        title={title}
+        description={description}
+        type={type}
+        ogImage={{ caption, title, date, lang, tags }}
+      />
       <div className={clsx('')}>
         <PageHeader
           title={title}

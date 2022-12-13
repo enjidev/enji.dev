@@ -95,13 +95,13 @@ const styles: Record<string, CSSProperties> = {
   },
 };
 
-interface PostProps {
+export type PostProps = {
   caption?: string;
   title?: string;
-  tags?: [string?, string?, string?];
+  tags?: Array<string>;
   date?: string;
   lang?: string;
-}
+};
 
 export const Post = ({ caption, title, tags, date, lang }: PostProps) => {
   return (
@@ -123,7 +123,7 @@ export const Post = ({ caption, title, tags, date, lang }: PostProps) => {
       {tags && Array.isArray(tags) && (
         <React.Fragment>
           <div style={styles.tags}>
-            {tags.map((tag) => (
+            {tags.slice(0, 3).map((tag) => (
               <div style={styles.tag} key={tag}>
                 <div style={styles.tagHash}>#</div>
                 <div style={styles.tagTitle}>{tag}</div>
