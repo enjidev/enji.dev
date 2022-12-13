@@ -1,5 +1,5 @@
 import { ImageResponse } from '@vercel/og';
-import { Blog } from '@/components/meta/OgImages';
+import { Post } from '@/components/meta/OgImages';
 
 import type { NextRequest } from 'next/server';
 
@@ -20,18 +20,32 @@ const OgImage = async (request: NextRequest) => {
   const get = (param: string) => searchParams.get(param) || undefined;
 
   try {
-    const title = get('title');
     const caption = get('caption');
-    const description = get('description');
+    const title = get('title');
+    const tags = get('tags')?.split(',').slice(0, 3) as [
+      string,
+      string,
+      string
+    ];
+    const date = get('date');
+    const lang = get('lang');
 
     const font400 = await PlusJakartaSans400;
     const font800 = await PlusJakartaSans800;
 
     return new ImageResponse(
-      <Blog title={title} caption={caption} description={description} />,
+      (
+        <Post
+          caption={caption}
+          title={title}
+          tags={tags}
+          date={date}
+          lang={lang}
+        />
+      ),
       {
         width: 1200,
-        height: 600,
+        height: 630,
         emoji: 'fluent',
         fonts: [
           {
