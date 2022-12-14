@@ -11,7 +11,6 @@ interface FrontMatter {
   tags: Array<string>;
   description: string;
   caption?: string;
-  pageStatus?: string;
   type?: 'post' | 'page';
 }
 
@@ -29,7 +28,6 @@ const ContentsLayout = ({
     tags,
     description,
     caption = '',
-    pageStatus = '',
     type = 'page',
   },
   tableOfContents,
@@ -44,12 +42,7 @@ const ContentsLayout = ({
         ogImage={{ caption, title, date, lang, tags }}
       />
       <div className={clsx('')}>
-        <PageHeader
-          title={title}
-          description={description}
-          caption={caption}
-          status={pageStatus}
-        />
+        <PageHeader title={title} description={description} caption={caption} />
         <div className={clsx('content-wrapper')}>
           <div className={clsx('flex gap-8', 'xl:gap-24')}>
             <div

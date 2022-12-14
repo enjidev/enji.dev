@@ -13,7 +13,6 @@ const PostPreview = ({
   date,
   slug,
   pageLang,
-  pageStatus,
 }: PostPreviewProps) => {
   return (
     <Link
@@ -43,17 +42,6 @@ const PostPreview = ({
           )}
         >
           {title}
-          {pageStatus && (
-            <span
-              className={clsx(
-                'ml-2 font-normal text-slate-600',
-                'md:ml-2',
-                'dark:text-slate-400'
-              )}
-            >
-              {pageStatus}
-            </span>
-          )}
         </h2>
       </div>
       <p
