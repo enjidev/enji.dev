@@ -4,17 +4,17 @@ import PageHeader from '@/components/shared/Header/PageHeader';
 import TableOfContents from '@/components/shared/TableOfContents';
 import type { TTableOfContents, TPageFrontMatter } from '@/types';
 
-interface ContentsLayoutProps {
+interface PageContentsLayoutProps {
   frontMatter: TPageFrontMatter;
   tableOfContents: TTableOfContents;
   children: React.ReactNode;
 }
 
-const ContentsLayout = ({
+const PageContentsLayout = ({
   frontMatter: { title, description, caption = '' },
   tableOfContents,
   children,
-}: ContentsLayoutProps) => {
+}: PageContentsLayoutProps) => {
   return (
     <>
       <Head
@@ -47,4 +47,4 @@ const ContentsLayout = ({
   );
 };
 
-export default ContentsLayout;
+export default PageContentsLayout;

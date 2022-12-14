@@ -14,13 +14,13 @@ interface FrontMatter {
   type?: 'post' | 'page';
 }
 
-interface ContentsLayoutProps {
+interface PostContentsLayoutProps {
   frontMatter: FrontMatter;
   tableOfContents: Array<TTableOfContentsItem>;
   children: React.ReactNode;
 }
 
-const ContentsLayout = ({
+const PostContentsLayout = ({
   frontMatter: {
     title,
     date,
@@ -32,7 +32,7 @@ const ContentsLayout = ({
   },
   tableOfContents,
   children,
-}: ContentsLayoutProps) => {
+}: PostContentsLayoutProps) => {
   return (
     <>
       <Head
@@ -66,4 +66,4 @@ const ContentsLayout = ({
   );
 };
 
-export default ContentsLayout;
+export default PostContentsLayout;
