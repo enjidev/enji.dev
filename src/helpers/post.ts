@@ -1,4 +1,6 @@
 import dayjs from '@/utils/dayjs';
+import { getBaseUrl } from '@/helpers/url';
+
 import type { TPostFrontMatter } from '@/types';
 
 export const formatDate = (date: string) => {
@@ -15,17 +17,6 @@ export const formatLang = (lang: TPostFrontMatter['lang']) => {
       return 'English';
     case 'ID':
       return 'Bahasa Indonesia';
-  }
-};
-
-export const getBaseUrl = () => {
-  switch (process.env.NEXT_PUBLIC_VERCEL_ENV) {
-    case 'production':
-      return 'https://enji.dev';
-    case 'preview':
-      return `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`;
-    default:
-      return `http://${process.env.NEXT_PUBLIC_VERCEL_URL}`;
   }
 };
 

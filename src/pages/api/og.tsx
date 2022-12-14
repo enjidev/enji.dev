@@ -1,6 +1,6 @@
 import { ImageResponse } from '@vercel/og';
 import { PostOgImage } from '@/components/meta/OgImages';
-import { formatDate } from '@/utils/helpers';
+import { formatDate } from '@/helpers/post';
 
 import type { NextRequest } from 'next/server';
 

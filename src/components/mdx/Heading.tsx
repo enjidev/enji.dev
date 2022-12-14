@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { getSlug } from '@/utils/mdx';
+import { getSlug } from '@/helpers/mdx';
 import { HashtagIcon } from '@/components/shared/Icons';
 
 import type { MDXComponents } from 'mdx/types';

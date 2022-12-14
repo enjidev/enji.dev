@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import Link from 'next/link';
 import { ChevronRightIcon } from '@/components/shared/Icons';
-import { formatDate, formatLang } from '@/utils/helpers';
+import { formatDate, formatLang } from '@/helpers/post';
 
 import type { TPostFrontMatter } from '@/types';
 type PostPreviewProps = TPostFrontMatter & {

@@ -2,8 +2,9 @@
 /* eslint-disable @next/next/no-img-element */
 
 import { TPostFrontMatter } from '@/types';
-import { formatLang } from '@/utils/helpers';
-import { CSSProperties } from 'react';
+import { formatLang } from '@/helpers/post';
+
+import type { CSSProperties } from 'react';
 
 const styles: Record<string, CSSProperties> = {
   container: {
