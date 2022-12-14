@@ -30,9 +30,9 @@ const withMDX = nextMDX({
   options: {
     remarkPlugins: [
       remarkFrontmatter,
-      withLayout,
-      withRestrictedHeading,
       withRestrictedFrontMatter,
+      withRestrictedHeading,
+      withLayout,
     ],
     rehypePlugins: [rehypePrism],
     providerImportSource: '@mdx-js/react',
