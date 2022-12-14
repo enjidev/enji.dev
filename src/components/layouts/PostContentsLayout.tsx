@@ -2,34 +2,16 @@ import clsx from 'clsx';
 import Head from '@/components/meta/Head';
 import PageHeader from '@/components/shared/Header/PageHeader';
 import TableOfContents from '@/components/shared/TableOfContents';
-import type { TTableOfContentsItem } from '@/types';
-
-interface FrontMatter {
-  title: string;
-  date: string;
-  lang: string;
-  tags: Array<string>;
-  description: string;
-  caption?: string;
-  type?: 'post' | 'page';
-}
+import type { TTableOfContents, TPostFrontMatter } from '@/types';
 
 interface PostContentsLayoutProps {
-  frontMatter: FrontMatter;
-  tableOfContents: Array<TTableOfContentsItem>;
+  frontMatter: TPostFrontMatter;
+  tableOfContents: TTableOfContents;
   children: React.ReactNode;
 }
 
 const PostContentsLayout = ({
-  frontMatter: {
-    title,
-    date,
-    lang,
-    tags,
-    description,
-    caption = '',
-    type = 'page',
-  },
+  frontMatter: { title, date, lang, tags, description },
   tableOfContents,
   children,
 }: PostContentsLayoutProps) => {
@@ -38,11 +20,10 @@ const PostContentsLayout = ({
       <Head
         title={title}
         description={description}
-        type={type}
-        ogImage={{ caption, title, date, lang, tags }}
+        ogImage={{ title, date, lang, tags }}
       />
       <div className={clsx('')}>
-        <PageHeader title={title} description={description} caption={caption} />
+        <PageHeader title={title} description={description} />
         <div className={clsx('content-wrapper')}>
           <div className={clsx('flex gap-8', 'xl:gap-24')}>
             <div
