@@ -5,7 +5,7 @@ export default function useOnExit(selector: string) {
 
   useEffect(() => {
     const element = document.querySelector(selector);
-    if (!element) return;
+    if (!element) return () => {};
 
     const observer = new IntersectionObserver(
       (entries) => {

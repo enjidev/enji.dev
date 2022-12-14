@@ -19,7 +19,7 @@ const animation = {
   },
 };
 
-const HeaderTechStack = () => {
+function HeaderTechStack() {
   return (
     <div>
       <motion.p
@@ -69,9 +69,7 @@ const HeaderTechStack = () => {
           </div>
         </motion.li>
         <motion.li variants={animation}>
-          <div
-            className={clsx('h-3 w-[1px] bg-slate-300 dark:bg-slate-700')}
-          ></div>
+          <div className={clsx('h-3 w-[1px] bg-slate-300 dark:bg-slate-700')} />
         </motion.li>
         <motion.li variants={animation}>
           <div className={clsx('transition duration-200 hover:text-[#007ACC]')}>
@@ -86,6 +84,6 @@ const HeaderTechStack = () => {
       </motion.ul>
     </div>
   );
-};
+}
 
 export default HeaderTechStack;

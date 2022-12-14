@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import Head from 'next/head';
 
-const Error404 = () => {
+function Error404() {
   return (
     <>
       <Head>
@@ -31,6 +31,6 @@ const Error404 = () => {
       </div>
     </>
   );
-};
+}
 
 export default Error404;

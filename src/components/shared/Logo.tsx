@@ -4,7 +4,7 @@ interface LogoProps {
   active?: boolean;
 }
 
-const Logo = ({ active = false }: LogoProps) => {
+function Logo({ active = false }: LogoProps) {
   return (
     <div className={clsx('flex items-center gap-1.5 font-[1000] leading-none')}>
       <div
@@ -33,6 +33,6 @@ const Logo = ({ active = false }: LogoProps) => {
       </div>
     </div>
   );
-};
+}
 
 export default Logo;

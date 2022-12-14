@@ -14,7 +14,7 @@ interface BlogHeaderProps {
   description: string;
 }
 
-const BlogHeader = ({ title, description }: BlogHeaderProps) => {
+function BlogHeader({ title, description }: BlogHeaderProps) {
   return (
     <header
       id="page-header"
@@ -60,6 +60,6 @@ const BlogHeader = ({ title, description }: BlogHeaderProps) => {
       </div>
     </header>
   );
-};
+}
 
 export default BlogHeader;

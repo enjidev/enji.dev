@@ -3,13 +3,16 @@ import NextLink from 'next/link';
 
 import { ExternalLink } from '@/components/shared/Icons';
 
-import type { MDXComponents } from 'mdx/types';
+import type { AnchorHTMLAttributes, DetailedHTMLProps } from 'react';
 
-const isExternal = (url: string) => {
-  return url.indexOf('/') !== 0;
-};
+type Props = DetailedHTMLProps<
+  AnchorHTMLAttributes<HTMLAnchorElement>,
+  HTMLAnchorElement
+>;
 
-export const Link: NonNullable<MDXComponents['a']> = ({ children, href }) => {
+const isExternal = (url: string) => url.indexOf('/') !== 0;
+
+export function Link({ children, href }: Props) {
   if (!href) {
     return <span>{children}</span>;
   }
@@ -24,4 +27,4 @@ export const Link: NonNullable<MDXComponents['a']> = ({ children, href }) => {
       {children}
     </NextLink>
   );
-};
+}

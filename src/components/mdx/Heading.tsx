@@ -4,9 +4,14 @@ import { HashtagIcon } from '@/components/shared/Icons';
 
 import { getSlug } from '@/helpers/mdx';
 
-import type { MDXComponents } from 'mdx/types';
+import type { DetailedHTMLProps, HTMLAttributes } from 'react';
 
-export const H2: NonNullable<MDXComponents['h2']> = ({ children }) => {
+type Props = DetailedHTMLProps<
+  HTMLAttributes<HTMLHeadingElement>,
+  HTMLHeadingElement
+>;
+
+export function H2({ children }: Props) {
   const slug = getSlug(children);
 
   return (
@@ -26,9 +31,9 @@ export const H2: NonNullable<MDXComponents['h2']> = ({ children }) => {
       <span>{children}</span>
     </h2>
   );
-};
+}
 
-export const H3: NonNullable<MDXComponents['h3']> = ({ children }) => {
+export function H3({ children }: Props) {
   const slug = getSlug(children);
 
   return (
@@ -48,4 +53,4 @@ export const H3: NonNullable<MDXComponents['h3']> = ({ children }) => {
       <span>{children}</span>
     </h3>
   );
-};
+}

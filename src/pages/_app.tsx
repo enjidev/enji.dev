@@ -14,6 +14,7 @@ function App({ Component, pageProps }: AppProps) {
     <Provider>
       <RootLayout>
         <>
+          {/* eslint-disable-next-line react/jsx-props-no-spreading */}
           <Component {...pageProps} />
           <Analytics />
         </>

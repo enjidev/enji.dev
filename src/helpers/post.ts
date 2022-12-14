@@ -13,10 +13,12 @@ export const formatDate = (date: string) => {
 
 export const formatLang = (lang: TPostFrontMatter['lang']) => {
   switch (lang) {
-    case 'EN':
-      return 'English';
     case 'ID':
       return 'Bahasa Indonesia';
+    case 'EN':
+      return 'English';
+    default:
+      return '';
   }
 };
 
@@ -31,6 +33,5 @@ export const getPostOgImageUrl = ({
   date,
   lang,
   tags,
-}: PostOgImageData) => {
-  return `${getBaseUrl()}/api/og?title=${title}&category=${category}&date=${date}&lang=${lang}&tags=${tags}`;
-};
+}: PostOgImageData) =>
+  `${getBaseUrl()}/api/og?title=${title}&category=${category}&date=${date}&lang=${lang}&tags=${tags}`;

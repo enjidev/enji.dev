@@ -2,7 +2,7 @@ import clsx from 'clsx';
 
 import { QuoteIcon } from '@/components/shared/Icons';
 
-const Quote = () => {
+function Quote() {
   return (
     <blockquote
       className={clsx(
@@ -31,7 +31,7 @@ const Quote = () => {
               'lg:h-1 lg:w-24',
               'dark:bg-slate-600'
             )}
-          ></span>
+          />
           <span>
             <strong
               className={clsx(
@@ -57,7 +57,7 @@ const Quote = () => {
               'lg:h-1 lg:w-14',
               'dark:bg-slate-600'
             )}
-          ></span>
+          />
         </span>
         <span className={clsx('leading-[1.15]')}>
           is a{' '}
@@ -73,13 +73,13 @@ const Quote = () => {
                 'lg:-left-1.5 lg:-right-0.5 lg:top-2 lg:bottom-0',
                 'dark:bg-slate-800'
               )}
-            ></span>
+            />
             must.
           </strong>
         </span>
       </div>
     </blockquote>
   );
-};
+}
 
 export default Quote;

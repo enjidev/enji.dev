@@ -62,9 +62,7 @@ const OgImage = async (request: NextRequest) => {
         ],
       }
     );
-  } catch (e: any) {
-    console.error(`${e.message}`);
-
+  } catch (e) {
     return new Response(`Failed to generate the image`, {
       status: 500,
     });

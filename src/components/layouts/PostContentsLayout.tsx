@@ -14,11 +14,11 @@ interface PostContentsLayoutProps {
   children: React.ReactNode;
 }
 
-const PostContentsLayout = ({
+function PostContentsLayout({
   frontMatter: { title, date, lang, tags, description, category },
   tableOfContents,
   children,
-}: PostContentsLayoutProps) => {
+}: PostContentsLayoutProps) {
   const ogImage = getPostOgImageUrl({
     category,
     title,
@@ -62,6 +62,6 @@ const PostContentsLayout = ({
       </div>
     </>
   );
-};
+}
 
 export default PostContentsLayout;

@@ -7,9 +7,7 @@ import Hero from '@/components/pages/index/Hero';
 import Quote from '@/components/pages/index/Quote';
 import { CodeIcon, HeartIcon, SparklesIcon } from '@/components/shared/Icons';
 
-import type { NextPage } from 'next';
-
-const Index: NextPage = () => {
+function Index() {
   return (
     <>
       <Head>
@@ -83,6 +81,6 @@ const Index: NextPage = () => {
       </section>
     </>
   );
-};
+}
 
 export default Index;

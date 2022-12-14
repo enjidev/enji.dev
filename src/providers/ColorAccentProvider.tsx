@@ -3,13 +3,13 @@ import { useEffect } from 'react';
 
 interface ColorAccentProviderProps {
   defaultScheme?: 'violet' | 'blue';
-  children?: React.ReactNode;
+  children: JSX.Element;
 }
 
-const ColorAccentProvider = ({
+function ColorAccentProvider({
   defaultScheme = 'violet',
   children,
-}: ColorAccentProviderProps) => {
+}: ColorAccentProviderProps) {
   const { pathname } = useRouter();
 
   useEffect(() => {
@@ -20,7 +20,7 @@ const ColorAccentProvider = ({
     }
   }, [pathname, defaultScheme]);
 
-  return <>{children}</>;
-};
+  return children;
+}
 
 export default ColorAccentProvider;

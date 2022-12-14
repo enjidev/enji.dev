@@ -7,7 +7,7 @@ interface HeadProps {
   ogImage?: string;
 }
 
-const Head = ({ title, description, ogImage, type }: HeadProps) => {
+function Head({ title, description, ogImage = '', type = 'page' }: HeadProps) {
   const htmlTitle = `${title} · Enji Kusnadi`;
 
   return (
@@ -32,6 +32,6 @@ const Head = ({ title, description, ogImage, type }: HeadProps) => {
       )}
     </NextHead>
   );
-};
+}
 
 export default Head;

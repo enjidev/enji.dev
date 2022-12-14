@@ -15,7 +15,11 @@ interface PageHeaderProps {
   caption?: string;
 }
 
-const PageHeader = ({ title, description, caption }: PageHeaderProps) => {
+function PageHeader({
+  title,
+  description = '',
+  caption = '',
+}: PageHeaderProps) {
   return (
     <header
       id="page-header"
@@ -78,6 +82,6 @@ const PageHeader = ({ title, description, caption }: PageHeaderProps) => {
       </div>
     </header>
   );
-};
+}
 
 export default PageHeader;

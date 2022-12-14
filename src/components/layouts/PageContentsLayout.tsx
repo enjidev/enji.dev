@@ -12,11 +12,11 @@ interface PageContentsLayoutProps {
   children: React.ReactNode;
 }
 
-const PageContentsLayout = ({
+function PageContentsLayout({
   frontMatter: { title, description, caption = '' },
   tableOfContents,
   children,
-}: PageContentsLayoutProps) => {
+}: PageContentsLayoutProps) {
   return (
     <>
       <Head title={title} description={description} />
@@ -43,6 +43,6 @@ const PageContentsLayout = ({
       </div>
     </>
   );
-};
+}
 
 export default PageContentsLayout;

@@ -9,7 +9,7 @@ interface NavLogoProps {
   title: string;
 }
 
-const NavLogo = ({ href, title }: NavLogoProps) => {
+function NavLogo({ href, title }: NavLogoProps) {
   const router = useRouter();
   const isActive = router.pathname === href;
 
@@ -22,6 +22,6 @@ const NavLogo = ({ href, title }: NavLogoProps) => {
       <Logo active={isActive} />
     </Link>
   );
-};
+}
 
 export default NavLogo;

@@ -10,15 +10,15 @@ interface SectionTitleProps {
   button?: {
     title: string;
     href: string;
-  };
+  } | null;
 }
 
-const SectionTitle = ({
+function SectionTitle({
   title,
   caption,
   description,
-  button,
-}: SectionTitleProps) => {
+  button = null,
+}: SectionTitleProps) {
   return (
     <div className={clsx('content-wrapper')}>
       <span
@@ -52,6 +52,6 @@ const SectionTitle = ({
       )}
     </div>
   );
-};
+}
 
 export default SectionTitle;

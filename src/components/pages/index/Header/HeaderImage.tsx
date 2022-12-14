@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import { motion, useAnimationControls } from 'framer-motion';
 import Image from 'next/image';
 
-const HeaderImage = () => {
+function HeaderImage() {
   const controls = useAnimationControls();
 
   return (
@@ -46,6 +46,6 @@ const HeaderImage = () => {
       </div>
     </div>
   );
-};
+}
 
 export default HeaderImage;

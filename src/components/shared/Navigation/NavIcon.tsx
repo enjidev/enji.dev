@@ -7,7 +7,7 @@ interface NavIconProps {
   label?: string;
 }
 
-const NavIcon = ({ href, icon, title, label }: NavIconProps) => {
+function NavIcon({ href, icon, title, label = '' }: NavIconProps) {
   return (
     <a
       href={href}
@@ -46,6 +46,6 @@ const NavIcon = ({ href, icon, title, label }: NavIconProps) => {
       )}
     </a>
   );
-};
+}
 
 export default NavIcon;

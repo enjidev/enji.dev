@@ -8,7 +8,7 @@ interface FeaturedCardProps {
   desc: string;
 }
 
-const FeaturedCard = ({ icon, title, desc }: FeaturedCardProps) => {
+function FeaturedCard({ icon, title, desc }: FeaturedCardProps) {
   return (
     <div
       className={clsx(
@@ -21,13 +21,13 @@ const FeaturedCard = ({ icon, title, desc }: FeaturedCardProps) => {
           'absolute inset-x-0 inset-y-8 z-[-1] border-t border-divider-light',
           'dark:border-divider-dark'
         )}
-      ></div>
+      />
       <div
         className={clsx(
           'absolute inset-y-0 inset-x-8 z-[-1] border-l border-divider-light',
           'dark:border-divider-dark'
         )}
-      ></div>
+      />
       <div className={clsx('-mt-0.5')}>
         <div
           className={clsx(
@@ -56,6 +56,6 @@ const FeaturedCard = ({ icon, title, desc }: FeaturedCardProps) => {
       </div>
     </div>
   );
-};
+}
 
 export default FeaturedCard;

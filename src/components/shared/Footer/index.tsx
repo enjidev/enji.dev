@@ -5,7 +5,7 @@ import LastUpdate from '@/components/shared/Footer/LastUpdate';
 
 import dayjs from '@/utils/dayjs';
 
-const Footer = () => {
+function Footer() {
   return (
     <footer
       className={clsx(
@@ -64,6 +64,6 @@ const Footer = () => {
       </div>
     </footer>
   );
-};
+}
 
 export default Footer;

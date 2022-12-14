@@ -1,10 +1,8 @@
 import clsx from 'clsx';
 
-interface SectionContentProps {
-  children?: React.ReactNode;
-}
+import type { PropsWithChildren } from 'react';
 
-const SectionContent = ({ children }: SectionContentProps) => {
+function SectionContent({ children }: PropsWithChildren) {
   return (
     <div
       className={clsx(
@@ -15,6 +13,6 @@ const SectionContent = ({ children }: SectionContentProps) => {
       <div className={clsx('content-wrapper pb-20')}>{children}</div>
     </div>
   );
-};
+}
 
 export default SectionContent;

@@ -1,18 +1,20 @@
-import { JetBrains_Mono } from '@next/font/google';
+import { JetBrains_Mono as JetBrainsMono } from '@next/font/google';
 
-const font = JetBrains_Mono({
+const font = JetBrainsMono({
   subsets: ['latin'],
 });
 
-const FontJetBrainsMono = () => (
-  <style global jsx>{`
-    code,
-    kbd,
-    samp,
-    pre {
-      font-family: ${font.style.fontFamily}, sans-serif;
-    }
-  `}</style>
-);
+function FontJetBrainsMono() {
+  return (
+    <style global jsx>{`
+      code,
+      kbd,
+      samp,
+      pre {
+        font-family: ${font.style.fontFamily}, sans-serif;
+      }
+    `}</style>
+  );
+}
 
 export default FontJetBrainsMono;

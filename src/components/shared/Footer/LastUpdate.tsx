@@ -5,7 +5,7 @@ import useLastUpdate from '@/hooks/useLastUpdate';
 
 import dayjs from '@/utils/dayjs';
 
-const LastUpdate = () => {
+function LastUpdate() {
   const { data, isError } = useLastUpdate();
 
   return data ? (
@@ -34,6 +34,6 @@ const LastUpdate = () => {
   ) : (
     <span>&nbsp;</span>
   );
-};
+}
 
 export default LastUpdate;

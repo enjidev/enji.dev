@@ -5,7 +5,7 @@ import Navigation from '@/components/shared/Navigation';
 
 import type { ReactNode } from 'react';
 
-const Root = ({ children }: { children: ReactNode }) => {
+function Root({ children }: { children: ReactNode }) {
   return (
     <>
       <FontPlusJakartaSans />
@@ -15,6 +15,6 @@ const Root = ({ children }: { children: ReactNode }) => {
       <Footer />
     </>
   );
-};
+}
 
 export default Root;

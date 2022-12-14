@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 
 import { DarkIcon, LightIcon } from '@/components/shared/Icons';
 
-const NavIconTheme = () => {
+function NavIconTheme() {
   const controls = useAnimation();
   const [mounted, setMounted] = useState(false);
   const { resolvedTheme, setTheme } = useTheme();
@@ -57,6 +57,7 @@ const NavIconTheme = () => {
         />
       </div>
       <button
+        type="button"
         className={clsx(
           'ml-1 flex h-9 w-9 items-center justify-center rounded-xl bg-slate-300/50 text-slate-800',
           'hover:bg-slate-300/70 sm:ml-0',
@@ -73,6 +74,6 @@ const NavIconTheme = () => {
       </button>
     </>
   );
-};
+}
 
 export default NavIconTheme;

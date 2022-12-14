@@ -5,7 +5,7 @@ import HeaderImage from '@/components/pages/index/Header/HeaderImage';
 import HeaderTechStack from '@/components/pages/index/Header/HeaderTechStack';
 import HeaderTitle from '@/components/pages/index/Header/HeaderTitle';
 
-const Header = () => {
+function Header() {
   return (
     <header
       id="page-header"
@@ -37,6 +37,6 @@ const Header = () => {
       </div>
     </header>
   );
-};
+}
 
 export default Header;

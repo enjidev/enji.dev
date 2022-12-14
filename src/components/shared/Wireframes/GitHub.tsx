@@ -8,11 +8,11 @@ interface GithubWireframeProps {
   description: string;
 }
 
-const GitHubWireframe = ({
+function GitHubWireframe({
   repository,
   description,
-  author,
-}: GithubWireframeProps) => {
+  author = '',
+}: GithubWireframeProps) {
   return (
     <div
       className={clsx(
@@ -151,6 +151,6 @@ const GitHubWireframe = ({
       </div>
     </div>
   );
-};
+}
 
 export default GitHubWireframe;

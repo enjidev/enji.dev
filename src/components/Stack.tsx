@@ -5,18 +5,18 @@ interface StackProps {
   children: React.ReactNode;
 }
 
-export const VStack = ({ spacing, children }: StackProps) => {
+export function VStack({ spacing, children }: StackProps) {
   return (
     <div className={clsx('flex flex-col flex-wrap')} style={{ gap: spacing }}>
       {children}
     </div>
   );
-};
+}
 
-export const HStack = ({ spacing, children }: StackProps) => {
+export function HStack({ spacing, children }: StackProps) {
   return (
     <div className={clsx('flex flex-row flex-wrap')} style={{ gap: spacing }}>
       {children}
     </div>
   );
-};
+}

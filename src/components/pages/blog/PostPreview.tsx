@@ -11,13 +11,13 @@ type PostPreviewProps = TPostFrontMatter & {
   slug: string;
 };
 
-const PostPreview = ({
+function PostPreview({
   title,
   description,
   date,
   slug,
   lang,
-}: PostPreviewProps) => {
+}: PostPreviewProps) {
   return (
     <Link
       key={slug}
@@ -63,6 +63,6 @@ const PostPreview = ({
       </div>
     </Link>
   );
-};
+}
 
 export default PostPreview;

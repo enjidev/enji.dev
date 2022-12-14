@@ -2,13 +2,15 @@ import clsx from 'clsx';
 
 import { SkeletonMd } from '@/components/shared/Wireframes/Skeletons';
 
+import type { PropsWithChildren } from 'react';
+
 interface BrowserTabProps {
   icon: React.ReactNode;
   title: string;
   isActive: boolean;
 }
 
-const BrowserTab = ({ icon, title, isActive }: BrowserTabProps) => {
+function BrowserTab({ icon, title, isActive }: BrowserTabProps) {
   return (
     <div
       className={clsx('flex h-6 items-center truncate rounded-lg', [
@@ -27,15 +29,18 @@ const BrowserTab = ({ icon, title, isActive }: BrowserTabProps) => {
       </div>
     </div>
   );
-};
+}
 
 interface AppWindowProps {
-  children?: React.ReactNode;
   type?: 'browser' | 'app';
   browserTabs?: Array<BrowserTabProps>;
 }
 
-const AppWindow = ({ children, type = 'app', browserTabs }: AppWindowProps) => {
+function AppWindow({
+  children = null,
+  type = 'app',
+  browserTabs = [],
+}: PropsWithChildren<AppWindowProps>) {
   const isWithBrowserTabs = type === 'browser' && browserTabs;
 
   return (
@@ -69,8 +74,13 @@ const AppWindow = ({ children, type = 'app', browserTabs }: AppWindowProps) => {
             </div>
             {isWithBrowserTabs && (
               <div className={clsx('mt-2 flex gap-2 px-3')}>
-                {browserTabs.map((browserTab, idx) => (
-                  <BrowserTab key={idx} {...browserTab} />
+                {browserTabs.map(({ icon, title, isActive }) => (
+                  <BrowserTab
+                    key={title}
+                    icon={icon}
+                    title={title}
+                    isActive={isActive}
+                  />
                 ))}
               </div>
             )}
@@ -80,6 +90,6 @@ const AppWindow = ({ children, type = 'app', browserTabs }: AppWindowProps) => {
       <div className={clsx('flex-1 overflow-hidden')}>{children}</div>
     </div>
   );
-};
+}
 
 export default AppWindow;

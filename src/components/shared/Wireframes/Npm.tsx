@@ -10,7 +10,7 @@ interface NpmWireframeProps {
   description: string;
 }
 
-const NpmWireframe = ({ packageName, description }: NpmWireframeProps) => {
+function NpmWireframe({ packageName, description }: NpmWireframeProps) {
   return (
     <div
       className={clsx(
@@ -108,6 +108,6 @@ const NpmWireframe = ({ packageName, description }: NpmWireframeProps) => {
       </div>
     </div>
   );
-};
+}
 
 export default NpmWireframe;

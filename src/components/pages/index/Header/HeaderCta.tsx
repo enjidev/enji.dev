@@ -20,7 +20,7 @@ interface HeaderCtaProps {
   isFreeAnimationDuration?: number;
 }
 
-const ButtonContactMe = () => {
+function ButtonContactMe() {
   return (
     <Link
       href="/work/contact"
@@ -29,9 +29,9 @@ const ButtonContactMe = () => {
       Contact Me
     </Link>
   );
-};
+}
 
-const ButtonResume = () => {
+function ButtonResume() {
   return (
     <a
       target="_blank"
@@ -43,9 +43,9 @@ const ButtonResume = () => {
       RESUME
     </a>
   );
-};
+}
 
-const AvailableForHire = () => {
+function AvailableForHire() {
   return (
     <div
       className={clsx(
@@ -60,23 +60,23 @@ const AvailableForHire = () => {
             'absolute -top-1 -left-1 inline-flex h-4 w-4 animate-ping rounded-full bg-accent-600 opacity-75',
             'dark:bg-accent-300'
           )}
-        ></span>
+        />
         <span
           className={clsx(
             'relative inline-flex h-2 w-2 rounded-full bg-accent-500',
             'dark:bg-accent-400'
           )}
-        ></span>
+        />
       </span>
       AVAILABLE FOR HIRE
     </div>
   );
-};
+}
 
-const HeaderCta = ({
+function HeaderCta({
   isFree = true,
   isFreeAnimationDuration = 4,
-}: HeaderCtaProps) => {
+}: HeaderCtaProps) {
   const shouldReduceMotion = useReducedMotion();
 
   let isFreeVariants = {
@@ -140,6 +140,6 @@ const HeaderCta = ({
       )}
     </motion.div>
   );
-};
+}
 
 export default HeaderCta;

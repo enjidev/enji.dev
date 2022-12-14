@@ -1,14 +1,18 @@
 import clsx from 'clsx';
 
+import type { PropsWithChildren } from 'react';
+
 interface SkeletonProps {
   /**
    * Skeleton width in pixels.
    */
   w?: number;
-  children?: React.ReactNode;
 }
 
-export const SkeletonSm = ({ w = 16, children }: SkeletonProps) => {
+export function SkeletonSm({
+  w = 16,
+  children = null,
+}: PropsWithChildren<SkeletonProps>) {
   return (
     <div
       className={clsx(
@@ -20,9 +24,12 @@ export const SkeletonSm = ({ w = 16, children }: SkeletonProps) => {
       {children}
     </div>
   );
-};
+}
 
-export const SkeletonMd = ({ w = 24, children }: SkeletonProps) => {
+export function SkeletonMd({
+  w = 24,
+  children = null,
+}: PropsWithChildren<SkeletonProps>) {
   return (
     <div
       className={clsx(
@@ -34,4 +41,4 @@ export const SkeletonMd = ({ w = 24, children }: SkeletonProps) => {
       {children}
     </div>
   );
-};
+}

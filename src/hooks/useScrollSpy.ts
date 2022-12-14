@@ -32,8 +32,7 @@ export default function useScrollSpy(wrapper: string, wrapperOffset = 0) {
      */
     const items = document.querySelectorAll<HTMLElement>('[data-ss]');
     let currentActiveSlug = currentSlug;
-    for (let i = 0; i < items.length; i++) {
-      const item = items[i];
+    items.forEach((item) => {
       const slug = item.dataset.ss || null;
       const offsetTop: number = Number(item.dataset.ssMt) + 5 || 0;
 
@@ -42,12 +41,8 @@ export default function useScrollSpy(wrapper: string, wrapperOffset = 0) {
 
       if (fromTop < 0) {
         currentActiveSlug = slug;
-
-        continue;
       }
-
-      break;
-    }
+    });
 
     if (elementTop > 0) {
       setCurrentSlug(null);

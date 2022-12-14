@@ -43,21 +43,22 @@ const content: Array<Content> = [
 
 interface HeroButtonProps {
   title: string;
-  desc?: string;
+  description?: string;
   step?: number;
   active?: boolean;
   onClick?: () => void;
 }
 
-const HeroButton = ({
+function HeroButton({
   title,
-  desc,
-  step,
+  description = '',
+  step = 0,
   active = false,
   onClick = () => {},
-}: HeroButtonProps) => {
+}: HeroButtonProps) {
   return (
     <button
+      type="button"
       className={clsx(
         'flex flex-1 items-center rounded-2xl border-2 bg-white p-4 text-left',
         'dark:bg-slate-900',
@@ -91,27 +92,30 @@ const HeroButton = ({
         >
           {title}
         </span>
-        <span
-          className={clsx(
-            'mt-1 block text-sm text-slate-600',
-            'dark:text-slate-400'
-          )}
-        >
-          {desc}
-        </span>
+        {description && (
+          <span
+            className={clsx(
+              'mt-1 block text-sm text-slate-600',
+              'dark:text-slate-400'
+            )}
+          >
+            {description}
+          </span>
+        )}
       </div>
     </button>
   );
-};
+}
 
-const HeroButtonSmall = ({
+function HeroButtonSmall({
   title,
-  step,
+  step = 0,
   active = false,
   onClick = () => {},
-}: HeroButtonProps) => {
+}: Omit<HeroButtonProps, 'description'>) {
   return (
     <button
+      type="button"
       className={clsx('rounded-xl p-2 text-sm', [
         active
           ? ['text-accent-600', 'dark:text-accent-400']
@@ -132,9 +136,9 @@ const HeroButtonSmall = ({
       </span>
     </button>
   );
-};
+}
 
-const Hero = () => {
+function Hero() {
   const [currentState, setCurrentState] = useState<Content | null>(null);
 
   return (
@@ -183,7 +187,7 @@ const Hero = () => {
               <HeroButton
                 key={item.state}
                 title={item.title}
-                desc={item.description}
+                description={item.description}
                 step={i + 1}
                 active={currentState?.state === item.state}
                 onClick={() => setCurrentState(item)}
@@ -220,6 +224,6 @@ const Hero = () => {
       </SectionContent>
     </>
   );
-};
+}
 
 export default Hero;

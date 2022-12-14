@@ -5,7 +5,7 @@ interface LabelProps {
   indicator: number;
 }
 
-export const Label = ({ indicator, children }: LabelProps) => {
+export function Label({ indicator, children }: LabelProps) {
   const percentage = Math.min(100, Math.max(0, indicator));
 
   return (
@@ -18,14 +18,14 @@ export const Label = ({ indicator, children }: LabelProps) => {
       />
     </span>
   );
-};
+}
 
 interface LabelsProps {
   title: string;
   children: React.ReactElement<LabelProps> | React.ReactElement<LabelProps>[];
 }
 
-const Labels = ({ title, children }: LabelsProps) => {
+function Labels({ title, children }: LabelsProps) {
   return (
     <div
       className={clsx(
@@ -39,6 +39,6 @@ const Labels = ({ title, children }: LabelsProps) => {
       <div className={clsx('flex flex-1 flex-wrap gap-2')}>{children}</div>
     </div>
   );
-};
+}
 
 export default Labels;

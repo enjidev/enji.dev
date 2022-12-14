@@ -1,6 +1,6 @@
 import { useCallback, useEffect } from 'react';
 
-export default function useShortcut(key: string, callback: Function) {
+export default function useShortcut(key: string, callback: () => void) {
   const handler = useCallback(
     (e: KeyboardEvent) => {
       // returns earlier if the pressed key doesn't match as the requested key.
@@ -14,7 +14,7 @@ export default function useShortcut(key: string, callback: Function) {
       if (exclude) return;
 
       // call the callback.
-      callback && callback();
+      callback();
     },
     [callback, key]
   );

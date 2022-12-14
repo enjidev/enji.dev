@@ -8,7 +8,7 @@ import SectionTitle from '@/components/shared/SectionTitle';
 import AppWindow from '@/components/shared/Wireframes/AppWindow';
 import GitHubWireframe from '@/components/shared/Wireframes/GitHub';
 
-const Projects = () => {
+function Projects() {
   return (
     <>
       <Head title="Projects" description="Projects" />
@@ -28,7 +28,7 @@ const Projects = () => {
       />
       <SectionContent>
         <div className={clsx('flex', 'lg:gap-12')}>
-          <div className={clsx('hidden flex-1', 'lg:flex')}></div>
+          <div className={clsx('hidden flex-1', 'lg:flex')} />
           <div className={clsx('w-full', 'lg:w-auto')}>
             <div className={clsx('-mt-[41px]')}>
               <div className={clsx('w-full', 'lg:h-[400px] lg:w-[600px]')}>
@@ -60,6 +60,6 @@ const Projects = () => {
       </SectionContent>
     </>
   );
-};
+}
 
 export default Projects;

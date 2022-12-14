@@ -8,7 +8,7 @@ interface TodoItemProps {
   state: Array<TodoItemState>;
 }
 
-const TodoItem = ({ state }: TodoItemProps) => {
+function TodoItem({ state }: TodoItemProps) {
   return (
     <div
       className={clsx(
@@ -158,6 +158,6 @@ const TodoItem = ({ state }: TodoItemProps) => {
       </div>
     </div>
   );
-};
+}
 
 export default TodoItem;

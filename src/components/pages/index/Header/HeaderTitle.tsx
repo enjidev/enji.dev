@@ -10,7 +10,7 @@ const animation = {
   },
 };
 
-const HeaderTitle = () => {
+function HeaderTitle() {
   const controls = useAnimationControls();
 
   return (
@@ -84,6 +84,6 @@ const HeaderTitle = () => {
       </h1>
     </div>
   );
-};
+}
 
 export default HeaderTitle;

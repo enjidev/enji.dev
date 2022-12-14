@@ -14,7 +14,7 @@ export default function useLastUpdate() {
 
   return {
     data: data as TLastUpdate,
-    isError: isError,
+    isError,
     isLoading: !isError && !data,
   };
 }

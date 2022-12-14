@@ -2,19 +2,16 @@ import clsx from 'clsx';
 import React from 'react';
 
 import { ChevronRightIcon } from '@/components/shared/Icons';
-import { NavLink } from '@/components/shared/Navigation/NavLink';
+import NavLink from '@/components/shared/Navigation/NavLink';
 
-type NavLink = {
-  href: string;
-  title: string;
-};
+import type { NavLinkProps } from '@/components/shared/Navigation/NavLink';
 
 interface NavLinkExpandedProps {
   title: string;
-  items: Array<NavLink>;
+  items: Array<NavLinkProps>;
 }
 
-const NavLinkExpanded = ({ title, items }: NavLinkExpandedProps) => {
+function NavLinkExpanded({ title, items }: NavLinkExpandedProps) {
   return (
     <div className={clsx('flex')}>
       <div
@@ -26,10 +23,10 @@ const NavLinkExpanded = ({ title, items }: NavLinkExpandedProps) => {
         <ChevronRightIcon className={clsx('h-3 w-3')} />
       </div>
       <ul className={clsx('flex items-center')}>
-        {items.map(({ title, href }, idx) => (
-          <React.Fragment key={href}>
+        {items.map((item, idx) => (
+          <React.Fragment key={item.href}>
             <li>
-              <NavLink title={title} href={href} />
+              <NavLink title={item.title} href={item.href} />
             </li>
             {idx !== items.length - 1 && (
               <li>
@@ -41,6 +38,6 @@ const NavLinkExpanded = ({ title, items }: NavLinkExpandedProps) => {
       </ul>
     </div>
   );
-};
+}
 
 export default NavLinkExpanded;

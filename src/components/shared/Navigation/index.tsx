@@ -18,7 +18,7 @@ const workLinks = [
   { title: 'Contact', href: '/work/contact' },
 ];
 
-const Navbar = () => {
+function Navbar() {
   const position = useScrollTop();
   const isExit = useOnExit('#page-header');
 
@@ -107,6 +107,6 @@ const Navbar = () => {
       </div>
     </nav>
   );
-};
+}
 
 export default Navbar;

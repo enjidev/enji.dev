@@ -19,13 +19,12 @@ type LinkRefProps = HTMLAttributes<HTMLAnchorElement> & {
 };
 
 const LinkRef = forwardRef(
-  ({ href, children, ...rest }: LinkRefProps, ref: Ref<HTMLAnchorElement>) => {
-    return (
-      <Link href={href} ref={ref} {...rest}>
-        {children}
-      </Link>
-    );
-  }
+  ({ href, children, ...rest }: LinkRefProps, ref: Ref<HTMLAnchorElement>) => (
+    // eslint-disable-next-line react/jsx-props-no-spreading
+    <Link href={href} ref={ref} {...rest}>
+      {children}
+    </Link>
+  )
 );
 
 LinkRef.displayName = 'LinkRef';
@@ -40,7 +39,7 @@ interface NavLinkDropdownProps {
   items: Array<NavLink>;
 }
 
-const NavLinkDropdown = ({ title, items }: NavLinkDropdownProps) => {
+function NavLinkDropdown({ title, items }: NavLinkDropdownProps) {
   return (
     <div className="relative">
       <Menu>
@@ -57,23 +56,23 @@ const NavLinkDropdown = ({ title, items }: NavLinkDropdownProps) => {
                 static
                 as={motion.div}
                 variants={animation}
-                initial={'hide'}
-                animate={'show'}
+                initial="hide"
+                animate="show"
                 className={clsx(
                   'absolute top-11 z-40 flex w-40 flex-col rounded-2xl border border-divider-light bg-white p-2',
                   'dark:border-divider-dark dark:bg-slate-900'
                 )}
               >
-                {items.map(({ title, href }) => (
-                  <Menu.Item key={href}>
+                {items.map((item) => (
+                  <Menu.Item key={item.href}>
                     {({ active }) => (
                       <LinkRef
-                        href={href}
+                        href={item.href}
                         className={clsx('nav-link h-8 text-xs', [
                           active && 'nav-link--focus',
                         ])}
                       >
-                        {title}
+                        {item.title}
                       </LinkRef>
                     )}
                   </Menu.Item>
@@ -85,6 +84,6 @@ const NavLinkDropdown = ({ title, items }: NavLinkDropdownProps) => {
       </Menu>
     </div>
   );
-};
+}
 
 export default NavLinkDropdown;
