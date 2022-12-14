@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import Link from 'next/link';
 import { ChevronRightIcon } from '@/components/shared/Icons';
-import { formatDate } from '@/utils/helpers';
+import { formatDate, formatLang } from '@/utils/helpers';
 
 import type { TPostFrontMatter } from '@/types';
 type PostPreviewProps = TPostFrontMatter & {
@@ -28,12 +28,8 @@ const PostPreview = ({
         )}
       >
         <span>{formatDate(date)}</span>
-        {lang && lang === 'ID' && (
-          <>
-            <span>&middot;</span>
-            <span>Bahasa Indonesia</span>
-          </>
-        )}
+        <span>&middot;</span>
+        <span>{formatLang(lang)}</span>
       </div>
       <div className={clsx('mb-1')}>
         <h2

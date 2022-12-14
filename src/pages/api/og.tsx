@@ -18,18 +18,14 @@ const PlusJakartaSans800 = fetch(
 
 const OgImage = async (request: NextRequest) => {
   const { searchParams } = new URL(request.url);
-  const get = (param: string) => searchParams.get(param) || undefined;
+  const get = (param: string): string => searchParams.get(param) || param;
 
   try {
     const category = get('category');
     const title = get('title');
-    const tags = get('tags')?.split(',').slice(0, 3) as [
-      string,
-      string,
-      string
-    ];
-    const date = get('date') as string;
-    const lang = get('lang');
+    const tags = get('tags').split(',').slice(0, 3);
+    const date = get('date');
+    const lang = get('lang') as 'ID' | 'EN';
 
     const font400 = await PlusJakartaSans400;
     const font800 = await PlusJakartaSans800;

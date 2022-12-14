@@ -2,7 +2,20 @@ import dayjs from '@/utils/dayjs';
 import type { TPostFrontMatter } from '@/types';
 
 export const formatDate = (date: string) => {
-  return dayjs(date, 'YYYY-MM-DD').format('MMMM D, YYYY');
+  if (dayjs(date).isValid()) {
+    return dayjs(date, 'YYYY-MM-DD').format('MMMM D, YYYY');
+  }
+
+  return date;
+};
+
+export const formatLang = (lang: TPostFrontMatter['lang']) => {
+  switch (lang) {
+    case 'EN':
+      return 'English';
+    case 'ID':
+      return 'Bahasa Indonesia';
+  }
 };
 
 export const getBaseUrl = () => {

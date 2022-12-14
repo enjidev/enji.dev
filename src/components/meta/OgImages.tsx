@@ -1,7 +1,9 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
 
-import React, { CSSProperties } from 'react';
+import { TPostFrontMatter } from '@/types';
+import { formatLang } from '@/utils/helpers';
+import { CSSProperties } from 'react';
 
 const styles: Record<string, CSSProperties> = {
   container: {
@@ -95,13 +97,10 @@ const styles: Record<string, CSSProperties> = {
   },
 };
 
-export type PostOgImageProps = {
-  category?: string;
-  title?: string;
-  tags?: Array<string>;
-  date?: string;
-  lang?: string;
-};
+export type PostOgImageProps = Pick<
+  TPostFrontMatter,
+  'category' | 'title' | 'date' | 'lang' | 'tags'
+>;
 
 export const PostOgImage = ({
   category,
@@ -112,33 +111,21 @@ export const PostOgImage = ({
 }: PostOgImageProps) => {
   return (
     <div style={styles.container}>
-      {category && (
-        <React.Fragment>
-          <div style={styles.category}>{category}</div>
-          <div />
-        </React.Fragment>
-      )}
+      <div style={styles.category}>{category}</div>
+      <div />
 
-      {title && (
-        <React.Fragment>
-          <div style={styles.title}>{title}</div>
-          <div />
-        </React.Fragment>
-      )}
+      <div style={styles.title}>{title}</div>
+      <div />
 
-      {tags && Array.isArray(tags) && (
-        <React.Fragment>
-          <div style={styles.tags}>
-            {tags.slice(0, 3).map((tag) => (
-              <div style={styles.tag} key={tag}>
-                <div style={styles.tagHash}>#</div>
-                <div style={styles.tagTitle}>{tag}</div>
-              </div>
-            ))}
+      <div style={styles.tags}>
+        {tags.slice(0, 3).map((tag) => (
+          <div style={styles.tag} key={tag}>
+            <div style={styles.tagHash}>#</div>
+            <div style={styles.tagTitle}>{tag}</div>
           </div>
-          <div />
-        </React.Fragment>
-      )}
+        ))}
+      </div>
+      <div />
 
       <div style={styles.author}>
         <img
@@ -149,19 +136,11 @@ export const PostOgImage = ({
         />
         <div style={styles.authorName}>@enjidev</div>
 
-        {date && (
-          <React.Fragment>
-            <div style={styles.divider}>&middot;</div>
-            <div style={styles.description}>{date}</div>
-          </React.Fragment>
-        )}
+        <div style={styles.divider}>&middot;</div>
+        <div style={styles.description}>{date}</div>
 
-        {lang === 'ID' && (
-          <React.Fragment>
-            <div style={styles.divider}>&middot;</div>
-            <div style={styles.description}>Bahasa Indonesia</div>
-          </React.Fragment>
-        )}
+        <div style={styles.divider}>&middot;</div>
+        <div style={styles.description}>{formatLang(lang)}</div>
       </div>
       <div style={styles.borderBottom} />
     </div>
