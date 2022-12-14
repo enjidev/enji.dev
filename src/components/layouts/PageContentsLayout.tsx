@@ -17,11 +17,7 @@ const PageContentsLayout = ({
 }: PageContentsLayoutProps) => {
   return (
     <>
-      <Head
-        title={title}
-        description={description}
-        ogImage={{ caption, title }}
-      />
+      <Head title={title} description={description} />
       <div className={clsx('')}>
         <PageHeader title={title} description={description} caption={caption} />
         <div className={clsx('content-wrapper')}>

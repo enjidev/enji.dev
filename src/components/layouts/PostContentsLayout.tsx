@@ -2,6 +2,8 @@ import clsx from 'clsx';
 import Head from '@/components/meta/Head';
 import PageHeader from '@/components/shared/Header/PageHeader';
 import TableOfContents from '@/components/shared/TableOfContents';
+import { getPostOgImageUrl } from '@/utils/helpers';
+
 import type { TTableOfContents, TPostFrontMatter } from '@/types';
 
 interface PostContentsLayoutProps {
@@ -15,12 +17,21 @@ const PostContentsLayout = ({
   tableOfContents,
   children,
 }: PostContentsLayoutProps) => {
+  const ogImage = getPostOgImageUrl({
+    category,
+    title,
+    date,
+    lang,
+    tags,
+  });
+
   return (
     <>
       <Head
         title={title}
         description={description}
-        ogImage={{ title, date, lang, tags }}
+        type="post"
+        ogImage={ogImage}
       />
       <div className={clsx('')}>
         <PageHeader

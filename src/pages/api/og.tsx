@@ -1,5 +1,6 @@
 import { ImageResponse } from '@vercel/og';
-import { Post } from '@/components/meta/OgImages';
+import { PostOgImage } from '@/components/meta/OgImages';
+import { formatDate } from '@/utils/helpers';
 
 import type { NextRequest } from 'next/server';
 
@@ -20,14 +21,14 @@ const OgImage = async (request: NextRequest) => {
   const get = (param: string) => searchParams.get(param) || undefined;
 
   try {
-    const caption = get('caption');
+    const category = get('category');
     const title = get('title');
     const tags = get('tags')?.split(',').slice(0, 3) as [
       string,
       string,
       string
     ];
-    const date = get('date');
+    const date = get('date') as string;
     const lang = get('lang');
 
     const font400 = await PlusJakartaSans400;
@@ -35,11 +36,11 @@ const OgImage = async (request: NextRequest) => {
 
     return new ImageResponse(
       (
-        <Post
-          caption={caption}
+        <PostOgImage
+          category={category}
           title={title}
           tags={tags}
-          date={date}
+          date={formatDate(date)}
           lang={lang}
         />
       ),

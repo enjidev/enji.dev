@@ -24,7 +24,7 @@ const styles: Record<string, CSSProperties> = {
     position: 'relative',
     width: '100%',
   },
-  caption: {
+  category: {
     color: '#7733ff',
     fontSize: 36,
     fontWeight: 800,
@@ -45,7 +45,7 @@ const styles: Record<string, CSSProperties> = {
     borderRadius: 100,
     backgroundColor: '#dbeafe',
     color: '#2563eb',
-    fontSize: 24,
+    fontSize: 20,
     fontWeight: 800,
     display: 'flex',
     height: 48,
@@ -95,20 +95,26 @@ const styles: Record<string, CSSProperties> = {
   },
 };
 
-export type PostProps = {
-  caption?: string;
+export type PostOgImageProps = {
+  category?: string;
   title?: string;
   tags?: Array<string>;
   date?: string;
   lang?: string;
 };
 
-export const Post = ({ caption, title, tags, date, lang }: PostProps) => {
+export const PostOgImage = ({
+  category,
+  title,
+  tags,
+  date,
+  lang,
+}: PostOgImageProps) => {
   return (
     <div style={styles.container}>
-      {caption && (
+      {category && (
         <React.Fragment>
-          <div style={styles.caption}>{caption}</div>
+          <div style={styles.category}>{category}</div>
           <div />
         </React.Fragment>
       )}

@@ -1,10 +1,9 @@
 import clsx from 'clsx';
-import dayjs from '@/utils/dayjs';
 import Link from 'next/link';
 import { ChevronRightIcon } from '@/components/shared/Icons';
+import { formatDate } from '@/utils/helpers';
 
 import type { TPostFrontMatter } from '@/types';
-
 type PostPreviewProps = TPostFrontMatter & {
   slug: string;
 };
@@ -28,7 +27,7 @@ const PostPreview = ({
           'dark:text-slate-400'
         )}
       >
-        <span>{dayjs(date, 'YYYY-MM-DD').format('MMMM D, YYYY')}</span>
+        <span>{formatDate(date)}</span>
         {lang && lang === 'ID' && (
           <>
             <span>&middot;</span>
