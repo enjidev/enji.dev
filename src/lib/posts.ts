@@ -16,8 +16,7 @@ export const getSortedPostsData = () => {
     const fileContents = fs.readFileSync(fullPath, 'utf8');
 
     // use front-matter to parse the post metadata section
-    const { attributes } =
-      frontMatter<Omit<TPostFrontMatter, 'slug'>>(fileContents);
+    const { attributes } = frontMatter<TPostFrontMatter>(fileContents);
 
     return {
       slug,

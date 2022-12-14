@@ -5,7 +5,9 @@ import { ChevronRightIcon } from '@/components/shared/Icons';
 
 import type { TPostFrontMatter } from '@/types';
 
-type PostPreviewProps = TPostFrontMatter & {};
+type PostPreviewProps = TPostFrontMatter & {
+  slug: string;
+};
 
 const PostPreview = ({
   title,

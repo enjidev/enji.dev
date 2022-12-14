@@ -1,13 +1,14 @@
 import clsx from 'clsx';
 import Head from '@/components/meta/Head';
 import CenteredHeader from '@/components/shared/Header/CenteredHeader';
+import PostPreview from '@/components/pages/blog/PostPreview';
 import { getSortedPostsData } from '@/lib/posts';
 
 import type { GetStaticProps, NextPage } from 'next';
 import type { TPostFrontMatter } from '@/types';
-import PostPreview from '@/components/pages/blog/PostPreview';
+
 interface BlogProps {
-  posts: Array<TPostFrontMatter>;
+  posts: Array<TPostFrontMatter & { slug: string }>;
 }
 
 const Blog: NextPage<BlogProps> = ({ posts }) => {
