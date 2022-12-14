@@ -34,4 +34,4 @@ export const getPostOgImageUrl = ({
   lang,
   tags,
 }: PostOgImageData) =>
-  `${getBaseUrl()}/api/og?title=${title}&category=${category}&date=${date}&lang=${lang}&tags=${tags}`;
+  `${getBaseUrl()}/api/og-post?title=${title}&category=${category}&date=${date}&lang=${lang}&tags=${tags}`;
