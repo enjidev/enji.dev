@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "lint:types": "tsc --noEmit",
     "lint:style": "prettier --check .",
     "analyze": "cross-env ANALYZE=true yarn build"
   },
