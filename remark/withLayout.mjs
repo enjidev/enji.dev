@@ -13,16 +13,20 @@ const withLayout = () => {
     const pageType = frontMatter.type;
 
     if (pageType === 'post') {
-      addImport(tree, 'ContentsLayout', '@/components/layouts/ContentsLayout');
+      addImport(
+        tree,
+        'PostContentsLayout',
+        '@/components/layouts/PostContentsLayout'
+      );
       addContent(
         tree,
         `export default ({ children }) => (
-          <ContentsLayout 
+          <PostContentsLayout 
             frontMatter={${JSON.stringify(frontMatter)}}
             tableOfContents={${JSON.stringify(headings)}}
           >
             {children}
-          </ContentsLayout>
+          </PostContentsLayout>
         )`
       );
     } else {
