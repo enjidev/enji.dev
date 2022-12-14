@@ -21,5 +21,5 @@ export type TPostFrontMatter = {
   description: string;
   slug: string;
   date: string;
-  pageLang: string;
+  lang: 'ID' | 'EN';
 };

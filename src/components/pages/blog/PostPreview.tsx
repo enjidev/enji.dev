@@ -12,7 +12,7 @@ const PostPreview = ({
   description,
   date,
   slug,
-  pageLang,
+  lang,
 }: PostPreviewProps) => {
   return (
     <Link
@@ -27,7 +27,7 @@ const PostPreview = ({
         )}
       >
         <span>{dayjs(date, 'YYYY-MM-DD').format('MMMM D, YYYY')}</span>
-        {pageLang && pageLang === 'id' && (
+        {lang && lang === 'ID' && (
           <>
             <span>&middot;</span>
             <span>Bahasa Indonesia</span>

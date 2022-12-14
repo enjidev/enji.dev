@@ -7,7 +7,7 @@ import type { TTableOfContentsItem } from '@/types';
 interface FrontMatter {
   title: string;
   date: string;
-  pageLang: string;
+  lang: string;
   tags: Array<string>;
   description: string;
   caption?: string;
@@ -24,7 +24,7 @@ const ContentsLayout = ({
   frontMatter: {
     title,
     date,
-    pageLang: lang,
+    lang,
     tags,
     description,
     caption = '',
