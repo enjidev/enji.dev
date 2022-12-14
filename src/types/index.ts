@@ -30,4 +30,5 @@ export type TPostFrontMatter = {
   date: string;
   lang: 'ID' | 'EN';
   tags: Array<string>;
+  category: string;
 };

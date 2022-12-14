@@ -11,7 +11,7 @@ interface PostContentsLayoutProps {
 }
 
 const PostContentsLayout = ({
-  frontMatter: { title, date, lang, tags, description },
+  frontMatter: { title, date, lang, tags, description, category },
   tableOfContents,
   children,
 }: PostContentsLayoutProps) => {
@@ -23,7 +23,11 @@ const PostContentsLayout = ({
         ogImage={{ title, date, lang, tags }}
       />
       <div className={clsx('')}>
-        <PageHeader title={title} description={description} />
+        <PageHeader
+          title={title}
+          caption={category}
+          description={description}
+        />
         <div className={clsx('content-wrapper')}>
           <div className={clsx('flex gap-8', 'xl:gap-24')}>
             <div
