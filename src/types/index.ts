@@ -16,10 +16,17 @@ export type TTableOfContentsItem = {
   slug: string;
 };
 
+export type TTableOfContents = Array<TTableOfContentsItem>;
+
+export type TPageFrontMatter = {
+  title: string;
+  description: string;
+  caption: string;
+};
+
 export type TPostFrontMatter = {
   title: string;
   description: string;
-  slug: string;
   date: string;
   lang: 'ID' | 'EN';
 };

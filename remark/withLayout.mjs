@@ -10,18 +10,39 @@ const withLayout = () => {
     const frontMatter = getFrontMatter(file.value);
     const headings = getHeadings(tree);
 
-    addImport(tree, 'ContentsLayout', '@/components/layouts/ContentsLayout');
-    addContent(
-      tree,
-      `export default ({ children }) => (
-        <ContentsLayout 
-          frontMatter={${JSON.stringify(frontMatter)}}
-          tableOfContents={${JSON.stringify(headings)}}
-        >
-          {children}
-        </ContentsLayout>
-      )`
-    );
+    const pageType = frontMatter.type;
+
+    if (pageType === 'post') {
+      addImport(tree, 'ContentsLayout', '@/components/layouts/ContentsLayout');
+      addContent(
+        tree,
+        `export default ({ children }) => (
+          <ContentsLayout 
+            frontMatter={${JSON.stringify(frontMatter)}}
+            tableOfContents={${JSON.stringify(headings)}}
+          >
+            {children}
+          </ContentsLayout>
+        )`
+      );
+    } else {
+      addImport(
+        tree,
+        'PageContentsLayout',
+        '@/components/layouts/PageContentsLayout'
+      );
+      addContent(
+        tree,
+        `export default ({ children }) => (
+          <PageContentsLayout 
+            frontMatter={${JSON.stringify(frontMatter)}}
+            tableOfContents={${JSON.stringify(headings)}}
+          >
+            {children}
+          </PageContentsLayout>
+        )`
+      );
+    }
   };
 };
 
