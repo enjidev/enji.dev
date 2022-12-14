@@ -21,7 +21,7 @@ export type TTableOfContents = Array<TTableOfContentsItem>;
 export type TPageFrontMatter = {
   title: string;
   description: string;
-  caption: string;
+  caption?: string;
 };
 
 export type TPostFrontMatter = {
