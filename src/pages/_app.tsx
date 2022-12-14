@@ -1,6 +1,7 @@
-import Provider from '@/providers';
-import RootLayout from '@/components/layouts/Root';
 import { Analytics } from '@vercel/analytics/react';
+
+import RootLayout from '@/components/layouts/Root';
+import Provider from '@/providers';
 
 import type { AppProps } from 'next/app';
 

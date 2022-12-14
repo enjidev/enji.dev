@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import Link from 'next/link';
+
 import { ChevronRightIcon } from '@/components/shared/Icons';
 
 interface SectionTitleProps {

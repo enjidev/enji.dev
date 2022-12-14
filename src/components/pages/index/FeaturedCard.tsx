@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+
 import type { ReactElement } from 'react';
 
 interface FeaturedCardProps {

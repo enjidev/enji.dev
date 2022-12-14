@@ -1,12 +1,13 @@
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
+
 import {
-  TypeScriptIcon,
-  ReactIcon,
-  FramerMotionIcon,
-  TailwindCssIcon,
-  NextJsIcon,
   FigmaIcon,
+  FramerMotionIcon,
+  NextJsIcon,
+  ReactIcon,
+  TailwindCssIcon,
+  TypeScriptIcon,
   VSCodeIcon,
 } from '@/components/shared/Icons';
 

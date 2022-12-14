@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function useOnExit(selector: string) {
   const [isExit, setIsExit] = useState<boolean>();

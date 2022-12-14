@@ -1,6 +1,7 @@
 import clsx from 'clsx';
-import { useRouter } from 'next/router';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+
 import Logo from '@/components/shared/Logo';
 
 interface NavLogoProps {

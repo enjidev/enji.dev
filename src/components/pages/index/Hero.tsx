@@ -1,8 +1,9 @@
 import clsx from 'clsx';
 import { useState } from 'react';
+
 import TodoItem from '@/components/pages/index/Cards/TodoItem';
-import SectionTitle from '@/components/shared/SectionTitle';
 import SectionContent from '@/components/shared/SectionContent';
+import SectionTitle from '@/components/shared/SectionTitle';
 
 import type { TodoItemState } from '@/components/pages/index/Cards/TodoItem';
 

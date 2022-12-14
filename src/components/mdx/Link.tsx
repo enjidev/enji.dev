@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import NextLink from 'next/link';
+
 import { ExternalLink } from '@/components/shared/Icons';
 
 import type { MDXComponents } from 'mdx/types';

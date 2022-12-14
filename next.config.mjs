@@ -1,10 +1,11 @@
 import bundeAnalyzer from '@next/bundle-analyzer';
 import nextMDX from '@next/mdx';
-import remarkFrontmatter from 'remark-frontmatter';
-import withLayout from './remark/withLayout.mjs';
-import withRestrictedHeading from './remark/withRestrictedHeading.mjs';
-import withRestrictedFrontMatter from './remark/withRestrictedFrontMatter.mjs';
 import rehypePrism from 'rehype-prism-plus';
+import remarkFrontmatter from 'remark-frontmatter';
+
+import withLayout from './remark/withLayout.mjs';
+import withRestrictedFrontMatter from './remark/withRestrictedFrontMatter.mjs';
+import withRestrictedHeading from './remark/withRestrictedHeading.mjs';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {

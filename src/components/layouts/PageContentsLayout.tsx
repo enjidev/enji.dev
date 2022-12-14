@@ -1,8 +1,10 @@
 import clsx from 'clsx';
+
 import Head from '@/components/meta/Head';
 import PageHeader from '@/components/shared/Header/PageHeader';
 import TableOfContents from '@/components/shared/TableOfContents';
-import type { TTableOfContents, TPageFrontMatter } from '@/types';
+
+import type { TPageFrontMatter, TTableOfContents } from '@/types';
 
 interface PageContentsLayoutProps {
   frontMatter: TPageFrontMatter;

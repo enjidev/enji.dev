@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+
 import useScrollSpy from '@/hooks/useScrollSpy';
 
 import type { TTableOfContentsItem } from '@/types';

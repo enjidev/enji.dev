@@ -1,6 +1,8 @@
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
+
 import useLastUpdate from '@/hooks/useLastUpdate';
+
 import dayjs from '@/utils/dayjs';
 
 const LastUpdate = () => {

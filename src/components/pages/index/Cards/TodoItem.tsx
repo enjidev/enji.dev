@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+
 import { CalendarIcon } from '@/components/shared/Icons';
 
 export type TodoItemState = 'spacing' | 'typography' | 'colors' | 'effects';

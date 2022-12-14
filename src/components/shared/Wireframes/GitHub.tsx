@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+
 import { SkeletonSm } from '@/components/shared/Wireframes/Skeletons';
 
 interface GithubWireframeProps {

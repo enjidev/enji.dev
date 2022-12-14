@@ -1,6 +1,6 @@
+import frontMatter from 'front-matter';
 import fs from 'fs';
 import path from 'path';
-import frontMatter from 'front-matter';
 
 import type { TPostFrontMatter } from '@/types';
 

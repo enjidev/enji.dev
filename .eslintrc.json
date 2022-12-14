@@ -1,3 +1,32 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": ["next/core-web-vitals", "prettier"],
+  "plugins": ["simple-import-sort"],
+  "rules": {
+    "simple-import-sort/exports": "warn",
+    "simple-import-sort/imports": [
+      "warn",
+      {
+        "groups": [
+          // Packages and side effect imports.
+          ["^@?\\w", "^\\u0000"],
+          // Components and providers.
+          ["^@/components", "^@/providers"],
+          // Hooks
+          ["^@/hooks"],
+          // Utils, helpers, and lib
+          ["^@/utils", "^@/helpers", "^@/lib"],
+          // Other absolute imports.
+          ["^@/"],
+          // Relative imports.
+          ["^\\."],
+          // Import type and types.
+          ["^.*\\u0000$", "^@/types"],
+          // Styles.
+          ["^.+\\.s?css$"],
+          // Anything not matched in another group.
+          ["^"]
+        ]
+      }
+    ]
+  }
 }

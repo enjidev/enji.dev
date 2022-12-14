@@ -1,7 +1,8 @@
 import clsx from 'clsx';
 import React from 'react';
-import { NavLink } from '@/components/shared/Navigation/NavLink';
+
 import { ChevronRightIcon } from '@/components/shared/Icons';
+import { NavLink } from '@/components/shared/Navigation/NavLink';
 
 type NavLink = {
   href: string;

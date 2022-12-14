@@ -1,9 +1,9 @@
-import { ThemeProvider } from 'next-themes';
 import { MDXProvider } from '@mdx-js/react';
 import { MotionConfig as MotionProvider } from 'framer-motion';
-import ColorAccentProvider from '@/providers/ColorAccentProvider';
+import { ThemeProvider } from 'next-themes';
 
 import mdxComponents from '@/components/mdx';
+import ColorAccentProvider from '@/providers/ColorAccentProvider';
 
 interface ProviderProps {
   children?: React.ReactNode;

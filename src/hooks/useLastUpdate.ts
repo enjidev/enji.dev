@@ -1,6 +1,8 @@
 import useSWR from 'swr';
+
 import fetcher from '@/utils/fetcher';
-import type { TLastUpdate, TApiError } from '@/types';
+
+import type { TApiError, TLastUpdate } from '@/types';
 
 export default function useLastUpdate() {
   const { data, error } = useSWR<TLastUpdate | TApiError>(

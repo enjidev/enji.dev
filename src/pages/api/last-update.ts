@@ -1,5 +1,5 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
 import type { TApiError, TLastUpdate } from '@/types';
+import type { NextApiRequest, NextApiResponse } from 'next';
 
 export default async function lastUpdate(
   req: NextApiRequest,

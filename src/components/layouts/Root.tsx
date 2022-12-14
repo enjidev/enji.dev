@@ -1,7 +1,7 @@
-import FontPlusJakartaSans from '@/components/fonts/PlusJakartaSans';
 import FontJetBrainsMono from '@/components/fonts/JetBrainsMono';
-import Navigation from '@/components/shared/Navigation';
+import FontPlusJakartaSans from '@/components/fonts/PlusJakartaSans';
 import Footer from '@/components/shared/Footer';
+import Navigation from '@/components/shared/Navigation';
 
 import type { ReactNode } from 'react';
 

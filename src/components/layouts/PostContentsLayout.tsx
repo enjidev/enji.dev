@@ -1,10 +1,12 @@
 import clsx from 'clsx';
+
 import Head from '@/components/meta/Head';
 import PageHeader from '@/components/shared/Header/PageHeader';
 import TableOfContents from '@/components/shared/TableOfContents';
+
 import { getPostOgImageUrl } from '@/helpers/post';
 
-import type { TTableOfContents, TPostFrontMatter } from '@/types';
+import type { TPostFrontMatter, TTableOfContents } from '@/types';
 
 interface PostContentsLayoutProps {
   frontMatter: TPostFrontMatter;

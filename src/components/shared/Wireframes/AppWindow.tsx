@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+
 import { SkeletonMd } from '@/components/shared/Wireframes/Skeletons';
 
 interface BrowserTabProps {

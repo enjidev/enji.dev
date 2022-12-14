@@ -1,6 +1,6 @@
 import clsx from 'clsx';
-import Image from 'next/image';
 import { motion, useAnimationControls } from 'framer-motion';
+import Image from 'next/image';
 
 const HeaderImage = () => {
   const controls = useAnimationControls();
