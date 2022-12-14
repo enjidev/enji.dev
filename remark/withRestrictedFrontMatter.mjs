@@ -1,6 +1,8 @@
 import { z } from 'zod';
 import { getFrontMatter } from './utils.mjs';
 
+const dateRegex = /^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$/;
+
 const PageFrontMatter = z.object({
   title: z.string(),
   description: z.string(),
@@ -10,7 +12,7 @@ const PageFrontMatter = z.object({
 const PostFrontMatter = z.object({
   title: z.string(),
   description: z.string(),
-  date: z.string(),
+  date: z.string().regex(dateRegex, 'Date format MUST be YYYY-MM-DD'),
   lang: z.enum(['ID', 'EN']),
   tags: z.array(z.string()),
   category: z.string({ description: 'asd' }),
