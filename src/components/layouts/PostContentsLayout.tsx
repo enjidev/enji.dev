@@ -4,7 +4,7 @@ import Head from '@/components/meta/Head';
 import PageHeader from '@/components/shared/Header/PageHeader';
 import TableOfContents from '@/components/shared/TableOfContents';
 
-import { getPostOgImageUrl } from '@/helpers/post';
+import { formatDateISO, getPostOgImageUrl } from '@/helpers/post';
 
 import type { TPostFrontMatter, TTableOfContents } from '@/types';
 
@@ -27,9 +27,42 @@ function PostContentsLayout({
     tags,
   });
 
+  const structuredData = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: title,
+    image: [
+      {
+        '@type': 'ImageObject',
+        contentUrl: ogImage,
+        creditText: 'enji.dev',
+        creator: {
+          '@type': 'Person',
+          name: 'Enji Kusnadi',
+          url: 'https://twitter.com/enjidev',
+        },
+        copyrightNotice: 'Enji Kusnadi',
+      },
+    ],
+    datePublished: formatDateISO(date),
+    dateModified: formatDateISO(date),
+    author: [
+      {
+        '@type': 'Person',
+        name: 'Enji Kusnadi',
+        url: 'https://twitter.com/enjidev',
+      },
+    ],
+  });
+
   return (
     <>
-      <Head title={title} description={description} ogImage={ogImage} />
+      <Head
+        title={title}
+        description={description}
+        ogImage={ogImage}
+        structuredData={structuredData}
+      />
       <div className={clsx('')}>
         <PageHeader
           title={title}

@@ -11,6 +11,14 @@ export const formatDate = (date: string) => {
   return date;
 };
 
+export const formatDateISO = (date: string) => {
+  if (dayjs(date).isValid()) {
+    return dayjs(date, 'YYYY-MM-DD').format();
+  }
+
+  return date;
+};
+
 export const formatLang = (lang: TPostFrontMatter['lang']) => {
   switch (lang) {
     case 'ID':
