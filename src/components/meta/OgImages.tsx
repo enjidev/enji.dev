@@ -33,6 +33,9 @@ const styles: Record<string, CSSProperties> = {
     fontWeight: 800,
     marginBottom: 8,
   },
+  categoryWork: {
+    color: '#3b82f6',
+  },
   title: {
     color: '#334155',
     fontSize: 60,
@@ -95,6 +98,9 @@ const styles: Record<string, CSSProperties> = {
     left: 0,
     position: 'absolute',
     right: 0,
+  },
+  borderBottomWork: {
+    backgroundColor: '#3b82f6',
   },
 };
 
@@ -176,7 +182,15 @@ export function PageOgImage({
     <div style={styles.container}>
       {caption && (
         <>
-          <div style={styles.category}>{caption}</div>
+          <div
+            style={
+              caption.toLowerCase() === 'work'
+                ? { ...styles.category, ...styles.categoryWork }
+                : styles.category
+            }
+          >
+            {caption}
+          </div>
           <div />
         </>
       )}
@@ -204,7 +218,13 @@ export function PageOgImage({
         />
         <div style={styles.authorName}>@enjidev</div>
       </div>
-      <div style={styles.borderBottom} />
+      <div
+        style={
+          caption.toLowerCase() === 'work'
+            ? { ...styles.borderBottom, ...styles.borderBottomWork }
+            : styles.borderBottom
+        }
+      />
     </div>
   );
 }
