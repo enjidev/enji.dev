@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 
 import Head from '@/components/meta/Head';
+import StructuredData from '@/components/meta/StructuredData';
 import PageHeader from '@/components/shared/Header/PageHeader';
 import TableOfContents from '@/components/shared/TableOfContents';
 
@@ -58,7 +59,7 @@ function PostContentsLayout({
   return (
     <>
       <Head title={title} description={description} ogImage={ogImage} />
-      <script type="application/ld+json">{structuredData}</script>
+      <StructuredData data={structuredData} />
       <div className={clsx('')}>
         <PageHeader
           title={title}

@@ -5,16 +5,9 @@ interface HeadProps {
   description: string;
   ogImage: string;
   overrideTitle?: string;
-  structuredData?: string;
 }
 
-function Head({
-  title,
-  description,
-  ogImage,
-  overrideTitle = '',
-  structuredData = '',
-}: HeadProps) {
+function Head({ title, description, ogImage, overrideTitle = '' }: HeadProps) {
   const htmlTitle = overrideTitle || `${title} · Enji Kusnadi`;
 
   return (
@@ -37,16 +30,6 @@ function Head({
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage} />
       <meta name="twitter:image:alt" content={`Image with "${title}" text.`} />
-
-      {/* structured-data */}
-      {structuredData && (
-        <script
-          key="structured-data"
-          type="application/ld+json"
-          // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{ __html: structuredData }}
-        />
-      )}
     </NextHead>
   );
 }
