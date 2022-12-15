@@ -3,8 +3,8 @@
 
 import { formatLang } from '@/helpers/post';
 
+import type { TPageOgImage, TPostOgImage } from '@/types';
 import type { CSSProperties } from 'react';
-import { TPageFrontMatter, TPostFrontMatter } from '@/types';
 
 const styles: Record<string, CSSProperties> = {
   container: {
@@ -98,9 +98,7 @@ const styles: Record<string, CSSProperties> = {
   },
 };
 
-export type PostOgImageProps = Partial<
-  Pick<TPostFrontMatter, 'category' | 'title' | 'date' | 'lang' | 'tags'>
->;
+type PostOgImageProps = TPostOgImage;
 
 export function PostOgImage({
   category = '',
@@ -167,9 +165,7 @@ export function PostOgImage({
   );
 }
 
-export type PageOgImageProps = Partial<
-  Pick<TPageFrontMatter, 'caption' | 'title' | 'description'>
->;
+type PageOgImageProps = TPageOgImage;
 
 export function PageOgImage({
   caption = '',

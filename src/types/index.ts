@@ -24,6 +24,10 @@ export type TPageFrontMatter = {
   caption?: string;
 };
 
+export type TPageOgImage = Partial<
+  Pick<TPageFrontMatter, 'caption' | 'title' | 'description'>
+>;
+
 export type TPostFrontMatter = {
   title: string;
   description: string;
@@ -32,3 +36,7 @@ export type TPostFrontMatter = {
   tags: Array<string>;
   category: string;
 };
+
+export type TPostOgImage = Partial<
+  Pick<TPostFrontMatter, 'category' | 'title' | 'date' | 'lang' | 'tags'>
+>;
