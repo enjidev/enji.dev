@@ -1,11 +1,12 @@
 import clsx from 'clsx';
+import { ArticleJsonLd } from 'next-seo';
 
 import Head from '@/components/meta/Head';
-import StructuredData from '@/components/meta/StructuredData';
 import PageHeader from '@/components/shared/Header/PageHeader';
 import TableOfContents from '@/components/shared/TableOfContents';
 
 import { formatDateISO, getPostOgImageUrl } from '@/helpers/post';
+import { getBaseUrl } from '@/helpers/url';
 
 import type { TPostFrontMatter, TTableOfContents } from '@/types';
 
@@ -28,38 +29,26 @@ function PostContentsLayout({
     tags,
   });
 
-  const structuredData = JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'BlogPosting',
-    headline: title,
-    image: [
-      {
-        '@type': 'ImageObject',
-        contentUrl: ogImage,
-        creditText: 'enji.dev',
-        creator: {
-          '@type': 'Person',
-          name: 'Enji Kusnadi',
-          url: 'https://twitter.com/enjidev',
-        },
-        copyrightNotice: 'Enji Kusnadi',
-      },
-    ],
-    datePublished: formatDateISO(date),
-    dateModified: formatDateISO(date),
-    author: [
-      {
-        '@type': 'Person',
-        name: 'Enji Kusnadi',
-        url: 'https://twitter.com/enjidev',
-      },
-    ],
-  });
-
   return (
     <>
       <Head title={title} description={description} ogImage={ogImage} />
-      <StructuredData data={structuredData} />
+      <ArticleJsonLd
+        url={`${getBaseUrl()}/blog`}
+        title={title}
+        images={[ogImage]}
+        datePublished={formatDateISO(date)}
+        dateModified={formatDateISO(date)}
+        authorName={[
+          {
+            name: 'Enji Kusnadi',
+            url: 'https://twitter.com/enjidev',
+          },
+        ]}
+        publisherName="Enji Kusnadi"
+        publisherLogo="https://github.com/enjidev.png"
+        description={description}
+        isAccessibleForFree
+      />
       <div className={clsx('')}>
         <PageHeader
           title={title}
