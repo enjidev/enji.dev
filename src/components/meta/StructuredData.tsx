@@ -8,7 +8,7 @@ function StructuredData({ data }: StructuredDataProps) {
     const script = document.createElement('script');
     script.setAttribute('type', 'application/ld+json');
     script.textContent = data;
-    document.head.appendChild(script);
+    document.body.appendChild(script);
   }, [data]);
 
   return null;
