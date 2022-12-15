@@ -40,7 +40,11 @@ function Head({
 
       {/* structured-data */}
       {structuredData && (
-        <script type="application/ld+json">{structuredData}</script>
+        <script
+          type="application/ld+json"
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{ __html: structuredData }}
+        />
       )}
     </NextHead>
   );
