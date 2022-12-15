@@ -57,12 +57,8 @@ function PostContentsLayout({
 
   return (
     <>
-      <Head
-        title={title}
-        description={description}
-        ogImage={ogImage}
-        structuredData={structuredData}
-      />
+      <Head title={title} description={description} ogImage={ogImage} />
+      <script type="application/ld+json">{structuredData}</script>
       <div className={clsx('')}>
         <PageHeader
           title={title}
