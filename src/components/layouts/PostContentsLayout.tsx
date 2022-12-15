@@ -1,11 +1,14 @@
 import clsx from 'clsx';
-import { ArticleJsonLd } from 'next-seo';
 
 import Head from '@/components/meta/Head';
 import PageHeader from '@/components/shared/Header/PageHeader';
 import TableOfContents from '@/components/shared/TableOfContents';
 
-import { formatDateISO, getPostOgImageUrl } from '@/helpers/post';
+import {
+  formatDateISO,
+  getPostOgImageUrl,
+  getPostStructuredData,
+} from '@/helpers/post';
 import { getBaseUrl } from '@/helpers/url';
 
 import type { TPostFrontMatter, TTableOfContents } from '@/types';
@@ -29,25 +32,20 @@ function PostContentsLayout({
     tags,
   });
 
+  const structuredData = getPostStructuredData({
+    title,
+    dateModified: date,
+    datePublished: date,
+    images: [ogImage],
+  });
+
   return (
     <>
-      <Head title={title} description={description} ogImage={ogImage} />
-      <ArticleJsonLd
-        url={`${getBaseUrl()}/blog`}
+      <Head
         title={title}
-        images={[ogImage]}
-        datePublished={formatDateISO(date)}
-        dateModified={formatDateISO(date)}
-        authorName={[
-          {
-            name: 'Enji Kusnadi',
-            url: 'https://twitter.com/enjidev',
-          },
-        ]}
-        publisherName="Enji Kusnadi"
-        publisherLogo="https://github.com/enjidev.png"
         description={description}
-        isAccessibleForFree
+        ogImage={ogImage}
+        structuredData={structuredData}
       />
       <div className={clsx('')}>
         <PageHeader
