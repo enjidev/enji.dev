@@ -3,15 +3,14 @@ import { getFrontMatter } from './utils.mjs';
 
 const dateRegex = /^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$/;
 
-const GlobalFrontMatter = {
-  type: z.enum(['post', 'page']).optional(),
-};
+const GlobalFrontMatter = z.object({
+  type: z.enum(['post', 'page']),
+});
 
 const PageFrontMatter = z.object({
   title: z.string(),
   description: z.string(),
   caption: z.string().optional(),
-  ...GlobalFrontMatter,
 });
 
 const PostFrontMatter = z.object({
@@ -20,8 +19,7 @@ const PostFrontMatter = z.object({
   date: z.string().regex(dateRegex, 'Date format MUST be YYYY-MM-DD'),
   lang: z.enum(['ID', 'EN']),
   tags: z.array(z.string()).min(2).max(5),
-  category: z.string({ description: 'asd' }),
-  ...GlobalFrontMatter,
+  category: z.string(),
 });
 
 const validate = (schema, object) => {
@@ -39,12 +37,14 @@ const withRestrictedFrontMatter = () => {
     // get front-matter
     const frontMatter = getFrontMatter(file.value);
 
-    // get content type
-    const type = frontMatter.type;
+    // validate global front-matter
+    validate(GlobalFrontMatter, frontMatter);
 
-    if (type === 'post') {
+    if (frontMatter.type === 'post') {
+      // validate post front-matter
       validate(PostFrontMatter, frontMatter);
     } else {
+      // validate page front-matter
       validate(PageFrontMatter, frontMatter);
     }
   };
