@@ -3,10 +3,15 @@ import { getFrontMatter } from './utils.mjs';
 
 const dateRegex = /^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$/;
 
+const GlobalFrontMatter = {
+  type: z.enum(['post', 'page']).optional(),
+};
+
 const PageFrontMatter = z.object({
   title: z.string(),
   description: z.string(),
   caption: z.string().optional(),
+  ...GlobalFrontMatter,
 });
 
 const PostFrontMatter = z.object({
@@ -16,6 +21,7 @@ const PostFrontMatter = z.object({
   lang: z.enum(['ID', 'EN']),
   tags: z.array(z.string()),
   category: z.string({ description: 'asd' }),
+  ...GlobalFrontMatter,
 });
 
 const validate = (schema, object) => {

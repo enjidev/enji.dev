@@ -13,7 +13,14 @@ const parse = (content) => {
 };
 
 export const getFrontMatter = (content) => {
-  return fm(content).attributes;
+  const defaultGlobalFrontMatter = {
+    type: 'page',
+  };
+
+  return {
+    ...defaultGlobalFrontMatter,
+    ...fm(content).attributes,
+  };
 };
 
 export const addImport = (tree, name, location) => {
