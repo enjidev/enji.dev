@@ -1,7 +1,7 @@
 import dayjs from '@/utils/dayjs';
 import { getBaseUrl, getParams } from '@/helpers/url';
 
-import type { TPostFrontMatter } from '@/types';
+import type { TPostFrontMatter, TPostOgImage } from '@/types';
 
 export const formatDate = (date: string) => {
   if (dayjs(date).isValid()) {
@@ -30,18 +30,13 @@ export const formatLang = (lang: TPostFrontMatter['lang']) => {
   }
 };
 
-type PostOgImageData = Pick<
-  TPostFrontMatter,
-  'category' | 'title' | 'date' | 'lang' | 'tags'
->;
-
 export const getPostOgImageUrl = ({
   category,
   title,
   date,
   lang,
   tags,
-}: PostOgImageData) =>
+}: TPostOgImage) =>
   encodeURI(
     `${getBaseUrl()}/api/og-post?${getParams({
       category,

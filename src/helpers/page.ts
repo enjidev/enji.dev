@@ -1,17 +1,12 @@
 import { getBaseUrl, getParams } from '@/helpers/url';
 
-import type { TPageFrontMatter } from '@/types';
-
-type PageOgImageData = Pick<
-  TPageFrontMatter,
-  'caption' | 'title' | 'description'
->;
+import type { TPageOgImage } from '@/types';
 
 export const getPageOgImageUrl = ({
   caption,
   title,
   description,
-}: PageOgImageData) =>
+}: TPageOgImage) =>
   encodeURI(
     `${getBaseUrl()}/api/og-page?${getParams({ caption, title, description })}`
   );
