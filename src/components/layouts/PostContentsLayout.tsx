@@ -4,12 +4,7 @@ import Head from '@/components/meta/Head';
 import PageHeader from '@/components/shared/Header/PageHeader';
 import TableOfContents from '@/components/shared/TableOfContents';
 
-import {
-  formatDateISO,
-  getPostOgImageUrl,
-  getPostStructuredData,
-} from '@/helpers/post';
-import { getBaseUrl } from '@/helpers/url';
+import { getPostOgImageUrl, getPostStructuredData } from '@/helpers/post';
 
 import type { TPostFrontMatter, TTableOfContents } from '@/types';
 
