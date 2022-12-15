@@ -4,7 +4,7 @@
 import { formatLang } from '@/helpers/post';
 
 import type { CSSProperties } from 'react';
-import { TPostFrontMatter } from '@/types';
+import { TPageFrontMatter, TPostFrontMatter } from '@/types';
 
 const styles: Record<string, CSSProperties> = {
   container: {
@@ -142,6 +142,45 @@ export function PostOgImage({
 
         <div style={styles.divider}>&middot;</div>
         <div style={styles.description}>{formatLang(lang)}</div>
+      </div>
+      <div style={styles.borderBottom} />
+    </div>
+  );
+}
+
+export type PageOgImageProps = Pick<
+  TPageFrontMatter,
+  'caption' | 'title' | 'description'
+>;
+
+export function PageOgImage({
+  caption = '',
+  title,
+  description,
+}: PageOgImageProps) {
+  return (
+    <div style={styles.container}>
+      {caption && (
+        <>
+          <div style={styles.category}>{caption}</div>
+          <div />
+        </>
+      )}
+
+      <div style={styles.title}>{title}</div>
+      <div />
+
+      <div style={styles.description}>{description}</div>
+      <div />
+
+      <div style={styles.author}>
+        <img
+          width="48"
+          height="48"
+          src="https://github.com/enjidev.png?size=48"
+          style={styles.authorAvatar}
+        />
+        <div style={styles.authorName}>@enjidev</div>
       </div>
       <div style={styles.borderBottom} />
     </div>

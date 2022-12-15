@@ -8,14 +8,25 @@ import SectionTitle from '@/components/shared/SectionTitle';
 import AppWindow from '@/components/shared/Wireframes/AppWindow';
 import GitHubWireframe from '@/components/shared/Wireframes/GitHub';
 
+import { getPageOgImageUrl } from '@/helpers/page';
+
+const pageData = {
+  title: 'My Projects',
+  description: 'All about my Front-End related work',
+};
+
 function Projects() {
+  const { title, description } = pageData;
+
+  const ogImage = getPageOgImageUrl({
+    title,
+    description,
+  });
+
   return (
     <>
-      <Head title="Projects" description="Projects" />
-      <CenteredHeader
-        title="My Projects"
-        description="All about my Front-End related work"
-      />
+      <Head title="Projects" description={description} ogImage={ogImage} />
+      <CenteredHeader title={title} description={description} />
       <div className={clsx('mt-20')} />
       <SectionTitle
         title="The dynamic accent colors."

@@ -1,20 +1,35 @@
 import clsx from 'clsx';
-import Head from 'next/head';
 
+import Head from '@/components/meta/Head';
 import FeaturedCard from '@/components/pages/index/FeaturedCard';
 import Header from '@/components/pages/index/Header';
 import Hero from '@/components/pages/index/Hero';
 import Quote from '@/components/pages/index/Quote';
 import { CodeIcon, HeartIcon, SparklesIcon } from '@/components/shared/Icons';
 
+import { getPageOgImageUrl } from '@/helpers/page';
+
+const pageData = {
+  title: 'Enji Kusnadi · Creative Developer',
+  description: 'A personal website and blog by Enji Kusnadi.',
+};
+
 function Index() {
+  const { title, description } = pageData;
+
+  const ogImage = getPageOgImageUrl({
+    title,
+    description,
+  });
+
   return (
     <>
-      <Head>
-        <title>Enji Kusnadi &middot; Creative Developer</title>
-        <meta name="description" content="Hi!" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <Head
+        title={title}
+        description={description}
+        ogImage={ogImage}
+        overrideTitle={title}
+      />
       <Header />
       <section className={clsx('mb-12', 'md:mb-20')}>
         <div className={clsx('content-wrapper')}>

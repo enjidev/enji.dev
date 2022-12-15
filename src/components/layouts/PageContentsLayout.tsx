@@ -4,6 +4,8 @@ import Head from '@/components/meta/Head';
 import PageHeader from '@/components/shared/Header/PageHeader';
 import TableOfContents from '@/components/shared/TableOfContents';
 
+import { getPageOgImageUrl } from '@/helpers/page';
+
 import type { TPageFrontMatter, TTableOfContents } from '@/types';
 
 interface PageContentsLayoutProps {
@@ -17,9 +19,15 @@ function PageContentsLayout({
   tableOfContents,
   children,
 }: PageContentsLayoutProps) {
+  const ogImage = getPageOgImageUrl({
+    caption,
+    title,
+    description,
+  });
+
   return (
     <>
-      <Head title={title} description={description} />
+      <Head title={title} description={description} ogImage={ogImage} />
       <div className={clsx('')}>
         <PageHeader title={title} description={description} caption={caption} />
         <div className={clsx('content-wrapper')}>

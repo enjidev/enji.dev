@@ -29,12 +29,7 @@ function PostContentsLayout({
 
   return (
     <>
-      <Head
-        title={title}
-        description={description}
-        type="post"
-        ogImage={ogImage}
-      />
+      <Head title={title} description={description} ogImage={ogImage} />
       <div className={clsx('')}>
         <PageHeader
           title={title}
