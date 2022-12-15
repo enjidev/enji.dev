@@ -1,1 +1,2 @@
-remark/**/*.mjs
+**/*.js
+**/*.mjs
