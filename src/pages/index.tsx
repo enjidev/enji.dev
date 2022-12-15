@@ -31,7 +31,7 @@ function Index() {
         overrideTitle={title}
       />
       <Header />
-      <section className={clsx('mb-12', 'md:mb-20')}>
+      <div className={clsx('mb-12', 'md:mb-20')}>
         <div className={clsx('content-wrapper')}>
           <div
             className={clsx(
@@ -83,17 +83,17 @@ function Index() {
             />
           </div>
         </div>
-      </section>
-      <section className={clsx('mb-12', 'md:mb-24')}>
+      </div>
+      <div className={clsx('mb-12', 'md:mb-24')}>
         <div className={clsx('content-wrapper')}>
           <div className={clsx('flex items-center justify-center py-8')}>
             <Quote />
           </div>
         </div>
-      </section>
-      <section className={clsx('mb-24', 'lg:mb-36')}>
+      </div>
+      <div className={clsx('mb-24', 'lg:mb-36')}>
         <Hero />
-      </section>
+      </div>
     </>
   );
 }

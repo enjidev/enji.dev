@@ -14,7 +14,7 @@ export function Label({ indicator, children }: LabelProps) {
       <span
         className={clsx('label__indicator')}
         style={{ width: `${percentage}%` }}
-        aria-label={`${percentage}%`}
+        aria-label={`Label percentage: ${percentage}%`}
       />
     </span>
   );

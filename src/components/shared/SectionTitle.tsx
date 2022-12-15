@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { ChevronRightIcon } from '@/components/shared/Icons';
 
 interface SectionTitleProps {
+  as?: 'h2' | 'h3';
   title: string;
   caption: string;
   description: string | React.ReactNode;
@@ -14,14 +15,17 @@ interface SectionTitleProps {
 }
 
 function SectionTitle({
+  as = 'h2',
   title,
   caption,
   description,
   button = null,
 }: SectionTitleProps) {
+  const Heading = as;
+
   return (
     <div className={clsx('content-wrapper')}>
-      <span
+      <Heading
         className={clsx(
           'mb-2 block font-black text-accent-600',
           'lg:mb-4',
@@ -29,8 +33,8 @@ function SectionTitle({
         )}
       >
         {caption}
-      </span>
-      <h2
+      </Heading>
+      <p
         className={clsx(
           'mb-4 text-3xl font-black text-slate-700',
           'lg:text-4xl',
@@ -38,7 +42,7 @@ function SectionTitle({
         )}
       >
         {title}
-      </h2>
+      </p>
       <p className={clsx('max-w-lg text-slate-600', 'dark:text-slate-400')}>
         {description}
       </p>

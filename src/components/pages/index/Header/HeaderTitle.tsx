@@ -71,7 +71,7 @@ function HeaderTitle() {
           <strong className={clsx('text-accent-600', 'dark:text-accent-500')}>
             Enji
           </strong>{' '}
-          Kusnadi,
+          Kusnadi,{' '}
         </motion.span>
         <motion.span
           className={clsx('block text-lg', 'md:text-2xl')}

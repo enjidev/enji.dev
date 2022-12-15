@@ -24,6 +24,7 @@ function Navbar() {
 
   return (
     <nav
+      aria-label="Site Navigation"
       className={clsx('fixed right-0 left-0 z-[1000] transition', [
         position > 0 ? 'translate-y-0' : 'translate-y-2',
       ])}

@@ -14,7 +14,7 @@ function Footer() {
       )}
     >
       <div className={clsx('content-wrapper')}>
-        <section className={clsx('py-10 font-semibold')}>
+        <div className={clsx('py-10 font-semibold')}>
           <ul
             className={clsx(
               'flex flex-wrap justify-center gap-x-2 gap-y-1',
@@ -47,7 +47,7 @@ function Footer() {
               </a>
             </li>
           </ul>
-        </section>
+        </div>
         <div
           className={clsx(
             'flex justify-between border-t border-divider-light py-6 text-xs',

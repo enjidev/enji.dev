@@ -69,7 +69,7 @@ function HeroButton({
       onClick={onClick}
     >
       {step && (
-        <div
+        <span
           className={clsx(
             'w-24 pr-4 text-center text-7xl font-black',
             '',
@@ -79,9 +79,9 @@ function HeroButton({
           )}
         >
           {step}
-        </div>
+        </span>
       )}
-      <div>
+      <span>
         <span
           className={clsx(
             'block font-bold ',
@@ -102,7 +102,7 @@ function HeroButton({
             {description}
           </span>
         )}
-      </div>
+      </span>
     </button>
   );
 }
@@ -116,14 +116,14 @@ function HeroButtonSmall({
   return (
     <button
       type="button"
-      className={clsx('rounded-xl p-2 text-sm', [
+      className={clsx('flex flex-col items-center rounded-xl p-2 text-sm', [
         active
           ? ['text-accent-600', 'dark:text-accent-400']
           : ['text-slate-400', 'dark:text-slate-600'],
       ])}
       onClick={onClick}
     >
-      <div className={clsx('text-4xl font-black')}>{step}</div>
+      <span className={clsx('text-4xl font-black')}>{step}</span>
       <span
         className={clsx(
           'font-medium',

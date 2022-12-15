@@ -18,9 +18,9 @@ function Quote() {
           'dark:text-slate-800'
         )}
       />
-      <div className={clsx('flex flex-col')}>
+      <span className={clsx('flex flex-col')}>
         <span className={clsx('leading-[1.15]')}>
-          <em>beautiful</em>
+          <em>Beautiful</em>{' '}
         </span>
         <span
           className={clsx('flex items-center gap-2 leading-[1.15]', 'lg:gap-4')}
@@ -48,7 +48,7 @@ function Quote() {
                 'dark:text-slate-300'
               )}
             >
-              out
+              out{' '}
             </strong>
           </span>
           <span
@@ -77,7 +77,7 @@ function Quote() {
             must.
           </strong>
         </span>
-      </div>
+      </span>
     </blockquote>
   );
 }
