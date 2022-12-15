@@ -7,6 +7,7 @@ function Error404() {
       <Head>
         <title>Page Not Found &middot; Enji Kusnadi</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta name="robots" content="noindex" />
       </Head>
       <div
         className={clsx(
