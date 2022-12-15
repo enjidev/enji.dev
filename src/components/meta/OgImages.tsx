@@ -32,16 +32,17 @@ const styles: Record<string, CSSProperties> = {
     fontSize: 36,
     fontWeight: 800,
     marginBottom: 8,
+    textTransform: 'capitalize',
   },
   categoryWork: {
     color: '#3b82f6',
   },
   title: {
     color: '#334155',
-    fontSize: 60,
+    fontSize: 68,
     fontWeight: 800,
-    lineHeight: 1.25,
-    marginBottom: 24,
+    lineHeight: 1.15,
+    marginBottom: 28,
   },
   tags: {
     display: 'flex',
@@ -84,12 +85,12 @@ const styles: Record<string, CSSProperties> = {
   authorName: {
     color: '#334155',
     display: 'flex',
-    fontSize: 28,
+    fontSize: 26,
     fontWeight: 800,
   },
   description: {
     color: '#475569',
-    fontSize: 28,
+    fontSize: 26,
   },
   borderBottom: {
     backgroundColor: '#7733ff',
