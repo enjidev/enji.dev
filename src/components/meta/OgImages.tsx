@@ -98,35 +98,46 @@ const styles: Record<string, CSSProperties> = {
   },
 };
 
-export type PostOgImageProps = Pick<
-  TPostFrontMatter,
-  'category' | 'title' | 'date' | 'lang' | 'tags'
+export type PostOgImageProps = Partial<
+  Pick<TPostFrontMatter, 'category' | 'title' | 'date' | 'lang' | 'tags'>
 >;
 
 export function PostOgImage({
-  category,
-  title,
-  tags,
-  date,
+  category = '',
+  title = '',
+  tags = [],
+  date = '',
   lang,
 }: PostOgImageProps) {
   return (
     <div style={styles.container}>
-      <div style={styles.category}>{category}</div>
-      <div />
+      {category && (
+        <>
+          <div style={styles.category}>{category}</div>
+          <div />
+        </>
+      )}
 
-      <div style={styles.title}>{title}</div>
-      <div />
+      {title && (
+        <>
+          <div style={styles.title}>{title}</div>
+          <div />
+        </>
+      )}
 
-      <div style={styles.tags}>
-        {tags.slice(0, 3).map((tag) => (
-          <div style={styles.tag} key={tag}>
-            <div style={styles.tagHash}>#</div>
-            <div style={styles.tagTitle}>{tag}</div>
+      {tags && Array.isArray(tags) && tags.length > 0 && (
+        <>
+          <div style={styles.tags}>
+            {tags.slice(0, 3).map((tag) => (
+              <div style={styles.tag} key={tag}>
+                <div style={styles.tagHash}>#</div>
+                <div style={styles.tagTitle}>{tag}</div>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
-      <div />
+          <div />
+        </>
+      )}
 
       <div style={styles.author}>
         <img
@@ -137,26 +148,33 @@ export function PostOgImage({
         />
         <div style={styles.authorName}>@enjidev</div>
 
-        <div style={styles.divider}>&middot;</div>
-        <div style={styles.description}>{date}</div>
+        {date && (
+          <>
+            <div style={styles.divider}>&middot;</div>
+            <div style={styles.description}>{date}</div>
+          </>
+        )}
 
-        <div style={styles.divider}>&middot;</div>
-        <div style={styles.description}>{formatLang(lang)}</div>
+        {lang && (
+          <>
+            <div style={styles.divider}>&middot;</div>
+            <div style={styles.description}>{formatLang(lang)}</div>
+          </>
+        )}
       </div>
       <div style={styles.borderBottom} />
     </div>
   );
 }
 
-export type PageOgImageProps = Pick<
-  TPageFrontMatter,
-  'caption' | 'title' | 'description'
+export type PageOgImageProps = Partial<
+  Pick<TPageFrontMatter, 'caption' | 'title' | 'description'>
 >;
 
 export function PageOgImage({
   caption = '',
-  title,
-  description,
+  title = '',
+  description = '',
 }: PageOgImageProps) {
   return (
     <div style={styles.container}>
@@ -167,11 +185,19 @@ export function PageOgImage({
         </>
       )}
 
-      <div style={styles.title}>{title}</div>
-      <div />
+      {title && (
+        <>
+          <div style={styles.title}>{title}</div>
+          <div />
+        </>
+      )}
 
-      <div style={styles.description}>{description}</div>
-      <div />
+      {description && (
+        <>
+          <div style={styles.description}>{description}</div>
+          <div />
+        </>
+      )}
 
       <div style={styles.author}>
         <img

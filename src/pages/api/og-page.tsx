@@ -18,7 +18,7 @@ const PlusJakartaSans800 = fetch(
 
 const OgImage = async (request: NextRequest) => {
   const { searchParams } = new URL(request.url);
-  const get = (param: string): string => searchParams.get(param) || param;
+  const get = (param: string): string => searchParams.get(param) || '';
 
   try {
     const caption = get('caption');

@@ -1,5 +1,5 @@
 import dayjs from '@/utils/dayjs';
-import { getBaseUrl } from '@/helpers/url';
+import { getBaseUrl, getParams } from '@/helpers/url';
 
 import type { TPostFrontMatter } from '@/types';
 
@@ -34,4 +34,12 @@ export const getPostOgImageUrl = ({
   lang,
   tags,
 }: PostOgImageData) =>
-  `${getBaseUrl()}/api/og-post?title=${title}&category=${category}&date=${date}&lang=${lang}&tags=${tags}`;
+  encodeURI(
+    `${getBaseUrl()}/api/og-post?${getParams({
+      category,
+      title,
+      date,
+      lang,
+      tags,
+    })}`
+  );

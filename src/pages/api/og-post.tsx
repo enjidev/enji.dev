@@ -20,13 +20,13 @@ const PlusJakartaSans800 = fetch(
 
 const OgImage = async (request: NextRequest) => {
   const { searchParams } = new URL(request.url);
-  const get = (param: string): string => searchParams.get(param) || param;
+  const get = (param: string): string => searchParams.get(param) || '';
 
   try {
     const category = get('category');
     const title = get('title');
-    const tags = get('tags').split(',').slice(0, 3);
-    const date = get('date');
+    const tags = get('tags') ? get('tags').split(',') : undefined;
+    const date = get('date') ? formatDate(get('date')) : undefined;
     const lang = get('lang') as 'ID' | 'EN';
 
     const font400 = await PlusJakartaSans400;
@@ -38,7 +38,7 @@ const OgImage = async (request: NextRequest) => {
           category={category}
           title={title}
           tags={tags}
-          date={formatDate(date)}
+          date={date}
           lang={lang}
         />
       ),
