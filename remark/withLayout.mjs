@@ -10,11 +10,10 @@ const withLayout = () => {
     const frontMatter = getFrontMatter(file.value);
     const headings = getHeadings(tree);
 
-    // get source directory
-    const filePaths = file.history[0].split('\\');
-    const directory = filePaths[filePaths.length - 2];
+    // get content type
+    const type = frontMatter.type;
 
-    if (directory === 'blog') {
+    if (type === 'post') {
       addImport(
         tree,
         'PostContentsLayout',
