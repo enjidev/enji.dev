@@ -46,4 +46,6 @@ export type TPostFrontMatter = TGlobalFrontMatter & {
 
 export type TPostOgImage = Partial<
   Pick<TPostFrontMatter, 'category' | 'title' | 'date' | 'lang' | 'tags'>
->;
+> & {
+  aspectRatio?: '16/9' | '4/3' | '1/1';
+};

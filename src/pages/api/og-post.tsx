@@ -22,6 +22,30 @@ const OgImage = async (request: NextRequest) => {
   const { searchParams } = new URL(request.url);
   const get = (param: string): string => searchParams.get(param) || '';
 
+  const imageSize = {
+    width: 1200,
+    height: 630,
+  };
+
+  const aspectRatio = get('aspectRatio');
+
+  switch (aspectRatio) {
+    case '1/1':
+      imageSize.width = 1200;
+      imageSize.height = 1200;
+      break;
+    case '4/3':
+      imageSize.width = 1200;
+      imageSize.height = 900;
+      break;
+    case '16/9':
+      imageSize.width = 1200;
+      imageSize.height = 675;
+      break;
+    default:
+      break;
+  }
+
   try {
     const category = get('category');
     const title = get('title');
@@ -43,8 +67,8 @@ const OgImage = async (request: NextRequest) => {
         />
       ),
       {
-        width: 1200,
-        height: 630,
+        width: imageSize.width,
+        height: imageSize.height,
         emoji: 'fluent',
         fonts: [
           {

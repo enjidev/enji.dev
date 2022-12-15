@@ -30,22 +30,22 @@ export const formatLang = (lang: TPostFrontMatter['lang']) => {
   }
 };
 
-export const getPostOgImageUrl = ({
-  category,
-  title,
-  date,
-  lang,
-  tags,
-}: TPostOgImage) =>
-  encodeURI(
-    `${getBaseUrl()}/api/og-post?${getParams({
-      category,
-      title,
-      date,
-      lang,
-      tags,
-    })}`
-  );
+export const getPostOgImageUrl = (data: TPostOgImage) => {
+  const getUrl = (aspectRatio?: TPostOgImage['aspectRatio']) => {
+    const params = aspectRatio
+      ? getParams({ ...data, aspectRatio })
+      : getParams(data);
+
+    return encodeURI(`${getBaseUrl()}/api/og-post?${params}`);
+  };
+
+  return {
+    default: getUrl(),
+    '16/9': getUrl('16/9'),
+    '4/3': getUrl('4/3'),
+    '1/1': getUrl('1/1'),
+  };
+};
 
 export const getPostStructuredData = ({
   title,

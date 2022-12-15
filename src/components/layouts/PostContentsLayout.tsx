@@ -31,7 +31,7 @@ function PostContentsLayout({
     title,
     dateModified: date,
     datePublished: date,
-    images: [ogImage],
+    images: [ogImage['1/1'], ogImage['4/3'], ogImage['16/9']],
   });
 
   return (
@@ -39,7 +39,7 @@ function PostContentsLayout({
       <Head
         title={title}
         description={description}
-        ogImage={ogImage}
+        ogImage={ogImage.default}
         structuredData={structuredData}
       />
       <div className={clsx('')}>
