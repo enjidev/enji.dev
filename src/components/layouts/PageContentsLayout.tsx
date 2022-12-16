@@ -28,7 +28,7 @@ function PageContentsLayout({
   return (
     <>
       <Head title={title} description={description} ogImage={ogImage} />
-      <div className={clsx('')}>
+      <article className={clsx('')} lang="en">
         <PageHeader title={title} description={description} caption={caption} />
         <div className={clsx('content-wrapper')}>
           <div className={clsx('flex gap-8', 'xl:gap-24')}>
@@ -48,7 +48,7 @@ function PageContentsLayout({
             )}
           </div>
         </div>
-      </div>
+      </article>
     </>
   );
 }

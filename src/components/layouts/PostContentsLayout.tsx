@@ -42,7 +42,7 @@ function PostContentsLayout({
         ogImage={ogImage.default}
         structuredData={structuredData}
       />
-      <div className={clsx('')}>
+      <article lang={lang}>
         <PageHeader
           title={title}
           caption={category}
@@ -66,7 +66,7 @@ function PostContentsLayout({
             )}
           </div>
         </div>
-      </div>
+      </article>
     </>
   );
 }
