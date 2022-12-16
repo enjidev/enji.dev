@@ -63,7 +63,10 @@ function NavIconTheme() {
           'hover:bg-slate-300/70 sm:ml-0',
           'dark:bg-slate-800/50 dark:text-slate-100 dark:hover:bg-slate-700/50'
         )}
-        aria-label="Toggle Theme"
+        aria-label={
+          mounted && resolvedTheme === 'dark' ? 'Light Mode' : 'Dark Mode'
+        }
+        title={mounted && resolvedTheme === 'dark' ? 'Light Mode' : 'Dark Mode'}
         onClick={handleThemeChange}
       >
         {mounted && resolvedTheme === 'dark' ? (
