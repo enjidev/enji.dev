@@ -28,15 +28,7 @@ function Blog({ posts }: BlogProps) {
           <div className={clsx('md:w-64')}>{/* TODO: Filter Posts */}</div>
           <div className={clsx('flex-1')}>
             {posts.map(
-              ({
-                category,
-                title: postTitle,
-                description: postDescription,
-                date,
-                lang,
-                slug,
-                tags,
-              }) => (
+              ({ category, title, description, date, lang, slug, tags }) => (
                 <div
                   key={slug}
                   className={clsx(
@@ -55,8 +47,8 @@ function Blog({ posts }: BlogProps) {
                     <PostPreview
                       slug={slug}
                       category={category}
-                      title={postTitle}
-                      description={postDescription}
+                      title={title}
+                      description={description}
                       date={date}
                       lang={lang}
                       tags={tags}
