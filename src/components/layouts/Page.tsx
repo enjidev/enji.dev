@@ -1,5 +1,8 @@
+import clsx from 'clsx';
+
 import Head from '@/components/meta/Head';
 import CenteredHeader from '@/components/shared/Header/CenteredHeader';
+import SkipNavigation from '@/components/shared/Navigation/SkipNavigation';
 
 import { getPageOgImageUrl } from '@/helpers/page';
 
@@ -19,7 +22,10 @@ function Page({ title, description, children }: PageProps) {
     <>
       <Head title={title} description={description} ogImage={ogImage} />
       <CenteredHeader title={title} description={description} />
-      {children}
+      <SkipNavigation skipTableOfContents={false} />
+      <div id="main-contents" className={clsx('scroll-mt-[86px]')}>
+        {children}
+      </div>
     </>
   );
 }
