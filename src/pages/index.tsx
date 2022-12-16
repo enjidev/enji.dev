@@ -7,7 +7,7 @@ import Hero from '@/components/pages/index/Hero';
 import Quote from '@/components/pages/index/Quote';
 import { CodeIcon, HeartIcon, SparklesIcon } from '@/components/shared/Icons';
 
-import { getPageOgImageUrl } from '@/helpers/page';
+import { getBaseUrl } from '@/helpers/url';
 
 const pageData = {
   title: 'Enji Kusnadi · Front-End Developer',
@@ -18,18 +18,12 @@ const pageData = {
 function Index() {
   const { title, description } = pageData;
 
-  const ogImage = getPageOgImageUrl({
-    title: 'Enji · FE Developer',
-    description:
-      '— passionate about creating intuitive, clean, modern UI design.',
-  });
-
   return (
     <>
       <Head
         title={title}
         description={description}
-        ogImage={ogImage}
+        ogImage={`${getBaseUrl()}/assets/images/og-image.png`}
         overrideTitle={title}
       />
       <Header />
