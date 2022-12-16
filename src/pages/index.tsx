@@ -10,7 +10,7 @@ import { CodeIcon, HeartIcon, SparklesIcon } from '@/components/shared/Icons';
 import { getPageOgImageUrl } from '@/helpers/page';
 
 const pageData = {
-  title: 'Enji Kusnadi · Creative Developer',
+  title: 'Enji Kusnadi · Front-End Developer',
   description:
     'An online portfolio featuring my projects and thoughts about web development as a Front-End Developer with a passion for intuitive, clean, modern UI design.',
 };
@@ -19,8 +19,9 @@ function Index() {
   const { title, description } = pageData;
 
   const ogImage = getPageOgImageUrl({
-    title: 'Enji · Creative Developer',
-    description: 'A personal website and blog by Enji Kusnadi.',
+    title: 'Enji · FE Developer',
+    description:
+      '— passionate about creating intuitive, clean, modern UI design.',
   });
 
   return (

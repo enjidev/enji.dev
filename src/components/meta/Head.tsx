@@ -15,7 +15,7 @@ function Head({
   overrideTitle = '',
   structuredData = '',
 }: HeadProps) {
-  const htmlTitle = overrideTitle || `${title} · Enji Kusnadi`;
+  const htmlTitle = overrideTitle || `${title} — Enji · Front-End Developer`;
 
   return (
     <NextHead>
