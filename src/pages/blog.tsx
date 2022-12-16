@@ -16,8 +16,7 @@ interface BlogProps {
 
 const pageData = {
   title: 'Personal Blog',
-  description:
-    'All about the detailed tutorials, stories, and tech-related stuff',
+  description: 'Web development thoughts and stories.',
 };
 
 function Blog({ posts }: BlogProps) {

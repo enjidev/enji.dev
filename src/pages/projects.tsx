@@ -11,8 +11,8 @@ import GitHubWireframe from '@/components/shared/Wireframes/GitHub';
 import { getPageOgImageUrl } from '@/helpers/page';
 
 const pageData = {
-  title: 'My Projects',
-  description: 'All about my Front-End related work',
+  title: 'Projects',
+  description: 'Showcase of my Front-End related work.',
 };
 
 function Projects() {
