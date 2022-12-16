@@ -17,8 +17,8 @@ function HeaderTitle() {
     <div>
       <motion.div
         className={clsx(
-          'flex items-center gap-1 text-2xl text-slate-600',
-          'md:gap-2 md:text-4xl',
+          'mb-1 flex items-center gap-1 text-2xl text-slate-600',
+          'md:mb-0 md:gap-2 md:text-4xl',
           'dark:text-slate-400'
         )}
         initial={animation.hide}
@@ -60,7 +60,7 @@ function HeaderTitle() {
       <span className={clsx('text-slate-700', 'dark:text-slate-300')}>
         <motion.span
           className={clsx(
-            'mb-2 block text-[2.5rem] font-[1000] leading-none',
+            'mb-4 block text-[2.5rem] font-[1000] leading-none',
             'md:mb-6 md:text-7xl'
           )}
           initial={animation.hide}

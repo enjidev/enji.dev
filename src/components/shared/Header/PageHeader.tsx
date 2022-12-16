@@ -38,8 +38,8 @@ function PageHeader({
           >
             <span
               className={clsx(
-                'mb-2 block text-sm font-bold leading-none text-accent-600',
-                'md:text-base',
+                'mb-1 block text-lg font-extrabold capitalize leading-none text-accent-600',
+                'md:mb-0 md:text-2xl',
                 'dark:text-accent-400'
               )}
             >
@@ -70,7 +70,7 @@ function PageHeader({
           >
             <p
               className={clsx(
-                'mt-2 text-lg text-slate-600',
+                'mt-4 text-lg text-slate-600',
                 'md:mt-6 md:text-2xl lg:max-w-[500px] xl:max-w-[700px]',
                 'dark:text-slate-400'
               )}

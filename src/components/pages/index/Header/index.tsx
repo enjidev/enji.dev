@@ -19,7 +19,7 @@ function Header() {
           <div className={clsx('relative z-10')}>
             <HeaderTitle />
           </div>
-          <div className={clsx('mt-4 md:mt-8')}>
+          <div className={clsx('mt-6 md:mt-8')}>
             <HeaderCta />
           </div>
           <div className={clsx('mt-20 lg:mt-36')}>
