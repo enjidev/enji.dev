@@ -12,7 +12,7 @@ import { getBaseUrl } from '@/helpers/url';
 const pageData = {
   title: 'Enji Kusnadi · Front-End Developer',
   description:
-    'An online portfolio featuring my projects and thoughts about web development as a Front-End Developer with a passion for intuitive, clean, modern UI design.',
+    'An online portfolio featuring a showcase of my projects and some thoughts as a Front-End Developer who loves intuitive, clean and modern UI design.',
 };
 
 function Index() {
