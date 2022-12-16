@@ -39,7 +39,7 @@ export type TPostFrontMatter = TGlobalFrontMatter & {
   title: string;
   description: string;
   date: string;
-  lang: 'ID' | 'EN';
+  lang: 'id' | 'en';
   tags: Array<string>;
   category: string;
 };

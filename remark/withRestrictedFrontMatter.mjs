@@ -17,7 +17,7 @@ const PostFrontMatter = z.object({
   title: z.string().max(110),
   description: z.string().min(60).max(120),
   date: z.string().regex(dateRegex, 'Date format MUST be YYYY-MM-DD'),
-  lang: z.enum(['ID', 'EN']),
+  lang: z.enum(['id', 'en']),
   tags: z.array(z.string()).min(2).max(5),
   category: z.string(),
 });
