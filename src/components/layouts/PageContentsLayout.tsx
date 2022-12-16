@@ -2,6 +2,7 @@ import clsx from 'clsx';
 
 import Head from '@/components/meta/Head';
 import PageHeader from '@/components/shared/Header/PageHeader';
+import SkipNavigation from '@/components/shared/Navigation/SkipNavigation';
 import TableOfContents from '@/components/shared/TableOfContents';
 
 import { getPageOgImageUrl } from '@/helpers/page';
@@ -28,6 +29,7 @@ function PageContentsLayout({
   return (
     <>
       <Head title={title} description={description} ogImage={ogImage} />
+      <SkipNavigation />
       <PageHeader title={title} description={description} caption={caption} />
       <div className={clsx('content-wrapper')}>
         <div className={clsx('flex flex-row-reverse gap-8', 'xl:gap-24')}>

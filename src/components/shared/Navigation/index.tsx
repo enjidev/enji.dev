@@ -7,7 +7,6 @@ import NavLink from '@/components/shared/Navigation/NavLink';
 import NavLinkDropdown from '@/components/shared/Navigation/NavLinkDropdown';
 import NavLinkExpanded from '@/components/shared/Navigation/NavLinkExpanded';
 import NavLogo from '@/components/shared/Navigation/NavLogo';
-import SkipNavigation from '@/components/shared/Navigation/SkipNavigation';
 
 import useOnExit from '@/hooks/useOnExit';
 import useScrollTop from '@/hooks/useScrollTop';
@@ -29,7 +28,6 @@ function Navbar() {
         position > 0 ? 'translate-y-0' : 'translate-y-2',
       ])}
     >
-      <SkipNavigation />
       <div
         className={clsx(
           'pointer-events-none fixed top-0 left-0 right-0 h-16 border-b border-divider-light backdrop-blur transition',

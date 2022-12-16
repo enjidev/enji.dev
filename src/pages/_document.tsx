@@ -5,6 +5,7 @@ function Document() {
     <Html lang="en">
       <Head />
       <body>
+        <div id="skip-navigation" />
         <Main />
         <NextScript />
       </body>

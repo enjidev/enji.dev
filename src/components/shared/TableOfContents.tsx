@@ -55,7 +55,7 @@ function TableOfContents({ items = [] }: TableOfContensProps) {
           animate={currentSlug ? { x: 0, opacity: 1 } : { x: 16, opacity: 0 }}
         >
           <a
-            href="#jump-to"
+            href="#skip-navigation"
             className={clsx(
               'cursor-pointer p-1 px-2 font-normal text-accent-700',
               'dark:text-accent-400'

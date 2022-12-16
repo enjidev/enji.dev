@@ -2,6 +2,7 @@ import clsx from 'clsx';
 
 import Head from '@/components/meta/Head';
 import PageHeader from '@/components/shared/Header/PageHeader';
+import SkipNavigation from '@/components/shared/Navigation/SkipNavigation';
 import TableOfContents from '@/components/shared/TableOfContents';
 
 import { getPostOgImageUrl, getPostStructuredData } from '@/helpers/post';
@@ -42,6 +43,7 @@ function PostContentsLayout({
         ogImage={ogImage.default}
         structuredData={structuredData}
       />
+      <SkipNavigation />
       <PageHeader title={title} caption={category} description={description} />
       <div className={clsx('content-wrapper')}>
         <div className={clsx('flex flex-row-reverse gap-8', 'xl:gap-24')}>

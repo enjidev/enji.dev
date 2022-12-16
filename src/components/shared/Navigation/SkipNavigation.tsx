@@ -1,5 +1,7 @@
 import clsx from 'clsx';
 
+import Portal from '@/components/shared/Portal';
+
 interface SkipNavigationLinkProps {
   title: string;
   slug: string;
@@ -23,23 +25,30 @@ function SkipNavigationLink({ title, slug }: SkipNavigationLinkProps) {
   );
 }
 
-function SkipNavigation() {
+interface SkipNavigationProps {
+  skipTableOfContents?: boolean;
+}
+
+function SkipNavigation({ skipTableOfContents = true }: SkipNavigationProps) {
   return (
-    <div
-      id="jump-to"
-      className={clsx(
-        'pointer-events-none fixed left-0 right-0 -top-2 z-[1001] h-24 bg-gradient-to-b from-white px-4 pt-6 transition',
-        ['opacity-0', 'focus-within:opacity-100'],
-        'md:px-6',
-        'dark:from-slate-900'
-      )}
-    >
-      <SkipNavigationLink
-        slug="#table-of-contents"
-        title="Jump to Table of Contents"
-      />
-      <SkipNavigationLink slug="#main-contents" title="Jump to Content" />
-    </div>
+    <Portal selector="#skip-navigation">
+      <div
+        className={clsx(
+          'pointer-events-none fixed left-0 right-0 -top-2 z-[1001] h-24 bg-gradient-to-b from-white px-4 pt-6 transition',
+          ['opacity-0', 'focus-within:opacity-100'],
+          'md:px-6',
+          'dark:from-slate-900'
+        )}
+      >
+        {skipTableOfContents && (
+          <SkipNavigationLink
+            slug="#table-of-contents"
+            title="Jump to Table of Contents"
+          />
+        )}
+        <SkipNavigationLink slug="#main-contents" title="Jump to Content" />
+      </div>
+    </Portal>
   );
 }
 
