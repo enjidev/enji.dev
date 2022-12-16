@@ -1,32 +1,15 @@
 import clsx from 'clsx';
 
-import Head from '@/components/meta/Head';
-import CenteredHeader from '@/components/shared/Header/CenteredHeader';
+import Page from '@/components/layouts/Page';
 import { GitHubIcon, NpmIcon } from '@/components/shared/Icons';
 import SectionContent from '@/components/shared/SectionContent';
 import SectionTitle from '@/components/shared/SectionTitle';
 import AppWindow from '@/components/shared/Wireframes/AppWindow';
 import GitHubWireframe from '@/components/shared/Wireframes/GitHub';
 
-import { getPageOgImageUrl } from '@/helpers/page';
-
-const pageData = {
-  title: 'Projects',
-  description: 'Showcase of my Front-End related work.',
-};
-
 function Projects() {
-  const { title, description } = pageData;
-
-  const ogImage = getPageOgImageUrl({
-    title,
-    description,
-  });
-
   return (
-    <>
-      <Head title="Projects" description={description} ogImage={ogImage} />
-      <CenteredHeader title={title} description={description} />
+    <Page title="Projects" description="Showcase of my Front-End related work.">
       <div className={clsx('mt-20')} />
       <SectionTitle
         title="The dynamic accent colors."
@@ -69,7 +52,7 @@ function Projects() {
           </div>
         </div>
       </SectionContent>
-    </>
+    </Page>
   );
 }
 
