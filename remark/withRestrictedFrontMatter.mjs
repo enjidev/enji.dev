@@ -4,18 +4,18 @@ import { getFrontMatter } from './utils.mjs';
 const dateRegex = /^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$/;
 
 const GlobalFrontMatter = z.object({
+  title: z.string().max(110),
+  description: z.string().max(120),
+  caption: z.string().optional(),
   type: z.enum(['post', 'page']),
 });
 
 const PageFrontMatter = z.object({
-  title: z.string(),
-  description: z.string(),
-  caption: z.string().optional(),
+  ...GlobalFrontMatter,
 });
 
 const PostFrontMatter = z.object({
-  title: z.string().max(110),
-  description: z.string().min(60).max(120),
+  ...GlobalFrontMatter,
   date: z.string().regex(dateRegex, 'Date format MUST be YYYY-MM-DD'),
   lang: z.enum(['id', 'en']),
   tags: z.array(z.string()).min(2).max(5),

@@ -19,17 +19,13 @@ export type TTableOfContentsItem = {
 export type TTableOfContents = Array<TTableOfContentsItem>;
 
 export type TGlobalFrontMatter = {
-  /**
-   * @default page
-   */
-  type?: 'post' | 'page';
-};
-
-export type TPageFrontMatter = TGlobalFrontMatter & {
   title: string;
   description: string;
   caption?: string;
+  type?: 'post' | 'page';
 };
+
+export type TPageFrontMatter = TGlobalFrontMatter;
 
 export type TPageOgImage = Partial<
   Pick<TPageFrontMatter, 'caption' | 'title' | 'description'>

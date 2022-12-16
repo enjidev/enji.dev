@@ -9,7 +9,12 @@ import GitHubWireframe from '@/components/shared/Wireframes/GitHub';
 
 function Projects() {
   return (
-    <Page title="Projects" description="Showcase of my Front-End related work.">
+    <Page
+      frontMatter={{
+        title: 'Projects',
+        description: 'Showcase of my Front-End related work.',
+      }}
+    >
       <div className={clsx('mt-20')} />
       <SectionTitle
         title="The dynamic accent colors."

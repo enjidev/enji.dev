@@ -15,8 +15,10 @@ interface BlogProps {
 function Blog({ posts }: BlogProps) {
   return (
     <Page
-      title="Personal Blog"
-      description="Web development thoughts and stories."
+      frontMatter={{
+        title: 'Personal Blog',
+        description: 'Web development thoughts and stories.',
+      }}
     >
       <div className={clsx('content-wrapper')}>
         <div
