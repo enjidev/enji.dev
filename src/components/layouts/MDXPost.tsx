@@ -9,17 +9,17 @@ import { getPostOgImageUrl, getPostStructuredData } from '@/helpers/post';
 
 import type { TPostFrontMatter, TTableOfContents } from '@/types';
 
-interface PostContentsLayoutProps {
+interface MDXPostProps {
   frontMatter: TPostFrontMatter;
   tableOfContents: TTableOfContents;
   children: React.ReactNode;
 }
 
-function PostContentsLayout({
+function MDXPost({
   frontMatter: { title, date, lang, tags, description, category },
   tableOfContents,
   children,
-}: PostContentsLayoutProps) {
+}: MDXPostProps) {
   const ogImage = getPostOgImageUrl({
     category,
     title,
@@ -71,4 +71,4 @@ function PostContentsLayout({
   );
 }
 
-export default PostContentsLayout;
+export default MDXPost;

@@ -9,17 +9,17 @@ import { getPageOgImageUrl } from '@/helpers/page';
 
 import type { TPageFrontMatter, TTableOfContents } from '@/types';
 
-interface PageContentsLayoutProps {
+interface MDXPageProps {
   frontMatter: TPageFrontMatter;
   tableOfContents: TTableOfContents;
   children: React.ReactNode;
 }
 
-function PageContentsLayout({
+function MDXPage({
   frontMatter: { title, description, caption = '' },
   tableOfContents,
   children,
-}: PageContentsLayoutProps) {
+}: MDXPageProps) {
   const ogImage = getPageOgImageUrl({
     caption,
     title,
@@ -56,4 +56,4 @@ function PageContentsLayout({
   );
 }
 
-export default PageContentsLayout;
+export default MDXPage;

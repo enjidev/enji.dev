@@ -14,37 +14,29 @@ const withLayout = () => {
     const type = frontMatter.type;
 
     if (type === 'post') {
-      addImport(
-        tree,
-        'PostContentsLayout',
-        '@/components/layouts/PostContentsLayout'
-      );
+      addImport(tree, 'MDXPost', '@/components/layouts/MDXPost');
       addContent(
         tree,
         `export default ({ children }) => (
-          <PostContentsLayout 
+          <MDXPost 
             frontMatter={${JSON.stringify(frontMatter)}}
             tableOfContents={${JSON.stringify(headings)}}
           >
             {children}
-          </PostContentsLayout>
+          </MDXPost>
         )`
       );
     } else {
-      addImport(
-        tree,
-        'PageContentsLayout',
-        '@/components/layouts/PageContentsLayout'
-      );
+      addImport(tree, 'MDXPage', '@/components/layouts/MDXPage');
       addContent(
         tree,
         `export default ({ children }) => (
-          <PageContentsLayout 
+          <MDXPage 
             frontMatter={${JSON.stringify(frontMatter)}}
             tableOfContents={${JSON.stringify(headings)}}
           >
             {children}
-          </PageContentsLayout>
+          </MDXPage>
         )`
       );
     }
