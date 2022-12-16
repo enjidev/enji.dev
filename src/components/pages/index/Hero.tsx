@@ -200,7 +200,7 @@ function Hero() {
             <div
               className={clsx('-mt-8 flex gap-4', 'md:gap-6 lg:top-8 lg:mt-0')}
             >
-              <div className={clsx('')}>
+              <div>
                 <TodoItem
                   state={
                     currentState
