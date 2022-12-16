@@ -11,15 +11,16 @@ import { getPageOgImageUrl } from '@/helpers/page';
 
 const pageData = {
   title: 'Enji Kusnadi · Creative Developer',
-  description: 'A personal website and blog by Enji Kusnadi.',
+  description:
+    'An online portfolio featuring my projects and thoughts about web development as a Front-End Developer with a passion for intuitive, clean, modern UI design.',
 };
 
 function Index() {
   const { title, description } = pageData;
 
   const ogImage = getPageOgImageUrl({
-    title,
-    description,
+    title: 'Enji · Creative Developer',
+    description: 'A personal website and blog by Enji Kusnadi.',
   });
 
   return (

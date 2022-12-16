@@ -57,11 +57,11 @@ function HeaderTitle() {
           />
         </motion.div>
       </motion.div>
-      <h1 className={clsx('text-slate-700', 'dark:text-slate-300')}>
+      <span className={clsx('text-slate-700', 'dark:text-slate-300')}>
         <motion.span
           className={clsx(
             'mb-2 block text-[2.5rem] font-[1000] leading-none',
-            'md:mb-4 md:text-7xl'
+            'md:mb-6 md:text-7xl'
           )}
           initial={animation.hide}
           animate={animation.show}
@@ -73,15 +73,31 @@ function HeaderTitle() {
           </strong>{' '}
           Kusnadi,{' '}
         </motion.span>
-        <motion.span
-          className={clsx('block text-lg', 'md:text-2xl')}
+        <motion.h1
+          className={clsx(
+            'block text-base text-slate-600',
+            'md:text-xl',
+            'dark:text-slate-400'
+          )}
           initial={animation.hide}
           animate={animation.show}
           transition={{ delay: 0.3 }}
         >
-          a <strong className={clsx('font-bold')}>creative developer</strong>.
-        </motion.span>
-      </h1>
+          a{' '}
+          <strong
+            className={clsx(
+              'font-bold lowercase text-slate-700',
+              'dark:text-slate-300'
+            )}
+          >
+            Front-End Developer
+          </strong>{' '}
+          passionate about creating{' '}
+          <span className={clsx('sm:block')}>
+            intuitive, clean, modern UI design.
+          </span>
+        </motion.h1>
+      </span>
     </div>
   );
 }
