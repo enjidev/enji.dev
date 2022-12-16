@@ -36,7 +36,10 @@ function PageContentsLayout({
               <TableOfContents items={tableOfContents} />
             </div>
           )}
-          <div className={clsx('mdx-contents flex-1')} id="mdx-contents">
+          <div
+            className={clsx('mdx-contents flex-1 scroll-mt-[86px]')}
+            id="main-contents"
+          >
             {children}
           </div>
           <div

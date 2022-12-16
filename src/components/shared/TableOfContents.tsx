@@ -1,6 +1,5 @@
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
-import Link from 'next/link';
 
 import useScrollSpy from '@/hooks/useScrollSpy';
 
@@ -34,30 +33,38 @@ interface TableOfContensProps {
 }
 
 function TableOfContents({ items = [] }: TableOfContensProps) {
-  const { currentSlug, scrollProgress } = useScrollSpy('mdx-contents', 96);
+  const { currentSlug, scrollProgress } = useScrollSpy('main-contents', 96);
+
+  const handleScrollToTopClick = () => {
+    window.scrollTo({ top: 0 });
+  };
 
   return (
     <nav className={clsx('sticky top-24 z-[901] w-64')}>
       <div
         className={clsx('flex items-center justify-between text-sm font-bold')}
       >
-        <h2 className={clsx('text-slate-700', 'dark:text-slate-300')}>
+        <h2
+          className={clsx('text-slate-700', 'dark:text-slate-300')}
+          id="table-of-contents"
+        >
           Table of Contents
         </h2>
         <motion.div
           initial={{ x: 16, opacity: 0 }}
           animate={currentSlug ? { x: 0, opacity: 1 } : { x: 16, opacity: 0 }}
         >
-          <Link
-            href="#skip-navigation"
+          <a
+            href="#jump-to"
             className={clsx(
               'cursor-pointer p-1 px-2 font-normal text-accent-700',
               'dark:text-accent-400'
             )}
             tabIndex={currentSlug ? 0 : -1}
+            onClick={handleScrollToTopClick}
           >
             Scroll to top
-          </Link>
+          </a>
         </motion.div>
       </div>
       <div
