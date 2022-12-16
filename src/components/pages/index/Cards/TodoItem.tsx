@@ -24,6 +24,7 @@ function TodoItem({ state }: TodoItemProps) {
           ? ['bg-white', 'dark:bg-slate-900']
           : ['border-black bg-white', 'dark:border-white dark:bg-[#050914]']
       )}
+      role="presentation"
     >
       <div
         className={clsx(
