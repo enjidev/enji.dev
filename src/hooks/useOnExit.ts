@@ -25,7 +25,7 @@ export default function useOnExit(selector: string) {
     return () => {
       observer.disconnect();
     };
-  });
+  }, [selector]);
 
   return isExit;
 }
