@@ -92,10 +92,8 @@ function HeaderTitle() {
           >
             Front-End Developer
           </strong>{' '}
-          passionate about creating{' '}
-          <span className={clsx('sm:block')}>
-            intuitive, clean, modern UI design.
-          </span>
+          who loves intuitive,{' '}
+          <span className={clsx('block')}>clean and modern UI design.</span>
         </motion.h1>
       </span>
     </div>
