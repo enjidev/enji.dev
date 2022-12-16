@@ -37,13 +37,13 @@ function TableOfContents({ items = [] }: TableOfContensProps) {
   const { currentSlug, scrollProgress } = useScrollSpy('mdx-contents', 96);
 
   return (
-    <div className={clsx('sticky top-24 z-[901] w-64')}>
+    <nav className={clsx('sticky top-24 z-[901] w-64')}>
       <div
         className={clsx('flex items-center justify-between text-sm font-bold')}
       >
-        <span className={clsx('text-slate-700', 'dark:text-slate-300')}>
+        <h2 className={clsx('text-slate-700', 'dark:text-slate-300')}>
           Table of Contents
-        </span>
+        </h2>
         <motion.div
           initial={{ x: 16, opacity: 0 }}
           animate={currentSlug ? { x: 0, opacity: 1 } : { x: 16, opacity: 0 }}
@@ -73,7 +73,7 @@ function TableOfContents({ items = [] }: TableOfContensProps) {
           )}
           style={{ height: `${scrollProgress}%` }}
         />
-        <ul className={clsx('flex flex-col gap-2')}>
+        <ol className={clsx('flex flex-col gap-2')}>
           {items.map(({ title, depth, slug }) => {
             const isActive = currentSlug ? currentSlug === slug : false;
 
@@ -88,9 +88,9 @@ function TableOfContents({ items = [] }: TableOfContensProps) {
               </li>
             );
           })}
-        </ul>
+        </ol>
       </div>
-    </div>
+    </nav>
   );
 }
 

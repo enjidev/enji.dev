@@ -44,13 +44,12 @@ function PostContentsLayout({
       />
       <PageHeader title={title} caption={category} description={description} />
       <div className={clsx('content-wrapper')}>
-        <div className={clsx('flex gap-8', 'xl:gap-24')}>
-          <div
-            className={clsx(
-              'hidden border-l border-divider-light',
-              ' dark:border-divider-dark lg:block'
-            )}
-          />
+        <div className={clsx('flex flex-row-reverse gap-8', 'xl:gap-24')}>
+          {tableOfContents.length > 0 && (
+            <div className={clsx('-mt-36 hidden', 'lg:block')}>
+              <TableOfContents items={tableOfContents} />
+            </div>
+          )}
           <div
             className={clsx('mdx-contents flex-1')}
             id="mdx-contents"
@@ -58,11 +57,12 @@ function PostContentsLayout({
           >
             {children}
           </div>
-          {tableOfContents.length > 0 && (
-            <div className={clsx('-mt-36 hidden', 'lg:block')}>
-              <TableOfContents items={tableOfContents} />
-            </div>
-          )}
+          <div
+            className={clsx(
+              'hidden border-l border-divider-light',
+              ' dark:border-divider-dark lg:block'
+            )}
+          />
         </div>
       </div>
     </>

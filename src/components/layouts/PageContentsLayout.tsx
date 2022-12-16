@@ -30,21 +30,21 @@ function PageContentsLayout({
       <Head title={title} description={description} ogImage={ogImage} />
       <PageHeader title={title} description={description} caption={caption} />
       <div className={clsx('content-wrapper')}>
-        <div className={clsx('flex gap-8', 'xl:gap-24')}>
+        <div className={clsx('flex flex-row-reverse gap-8', 'xl:gap-24')}>
+          {tableOfContents.length > 0 && (
+            <div className={clsx('-mt-36 hidden', 'lg:block')}>
+              <TableOfContents items={tableOfContents} />
+            </div>
+          )}
+          <div className={clsx('mdx-contents flex-1')} id="mdx-contents">
+            {children}
+          </div>
           <div
             className={clsx(
               'hidden border-l border-divider-light',
               ' dark:border-divider-dark lg:block'
             )}
           />
-          <div className={clsx('mdx-contents flex-1')} id="mdx-contents">
-            {children}
-          </div>
-          {tableOfContents.length > 0 && (
-            <div className={clsx('-mt-36 hidden', 'lg:block')}>
-              <TableOfContents items={tableOfContents} />
-            </div>
-          )}
         </div>
       </div>
     </>
