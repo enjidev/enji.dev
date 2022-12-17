@@ -4,7 +4,7 @@ interface HeadProps {
   title: string;
   description: string;
   ogImage: string;
-  overrideTitle?: string;
+  overrideTitle?: boolean;
   structuredData?: string;
 }
 
@@ -12,10 +12,12 @@ function Head({
   title,
   description,
   ogImage,
-  overrideTitle = '',
+  overrideTitle = false,
   structuredData = '',
 }: HeadProps) {
-  const htmlTitle = overrideTitle || `${title} — Enji · Front-End Developer`;
+  const htmlTitle = overrideTitle
+    ? title
+    : `${title} — Enji · Front-End Developer`;
 
   return (
     <NextHead>
