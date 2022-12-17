@@ -27,11 +27,11 @@ function getDefaultLayout(page: ReactElement): ReactNode {
 function App({ Component, pageProps }: AppPropsWithLayout) {
   const getLayout = Component.getLayout ?? getDefaultLayout;
 
-  return getLayout(
+  return (
     <Provider>
       <RootLayout>
         {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-        <Component {...pageProps} />
+        {getLayout(<Component {...pageProps} />)}
         <Analytics />
       </RootLayout>
     </Provider>
