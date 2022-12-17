@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import { m } from 'framer-motion';
 
+import useOnScroll from '@/hooks/useOnScroll';
 import useScrollSpy from '@/hooks/useScrollSpy';
 
 import type { TTableOfContentsItem } from '@/types';
@@ -33,56 +34,56 @@ interface TableOfContensProps {
 }
 
 function TableOfContents({ items = [] }: TableOfContensProps) {
-  const { currentSlug, scrollProgress } = useScrollSpy('main-contents', 96);
+  const isScrolled = useOnScroll(200);
+  const visibleItems = useScrollSpy();
 
   const handleScrollToTopClick = () => {
     window.scrollTo({ top: 0 });
   };
 
   return (
-    <nav className={clsx('sticky top-24 z-[901] w-64')}>
+    <nav
+      aria-label="Page table of contents"
+      className={clsx(
+        'sticky top-24 z-[901] w-64 rounded-xl border border-divider-light bg-white',
+        'xl:w-[272px]',
+        'dark:border-divider-dark dark:bg-[#161e31]'
+      )}
+    >
       <div
-        className={clsx('flex items-center justify-between text-sm font-bold')}
+        className={clsx(
+          'flex items-center justify-between border-b border-divider-light py-3 px-5 text-sm font-bold',
+          'dark:border-divider-dark'
+        )}
       >
         <h2
           className={clsx('text-slate-700', 'dark:text-slate-300')}
           id="table-of-contents"
         >
-          Table of Contents
+          <span className={clsx('lg:hidden', 'xl:inline')}>Table of </span>
+          Contents
         </h2>
         <m.div
           initial={{ x: 16, opacity: 0 }}
-          animate={currentSlug ? { x: 0, opacity: 1 } : { x: 16, opacity: 0 }}
+          animate={isScrolled ? { x: 0, opacity: 1 } : { x: 16, opacity: 0 }}
         >
           <a
             href="#skip-navigation"
             className={clsx(
-              'cursor-pointer p-1 px-2 font-normal text-accent-700',
-              'dark:text-accent-400'
+              'flex h-6 cursor-pointer items-center rounded-full border border-divider-light px-2 text-xs font-normal text-accent-700',
+              'dark:border-divider-dark dark:text-accent-400'
             )}
-            tabIndex={currentSlug ? 0 : -1}
+            tabIndex={isScrolled ? 0 : -1}
             onClick={handleScrollToTopClick}
           >
-            Scroll to top
+            scroll to top
           </a>
         </m.div>
       </div>
-      <div
-        className={clsx(
-          'relative mt-4 border-l border-divider-light px-4',
-          'dark:border-divider-dark'
-        )}
-      >
-        <div
-          className={clsx(
-            'absolute top-0 bottom-0 left-[-1px] border-l border-accent-600',
-            'dark:border-accent-400'
-          )}
-          style={{ height: `${scrollProgress}%` }}
-        />
-        <ol className={clsx('flex flex-col gap-2')}>
+      <div className={clsx('relative p-3 py-4')}>
+        <ol className={clsx('toc flex flex-col gap-2')}>
           {items.map(({ title, depth, slug }) => {
-            const isActive = currentSlug ? currentSlug === slug : false;
+            const isActive = visibleItems.includes(slug);
 
             return (
               <li key={slug}>
@@ -92,6 +93,7 @@ function TableOfContents({ items = [] }: TableOfContensProps) {
                   slug={slug}
                   active={isActive}
                 />
+                {isActive && <div className={clsx('toc-visible')} />}
               </li>
             );
           })}

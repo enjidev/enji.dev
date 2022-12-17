@@ -161,8 +161,19 @@
     }
   }
 
+  .toc {
+    li {
+      @apply relative;
+    }
+  }
+
+  .toc-visible {
+    @apply absolute -inset-x-3 -inset-y-1 z-[-1] bg-slate-50;
+    @apply dark:bg-[#192134];
+  }
+
   .toc-link {
-    @apply flex p-1 px-2 text-[13px] font-bold text-slate-700 hover:text-accent-700;
+    @apply relative z-10 flex p-1 px-2 text-[13px] font-bold text-slate-700 hover:text-accent-700;
     @apply dark:font-semibold dark:text-slate-300 dark:hover:text-accent-300;
 
     &--depth-2 {

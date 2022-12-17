@@ -95,6 +95,7 @@ function Page({
             <div
               className={clsx('mdx-contents flex-1 scroll-mt-[86px]')}
               id="main-contents"
+              data-ss-wrapper
             >
               {children}
             </div>
