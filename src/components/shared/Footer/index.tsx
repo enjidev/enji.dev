@@ -22,11 +22,6 @@ function Footer() {
             )}
           >
             <li>
-              <Link href="/design-system" className={clsx('block px-2 py-1')}>
-                Design System
-              </Link>
-            </li>
-            <li>
               <a
                 href="https://www.figma.com/community/file/1176392613303840973"
                 target="_blank"
