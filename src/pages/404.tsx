@@ -1,5 +1,6 @@
-import clsx from 'clsx';
 import Head from 'next/head';
+
+import Error404Contents from '@/contents/404';
 
 function Error404() {
   return (
@@ -9,27 +10,7 @@ function Error404() {
         <link rel="icon" href="/favicon.ico" />
         <meta name="robots" content="noindex" />
       </Head>
-      <div
-        className={clsx(
-          'background-grid flex h-full items-center justify-center'
-        )}
-      >
-        <div
-          className={clsx(
-            'content-wrapper text-slate-600',
-            'dark:text-slate-400'
-          )}
-        >
-          <div className={clsx('py-24 text-center')}>
-            <div
-              className={clsx('mb-3 text-6xl font-extrabold', 'md:text-9xl')}
-            >
-              404
-            </div>
-            <h1 className={clsx('text-sm', 'md:text-3xl')}>Page Not Found</h1>
-          </div>
-        </div>
-      </div>
+      <Error404Contents />
     </>
   );
 }
