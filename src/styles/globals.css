@@ -10,12 +10,13 @@
 
   html,
   body,
-  #__next {
+  #__next,
+  #__root {
     @apply h-full;
   }
 
-  #__next {
-    @apply flex flex-col;
+  #__root {
+    @apply flex flex-col font-sans;
   }
 
   main {
