@@ -1,6 +1,7 @@
 import { Analytics } from '@vercel/analytics/react';
 
 import RootLayout from '@/components/layouts/Root';
+import WithNavigationFooter from '@/components/layouts/WithNavigationFooter';
 import Provider from '@/providers';
 
 import type { NextPage } from 'next';
@@ -20,23 +21,21 @@ type AppPropsWithLayout = AppProps & {
 };
 
 function getDefultLayout(page: ReactElement): ReactNode {
-  return (
-    <Provider>
-      <RootLayout>
-        <>
-          {page}
-          <Analytics />
-        </>
-      </RootLayout>
-    </Provider>
-  );
+  return <WithNavigationFooter>{page}</WithNavigationFooter>;
 }
 
 function App({ Component, pageProps }: AppPropsWithLayout) {
   const getLayout = Component.getLayout ?? getDefultLayout;
 
-  // eslint-disable-next-line react/jsx-props-no-spreading
-  return getLayout(<Component {...pageProps} />);
+  return getLayout(
+    <Provider>
+      <RootLayout>
+        {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+        <Component {...pageProps} />
+        <Analytics />
+      </RootLayout>
+    </Provider>
+  );
 }
 
 export default App;
