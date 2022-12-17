@@ -20,12 +20,12 @@ type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout;
 };
 
-function getDefultLayout(page: ReactElement): ReactNode {
+function getDefaultLayout(page: ReactElement): ReactNode {
   return <WithNavigationFooter>{page}</WithNavigationFooter>;
 }
 
 function App({ Component, pageProps }: AppPropsWithLayout) {
-  const getLayout = Component.getLayout ?? getDefultLayout;
+  const getLayout = Component.getLayout ?? getDefaultLayout;
 
   return getLayout(
     <Provider>
