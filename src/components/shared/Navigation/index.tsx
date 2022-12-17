@@ -22,14 +22,13 @@ function Navbar() {
 
   return (
     <header
-      className={clsx(
-        'fixed right-0 left-0 z-[1000] translate-y-0 transition',
-        [isScrolled ? 'translate-y-0' : 'translate-y-2']
-      )}
+      className={clsx('fixed right-0 left-0 z-[1000] transition', [
+        isScrolled ? 'translate-y-0' : 'translate-y-2',
+      ])}
     >
       <div
         className={clsx(
-          'pointer-events-none fixed top-0 left-0 right-0 h-16 translate-y-0 border-b border-divider-light bg-white/70 opacity-100 backdrop-blur transition',
+          'pointer-events-none fixed top-0 left-0 right-0 h-16 border-b border-divider-light bg-white/70 backdrop-blur transition',
           'dark:border-divider-dark dark:bg-slate-900/80',
           [isScrolled ? 'translate-y-0 opacity-100' : 'translate-y-2 opacity-0']
         )}
