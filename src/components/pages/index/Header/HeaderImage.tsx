@@ -36,7 +36,6 @@ function HeaderImage() {
             className={clsx('max-w-none', 'dark:brightness-[.82]')}
             quality={100}
             onLoadingComplete={() => {
-              console.log('a');
               controls.start({
                 opacity: 1,
                 x: 0,

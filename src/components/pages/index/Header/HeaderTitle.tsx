@@ -48,7 +48,6 @@ function HeaderTitle() {
             width={48}
             height={48}
             onLoadingComplete={() => {
-              console.log('a');
               controls.start({
                 opacity: 1,
                 y: 0,
