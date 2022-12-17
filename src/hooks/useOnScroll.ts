@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 
-export default function useScrollTop() {
-  const [scrollPosition, setScrollPosition] = useState<number>(0);
+export default function useScroll(threshold = 0) {
+  const [isScrolled, setScrolled] = useState<boolean>(false);
 
   useEffect(() => {
     const onScroll = () => {
-      setScrollPosition(window.scrollY);
+      setScrolled(window.scrollY > threshold);
     };
     onScroll();
 
@@ -13,7 +13,7 @@ export default function useScrollTop() {
     return () => {
       document.removeEventListener('scroll', onScroll);
     };
-  }, []);
+  }, [threshold]);
 
-  return scrollPosition;
+  return isScrolled;
 }

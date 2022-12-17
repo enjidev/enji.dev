@@ -8,8 +8,7 @@ import NavLinkDropdown from '@/components/shared/Navigation/NavLinkDropdown';
 import NavLinkExpanded from '@/components/shared/Navigation/NavLinkExpanded';
 import NavLogo from '@/components/shared/Navigation/NavLogo';
 
-import useOnExit from '@/hooks/useOnExit';
-import useScrollTop from '@/hooks/useScrollTop';
+import useOnScroll from '@/hooks/useOnScroll';
 
 const workLinks = [
   { title: 'Skills & Tools', href: '/work/skills-and-tools' },
@@ -19,29 +18,20 @@ const workLinks = [
 ];
 
 function Navbar() {
-  const position = useScrollTop();
-  const isExit = useOnExit('#page-header');
+  const isScrolled = useOnScroll(80);
 
   return (
     <header
-      className={clsx('fixed right-0 left-0 z-[1000] transition', [
-        position > 0 ? 'translate-y-0' : 'translate-y-2',
-      ])}
+      className={clsx(
+        'fixed right-0 left-0 z-[1000] translate-y-0 transition',
+        [isScrolled ? 'translate-y-0' : 'translate-y-2']
+      )}
     >
       <div
         className={clsx(
-          'pointer-events-none fixed top-0 left-0 right-0 h-16 border-b border-divider-light backdrop-blur transition',
-          'dark:border-divider-dark',
-          [
-            !isExit
-              ? ['bg-slate-100/80', 'dark:bg-[#0c1222]/80']
-              : ['bg-white/70', 'dark:bg-slate-900/80'],
-          ],
-          [
-            position > 0
-              ? 'translate-y-0 opacity-100'
-              : 'translate-y-2 opacity-0',
-          ]
+          'pointer-events-none fixed top-0 left-0 right-0 h-16 translate-y-0 border-b border-divider-light bg-white/70 opacity-100 backdrop-blur transition',
+          'dark:border-divider-dark dark:bg-slate-900/80',
+          [isScrolled ? 'translate-y-0 opacity-100' : 'translate-y-2 opacity-0']
         )}
       />
       <div className={clsx('content-wrapper-max')}>
