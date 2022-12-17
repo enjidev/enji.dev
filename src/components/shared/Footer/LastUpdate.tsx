@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 
 import useLastUpdate from '@/hooks/useLastUpdate';
 
@@ -9,7 +9,7 @@ function LastUpdate() {
   const { data, isError } = useLastUpdate();
 
   return data ? (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+    <m.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
       {!isError ? (
         <a
           href={data.url}
@@ -30,7 +30,7 @@ function LastUpdate() {
           <span>see the recent update on GitHub</span>
         </a>
       )}
-    </motion.div>
+    </m.div>
   ) : (
     <span>&nbsp;</span>
   );

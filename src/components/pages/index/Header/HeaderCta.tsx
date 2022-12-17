@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { motion, useReducedMotion } from 'framer-motion';
+import { m, useReducedMotion } from 'framer-motion';
 import Link from 'next/link';
 
 import { DocumentIcon } from '@/components/shared/Icons';
@@ -104,41 +104,41 @@ function HeaderCta({
   }
 
   return (
-    <motion.div className={clsx('flex gap-2')} initial="hide" animate="show">
-      <motion.div
+    <m.div className={clsx('flex gap-2')} initial="hide" animate="show">
+      <m.div
         className={clsx('relative z-20')}
         variants={animation}
         transition={{ delay: 0.4 }}
       >
         <ButtonContactMe />
-      </motion.div>
+      </m.div>
       {isFree ? (
-        <motion.div
+        <m.div
           variants={animation}
           transition={{ delay: 1.5 }}
           className={clsx('relative z-10')}
         >
-          <motion.div
+          <m.div
             variants={isFreeVariants}
             transition={{ delay: isFreeAnimationDuration + 1.5, duration: 0.4 }}
           >
             <AvailableForHire />
-          </motion.div>
-          <motion.div
+          </m.div>
+          <m.div
             className={clsx('absolute top-0 left-0')}
             initial={{ x: -48, opacity: 0, pointerEvents: 'none' }}
             animate={{ x: 0, opacity: 1, pointerEvents: 'auto' }}
             transition={{ delay: isFreeAnimationDuration + 1.6, duration: 0.4 }}
           >
             <ButtonResume />
-          </motion.div>
-        </motion.div>
+          </m.div>
+        </m.div>
       ) : (
-        <motion.div variants={animation} transition={{ delay: 0.5 }}>
+        <m.div variants={animation} transition={{ delay: 0.5 }}>
           <ButtonResume />
-        </motion.div>
+        </m.div>
       )}
-    </motion.div>
+    </m.div>
   );
 }
 

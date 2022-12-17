@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 
 const animation = {
   hide: { x: -32, opacity: 0 },
@@ -31,7 +31,7 @@ function PageHeader({
     >
       <div className={clsx('content-wrapper')}>
         {caption && (
-          <motion.div
+          <m.div
             initial={animation.hide}
             animate={animation.show}
             transition={{ delay: 0 }}
@@ -45,9 +45,9 @@ function PageHeader({
             >
               {caption}
             </span>
-          </motion.div>
+          </m.div>
         )}
-        <motion.div
+        <m.div
           initial={animation.hide}
           animate={animation.show}
           transition={{ delay: 0.1 }}
@@ -61,9 +61,9 @@ function PageHeader({
           >
             {title}
           </h1>
-        </motion.div>
+        </m.div>
         {description && (
-          <motion.div
+          <m.div
             initial={animation.hide}
             animate={animation.show}
             transition={{ delay: 0.2 }}
@@ -77,7 +77,7 @@ function PageHeader({
             >
               {description}
             </p>
-          </motion.div>
+          </m.div>
         )}
       </div>
     </header>

@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { motion, useAnimation } from 'framer-motion';
+import { m, useAnimation } from 'framer-motion';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 
@@ -49,7 +49,7 @@ function NavIconTheme() {
           'md:right-auto'
         )}
       >
-        <motion.div
+        <m.div
           animate={controls}
           className={clsx(
             'pointer-events-auto h-9 w-9 origin-center scale-0 rounded-full opacity-0'

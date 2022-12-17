@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { motion, useAnimationControls } from 'framer-motion';
+import { m, useAnimationControls } from 'framer-motion';
 import Image from 'next/image';
 
 function HeaderImage() {
@@ -19,7 +19,7 @@ function HeaderImage() {
           'dark:from-accent-600/10 dark:via-accent-600/0'
         )}
       >
-        <motion.div
+        <m.div
           className={clsx('absolute right-0 bottom-0 overflow-hidden')}
           initial={{
             opacity: 0,
@@ -36,13 +36,14 @@ function HeaderImage() {
             className={clsx('max-w-none', 'dark:brightness-[.82]')}
             quality={100}
             onLoadingComplete={() => {
+              console.log('a');
               controls.start({
                 opacity: 1,
                 x: 0,
               });
             }}
           />
-        </motion.div>
+        </m.div>
       </div>
     </div>
   );

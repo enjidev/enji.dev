@@ -1,6 +1,6 @@
 import { Menu } from '@headlessui/react';
 import clsx from 'clsx';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import Link from 'next/link';
 import { forwardRef } from 'react';
 
@@ -54,7 +54,7 @@ function NavLinkDropdown({ title, items }: NavLinkDropdownProps) {
             {open && (
               <Menu.Items
                 static
-                as={motion.div}
+                as={m.div}
                 variants={animation}
                 initial="hide"
                 animate="show"

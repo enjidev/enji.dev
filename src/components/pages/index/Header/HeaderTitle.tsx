@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { motion, useAnimationControls } from 'framer-motion';
+import { m, useAnimationControls } from 'framer-motion';
 import Image from 'next/image';
 
 const animation = {
@@ -15,7 +15,7 @@ function HeaderTitle() {
 
   return (
     <div>
-      <motion.div
+      <m.div
         className={clsx(
           'mb-1 flex items-center gap-1 text-2xl text-slate-600',
           'md:mb-0 md:gap-2 md:text-4xl',
@@ -26,7 +26,7 @@ function HeaderTitle() {
         transition={{ delay: 0.1 }}
       >
         hi!
-        <motion.div
+        <m.div
           initial={{
             opacity: 0,
             y: 16,
@@ -48,6 +48,7 @@ function HeaderTitle() {
             width={48}
             height={48}
             onLoadingComplete={() => {
+              console.log('a');
               controls.start({
                 opacity: 1,
                 y: 0,
@@ -55,10 +56,10 @@ function HeaderTitle() {
               });
             }}
           />
-        </motion.div>
-      </motion.div>
+        </m.div>
+      </m.div>
       <span className={clsx('text-slate-700', 'dark:text-slate-300')}>
-        <motion.span
+        <m.span
           className={clsx(
             'mb-4 block text-[2.5rem] font-[1000] leading-none',
             'md:mb-6 md:text-7xl'
@@ -72,8 +73,8 @@ function HeaderTitle() {
             Enji
           </strong>{' '}
           Kusnadi,{' '}
-        </motion.span>
-        <motion.h1
+        </m.span>
+        <m.h1
           className={clsx(
             'block text-base text-slate-600',
             'md:text-xl',
@@ -94,7 +95,7 @@ function HeaderTitle() {
           </strong>{' '}
           who loves intuitive,{' '}
           <span className={clsx('block')}>clean and modern UI design.</span>
-        </motion.h1>
+        </m.h1>
       </span>
     </div>
   );

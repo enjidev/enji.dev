@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 
 import useScrollSpy from '@/hooks/useScrollSpy';
 
@@ -50,7 +50,7 @@ function TableOfContents({ items = [] }: TableOfContensProps) {
         >
           Table of Contents
         </h2>
-        <motion.div
+        <m.div
           initial={{ x: 16, opacity: 0 }}
           animate={currentSlug ? { x: 0, opacity: 1 } : { x: 16, opacity: 0 }}
         >
@@ -65,7 +65,7 @@ function TableOfContents({ items = [] }: TableOfContensProps) {
           >
             Scroll to top
           </a>
-        </motion.div>
+        </m.div>
       </div>
       <div
         className={clsx(
