@@ -1,9 +1,9 @@
-import { getHeadings, addImport, addContent } from './utils.mjs';
+import { getTableOfContents, addImport, addContent } from './utils.mjs';
 
 const withLayout = () => {
   return (tree, file) => {
     const { layout, ...frontMatter } = file.data['front-matter'];
-    const headings = getHeadings(tree);
+    const tableOfContents = getTableOfContents(tree);
 
     // import front-matter specified layout
     addImport(tree, layout, `@/components/layouts/${layout}`);
@@ -14,7 +14,7 @@ const withLayout = () => {
       `export default ({ children }) => (
         <${layout}
           frontMatter={${JSON.stringify(frontMatter)}}
-          tableOfContents={${JSON.stringify(headings)}}
+          tableOfContents={${JSON.stringify(tableOfContents)}}
         >
           {children}
         </${layout}>

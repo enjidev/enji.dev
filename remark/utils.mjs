@@ -34,7 +34,7 @@ export const addContent = (tree, content) => {
   });
 };
 
-export const getHeadings = (tree) => {
+export const getTableOfContents = (tree) => {
   const contents = [];
 
   for (let nodeIndex = 0; nodeIndex < tree.children.length; nodeIndex++) {
