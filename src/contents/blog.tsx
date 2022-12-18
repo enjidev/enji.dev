@@ -5,7 +5,10 @@ import PostPreview from '@/components/pages/blog/PostPreview';
 import type { TPostFrontMatter } from '@/types';
 
 export type BlogContentsProps = {
-  posts: Array<TPostFrontMatter & { slug: string }>;
+  posts: Array<{
+    slug: string;
+    frontMatter: TPostFrontMatter;
+  }>;
 };
 
 function BlogContents({ posts }: BlogContentsProps) {
@@ -20,7 +23,10 @@ function BlogContents({ posts }: BlogContentsProps) {
         <div className={clsx('md:w-64')}>{/* TODO: Filter Posts */}</div>
         <div className={clsx('flex-1')}>
           {posts.map(
-            ({ category, title, description, date, lang, slug, tags }) => (
+            ({
+              slug,
+              frontMatter: { category, title, description, date, lang, tags },
+            }) => (
               <div
                 key={slug}
                 className={clsx(

@@ -6,9 +6,15 @@ import type { TPostFrontMatter } from '@/types';
 
 const postsDirectory = path.join(process.cwd(), 'src/pages/blog');
 
-export const getPostData = (fileName: string): TPostFrontMatter => {
+export const getPostSlugs = () => {
+  const fileNames = fs.readdirSync(postsDirectory);
+
+  return fileNames.map((fileName) => fileName.replace(/\.mdx$/, ''));
+};
+
+export const getPostFrontMatter = (slug: string): TPostFrontMatter => {
   // read markdown file as string
-  const fullPath = path.join(postsDirectory, fileName);
+  const fullPath = path.join(postsDirectory, `${slug}.mdx`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
 
   // use front-matter to parse the post metadata section
@@ -17,26 +23,28 @@ export const getPostData = (fileName: string): TPostFrontMatter => {
   return attributes;
 };
 
-export const getSortedPostsData = () => {
-  const fileNames = fs.readdirSync(postsDirectory);
-  const allPostsData = fileNames.map((fileName) => {
-    const slug = fileName.replace(/\.mdx$/, '');
-    const data = getPostData(fileName);
+export const getSortedPosts = () => {
+  const slugs = getPostSlugs();
+
+  const allPostsData = slugs.map((slug) => {
+    const data = getPostFrontMatter(slug);
 
     return {
       slug,
-      ...data,
+      frontMatter: data,
     };
   });
 
   // sort posts by date
-  return allPostsData.sort(({ date: a }, { date: b }) => {
-    if (a < b) {
-      return 1;
+  return allPostsData.sort(
+    ({ frontMatter: { date: a } }, { frontMatter: { date: b } }) => {
+      if (a < b) {
+        return 1;
+      }
+      if (a > b) {
+        return -1;
+      }
+      return 0;
     }
-    if (a > b) {
-      return -1;
-    }
-    return 0;
-  });
+  );
 };

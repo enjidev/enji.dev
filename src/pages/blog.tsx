@@ -1,4 +1,4 @@
-import { getSortedPostsData } from '@/lib/posts';
+import { getSortedPosts } from '@/lib/posts';
 
 import BlogContents from '@/contents/blog';
 import Page from '@/contents-layouts/Page';
@@ -22,7 +22,7 @@ function Blog({ posts }: BlogProps) {
 }
 
 export const getStaticProps: GetStaticProps<BlogProps> = async () => {
-  const allPostsData = getSortedPostsData();
+  const allPostsData = getSortedPosts();
 
   return {
     props: {
