@@ -36,8 +36,8 @@ function BlogContents({ posts }: BlogContentsProps) {
               >
                 <div
                   className={clsx(
-                    'mt-14 w-8 -translate-y-1 border-b border-divider-light',
-                    'md:mt-16 md:w-20',
+                    'mt-14 hidden w-8 -translate-y-1 border-b border-divider-light',
+                    'md:mt-16 md:block md:w-20',
                     'dark:border-divider-dark'
                   )}
                 />
