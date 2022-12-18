@@ -4,7 +4,7 @@ import rehypePrism from 'rehype-prism-plus';
 import remarkFrontmatter from 'remark-frontmatter';
 
 import withLayout from './remark/withLayout.mjs';
-import withRestrictedFrontMatter from './remark/withRestrictedFrontMatter.mjs';
+import withFrontMatter from './remark/withFrontMatter.mjs';
 import withRestrictedHeading from './remark/withRestrictedHeading.mjs';
 
 /** @type {import('next').NextConfig} */
@@ -31,7 +31,7 @@ const withMDX = nextMDX({
   options: {
     remarkPlugins: [
       remarkFrontmatter,
-      withRestrictedFrontMatter,
+      withFrontMatter,
       withRestrictedHeading,
       withLayout,
     ],

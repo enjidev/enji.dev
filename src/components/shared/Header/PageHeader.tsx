@@ -11,15 +11,11 @@ const animation = {
 
 interface PageHeaderProps {
   title: string;
-  description?: string;
+  description: string;
   caption?: string;
 }
 
-function PageHeader({
-  title,
-  description = '',
-  caption = '',
-}: PageHeaderProps) {
+function PageHeader({ title, description, caption = '' }: PageHeaderProps) {
   return (
     <header
       id="page-header"
@@ -62,23 +58,21 @@ function PageHeader({
             {title}
           </h1>
         </m.div>
-        {description && (
-          <m.div
-            initial={animation.hide}
-            animate={animation.show}
-            transition={{ delay: 0.2 }}
+        <m.div
+          initial={animation.hide}
+          animate={animation.show}
+          transition={{ delay: 0.2 }}
+        >
+          <p
+            className={clsx(
+              'mt-4 text-lg text-slate-600',
+              'md:mt-6 md:text-2xl lg:max-w-[500px] xl:max-w-[700px]',
+              'dark:text-slate-400'
+            )}
           >
-            <p
-              className={clsx(
-                'mt-4 text-lg text-slate-600',
-                'md:mt-6 md:text-2xl lg:max-w-[500px] xl:max-w-[700px]',
-                'dark:text-slate-400'
-              )}
-            >
-              {description}
-            </p>
-          </m.div>
-        )}
+            {description}
+          </p>
+        </m.div>
       </div>
     </header>
   );

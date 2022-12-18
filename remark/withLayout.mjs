@@ -1,30 +1,24 @@
-import {
-  getFrontMatter,
-  getHeadings,
-  addImport,
-  addContent,
-} from './utils.mjs';
+import { getHeadings, addImport, addContent } from './utils.mjs';
 
 const withLayout = () => {
   return (tree, file) => {
-    const frontMatter = getFrontMatter(file.value);
+    const { layout, ...frontMatter } = file.data['front-matter'];
     const headings = getHeadings(tree);
 
-    // get content type
-    const type = frontMatter.type;
+    // import front-matter specified layout
+    addImport(tree, layout, `@/components/layouts/${layout}`);
 
-    addImport(tree, 'Page', '@/components/layouts/Page');
+    // export layout
     addContent(
       tree,
       `export default ({ children }) => (
-          <Page
-            type={${JSON.stringify(type)}}
-            frontMatter={${JSON.stringify(frontMatter)}}
-            tableOfContents={${JSON.stringify(headings)}}
-          >
-            {children}
-          </Page>
-        )`
+        <${layout}
+          frontMatter={${JSON.stringify(frontMatter)}}
+          tableOfContents={${JSON.stringify(headings)}}
+        >
+          {children}
+        </${layout}>
+       )`
     );
   };
 };
