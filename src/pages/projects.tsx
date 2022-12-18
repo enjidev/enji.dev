@@ -1,6 +1,5 @@
-import Page from '@/components/layouts/Page';
-
 import ProjectsContents from '@/contents/projects';
+import Page from '@/contents-layouts/Page';
 
 function Projects() {
   return (

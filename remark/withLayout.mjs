@@ -6,7 +6,7 @@ const withLayout = () => {
     const tableOfContents = getTableOfContents(tree);
 
     // import front-matter specified layout
-    addImport(tree, layout, `@/components/layouts/${layout}`);
+    addImport(tree, layout, `@/contents-layouts/${layout}`);
 
     // export layout
     addContent(

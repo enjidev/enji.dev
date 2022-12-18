@@ -6,8 +6,8 @@ const dateRegex = /^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$/;
 const BaseFrontMatter = z.object({
   title: z.string().max(110),
   description: z.string().max(120),
-  caption: z.string().optional(),
-  layout: z.string().default('Page'),
+  caption: z.string().default(''),
+  layout: z.string().default('Post'),
 });
 
 const PostFrontMatter = z.object({

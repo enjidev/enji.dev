@@ -1,8 +1,7 @@
-import Page from '@/components/layouts/Page';
-
 import { getSortedPostsData } from '@/lib/posts';
 
 import BlogContents from '@/contents/blog';
+import Page from '@/contents-layouts/Page';
 
 import type { BlogContentsProps } from '@/contents/blog';
 import type { GetStaticProps } from 'next';
