@@ -31,8 +31,6 @@ export type TPageOgImage = Partial<
 >;
 
 export type TPostFrontMatter = TBaseFrontMatter & {
-  title: string;
-  description: string;
   date: string;
   lang: 'id' | 'en';
   tags: Array<string>;
