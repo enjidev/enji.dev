@@ -2,6 +2,10 @@ import clsx from 'clsx';
 import { useState } from 'react';
 
 import TodoItem from '@/components/pages/index/Cards/TodoItem';
+import {
+  SectionButton,
+  SectionButtonSmall,
+} from '@/components/shared/SectionButton';
 import SectionContent from '@/components/shared/SectionContent';
 import SectionTitle from '@/components/shared/SectionTitle';
 
@@ -41,104 +45,7 @@ const content: Array<Content> = [
   },
 ];
 
-interface HeroButtonProps {
-  title: string;
-  description?: string;
-  step?: number;
-  active?: boolean;
-  onClick?: () => void;
-}
-
-function HeroButton({
-  title,
-  description = '',
-  step = 0,
-  active = false,
-  onClick = () => {},
-}: HeroButtonProps) {
-  return (
-    <button
-      type="button"
-      className={clsx(
-        'flex flex-1 items-center rounded-2xl border-2 bg-white p-4 text-left',
-        'dark:bg-slate-900',
-        active
-          ? ['border-accent-400', 'dark:border-accent-400']
-          : ['border-divider-light ', 'dark:border-divider-dark']
-      )}
-      onClick={onClick}
-    >
-      {step && (
-        <span
-          className={clsx(
-            'w-24 pr-4 text-center text-7xl font-black',
-            '',
-            active
-              ? ['text-accent-600', 'dark:text-accent-400']
-              : ['text-slate-400', 'dark:text-slate-600']
-          )}
-        >
-          {step}
-        </span>
-      )}
-      <span>
-        <span
-          className={clsx(
-            'block font-bold ',
-            active
-              ? ['text-accent-600', 'dark:text-accent-400']
-              : ['text-slate-700', 'dark:text-slate-200']
-          )}
-        >
-          {title}
-        </span>
-        {description && (
-          <span
-            className={clsx(
-              'mt-1 block text-sm text-slate-600',
-              'dark:text-slate-400'
-            )}
-          >
-            {description}
-          </span>
-        )}
-      </span>
-    </button>
-  );
-}
-
-function HeroButtonSmall({
-  title,
-  step = 0,
-  active = false,
-  onClick = () => {},
-}: Omit<HeroButtonProps, 'description'>) {
-  return (
-    <button
-      type="button"
-      className={clsx('flex flex-col items-center rounded-xl p-2 text-sm', [
-        active
-          ? ['text-accent-600', 'dark:text-accent-400']
-          : ['text-slate-400', 'dark:text-slate-600'],
-      ])}
-      onClick={onClick}
-    >
-      <span className={clsx('text-4xl font-black')}>{step}</span>
-      <span
-        className={clsx(
-          'font-medium',
-          active
-            ? ['text-accent-600', 'dark:text-accent-400']
-            : ['text-slate-500', 'dark:text-slate-400']
-        )}
-      >
-        {title}
-      </span>
-    </button>
-  );
-}
-
-function Hero() {
+function CleanIntuitive() {
   const [currentState, setCurrentState] = useState<Content | null>(null);
 
   return (
@@ -155,10 +62,10 @@ function Hero() {
         <div className={clsx('content-wrapper mb-4')}>
           <div className={clsx('-mx-2 mb-2 flex gap-2')}>
             {content.map((item, i) => (
-              <HeroButtonSmall
+              <SectionButtonSmall
                 key={item.state}
                 title={item.title}
-                step={i + 1}
+                icon={i + 1}
                 active={currentState?.state === item.state}
                 onClick={() => setCurrentState(item)}
               />
@@ -184,11 +91,11 @@ function Hero() {
             className={clsx('-mt-8 hidden flex-1 flex-col gap-3', 'lg:flex')}
           >
             {content.map((item, i) => (
-              <HeroButton
+              <SectionButton
                 key={item.state}
                 title={item.title}
                 description={item.description}
-                step={i + 1}
+                icon={i + 1}
                 active={currentState?.state === item.state}
                 onClick={() => setCurrentState(item)}
               />
@@ -226,4 +133,4 @@ function Hero() {
   );
 }
 
-export default Hero;
+export default CleanIntuitive;

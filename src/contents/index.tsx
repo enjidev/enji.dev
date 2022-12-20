@@ -1,8 +1,8 @@
 import clsx from 'clsx';
 
+import CleanIntuitive from '@/components/pages/index/CleanIntuitive';
 import FeaturedCard from '@/components/pages/index/FeaturedCard';
 import Header from '@/components/pages/index/Header';
-import Hero from '@/components/pages/index/Hero';
 import Quote from '@/components/pages/index/Quote';
 import { CodeIcon, HeartIcon, SparklesIcon } from '@/components/shared/Icons';
 
@@ -71,7 +71,7 @@ function IndexContents() {
         </div>
       </div>
       <div className={clsx('mb-24', 'lg:mb-36')}>
-        <Hero />
+        <CleanIntuitive />
       </div>
     </>
   );
