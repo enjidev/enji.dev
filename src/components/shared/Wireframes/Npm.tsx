@@ -1,16 +1,19 @@
 import clsx from 'clsx';
 
-import {
-  SkeletonMd,
-  SkeletonSm,
-} from '@/components/shared/Wireframes/Skeletons';
+import { TypeScriptIcon } from '@/components/shared/Icons';
+import { SkeletonSm } from '@/components/shared/Wireframes/Skeletons';
 
 interface NpmWireframeProps {
   packageName: string;
   description: string;
+  isWithTypeScript?: boolean;
 }
 
-function NpmWireframe({ packageName, description }: NpmWireframeProps) {
+function NpmWireframe({
+  packageName,
+  description,
+  isWithTypeScript = false,
+}: NpmWireframeProps) {
   return (
     <div
       className={clsx(
@@ -20,7 +23,11 @@ function NpmWireframe({ packageName, description }: NpmWireframeProps) {
     >
       <div className={clsx('flex items-center gap-2 text-lg font-bold')}>
         {packageName}
-        <SkeletonMd />
+        {isWithTypeScript && (
+          <div className={clsx('')}>
+            <TypeScriptIcon className={clsx('ml-1 h-5 w-5')} />
+          </div>
+        )}
       </div>
       <div
         className={clsx('mt-2 flex items-center gap-2 text-lg text-slate-400')}
