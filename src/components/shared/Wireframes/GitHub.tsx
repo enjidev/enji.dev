@@ -4,14 +4,16 @@ import { SkeletonSm } from '@/components/shared/Wireframes/Skeletons';
 
 interface GithubWireframeProps {
   author?: string;
+  license?: string;
   repository: string;
   description: string;
 }
 
 function GitHubWireframe({
+  author = '',
+  license = '',
   repository,
   description,
-  author = '',
 }: GithubWireframeProps) {
   return (
     <div
@@ -53,9 +55,15 @@ function GitHubWireframe({
         <p>{description}</p>
       </div>
       <div className={clsx('mt-6 flex flex-col gap-3')}>
-        <div className={clsx('flex items-center gap-1')}>
+        <div className={clsx('flex items-center gap-2')}>
           <SkeletonSm />
-          <SkeletonSm w={64} />
+          {license ? (
+            <div className={clsx('')}>
+              <p>{license} license</p>
+            </div>
+          ) : (
+            <SkeletonSm w={64} />
+          )}
         </div>
         <div className={clsx('flex items-center gap-3')}>
           <div className={clsx('flex items-center gap-1')}>
