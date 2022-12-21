@@ -14,7 +14,6 @@ function ProjectsContents() {
 
   return (
     <>
-      <div className={clsx('mt-20')} />
       <SectionTitle
         title="The dynamic accent colors."
         caption="tailwindcss-accent"
