@@ -54,6 +54,7 @@ function HeaderTitle() {
                 rotate: 0,
               });
             }}
+            priority
           />
         </m.div>
       </m.div>

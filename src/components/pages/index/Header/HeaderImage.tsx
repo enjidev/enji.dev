@@ -33,7 +33,11 @@ function HeaderImage() {
             src="/me.png"
             width={457}
             height={526}
-            className={clsx('max-w-none', 'dark:brightness-[.82]')}
+            className={clsx(
+              'hidden max-w-none',
+              'lg:block',
+              'dark:brightness-[.82]'
+            )}
             quality={100}
             onLoadingComplete={() => {
               controls.start({
@@ -41,6 +45,7 @@ function HeaderImage() {
                 x: 0,
               });
             }}
+            priority
           />
         </m.div>
       </div>
