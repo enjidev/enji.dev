@@ -6,7 +6,7 @@ function PrettyOptimized() {
   return (
     <div className={clsx('mb-8')}>
       <SectionTitle
-        title="Aesthetically Pleasing, Optimized Code."
+        title="Comprehensible, Optimized Code."
         caption="Pretty & Optimized"
         description="Writing clean code is a top priority while keeping it as optimized as possible."
       />
