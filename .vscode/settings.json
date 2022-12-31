@@ -6,5 +6,10 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "files.associations": {
     "*.css": "postcss"
+  },
+  "files.exclude": {
+    "**/.next": true,
+    "**/.turbo": true,
+    "**/node_modules": true
   }
 }
