@@ -1,20 +1,17 @@
-import fm from 'front-matter';
-import slug from 'slug';
 import { Parser } from 'acorn';
 import acornJsx from 'acorn-jsx';
+import fm from 'front-matter';
+import slug from 'slug';
 
 const ParserWithJSX = Parser.extend(acornJsx());
 
-const parse = (content) => {
-  return ParserWithJSX.parse(content, {
+const parse = (content) =>
+  ParserWithJSX.parse(content, {
     ecmaVersion: 2020,
     sourceType: 'module',
   });
-};
 
-export const getFrontMatter = (content) => {
-  return fm(content).attributes;
-};
+export const getFrontMatter = (content) => fm(content).attributes;
 
 export const addImport = (tree, name, location) => {
   tree.children.unshift({
@@ -38,11 +35,11 @@ export const getTableOfContents = (tree) => {
   const contents = [];
 
   for (let nodeIndex = 0; nodeIndex < tree.children.length; nodeIndex++) {
-    let node = tree.children[nodeIndex];
+    const node = tree.children[nodeIndex];
 
     if (node.type === 'heading' && [2, 3].includes(node.depth)) {
-      let depth = node.depth - 1;
-      let title = node.children
+      const depth = node.depth - 1;
+      const title = node.children
         .filter((n) => n.type === 'text')
         .map((n) => n.value)
         .join('');

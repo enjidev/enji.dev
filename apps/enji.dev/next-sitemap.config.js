@@ -5,15 +5,13 @@ module.exports = {
   generateRobotsTxt: true,
   generateIndexSitemap: false,
   transform: async (config, path) => {
-    const defaultValue = (priority) => {
-      return {
-        loc: path,
-        changefreq: config.changefreq,
-        priority: priority || config.priority,
-        lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
-        alternateRefs: config.alternateRefs ?? [],
-      };
-    };
+    const defaultValue = (priority) => ({
+      loc: path,
+      changefreq: config.changefreq,
+      priority: priority || config.priority,
+      lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
+      alternateRefs: config.alternateRefs ?? [],
+    });
 
     if (path === '/') {
       return defaultValue(1.0);

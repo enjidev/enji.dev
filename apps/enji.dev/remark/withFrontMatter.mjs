@@ -1,7 +1,8 @@
 import { z } from 'zod';
+
 import { getFrontMatter } from './utils.mjs';
 
-const dateRegex = /^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$/;
+const dateRegex = /^\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$/;
 
 const BaseFrontMatter = z.object({
   title: z.string().max(110),
@@ -24,35 +25,37 @@ const validate = (schema, data) => {
     if (err instanceof z.ZodError) {
       throw new Error(JSON.stringify(err.issues, null, 2));
     }
+
+    return null;
   }
 };
 
-const withFrontMatter = () => {
-  return (_tree, file) => {
-    const data = getFrontMatter(file.value);
-    const base = validate(BaseFrontMatter, data);
+const withFrontMatter = () => (_tree, file) => {
+  const data = getFrontMatter(file.value);
+  const base = validate(BaseFrontMatter, data);
 
-    let frontMatter;
+  let frontMatter;
 
-    switch (base.layout) {
-      /**
-       * Specific post frontMatter
-       */
-      case 'Post':
-        const post = validate(PostFrontMatter, data);
-        frontMatter = { ...base, ...post };
-        break;
-
-      /**
-       * Default frontMatter
-       */
-      default:
-        frontMatter = base;
-        break;
+  switch (base.layout) {
+    /**
+     * Specific post frontMatter
+     */
+    case 'Post': {
+      const post = validate(PostFrontMatter, data);
+      frontMatter = { ...base, ...post };
+      break;
     }
+    /**
+     * Default frontMatter
+     */
+    default: {
+      frontMatter = base;
+      break;
+    }
+  }
 
-    file.data['front-matter'] = frontMatter;
-  };
+  // eslint-disable-next-line no-param-reassign
+  file.data['front-matter'] = frontMatter;
 };
 
 export default withFrontMatter;

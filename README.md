@@ -1,3 +1,3 @@
 <div align="center">
-  <h1>enji.dev</h1>
+  <h1>enji.dev monorepo</h1>
 </div>

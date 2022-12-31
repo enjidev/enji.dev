@@ -4,20 +4,18 @@ import rehypePrism from 'rehype-prism-plus';
 import remarkFrontmatter from 'remark-frontmatter';
 
 import withFrontMatter from './remark/withFrontMatter.mjs';
-import withStrict from './remark/withStrict.mjs';
 import withLayout from './remark/withLayout.mjs';
+import withStrict from './remark/withStrict.mjs';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  redirects: async () => {
-    return [
-      {
-        source: '/work',
-        destination: '/work/skills-and-tools',
-        permanent: false,
-      },
-    ];
-  },
+  redirects: async () => [
+    {
+      source: '/work',
+      destination: '/work/skills-and-tools',
+      permanent: false,
+    },
+  ],
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
   reactStrictMode: true,
 };
