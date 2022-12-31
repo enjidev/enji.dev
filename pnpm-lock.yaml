@@ -64,7 +64,7 @@ importers:
       concurrently: ^7.6.0
       cross-env: ^7.0.3
       dayjs: ^1.11.6
-      framer-motion: 7.7.0
+      framer-motion: 8.0.2
       front-matter: ^4.0.2
       mini-svg-data-uri: ^1.4.4
       next: 13.0.0
@@ -95,7 +95,7 @@ importers:
       acorn-jsx: 5.3.2_acorn@8.8.1
       clsx: 1.2.1
       dayjs: 1.11.7
-      framer-motion: 7.7.0_biqbaboplfbrettd7655fr4n2y
+      framer-motion: 8.0.2_biqbaboplfbrettd7655fr4n2y
       front-matter: 4.0.2
       next: 13.0.0_biqbaboplfbrettd7655fr4n2y
       next-themes: 0.2.1_r5sq4deac3rmm2d5onhwvomqve
@@ -316,8 +316,8 @@ packages:
       tslib: 2.4.1
     dev: false
 
-  /@motionone/dom/10.13.1:
-    resolution: {integrity: sha512-zjfX+AGMIt/fIqd/SL1Lj93S6AiJsEA3oc5M9VkUr+Gz+juRmYN1vfvZd6MvEkSqEjwPQgcjN7rGZHrDB9APfQ==}
+  /@motionone/dom/10.15.3:
+    resolution: {integrity: sha512-FQ7a2zMBXc1UeU8CG9G3yDpst55fbb0+C9A0VGfwOITitBCzigKZnXRgsRSWWR+FW57GSc13eGQxtYB0lKG0Ng==}
     dependencies:
       '@motionone/animation': 10.15.1
       '@motionone/generators': 10.15.1
@@ -2148,27 +2148,19 @@ packages:
     resolution: {integrity: sha512-MhLuK+2gUcnZe8ZHlaaINnQLl0xRIGRfcGk2yl8xoQAfHrSsL3rYu6FCmBdkdbhc9EPlwyGHewaRsvwRMJtAlA==}
     dev: true
 
-  /framer-motion/7.7.0_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-2QBUM+LanbQz6g6OCvkOjyI1nvvKNEtaBIr+LO4vK1hN88T2Jh7jIZmL/tdKb2NLnbhJwcfWGwSijrG36sbgcQ==}
+  /framer-motion/8.0.2_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-xuIiQchVh/cLqUzzu5/8ok4o0nkwYPyIRtkDl8wDvrQUNRhSfRaZu1MMdzN0TjpBtG66oP03PSLO7Qtu1YqPrA==}
     peerDependencies:
       react: ^18.0.0
       react-dom: ^18.0.0
     dependencies:
-      '@motionone/dom': 10.13.1
-      framesync: 6.1.2
+      '@motionone/dom': 10.15.3
       hey-listen: 1.0.8
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
-      style-value-types: 5.1.2
       tslib: 2.4.0
     optionalDependencies:
       '@emotion/is-prop-valid': 0.8.8
-    dev: false
-
-  /framesync/6.1.2:
-    resolution: {integrity: sha512-jBTqhX6KaQVDyus8muwZbBeGGP0XgujBRbQ7gM7BRdS3CadCZIHiawyzYLnafYcvZIh5j8WE7cxZKFn7dXhu9g==}
-    dependencies:
-      tslib: 2.4.0
     dev: false
 
   /front-matter/4.0.2:
@@ -3952,13 +3944,6 @@ packages:
     resolution: {integrity: sha512-CzFnRRXhzWIdItT3OmF8SQfWyahHhjq3HwcMNCNLn+N7klOOqPjMeG/4JSu77D7ypZdGvSzvkrbyeTMizz2VrA==}
     dependencies:
       inline-style-parser: 0.1.1
-    dev: false
-
-  /style-value-types/5.1.2:
-    resolution: {integrity: sha512-Vs9fNreYF9j6W2VvuDTP7kepALi7sk0xtk2Tu8Yxi9UoajJdEVpNpCov0HsLTqXvNGKX+Uv09pkozVITi1jf3Q==}
-    dependencies:
-      hey-listen: 1.0.8
-      tslib: 2.4.0
     dev: false
 
   /styled-jsx/5.1.0_react@18.2.0:
