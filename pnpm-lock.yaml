@@ -5,13 +5,13 @@ importers:
   .:
     specifiers:
       '@next/eslint-plugin-next': ^13.1.1
-      '@typescript-eslint/eslint-plugin': ^5.46.1
-      '@typescript-eslint/parser': ^5.46.1
-      eslint: ^8.0.0
+      '@typescript-eslint/eslint-plugin': ^5.47.1
+      '@typescript-eslint/parser': ^5.47.1
+      eslint: ^8.30.0
       eslint-config-airbnb: ^19.0.4
       eslint-config-airbnb-base: ^15.0.0
       eslint-config-airbnb-typescript: ^17.0.0
-      eslint-config-next: ^13.0.0
+      eslint-config-next: ^13.1.1
       eslint-config-prettier: ^8.5.0
       eslint-config-turbo: latest
       eslint-plugin-import: ^2.26.0
@@ -19,8 +19,8 @@ importers:
       eslint-plugin-react: ^7.31.11
       eslint-plugin-react-hooks: ^4.6.0
       eslint-plugin-simple-import-sort: ^8.0.0
-      prettier: ^2.7.1
-      prettier-plugin-tailwindcss: ^0.2.0
+      prettier: ^2.8.1
+      prettier-plugin-tailwindcss: ^0.2.1
       turbo: latest
     devDependencies:
       '@next/eslint-plugin-next': 13.1.1
@@ -38,39 +38,39 @@ importers:
       eslint-plugin-react: 7.31.11_eslint@8.30.0
       eslint-plugin-react-hooks: 4.6.0_eslint@8.30.0
       eslint-plugin-simple-import-sort: 8.0.0_eslint@8.30.0
-      prettier: 2.8.0
-      prettier-plugin-tailwindcss: 0.2.1_prettier@2.8.0
+      prettier: 2.8.1
+      prettier-plugin-tailwindcss: 0.2.1_prettier@2.8.1
       turbo: 1.6.3
 
   apps/enji.dev:
     specifiers:
-      '@headlessui/react': ^1.7.4
-      '@mdx-js/loader': ^2.1.5
-      '@mdx-js/react': ^2.1.5
-      '@next/bundle-analyzer': ^13.0.3
-      '@next/font': ^13.0.0
-      '@next/mdx': ^13.0.5
+      '@headlessui/react': ^1.7.7
+      '@mdx-js/loader': ^2.2.1
+      '@mdx-js/react': ^2.2.1
+      '@next/bundle-analyzer': ^13.1.1
+      '@next/font': ^13.1.1
+      '@next/mdx': ^13.1.1
       '@types/mdx': ^2.0.3
       '@types/node': 18.11.18
       '@types/react': ^18.0.26
-      '@types/react-dom': ^18.0.9
+      '@types/react-dom': ^18.0.10
       '@types/slug': ^5.0.3
-      '@vercel/analytics': ^0.1.5
+      '@vercel/analytics': ^0.1.6
       '@vercel/og': ^0.0.21
       acorn: ^8.8.1
       acorn-jsx: ^5.3.2
-      autoprefixer: ^10.4.12
+      autoprefixer: ^10.4.13
       clsx: ^1.2.1
       concurrently: ^7.6.0
       cross-env: ^7.0.3
-      dayjs: ^1.11.6
+      dayjs: ^1.11.7
       framer-motion: 7.7.0
       front-matter: ^4.0.2
       mini-svg-data-uri: ^1.4.4
-      next: 13.1.1
-      next-sitemap: ^3.1.42
+      next: ^13.1.1
+      next-sitemap: ^3.1.43
       next-themes: ^0.2.1
-      postcss: ^8.4.18
+      postcss: ^8.4.20
       react: ^18.2.0
       react-dom: ^18.2.0
       rehype-prism-plus: ^1.5.0
@@ -111,7 +111,7 @@ importers:
       '@types/mdx': 2.0.3
       '@types/node': 18.11.18
       '@types/react': 18.0.26
-      '@types/react-dom': 18.0.9
+      '@types/react-dom': 18.0.10
       '@types/slug': 5.0.3
       autoprefixer: 10.4.13_postcss@8.4.20
       concurrently: 7.6.0
@@ -613,8 +613,8 @@ packages:
   /@types/prop-types/15.7.5:
     resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
 
-  /@types/react-dom/18.0.9:
-    resolution: {integrity: sha512-qnVvHxASt/H7i+XG1U1xMiY5t+IHcPGUK7TDMDzom08xa7e86eCeKOiLZezwCKVxJn6NEiiy2ekgX8aQssjIKg==}
+  /@types/react-dom/18.0.10:
+    resolution: {integrity: sha512-E42GW/JA4Qv15wQdqJq8DL4JhNpB3prJgjgapN3qJT9K2zO5IIAQh4VXvCEDupoqAwnz0cY4RlXeC/ajX5SFHg==}
     dependencies:
       '@types/react': 18.0.26
     dev: true
@@ -3453,17 +3453,17 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
-  /prettier-plugin-tailwindcss/0.2.1_prettier@2.8.0:
+  /prettier-plugin-tailwindcss/0.2.1_prettier@2.8.1:
     resolution: {integrity: sha512-aIO8IguumORyRsmT+E7JfJ3A9FEoyhqZR7Au7TBOege3VZkgMvHJMkufeYp4zjnDK2iq4ktkvGMNOQR9T8lisQ==}
     engines: {node: '>=12.17.0'}
     peerDependencies:
       prettier: '>=2.2.0'
     dependencies:
-      prettier: 2.8.0
+      prettier: 2.8.1
     dev: true
 
-  /prettier/2.8.0:
-    resolution: {integrity: sha512-9Lmg8hTFZKG0Asr/kW9Bp8tJjRVluO8EJQVfY2T7FMw9T5jy4I/Uvx0Rca/XWf50QQ1/SS48+6IJWnrb+2yemA==}
+  /prettier/2.8.1:
+    resolution: {integrity: sha512-lqGoSJBQNJidqCHE80vqZJHWHRFoNYsSpP9AjFhlhi9ODCJA541svILes/+/1GM3VaL/abZi7cpFzOpdR9UPKg==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
