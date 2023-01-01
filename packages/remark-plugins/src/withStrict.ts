@@ -1,3 +1,5 @@
+/* eslint-disable no-plusplus */
+
 const withStrict = () => (tree) => {
   for (let nodeIndex = 0; nodeIndex < tree.children.length; nodeIndex++) {
     const node = tree.children[nodeIndex];

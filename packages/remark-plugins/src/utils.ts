@@ -1,3 +1,5 @@
+/* eslint-disable no-plusplus */
+
 import { Parser } from 'acorn';
 import acornJsx from 'acorn-jsx';
 import fm from 'front-matter';
