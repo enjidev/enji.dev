@@ -1,4 +1,4 @@
-import { addContent, addImport, getTableOfContents } from './utils.mjs';
+import { addContent, addImport, getTableOfContents } from './utils';
 
 const withLayout = () => (tree, file) => {
   const { layout, ...frontMatter } = file.data['front-matter'];

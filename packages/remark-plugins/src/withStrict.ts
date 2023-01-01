@@ -1,4 +1,4 @@
-const withRestrictedHeading = () => (tree) => {
+const withStrict = () => (tree) => {
   for (let nodeIndex = 0; nodeIndex < tree.children.length; nodeIndex++) {
     const node = tree.children[nodeIndex];
 
@@ -12,4 +12,4 @@ const withRestrictedHeading = () => (tree) => {
   }
 };
 
-export default withRestrictedHeading;
+export default withStrict;

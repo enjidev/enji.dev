@@ -1,6 +1,10 @@
 const GLOBAL_RULES = {
   'no-plusplus': 'off',
   'import/extensions': 'off',
+  'import/no-extraneous-dependencies': [
+    'error',
+    { devDependencies: ['**/*.config.{js,ts}'] },
+  ],
   'import/order': 'off',
   'import/prefer-default-export': 'off',
   'simple-import-sort/exports': 'warn',

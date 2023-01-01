@@ -1,11 +1,7 @@
 import bundeAnalyzer from '@next/bundle-analyzer';
 import nextMDX from '@next/mdx';
-import rehypePrism from 'rehype-prism-plus';
-import remarkFrontmatter from 'remark-frontmatter';
-
-import withFrontMatter from './remark/withFrontMatter.mjs';
-import withLayout from './remark/withLayout.mjs';
-import withStrict from './remark/withStrict.mjs';
+import rehypePlugins from 'rehype-plugins';
+import remarkPlugins from 'remark-plugins';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -27,8 +23,8 @@ const withBundleAnalyzer = bundeAnalyzer({
 const withMDX = nextMDX({
   extension: /\.mdx?$/,
   options: {
-    remarkPlugins: [remarkFrontmatter, withFrontMatter, withStrict, withLayout],
-    rehypePlugins: [rehypePrism],
+    remarkPlugins,
+    rehypePlugins,
     providerImportSource: '@mdx-js/react',
   },
 });

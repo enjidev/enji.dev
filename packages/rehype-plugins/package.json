@@ -1,0 +1,20 @@
+{
+  "name": "rehype-plugins",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "main": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsup --env.NODE_ENV production",
+    "dev": "tsup --watch"
+  },
+  "dependencies": {
+    "rehype-prism-plus": "^1.5.0"
+  },
+  "devDependencies": {
+    "tsconfig": "workspace:*",
+    "tsup": "^6.5.0",
+    "unified": "^10.1.2"
+  }
+}
