@@ -1,6 +1,5 @@
 /** @type {import('eslint').Linter.Config} */
 module.exports = {
-  root: true,
   plugins: ['@typescript-eslint', 'simple-import-sort'],
   extends: [
     'airbnb',
