@@ -22,16 +22,20 @@ export default function ImageSensitive({
       {!isShown && (
         <div
           className={clsx(
-            'border-divider-light absolute inset-0 z-10 flex items-center justify-center rounded-lg border bg-slate-100',
-            'dark:border-divider-dark dark:bg-slate-800'
+            'border-divider-light background-grid absolute inset-0 z-10 flex items-center justify-center rounded-lg border',
+            'dark:border-divider-dark'
           )}
         >
-          <div className={clsx('flex flex-col items-center gap-2')}>
+          <div
+            className={clsx(
+              'flex flex-col items-center gap-2 px-4 text-center'
+            )}
+          >
             <div className={clsx('font-bold')}>
-              WARNING: {message || 'Sensitive Content'}
+              {message || 'Sensitive Content'}
             </div>
             <p className={clsx('text-sm')}>
-              This image is flagged as sensitive content.
+              WARNING: This image is flagged as sensitive content.
             </p>
             <button
               type="button"
