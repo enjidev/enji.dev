@@ -11,15 +11,13 @@ interface PageWithMDXProps {
 
 function PageWithMDX({ tableOfContents, children }: PageWithMDXProps) {
   return (
-    <div
-      className={clsx('content-wrapper overflow-hidden', 'lg:overflow-visible')}
-    >
+    <div className={clsx('content-wrapper')}>
       <div className={clsx('flex flex-row-reverse gap-8', 'xl:gap-24')}>
         <div className={clsx('-mt-36 hidden', 'lg:block')}>
           <TableOfContents items={tableOfContents} />
         </div>
         <div
-          className={clsx('mdx-contents flex-1 scroll-mt-[86px]')}
+          className={clsx('mdx-contents flex-1 scroll-mt-[86px] overflow-auto')}
           id="main-contents"
           data-ss-wrapper
         >
