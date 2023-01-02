@@ -52,7 +52,7 @@ export default function ImageSensitive({
           </div>
         </div>
       )}
-      <Image backdrop={isShown} {...props} />
+      <Image {...props} />
     </div>
   );
 }
