@@ -136,7 +136,7 @@
     }
 
     pre {
-      @apply my-6 overflow-auto rounded-xl p-4;
+      @apply my-6 max-w-full overflow-auto rounded-xl p-4;
     }
 
     hr {

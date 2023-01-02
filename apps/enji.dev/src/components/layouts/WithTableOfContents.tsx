@@ -17,7 +17,7 @@ function PageWithMDX({ tableOfContents, children }: PageWithMDXProps) {
           <TableOfContents items={tableOfContents} />
         </div>
         <div
-          className={clsx('mdx-contents flex-1 scroll-mt-[86px] overflow-auto')}
+          className={clsx('mdx-contents min-w-0 flex-1 scroll-mt-[86px]')}
           id="main-contents"
           data-ss-wrapper
         >
