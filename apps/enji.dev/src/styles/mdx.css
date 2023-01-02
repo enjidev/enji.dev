@@ -14,7 +14,7 @@
         @apply relative;
 
         &::before {
-          @apply absolute inset-0 -inset-x-2 z-[-1] origin-left scale-x-0 bg-accent-400/60 content-[''];
+          @apply bg-accent-400/60 absolute inset-0 -inset-x-2 z-[-1] origin-left scale-x-0 content-[''];
           @apply dark:bg-accent-900/60;
         }
       }
@@ -36,7 +36,7 @@
         @apply flex items-center gap-4;
 
         a {
-          @apply hidden cursor-pointer items-center justify-center rounded-lg border border-divider-light bg-slate-100/50 opacity-0;
+          @apply border-divider-light hidden cursor-pointer items-center justify-center rounded-lg border bg-slate-100/50 opacity-0;
           @apply lg:flex;
           @apply dark:border-divider-dark dark:bg-slate-200/5;
           @apply lg:focus:opacity-100;
@@ -75,7 +75,7 @@
     }
 
     .link {
-      @apply relative inline-flex items-center gap-1 text-accent-600;
+      @apply text-accent-600 relative inline-flex items-center gap-1;
       @apply dark:text-accent-400;
 
       &:hover {
@@ -85,8 +85,22 @@
       }
 
       &::after {
-        @apply absolute bottom-1 left-0 right-0 z-[-1] h-2 origin-bottom scale-y-[.4] bg-accent-600/20 transition-transform content-[''];
+        @apply bg-accent-600/20 absolute bottom-1 left-0 right-0 z-[-1] h-2 origin-bottom scale-y-[.4] transition-transform content-[''];
       }
+    }
+
+    .custom-image-sensitive {
+      @apply my-4;
+      @apply md:my-6;
+
+      .custom-image {
+        @apply m-0;
+      }
+    }
+
+    .custom-image {
+      @apply my-4;
+      @apply md:my-6;
     }
 
     p {
@@ -126,7 +140,7 @@
     }
 
     hr {
-      @apply my-8 border-divider-light;
+      @apply border-divider-light my-8;
       @apply md:my-12;
       @apply dark:border-divider-dark;
 
