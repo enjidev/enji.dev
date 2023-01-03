@@ -5,6 +5,9 @@ import SkipNavigation from '@/components/shared/Navigation/SkipNavigation';
 
 import { getPostOgImageUrl, getPostStructuredData } from '@/helpers/post';
 
+import PostFooter from '@/contents-layouts/Post/PostFooter';
+import PostMeta from '@/contents-layouts/Post/PostMeta';
+
 import type { TPostFrontMatter, TTableOfContents } from '@/types';
 
 interface PostProps {
@@ -45,9 +48,11 @@ function Post({
       />
       <SkipNavigation />
       <PageHeader title={title} description={description} caption={caption} />
+      <PostMeta date={date} lang={lang} />
       <WithTableOfContents tableOfContents={tableOfContents}>
         {children}
       </WithTableOfContents>
+      <PostFooter tags={tags} category={category} />
     </>
   );
 }
