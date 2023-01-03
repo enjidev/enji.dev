@@ -90,7 +90,7 @@
     }
 
     .custom-image-sensitive {
-      @apply my-4;
+      @apply my-4 mx-auto max-w-fit;
       @apply md:my-6;
 
       .custom-image {
@@ -99,7 +99,7 @@
     }
 
     .custom-image {
-      @apply my-4;
+      @apply my-4 mx-auto max-w-fit;
       @apply md:my-6;
     }
 
