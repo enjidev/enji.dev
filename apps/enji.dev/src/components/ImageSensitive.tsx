@@ -52,7 +52,7 @@ export default function ImageSensitive({
           </div>
         </div>
       )}
-      <Image {...props} />
+      <Image immersive={isShown} {...props} />
     </div>
   );
 }
