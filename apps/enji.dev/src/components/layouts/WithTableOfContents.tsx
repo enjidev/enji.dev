@@ -11,7 +11,7 @@ interface PageWithMDXProps {
 
 function PageWithMDX({ tableOfContents, children }: PageWithMDXProps) {
   return (
-    <div className={clsx('content-wrapper')}>
+    <div className={clsx('content-wrapper overflow-hidden')}>
       <div className={clsx('flex flex-row-reverse gap-8', 'xl:gap-24')}>
         <div className={clsx('-mt-36 hidden', 'lg:block')}>
           <TableOfContents items={tableOfContents} />
