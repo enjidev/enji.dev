@@ -59,8 +59,8 @@ function NavLinkDropdown({ title, items }: NavLinkDropdownProps) {
                 initial="hide"
                 animate="show"
                 className={clsx(
-                  'absolute top-11 z-40 flex w-40 flex-col rounded-2xl border border-divider-light bg-white p-2',
-                  'dark:border-divider-dark dark:bg-slate-900'
+                  'border-divider-light absolute top-11 z-40 flex w-40 flex-col rounded-2xl border bg-white/70 p-2 backdrop-blur',
+                  'dark:border-divider-dark dark:bg-slate-900/80'
                 )}
               >
                 {items.map((item) => (
