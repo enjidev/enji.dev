@@ -16,8 +16,8 @@ export default function Image({ immersive = true, src, ...props }: ImageProps) {
         <div
           style={{ backgroundImage: `url(${src})` }}
           className={clsx(
-            'absolute -inset-8 z-[-1] rounded-[20%] bg-[length:180%_180%] bg-center opacity-50 blur-2xl',
-            'dark:opacity-25'
+            'absolute -inset-8 z-[-1] hidden rounded-[20%] bg-[length:180%_180%] bg-center opacity-50 blur-2xl',
+            'dark:block dark:opacity-25'
           )}
         />
       ) : null}
