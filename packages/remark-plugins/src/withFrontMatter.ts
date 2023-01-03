@@ -18,6 +18,12 @@ const PostFrontMatter = z.object({
   category: z.string(),
 });
 
+const ProjectFrontMatter = z.object({
+  githubUrl: z.string().url().optional(),
+  npmUrl: z.string().url().optional(),
+  type: z.enum(['package']).default('package'),
+});
+
 const validate = (schema, data) => {
   try {
     return schema.parse(data);
@@ -43,6 +49,14 @@ const withFrontMatter = () => (_tree, file) => {
     case 'Post': {
       const post = validate(PostFrontMatter, data);
       frontMatter = { ...base, ...post };
+      break;
+    }
+    /**
+     * Specific project frontMatter
+     */
+    case 'Project': {
+      const project = validate(ProjectFrontMatter, data);
+      frontMatter = { ...base, ...project };
       break;
     }
     /**

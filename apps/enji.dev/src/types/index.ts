@@ -42,3 +42,9 @@ export type TPostOgImage = Partial<
 > & {
   aspectRatio?: '16/9' | '4/3' | '1/1';
 };
+
+export type TProjectFrontMatter = TBaseFrontMatter & {
+  githubUrl?: string;
+  npmUrl?: string;
+  type: 'package';
+};
