@@ -23,6 +23,8 @@ function Code() {
       initial="hide"
       animate="show"
       strokeWidth={16}
+      strokeLinecap="round"
+      strokeLinejoin="round"
       className={clsx(
         'stroke-accent-400 h-full opacity-20',
         'dark:stroke-accent-500 dark:opacity-5'
