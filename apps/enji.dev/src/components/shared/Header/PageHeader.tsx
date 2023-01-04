@@ -34,7 +34,7 @@ function PageHeader({
       {headerImage && (
         <div
           className={clsx(
-            'background-image background-image--fade-out absolute inset-0 hidden',
+            'background-image background-image--fade-out pointer-events-none absolute inset-0 hidden select-none',
             'lg:block'
           )}
         >
