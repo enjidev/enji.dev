@@ -13,18 +13,37 @@ interface PageHeaderProps {
   title: string;
   description: string;
   caption?: string;
+  headerImage?: React.ReactNode;
 }
 
-function PageHeader({ title, description, caption = '' }: PageHeaderProps) {
+function PageHeader({
+  title,
+  description,
+  caption = '',
+  headerImage = null,
+}: PageHeaderProps) {
   return (
     <header
       id="page-header"
       className={clsx(
-        'background-grid background-grid--fade-out z-[900] mb-10 border-b border-divider-light pt-32 pb-10',
+        'background-grid background-grid--fade-out border-divider-light z-[900] mb-10 border-b pt-32 pb-10',
         'md:mb-0 md:border-none md:pb-20 md:pt-40',
         'dark:border-divider-dark'
       )}
     >
+      {headerImage && (
+        <div
+          className={clsx(
+            'background-image background-image--fade-out absolute inset-0'
+          )}
+        >
+          <div className={clsx('content-wrapper relative h-full')}>
+            <div className={clsx('absolute right-0 -top-24 bottom-0')}>
+              {headerImage}
+            </div>
+          </div>
+        </div>
+      )}
       <div className={clsx('content-wrapper')}>
         {caption && (
           <m.div
@@ -34,7 +53,7 @@ function PageHeader({ title, description, caption = '' }: PageHeaderProps) {
           >
             <span
               className={clsx(
-                'mb-1 block text-lg font-extrabold capitalize leading-none text-accent-600',
+                'text-accent-600 mb-1 block text-lg font-extrabold capitalize leading-none',
                 'md:mb-0 md:text-2xl',
                 'dark:text-accent-400'
               )}

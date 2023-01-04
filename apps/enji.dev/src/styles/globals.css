@@ -29,7 +29,7 @@
   }
 
   :focus-visible {
-    @apply relative rounded-xl outline-none ring-2 ring-accent-400;
+    @apply ring-accent-400 relative rounded-xl outline-none ring-2;
   }
 
   ::selection {
@@ -53,7 +53,7 @@
     @apply dark:bg-[#0c1222];
 
     &::before {
-      @apply absolute inset-0 z-[-1] content-[''] bg-grid-slate-200/80;
+      @apply bg-grid-slate-200/80 absolute inset-0 z-[-1] content-[''];
       @apply dark:bg-grid-slate-50/[.025];
 
       mask-image: linear-gradient(transparent, black, transparent);
@@ -80,6 +80,12 @@
     }
   }
 
+  .background-image {
+    &--fade-out {
+      mask-image: linear-gradient(black, black, transparent);
+    }
+  }
+
   .button {
     @apply inline-flex h-10 items-center justify-center gap-1.5 rounded-md border border-transparent px-4 text-center text-sm font-bold transition duration-150;
     @apply md:rounded-xl;
@@ -97,8 +103,8 @@
     }
 
     &--soft {
-      @apply rounded-full bg-slate-100 bg-accent-600/[0.08] px-5 font-bold text-accent-600;
-      @apply dark:bg-accent-400/10 dark:font-semibold dark:text-accent-400;
+      @apply bg-accent-600/[0.08] text-accent-600 rounded-full bg-slate-100 px-5 font-bold;
+      @apply dark:bg-accent-400/10 dark:text-accent-400 dark:font-semibold;
     }
 
     &--big {
@@ -122,8 +128,8 @@
   }
 
   .nav-link {
-    @apply flex h-9 items-center gap-1 rounded-xl px-2 text-[13px] font-bold text-accent-600;
-    @apply dark:font-semibold dark:text-accent-400;
+    @apply text-accent-600 flex h-9 items-center gap-1 rounded-xl px-2 text-[13px] font-bold;
+    @apply dark:text-accent-400 dark:font-semibold;
 
     &:hover,
     &[aria-expanded='true'] {
@@ -132,7 +138,7 @@
     }
 
     &--label {
-      @apply rounded-full bg-slate-100 bg-accent-600/[0.08] px-5;
+      @apply bg-accent-600/[0.08] rounded-full px-5;
       @apply dark:bg-accent-400/10;
 
       svg {
@@ -173,8 +179,8 @@
   }
 
   .toc-link {
-    @apply relative z-10 flex p-1 px-2 text-[13px] font-bold text-slate-700 hover:text-accent-700;
-    @apply dark:font-semibold dark:text-slate-300 dark:hover:text-accent-300;
+    @apply hover:text-accent-700 relative z-10 flex p-1 px-2 text-[13px] font-bold text-slate-700;
+    @apply dark:hover:text-accent-300 dark:font-semibold dark:text-slate-300;
 
     &--depth-2 {
       @apply ml-4 font-normal text-slate-600;
