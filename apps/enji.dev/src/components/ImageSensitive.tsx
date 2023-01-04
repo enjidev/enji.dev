@@ -23,8 +23,9 @@ export default function ImageSensitive({
       <button
         type="button"
         className={clsx(
-          'border-divider-light absolute bottom-4 right-4 z-20 mt-4 flex h-9 items-center rounded-full border bg-white/70 px-4 text-sm',
-          'dark:bg-slate-900/80'
+          'border-divider-light absolute bottom-4 right-4 z-20 mt-4 flex h-8 items-center rounded-full border bg-white/70 px-4 text-sm',
+          'md:bottom-6 md:right-6',
+          'dark:border-divider-dark dark:bg-slate-900/80'
         )}
         onClick={() => setShown(!isShown)}
       >
