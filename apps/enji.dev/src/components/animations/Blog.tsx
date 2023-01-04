@@ -2,9 +2,9 @@ import clsx from 'clsx';
 import { m } from 'framer-motion';
 
 const animation = {
-  hide: { pathLength: 0 },
+  hide: { pathLength: 0.1 },
   show: (i) => {
-    const delay = i * 0.1;
+    const delay = 0.2 + i * 0.1;
     return {
       pathLength: 1,
       transition: {
@@ -22,10 +22,13 @@ function Blog() {
       fill="none"
       initial="hide"
       animate="show"
-      strokeWidth={6}
+      strokeWidth={2}
       strokeLinecap="round"
       strokeLinejoin="round"
-      className={clsx('stroke-accent-500 h-full opacity-10', 'dark:opacity-5')}
+      className={clsx(
+        'stroke-accent-500 -mt-16 h-full opacity-60',
+        'dark:opacity-40'
+      )}
     >
       <m.path
         variants={animation}

@@ -31,7 +31,10 @@ function HeaderImageAnimation({
       strokeWidth={1.5}
       strokeLinecap="round"
       strokeLinejoin="round"
-      className={clsx('stroke-accent-500 h-[526px] w-[457px]')}
+      className={clsx(
+        'stroke-accent-500 h-[526px] w-[457px] opacity-60',
+        'dark:opacity-40'
+      )}
       onAnimationComplete={onAnimationComplete}
     >
       <m.path
