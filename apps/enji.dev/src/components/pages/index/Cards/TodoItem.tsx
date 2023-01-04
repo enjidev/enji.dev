@@ -14,14 +14,14 @@ function TodoItem({ state }: TodoItemProps) {
       className={clsx(
         'w-full border p-6',
         'lg:w-96',
-        state.includes('effects') && [
-          'rounded-xl border-divider-light',
-          'dark:border-divider-dark',
-        ],
+        state.includes('effects') && ['rounded-xl '],
         state.includes('spacing') && [''],
         state.includes('typography') ? ['text-sm'] : ['font-serif'],
         state.includes('colors')
-          ? ['bg-white', 'dark:bg-slate-900']
+          ? [
+              'border-divider-light bg-white',
+              'dark:border-divider-dark dark:bg-slate-900',
+            ]
           : ['border-black bg-white', 'dark:border-white dark:bg-[#050914]']
       )}
       role="presentation"
