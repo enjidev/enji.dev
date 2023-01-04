@@ -1,4 +1,4 @@
-import Code from '@/components/animations/Code';
+import ProjectsAnimation from '@/components/animations/Projects';
 
 import ProjectsContents from '@/contents/projects';
 import Page from '@/contents-layouts/Page';
@@ -10,7 +10,7 @@ function Projects() {
         title: 'Projects',
         description: 'Showcase of my Front-End related work.',
       }}
-      headerImage={<Code />}
+      headerImage={<ProjectsAnimation />}
     >
       <ProjectsContents />
     </Page>

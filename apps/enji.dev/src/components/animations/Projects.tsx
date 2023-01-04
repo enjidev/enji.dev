@@ -14,7 +14,7 @@ const animation = {
   },
 };
 
-function Code() {
+function Projects() {
   return (
     <m.svg
       xmlns="http://www.w3.org/2000/svg"
@@ -22,13 +22,10 @@ function Code() {
       fill="none"
       initial="hide"
       animate="show"
-      strokeWidth={16}
+      strokeWidth={6}
       strokeLinecap="round"
       strokeLinejoin="round"
-      className={clsx(
-        'stroke-accent-400 h-full opacity-20',
-        'dark:stroke-accent-500 dark:opacity-5'
-      )}
+      className={clsx('stroke-accent-500 h-full opacity-10', 'dark:opacity-5')}
     >
       <m.rect
         x="254.558"
@@ -73,4 +70,4 @@ function Code() {
   );
 }
 
-export default Code;
+export default Projects;

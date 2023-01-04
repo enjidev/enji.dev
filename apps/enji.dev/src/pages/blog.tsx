@@ -1,4 +1,4 @@
-import Pen from '@/components/animations/Pen';
+import BlogAnimation from '@/components/animations/Blog';
 
 import { getSortedPosts } from '@/lib/posts';
 
@@ -17,7 +17,7 @@ function Blog({ posts }: BlogProps) {
         title: 'Personal Blog',
         description: 'Web development thoughts and stories.',
       }}
-      headerImage={<Pen />}
+      headerImage={<BlogAnimation />}
     >
       <BlogContents posts={posts} />
     </Page>

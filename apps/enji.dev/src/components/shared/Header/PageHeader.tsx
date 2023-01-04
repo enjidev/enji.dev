@@ -34,7 +34,8 @@ function PageHeader({
       {headerImage && (
         <div
           className={clsx(
-            'background-image background-image--fade-out absolute inset-0'
+            'background-image background-image--fade-out absolute inset-0 hidden',
+            'lg:block'
           )}
         >
           <div className={clsx('content-wrapper relative h-full')}>
