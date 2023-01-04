@@ -49,7 +49,7 @@ function AvailableForHire() {
   return (
     <div
       className={clsx(
-        'button button--ghost pointer-events-none gap-2.5 px-2.5 text-accent-500',
+        'button button--ghost text-accent-500 pointer-events-none gap-2.5 px-2.5',
         'md:button--big md:px-2.5',
         'dark:text-accent-400'
       )}
@@ -57,13 +57,13 @@ function AvailableForHire() {
       <span className={clsx('relative flex h-2 w-2')}>
         <span
           className={clsx(
-            'absolute -top-1 -left-1 inline-flex h-4 w-4 animate-ping rounded-full bg-accent-600 opacity-75',
+            'bg-accent-600 absolute -top-1 -left-1 inline-flex h-4 w-4 animate-ping rounded-full opacity-75',
             'dark:bg-accent-300'
           )}
         />
         <span
           className={clsx(
-            'relative inline-flex h-2 w-2 rounded-full bg-accent-500',
+            'bg-accent-500 relative inline-flex h-2 w-2 rounded-full',
             'dark:bg-accent-400'
           )}
         />
@@ -115,7 +115,7 @@ function HeaderCta({
       {isFree ? (
         <m.div
           variants={animation}
-          transition={{ delay: 1.5 }}
+          transition={{ delay: 2.8 }}
           className={clsx('relative z-10')}
         >
           <m.div
