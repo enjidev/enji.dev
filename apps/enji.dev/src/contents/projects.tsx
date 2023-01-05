@@ -17,9 +17,9 @@ function ProjectsContents() {
       <SectionTitle
         title="The dynamic accent colors."
         caption="tailwindcss-accent"
-        description="With tailwindcss-accent, you can add a dynamic accent color to your Tailwind CSS project."
+        description="Add accent colors for dynamic, flexible color use in your Tailwind CSS project."
         button={{
-          title: 'See More',
+          title: 'Read More',
           href: '/projects/tailwindcss-accent',
         }}
       />

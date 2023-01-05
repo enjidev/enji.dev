@@ -1,27 +1,25 @@
 ---
 title: tailwindcss-accent
-description: Adds accent colors for more dynamic and flexible color utilization.
+description: Add accent colors for dynamic, flexible color use in your Tailwind CSS project.
 caption: Plugin
 githubUrl: https://github.com/enjidev/tailwindcss-accent
 npmUrl: https://www.npmjs.com/package/tailwindcss-accent
 layout: Project
 ---
 
-This plugin creates a dynamic accent color using CSS custom properties based on the Tailwind CSS default color palette.
+This plugin creates **accent** colors using CSS custom properties based on the Tailwind CSS default color palette.
 
-Using this plugin will add an `accent` color classes to your Tailwind CSS project, for example: `bg-accent-500`, `dark:outline-accent-200`, etc.
-
-Tested with Tailwind CSS v2 and v3.
+> Has been tested with Tailwind CSS versions 2 and 3.
 
 ## Usage
 
-Install the plugin from npm:
+Install the plugin from npm
 
 ```bash
 npm install tailwindcss-accent
 ```
 
-Then add the plugin to your `tailwind.config.js` file:
+Add the plugin to your `tailwind.config.js` file
 
 ```js {4-11}
 // tailwind.config.js
@@ -39,34 +37,47 @@ module.exports = {
 };
 ```
 
-## Available Colors
+## Available colors
 
 Check the Tailwind CSS default [color palette](https://tailwindcss.com/docs/customizing-colors).
 
-## Example
+## How does it work?
 
-Add `data-accent` attribute to parent element, for example: `html` element.
+This plugin adds `accent` color utilities to your project, such as `bg-accent-500` and `dark:outline-accent-200/80`.
 
-```html
-<html data-accent="violet"></html>
-```
+The **accent** color will follow the value of the **nearest parent** element's `data-accent` attribute or the **element itself**.
 
-Let's use the `accent` color class on our component.
+Let the code speak:
 
 ```html
-<div class="text-accent-400">Hello, World!</div>
+<!-- default to :root -->
+<p class="text-accent-600">this text has a blue (:root) accent color.</p>
+
+<div data-accent="violet">
+  <!-- based on nearest parent element: violet. -->
+  <p class="text-accent-600">this text has a violet accent color.</p>
+
+  <!-- based on nearest parent element: violet. -->
+  <p class="text-accent-600">
+    this text has a violet
+
+    <!-- overrides the parent's accent color to blue. -->
+    <span data-accent="blue" class="text-accent-600">and blue</span>
+
+    accent color!
+  </p>
+</div>
 ```
 
-Note that based on the closest parent `data-accent` value, the current component will have a **violet-400** text color.
+[Try it on Tailwind Play](https://play.tailwindcss.com/D1HDP9fJhF)
 
-Then, somewhere on the button's click event:
+## Real-world example
 
-```js
-// change the data-accent html attribute value to blue
-document.documentElement.setAttribute('data-accent', 'blue');
-```
+This website uses this plugin. By default, all pages use the `violet` color, except for pages under the `work/` path, which have a `blue` accent color.
 
-The component will automatically change the text color from **violet-400** to **blue-400**.
+You can see the difference in the table of contents, header caption, text selection, links, etc.
+
+See the [configuration](https://github.com/enjidev/enji.dev/blob/a6078ba395ea65cc9c1a7ea524adb29b9580406d/apps/enji.dev/tailwind.config.js#L54-L57) file and [implementation](https://github.com/enjidev/enji.dev/blob/a6078ba395ea65cc9c1a7ea524adb29b9580406d/apps/enji.dev/src/providers/ColorAccentProvider.tsx#L18-L20) code for details.
 
 ## License
 
