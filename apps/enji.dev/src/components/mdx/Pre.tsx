@@ -34,7 +34,7 @@ export function Pre({ children, className, ...props }: PreProps) {
         'dark:border-slate-800 dark:bg-gray-900'
       )}
     >
-      <pre {...props} ref={codeRef}>
+      <pre className={className} {...props} ref={codeRef}>
         {children}
       </pre>
       <div

@@ -1,8 +1,20 @@
 pre {
-  @apply text-[14px] leading-normal;
+  @apply overflow-x-auto p-4 text-[14px] leading-normal;
 
   code {
     @apply font-normal text-slate-400;
+  }
+}
+
+.code-highlight {
+  @apply float-left min-w-full;
+
+  .code-line {
+    @apply block;
+
+    &.highlight-line {
+      @apply bg-accent-500/10 -mx-4 px-4;
+    }
   }
 }
 

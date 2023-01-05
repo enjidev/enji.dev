@@ -139,10 +139,6 @@
       @apply my-6;
     }
 
-    pre {
-      @apply max-w-full overflow-auto p-4;
-    }
-
     hr {
       @apply border-divider-light my-8;
       @apply md:my-12;
