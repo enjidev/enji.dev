@@ -20,6 +20,36 @@ pre {
   }
 
   &.attr-value {
+    @apply text-blue-300;
+  }
+
+  &.property {
+    @apply text-slate-200;
+  }
+
+  &.string {
+    @apply text-blue-300;
+  }
+
+  &.property-access {
     @apply text-blue-400;
+  }
+
+  &.function {
+    @apply text-purple-400;
+  }
+
+  &.comment {
+    @apply text-slate-500;
+  }
+}
+
+.language-bash {
+  @apply text-blue-300;
+
+  .token {
+    &.function {
+      @apply text-slate-300;
+    }
   }
 }
