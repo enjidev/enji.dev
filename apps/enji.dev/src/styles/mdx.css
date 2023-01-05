@@ -77,14 +77,14 @@
         }
       }
     }
-  }
 
-  blockquote {
-    @apply relative my-6 py-1 pl-6 text-slate-500;
+    blockquote {
+      @apply relative my-6 py-1 pl-6 text-slate-500;
 
-    &::before {
-      @apply absolute top-0 bottom-0 left-0 w-1 bg-slate-200 content-[''];
-      @apply dark:bg-slate-800;
+      &::before {
+        @apply absolute top-0 bottom-0 left-0 w-1 bg-slate-200 content-[''];
+        @apply dark:bg-slate-800;
+      }
     }
   }
 }
