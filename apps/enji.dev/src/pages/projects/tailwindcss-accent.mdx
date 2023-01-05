@@ -7,9 +7,13 @@ npmUrl: https://www.npmjs.com/package/tailwindcss-accent
 layout: Project
 ---
 
+import AccentDemo from '@/components/pages/projects/AccentDemo';
+
 This plugin creates **accent** colors using CSS custom properties based on the Tailwind CSS default color palette.
 
-> Has been tested with Tailwind CSS versions 2 and 3.
+> This plugin has been tested with Tailwind CSS versions 2 and 3.
+
+---
 
 ## Usage
 
@@ -21,8 +25,7 @@ npm install tailwindcss-accent
 
 Add the plugin to your `tailwind.config.js` file
 
-```js {4-11}
-// tailwind.config.js
+```js {3-10}
 module.exports = {
   plugins: [
     require('tailwindcss-accent')({
@@ -73,11 +76,27 @@ Let the code speak:
 
 ## Real-world example
 
-This website uses this plugin. By default, all pages use the `violet` color, except for pages under the `work/` path, which have a `blue` accent color.
+This website uses this plugin. By default, all pages use the `violet` accent color, except for pages under the `work/` path, which have a `blue` accent color.
 
 You can see the difference in the table of contents, header caption, text selection, links, etc.
 
 See the [configuration](https://github.com/enjidev/enji.dev/blob/a6078ba395ea65cc9c1a7ea524adb29b9580406d/apps/enji.dev/tailwind.config.js#L54-L57) file and [implementation](https://github.com/enjidev/enji.dev/blob/a6078ba395ea65cc9c1a7ea524adb29b9580406d/apps/enji.dev/src/providers/ColorAccentProvider.tsx#L18-L20) code for details.
+
+---
+
+Want to see something cool? Click this button and watch the accent colors on this page **change from violet to blue** or vice versa.
+
+<AccentDemo />
+
+And BOOM! the button doesn't change the colors of all components. This single line of code;
+
+```js
+document.documentElement.setAttribute('data-accent', newAccent);
+```
+
+does the magic by simply changing the html `data-accent` attribute value to the new accent color.
+
+Changing your website's accent color has never been this easy 🔥
 
 ## License
 
