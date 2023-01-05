@@ -18,7 +18,7 @@ export default function Image({
   const [image, setImage] = useState<string>('');
 
   return (
-    <div className={clsx('custom-image relative')}>
+    <div className={clsx('mdx-image relative')}>
       {immersive && image ? (
         <div
           style={{ backgroundImage: `url(${image})` }}

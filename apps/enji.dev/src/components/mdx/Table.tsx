@@ -9,7 +9,7 @@ type TableProps = DetailedHTMLProps<
 
 export function Table({ children }: TableProps) {
   return (
-    <div className={clsx('table')}>
+    <div className={clsx('mdx-table')}>
       <table>{children}</table>
     </div>
   );

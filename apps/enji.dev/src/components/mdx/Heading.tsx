@@ -19,14 +19,14 @@ export function H2({ children }: Props) {
       id={slug}
       data-ss={slug}
       data-ss-mt={96}
-      className={clsx('with-anchor group')}
+      className={clsx('mdx-heading mdx-heading--h2 group')}
     >
       <a
         href={`#${slug}`}
-        className={clsx('group-hover:opacity-100')}
+        className={clsx('mdx-heading__anchor group-hover:opacity-100')}
         aria-labelledby={slug}
       >
-        <HashtagIcon className={clsx('h-5 w-5')} />
+        <HashtagIcon />
       </a>
       <span>{children}</span>
     </h2>
@@ -41,14 +41,14 @@ export function H3({ children }: Props) {
       id={slug}
       data-ss={slug}
       data-ss-mt={96}
-      className={clsx('with-anchor group')}
+      className={clsx('mdx-heading mdx-heading--h3 group')}
     >
       <a
         href={`#${slug}`}
-        className={clsx('group-hover:opacity-100')}
+        className={clsx('mdx-heading__anchor group-hover:opacity-100')}
         aria-labelledby={slug}
       >
-        <HashtagIcon className={clsx('h-5 w-5')} />
+        <HashtagIcon />
       </a>
       <span>{children}</span>
     </h3>

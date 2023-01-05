@@ -19,7 +19,7 @@ export default function ImageSensitive({
   const [isShown, setShown] = useState<boolean>(false);
 
   return (
-    <div className={clsx('custom-image-sensitive relative')}>
+    <div className={clsx('mdx-image-sensitive relative')}>
       <button
         type="button"
         className={clsx(

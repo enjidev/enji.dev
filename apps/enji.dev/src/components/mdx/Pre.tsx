@@ -28,42 +28,25 @@ export function Pre({ children, className, ...props }: PreProps) {
   };
 
   return (
-    <div
-      className={clsx(
-        'code-block overflow-hidden rounded-xl border border-transparent bg-slate-800 text-slate-400 [color-scheme:dark]',
-        'dark:border-slate-800 dark:bg-gray-900'
-      )}
-    >
+    <div className={clsx('mdx-code-block')}>
       <pre className={className} {...props} ref={codeRef}>
         {children}
       </pre>
-      <div
-        className={clsx(
-          'flex items-center justify-end border-t border-t-slate-600 text-xs',
-          'dark:border-t-slate-800'
-        )}
-      >
+      <div className={clsx('mdx-code-block__toolbar')}>
         {language && (
           <>
-            <div className={clsx('flex h-8 items-center px-2')}>{language}</div>
-            <div
-              className={clsx(
-                'h-8 border-l border-slate-600',
-                'dark:border-slate-800'
-              )}
-            />
+            <div className={clsx('mdx-code-block__toolbar-item')}>
+              {language}
+            </div>
+            <div className={clsx('mdx-code-block__toolbar-divider')} />
           </>
         )}
         <button
           type="button"
-          className={clsx(
-            'flex h-8 items-center gap-1 px-2',
-            'hover:bg-slate-700',
-            'dark:hover:bg-slate-800'
-          )}
+          className={clsx('mdx-code-block__toolbar-button')}
           onClick={copyToClipboard}
         >
-          <ClipboardIcon className={clsx('h-4 w-4')} />
+          <ClipboardIcon />
           {!isCopied ? 'Copy to Clipboard' : 'Copied!'}
         </button>
       </div>
