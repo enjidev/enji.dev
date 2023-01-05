@@ -8,7 +8,7 @@ function Projects() {
     <Page
       frontMatter={{
         title: 'Projects',
-        description: 'Showcase of my Front-End related work.',
+        description: 'Showcase of my front-end related work.',
       }}
       headerImage={<ProjectsAnimation />}
     >
