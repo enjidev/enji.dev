@@ -49,7 +49,7 @@ importers:
       slug: ^8.2.2
       swr: ^2.0.0
       tailwindcss: ^3.2.4
-      tailwindcss-accent: ^2.1.1
+      tailwindcss-accent: ^2.1.2
       tsconfig: workspace:*
       typescript: ^4.9.4
     dependencies:
@@ -73,7 +73,7 @@ importers:
       remark-plugins: link:../../packages/remark-plugins
       slug: 8.2.2
       swr: 2.0.0_react@18.2.0
-      tailwindcss-accent: 2.1.1_tailwindcss@3.2.4
+      tailwindcss-accent: 2.1.2_tailwindcss@3.2.4
     devDependencies:
       '@types/mdx': 2.0.3
       '@types/node': 18.11.18
@@ -4206,8 +4206,8 @@ packages:
       use-sync-external-store: 1.2.0_react@18.2.0
     dev: false
 
-  /tailwindcss-accent/2.1.1_tailwindcss@3.2.4:
-    resolution: {integrity: sha512-iUhC1qh5E/IxULv7jjP4OVIFKtPoWqkLnK8h94LmlS6MvNaEG4dFtzzWhy9rZl/wB2o+OGcrGNRllpuIQI2u2A==}
+  /tailwindcss-accent/2.1.2_tailwindcss@3.2.4:
+    resolution: {integrity: sha512-Yjxpf7ViuE8NKOxtQiFCI8ACZ/I6TpRGZNkaTmPHWkjBYcP0MOVNWVODkmvvbJD786npABB0xfmtqDUP7ouoAg==}
     peerDependencies:
       tailwindcss: '>=2.0.0 || >=3.0.0'
     dependencies:

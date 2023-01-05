@@ -34,7 +34,7 @@
     "remark-plugins": "workspace:*",
     "slug": "^8.2.2",
     "swr": "^2.0.0",
-    "tailwindcss-accent": "^2.1.1"
+    "tailwindcss-accent": "^2.1.2"
   },
   "devDependencies": {
     "@types/mdx": "^2.0.3",
