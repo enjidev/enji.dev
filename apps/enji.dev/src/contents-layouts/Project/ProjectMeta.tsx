@@ -16,7 +16,7 @@ function ProjectMeta({ githubUrl = '', npmUrl = '' }: ProjectMetaProps) {
     <div className={clsx('content-wrapper mb-10')}>
       <div
         className={clsx(
-          'flex flex-wrap gap-x-6 gap-y-3 text-sm text-slate-600',
+          'flex flex-wrap gap-x-4 gap-y-2 text-sm text-slate-600',
           'dark:text-slate-500'
         )}
       >
@@ -25,7 +25,7 @@ function ProjectMeta({ githubUrl = '', npmUrl = '' }: ProjectMetaProps) {
             href={githubUrl}
             target="_blank"
             rel="noreferrer"
-            className={clsx('flex items-center gap-1.5')}
+            className={clsx('button button--soft')}
           >
             <GitHubIcon className={clsx('h-5 w-5')} />
             GitHub
@@ -36,7 +36,7 @@ function ProjectMeta({ githubUrl = '', npmUrl = '' }: ProjectMetaProps) {
             href={npmUrl}
             target="_blank"
             rel="noreferrer"
-            className={clsx('flex items-center gap-1.5')}
+            className={clsx('button button--soft')}
           >
             <NpmIcon className={clsx('h-5 w-5')} />
             npm
