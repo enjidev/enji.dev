@@ -1,5 +1,5 @@
 pre {
-  @apply bg-slate-800 text-[14px] leading-normal;
+  @apply text-[14px] leading-normal;
 
   code {
     @apply font-normal text-slate-400;
