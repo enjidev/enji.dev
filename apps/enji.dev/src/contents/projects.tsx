@@ -66,13 +66,13 @@ function ProjectsContents() {
                       author="enjidev"
                       license="MIT"
                       repository="tailwindcss-accent"
-                      description="Add dynamic accent color to your Tailwind CSS project."
+                      description="Adds accent colors for more dynamic and flexible color utilization."
                     />
                   )}
                   {currentState === 'npm' && (
                     <NpmWireframe
                       packageName="tailwindcss-accent"
-                      description="Add dynamic accent color to your Tailwind CSS project."
+                      description="Adds accent colors for more dynamic and flexible color utilization."
                       isWithTypeScript
                     />
                   )}
