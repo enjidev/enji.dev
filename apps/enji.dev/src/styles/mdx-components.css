@@ -126,7 +126,7 @@
     }
 
     &-tab {
-      @apply relative flex h-10 items-center gap-2 rounded-t-lg bg-[var(--code-bg)] px-4 text-[13px] font-semibold;
+      @apply relative flex h-10 items-center gap-2 rounded-t-lg bg-[var(--code-bg)] pl-5 pr-6 text-[13px] font-semibold;
 
       svg {
         @apply h-4 w-4;
