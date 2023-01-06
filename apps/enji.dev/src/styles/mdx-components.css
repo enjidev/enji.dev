@@ -97,7 +97,7 @@
 
 .mdx-image {
   @apply my-4 mx-auto max-w-fit;
-  @apply md:my-6;
+  @apply md:my-6 xl:-mx-10;
 }
 
 .dark {
