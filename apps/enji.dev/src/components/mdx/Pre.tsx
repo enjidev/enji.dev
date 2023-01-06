@@ -40,11 +40,7 @@ export function Pre({
   };
 
   return (
-    <div
-      className={clsx('mdx-code-block', [
-        lines === '1' && 'mdx-code-block--single-line',
-      ])}
-    >
+    <div className={clsx('mdx-code-block')}>
       {filename && (
         <div className={clsx('mdx-code-block__header')}>
           <div className={clsx('mdx-code-block__header-dots')}>
