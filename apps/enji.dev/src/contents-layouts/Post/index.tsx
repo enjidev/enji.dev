@@ -51,8 +51,8 @@ function Post({
       <PostMeta date={date} lang={lang} />
       <WithTableOfContents tableOfContents={tableOfContents}>
         {children}
+        <PostFooter tags={tags} category={category} />
       </WithTableOfContents>
-      <PostFooter tags={tags} category={category} />
     </>
   );
 }
