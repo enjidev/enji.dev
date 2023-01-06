@@ -26,6 +26,7 @@ export function Pre({
 }: PreProps) {
   const codeRef = useRef<HTMLPreElement>(null);
   const [isCopied, setCopied] = useState<boolean>(false);
+  const { language: lang, icon } = formatLang(language);
 
   const copyToClipboard = async () => {
     try {
@@ -51,6 +52,7 @@ export function Pre({
           <div className={clsx('mdx-code-block__header-tab')}>
             <div className={clsx('mdx-code-block__header-tab-bl')} />
             <div className={clsx('mdx-code-block__header-tab-br')} />
+            {icon}
             {filename}
           </div>
         </div>
@@ -76,9 +78,7 @@ export function Pre({
             </div>
           )}
           {language && (
-            <div className={clsx('mdx-code-block__footer-item')}>
-              {formatLang(language)}
-            </div>
+            <div className={clsx('mdx-code-block__footer-item')}>{lang}</div>
           )}
           {lines && (
             <div className={clsx('mdx-code-block__footer-item')}>
