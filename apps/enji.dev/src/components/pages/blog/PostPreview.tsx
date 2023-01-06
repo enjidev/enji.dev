@@ -31,17 +31,18 @@ function PostPreview({
         <div
           className={clsx(
             'text-slate mb-2 flex gap-1 text-xs text-slate-500',
-            'dark:text-slate-400'
+            'dark:text-slate-400 md:mb-1'
           )}
         >
           <time dateTime={date}>{formatDate(date)}</time>
           <span>&middot;</span>
           <span>{formatLang(lang)}</span>
         </div>
-        <div className={clsx('mb-1')}>
+        <div className={clsx('mb-2')}>
           <h2
             className={clsx(
-              'font-extrabold text-slate-700',
+              'text-xl font-extrabold text-slate-700',
+              'md:text-2xl',
               'dark:text-slate-300'
             )}
           >
@@ -58,12 +59,12 @@ function PostPreview({
         </p>
         <div
           className={clsx(
-            'flex items-center gap-1 text-sm font-semibold text-accent-600',
+            'text-accent-600 flex items-center gap-1 text-sm font-semibold',
             'dark:text-accent-400'
           )}
         >
           read more{' '}
-          <ChevronRightIcon className="mt-1 h-3 w-3 transition group-hover:animate-bounce-x" />
+          <ChevronRightIcon className="group-hover:animate-bounce-x mt-1 h-3 w-3 transition" />
         </div>
       </Link>
     </article>
