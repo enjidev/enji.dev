@@ -250,6 +250,10 @@
     &__copy-button {
       @apply pointer-events-none absolute top-3 right-3 flex h-8 items-center gap-1 rounded-lg bg-[var(--code-window)] px-2 text-xs opacity-0;
 
+      &:focus-visible {
+        @apply pointer-events-auto opacity-100;
+      }
+
       svg {
         @apply h-4 w-4;
       }
