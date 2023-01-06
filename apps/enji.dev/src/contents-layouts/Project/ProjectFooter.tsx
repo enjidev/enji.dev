@@ -10,17 +10,28 @@ function ProjectFooter({ githubUrl = '' }: ProjectFooterProps) {
   if (!githubUrl) return null;
 
   return (
-    <div className={clsx('content-wrapper mt-10')}>
-      <div className={clsx('text-sm text-slate-600', 'dark:text-slate-500')}>
-        Got any feedback?{' '}
-        <a
-          href={githubUrl}
-          target="_blank"
-          rel="noreferrer"
-          className={clsx('text-accent-600 font-bold', 'dark:text-accent-500')}
-        >
-          open an issue / discussion here.
-        </a>
+    <div
+      className={clsx(
+        'mt-24 flex flex-col gap-6 text-sm text-slate-600',
+        'md:flex-row md:items-center md:justify-between',
+        'dark:text-slate-500'
+      )}
+    >
+      <div className={clsx('flex flex-wrap gap-x-1 gap-y-2')}>
+        <div className={clsx('')}>
+          Got any feedback?{' '}
+          <a
+            href={githubUrl}
+            target="_blank"
+            rel="noreferrer"
+            className={clsx(
+              'text-accent-600 font-bold',
+              'dark:text-accent-500'
+            )}
+          >
+            open an issue / discussion here.
+          </a>
+        </div>
       </div>
     </div>
   );

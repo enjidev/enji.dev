@@ -35,8 +35,8 @@ function ProjectLayout({
       <ProjectMeta githubUrl={githubUrl} npmUrl={npmUrl} />
       <WithTableOfContents tableOfContents={tableOfContents}>
         {children}
+        <ProjectFooter githubUrl={githubUrl} />
       </WithTableOfContents>
-      <ProjectFooter githubUrl={githubUrl} />
     </>
   );
 }
