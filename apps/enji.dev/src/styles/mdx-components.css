@@ -62,7 +62,8 @@
   @apply flex h-auto items-center justify-center;
 
   &::after {
-    @apply h-1 w-full rounded-full bg-slate-800 content-[''];
+    @apply h-0.5 w-full rounded-full bg-slate-200 content-[''];
+    @apply dark:bg-slate-800;
   }
 }
 
@@ -110,7 +111,7 @@
   --code-bg: #2a344a;
   --code-window: #353f56;
 
-  @apply my-6 overflow-hidden rounded-xl bg-[var(--code-bg)] text-slate-400 [color-scheme:dark];
+  @apply mt-4 mb-8 overflow-hidden rounded-xl bg-[var(--code-bg)] text-slate-400 [color-scheme:dark];
   @apply dark:border-divider-dark dark:border;
 
   &__header {
@@ -189,7 +190,7 @@
 }
 
 .mdx-table {
-  @apply border-divider-light my-4 w-full overflow-x-auto rounded-lg border pb-2 text-sm;
+  @apply border-divider-light mt-6 mb-8 w-full overflow-x-auto rounded-lg border pb-2 text-sm;
   @apply dark:border-divider-dark;
 
   table {
