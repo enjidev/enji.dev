@@ -127,7 +127,8 @@
           @apply ml-0 bg-transparent;
 
           &::before {
-            @apply border-r-4 border-green-800 pr-5 text-slate-500;
+            @apply border-accent-500/40 border-r-4 pr-5 text-slate-500;
+            @apply dark:border-accent-600/40;
           }
         }
       }
