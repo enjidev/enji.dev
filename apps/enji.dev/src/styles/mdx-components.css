@@ -114,6 +114,26 @@
   @apply mt-4 mb-8 overflow-hidden rounded-xl bg-[var(--code-bg)] text-slate-400 [color-scheme:dark];
   @apply dark:border-divider-dark dark:border;
 
+  .code-highlight {
+    .code-line {
+      &.line-number {
+        @apply pl-10;
+
+        &::before {
+          @apply absolute left-0 bg-[var(--code-bg)] pl-4;
+        }
+
+        &.highlight-line {
+          @apply ml-0 bg-transparent;
+
+          &::before {
+            @apply border-r-4 border-green-800 pr-5 text-slate-500;
+          }
+        }
+      }
+    }
+  }
+
   &__header {
     @apply flex items-center bg-[var(--code-window)] pt-1.5;
 

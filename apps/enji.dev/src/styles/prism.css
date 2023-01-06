@@ -1,5 +1,5 @@
 pre {
-  @apply overflow-x-auto p-4 text-[14px] leading-normal;
+  @apply overflow-x-auto p-4 text-[14px] leading-relaxed;
 
   code {
     @apply font-normal text-slate-400;
@@ -14,6 +14,18 @@ pre {
 
     &.highlight-line {
       @apply bg-accent-500/5 -mx-4 px-4;
+
+      &.line-number {
+        &::before {
+          @apply bg-accent-500/5 text-slate-300;
+        }
+      }
+    }
+
+    &.line-number {
+      &::before {
+        @apply box-content inline-block w-4 pr-6 text-right text-slate-500 content-[attr(line)];
+      }
     }
   }
 }
@@ -71,7 +83,7 @@ pre {
 
   .code-line {
     &::before {
-      @apply mr-3 text-slate-400 content-['$'];
+      @apply mr-3 inline-block text-slate-500 content-['$'];
     }
   }
 }
