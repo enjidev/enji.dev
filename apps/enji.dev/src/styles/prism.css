@@ -13,7 +13,7 @@ pre {
     @apply block;
 
     &.highlight-line {
-      @apply bg-accent-500/10 -mx-4 px-4;
+      @apply bg-accent-500/5 -mx-4 px-4;
     }
   }
 }
@@ -57,11 +57,15 @@ pre {
 }
 
 .language-bash {
-  @apply text-blue-300;
+  @apply text-blue-400;
 
   .token {
     &.function {
       @apply text-slate-300;
+    }
+
+    &.parameter {
+      @apply text-slate-500;
     }
   }
 }
