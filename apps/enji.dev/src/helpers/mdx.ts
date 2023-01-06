@@ -20,19 +20,8 @@ export const urlType = (url: string) => {
   return 'external';
 };
 
-export const getLangFromClassName = (
-  className?: string
-): string | undefined => {
-  if (!className) return undefined;
-
-  const classes = className.split(' ');
-  const language = classes
-    ?.filter((c) => c.includes('language-'))[0]
-    ?.replace('language-', '');
-
-  if (!language) return undefined;
-
-  switch (language) {
+export const formatLang = (lang: string): string => {
+  switch (lang) {
     case 'js':
     case 'javascript':
       return 'JavaScript';
@@ -47,6 +36,6 @@ export const getLangFromClassName = (
     case 'cmd':
       return 'Terminal';
     default:
-      return language;
+      return lang;
   }
 };

@@ -3,16 +3,28 @@ import { DetailedHTMLProps, HTMLAttributes, useRef, useState } from 'react';
 
 import { ClipboardIcon } from '@/components/shared/Icons';
 
-import { getLangFromClassName } from '@/helpers/mdx';
+import { formatLang } from '@/helpers/mdx';
 
 type PreProps = DetailedHTMLProps<
   HTMLAttributes<HTMLPreElement>,
   HTMLPreElement
->;
+> & {
+  'data-lines'?: string;
+  'data-selected'?: string;
+  'data-language'?: string;
+  'data-filename'?: string;
+};
 
-export function Pre({ children, className, ...props }: PreProps) {
+export function Pre({
+  children,
+  className,
+  'data-lines': lines = '',
+  'data-selected': selected = '',
+  'data-language': language = '',
+  'data-filename': filename = '',
+  ...props
+}: PreProps) {
   const codeRef = useRef<HTMLPreElement>(null);
-  const language = getLangFromClassName(className);
   const [isCopied, setCopied] = useState<boolean>(false);
 
   const copyToClipboard = async () => {
@@ -21,35 +33,65 @@ export function Pre({ children, className, ...props }: PreProps) {
       await navigator.clipboard.writeText(content);
 
       setCopied(true);
-      setTimeout(() => setCopied(false), 1300);
+      setTimeout(() => setCopied(false), 1000);
     } catch (err) {
       setCopied(false);
     }
   };
 
   return (
-    <div className={clsx('mdx-code-block')}>
-      <pre className={className} {...props} ref={codeRef}>
-        {children}
-      </pre>
-      <div className={clsx('mdx-code-block__toolbar')}>
-        {language && (
-          <>
-            <div className={clsx('mdx-code-block__toolbar-item')}>
-              {language}
-            </div>
-            <div className={clsx('mdx-code-block__toolbar-divider')} />
-          </>
-        )}
+    <div
+      className={clsx('mdx-code-block', [
+        lines === '1' && 'mdx-code-block--single-line',
+      ])}
+    >
+      {filename && (
+        <div className={clsx('mdx-code-block__header')}>
+          <div className={clsx('mdx-code-block__header-dots')}>
+            <div className={clsx('mdx-code-block__header-dot')} />
+            <div className={clsx('mdx-code-block__header-dot')} />
+            <div className={clsx('mdx-code-block__header-dot')} />
+          </div>
+          <div className={clsx('mdx-code-block__header-tab')}>
+            <div className={clsx('mdx-code-block__header-tab-bl')} />
+            <div className={clsx('mdx-code-block__header-tab-br')} />
+            {filename}
+          </div>
+        </div>
+      )}
+      <div className={clsx('mdx-code-block__content')}>
+        <pre className={className} {...props} ref={codeRef}>
+          {children}
+        </pre>
         <button
           type="button"
-          className={clsx('mdx-code-block__toolbar-button')}
+          className={clsx('mdx-code-block__copy-button')}
           onClick={copyToClipboard}
         >
           <ClipboardIcon />
           {!isCopied ? 'Copy to Clipboard' : 'Copied!'}
         </button>
       </div>
+      {lines !== '1' && (
+        <div className={clsx('mdx-code-block__footer')}>
+          {selected && (
+            <div className={clsx('mdx-code-block__footer-item')}>
+              Selected: {selected}
+            </div>
+          )}
+          {language && (
+            <div className={clsx('mdx-code-block__footer-item')}>
+              {formatLang(language)}
+            </div>
+          )}
+          {lines && (
+            <div className={clsx('mdx-code-block__footer-item')}>
+              Lines: {lines}
+            </div>
+          )}
+          <div className={clsx('mdx-code-block__footer-item')}>UTF-8</div>
+        </div>
+      )}
     </div>
   );
 }

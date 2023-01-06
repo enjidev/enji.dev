@@ -187,31 +187,76 @@
   }
 
   .mdx-code-block {
-    @apply my-6 overflow-hidden rounded-xl bg-slate-800 text-slate-400 [color-scheme:dark];
-    @apply dark:border dark:border-slate-800 dark:bg-gray-900;
+    --code-bg: #161e31;
+    --code-window: #1d263a;
 
-    &__toolbar {
-      @apply flex items-center justify-end border-t border-t-slate-600 text-xs;
-      @apply dark:border-t-slate-800;
+    @apply my-6 overflow-hidden rounded-xl bg-[var(--code-bg)] text-slate-400 [color-scheme:dark];
+    @apply dark:border-divider-dark dark:border;
+
+    &__header {
+      @apply flex items-center bg-[var(--code-window)] pt-1.5;
+
+      &-dots {
+        @apply -mt-1.5 flex h-9 items-center gap-1.5 px-4;
+      }
+
+      &-dot {
+        @apply h-2.5 w-2.5 rounded-full bg-slate-500;
+      }
+
+      &-tab {
+        @apply relative flex h-9 items-center gap-2 rounded-t-lg bg-[var(--code-bg)] px-4 text-[13px] font-semibold;
+
+        &-bl {
+          @apply absolute bottom-0 left-[-16px] h-4 w-4;
+
+          &::before {
+            @apply absolute z-[2] h-4 w-4 rounded-br-lg bg-[var(--code-window)] content-[''];
+          }
+
+          &::after {
+            @apply absolute z-[1] h-4 w-4 bg-[var(--code-bg)] content-[''];
+          }
+        }
+
+        &-br {
+          @apply absolute bottom-0 right-[-16px] h-4 w-4;
+
+          &::before {
+            @apply absolute z-[2] h-4 w-4 rounded-bl-lg bg-[var(--code-window)] content-[''];
+          }
+
+          &::after {
+            @apply absolute z-[1] h-4 w-4 bg-[var(--code-bg)] content-[''];
+          }
+        }
+      }
+    }
+
+    &__content {
+      @apply relative bg-[var(--code-bg)];
+
+      &:hover {
+        .mdx-code-block__copy-button {
+          @apply pointer-events-auto opacity-100;
+        }
+      }
+    }
+
+    &__copy-button {
+      @apply pointer-events-none absolute top-3 right-3 flex h-8 items-center gap-1 rounded-lg bg-[var(--code-window)] px-2 text-xs opacity-0;
 
       svg {
         @apply h-4 w-4;
       }
     }
 
-    &__toolbar-item {
-      @apply flex h-8 items-center gap-1 px-2;
-    }
+    &__footer {
+      @apply flex items-center justify-end border-t border-t-[var(--code-window)] px-2 text-xs;
 
-    &__toolbar-button {
-      @apply flex h-8 items-center gap-1 px-2;
-      @apply hover:bg-slate-700;
-      @apply dark:hover:bg-slate-800;
-    }
-
-    &__toolbar-divider {
-      @apply h-8 border-l border-slate-600;
-      @apply dark:border-slate-800;
+      &-item {
+        @apply flex h-7 items-center gap-1 px-2;
+      }
     }
   }
 
