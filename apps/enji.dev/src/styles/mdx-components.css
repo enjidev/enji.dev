@@ -58,6 +58,14 @@
   }
 }
 
+.mdx-hr {
+  @apply flex h-auto items-center justify-center;
+
+  &::after {
+    @apply h-1 w-full rounded-full bg-slate-800 content-[''];
+  }
+}
+
 .mdx-link {
   @apply text-accent-600 relative inline-flex items-center gap-1;
   @apply dark:text-accent-400;

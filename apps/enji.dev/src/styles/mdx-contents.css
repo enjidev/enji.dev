@@ -17,9 +17,8 @@
   }
 
   hr {
-    @apply border-divider-light my-8;
+    @apply my-8 border-none;
     @apply md:my-12;
-    @apply dark:border-divider-dark;
 
     & + * {
       @apply mt-0;
