@@ -3,24 +3,14 @@ import NextLink from 'next/link';
 
 import { ExternalLink, MailIcon } from '@/components/shared/Icons';
 
+import { urlType } from '@/helpers/mdx';
+
 import type { AnchorHTMLAttributes, DetailedHTMLProps } from 'react';
 
 type Props = DetailedHTMLProps<
   AnchorHTMLAttributes<HTMLAnchorElement>,
   HTMLAnchorElement
 >;
-
-const urlType = (url: string) => {
-  if (url.indexOf('/') === 0) {
-    return 'internal';
-  }
-
-  if (url.indexOf('mailto') === 0) {
-    return 'mail';
-  }
-
-  return 'external';
-};
 
 export function Link({ children, href }: Props) {
   if (!href) {
