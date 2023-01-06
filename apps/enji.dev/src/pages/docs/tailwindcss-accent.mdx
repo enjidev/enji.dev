@@ -25,18 +25,15 @@ npm install -D tailwindcss-accent
 
 Then add the plugin to your `tailwind.config.js` file:
 
-```js {6-13}
+```js {6-10}
 module.exports = {
   theme: {
     // ...
   },
   plugins: [
     require('tailwindcss-accent')({
-      // REQUIRED, include specific color(s).
       colors: ['violet', 'blue'],
-      // OPTIONAL, set color from colors option as :root accent color.
       root: 'blue',
-      // OPTIONAL, set prefix for css variables name. default to 'tw-ta' (e.g: --tw-ta-accent-200)
       cssVarsPrefix: 'tw-plugin', // result: --tw-plugin-accent-200
     }),
     // ...
@@ -44,7 +41,17 @@ module.exports = {
 };
 ```
 
-Check the Tailwind CSS default [color palette](https://tailwindcss.com/docs/customizing-colors) for available colors.
+### Plugin Options
+
+| Option              | Description                                                                        |
+| ------------------- | ---------------------------------------------------------------------------------- |
+| `colors` (REQUIRED) | Include specific color(s). View the [available colors](#available-colors) section. |
+| `root`              | Set color from colors option as `:root` accent color.                              |
+| `cssVarsPrefix`     | Set prefix for css variables name. default to 'tw-ta' (e.g: `--tw-ta-accent-200`)  |
+
+### Available Colors
+
+Check the default color palettes for [the Tailwind CSS v2](https://v2.tailwindcss.com/docs/customizing-colors#color-palette-reference) and [the Tailwind CSS v3](https://tailwindcss.com/docs/customizing-colors#default-color-palette).
 
 ---
 
@@ -88,7 +95,9 @@ Let the code speak:
 
 ---
 
-## Real-world example
+## Examples
+
+### Real-world Example
 
 This website uses this plugin. By default, all pages use the `violet` accent color, except for pages under the `work/` path, which have a `blue` accent color.
 
@@ -96,11 +105,9 @@ You can see the difference in the table of contents, header caption, text select
 
 See the [configuration](https://github.com/enjidev/enji.dev/blob/a6078ba395ea65cc9c1a7ea524adb29b9580406d/apps/enji.dev/tailwind.config.js#L54-L57) file and [implementation](https://github.com/enjidev/enji.dev/blob/a6078ba395ea65cc9c1a7ea524adb29b9580406d/apps/enji.dev/src/providers/ColorAccentProvider.tsx#L18-L20) code for details.
 
----
+### Live Example
 
-## Live example
-
-Want to see something cool? Click this button and watch the accent color change.
+Want to see something cool? Click this button and watch the accent color on this page change.
 
 <AccentDemo />
 
