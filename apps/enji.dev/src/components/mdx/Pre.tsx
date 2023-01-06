@@ -81,7 +81,9 @@ export function Pre({
             <div className={clsx('mdx-code-block__footer-item')}>{lang}</div>
           )}
           {lines && (
-            <div className={clsx('mdx-code-block__footer-item')}>
+            <div
+              className={clsx('mdx-code-block__footer-item hidden', 'sm:flex')}
+            >
               Lines: {lines}
             </div>
           )}
