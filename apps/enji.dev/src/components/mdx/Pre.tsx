@@ -26,7 +26,7 @@ export function Pre({
 }: PreProps) {
   const codeRef = useRef<HTMLPreElement>(null);
   const [isCopied, setCopied] = useState<boolean>(false);
-  const { language: lang, icon } = formatLang(language);
+  const { language: lang, icon } = formatLang(language, filename);
 
   const copyToClipboard = async () => {
     try {

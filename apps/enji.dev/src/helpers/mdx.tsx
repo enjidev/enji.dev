@@ -6,6 +6,7 @@ import {
   HtmlIcon,
   JavaScriptIcon,
   ReactIcon,
+  TailwindIcon,
   TypeScriptIcon,
 } from '@/components/shared/IconsFile';
 
@@ -30,54 +31,58 @@ export const urlType = (url: string) => {
 };
 
 export const formatLang = (
-  lang: string
+  lang: string,
+  filename?: string
 ): {
   language: string;
   icon: React.ReactElement;
 } => {
+  let language = lang;
+  let icon = <FileIcon />;
+
   switch (lang) {
     case 'js':
     case 'javascript':
-      return {
-        language: 'JavaScript',
-        icon: <JavaScriptIcon />,
-      };
+      language = 'JavaScript';
+      icon = <JavaScriptIcon />;
+      break;
     case 'ts':
     case 'typescript':
-      return {
-        language: 'TypeScript',
-        icon: <TypeScriptIcon />,
-      };
+      language = 'TypeScript';
+      icon = <TypeScriptIcon />;
+      break;
     case 'jsx':
-      return {
-        language: 'JavaScript React',
-        icon: <ReactIcon />,
-      };
+      language = 'JavaScript React';
+      icon = <ReactIcon />;
+      break;
     case 'tsx':
-      return {
-        language: 'TypeScript React',
-        icon: <ReactIcon />,
-      };
+      language = 'TypeScript React';
+      icon = <ReactIcon />;
+      break;
     case 'html':
-      return {
-        language: 'HTML',
-        icon: <HtmlIcon />,
-      };
+      language = 'HTML';
+      icon = <HtmlIcon />;
+      break;
     case 'css':
-      return {
-        language: 'CSS',
-        icon: <CssIcon />,
-      };
+      language = 'CSS';
+      icon = <CssIcon />;
+      break;
     case 'bash':
     case 'cmd':
-      return {
-        language: 'Terminal',
-        icon: <FileIcon />,
-      };
+      language = 'Terminal';
+      break;
     default:
-      return {
-        language: 'Plain Text',
-        icon: <FileIcon />,
-      };
+      language = 'Plain Text';
+      break;
   }
+
+  switch (filename) {
+    case 'tailwind.config.js':
+      icon = <TailwindIcon />;
+      break;
+    default:
+      break;
+  }
+
+  return { language, icon };
 };
