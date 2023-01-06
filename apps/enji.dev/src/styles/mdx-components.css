@@ -91,9 +91,16 @@
   @apply md:my-6;
 }
 
+.dark {
+  .mdx-code-block {
+    --code-bg: #161e31;
+    --code-window: #1d263a;
+  }
+}
+
 .mdx-code-block {
-  --code-bg: #161e31;
-  --code-window: #1d263a;
+  --code-bg: #2a344a;
+  --code-window: #353f56;
 
   @apply my-6 overflow-hidden rounded-xl bg-[var(--code-bg)] text-slate-400 [color-scheme:dark];
   @apply dark:border-divider-dark dark:border;
@@ -102,7 +109,7 @@
     @apply flex items-center bg-[var(--code-window)] pt-1.5;
 
     &-dots {
-      @apply -mt-1.5 flex h-9 items-center gap-1.5 px-4;
+      @apply -mt-1.5 flex h-10 items-center gap-1.5 px-4;
     }
 
     &-dot {
@@ -110,7 +117,7 @@
     }
 
     &-tab {
-      @apply relative flex h-9 items-center gap-2 rounded-t-lg bg-[var(--code-bg)] px-4 text-[13px] font-semibold;
+      @apply relative flex h-10 items-center gap-2 rounded-t-lg bg-[var(--code-bg)] px-4 text-[13px] font-semibold;
 
       svg {
         @apply h-4 w-4;
