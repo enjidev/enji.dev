@@ -95,7 +95,7 @@ function AccentDemo() {
       </style>
       <button
         type="button"
-        className={clsx('button button--solid')}
+        className={clsx('button button--solid button--big')}
         onClick={handleClick}
       >
         {getButtonText(accent)}
