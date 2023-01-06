@@ -58,7 +58,9 @@
     }
 
     p,
-    li {
+    li,
+    th,
+    td {
       code {
         @apply font-medium text-slate-700;
         @apply dark:text-slate-300;
