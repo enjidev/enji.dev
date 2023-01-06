@@ -8,9 +8,7 @@ import type { NextPage } from 'next';
 import type { AppProps } from 'next/app';
 import type { ReactElement, ReactNode } from 'react';
 
-import '@/styles/globals.css';
-import '@/styles/prism.css';
-import '@/styles/mdx.css';
+import '@/styles/main.css';
 
 type NextPageWithLayout<P = object, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode;
