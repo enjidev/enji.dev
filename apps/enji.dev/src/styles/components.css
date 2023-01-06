@@ -1,6 +1,6 @@
 .content-wrapper {
   @apply mx-auto max-w-[75rem] px-4;
-  @apply md:px-6 lg:px-16 xl:px-6;
+  @apply sm:px-12 md:px-10 lg:px-16 xl:px-6;
 }
 
 .content-wrapper-max {
