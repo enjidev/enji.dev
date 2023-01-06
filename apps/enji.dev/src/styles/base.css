@@ -1,33 +1,37 @@
-html {
-  -webkit-tap-highlight-color: transparent;
-  @apply scroll-smooth;
-}
+@tailwind base;
 
-html,
-body,
-#__next,
-#__root {
-  @apply h-full;
-}
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+    @apply scroll-smooth;
+  }
 
-#__root {
-  @apply flex flex-col font-sans;
-}
+  html,
+  body,
+  #__next,
+  #__root {
+    @apply h-full;
+  }
 
-main {
-  @apply flex-1;
-}
+  #__root {
+    @apply flex flex-col font-sans;
+  }
 
-body {
-  @apply bg-white text-slate-900;
-  @apply dark:bg-slate-900 dark:text-slate-200 dark:[color-scheme:dark];
-}
+  main {
+    @apply flex-1;
+  }
 
-:focus-visible {
-  @apply ring-accent-400 relative rounded-xl outline-none ring-2;
-}
+  body {
+    @apply bg-white text-slate-900;
+    @apply dark:bg-slate-900 dark:text-slate-200 dark:[color-scheme:dark];
+  }
 
-::selection {
-  @apply bg-accent-200/60 text-accent-900;
-  @apply dark:bg-accent-400/30 dark:text-accent-100;
+  :focus-visible {
+    @apply ring-accent-400 relative rounded-xl outline-none ring-2;
+  }
+
+  ::selection {
+    @apply bg-accent-200/60 text-accent-900;
+    @apply dark:bg-accent-400/30 dark:text-accent-100;
+  }
 }
