@@ -11,7 +11,8 @@
     "lint": "eslint src"
   },
   "dependencies": {
-    "rehype-prism-plus": "^1.5.0"
+    "rehype-prism-plus": "^1.5.0",
+    "unist-util-visit": "^4.1.1"
   },
   "devDependencies": {
     "eslint-config-typescript": "workspace:*",

@@ -1,10 +1,11 @@
-/* eslint-disable no-plusplus */
+/* eslint-disable no-param-reassign */
 /* eslint-disable prefer-destructuring */
-const withCodeAttributes = () => (tree, file) => {
-  for (let nodeIndex = 0; nodeIndex < tree.children.length; nodeIndex++) {
-    const node = tree.children[nodeIndex];
 
-    if (node.type === 'element' && node.tagName === 'pre') {
+import { visit } from 'unist-util-visit';
+
+const withCodeAttributes = () => (tree: any) => {
+  visit(tree, 'element', (node) => {
+    if (node.tagName === 'pre') {
       const attributes: {
         [key: string]: string;
       } = {};
@@ -28,16 +29,14 @@ const withCodeAttributes = () => (tree, file) => {
         const metas = meta.match(/[^{}]+(?=})/g) || [];
 
         // dynamic attributes
-        for (let attrIndex = 0; attrIndex < metas.length; attrIndex++) {
-          const attr = metas[attrIndex];
-
+        metas.forEach((attr: string) => {
           if (attr.indexOf(':')) {
             const key = attr.split(':')[0];
             const val = attr.split(':')[1];
 
             attributes[key] = val;
           }
-        }
+        });
 
         // apply attributes
         Object.keys(attributes).forEach((key) => {
@@ -45,7 +44,7 @@ const withCodeAttributes = () => (tree, file) => {
         });
       }
     }
-  }
+  });
 };
 
 export default withCodeAttributes;
