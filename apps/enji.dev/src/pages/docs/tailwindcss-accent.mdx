@@ -8,6 +8,7 @@ layout: Project
 ---
 
 import AccentDemo from '@/components/pages/projects/AccentDemo';
+import CodeGroup from '@/components/CodeGroup';
 
 A Tailwind CSS plugin that provides **accent** color utilities using CSS custom properties based on the Tailwind CSS default color palette.
 
@@ -19,13 +20,27 @@ A Tailwind CSS plugin that provides **accent** color utilities using CSS custom 
 
 Install the plugin from npm:
 
-```bash
+<CodeGroup>
+
+```bash {title:npm}
+npm install -D tailwindcss-accent
+```
+
+```bash {title:yarn}
 yarn add -D tailwindcss-accent
 ```
 
+```bash {title:pnpm}
+pnpm add -D tailwindcss-accent
+```
+
+</CodeGroup>
+
 Then add the plugin to your `tailwind.config.js` file:
 
-```js {6-10} showLineNumbers {selected:6-10} {filename:tailwind.config.js}
+<CodeGroup variant="window">
+
+```js {6-10} showLineNumbers {selected:6-10} {title:tailwind.config.js}
 module.exports = {
   theme: {
     // ...
@@ -40,6 +55,8 @@ module.exports = {
   ],
 };
 ```
+
+</CodeGroup>
 
 ### Plugin Options
 
@@ -113,7 +130,7 @@ Want to see something cool? Click this button and watch the accent color on this
 
 You should already know that the button doesn't change the color classes of all components. This single line of code&mdash;
 
-```js
+```js {copy:false}
 document.documentElement.setAttribute('data-accent', newAccent);
 ```
 
