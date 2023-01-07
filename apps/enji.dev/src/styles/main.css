@@ -3,7 +3,6 @@
 
 @import 'tailwindcss/components';
 @import './components.css';
-@import './prism.css';
 @import './prism-colors.css';
 @import './mdx-contents.css';
 @import './mdx-components.css';

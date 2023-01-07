@@ -114,23 +114,47 @@
   @apply mt-4 mb-8 overflow-hidden rounded-xl bg-[var(--code-bg)] text-slate-400 [color-scheme:dark];
   @apply dark:border-divider-dark dark:border;
 
+  pre {
+    @apply overflow-x-auto p-4 text-[14px] leading-relaxed;
+
+    code {
+      @apply font-normal;
+    }
+  }
+
   .code-highlight {
+    @apply float-left min-w-full;
+
     .code-line {
+      @apply block;
+
+      &.highlight-line {
+        @apply bg-accent-500/5 -mx-4 px-4;
+      }
+
       &.line-number {
         @apply pl-10;
 
         &::before {
-          @apply absolute left-0 bg-[var(--code-bg)] pl-4;
+          @apply absolute left-0 box-content inline-block w-4 bg-[var(--code-bg)] pl-4 pr-6 text-right content-[attr(line)];
         }
 
         &.highlight-line {
           @apply ml-0 bg-transparent;
 
           &::before {
-            @apply border-accent-500/40 border-r-4 pr-5 text-slate-500;
+            @apply border-accent-500/40 border-r-4 pr-5 text-[var(--prism-color-base-secondary)];
             @apply dark:border-accent-600/40;
           }
         }
+      }
+    }
+  }
+
+  .language-bash {
+    .code-line {
+      &::before {
+        @apply mr-3 inline-block content-['$'];
       }
     }
   }
