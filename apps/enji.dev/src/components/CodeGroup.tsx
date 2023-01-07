@@ -18,7 +18,7 @@ function CBTabWindow({ children = null }: CBTabWindowProps) {
   return (
     <Tab className={clsx('mdx-code-block-group__tab-window')}>
       {({ selected }) => (
-        <>
+        <div className={clsx('mdx-code-block-group__tab-window-content')}>
           {selected && (
             <>
               <div className={clsx('mdx-code-block-group__tab-window-bl')} />
@@ -26,7 +26,7 @@ function CBTabWindow({ children = null }: CBTabWindowProps) {
             </>
           )}
           {children}
-        </>
+        </div>
       )}
     </Tab>
   );
@@ -75,7 +75,7 @@ function CodeGroup({ variant = 'tab', children }: CodeGroupProps) {
           : 'mdx-code-block-group--tab',
       ])}
     >
-      <Tab.Group>
+      <Tab.Group manual>
         <div className={clsx('mdx-code-block-group__header')}>
           <Tab.List className={clsx('mdx-code-block-group__tabs')}>
             {tab.map(({ title, icon }, idx) =>

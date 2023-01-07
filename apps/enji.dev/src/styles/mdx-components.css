@@ -209,7 +209,7 @@
     }
 
     .mdx-code-block-group__tabs {
-      @apply border-divider-light flex h-8 w-fit overflow-hidden rounded-lg border;
+      @apply border-divider-light flex h-8 w-fit rounded-lg border;
       @apply dark:border-divider-dark;
     }
 
@@ -219,8 +219,16 @@
       @apply ui-selected:bg-accent-600/[0.08] ui-selected:text-accent-600;
       @apply dark:ui-selected:bg-accent-400/10 dark:ui-selected:text-accent-400;
 
+      &:first-child {
+        @apply rounded-l-lg;
+      }
+
       &:last-child {
-        @apply border-none;
+        @apply rounded-r-lg border-none;
+      }
+
+      &:focus-visible {
+        @apply rounded-md;
       }
 
       svg {
@@ -246,8 +254,20 @@
     }
 
     .mdx-code-block-group__tab-window {
-      @apply relative flex h-10 items-center gap-2 rounded-t-lg rounded-b-none bg-transparent pl-5 pr-6 text-xs font-semibold;
+      @apply relative flex h-10 items-center gap-2 rounded-t-lg rounded-b-none bg-transparent pl-3 pr-4 text-xs font-semibold;
       @apply ui-selected:bg-[var(--code-bg)];
+
+      &-content {
+        @apply flex gap-2 rounded-sm px-2 py-0.5;
+      }
+
+      &:focus-visible {
+        @apply ring-0;
+
+        .mdx-code-block-group__tab-window-content {
+          @apply ring-2 ring-slate-400;
+        }
+      }
 
       svg {
         @apply h-4 w-4;
@@ -280,6 +300,12 @@
 
     .mdx-code-block {
       @apply rounded-none border-none;
+    }
+
+    &__contents {
+      [role~='tabpanel']:focus-visible {
+        /* @apply ring-0; */
+      }
     }
   }
 }
