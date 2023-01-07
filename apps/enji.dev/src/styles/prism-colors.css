@@ -140,6 +140,21 @@ pre > code,
   }
 }
 
+.language-json {
+  .code-line {
+    @apply text-[var(--prism-color-string)];
+  }
+
+  .token {
+    &.property,
+    &.number,
+    &.function,
+    &.selector .class {
+      @apply text-[var(--prism-color-tag)];
+    }
+  }
+}
+
 /**
  * Extensions
  */

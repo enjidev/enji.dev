@@ -6,6 +6,7 @@ import {
   FileIcon,
   HtmlIcon,
   JavaScriptIcon,
+  NpmFileIcon,
   ReactIcon,
   TailwindIcon,
   TypeScriptIcon,
@@ -72,6 +73,9 @@ export const formatLang = (
     case 'cmd':
       language = 'Terminal';
       break;
+    case 'json':
+      language = 'JSON';
+      break;
     case '':
       language = 'Plain Text';
       break;
@@ -82,6 +86,9 @@ export const formatLang = (
   switch (title) {
     case 'tailwind.config.js':
       icon = <TailwindIcon />;
+      break;
+    case 'package.json':
+      icon = <NpmFileIcon />;
       break;
     case 'npm':
       icon = <NpmIcon />;
