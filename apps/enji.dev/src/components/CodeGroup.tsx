@@ -16,7 +16,19 @@ interface CBTabWindowProps {
 
 function CBTabWindow({ children = null }: CBTabWindowProps) {
   return (
-    <Tab className={clsx('mdx-code-block-group__tab-window')}>{children}</Tab>
+    <Tab className={clsx('mdx-code-block-group__tab-window')}>
+      {({ selected }) => (
+        <>
+          {selected && (
+            <>
+              <div className={clsx('mdx-code-block-group__tab-window-bl')} />
+              <div className={clsx('mdx-code-block-group__tab-window-br')} />
+            </>
+          )}
+          {children}
+        </>
+      )}
+    </Tab>
   );
 }
 

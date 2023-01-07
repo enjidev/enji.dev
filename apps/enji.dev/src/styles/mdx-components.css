@@ -246,11 +246,35 @@
     }
 
     .mdx-code-block-group__tab-window {
-      @apply relative flex h-9 items-center gap-2 rounded-t-lg bg-transparent pl-5 pr-6 text-xs font-semibold;
+      @apply relative flex h-10 items-center gap-2 rounded-t-lg rounded-b-none bg-transparent pl-5 pr-6 text-xs font-semibold;
       @apply ui-selected:bg-[var(--code-bg)];
 
       svg {
         @apply h-4 w-4;
+      }
+
+      &-bl {
+        @apply absolute bottom-0 left-0;
+
+        &::before {
+          @apply absolute bottom-0 left-[-12px] z-[2] h-3 w-3 rounded-br-md bg-[var(--code-window)] content-[''];
+        }
+
+        &::after {
+          @apply absolute bottom-0 left-[-12px] z-[1] h-3 w-3 bg-[var(--code-bg)] content-[''];
+        }
+      }
+
+      &-br {
+        @apply absolute bottom-0 right-0;
+
+        &::before {
+          @apply absolute bottom-0 right-[-12px] z-[2] h-3 w-3 rounded-bl-md bg-[var(--code-window)] content-[''];
+        }
+
+        &::after {
+          @apply absolute bottom-0 right-[-12px] z-[1] h-3 w-3 bg-[var(--code-bg)] content-[''];
+        }
       }
     }
 
