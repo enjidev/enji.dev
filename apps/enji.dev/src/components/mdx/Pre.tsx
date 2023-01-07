@@ -13,6 +13,8 @@ export type PreProps = DetailedHTMLProps<
   'data-lines'?: string;
   'data-selected'?: string;
   'data-language'?: string;
+  'data-copy'?: string;
+  'data-footer'?: string;
 };
 
 export function Pre({
@@ -22,6 +24,8 @@ export function Pre({
   'data-lines': lines = '',
   'data-selected': selected = '',
   'data-language': language = '',
+  'data-copy': copy = 'true',
+  'data-footer': footer = 'true',
   ...props
 }: PreProps) {
   const codeRef = useRef<HTMLPreElement>(null);
@@ -44,28 +48,30 @@ export function Pre({
 
   return (
     <div className={clsx('mdx-code-block')}>
-      <button
-        type="button"
-        className={clsx('mdx-code-block__copy-button')}
-        onClick={copyToClipboard}
-        title="Copy to Clipboard"
-        aria-label="Copy to Clipboard"
-      >
-        <div
-          className={clsx('mdx-code-block__copy-button-message', [
-            isCopied ? 'mdx-code-block__copy-button-message-copied' : '',
-          ])}
+      {copy === 'true' && (
+        <button
+          type="button"
+          className={clsx('mdx-code-block__copy-button')}
+          onClick={copyToClipboard}
+          title="Copy to Clipboard"
+          aria-label="Copy to Clipboard"
         >
-          Copied!
-        </div>
-        <ClipboardIcon />
-      </button>
+          <div
+            className={clsx('mdx-code-block__copy-button-message', [
+              isCopied ? 'mdx-code-block__copy-button-message-copied' : '',
+            ])}
+          >
+            Copied!
+          </div>
+          <ClipboardIcon />
+        </button>
+      )}
       <div className={clsx('mdx-code-block__content')}>
         <pre className={className} {...props} ref={codeRef}>
           {children}
         </pre>
       </div>
-      {lines !== '1' && (
+      {(lines !== '1' || footer === 'true') && (
         <div className={clsx('mdx-code-block__footer')}>
           {selected && (
             <div className={clsx('mdx-code-block__footer-item')}>
