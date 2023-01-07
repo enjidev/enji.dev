@@ -71,7 +71,7 @@ export function Pre({
           {children}
         </pre>
       </div>
-      {(lines !== '1' || footer === 'true') && (
+      {(lines !== '1' || (lines !== '1' && footer === 'true')) && (
         <div className={clsx('mdx-code-block__footer')}>
           {selected && (
             <div className={clsx('mdx-code-block__footer-item')}>
