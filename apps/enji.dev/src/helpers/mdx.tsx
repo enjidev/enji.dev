@@ -1,5 +1,6 @@
 import slug from 'slug';
 
+import { NpmIcon, PnpmIcon, YarnIcon } from '@/components/shared/Icons';
 import {
   CssIcon,
   FileIcon,
@@ -32,7 +33,7 @@ export const urlType = (url: string) => {
 
 export const formatLang = (
   lang: string,
-  filename?: string
+  title?: string
 ): {
   language: string;
   icon: React.ReactElement;
@@ -71,14 +72,25 @@ export const formatLang = (
     case 'cmd':
       language = 'Terminal';
       break;
-    default:
+    case '':
       language = 'Plain Text';
+      break;
+    default:
       break;
   }
 
-  switch (filename) {
+  switch (title) {
     case 'tailwind.config.js':
       icon = <TailwindIcon />;
+      break;
+    case 'npm':
+      icon = <NpmIcon />;
+      break;
+    case 'pnpm':
+      icon = <PnpmIcon />;
+      break;
+    case 'yarn':
+      icon = <YarnIcon />;
       break;
     default:
       break;

@@ -41,13 +41,11 @@ function CodeGroup({ variant = 'tab', children }: CodeGroupProps) {
   }> = [];
 
   Children.forEach(children, (child) => {
-    // console.log(child.props);
     if (child.type === Pre) {
       const title = child.props['data-title'] || '';
       const language = child.props['data-language'] || '';
-      const filename = child.props['data-filename'] || '';
 
-      const { icon } = formatLang(language, filename);
+      const { icon } = formatLang(language, title);
 
       tab.push({
         icon,
