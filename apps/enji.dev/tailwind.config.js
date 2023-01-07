@@ -51,6 +51,7 @@ module.exports = {
         { values: flattenColorPalette(theme('backgroundColor')), type: 'color' }
       );
     },
+    require('@headlessui/tailwindcss'),
     require('tailwindcss-accent')({
       colors: ['violet', 'blue'],
       root: 'violet',
