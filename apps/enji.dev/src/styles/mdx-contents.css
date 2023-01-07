@@ -53,11 +53,8 @@
     }
   }
 
-  p,
-  li,
-  th,
-  td {
-    code {
+  :not(pre) {
+    > code {
       @apply font-medium text-slate-700;
       @apply dark:text-slate-300;
 
