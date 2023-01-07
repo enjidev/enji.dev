@@ -33,8 +33,10 @@ export function Pre({
       const content = codeRef.current.textContent || '';
       await navigator.clipboard.writeText(content);
 
-      setCopied(true);
-      setTimeout(() => setCopied(false), 1000);
+      if (!isCopied) {
+        setCopied(true);
+        setTimeout(() => setCopied(false), 1000);
+      }
     } catch (err) {
       setCopied(false);
     }
@@ -46,9 +48,17 @@ export function Pre({
         type="button"
         className={clsx('mdx-code-block__copy-button')}
         onClick={copyToClipboard}
+        title="Copy to Clipboard"
+        aria-label="Copy to Clipboard"
       >
+        <div
+          className={clsx('mdx-code-block__copy-button-message', [
+            isCopied ? 'mdx-code-block__copy-button-message-copied' : '',
+          ])}
+        >
+          Copied!
+        </div>
         <ClipboardIcon />
-        {!isCopied ? 'Copy' : 'Copied!'}
       </button>
       <div className={clsx('mdx-code-block__content')}>
         <pre className={className} {...props} ref={codeRef}>

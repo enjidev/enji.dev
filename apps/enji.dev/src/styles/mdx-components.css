@@ -170,10 +170,19 @@
   }
 
   &__copy-button {
-    @apply absolute top-3 right-3 flex h-8 w-fit items-center gap-1 rounded-lg bg-[var(--code-window)] px-2 text-xs;
+    @apply absolute top-3 right-3 flex h-8 w-8 items-center justify-center rounded-lg bg-[var(--code-window)];
 
     svg {
       @apply h-4 w-4;
+    }
+
+    &-message {
+      @apply bg-accent-600 text-accent-200 absolute -left-16 -ml-2 w-16 translate-x-2 rounded-md px-2 py-1 text-xs font-bold opacity-0 transition;
+      @apply dark:bg-accent-300 dark:text-accent-900;
+
+      &-copied {
+        @apply translate-x-0 opacity-100;
+      }
     }
   }
 
