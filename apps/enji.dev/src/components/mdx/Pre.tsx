@@ -5,28 +5,28 @@ import { ClipboardIcon } from '@/components/shared/Icons';
 
 import { formatLang } from '@/helpers/mdx';
 
-type PreProps = DetailedHTMLProps<
+export type PreProps = DetailedHTMLProps<
   HTMLAttributes<HTMLPreElement>,
   HTMLPreElement
 > & {
+  'data-title'?: string;
   'data-lines'?: string;
   'data-selected'?: string;
   'data-language'?: string;
-  'data-filename'?: string;
 };
 
 export function Pre({
   children,
   className,
+  'data-title': title = '',
   'data-lines': lines = '',
   'data-selected': selected = '',
   'data-language': language = '',
-  'data-filename': filename = '',
   ...props
 }: PreProps) {
   const codeRef = useRef<HTMLPreElement>(null);
   const [isCopied, setCopied] = useState<boolean>(false);
-  const { language: lang, icon } = formatLang(language, filename);
+  const { language: lang } = formatLang(language, title);
 
   const copyToClipboard = async () => {
     try {
@@ -42,33 +42,18 @@ export function Pre({
 
   return (
     <div className={clsx('mdx-code-block')}>
-      {filename && (
-        <div className={clsx('mdx-code-block__header')}>
-          <div className={clsx('mdx-code-block__header-dots')}>
-            <div className={clsx('mdx-code-block__header-dot')} />
-            <div className={clsx('mdx-code-block__header-dot')} />
-            <div className={clsx('mdx-code-block__header-dot')} />
-          </div>
-          <div className={clsx('mdx-code-block__header-tab')}>
-            <div className={clsx('mdx-code-block__header-tab-bl')} />
-            <div className={clsx('mdx-code-block__header-tab-br')} />
-            {icon}
-            {filename}
-          </div>
-        </div>
-      )}
+      <button
+        type="button"
+        className={clsx('mdx-code-block__copy-button')}
+        onClick={copyToClipboard}
+      >
+        <ClipboardIcon />
+        {!isCopied ? 'Copy' : 'Copied!'}
+      </button>
       <div className={clsx('mdx-code-block__content')}>
         <pre className={className} {...props} ref={codeRef}>
           {children}
         </pre>
-        <button
-          type="button"
-          className={clsx('mdx-code-block__copy-button')}
-          onClick={copyToClipboard}
-        >
-          <ClipboardIcon />
-          {!isCopied ? 'Copy to Clipboard' : 'Copied!'}
-        </button>
       </div>
       {lines !== '1' && (
         <div className={clsx('mdx-code-block__footer')}>
