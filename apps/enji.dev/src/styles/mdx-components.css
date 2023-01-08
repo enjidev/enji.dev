@@ -177,19 +177,15 @@
 }
 
 .mdx-code-group {
-  .mdx-code {
-    @apply my-0;
-  }
-
   &--tab {
     @apply border-divider-light relative mt-4 mb-8 overflow-hidden rounded-xl border;
     @apply dark:border-divider-dark;
 
-    .mdx-code-group__header {
+    .mdx-code-group__header-wrapper {
       @apply p-3;
     }
 
-    .mdx-code-group__tabs {
+    .mdx-code-group__header {
       @apply border-divider-light flex h-8 w-fit rounded-lg border;
       @apply dark:border-divider-dark;
     }
@@ -217,24 +213,24 @@
       }
     }
 
-    .mdx-code-group__contents {
+    .mdx-code-group__content {
       @apply p-3 pt-0;
-    }
 
-    .mdx-code {
-      @apply border-none;
+      .mdx-code {
+        @apply border-none;
+      }
     }
   }
 
-  &--window {
+  &--files {
     @apply mt-4 mb-8 overflow-hidden rounded-xl bg-[var(--code-bg)] text-slate-400 [color-scheme:dark];
     @apply dark:border-divider-dark dark:border;
 
-    .mdx-code-group__tabs {
+    .mdx-code-group__header {
       @apply flex items-center bg-[var(--code-window)] pt-1.5 pl-2;
     }
 
-    .mdx-code-group__tab-window {
+    .mdx-code-group__file {
       @apply relative flex h-10 items-center gap-2 rounded-t-lg rounded-b-none bg-transparent pl-3 pr-4 text-xs font-semibold;
       @apply ui-selected:bg-[var(--code-bg)];
 
@@ -245,7 +241,7 @@
       &:focus-visible {
         @apply ring-0;
 
-        .mdx-code-group__tab-window-content {
+        .mdx-code-group__file-content {
           @apply ring-2 ring-slate-400;
         }
       }
@@ -279,14 +275,16 @@
       }
     }
 
-    .mdx-code {
-      @apply rounded-none border-none;
-    }
-
-    &__contents {
-      [role~='tabpanel']:focus-visible {
-        /* @apply ring-0; */
+    .mdx-code-group__content {
+      .mdx-code {
+        @apply rounded-none border-none;
       }
+    }
+  }
+
+  &__content {
+    .mdx-code {
+      @apply my-0;
     }
   }
 }

@@ -10,15 +10,15 @@ import { formatLang } from '@/helpers/mdx';
 import type { PreProps } from '@/components/mdx/custom-components/Pre';
 import type { PropsWithChildren, ReactElement } from 'react';
 
-function CBTabWindow({ children = null }: PropsWithChildren) {
+function CodeGroupFile({ children = null }: PropsWithChildren) {
   return (
-    <Tab className={clsx('mdx-code-group__tab-window')}>
+    <Tab className={clsx('mdx-code-group__file')}>
       {({ selected }) => (
-        <div className={clsx('mdx-code-group__tab-window-content')}>
+        <div className={clsx('mdx-code-group__file-content')}>
           {selected && (
             <>
-              <div className={clsx('mdx-code-group__tab-window-bl')} />
-              <div className={clsx('mdx-code-group__tab-window-br')} />
+              <div className={clsx('mdx-code-group__file-bl')} />
+              <div className={clsx('mdx-code-group__file-br')} />
             </>
           )}
           {children}
@@ -28,13 +28,13 @@ function CBTabWindow({ children = null }: PropsWithChildren) {
   );
 }
 
-function CBTab({ children = null }: PropsWithChildren) {
+function CodeGroupTab({ children = null }: PropsWithChildren) {
   return <Tab className={clsx('mdx-code-group__tab')}>{children}</Tab>;
 }
 
 interface CodeGroupProps {
   children: ReactElement<PreProps> | ReactElement<PreProps>[];
-  variant?: 'window' | 'tab';
+  variant?: 'tab' | 'files';
 }
 
 function CodeGroup({ variant = 'tab', children }: CodeGroupProps) {
@@ -62,28 +62,28 @@ function CodeGroup({ variant = 'tab', children }: CodeGroupProps) {
   return (
     <div
       className={clsx('mdx-code-group', [
-        variant === 'window' ? 'mdx-code-group--window' : 'mdx-code-group--tab',
+        variant === 'tab' ? 'mdx-code-group--tab' : 'mdx-code-group--files',
       ])}
     >
       <Tab.Group manual>
-        <div className={clsx('mdx-code-group__header')}>
-          <Tab.List className={clsx('mdx-code-group__tabs')}>
+        <div className={clsx('mdx-code-group__header-wrapper')}>
+          <Tab.List className={clsx('mdx-code-group__header')}>
             {tab.map(({ title, icon }, idx) =>
-              variant === 'window' ? (
-                <CBTabWindow key={idx}>
+              variant === 'tab' ? (
+                <CodeGroupTab key={idx}>
                   {icon}
                   {title}
-                </CBTabWindow>
+                </CodeGroupTab>
               ) : (
-                <CBTab key={idx}>
+                <CodeGroupFile key={idx}>
                   {icon}
                   {title}
-                </CBTab>
+                </CodeGroupFile>
               )
             )}
           </Tab.List>
         </div>
-        <Tab.Panels className={clsx('mdx-code-group__contents')}>
+        <Tab.Panels className={clsx('mdx-code-group__content')}>
           {tab.map(({ panel }, idx) => (
             <Tab.Panel key={idx}>{panel}</Tab.Panel>
           ))}
