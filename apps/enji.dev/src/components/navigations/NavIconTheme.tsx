@@ -1,21 +1,16 @@
 import clsx from 'clsx';
 import { m, useAnimation } from 'framer-motion';
-import { useTheme } from 'next-themes';
-import { useEffect, useState } from 'react';
 
 import { DarkIcon, LightIcon } from '@/components/Icons';
 
+import useTheme from '@/hooks/useTheme';
+
 function NavIconTheme() {
   const controls = useAnimation();
-  const [mounted, setMounted] = useState(false);
-  const { resolvedTheme, setTheme } = useTheme();
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const { theme, setTheme } = useTheme();
 
   const handleThemeChange = () => {
-    const isDark = resolvedTheme === 'dark';
+    const isDark = theme === 'dark';
 
     controls
       // stage 1 - scale, opaque the transition.
@@ -26,7 +21,7 @@ function NavIconTheme() {
       })
       .finally(() => {
         // stage 2 - change theme in the background, fade out the transition.
-        setTheme(resolvedTheme === 'dark' ? 'light' : 'dark');
+        setTheme(theme === 'dark' ? 'light' : 'dark');
         controls
           .start({
             opacity: [1, 0],
@@ -63,13 +58,11 @@ function NavIconTheme() {
           'hover:bg-slate-300/70 sm:ml-0',
           'dark:bg-slate-800/50 dark:text-slate-100 dark:hover:bg-slate-700/50'
         )}
-        aria-label={
-          mounted && resolvedTheme === 'dark' ? 'Light Mode' : 'Dark Mode'
-        }
-        title={mounted && resolvedTheme === 'dark' ? 'Light Mode' : 'Dark Mode'}
+        aria-label={theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
+        title={theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
         onClick={handleThemeChange}
       >
-        {mounted && resolvedTheme === 'dark' ? (
+        {theme === 'dark' ? (
           <LightIcon className={clsx('h-5 w-5')} />
         ) : (
           <DarkIcon className={clsx('h-5 w-5')} />
