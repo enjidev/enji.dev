@@ -1,8 +1,10 @@
 import clsx from 'clsx';
 
+import type { ReactElement } from 'react';
+
 interface NavIconProps {
   href: string;
-  icon: React.ReactElement;
+  icon: ReactElement;
   title: string;
   label?: string;
 }

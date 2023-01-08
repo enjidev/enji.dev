@@ -1,3 +1,5 @@
+import { PropsWithChildren } from 'react';
+
 import WithTableOfContents from '@/components/layouts/WithTableOfContents';
 import Head from '@/components/meta/Head';
 import SkipNavigation from '@/components/navigations/SkipNavigation';
@@ -13,14 +15,13 @@ import type { TPostFrontMatter, TTableOfContents } from '@/types';
 interface PostProps {
   frontMatter: TPostFrontMatter;
   tableOfContents: TTableOfContents;
-  children: React.ReactNode;
 }
 
 function Post({
   frontMatter: { title, description, caption, category, date, lang, tags },
   tableOfContents,
-  children,
-}: PostProps) {
+  children = null,
+}: PropsWithChildren<PostProps>) {
   // get og image urls
   const postOgImages = getPostOgImageUrl({
     category,

@@ -7,18 +7,18 @@ import PageHeader from '@/components/PageHeader';
 import { getPageOgImageUrl } from '@/helpers/page';
 
 import type { TPageFrontMatter } from '@/types';
+import type { PropsWithChildren, ReactNode } from 'react';
 
 interface PageProps {
   frontMatter: TPageFrontMatter;
-  children: React.ReactNode;
-  headerImage?: React.ReactNode;
+  headerImage?: ReactNode;
 }
 
 function Page({
   frontMatter: { title, description, caption },
-  children,
+  children = null,
   headerImage = null,
-}: PageProps) {
+}: PropsWithChildren<PageProps>) {
   const image = getPageOgImageUrl({
     caption,
     title,

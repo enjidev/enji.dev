@@ -6,18 +6,18 @@ import PageHeader from '@/components/PageHeader';
 import { getPageOgImageUrl } from '@/helpers/page';
 
 import type { TPageFrontMatter, TTableOfContents } from '@/types';
+import type { PropsWithChildren } from 'react';
 
 interface PageWithMDXProps {
   frontMatter: TPageFrontMatter;
   tableOfContents: TTableOfContents;
-  children: React.ReactNode;
 }
 
 function PageWithMDX({
   frontMatter: { title, description, caption },
   tableOfContents,
-  children,
-}: PageWithMDXProps) {
+  children = null,
+}: PropsWithChildren<PageWithMDXProps>) {
   const image = getPageOgImageUrl({
     caption,
     title,

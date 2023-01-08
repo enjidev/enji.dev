@@ -1,11 +1,15 @@
 import clsx from 'clsx';
 
+import type { PropsWithChildren } from 'react';
+
 interface StackProps {
   spacing: number;
-  children: React.ReactNode;
 }
 
-export function VStack({ spacing, children }: StackProps) {
+export function VStack({
+  spacing,
+  children = null,
+}: PropsWithChildren<StackProps>) {
   return (
     <div className={clsx('flex flex-col flex-wrap')} style={{ gap: spacing }}>
       {children}
@@ -13,7 +17,10 @@ export function VStack({ spacing, children }: StackProps) {
   );
 }
 
-export function HStack({ spacing, children }: StackProps) {
+export function HStack({
+  spacing,
+  children = null,
+}: PropsWithChildren<StackProps>) {
   return (
     <div className={clsx('flex flex-row flex-wrap')} style={{ gap: spacing }}>
       {children}

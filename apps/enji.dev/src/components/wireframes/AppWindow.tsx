@@ -2,10 +2,10 @@ import clsx from 'clsx';
 
 import { SkeletonMd } from '@/components/wireframes/Skeletons';
 
-import type { PropsWithChildren } from 'react';
+import type { PropsWithChildren, ReactNode } from 'react';
 
 interface BrowserTabProps {
-  icon: React.ReactNode;
+  icon: ReactNode;
   title: string;
   isActive: boolean;
 }

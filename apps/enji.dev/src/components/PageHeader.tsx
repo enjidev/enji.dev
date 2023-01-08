@@ -1,6 +1,8 @@
 import clsx from 'clsx';
 import { m } from 'framer-motion';
 
+import type { ReactNode } from 'react';
+
 const animation = {
   hide: { x: -32, opacity: 0 },
   show: {
@@ -13,7 +15,7 @@ interface PageHeaderProps {
   title: string;
   description: string;
   caption?: string;
-  headerImage?: React.ReactNode;
+  headerImage?: ReactNode;
 }
 
 function PageHeader({

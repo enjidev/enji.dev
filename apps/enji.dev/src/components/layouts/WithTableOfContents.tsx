@@ -3,13 +3,16 @@ import clsx from 'clsx';
 import TableOfContents from '@/components/TableOfContents';
 
 import type { TTableOfContents } from '@/types';
+import type { PropsWithChildren } from 'react';
 
 interface PageWithMDXProps {
   tableOfContents: TTableOfContents;
-  children: React.ReactNode;
 }
 
-function PageWithMDX({ tableOfContents, children }: PageWithMDXProps) {
+function PageWithMDX({
+  tableOfContents,
+  children = null,
+}: PropsWithChildren<PageWithMDXProps>) {
   return (
     <div
       className={clsx('content-wrapper overflow-hidden', 'lg:overflow-visible')}

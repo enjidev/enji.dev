@@ -12,7 +12,9 @@ import {
   TypeScriptIcon,
 } from '@/components/IconsFile';
 
-export const getSlug = (children: React.ReactNode) => {
+import type { ReactElement, ReactNode } from 'react';
+
+export const getSlug = (children: ReactNode) => {
   if (typeof children === 'string') {
     return slug(children);
   }
@@ -37,7 +39,7 @@ export const formatLang = (
   title?: string
 ): {
   language: string;
-  icon: React.ReactElement;
+  icon: ReactElement;
 } => {
   let language = lang;
   let icon = <FileIcon />;

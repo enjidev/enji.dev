@@ -1,9 +1,9 @@
 import Footer from '@/components/Footer';
 import Navigation from '@/components/Navigation';
 
-import type { ReactNode } from 'react';
+import type { PropsWithChildren } from 'react';
 
-function WithNavigationFooter({ children }: { children: ReactNode }) {
+function WithNavigationFooter({ children }: PropsWithChildren) {
   return (
     <>
       <Navigation />

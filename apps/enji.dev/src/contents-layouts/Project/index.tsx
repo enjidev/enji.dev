@@ -9,18 +9,18 @@ import ProjectFooter from '@/contents-layouts/Project/ProjectFooter';
 import ProjectMeta from '@/contents-layouts/Project/ProjectMeta';
 
 import type { TProjectFrontMatter, TTableOfContents } from '@/types';
+import type { PropsWithChildren } from 'react';
 
 interface ProjectLayoutProps {
   frontMatter: TProjectFrontMatter;
   tableOfContents: TTableOfContents;
-  children: React.ReactNode;
 }
 
 function ProjectLayout({
   frontMatter: { title, description, caption, githubUrl, npmUrl },
   tableOfContents,
-  children,
-}: ProjectLayoutProps) {
+  children = null,
+}: PropsWithChildren<ProjectLayoutProps>) {
   const image = getPageOgImageUrl({
     caption,
     title,

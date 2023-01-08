@@ -4,7 +4,7 @@ import {
 } from '@next/font/google';
 import clsx from 'clsx';
 
-import type { ReactNode } from 'react';
+import type { PropsWithChildren } from 'react';
 
 const jetbrainsMono = JetBrainsMono({
   subsets: ['latin'],
@@ -16,7 +16,7 @@ const plusJakartaSans = PlusJakartaSans({
   variable: '--font-sans',
 });
 
-function Root({ children }: { children: ReactNode }) {
+function Root({ children }: PropsWithChildren) {
   return (
     <div
       id="__root"

@@ -1,9 +1,11 @@
 import clsx from 'clsx';
 
+import type { ReactNode } from 'react';
+
 interface SectionButtonProps {
   title: string;
   description?: string;
-  icon?: React.ReactNode;
+  icon?: ReactNode;
   active?: boolean;
   onClick?: () => void;
 }

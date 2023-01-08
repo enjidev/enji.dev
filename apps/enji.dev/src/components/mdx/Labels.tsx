@@ -1,11 +1,15 @@
 import clsx from 'clsx';
 
+import type { PropsWithChildren, ReactElement } from 'react';
+
 interface LabelProps {
-  children: React.ReactNode;
   indicator: number;
 }
 
-export function Label({ indicator, children }: LabelProps) {
+export function Label({
+  indicator,
+  children = null,
+}: PropsWithChildren<LabelProps>) {
   const percentage = Math.min(100, Math.max(0, indicator));
 
   return (
@@ -22,7 +26,7 @@ export function Label({ indicator, children }: LabelProps) {
 
 interface LabelsProps {
   title: string;
-  children: React.ReactElement<LabelProps> | React.ReactElement<LabelProps>[];
+  children: ReactElement<LabelProps> | ReactElement<LabelProps>[];
 }
 
 function Labels({ title, children }: LabelsProps) {

@@ -8,13 +8,9 @@ import { Pre } from '@/components/mdx/custom-components/Pre';
 import { formatLang } from '@/helpers/mdx';
 
 import type { PreProps } from '@/components/mdx/custom-components/Pre';
-import type { ReactElement, ReactNode } from 'react';
+import type { PropsWithChildren, ReactElement } from 'react';
 
-interface CBTabWindowProps {
-  children?: ReactNode;
-}
-
-function CBTabWindow({ children = null }: CBTabWindowProps) {
+function CBTabWindow({ children = null }: PropsWithChildren) {
   return (
     <Tab className={clsx('mdx-code-block-group__tab-window')}>
       {({ selected }) => (
@@ -32,11 +28,7 @@ function CBTabWindow({ children = null }: CBTabWindowProps) {
   );
 }
 
-interface CBTabProps {
-  children?: ReactNode;
-}
-
-function CBTab({ children = null }: CBTabProps) {
+function CBTab({ children = null }: PropsWithChildren) {
   return <Tab className={clsx('mdx-code-block-group__tab')}>{children}</Tab>;
 }
 

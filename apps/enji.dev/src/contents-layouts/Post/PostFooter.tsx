@@ -5,15 +5,19 @@ import { TwitterIcon } from '@/components/Icons';
 
 import useCurrentUrl from '@/hooks/useCurrentUrl';
 
+import type { PropsWithChildren } from 'react';
 import { TPostFrontMatter } from '@/types';
 
 type ChipProps = {
   href: string;
-  children: React.ReactNode;
   external?: boolean;
 };
 
-function Chip({ href, external = false, children }: ChipProps) {
+function Chip({
+  href,
+  external = false,
+  children = null,
+}: PropsWithChildren<ChipProps>) {
   if (external) {
     return (
       <a

@@ -3,11 +3,13 @@ import Link from 'next/link';
 
 import { ChevronRightIcon } from '@/components/Icons';
 
+import type { ReactNode } from 'react';
+
 interface SectionTitleProps {
   as?: 'h2' | 'h3';
   title: string;
   caption: string;
-  description: string | React.ReactNode;
+  description: string | ReactNode;
   button?: {
     title: string;
     href: string;
