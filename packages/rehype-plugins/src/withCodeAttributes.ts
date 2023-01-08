@@ -20,7 +20,8 @@ const withCodeAttributes = () => (tree: any) => {
         }
 
         // language attribute
-        const lang = node.properties.className[0]?.split('language-') || '';
+        const lang =
+          node.properties.className[0]?.replace('language-', '') || '';
         if (lang) {
           attributes.language = lang;
         }
