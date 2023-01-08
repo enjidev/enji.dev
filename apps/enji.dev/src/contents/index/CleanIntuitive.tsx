@@ -1,9 +1,12 @@
 import clsx from 'clsx';
 import { useState } from 'react';
 
-import { SectionButton, SectionButtonSmall } from '@/components/SectionButton';
-import SectionContent from '@/components/SectionContent';
-import SectionTitle from '@/components/SectionTitle';
+import {
+  SectionButton,
+  SectionButtonSmall,
+} from '@/components/sections/SectionButton';
+import SectionContent from '@/components/sections/SectionContent';
+import SectionTitle from '@/components/sections/SectionTitle';
 
 import TodoItem from '@/contents/index/Cards/TodoItem';
 
