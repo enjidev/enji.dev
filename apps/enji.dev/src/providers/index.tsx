@@ -1,7 +1,7 @@
 import { MDXProvider } from '@mdx-js/react';
 import { ThemeProvider } from 'next-themes';
 
-import mdxComponents from '@/components/mdx';
+import mdxCustomComponents from '@/components/mdx/custom-components';
 import ColorAccentProvider from '@/providers/ColorAccentProvider';
 import FramerMotionProvider from '@/providers/FramerMotionProvider';
 
@@ -12,7 +12,7 @@ function Provider({ children = null }: PropsWithChildren) {
     <FramerMotionProvider>
       <ThemeProvider attribute="class" disableTransitionOnChange>
         <ColorAccentProvider defaultScheme="violet">
-          <MDXProvider components={mdxComponents}>{children}</MDXProvider>
+          <MDXProvider components={mdxCustomComponents}>{children}</MDXProvider>
         </ColorAccentProvider>
       </ThemeProvider>
     </FramerMotionProvider>

@@ -1,6 +1,6 @@
 import slug from 'slug';
 
-import { NpmIcon, PnpmIcon, YarnIcon } from '@/components/shared/Icons';
+import { NpmIcon, PnpmIcon, YarnIcon } from '@/components/Icons';
 import {
   CssIcon,
   FileIcon,
@@ -10,7 +10,7 @@ import {
   ReactIcon,
   TailwindIcon,
   TypeScriptIcon,
-} from '@/components/shared/IconsFile';
+} from '@/components/IconsFile';
 
 export const getSlug = (children: React.ReactNode) => {
   if (typeof children === 'string') {

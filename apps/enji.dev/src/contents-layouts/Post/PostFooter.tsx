@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import Link from 'next/link';
 
-import { TwitterIcon } from '@/components/shared/Icons';
+import { TwitterIcon } from '@/components/Icons';
 
 import useCurrentUrl from '@/hooks/useCurrentUrl';
 

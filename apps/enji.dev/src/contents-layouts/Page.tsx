@@ -1,8 +1,8 @@
 import clsx from 'clsx';
 
 import Head from '@/components/meta/Head';
-import PageHeader from '@/components/shared/Header/PageHeader';
-import SkipNavigation from '@/components/shared/Navigation/SkipNavigation';
+import SkipNavigation from '@/components/navigations/SkipNavigation';
+import PageHeader from '@/components/PageHeader';
 
 import { getPageOgImageUrl } from '@/helpers/page';
 

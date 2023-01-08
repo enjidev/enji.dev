@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 
-import TableOfContents from '@/components/shared/TableOfContents';
+import TableOfContents from '@/components/TableOfContents';
 
 import type { TTableOfContents } from '@/types';
 

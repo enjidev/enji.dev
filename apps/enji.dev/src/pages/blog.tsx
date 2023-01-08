@@ -1,8 +1,7 @@
-import BlogAnimation from '@/components/animations/Blog';
-
 import { getSortedPosts } from '@/lib/posts';
 
 import BlogContents from '@/contents/blog';
+import HeaderImage from '@/contents/blog/HeaderImage';
 import Page from '@/contents-layouts/Page';
 
 import type { BlogContentsProps } from '@/contents/blog';
@@ -17,7 +16,7 @@ function Blog({ posts }: BlogProps) {
         title: 'Personal Blog',
         description: 'Web development thoughts and stories.',
       }}
-      headerImage={<BlogAnimation />}
+      headerImage={<HeaderImage />}
     >
       <BlogContents posts={posts} />
     </Page>
