@@ -1,9 +1,8 @@
-import clsx from 'clsx';
-import { DetailedHTMLProps, HTMLAttributes, useRef, useState } from 'react';
-
-import { ClipboardIcon } from '@/components/Icons';
+import Code from '@/components/mdx/Code';
 
 import { formatLang } from '@/helpers/mdx';
+
+import type { DetailedHTMLProps, HTMLAttributes } from 'react';
 
 export type PreProps = DetailedHTMLProps<
   HTMLAttributes<HTMLPreElement>,
@@ -14,81 +13,29 @@ export type PreProps = DetailedHTMLProps<
   'data-selected'?: string;
   'data-language'?: string;
   'data-copy'?: string;
-  'data-footer'?: string;
 };
 
 export function Pre({
   children,
-  className,
   'data-title': title = '',
   'data-lines': lines = '',
   'data-selected': selected = '',
   'data-language': language = '',
   'data-copy': copy = 'true',
-  'data-footer': footer = 'true',
-  ...props
 }: PreProps) {
-  const codeRef = useRef<HTMLPreElement>(null);
-  const [isCopied, setCopied] = useState<boolean>(false);
-  const { language: lang } = formatLang(language, title);
-
-  const copyToClipboard = async () => {
-    try {
-      const content = codeRef.current.textContent || '';
-      await navigator.clipboard.writeText(content);
-
-      if (!isCopied) {
-        setCopied(true);
-        setTimeout(() => setCopied(false), 1000);
-      }
-    } catch (err) {
-      setCopied(false);
-    }
-  };
+  const { language: formattedLanguage } = formatLang(language, title);
+  const withFooter = lines !== '1';
+  const withCopy = copy === 'true';
 
   return (
-    <div className={clsx('mdx-code')}>
-      {copy === 'true' && (
-        <button
-          type="button"
-          className={clsx('mdx-code__copy-button')}
-          onClick={copyToClipboard}
-          title="Copy to Clipboard"
-          aria-label="Copy to Clipboard"
-        >
-          <div
-            className={clsx('mdx-code__copy-button-message', [
-              isCopied ? 'mdx-code__copy-button-message-copied' : '',
-            ])}
-          >
-            Copied!
-          </div>
-          <ClipboardIcon />
-        </button>
-      )}
-      <div className={clsx('mdx-code__content')}>
-        <pre className={className} {...props} ref={codeRef}>
-          {children}
-        </pre>
-      </div>
-      {(lines !== '1' || (lines !== '1' && footer === 'true')) && (
-        <div className={clsx('mdx-code__footer')}>
-          {selected && (
-            <div className={clsx('mdx-code__footer-item')}>
-              Selected: {selected}
-            </div>
-          )}
-          {language && (
-            <div className={clsx('mdx-code__footer-item')}>{lang}</div>
-          )}
-          {lines && (
-            <div className={clsx('mdx-code__footer-item hidden', 'sm:flex')}>
-              Lines: {lines}
-            </div>
-          )}
-          <div className={clsx('mdx-code__footer-item')}>UTF-8</div>
-        </div>
-      )}
-    </div>
+    <Code
+      withFooter={withFooter}
+      withCopyButton={withCopy}
+      lines={Number(lines)}
+      selected={selected}
+      language={formattedLanguage}
+    >
+      {children}
+    </Code>
   );
 }
