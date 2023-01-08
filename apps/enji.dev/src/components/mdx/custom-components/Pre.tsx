@@ -47,18 +47,18 @@ export function Pre({
   };
 
   return (
-    <div className={clsx('mdx-code-block')}>
+    <div className={clsx('mdx-code')}>
       {copy === 'true' && (
         <button
           type="button"
-          className={clsx('mdx-code-block__copy-button')}
+          className={clsx('mdx-code__copy-button')}
           onClick={copyToClipboard}
           title="Copy to Clipboard"
           aria-label="Copy to Clipboard"
         >
           <div
-            className={clsx('mdx-code-block__copy-button-message', [
-              isCopied ? 'mdx-code-block__copy-button-message-copied' : '',
+            className={clsx('mdx-code__copy-button-message', [
+              isCopied ? 'mdx-code__copy-button-message-copied' : '',
             ])}
           >
             Copied!
@@ -66,29 +66,27 @@ export function Pre({
           <ClipboardIcon />
         </button>
       )}
-      <div className={clsx('mdx-code-block__content')}>
+      <div className={clsx('mdx-code__content')}>
         <pre className={className} {...props} ref={codeRef}>
           {children}
         </pre>
       </div>
       {(lines !== '1' || (lines !== '1' && footer === 'true')) && (
-        <div className={clsx('mdx-code-block__footer')}>
+        <div className={clsx('mdx-code__footer')}>
           {selected && (
-            <div className={clsx('mdx-code-block__footer-item')}>
+            <div className={clsx('mdx-code__footer-item')}>
               Selected: {selected}
             </div>
           )}
           {language && (
-            <div className={clsx('mdx-code-block__footer-item')}>{lang}</div>
+            <div className={clsx('mdx-code__footer-item')}>{lang}</div>
           )}
           {lines && (
-            <div
-              className={clsx('mdx-code-block__footer-item hidden', 'sm:flex')}
-            >
+            <div className={clsx('mdx-code__footer-item hidden', 'sm:flex')}>
               Lines: {lines}
             </div>
           )}
-          <div className={clsx('mdx-code-block__footer-item')}>UTF-8</div>
+          <div className={clsx('mdx-code__footer-item')}>UTF-8</div>
         </div>
       )}
     </div>

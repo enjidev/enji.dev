@@ -12,13 +12,13 @@ import type { PropsWithChildren, ReactElement } from 'react';
 
 function CBTabWindow({ children = null }: PropsWithChildren) {
   return (
-    <Tab className={clsx('mdx-code-block-group__tab-window')}>
+    <Tab className={clsx('mdx-code-group__tab-window')}>
       {({ selected }) => (
-        <div className={clsx('mdx-code-block-group__tab-window-content')}>
+        <div className={clsx('mdx-code-group__tab-window-content')}>
           {selected && (
             <>
-              <div className={clsx('mdx-code-block-group__tab-window-bl')} />
-              <div className={clsx('mdx-code-block-group__tab-window-br')} />
+              <div className={clsx('mdx-code-group__tab-window-bl')} />
+              <div className={clsx('mdx-code-group__tab-window-br')} />
             </>
           )}
           {children}
@@ -29,7 +29,7 @@ function CBTabWindow({ children = null }: PropsWithChildren) {
 }
 
 function CBTab({ children = null }: PropsWithChildren) {
-  return <Tab className={clsx('mdx-code-block-group__tab')}>{children}</Tab>;
+  return <Tab className={clsx('mdx-code-group__tab')}>{children}</Tab>;
 }
 
 interface CodeGroupProps {
@@ -61,15 +61,13 @@ function CodeGroup({ variant = 'tab', children }: CodeGroupProps) {
 
   return (
     <div
-      className={clsx('mdx-code-block-group', [
-        variant === 'window'
-          ? 'mdx-code-block-group--window'
-          : 'mdx-code-block-group--tab',
+      className={clsx('mdx-code-group', [
+        variant === 'window' ? 'mdx-code-group--window' : 'mdx-code-group--tab',
       ])}
     >
       <Tab.Group manual>
-        <div className={clsx('mdx-code-block-group__header')}>
-          <Tab.List className={clsx('mdx-code-block-group__tabs')}>
+        <div className={clsx('mdx-code-group__header')}>
+          <Tab.List className={clsx('mdx-code-group__tabs')}>
             {tab.map(({ title, icon }, idx) =>
               variant === 'window' ? (
                 <CBTabWindow key={idx}>
@@ -85,7 +83,7 @@ function CodeGroup({ variant = 'tab', children }: CodeGroupProps) {
             )}
           </Tab.List>
         </div>
-        <Tab.Panels className={clsx('mdx-code-block-group__contents')}>
+        <Tab.Panels className={clsx('mdx-code-group__contents')}>
           {tab.map(({ panel }, idx) => (
             <Tab.Panel key={idx}>{panel}</Tab.Panel>
           ))}
