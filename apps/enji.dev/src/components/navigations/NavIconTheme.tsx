@@ -58,15 +58,16 @@ function NavIconTheme() {
           'hover:bg-slate-300/70 sm:ml-0',
           'dark:bg-slate-800/50 dark:text-slate-100 dark:hover:bg-slate-700/50'
         )}
-        aria-label={theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
-        title={theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
+        aria-label={theme === 'dark' ? 'Use Light Mode' : 'Use Dark Mode'}
+        title={theme === 'dark' ? 'Use Light Mode' : 'Use Dark Mode'}
         onClick={handleThemeChange}
       >
-        {theme === 'dark' ? (
+        <div className={clsx('hidden', 'dark:block')}>
           <LightIcon className={clsx('h-5 w-5')} />
-        ) : (
+        </div>
+        <div className={clsx('dark:hidden')}>
           <DarkIcon className={clsx('h-5 w-5')} />
-        )}
+        </div>
       </button>
     </>
   );
