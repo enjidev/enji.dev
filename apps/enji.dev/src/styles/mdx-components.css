@@ -158,7 +158,7 @@
     }
 
     &-message {
-      @apply bg-accent-600 text-accent-200 absolute -left-16 -ml-2 w-16 translate-x-2 rounded-md px-2 py-1 text-xs font-bold opacity-0 transition;
+      @apply bg-accent-600 text-accent-200 pointer-events-none absolute -left-16 -ml-2 w-16 translate-x-2 rounded-md px-2 py-1 text-xs font-bold opacity-0 transition;
       @apply dark:bg-accent-300 dark:text-accent-900;
 
       &-copied {
@@ -217,7 +217,7 @@
       @apply p-3 pt-0;
 
       .mdx-code {
-        @apply border-none;
+        @apply static border-none;
       }
     }
   }
@@ -290,7 +290,7 @@
 }
 
 .mdx-table {
-  @apply border-divider-light mt-6 mb-8 w-full overflow-x-auto rounded-lg border pb-2 text-sm;
+  @apply border-divider-light mt-6 mb-8 w-full overflow-x-auto rounded-lg border text-sm;
   @apply dark:border-divider-dark;
 
   table {
@@ -317,8 +317,8 @@
 
     th,
     td {
-      &:first-of-type {
-        @apply sticky left-0 w-[120px] min-w-[120px] bg-white sm:w-[200px] sm:min-w-[200px];
+      &:first-child {
+        @apply sticky left-0 z-10 w-[120px] min-w-[120px] rounded-l-lg bg-white sm:w-[200px] sm:min-w-[200px];
         @apply dark:bg-slate-900;
       }
     }

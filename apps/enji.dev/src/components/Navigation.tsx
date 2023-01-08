@@ -72,7 +72,7 @@ function Navbar() {
                 title="GitHub"
               />
             </li>
-            <li>
+            <li className={clsx('hidden', 'sm:block')}>
               <NavIcon
                 href="https://twitter.com/enjidev"
                 icon={<TwitterIcon className={clsx('h-5 w-5')} />}
@@ -80,7 +80,7 @@ function Navbar() {
                 label="enjidev"
               />
             </li>
-            <li>
+            <li className={clsx('hidden', 'sm:block')}>
               <div
                 className={clsx(
                   'h-3 w-[1px] bg-slate-200',

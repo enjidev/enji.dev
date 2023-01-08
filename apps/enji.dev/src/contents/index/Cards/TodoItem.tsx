@@ -12,7 +12,7 @@ function TodoItem({ state }: TodoItemProps) {
   return (
     <div
       className={clsx(
-        'w-full border p-6',
+        'pointer-events-none w-full select-none border p-6',
         'lg:w-96',
         state.includes('effects') && ['rounded-xl '],
         state.includes('spacing') && [''],

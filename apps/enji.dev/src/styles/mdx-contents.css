@@ -35,7 +35,7 @@
 
   ul,
   ol {
-    @apply ml-6 mt-6 mb-6;
+    @apply ml-7 mt-6 mb-6;
     @apply md:ml-9;
 
     li {
@@ -46,7 +46,7 @@
       }
 
       &::before {
-        @apply absolute -left-6 top-[7px] h-3 w-3 rounded-[4px] bg-slate-500 content-[''];
+        @apply absolute -left-7 top-[7px] h-3 w-3 rounded-[4px] bg-slate-500 content-[''];
         @apply md:-left-9;
         @apply dark:bg-slate-400;
       }

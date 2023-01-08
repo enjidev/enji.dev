@@ -47,7 +47,7 @@ function AppWindow({
     <div
       role="presentation"
       className={clsx(
-        'border-divider-light flex h-full w-full flex-col overflow-hidden rounded-xl border bg-white',
+        'border-divider-light pointer-events-none flex h-full w-full select-none flex-col overflow-hidden rounded-xl border bg-white',
         'dark:border-divider-dark dark:bg-[#0c1222]'
       )}
     >
@@ -63,14 +63,29 @@ function AppWindow({
             'absolute left-4 top-0 flex h-10 items-center gap-1.5'
           )}
         >
-          <div className={clsx('h-3 w-3 rounded-full bg-red-400')} />
-          <div className={clsx('h-3 w-3 rounded-full bg-amber-400')} />
-          <div className={clsx('h-3 w-3 rounded-full bg-green-400')} />
+          <div
+            className={clsx(
+              'h-3 w-3 rounded-full bg-red-300',
+              'dark:bg-slate-500'
+            )}
+          />
+          <div
+            className={clsx(
+              'h-3 w-3 rounded-full bg-amber-300',
+              'dark:bg-slate-500'
+            )}
+          />
+          <div
+            className={clsx(
+              'h-3 w-3 rounded-full bg-green-300',
+              'dark:bg-slate-500'
+            )}
+          />
         </div>
         {type === 'browser' && (
           <>
             <div className={clsx('flex h-10 items-center justify-center')}>
-              <SkeletonMd w={200} />
+              <SkeletonMd w={160} />
             </div>
             {isWithBrowserTabs && (
               <div className={clsx('mt-2 flex gap-2 px-3')}>
