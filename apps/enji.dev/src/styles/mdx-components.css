@@ -218,6 +218,11 @@
 
       .mdx-code {
         @apply static border-none;
+
+        &__copy-button {
+          @apply border-divider-light border bg-transparent text-slate-600;
+          @apply dark:border-divider-dark dark:text-slate-400;
+        }
       }
     }
   }
