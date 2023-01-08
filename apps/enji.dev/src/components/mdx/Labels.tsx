@@ -18,7 +18,6 @@ export function Label({
       <span
         className={clsx('label__indicator')}
         style={{ width: `${percentage}%` }}
-        aria-label={`Label percentage: ${percentage}%`}
       />
     </span>
   );

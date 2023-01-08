@@ -26,7 +26,7 @@ export function Link({ children, href }: Props) {
           href={href}
           target="_blank"
           rel="noreferrer"
-          className={clsx('mdx-link')}
+          className={clsx('link')}
         >
           {children}
           <ExternalLink />
@@ -34,14 +34,14 @@ export function Link({ children, href }: Props) {
       );
     case 'mail':
       return (
-        <a href={href} className={clsx('mdx-link')}>
+        <a href={href} className={clsx('link')}>
           <MailIcon />
           {children}
         </a>
       );
     default:
       return (
-        <NextLink href={href} className={clsx('mdx-link')}>
+        <NextLink href={href} className={clsx('link')}>
           {children}
         </NextLink>
       );

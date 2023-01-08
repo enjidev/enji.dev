@@ -74,7 +74,8 @@
   }
 
   blockquote {
-    @apply relative my-6 py-1 pl-6 text-slate-500;
+    @apply relative my-6 py-1 pl-6 text-slate-600;
+    @apply dark:text-slate-400;
 
     &::before {
       @apply absolute top-0 bottom-0 left-0 w-1 rounded-full bg-slate-200 content-[''];

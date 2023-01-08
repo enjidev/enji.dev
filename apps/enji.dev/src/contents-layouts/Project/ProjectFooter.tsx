@@ -24,10 +24,7 @@ function ProjectFooter({ githubUrl = '' }: ProjectFooterProps) {
             href={githubUrl}
             target="_blank"
             rel="noreferrer"
-            className={clsx(
-              'text-accent-600 font-bold',
-              'dark:text-accent-500'
-            )}
+            className={clsx('link')}
           >
             open an issue / discussion here.
           </a>
