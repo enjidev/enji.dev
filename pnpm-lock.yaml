@@ -54,6 +54,7 @@ importers:
       tailwindcss-accent: ^2.1.2
       tsconfig: workspace:*
       typescript: ^4.9.4
+      use-local-storage-state: ^18.1.2
     dependencies:
       '@headlessui/react': 1.7.7_biqbaboplfbrettd7655fr4n2y
       '@headlessui/tailwindcss': 0.1.2_tailwindcss@3.2.4
@@ -77,6 +78,7 @@ importers:
       slug: 8.2.2
       swr: 2.0.0_react@18.2.0
       tailwindcss-accent: 2.1.2_tailwindcss@3.2.4
+      use-local-storage-state: 18.1.2_biqbaboplfbrettd7655fr4n2y
     devDependencies:
       '@types/mdx': 2.0.3
       '@types/node': 18.11.18
@@ -4596,6 +4598,17 @@ packages:
     resolution: {integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==}
     dependencies:
       punycode: 2.1.1
+
+  /use-local-storage-state/18.1.2_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-V+kYQNC5R0N/JDpsg6b4ED5UaItKJcSvbne68DwJDZWHxGMQBiF41ATktFIOyet3PIq30d2qtzVp/2aB6hQ8Bg==}
+    engines: {node: '>=12'}
+    peerDependencies:
+      react: '>=18'
+      react-dom: '>=18'
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
 
   /use-sync-external-store/1.2.0_react@18.2.0:
     resolution: {integrity: sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==}
