@@ -29,7 +29,7 @@ importers:
       '@types/react-dom': ^18.0.10
       '@types/slug': ^5.0.3
       '@vercel/analytics': ^0.1.6
-      '@vercel/og': ^0.0.22
+      '@vercel/og': ^1.0.0
       autoprefixer: ^10.4.13
       clsx: ^1.2.1
       concurrently: ^7.6.0
@@ -64,7 +64,7 @@ importers:
       '@next/font': 13.1.1
       '@next/mdx': 13.1.1_vvg67iglxhejglpl7nsv3pjzui
       '@vercel/analytics': 0.1.6_react@18.2.0
-      '@vercel/og': 0.0.22
+      '@vercel/og': 1.0.0
       clsx: 1.2.1
       dayjs: 1.11.7
       framer-motion: 7.7.0_biqbaboplfbrettd7655fr4n2y
@@ -705,10 +705,6 @@ packages:
   /@types/unist/2.0.6:
     resolution: {integrity: sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==}
 
-  /@types/yoga-layout/1.9.2:
-    resolution: {integrity: sha512-S9q47ByT2pPvD65IvrWp7qppVMpk9WGMbVq9wbWZOHg6tnXSD4vyhao6nOSBwwfDdV2p3Kx9evA9vI+XWTfDvw==}
-    dev: false
-
   /@typescript-eslint/eslint-plugin/5.47.1_axni7f4fgvh6tlufnh6hwgsifq:
     resolution: {integrity: sha512-r4RZ2Jl9kcQN7K/dcOT+J7NAimbiis4sSM9spvWimsBvDegMhKLA5vri2jG19PmIPbDjPeWzfUPQ2hjEzA4Nmg==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
@@ -838,13 +834,13 @@ packages:
       react: 18.2.0
     dev: false
 
-  /@vercel/og/0.0.22:
-    resolution: {integrity: sha512-HJjYfjpuNVnxwH7GnEv5QxzdIV4xytjY2RkVmhaOAKlms4X071WSPR9Jp6vjZ3Zmjz0tKSiRnrT5uN/PkW/q9Q==}
+  /@vercel/og/1.0.0:
+    resolution: {integrity: sha512-/uj/sVvxE4SFYUmc4VnMHGkVx/m+jkWzsqAawAghK8BFm5KXP8WAJ475osnO0xhqhptlZLWJDXcxGDht/sVm+g==}
     engines: {node: '>=16'}
     dependencies:
       '@resvg/resvg-wasm': 2.0.0-alpha.4
-      satori: 0.0.45
-      yoga-wasm-web: 0.1.2
+      satori: 0.0.46
+      yoga-wasm-web: 0.3.0
     dev: false
 
   /@webassemblyjs/ast/1.11.1:
@@ -3974,8 +3970,8 @@ packages:
       get-intrinsic: 1.1.3
       is-regex: 1.1.4
 
-  /satori/0.0.45:
-    resolution: {integrity: sha512-jF7AAK5ddZQVE6r6gTG07YxOvhldev0wBrFqBXRNbPH/mEy15gfIqA4xjGfVHczcGYZvY/VWmKri6DzRJF8cgQ==}
+  /satori/0.0.46:
+    resolution: {integrity: sha512-7RfTz38MB0n8tzmRHtUh1y0K7609CLBHpYuyZuh9rpf9FyhOd2in+6EHuqu6ul/Jebn1qD1HdYKtAMjb7uiNAQ==}
     engines: {node: '>=16'}
     dependencies:
       '@shuding/opentype.js': 1.4.0-beta.0
@@ -3984,7 +3980,7 @@ packages:
       css-to-react-native: 3.0.0
       emoji-regex: 10.2.1
       postcss-value-parser: 4.2.0
-      yoga-layout-prebuilt: 1.10.0
+      yoga-wasm-web: 0.3.0
     dev: false
 
   /scheduler/0.23.0:
@@ -4824,15 +4820,8 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
 
-  /yoga-layout-prebuilt/1.10.0:
-    resolution: {integrity: sha512-YnOmtSbv4MTf7RGJMK0FvZ+KD8OEe/J5BNnR0GHhD8J/XcG/Qvxgszm0Un6FTHWW4uHlTgP0IztiXQnGyIR45g==}
-    engines: {node: '>=8'}
-    dependencies:
-      '@types/yoga-layout': 1.9.2
-    dev: false
-
-  /yoga-wasm-web/0.1.2:
-    resolution: {integrity: sha512-8SkgawHcA0RUbMrnhxbaQkZDBi8rMed8pQHixkFF9w32zGhAwZ9/cOHWlpYfr6RCx42Yp3siV45/jPEkJxsk6w==}
+  /yoga-wasm-web/0.3.0:
+    resolution: {integrity: sha512-rD3L4jyMlO1m+RWU60lNwZQK5zmzglCV5fI1gTRikmpv3YzmNIZQbjyfE6cMNb9Xaly/C1SwemYGbsiOekMvnQ==}
     dev: false
 
   /zod/3.20.2:
