@@ -9,6 +9,7 @@ layout: Project
 
 import AccentDemo from '@/components/mdx/AccentDemo';
 import CodeGroup from '@/components/mdx/CodeGroup';
+import InlineHighlight from '@/components/mdx/InlineHighlight';
 
 A Tailwind CSS plugin that provides **accent** color utilities using CSS custom properties based on the Tailwind CSS default color palette.
 
@@ -84,11 +85,11 @@ Add the `data-accent` attribute to your root/html element (or simply set the `ro
 
 Now, instead of writing `text-blue-600`, with this plugin you can write `text-accent-600`.
 
-The **accent** color will follow the value of the **nearest parent** element's `data-accent` attribute, or the **element itself**.
+The **accent** color will follow the value of the **nearest parent** element's <InlineHighlight>`data-accent`</InlineHighlight> attribute, or the **element itself**.
 
 Let the code speak:
 
-```html {footer:false}
+```html {footer:false} {inlineHighlight:data-accent|1|violet} {inlineHighlight:text-accent-600|2,3|violet} {inlineHighlight:data-accent|2|blue} {inlineHighlight:text-accent-600|4|blue}
 <!-- default to :root -->
 <p class="text-accent-600">this text has a blue (:root) accent color.</p>
 
