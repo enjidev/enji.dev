@@ -53,7 +53,7 @@
     }
   }
 
-  :not(pre) {
+  :not(pre, .mdx-inline-highlight) {
     > code {
       @apply font-medium text-slate-700;
       @apply dark:text-slate-300;

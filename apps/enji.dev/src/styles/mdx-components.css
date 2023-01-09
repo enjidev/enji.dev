@@ -294,6 +294,34 @@
   }
 }
 
+.mdx-code .inline-highlight,
+.mdx-inline-highlight {
+  @apply bg-accent-500/30 text-accent-300 border-accent-300 mx-0.5 whitespace-nowrap rounded-md border py-0.5 px-1.5 font-mono;
+
+  &.blue {
+    @apply border-blue-300 bg-blue-500/30 text-blue-300;
+  }
+
+  &.violet {
+    @apply border-violet-300 bg-violet-500/30 text-violet-300;
+  }
+}
+
+.mdx-inline-highlight {
+  @apply text-accent-600 bg-accent-500/10;
+  @apply dark:text-accent-300 dark:bg-accent-500/30;
+
+  &.blue {
+    @apply bg-blue-500/10 text-blue-600;
+    @apply dark:text-blue-300;
+  }
+
+  &.violet {
+    @apply bg-violet-500/10 text-violet-600;
+    @apply dark:text-violet-300;
+  }
+}
+
 .mdx-table {
   @apply border-divider-light mt-6 mb-8 w-full overflow-x-auto rounded-lg border text-sm;
   @apply dark:border-divider-dark;
