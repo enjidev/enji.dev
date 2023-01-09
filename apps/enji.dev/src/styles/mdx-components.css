@@ -10,8 +10,8 @@
     @apply relative;
 
     &::before {
-      @apply bg-accent-400/60 absolute inset-0 -inset-x-2 z-[-1] origin-left scale-x-0 content-[''];
-      @apply dark:bg-accent-900/60;
+      @apply bg-accent-300 absolute inset-0 -inset-x-2 z-[-1] origin-left scale-x-0 content-[''];
+      @apply dark:bg-accent-400/40;
     }
   }
 
