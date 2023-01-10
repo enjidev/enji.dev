@@ -59,33 +59,6 @@ function CleanIntuitive() {
             compromising the User Experience."
         />
       </div>
-      <div className={clsx('', 'lg:hidden')}>
-        <div className={clsx('content-wrapper mb-4')}>
-          <div className={clsx('-mx-2 mb-2 flex gap-2')}>
-            {content.map((item, i) => (
-              <SectionButtonSmall
-                key={item.state}
-                title={item.title}
-                icon={i + 1}
-                active={currentState?.state === item.state}
-                onClick={() => setCurrentState(item)}
-              />
-            ))}
-          </div>
-          {currentState && (
-            <div className={clsx('mb-8')}>
-              <p
-                className={clsx(
-                  'py-2 text-sm text-slate-600',
-                  'dark:text-slate-400'
-                )}
-              >
-                {currentState.description}
-              </p>
-            </div>
-          )}
-        </div>
-      </div>
       <SectionContent>
         <div className={clsx('flex', 'lg:gap-12')}>
           <div
@@ -124,6 +97,11 @@ function CleanIntuitive() {
                       ? currentState.shows
                       : ['typography', 'spacing', 'colors', 'effects']
                   }
+                  title="UI Implementation"
+                  description="Start creating UI components using React and Tailwind CSS."
+                  date="10:00 AM · Tomorrow"
+                  tag1="Design"
+                  tag2="Components"
                 />
               </div>
             </div>

@@ -6,9 +6,21 @@ export type TodoItemState = 'spacing' | 'typography' | 'colors' | 'effects';
 
 interface TodoItemProps {
   state: Array<TodoItemState>;
+  title?: string;
+  description?: string;
+  date?: string;
+  tag1?: string;
+  tag2?: string;
 }
 
-function TodoItem({ state }: TodoItemProps) {
+function TodoItem({
+  state,
+  title = 'Create Documentations',
+  description = 'It is good to create early documentation for our new library.',
+  date = '10:00 AM · Tomorrow',
+  tag1 = 'Docs',
+  tag2 = 'Support',
+}: TodoItemProps) {
   return (
     <div
       className={clsx(
@@ -75,7 +87,7 @@ function TodoItem({ state }: TodoItemProps) {
             : ['text-black', 'dark:text-white']
         )}
       >
-        Create Documentations
+        {title}
       </div>
       <div
         className={clsx(
@@ -86,7 +98,7 @@ function TodoItem({ state }: TodoItemProps) {
             : ['text-black', 'dark:text-white']
         )}
       >
-        It is good to create early documentation for our new library.
+        {description}
       </div>
       <div
         className={clsx(
@@ -109,7 +121,7 @@ function TodoItem({ state }: TodoItemProps) {
               : ['bg-[#0000ff] text-white']
           )}
         >
-          Docs
+          {tag1}
         </div>
         <div
           className={clsx(
@@ -124,7 +136,7 @@ function TodoItem({ state }: TodoItemProps) {
               : ['bg-[#ffff00] text-black']
           )}
         >
-          Support
+          {tag2}
         </div>
       </div>
       <div
@@ -154,7 +166,7 @@ function TodoItem({ state }: TodoItemProps) {
               : ['text-black', 'dark:text-white']
           )}
         >
-          10:00 AM &middot; Tomorrow
+          {date}
         </div>
       </div>
     </div>

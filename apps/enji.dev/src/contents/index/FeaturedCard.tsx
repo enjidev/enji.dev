@@ -12,19 +12,19 @@ function FeaturedCard({ icon, title, desc }: FeaturedCardProps) {
   return (
     <div
       className={clsx(
-        'relative z-10 flex-1 rounded-2xl border border-divider-light bg-white',
+        'border-divider-light relative z-10 flex-1 rounded-2xl border bg-white',
         'dark:border-divider-dark dark:bg-slate-900'
       )}
     >
       <div
         className={clsx(
-          'absolute inset-x-0 inset-y-8 z-[-1] border-t border-divider-light',
+          'border-divider-light absolute inset-x-0 inset-y-8 z-[-1] border-t',
           'dark:border-divider-dark'
         )}
       />
       <div
         className={clsx(
-          'absolute inset-y-0 inset-x-8 z-[-1] border-l border-divider-light',
+          'border-divider-light absolute inset-y-0 inset-x-8 z-[-1] border-l',
           'dark:border-divider-dark'
         )}
       />
@@ -48,7 +48,7 @@ function FeaturedCard({ icon, title, desc }: FeaturedCardProps) {
       </div>
       <div
         className={clsx(
-          'p-4 pl-12 text-[13px] text-slate-600',
+          'p-4 pl-12 text-sm text-slate-600',
           'dark:text-slate-400'
         )}
       >
