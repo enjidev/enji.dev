@@ -17,7 +17,7 @@ function PostMeta({ date, lang }: PostMetaProps) {
       <div
         className={clsx(
           'flex flex-wrap gap-x-6 gap-y-3 text-sm text-slate-600',
-          'dark:text-slate-500'
+          'dark:text-slate-400'
         )}
       >
         <div className={clsx('flex items-center gap-1.5')}>

@@ -26,7 +26,7 @@ function Chip({
         rel="noreferrer"
         className={clsx(
           'bg-accent-600/[0.08] text-accent-600 inline-flex h-6 items-center gap-1 rounded-full px-2 text-[13px] font-medium',
-          'dark:text-accent-500 dark:dark:bg-accent-400/10 dark:font-normal'
+          'dark:text-accent-400 dark:dark:bg-accent-400/10 dark:font-normal'
         )}
       >
         {children}
@@ -39,7 +39,7 @@ function Chip({
       href={href}
       className={clsx(
         'bg-accent-600/[0.08] text-accent-600 inline-flex h-6 items-center gap-1 rounded-full px-2 text-[13px] font-medium',
-        'dark:text-accent-500 dark:dark:bg-accent-400/10 dark:font-normal'
+        'dark:text-accent-400 dark:dark:bg-accent-400/10 dark:font-normal'
       )}
     >
       {children}
@@ -60,14 +60,14 @@ function PostFooter({ tags, category }: PostFooterProps) {
       className={clsx(
         'mt-24 flex flex-col gap-6 text-sm text-slate-600',
         'md:flex-row md:items-center md:justify-between',
-        'dark:text-slate-500'
+        'dark:text-slate-400'
       )}
     >
       <div className={clsx('flex flex-wrap gap-x-1 gap-y-2')}>
         Posted on
         <Link
           href="/blog"
-          className={clsx('text-accent-600 font-bold', 'dark:text-accent-500')}
+          className={clsx('text-accent-600 font-bold', 'dark:text-accent-400')}
         >
           {category}
         </Link>
