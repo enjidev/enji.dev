@@ -82,18 +82,18 @@
 }
 
 :root {
-  --code-bg: #2a344a;
-  --code-window: #353f56;
+  --code-bg: var(--prism-color-background);
+  --code-window: theme(colors.slate.200);
 }
 
 .dark {
-  --code-bg: #161e31;
+  --code-bg: var(--prism-color-background);
   --code-window: #1d263a;
 }
 
 .mdx-code {
-  @apply relative mt-4 mb-8 overflow-hidden rounded-xl bg-[var(--code-bg)] text-slate-400 [color-scheme:dark];
-  @apply dark:border-divider-dark dark:border;
+  @apply border-divider-light relative mt-4 mb-8 overflow-hidden rounded-xl border bg-[var(--code-bg)] text-slate-400;
+  @apply dark:border-divider-dark;
 
   pre {
     @apply overflow-x-auto p-4 text-[14px] leading-relaxed;
@@ -151,7 +151,8 @@
   }
 
   &__copy-button {
-    @apply absolute top-3 right-3 flex h-8 w-8 items-center justify-center rounded-lg bg-[var(--code-window)];
+    @apply border-divider-light absolute top-3 right-3 flex h-8 w-8 items-center justify-center rounded-lg border bg-white text-slate-600;
+    @apply dark:border-divider-dark dark:bg-slate-900 dark:text-slate-400;
 
     svg {
       @apply h-4 w-4;
@@ -168,7 +169,8 @@
   }
 
   &__footer {
-    @apply flex items-center justify-end border-t border-t-[var(--code-window)] px-2 text-xs;
+    @apply flex items-center justify-end border-t border-t-[var(--code-window)] px-2 text-xs text-slate-600;
+    @apply dark:text-slate-400;
 
     &-item {
       @apply flex h-7 items-center gap-1 px-2;
@@ -218,25 +220,21 @@
 
       .mdx-code {
         @apply static border-none;
-
-        &__copy-button {
-          @apply border-divider-light border bg-transparent text-slate-600;
-          @apply dark:border-divider-dark dark:text-slate-400;
-        }
       }
     }
   }
 
   &--files {
-    @apply mt-4 mb-8 overflow-hidden rounded-xl bg-[var(--code-bg)] text-slate-400 [color-scheme:dark];
-    @apply dark:border-divider-dark dark:border;
+    @apply border-divider-light mt-4 mb-8 overflow-hidden rounded-xl border bg-[var(--code-bg)] text-slate-400;
+    @apply dark:border-divider-dark;
 
     .mdx-code-group__header {
       @apply flex items-center bg-[var(--code-window)] pt-1.5 pl-2;
     }
 
     .mdx-code-group__file {
-      @apply relative flex h-10 items-center gap-2 rounded-t-lg rounded-b-none bg-transparent pl-3 pr-4 text-xs font-semibold;
+      @apply relative flex h-10 items-center gap-2 rounded-t-lg rounded-b-none bg-transparent pl-3 pr-4 text-xs font-semibold text-slate-600;
+      @apply dark:text-slate-400;
       @apply ui-selected:bg-[var(--code-bg)];
 
       &-content {
@@ -307,17 +305,18 @@
   }
 }
 
+.mdx-code .inline-highlight,
 .mdx-inline-highlight {
   @apply text-accent-600 bg-accent-500/10;
   @apply dark:text-accent-300 dark:bg-accent-500/30;
 
   &.blue {
-    @apply bg-blue-500/10 text-blue-600;
+    @apply bg-blue-500/10 text-blue-700;
     @apply dark:text-blue-300;
   }
 
   &.violet {
-    @apply bg-violet-500/10 text-violet-600;
+    @apply bg-violet-500/10 text-violet-700;
     @apply dark:text-violet-300;
   }
 }

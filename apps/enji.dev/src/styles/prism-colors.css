@@ -1,4 +1,30 @@
 :root {
+  /* background color */
+  --prism-color-background: theme(colors.slate.50);
+
+  /* base color */
+  --prism-color-base-primary: theme(colors.slate.700);
+  --prism-color-base-secondary: theme(colors.slate.500);
+
+  /* tokens color */
+  --prism-color-function: theme(colors.purple.700);
+  --prism-color-keyword: theme(colors.red.700);
+  --prism-color-number: theme(colors.violet.600);
+  --prism-color-string: theme(colors.blue.600);
+  --prism-color-tag: theme(colors.green.700);
+  --prism-color-parameter: theme(colors.orange.700);
+  --prism-color-property-access: theme(colors.blue.700);
+
+  /* tokens color, from base */
+  --prism-color-comment: var(--prism-color-base-secondary);
+  --prism-color-property: var(--prism-color-base-primary);
+  --prism-color-punctuation: var(--prism-color-base-secondary);
+}
+
+.dark {
+  /* background color */
+  --prism-color-background: #161e31;
+
   /* base color */
   --prism-color-base-primary: theme(colors.slate.300);
   --prism-color-base-secondary: theme(colors.slate.400);
