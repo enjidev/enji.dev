@@ -8,12 +8,13 @@ layout: Project
 ---
 
 import AccentDemo from '@/components/mdx/AccentDemo';
+import Callout from '@/components/mdx/Callout';
 import CodeGroup from '@/components/mdx/CodeGroup';
 import InlineHighlight from '@/components/mdx/InlineHighlight';
 
 A Tailwind CSS plugin that provides **accent** color utilities using CSS custom properties based on the Tailwind CSS default color palette.
 
-> This plugin has been tested with Tailwind CSS versions 2 and 3.
+> This plugin has been tested with Tailwind CSS **v2** and **v3**.
 
 ---
 
@@ -66,6 +67,12 @@ module.exports = {
 | `colors` (REQUIRED) | Include specific color(s). View the [available colors](#available-colors) section. |
 | `root`              | Set color from colors option as `:root` accent color.                              |
 | `cssVarsPrefix`     | Set prefix for css variables name. default to 'tw-ta' (e.g: `--tw-ta-accent-200`)  |
+
+<Callout>
+
+The `cssVarsPrefix` option can help prevent naming conflicts and make it easier for you to use accent CSS variables in your styles.
+
+</Callout>
 
 ### Available Colors
 
