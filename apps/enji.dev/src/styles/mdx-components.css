@@ -358,6 +358,79 @@
   }
 }
 
+.mdx-callout {
+  @apply bg-accent-400/10 my-6 flex flex-col gap-2 rounded-xl p-4;
+  @apply md:gap-4 md:p-6;
+
+  blockquote {
+    @apply my-0;
+
+    &::before {
+      @apply bg-accent-300;
+      @apply dark:bg-accent-400/30;
+    }
+  }
+
+  &__header {
+    @apply text-accent-600 flex items-center gap-2 text-lg font-bold;
+    @apply md:gap-3 md:text-xl;
+    @apply dark:text-accent-400;
+
+    svg {
+      @apply h-5 w-5;
+      @apply md:h-6 md:w-6;
+    }
+  }
+
+  &--info {
+    @apply bg-blue-400/10;
+
+    .mdx-callout__header {
+      @apply text-blue-600;
+      @apply dark:text-blue-400;
+    }
+
+    blockquote {
+      &::before {
+        @apply bg-blue-300;
+        @apply dark:bg-blue-400/30;
+      }
+    }
+  }
+
+  &--warning {
+    @apply bg-amber-400/10;
+
+    .mdx-callout__header {
+      @apply text-amber-700;
+      @apply dark:text-amber-400;
+    }
+
+    blockquote {
+      &::before {
+        @apply bg-amber-300;
+        @apply dark:bg-amber-400/30;
+      }
+    }
+  }
+
+  &--danger {
+    @apply bg-red-400/10;
+
+    .mdx-callout__header {
+      @apply text-red-700;
+      @apply dark:text-red-400;
+    }
+
+    blockquote {
+      &::before {
+        @apply bg-red-300;
+        @apply dark:bg-red-400/30;
+      }
+    }
+  }
+}
+
 @keyframes heading-target {
   0%,
   44%,
