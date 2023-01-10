@@ -179,4 +179,19 @@
       @apply bg-accent-600/20 absolute bottom-1 left-0 right-0 z-[-1] h-2 origin-bottom scale-y-[.4] transition-transform content-[''];
     }
   }
+
+  .footer-link {
+    @apply flex h-8 items-center gap-2 whitespace-nowrap px-2 py-1 text-sm text-slate-900;
+    @apply dark:text-slate-200;
+
+    &__label {
+      @apply border-divider-light rounded-full border px-2 py-0 text-[10px] uppercase text-slate-900;
+      @apply dark:text-slate-200;
+    }
+
+    &--soon {
+      @apply cursor-not-allowed text-slate-600;
+      @apply dark:text-slate-400;
+    }
+  }
 }
