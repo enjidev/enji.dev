@@ -62,7 +62,7 @@
   @apply flex h-auto items-center justify-center;
 
   &::after {
-    @apply h-0.5 w-full rounded-full bg-slate-200 content-[''];
+    @apply h-[1px] w-full rounded-full bg-slate-200 content-[''];
     @apply dark:bg-slate-800;
   }
 }
