@@ -132,7 +132,7 @@ function FooterDescription() {
       >
         About Me
       </div>
-      <p className={clsx('mb-4 font-normal')}>
+      <p className={clsx('mb-4 font-normal leading-relaxed')}>
         I&apos;m Enji, a <strong>front-end developer</strong> who loves
         intuitive, clean and modern UI design.
       </p>
