@@ -1,7 +1,11 @@
+import clsx from 'clsx';
+
 import WithTableOfContents from '@/components/layouts/WithTableOfContents';
+import WithTableOfContentsMock from '@/components/layouts/WithTableOfContentsMock';
 import Head from '@/components/meta/Head';
 import SkipNavigation from '@/components/navigations/SkipNavigation';
 import PageHeader from '@/components/PageHeader';
+import Reactions from '@/components/Reactions';
 
 import { getPageOgImageUrl } from '@/helpers/page';
 
@@ -37,6 +41,19 @@ function ProjectLayout({
         {children}
         <ProjectFooter githubUrl={githubUrl} />
       </WithTableOfContents>
+
+      <div
+        className={clsx(
+          'sticky bottom-8 z-[902] mt-16',
+          'lg:bottom-8 lg:mt-24'
+        )}
+      >
+        <WithTableOfContentsMock>
+          <div className={clsx('mx-auto px-4', 'sm:max-w-[600px] lg:px-24')}>
+            <Reactions />
+          </div>
+        </WithTableOfContentsMock>
+      </div>
     </>
   );
 }

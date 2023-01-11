@@ -1,39 +1,14 @@
 import clsx from 'clsx';
 import Link from 'next/link';
 
-import { TwitterIcon } from '@/components/Icons';
-
-import useCurrentUrl from '@/hooks/useCurrentUrl';
-
 import type { PropsWithChildren } from 'react';
 import { TPostFrontMatter } from '@/types';
 
 type ChipProps = {
   href: string;
-  external?: boolean;
 };
 
-function Chip({
-  href,
-  external = false,
-  children = null,
-}: PropsWithChildren<ChipProps>) {
-  if (external) {
-    return (
-      <a
-        href={href}
-        target="_blank"
-        rel="noreferrer"
-        className={clsx(
-          'bg-accent-600/[0.08] text-accent-600 inline-flex h-6 items-center gap-1 rounded-full px-2 text-[13px] font-medium',
-          'dark:text-accent-400 dark:dark:bg-accent-400/10 dark:font-normal'
-        )}
-      >
-        {children}
-      </a>
-    );
-  }
-
+function Chip({ href, children = null }: PropsWithChildren<ChipProps>) {
   return (
     <Link
       href={href}
@@ -53,8 +28,6 @@ interface PostFooterProps {
 }
 
 function PostFooter({ tags, category }: PostFooterProps) {
-  const currentUrl = useCurrentUrl();
-
   return (
     <div
       className={clsx(
@@ -78,18 +51,6 @@ function PostFooter({ tags, category }: PostFooterProps) {
               #{tag}
             </Chip>
           ))}
-        </div>
-      </div>
-      <div className={clsx('flex flex-wrap gap-x-1 gap-y-2')}>
-        Share this on:
-        <div className={clsx('flex flex-wrap gap-1')}>
-          <Chip
-            href={`https://twitter.com/intent/tweet?via=enjidev&url=${currentUrl}`}
-            external
-          >
-            <TwitterIcon className={clsx('mt-0.5 h-4 w-4')} />
-            Twitter
-          </Chip>
         </div>
       </div>
     </div>
