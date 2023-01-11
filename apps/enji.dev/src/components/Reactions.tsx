@@ -74,7 +74,7 @@ function Reactions() {
   return (
     <div
       className={clsx(
-        'border-divider-light relative flex items-center justify-between rounded-full border bg-white/70 p-2 backdrop-blur',
+        'border-divider-light pointer-events-auto relative flex items-center justify-between rounded-full border bg-white/70 p-2 backdrop-blur',
         'dark:border-divider-dark dark:bg-slate-900/80'
       )}
     >

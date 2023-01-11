@@ -41,10 +41,9 @@ function ProjectLayout({
         {children}
         <ProjectFooter githubUrl={githubUrl} />
       </WithTableOfContents>
-
       <div
         className={clsx(
-          'sticky bottom-8 z-[902] mt-16',
+          'pointer-events-none sticky bottom-8 z-[902] mt-16',
           'lg:bottom-8 lg:mt-24'
         )}
       >
