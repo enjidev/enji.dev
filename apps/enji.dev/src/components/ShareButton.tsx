@@ -1,5 +1,6 @@
 import { Menu } from '@headlessui/react';
 import clsx from 'clsx';
+import { m } from 'framer-motion';
 import { forwardRef } from 'react';
 
 import {
@@ -30,7 +31,7 @@ const ShareItemButton = forwardRef(
       type="button"
       ref={ref}
       className={clsx(
-        'flex w-full items-center gap-4 px-5 py-2 text-sm',
+        'flex w-full items-center gap-3 px-4 py-2 text-[13px]',
         ['hover:bg-slate-100', 'hover:dark:bg-[#1d263a]'],
         [active && ['bg-slate-100', 'dark:bg-[#1d263a]']]
       )}
@@ -58,7 +59,7 @@ const ShareItemLink = forwardRef(
       target="_blank"
       rel="noreferrer"
       className={clsx(
-        'flex w-full items-center gap-4 px-5 py-2 text-sm',
+        'flex w-full items-center gap-3 px-4 py-2 text-[13px]',
         ['hover:bg-slate-100', 'hover:dark:bg-[#1d263a]'],
         [active && ['bg-slate-100', 'dark:bg-[#1d263a]']]
       )}
@@ -67,6 +68,11 @@ const ShareItemLink = forwardRef(
     </a>
   )
 );
+
+const animation = {
+  hide: { opacity: 0, y: 16 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.18 } },
+};
 
 interface ShareButtonProps {
   onItemClick?: () => void;
@@ -92,53 +98,64 @@ function ShareButton({ onItemClick = () => {} }: ShareButtonProps) {
 
   return (
     <Menu>
-      <Menu.Button
-        className={clsx(
-          'flex h-10 w-10 items-center justify-center rounded-full bg-slate-200',
-          'dark:bg-[#1d263a]'
-        )}
-      >
-        <ShareIcon className={clsx('h-5 w-5')} />
-      </Menu.Button>
-      <Menu.Items
-        className={clsx(
-          'border-divider-light absolute -top-2 right-0 z-[902] w-56 -translate-y-full overflow-hidden rounded-xl border bg-white pb-3',
-          'dark:border-divider-dark dark:bg-[#161e31]'
-        )}
-      >
-        <div className={clsx('py-4 px-5 text-sm font-bold')}>
-          Share this on:
-        </div>
-        <Menu.Item>
-          {({ active }) => (
-            <ShareItemLink
-              active={active}
-              href={`https://twitter.com/intent/tweet?via=enjidev&url=${currentUrl}`}
-              onClick={handleLink}
+      {({ open }) => (
+        <>
+          <Menu.Button
+            className={clsx(
+              'flex h-10 w-10 items-center justify-center rounded-full bg-slate-200',
+              'dark:bg-[#1d263a]'
+            )}
+          >
+            <ShareIcon className={clsx('h-5 w-5')} />
+          </Menu.Button>
+          {open && (
+            <Menu.Items
+              static
+              as={m.div}
+              variants={animation}
+              initial="hide"
+              animate="show"
+              className={clsx(
+                'border-divider-light absolute bottom-16 right-0 z-[902] flex w-full flex-col overflow-hidden rounded-2xl border bg-white pb-2 pt-1',
+                'dark:border-divider-dark dark:bg-[#161e31]'
+              )}
             >
-              <TwitterIcon className={clsx('h-5 w-5')} />
-              <span className={clsx('flex items-center gap-2')}>
-                Twitter
-                <ExternalLink className={clsx('h-4 w-4')} />
-              </span>
-            </ShareItemLink>
+              <div className={clsx('py-3 px-4 text-[13px] font-bold')}>
+                Share this on:
+              </div>
+              <Menu.Item>
+                {({ active }) => (
+                  <ShareItemLink
+                    active={active}
+                    href={`https://twitter.com/intent/tweet?via=enjidev&url=${currentUrl}`}
+                    onClick={handleLink}
+                  >
+                    <TwitterIcon className={clsx('h-4 w-4')} />
+                    <span className={clsx('flex items-center gap-2')}>
+                      Twitter
+                      <ExternalLink className={clsx('h-3 w-3')} />
+                    </span>
+                  </ShareItemLink>
+                )}
+              </Menu.Item>
+              <div
+                className={clsx(
+                  'border-divider-light my-2 border-t',
+                  'dark:border-divider-dark'
+                )}
+              />
+              <Menu.Item>
+                {({ active }) => (
+                  <ShareItemButton active={active} onClick={handleCopy}>
+                    <NoteIcon className={clsx('h-4 w-4')} />
+                    Copy link
+                  </ShareItemButton>
+                )}
+              </Menu.Item>
+            </Menu.Items>
           )}
-        </Menu.Item>
-        <div
-          className={clsx(
-            'border-divider-light my-2 border-t',
-            'dark:border-divider-dark'
-          )}
-        />
-        <Menu.Item>
-          {({ active }) => (
-            <ShareItemButton active={active} onClick={handleCopy}>
-              <NoteIcon className={clsx('h-5 w-5')} />
-              Copy link
-            </ShareItemButton>
-          )}
-        </Menu.Item>
-      </Menu.Items>
+        </>
+      )}
     </Menu>
   );
 }
