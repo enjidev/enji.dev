@@ -11,7 +11,7 @@ import type { UrlObject } from 'url';
 
 const animation = {
   hide: { opacity: 0, y: -16 },
-  show: { opacity: 1, y: 0 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.18 } },
 };
 
 type LinkRefProps = HTMLAttributes<HTMLAnchorElement> & {
