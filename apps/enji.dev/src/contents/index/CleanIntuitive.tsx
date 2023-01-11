@@ -48,14 +48,14 @@ function CleanIntuitive() {
 
   return (
     <>
-      <div className={clsx('mb-8')}>
+      <header className={clsx('mb-8')}>
         <SectionTitle
           title="Eye Catching, Modern & Minimalist Design."
           caption="Clean & Intuitive"
           description="Keep the User Interface clean with a modern touch without
             compromising the User Experience."
         />
-      </div>
+      </header>
       <SectionContent>
         <div className={clsx('flex', 'lg:gap-12')}>
           <div

@@ -80,15 +80,15 @@ function IndexContents() {
       <div className={clsx('-mt-12 mb-12', 'md:mt-0 md:mb-24')}>
         <QuoteSection />
       </div>
-      <div className={clsx('mb-12', 'lg:mb-24')}>
+      <section className={clsx('mb-12', 'lg:mb-24')}>
         <CleanIntuitive />
-      </div>
-      <div className={clsx('mb-12', 'lg:mb-24')}>
+      </section>
+      <section className={clsx('mb-12', 'lg:mb-24')}>
         <DetailOriented />
-      </div>
-      <div className={clsx('mb-12', 'lg:mb-24')}>
+      </section>
+      <section className={clsx('mb-12', 'lg:mb-24')}>
         <PrettyOptimized />
-      </div>
+      </section>
     </>
   );
 }
