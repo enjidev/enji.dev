@@ -116,7 +116,7 @@ function ShareButton({ onItemClick = () => {} }: ShareButtonProps) {
               initial="hide"
               animate="show"
               className={clsx(
-                'border-divider-light absolute bottom-16 right-0 z-[902] flex w-full flex-col overflow-hidden rounded-2xl border bg-white pb-2 pt-1',
+                'border-divider-light absolute bottom-16 right-0 z-[902] flex w-56 flex-col overflow-hidden rounded-2xl border bg-white pb-2 pt-1',
                 'dark:border-divider-dark dark:bg-[#161e31]'
               )}
             >

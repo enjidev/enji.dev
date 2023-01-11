@@ -78,58 +78,62 @@ function Reactions() {
         'dark:border-divider-dark dark:bg-slate-900/80'
       )}
     >
-      <div className={clsx('flex items-center gap-1')}>
-        <EmojiReaction
-          title="Claps"
-          defaultImage="/assets/emojis/clapping-hands.png"
-          animatedImage="/assets/emojis/clapping-hands-animated.png"
-          onClick={() => {
-            setClapCount((current) => current + 1);
-          }}
-        />
-        <EmojiReaction
-          title="Wow"
-          defaultImage="/assets/emojis/astonished-face.png"
-          animatedImage="/assets/emojis/astonished-face-animated.png"
-          onClick={() => {
-            setAmazedCount((current) => current + 1);
-          }}
-        />
+      <div className={clsx('flex items-center gap-4')}>
+        <div className={clsx('flex items-center gap-1 pl-2')}>
+          <EmojiReaction
+            title="Claps"
+            defaultImage="/assets/emojis/clapping-hands.png"
+            animatedImage="/assets/emojis/clapping-hands-animated.png"
+            onClick={() => {
+              setClapCount((current) => current + 1);
+            }}
+          />
+          <EmojiReaction
+            title="Wow"
+            defaultImage="/assets/emojis/astonished-face.png"
+            animatedImage="/assets/emojis/astonished-face-animated.png"
+            onClick={() => {
+              setAmazedCount((current) => current + 1);
+            }}
+          />
+        </div>
+        <div className={clsx('flex items-center gap-2')}>
+          <ReactionCounter count={clapCount}>
+            <Image
+              className={clsx('h-4 w-4 select-none')}
+              alt="Claps"
+              src="/assets/emojis/clapping-hands.png"
+              width={48}
+              height={48}
+              quality={100}
+              priority
+            />
+          </ReactionCounter>
+          <ReactionCounter count={amazedCount}>
+            <Image
+              className={clsx('h-4 w-4 select-none')}
+              alt="Amazed"
+              src="/assets/emojis/astonished-face.png"
+              width={48}
+              height={48}
+              quality={100}
+              priority
+            />
+          </ReactionCounter>
+        </div>
       </div>
-      <div className={clsx('flex items-center gap-2')}>
-        <ReactionCounter count={clapCount}>
-          <Image
-            className={clsx('h-4 w-4 select-none')}
-            alt="Claps"
-            src="/assets/emojis/clapping-hands.png"
-            width={48}
-            height={48}
-            quality={100}
-            priority
-          />
-        </ReactionCounter>
-        <ReactionCounter count={amazedCount}>
-          <Image
-            className={clsx('h-4 w-4 select-none')}
-            alt="Amazed"
-            src="/assets/emojis/astonished-face.png"
-            width={48}
-            height={48}
-            quality={100}
-            priority
-          />
-        </ReactionCounter>
+      <div className={clsx('flex items-center gap-4')}>
         <div className={clsx('hidden', 'sm:block')}>
           <ReactionCounter count={sharedCount}>
             <ShareIcon className={clsx('h-3 w-3')} />
           </ReactionCounter>
         </div>
+        <ShareButton
+          onItemClick={() => {
+            setSharedCount((current) => current + 1);
+          }}
+        />
       </div>
-      <ShareButton
-        onItemClick={() => {
-          setSharedCount((current) => current + 1);
-        }}
-      />
     </div>
   );
 }

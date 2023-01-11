@@ -64,7 +64,7 @@ function Post({
         )}
       >
         <WithTableOfContentsMock>
-          <div className={clsx('mx-auto px-4', 'sm:max-w-[600px] lg:px-24')}>
+          <div className={clsx('mx-auto max-w-[360px]', 'sm:max-w-[420px]')}>
             <Reactions />
           </div>
         </WithTableOfContentsMock>
