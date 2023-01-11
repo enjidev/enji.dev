@@ -43,16 +43,18 @@ const ShareItemButton = forwardRef(
 
 interface ShareItemLinkProps extends ShareItemProps {
   href: string;
+  onClick: () => void;
 }
 
 const ShareItemLink = forwardRef(
   (
-    { href, active, children }: ShareItemLinkProps,
+    { href, active, onClick, children }: ShareItemLinkProps,
     ref: Ref<HTMLAnchorElement>
   ) => (
     <a
       ref={ref}
       href={href}
+      onClick={onClick}
       target="_blank"
       rel="noreferrer"
       className={clsx(
@@ -66,16 +68,26 @@ const ShareItemLink = forwardRef(
   )
 );
 
-function ShareButton() {
+interface ShareButtonProps {
+  onItemClick?: () => void;
+}
+
+function ShareButton({ onItemClick = () => {} }: ShareButtonProps) {
   const currentUrl = useCurrentUrl();
 
   const handleCopy = async () => {
+    onItemClick();
+
     try {
       const content = currentUrl;
       await navigator.clipboard.writeText(content);
     } catch (err) {
       //
     }
+  };
+
+  const handleLink = () => {
+    onItemClick();
   };
 
   return (
@@ -102,6 +114,7 @@ function ShareButton() {
             <ShareItemLink
               active={active}
               href={`https://twitter.com/intent/tweet?via=enjidev&url=${currentUrl}`}
+              onClick={handleLink}
             >
               <TwitterIcon className={clsx('h-5 w-5')} />
               <span className={clsx('flex items-center gap-2')}>
