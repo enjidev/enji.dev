@@ -94,7 +94,7 @@ function ShareButton({ onItemClick = () => {} }: ShareButtonProps) {
     <Menu>
       <Menu.Button
         className={clsx(
-          'flex h-10 w-10 items-center justify-center rounded-full bg-slate-100',
+          'flex h-10 w-10 items-center justify-center rounded-full bg-slate-200',
           'dark:bg-[#1d263a]'
         )}
       >
