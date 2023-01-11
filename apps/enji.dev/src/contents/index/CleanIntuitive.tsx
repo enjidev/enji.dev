@@ -1,10 +1,7 @@
 import clsx from 'clsx';
 import { useState } from 'react';
 
-import {
-  SectionButton,
-  SectionButtonSmall,
-} from '@/components/sections/SectionButton';
+import { SectionButton } from '@/components/sections/SectionButton';
 import SectionContent from '@/components/sections/SectionContent';
 import SectionTitle from '@/components/sections/SectionTitle';
 
