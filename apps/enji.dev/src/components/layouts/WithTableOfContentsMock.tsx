@@ -11,12 +11,7 @@ function WithTableOfContentsMock({ children = null }: PropsWithChildren) {
           <div className={clsx('w-64', 'xl:w-[272px]')} />
         </div>
         <div className={clsx('min-w-0 flex-1')}>{children}</div>
-        <div
-          className={clsx(
-            'border-divider-light hidden border-l',
-            ' dark:border-divider-dark lg:block'
-          )}
-        />
+        <div className={clsx('hidden', ' lg:block')} />
       </div>
     </div>
   );
