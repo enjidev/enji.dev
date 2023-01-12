@@ -57,6 +57,7 @@ importers:
       tsconfig: workspace:*
       typescript: ^4.9.4
       use-local-storage-state: ^18.1.2
+      zod: ^3.20.2
     dependencies:
       '@headlessui/react': 1.7.7_biqbaboplfbrettd7655fr4n2y
       '@headlessui/tailwindcss': 0.1.2_tailwindcss@3.2.4
@@ -82,6 +83,7 @@ importers:
       swr: 2.0.0_react@18.2.0
       tailwindcss-accent: 2.1.2_tailwindcss@3.2.4
       use-local-storage-state: 18.1.2_biqbaboplfbrettd7655fr4n2y
+      zod: 3.20.2
     devDependencies:
       '@types/mdx': 2.0.3
       '@types/node': 18.11.18

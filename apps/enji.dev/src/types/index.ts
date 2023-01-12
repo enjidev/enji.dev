@@ -1,3 +1,5 @@
+import type { ReactionType } from '@prisma/client';
+
 export type TApiResponse = {
   message: string;
 };
@@ -41,10 +43,25 @@ export type TProjectFrontMatter = TBaseFrontMatter & {
   type: 'package';
 };
 
+export type TReaction = Record<ReactionType, number>;
+
 export type TContentMeta = {
   slug: string;
   meta: {
     views: number;
     shares: number;
+  };
+};
+
+export type TContentMetaDetail = {
+  slug: string;
+  meta: {
+    views: number;
+    shares: number;
+    reactions: number;
+    reactionsDetail: TReaction;
+  };
+  metaUser: {
+    reactionsDetail: TReaction;
   };
 };
