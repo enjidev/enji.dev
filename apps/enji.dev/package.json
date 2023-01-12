@@ -21,6 +21,7 @@
     "@next/bundle-analyzer": "^13.1.1",
     "@next/font": "^13.1.1",
     "@next/mdx": "^13.1.1",
+    "@prisma/client": "^4.8.1",
     "@vercel/analytics": "^0.1.6",
     "@vercel/og": "^0.0.22",
     "clsx": "^1.2.1",
@@ -52,6 +53,7 @@
     "next-sitemap": "^3.1.43",
     "postcss": "^8.4.20",
     "postcss-import": "^15.1.0",
+    "prisma": "^4.8.1",
     "tailwindcss": "^3.2.4",
     "tsconfig": "workspace:*",
     "typescript": "^4.9.4"

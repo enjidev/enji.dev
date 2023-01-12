@@ -4,6 +4,7 @@
     "editorconfig.editorconfig",
     "dbaeumer.vscode-eslint",
     "bradlc.vscode-tailwindcss",
-    "csstools.postcss"
+    "csstools.postcss",
+    "prisma.prisma"
   ]
 }
