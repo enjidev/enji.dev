@@ -2,7 +2,9 @@ import { prisma } from '@/utils/prisma';
 
 import type { TContentMeta, TReaction } from '@/types';
 
-export const getAllContentMeta = async (): Promise<Array<TContentMeta>> => {
+export const getAllContentMeta = async (): Promise<
+  Record<string, TContentMeta>
+> => {
   const result = await prisma.contentMeta.findMany({
     include: {
       _count: {
@@ -14,13 +16,20 @@ export const getAllContentMeta = async (): Promise<Array<TContentMeta>> => {
     },
   });
 
-  return result.map(({ slug, _count }) => ({
-    slug,
-    meta: _count,
-  }));
+  return result && result.length > 0
+    ? result.reduce(
+        (acc, cur) => ({
+          ...acc,
+          [cur.slug]: cur,
+        }),
+        {}
+      )
+    : {};
 };
 
-export const getContentMeta = async (slug: string) => {
+export const getContentMeta = async (
+  slug: string
+): Promise<{ shares: number; views: number; reactions: number }> => {
   const result = await prisma.contentMeta.findFirst({
     where: {
       slug,
@@ -36,7 +45,11 @@ export const getContentMeta = async (slug: string) => {
     },
   });
 
-  return result;
+  return {
+    shares: result?._count.shares || 0,
+    views: result?._count.views || 0,
+    reactions: result?._count.reactions || 0,
+  };
 };
 
 export const getReactions = async (slug: string): Promise<TReaction> => {

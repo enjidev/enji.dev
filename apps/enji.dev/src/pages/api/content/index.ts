@@ -5,7 +5,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Array<TContentMeta> | TApiResponse>
+  res: NextApiResponse<Record<string, TContentMeta> | TApiResponse>
 ) {
   try {
     if (req.method === 'GET') {
@@ -15,7 +15,7 @@ export default async function handler(
     } else {
       res.status(405).json({ message: 'Method Not Allowed' });
     }
-  } catch {
+  } catch (err) {
     res.status(500).json({ message: 'Internal Server Error' });
   }
 }

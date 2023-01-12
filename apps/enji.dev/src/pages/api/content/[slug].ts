@@ -20,11 +20,10 @@ export default async function handler(
       const reactionsDetailUser = await getReactionsBy(slug, sessionId);
 
       res.status(200).json({
-        slug,
         meta: {
-          shares: meta._count.shares,
-          views: meta._count.views,
-          reactions: meta._count.reactions,
+          shares: meta.shares,
+          views: meta.views,
+          reactions: meta.reactions,
           reactionsDetail,
         },
         metaUser: {
@@ -34,7 +33,7 @@ export default async function handler(
     } else {
       res.status(405).json({ message: 'Method Not Allowed' });
     }
-  } catch {
+  } catch (err) {
     res.status(500).json({ message: 'Internal Server Error' });
   }
 }

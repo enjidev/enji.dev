@@ -46,7 +46,6 @@ export type TProjectFrontMatter = TBaseFrontMatter & {
 export type TReaction = Record<ReactionType, number>;
 
 export type TContentMeta = {
-  slug: string;
   meta: {
     views: number;
     shares: number;
@@ -54,7 +53,6 @@ export type TContentMeta = {
 };
 
 export type TContentMetaDetail = {
-  slug: string;
   meta: {
     views: number;
     shares: number;
