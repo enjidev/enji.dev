@@ -1,17 +1,5 @@
-export type TApiError = {
-  error: string;
-};
-
 export type TApiResponse = {
   message: string;
-};
-
-export type TLastUpdate = {
-  commiter: string;
-  message: string;
-  avatar: string;
-  date: string;
-  url: string;
 };
 
 export type TTableOfContentsItem = {
