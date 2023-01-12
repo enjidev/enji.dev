@@ -1,8 +1,7 @@
 import { z } from 'zod';
 
-import { prisma } from '@/utils/prisma';
 import { getSessionId } from '@/helpers/server';
-import { getReactions, getReactionsBy } from '@/lib/meta';
+import { getContentMeta, getReactions, getReactionsBy } from '@/lib/meta';
 
 import type { TApiResponse, TContentMetaDetail } from '@/types';
 import type { NextApiRequest, NextApiResponse } from 'next';
@@ -16,21 +15,7 @@ export default async function handler(
 
   try {
     if (req.method === 'GET') {
-      const meta = await prisma.contentMeta.findFirst({
-        where: {
-          slug,
-        },
-        include: {
-          _count: {
-            select: {
-              shares: true,
-              views: true,
-              reactions: true,
-            },
-          },
-        },
-      });
-
+      const meta = await getContentMeta(slug);
       const reactionsDetail = await getReactions(slug);
       const reactionsDetailUser = await getReactionsBy(slug, sessionId);
 

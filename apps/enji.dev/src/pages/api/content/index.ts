@@ -1,4 +1,4 @@
-import { prisma } from '@/utils/prisma';
+import { getAllContentMeta } from '@/lib/meta';
 
 import type { TApiResponse, TContentMeta } from '@/types';
 import type { NextApiRequest, NextApiResponse } from 'next';
@@ -9,23 +9,9 @@ export default async function handler(
 ) {
   try {
     if (req.method === 'GET') {
-      const result = await prisma.contentMeta.findMany({
-        include: {
-          _count: {
-            select: {
-              shares: true,
-              views: true,
-            },
-          },
-        },
-      });
+      const result = await getAllContentMeta();
 
-      const response = result.map(({ slug, _count }) => ({
-        slug,
-        meta: _count,
-      }));
-
-      res.status(200).json(response);
+      res.status(200).json(result);
     } else {
       res.status(405).json({ message: 'Method Not Allowed' });
     }

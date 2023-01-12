@@ -1,6 +1,43 @@
 import { prisma } from '@/utils/prisma';
 
-import type { TReaction } from '@/types';
+import type { TContentMeta, TReaction } from '@/types';
+
+export const getAllContentMeta = async (): Promise<Array<TContentMeta>> => {
+  const result = await prisma.contentMeta.findMany({
+    include: {
+      _count: {
+        select: {
+          shares: true,
+          views: true,
+        },
+      },
+    },
+  });
+
+  return result.map(({ slug, _count }) => ({
+    slug,
+    meta: _count,
+  }));
+};
+
+export const getContentMeta = async (slug: string) => {
+  const result = await prisma.contentMeta.findFirst({
+    where: {
+      slug,
+    },
+    include: {
+      _count: {
+        select: {
+          shares: true,
+          views: true,
+          reactions: true,
+        },
+      },
+    },
+  });
+
+  return result;
+};
 
 export const getReactions = async (slug: string): Promise<TReaction> => {
   const result = await prisma.reaction.groupBy({
