@@ -12,6 +12,7 @@ module.exports = {
   ],
   parser: '@typescript-eslint/parser',
   rules: {
+    'no-underscore-dangle': ['error', { allow: ['_count'] }],
     'import/extensions': 'off',
     'import/order': 'off',
     'import/prefer-default-export': 'off',
