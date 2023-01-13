@@ -1,7 +1,7 @@
 import { prisma } from '@/utils/prisma';
 
 import type { TContentMeta, TReaction } from '@/types';
-import type { ReactionType } from '@prisma/client';
+import type { ReactionType, ShareType } from '@prisma/client';
 
 export const getAllContentMeta = async (): Promise<
   Record<string, TContentMeta>
@@ -130,6 +130,51 @@ export const setReaction = async ({
       count,
       type,
       section,
+      sessionId,
+      content: {
+        connectOrCreate: {
+          where: {
+            slug,
+          },
+          create: {
+            slug,
+          },
+        },
+      },
+    },
+  });
+
+  return result;
+};
+
+export const getSharesBy = async (
+  slug: string,
+  sessionId: string
+): Promise<number> => {
+  const result = await prisma.share.count({
+    where: {
+      sessionId,
+      content: {
+        slug,
+      },
+    },
+  });
+
+  return result || 0;
+};
+
+export const setShare = async ({
+  slug,
+  type,
+  sessionId,
+}: {
+  slug: string;
+  type: ShareType;
+  sessionId: string;
+}) => {
+  const result = await prisma.share.create({
+    data: {
+      type,
       sessionId,
       content: {
         connectOrCreate: {
