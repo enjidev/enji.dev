@@ -18,6 +18,9 @@ export const getAllContentMeta = async (): Promise<
         },
       },
     },
+    orderBy: {
+      slug: 'asc',
+    },
   });
 
   return result && result.length > 0
@@ -107,6 +110,9 @@ export const getSectionMeta = async (
       content: {
         slug,
       },
+    },
+    orderBy: {
+      section: 'asc',
     },
   });
 
