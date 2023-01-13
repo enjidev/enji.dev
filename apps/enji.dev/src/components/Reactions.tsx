@@ -139,7 +139,7 @@ function Reactions({ slug, meta, metaUser }: ReactionsProps) {
         'dark:border-divider-dark dark:bg-slate-900/80'
       )}
     >
-      <div className={clsx('flex items-center gap-6 pl-2')}>
+      <div className={clsx('flex items-center gap-4')}>
         <div className={clsx('flex flex-col items-center gap-2')}>
           <EmojiReaction
             disabled={clapQuota <= 0}
