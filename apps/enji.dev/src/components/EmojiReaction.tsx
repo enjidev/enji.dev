@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import { m } from 'framer-motion';
 import Head from 'next/head';
 import Image from 'next/image';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 type AnimationValue = {
   key: number;
@@ -58,6 +58,7 @@ interface EmojiReactionProps {
   disabled?: boolean;
   defaultImage: string;
   animatedImage: string;
+  disabledImage: string;
   onClick?: () => void;
   onBatchClick?: (count: number) => void;
 }
@@ -67,6 +68,7 @@ function EmojiReaction({
   disabled = false,
   defaultImage,
   animatedImage,
+  disabledImage,
   onClick = () => {},
   onBatchClick = () => {},
 }: EmojiReactionProps) {
@@ -75,6 +77,12 @@ function EmojiReaction({
 
   const [history, setHistory] = useState<Array<AnimationValue>>([]);
   const [src, setSrc] = useState<string>(defaultImage);
+
+  useEffect(() => {
+    if (disabled) {
+      setSrc(disabledImage);
+    }
+  }, [disabled, disabledImage]);
 
   const handleClick = () => {
     if (disabled) return;
@@ -101,21 +109,31 @@ function EmojiReaction({
   return (
     <>
       <Head>
-        <link rel="preload" as="image" href={defaultImage} />
         <link rel="preload" as="image" href={animatedImage} />
+        <link rel="preload" as="image" href={disabledImage} />
       </Head>
       <m.button
         disabled={disabled}
         title={title}
         aria-label={title}
-        className="relative cursor-pointer select-none"
+        className={clsx('relative cursor-pointer select-none', [
+          disabled && 'cursor-not-allowed',
+        ])}
         whileTap={!disabled && 'tap'}
         whileHover="hover"
         onHoverStart={() => {
-          setSrc(animatedImage);
+          if (!disabled) {
+            setSrc(animatedImage);
+          } else {
+            setSrc(disabledImage);
+          }
         }}
         onHoverEnd={() => {
-          setSrc(defaultImage);
+          if (!disabled) {
+            setSrc(defaultImage);
+          } else {
+            setSrc(disabledImage);
+          }
         }}
         onClick={handleClick}
       >

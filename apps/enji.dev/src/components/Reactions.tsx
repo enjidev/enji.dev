@@ -132,6 +132,7 @@ function Reactions({ slug, meta, metaUser }: ReactionsProps) {
             title="Claps"
             defaultImage="/assets/emojis/clapping-hands.png"
             animatedImage="/assets/emojis/clapping-hands-animated.png"
+            disabledImage="/assets/emojis/love-you-gesture.png"
             onClick={() => {
               setClapCount((current) => current + 1);
               setClapQuota((current) => current - 1);
@@ -143,6 +144,7 @@ function Reactions({ slug, meta, metaUser }: ReactionsProps) {
             title="Wow"
             defaultImage="/assets/emojis/astonished-face.png"
             animatedImage="/assets/emojis/astonished-face-animated.png"
+            disabledImage="/assets/emojis/star-struck.png"
             onClick={() => {
               setAmazedCount((current) => current + 1);
               setAmazedQuota((current) => current - 1);
