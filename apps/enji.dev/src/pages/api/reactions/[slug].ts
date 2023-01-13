@@ -22,30 +22,28 @@ export default async function handler(
       const count = z.number().parse(req.body.count || 1);
       const section = z.string().nullish().parse(req.body.section);
 
-      if (count > 0) {
-        // get current user reaction count
-        const reactionsDetailUser = await getReactionsBy(slug, sessionId);
-        const currentCount = reactionsDetailUser[type];
+      // get current user reactions count
+      const reactionsDetailUser = await getReactionsBy(slug, sessionId);
+      const currentCount = reactionsDetailUser[type];
 
-        if (currentCount <= MAX_REACTIONS_PER_SESSION) {
-          // make sure the count is not exceeded the max limit.
-          const quota = Math.min(
-            count,
-            MAX_REACTIONS_PER_SESSION - currentCount
-          );
+      if (currentCount < MAX_REACTIONS_PER_SESSION) {
+        // ensure that the count is not 0 and has not exceeded the maximum limit
+        const quota = Math.min(
+          Math.max(1, count),
+          MAX_REACTIONS_PER_SESSION - currentCount
+        );
 
-          await setReaction({
-            slug,
-            sessionId,
-            type,
-            count: quota,
-            section,
-          });
+        await setReaction({
+          slug,
+          sessionId,
+          type,
+          count: quota,
+          section,
+        });
 
-          res.status(200).json({ message: 'Success' });
-        } else {
-          res.status(403).json({ message: 'Max limit reached' });
-        }
+        res.status(200).json({ message: 'Success' });
+      } else {
+        res.status(403).json({ message: 'Max limit reached' });
       }
     } else {
       res.status(405).json({ message: 'Method Not Allowed' });

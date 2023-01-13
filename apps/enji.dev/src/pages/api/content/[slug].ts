@@ -19,11 +19,16 @@ export default async function handler(
       const reactionsDetail = await getReactions(slug);
       const reactionsDetailUser = await getReactionsBy(slug, sessionId);
 
+      const reactionsSum =
+        reactionsDetail.AMAZED +
+        reactionsDetail.CLAPPING +
+        reactionsDetail.THINKING;
+
       res.status(200).json({
         meta: {
           shares: meta.shares,
           views: meta.views,
-          reactions: meta.reactions,
+          reactions: reactionsSum,
           reactionsDetail,
         },
         metaUser: {

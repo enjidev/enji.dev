@@ -47,6 +47,7 @@ enum ShareType {
 model Reaction {
   id String @id @default(auto()) @map("_id") @db.ObjectId
 
+  count     Int?          @default(1)
   section   String?
   type      ReactionType? @default(CLAPPING)
   createdAt DateTime      @default(now())

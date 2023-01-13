@@ -35,7 +35,7 @@ export const getAllContentMeta = async (): Promise<
 
 export const getContentMeta = async (
   slug: string
-): Promise<{ shares: number; views: number; reactions: number }> => {
+): Promise<{ shares: number; views: number }> => {
   const result = await prisma.contentMeta.findFirst({
     where: {
       slug,
@@ -45,7 +45,6 @@ export const getContentMeta = async (
         select: {
           shares: true,
           views: true,
-          reactions: true,
         },
       },
     },
@@ -54,14 +53,15 @@ export const getContentMeta = async (
   return {
     shares: result?._count.shares || 0,
     views: result?._count.views || 0,
-    reactions: result?._count.reactions || 0,
   };
 };
 
 export const getReactions = async (slug: string): Promise<TReaction> => {
   const result = await prisma.reaction.groupBy({
     by: ['type'],
-    _count: true,
+    _sum: {
+      count: true,
+    },
     where: {
       content: {
         slug,
@@ -69,19 +69,17 @@ export const getReactions = async (slug: string): Promise<TReaction> => {
     },
   });
 
-  return result && result.length > 0
-    ? result.reduce(
-        (acc, cur) => ({
-          ...acc,
-          [cur.type]: cur._count,
-        }),
-        {} as TReaction
-      )
-    : {
-        CLAPPING: 0,
-        THINKING: 0,
-        AMAZED: 0,
-      };
+  return result.reduce(
+    (acc, cur) => ({
+      ...acc,
+      [cur.type]: cur._sum.count,
+    }),
+    {
+      CLAPPING: 0,
+      THINKING: 0,
+      AMAZED: 0,
+    }
+  );
 };
 
 export const getReactionsBy = async (
@@ -90,7 +88,9 @@ export const getReactionsBy = async (
 ): Promise<TReaction> => {
   const result = await prisma.reaction.groupBy({
     by: ['type'],
-    _count: true,
+    _sum: {
+      count: true,
+    },
     where: {
       sessionId,
       content: {
@@ -99,19 +99,17 @@ export const getReactionsBy = async (
     },
   });
 
-  return result && result.length > 0
-    ? result.reduce(
-        (acc, cur) => ({
-          ...acc,
-          [cur.type]: cur._count,
-        }),
-        {} as TReaction
-      )
-    : {
-        CLAPPING: 0,
-        THINKING: 0,
-        AMAZED: 0,
-      };
+  return result.reduce(
+    (acc, cur) => ({
+      ...acc,
+      [cur.type]: cur._sum.count,
+    }),
+    {
+      CLAPPING: 0,
+      THINKING: 0,
+      AMAZED: 0,
+    }
+  );
 };
 
 export const setReaction = async ({
@@ -127,30 +125,22 @@ export const setReaction = async ({
   sessionId: string;
   type: ReactionType;
 }) => {
-  const data = {
-    type,
-    section,
-    sessionId,
-  };
-
-  const result = await prisma.contentMeta.upsert({
-    where: {
-      slug,
-    },
-    create: {
-      slug,
-    },
-    update: {
-      reactions:
-        count > 1
-          ? {
-              createMany: {
-                data: Array(count).fill(data),
-              },
-            }
-          : {
-              create: data,
-            },
+  const result = await prisma.reaction.create({
+    data: {
+      count,
+      type,
+      section,
+      sessionId,
+      content: {
+        connectOrCreate: {
+          where: {
+            slug,
+          },
+          create: {
+            slug,
+          },
+        },
+      },
     },
   });
 
