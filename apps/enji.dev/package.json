@@ -24,6 +24,7 @@
     "@prisma/client": "^4.8.1",
     "@vercel/analytics": "^0.1.6",
     "@vercel/og": "^0.0.22",
+    "axios": "^1.2.2",
     "clsx": "^1.2.1",
     "dayjs": "^1.11.7",
     "framer-motion": "7.7.0",

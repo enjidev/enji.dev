@@ -1,14 +1,16 @@
 import clsx from 'clsx';
 import Link from 'next/link';
 
-import { ChevronRightIcon } from '@/components/Icons';
+import { ChevronRightIcon, InsightIcon } from '@/components/Icons';
 
-import { formatDate, formatLang } from '@/helpers/post';
+import { formatDate, formatLang, formatNumber } from '@/helpers/post';
 
 import type { TPostFrontMatter } from '@/types';
 
 type PostPreviewProps = TPostFrontMatter & {
   slug: string;
+  views: number;
+  shares: number;
 };
 
 function PostPreview({
@@ -17,6 +19,8 @@ function PostPreview({
   date,
   slug,
   lang,
+  views,
+  shares,
 }: PostPreviewProps) {
   return (
     <article lang={lang}>
@@ -30,13 +34,15 @@ function PostPreview({
       >
         <div
           className={clsx(
-            'text-slate mb-2 flex gap-1 text-xs text-slate-500',
+            'text-slate mb-2 flex flex-col gap-2 text-xs text-slate-500',
             'dark:text-slate-400 md:mb-1'
           )}
         >
-          <time dateTime={date}>{formatDate(date)}</time>
-          <span>&middot;</span>
-          <span>{formatLang(lang)}</span>
+          <div className={clsx('flex gap-1')}>
+            <time dateTime={date}>{formatDate(date)}</time>
+            <span>&middot;</span>
+            <span>{formatLang(lang)}</span>
+          </div>
         </div>
         <div className={clsx('mb-2')}>
           <h2
@@ -51,12 +57,35 @@ function PostPreview({
         </div>
         <p
           className={clsx(
-            'mb-2 block leading-relaxed text-slate-600',
+            'mb-3 block leading-relaxed text-slate-600',
             'dark:text-slate-400'
           )}
         >
           {description}
         </p>
+        <div
+          className={clsx(
+            'mb-4 flex items-center gap-2 text-xs text-slate-600',
+            'dark:text-slate-400'
+          )}
+        >
+          <InsightIcon className={clsx('-mt-0.5 h-4 w-4')} />
+          <span className={clsx('flex gap-1.5')}>
+            <span
+              className={clsx('flex items-center gap-1.5')}
+              title="Number of view(s)"
+            >
+              {formatNumber(views)} Views
+            </span>
+            <span>&middot;</span>
+            <span
+              className={clsx('flex items-center gap-1.5')}
+              title="Number of share(s)"
+            >
+              {formatNumber(shares)} Shares
+            </span>
+          </span>
+        </div>
         <div
           className={clsx(
             'text-accent-600 flex items-center gap-1 text-sm font-semibold',

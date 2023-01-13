@@ -1,5 +1,7 @@
 import clsx from 'clsx';
 
+import useContentMeta from '@/hooks/useContentMeta';
+
 import PostPreview from '@/contents/blog/PostPreview';
 
 import type { TPostFrontMatter } from '@/types';
@@ -12,6 +14,8 @@ export type BlogContentsProps = {
 };
 
 function BlogContents({ posts }: BlogContentsProps) {
+  const { data } = useContentMeta();
+
   return (
     <div className={clsx('content-wrapper')}>
       <div
@@ -26,34 +30,42 @@ function BlogContents({ posts }: BlogContentsProps) {
             ({
               slug,
               frontMatter: { category, title, description, date, lang, tags },
-            }) => (
-              <div
-                key={slug}
-                className={clsx(
-                  'mb-8 flex items-start gap-4',
-                  'md:mb-4 md:gap-6'
-                )}
-              >
+            }) => {
+              const { shares, views } = data[slug]
+                ? data[slug].meta
+                : { shares: 0, views: 0 };
+
+              return (
                 <div
+                  key={slug}
                   className={clsx(
-                    'border-divider-light mt-14 hidden w-8 -translate-y-1 border-b',
-                    'md:mt-16 md:w-20 lg:block',
-                    'dark:border-divider-dark'
+                    'mb-8 flex items-start gap-4',
+                    'md:mb-4 md:gap-6'
                   )}
-                />
-                <div className={clsx('flex-1')}>
-                  <PostPreview
-                    slug={slug}
-                    category={category}
-                    title={title}
-                    description={description}
-                    date={date}
-                    lang={lang}
-                    tags={tags}
+                >
+                  <div
+                    className={clsx(
+                      'border-divider-light mt-14 hidden w-8 -translate-y-1 border-b',
+                      'md:mt-16 md:w-20 lg:block',
+                      'dark:border-divider-dark'
+                    )}
                   />
+                  <div className={clsx('flex-1')}>
+                    <PostPreview
+                      slug={slug}
+                      category={category}
+                      title={title}
+                      description={description}
+                      date={date}
+                      lang={lang}
+                      tags={tags}
+                      views={views}
+                      shares={shares}
+                    />
+                  </div>
                 </div>
-              </div>
-            )
+              );
+            }
           )}
         </div>
       </div>

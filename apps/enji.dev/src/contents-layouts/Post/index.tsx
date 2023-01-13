@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import { useRouter } from 'next/router';
 import { PropsWithChildren } from 'react';
 
 import WithTableOfContents from '@/components/layouts/WithTableOfContents';
@@ -7,6 +8,8 @@ import Head from '@/components/meta/Head';
 import SkipNavigation from '@/components/navigations/SkipNavigation';
 import PageHeader from '@/components/PageHeader';
 import Reactions from '@/components/Reactions';
+
+import useInsight from '@/hooks/useInsight';
 
 import { getPostOgImageUrl, getPostStructuredData } from '@/helpers/post';
 
@@ -25,6 +28,13 @@ function Post({
   tableOfContents,
   children = null,
 }: PropsWithChildren<PostProps>) {
+  // currently is not possible to pass `slug` via property
+  const { pathname } = useRouter();
+  const slug = pathname.replace('/blog/', '');
+
+  // increase the views count
+  useInsight(slug);
+
   // get og image urls
   const postOgImages = getPostOgImageUrl({
     category,

@@ -30,6 +30,8 @@ export const formatLang = (lang: TPostFrontMatter['lang']) => {
   }
 };
 
+export const formatNumber = (number: number): string => number.toLocaleString();
+
 export const getPostOgImageUrl = (data: TPostOgImage) => {
   const getUrl = (aspectRatio?: TPostOgImage['aspectRatio']) => {
     const params = aspectRatio

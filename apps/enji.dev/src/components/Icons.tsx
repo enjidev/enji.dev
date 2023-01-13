@@ -303,6 +303,25 @@ export function ShareIcon(props: ComponentProps<'svg'>) {
   );
 }
 
+export function InsightIcon(props: ComponentProps<'svg'>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      stroke="currentColor"
+      fill="none"
+      {...props}
+    >
+      <line x1="18" y1="20" x2="18" y2="10" />
+      <line x1="12" y1="20" x2="12" y2="4" />
+      <line x1="6" y1="20" x2="6" y2="14" />
+    </svg>
+  );
+}
+
 export function EyeSlash(props: ComponentProps<'svg'>) {
   return (
     <svg

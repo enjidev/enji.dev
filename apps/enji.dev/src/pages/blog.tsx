@@ -7,7 +7,9 @@ import Page from '@/contents-layouts/Page';
 import type { BlogContentsProps } from '@/contents/blog';
 import type { GetStaticProps } from 'next';
 
-type BlogProps = BlogContentsProps;
+type BlogProps = {
+  posts: BlogContentsProps['posts'];
+};
 
 function Blog({ posts }: BlogProps) {
   return (
