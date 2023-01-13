@@ -75,17 +75,21 @@ export const getReactions = async (slug: string): Promise<TReaction> => {
     },
   });
 
-  return result.reduce(
-    (acc, cur) => ({
-      ...acc,
-      [cur.type]: cur._sum.count,
-    }),
+  const expression = `$merge([
     {
-      CLAPPING: 0,
-      THINKING: 0,
-      AMAZED: 0,
+      'CLAPPING': 0,
+      'THINKING': 0,
+      'AMAZED': 0
+    },
+    $.{
+      type: _sum.count
     }
-  );
+  ])`;
+
+  // transform result
+  const transformed = await jsonata(expression).evaluate(result);
+
+  return transformed;
 };
 
 export const getSectionMeta = async (
@@ -155,17 +159,21 @@ export const getReactionsBy = async (
     },
   });
 
-  return result.reduce(
-    (acc, cur) => ({
-      ...acc,
-      [cur.type]: cur._sum.count,
-    }),
+  const expression = `$merge([
     {
-      CLAPPING: 0,
-      THINKING: 0,
-      AMAZED: 0,
+      'CLAPPING': 0,
+      'THINKING': 0,
+      'AMAZED': 0
+    },
+    $.{
+      type: _sum.count
     }
-  );
+  ])`;
+
+  // transform result
+  const transformed = await jsonata(expression).evaluate(result);
+
+  return transformed;
 };
 
 export const setReaction = async ({
