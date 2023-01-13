@@ -173,9 +173,9 @@ function Reactions({ slug, meta, metaUser }: ReactionsProps) {
         <div className={clsx('flex flex-col items-center gap-2')}>
           <EmojiReaction
             disabled={thinkingQuota <= 0}
-            title="Hmmm"
+            title="Hmm"
             defaultImage="/assets/emojis/face-with-monocle.png"
-            animatedImage="/assets/emojis/face-with-monocle.png"
+            animatedImage="/assets/emojis/face-with-monocle-animated.png"
             disabledImage="/assets/emojis/nerd-face.png"
             onClick={() => {
               setThinkingCount((current) => current + 1);
