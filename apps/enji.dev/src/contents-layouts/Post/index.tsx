@@ -9,6 +9,7 @@ import SkipNavigation from '@/components/navigations/SkipNavigation';
 import PageHeader from '@/components/PageHeader';
 import Reactions from '@/components/Reactions';
 
+import useContentMetaDetail from '@/hooks/useContentMetaDetail';
 import useInsight from '@/hooks/useInsight';
 
 import { getPostOgImageUrl, getPostStructuredData } from '@/helpers/post';
@@ -34,6 +35,9 @@ function Post({
 
   // increase the views count
   useInsight(slug);
+
+  // get detailed content meta
+  const { data } = useContentMetaDetail(slug);
 
   // get og image urls
   const postOgImages = getPostOgImageUrl({
@@ -67,18 +71,26 @@ function Post({
         {children}
         <PostFooter tags={tags} category={category} />
       </WithTableOfContents>
-      <div
-        className={clsx(
-          'pointer-events-none sticky bottom-8 z-[902] mt-16',
-          'lg:bottom-8 lg:mt-24'
-        )}
-      >
-        <WithTableOfContentsMock>
-          <div className={clsx('mx-auto max-w-[360px]', 'sm:max-w-[420px]')}>
-            <Reactions />
-          </div>
-        </WithTableOfContentsMock>
-      </div>
+      {data ? (
+        <div
+          className={clsx(
+            'pointer-events-none sticky bottom-8 z-[902] mt-16',
+            'lg:bottom-8 lg:mt-24'
+          )}
+        >
+          <WithTableOfContentsMock>
+            <div className={clsx('mx-auto max-w-[360px]', 'sm:max-w-[420px]')}>
+              <Reactions
+                key={`${data.meta.reactions}-${data.meta.shares}-${data.meta.views}`}
+                slug={slug}
+                meta={data.meta}
+                metaUser={data.metaUser}
+                metaSection={data.metaSection}
+              />
+            </div>
+          </WithTableOfContentsMock>
+        </div>
+      ) : null}
     </>
   );
 }

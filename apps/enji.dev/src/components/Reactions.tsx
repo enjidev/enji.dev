@@ -7,6 +7,11 @@ import EmojiReaction from '@/components/EmojiReaction';
 import { ShareIcon } from '@/components/Icons';
 import ShareButton from '@/components/ShareButton';
 
+import { addReaction } from '@/helpers/api';
+
+import { MAX_REACTIONS_PER_SESSION } from '@/constants/app';
+
+import type { TContentMetaDetail } from '@/types';
 import type { PropsWithChildren } from 'react';
 
 interface CounterProps {
@@ -66,10 +71,44 @@ function ReactionCounter({ count, children = null }: ReactionCounterProps) {
   );
 }
 
-function Reactions() {
-  const [clapCount, setClapCount] = useState<number>(6);
-  const [amazedCount, setAmazedCount] = useState<number>(199);
-  const [sharedCount, setSharedCount] = useState<number>(7);
+type ReactionsProps = TContentMetaDetail & {
+  slug: string;
+};
+
+function Reactions({ slug, meta, metaUser }: ReactionsProps) {
+  const [clapCount, setClapCount] = useState<number>(
+    meta.reactionsDetail.CLAPPING
+  );
+  const [amazedCount, setAmazedCount] = useState<number>(
+    meta.reactionsDetail.AMAZED
+  );
+  const [sharedCount, setSharedCount] = useState<number>(meta.shares);
+
+  const [clapQuota, setClapQuota] = useState<number>(
+    MAX_REACTIONS_PER_SESSION - metaUser.reactionsDetail.CLAPPING
+  );
+
+  const [amazedQuota, setAmazedQuota] = useState<number>(
+    MAX_REACTIONS_PER_SESSION - metaUser.reactionsDetail.AMAZED
+  );
+
+  const handleBatchClap = (count: number) => {
+    addReaction({
+      slug,
+      type: 'CLAPPING',
+      count,
+      section: undefined,
+    });
+  };
+
+  const handleBatchAmazed = (count: number) => {
+    addReaction({
+      slug,
+      type: 'AMAZED',
+      count,
+      section: undefined,
+    });
+  };
 
   return (
     <div
@@ -81,20 +120,26 @@ function Reactions() {
       <div className={clsx('flex items-center gap-4')}>
         <div className={clsx('flex items-center gap-1 pl-2')}>
           <EmojiReaction
+            disabled={clapQuota <= 0}
             title="Claps"
             defaultImage="/assets/emojis/clapping-hands.png"
             animatedImage="/assets/emojis/clapping-hands-animated.png"
             onClick={() => {
               setClapCount((current) => current + 1);
+              setClapQuota((current) => current - 1);
             }}
+            onBatchClick={handleBatchClap}
           />
           <EmojiReaction
+            disabled={amazedQuota <= 0}
             title="Wow"
             defaultImage="/assets/emojis/astonished-face.png"
             animatedImage="/assets/emojis/astonished-face-animated.png"
             onClick={() => {
               setAmazedCount((current) => current + 1);
+              setAmazedQuota((current) => current - 1);
             }}
+            onBatchClick={handleBatchAmazed}
           />
         </div>
         <div className={clsx('flex items-center gap-2')}>

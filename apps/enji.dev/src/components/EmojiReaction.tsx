@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import { m } from 'framer-motion';
 import Head from 'next/head';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 type AnimationValue = {
   key: number;
@@ -55,19 +55,48 @@ const emojiMotion = {
 
 interface EmojiReactionProps {
   title: string;
+  disabled?: boolean;
   defaultImage: string;
   animatedImage: string;
   onClick?: () => void;
+  onBatchClick?: (count: number) => void;
 }
 
 function EmojiReaction({
   title,
+  disabled = false,
   defaultImage,
   animatedImage,
   onClick = () => {},
+  onBatchClick = () => {},
 }: EmojiReactionProps) {
+  const timer = useRef<NodeJS.Timeout>(null);
+  const batchClicksCount = useRef<number>(0);
+
   const [history, setHistory] = useState<Array<AnimationValue>>([]);
   const [src, setSrc] = useState<string>(defaultImage);
+
+  const handleClick = () => {
+    if (disabled) return;
+
+    // set history
+    setHistory((current) => [...current, getRandomAnimationValue()]);
+
+    // call click event
+    onClick();
+
+    // increase the count for batch click
+    batchClicksCount.current += 1;
+
+    // call a batch click event, but with the debounce effect
+    clearTimeout(timer.current);
+    timer.current = setTimeout(() => {
+      onBatchClick(batchClicksCount.current);
+
+      // reset the batch click count to zero for the next batch click
+      batchClicksCount.current = 0;
+    }, 400);
+  };
 
   return (
     <>
@@ -76,10 +105,11 @@ function EmojiReaction({
         <link rel="preload" as="image" href={animatedImage} />
       </Head>
       <m.button
+        disabled={disabled}
         title={title}
         aria-label={title}
         className="relative cursor-pointer select-none"
-        whileTap="tap"
+        whileTap={!disabled && 'tap'}
         whileHover="hover"
         onHoverStart={() => {
           setSrc(animatedImage);
@@ -87,11 +117,7 @@ function EmojiReaction({
         onHoverEnd={() => {
           setSrc(defaultImage);
         }}
-        onClick={() => {
-          setHistory((current) => [...current, getRandomAnimationValue()]);
-
-          onClick();
-        }}
+        onClick={handleClick}
       >
         {history.map(({ x, y, duration, key }) => (
           <m.div
