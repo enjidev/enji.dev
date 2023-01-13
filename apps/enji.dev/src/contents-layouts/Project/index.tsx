@@ -64,7 +64,12 @@ function ProjectLayout({
           )}
         >
           <WithTableOfContentsMock>
-            <div className={clsx('mx-auto max-w-[360px]', 'sm:max-w-[420px]')}>
+            <div
+              className={clsx(
+                'mx-auto max-w-[360px] px-4',
+                'sm:max-w-[420px] sm:px-0'
+              )}
+            >
               <Reactions
                 key={`${data.meta.reactions}-${data.meta.shares}-${data.meta.views}`}
                 slug={slug}

@@ -1,7 +1,6 @@
 import { ShareType } from '@prisma/client';
 import clsx from 'clsx';
 import { m, useAnimationControls } from 'framer-motion';
-import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 import EmojiReaction from '@/components/EmojiReaction';
@@ -61,7 +60,7 @@ function ReactionCounter({ count, children = null }: ReactionCounterProps) {
   return (
     <div
       className={clsx(
-        'relative flex h-6 items-center gap-1 overflow-hidden rounded-full bg-slate-200 py-1 pl-2 pr-2.5',
+        'relative flex h-6 items-center gap-1 overflow-hidden rounded-full bg-slate-200 py-1 px-2',
         'dark:bg-[#1d263a]'
       )}
     >
@@ -85,6 +84,7 @@ function Reactions({ slug, meta, metaUser }: ReactionsProps) {
   const [thinkingCount, setThinkingCount] = useState<number>(
     meta.reactionsDetail.THINKING
   );
+  const [sharesCount, setSharesCount] = useState<number>(meta.shares);
 
   const [clapQuota, setClapQuota] = useState<number>(
     MAX_REACTIONS_PER_SESSION - metaUser.reactionsDetail.CLAPPING
@@ -135,12 +135,12 @@ function Reactions({ slug, meta, metaUser }: ReactionsProps) {
   return (
     <div
       className={clsx(
-        'border-divider-light pointer-events-auto relative flex items-center justify-between rounded-full border bg-white/70 p-2 backdrop-blur',
+        'border-divider-light pointer-events-auto relative flex items-center justify-between rounded-xl border bg-white/70 p-4 backdrop-blur',
         'dark:border-divider-dark dark:bg-slate-900/80'
       )}
     >
-      <div className={clsx('flex items-center gap-4')}>
-        <div className={clsx('flex items-center gap-1 pl-2')}>
+      <div className={clsx('flex items-center gap-6 pl-2')}>
+        <div className={clsx('flex flex-col items-center gap-2')}>
           <EmojiReaction
             disabled={clapQuota <= 0}
             title="Claps"
@@ -153,6 +153,9 @@ function Reactions({ slug, meta, metaUser }: ReactionsProps) {
             }}
             onBatchClick={handleBatchClap}
           />
+          <ReactionCounter count={clapCount} />
+        </div>
+        <div className={clsx('flex flex-col items-center gap-2')}>
           <EmojiReaction
             disabled={amazedQuota <= 0}
             title="Wow"
@@ -165,6 +168,9 @@ function Reactions({ slug, meta, metaUser }: ReactionsProps) {
             }}
             onBatchClick={handleBatchAmazed}
           />
+          <ReactionCounter count={amazedCount} />
+        </div>
+        <div className={clsx('flex flex-col items-center gap-2')}>
           <EmojiReaction
             disabled={thinkingQuota <= 0}
             title="Hmmm"
@@ -177,45 +183,17 @@ function Reactions({ slug, meta, metaUser }: ReactionsProps) {
             }}
             onBatchClick={handleBatchThinking}
           />
-        </div>
-        <div className={clsx('flex items-center gap-2')}>
-          <ReactionCounter count={clapCount}>
-            <Image
-              className={clsx('h-4 w-4 select-none')}
-              alt="Claps"
-              src="/assets/emojis/clapping-hands.png"
-              width={48}
-              height={48}
-              quality={100}
-              priority
-            />
-          </ReactionCounter>
-          <ReactionCounter count={amazedCount}>
-            <Image
-              className={clsx('h-4 w-4 select-none')}
-              alt="Amazed"
-              src="/assets/emojis/astonished-face.png"
-              width={48}
-              height={48}
-              quality={100}
-              priority
-            />
-          </ReactionCounter>
-          <ReactionCounter count={thinkingCount}>
-            <Image
-              className={clsx('h-4 w-4 select-none')}
-              alt="Thinking"
-              src="/assets/emojis/face-with-monocle.png"
-              width={48}
-              height={48}
-              quality={100}
-              priority
-            />
-          </ReactionCounter>
+          <ReactionCounter count={thinkingCount} />
         </div>
       </div>
-      <div className={clsx('flex items-center gap-4')}>
-        <ShareButton onItemClick={handleShare} />
+      <div className={clsx('flex flex-col items-center gap-2')}>
+        <ShareButton
+          onItemClick={(type) => {
+            setSharesCount((current) => current + 1);
+            handleShare(type);
+          }}
+        />
+        <ReactionCounter count={sharesCount} />
       </div>
     </div>
   );
