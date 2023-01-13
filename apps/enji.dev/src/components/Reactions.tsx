@@ -5,7 +5,6 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 import EmojiReaction from '@/components/EmojiReaction';
-import { ShareIcon } from '@/components/Icons';
 import ShareButton from '@/components/ShareButton';
 
 import { addReaction, addShare } from '@/helpers/api';
@@ -83,7 +82,9 @@ function Reactions({ slug, meta, metaUser }: ReactionsProps) {
   const [amazedCount, setAmazedCount] = useState<number>(
     meta.reactionsDetail.AMAZED
   );
-  const [sharedCount, setSharedCount] = useState<number>(meta.shares);
+  const [thinkingCount, setThinkingCount] = useState<number>(
+    meta.reactionsDetail.THINKING
+  );
 
   const [clapQuota, setClapQuota] = useState<number>(
     MAX_REACTIONS_PER_SESSION - metaUser.reactionsDetail.CLAPPING
@@ -91,6 +92,10 @@ function Reactions({ slug, meta, metaUser }: ReactionsProps) {
 
   const [amazedQuota, setAmazedQuota] = useState<number>(
     MAX_REACTIONS_PER_SESSION - metaUser.reactionsDetail.AMAZED
+  );
+
+  const [thinkingQuota, setThinkingQuota] = useState<number>(
+    MAX_REACTIONS_PER_SESSION - metaUser.reactionsDetail.THINKING
   );
 
   const handleBatchClap = (count: number) => {
@@ -106,6 +111,15 @@ function Reactions({ slug, meta, metaUser }: ReactionsProps) {
     addReaction({
       slug,
       type: 'AMAZED',
+      count,
+      section: undefined,
+    });
+  };
+
+  const handleBatchThinking = (count: number) => {
+    addReaction({
+      slug,
+      type: 'THINKING',
       count,
       section: undefined,
     });
@@ -151,6 +165,18 @@ function Reactions({ slug, meta, metaUser }: ReactionsProps) {
             }}
             onBatchClick={handleBatchAmazed}
           />
+          <EmojiReaction
+            disabled={thinkingQuota <= 0}
+            title="Hmmm"
+            defaultImage="/assets/emojis/face-with-monocle.png"
+            animatedImage="/assets/emojis/face-with-monocle.png"
+            disabledImage="/assets/emojis/nerd-face.png"
+            onClick={() => {
+              setThinkingCount((current) => current + 1);
+              setThinkingQuota((current) => current - 1);
+            }}
+            onBatchClick={handleBatchThinking}
+          />
         </div>
         <div className={clsx('flex items-center gap-2')}>
           <ReactionCounter count={clapCount}>
@@ -175,20 +201,21 @@ function Reactions({ slug, meta, metaUser }: ReactionsProps) {
               priority
             />
           </ReactionCounter>
+          <ReactionCounter count={thinkingCount}>
+            <Image
+              className={clsx('h-4 w-4 select-none')}
+              alt="Thinking"
+              src="/assets/emojis/face-with-monocle.png"
+              width={48}
+              height={48}
+              quality={100}
+              priority
+            />
+          </ReactionCounter>
         </div>
       </div>
       <div className={clsx('flex items-center gap-4')}>
-        <div className={clsx('hidden', 'sm:block')}>
-          <ReactionCounter count={sharedCount}>
-            <ShareIcon className={clsx('h-3 w-3')} />
-          </ReactionCounter>
-        </div>
-        <ShareButton
-          onItemClick={(type) => {
-            setSharedCount((current) => current + 1);
-            handleShare(type);
-          }}
-        />
+        <ShareButton onItemClick={handleShare} />
       </div>
     </div>
   );
