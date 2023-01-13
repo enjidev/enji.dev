@@ -191,3 +191,45 @@ export const setShare = async ({
 
   return result;
 };
+
+export const getViewsBy = async (
+  slug: string,
+  sessionId: string
+): Promise<number> => {
+  const result = await prisma.view.count({
+    where: {
+      sessionId,
+      content: {
+        slug,
+      },
+    },
+  });
+
+  return result || 0;
+};
+
+export const setView = async ({
+  slug,
+  sessionId,
+}: {
+  slug: string;
+  sessionId: string;
+}) => {
+  const result = await prisma.view.create({
+    data: {
+      sessionId,
+      content: {
+        connectOrCreate: {
+          where: {
+            slug,
+          },
+          create: {
+            slug,
+          },
+        },
+      },
+    },
+  });
+
+  return result;
+};
