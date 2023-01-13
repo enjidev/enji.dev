@@ -1,3 +1,6 @@
+/* eslint-disable no-template-curly-in-string */
+import jsonata from 'jsonata';
+
 import { prisma } from '@/utils/prisma';
 
 import type { TContentMeta, TReaction } from '@/types';
@@ -80,6 +83,53 @@ export const getReactions = async (slug: string): Promise<TReaction> => {
       AMAZED: 0,
     }
   );
+};
+
+export const getSectionMeta = async (
+  slug: string
+): Promise<
+  Record<
+    string,
+    {
+      reactionsDetail: TReaction;
+    }
+  >
+> => {
+  const result = await prisma.reaction.groupBy({
+    by: ['section', 'type'],
+    _sum: {
+      count: true,
+    },
+    where: {
+      section: {
+        not: null,
+      },
+      content: {
+        slug,
+      },
+    },
+  });
+
+  const expression = `$\
+    {
+      section: {
+        'reactionsDetail': $merge([
+          {
+            'CLAPPING': 0,
+            'THINKING': 0,
+            'AMAZED': 0
+          },
+          {
+            type: _sum.count
+          }
+        ])
+      }
+    }`;
+
+  // transform result
+  const transformed = await jsonata(expression).evaluate(result);
+
+  return transformed;
 };
 
 export const getReactionsBy = async (

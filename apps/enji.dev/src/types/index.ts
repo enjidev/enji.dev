@@ -62,4 +62,9 @@ export type TContentMetaDetail = {
   metaUser: {
     reactionsDetail: TReaction;
   };
+  metaSection: {
+    [section: string]: {
+      reactionsDetail: TReaction;
+    };
+  };
 };

@@ -1,7 +1,12 @@
 import { z } from 'zod';
 
 import { getSessionId } from '@/helpers/server';
-import { getContentMeta, getReactions, getReactionsBy } from '@/lib/meta';
+import {
+  getContentMeta,
+  getReactions,
+  getReactionsBy,
+  getSectionMeta,
+} from '@/lib/meta';
 
 import type { TApiResponse, TContentMetaDetail } from '@/types';
 import type { NextApiRequest, NextApiResponse } from 'next';
@@ -16,6 +21,7 @@ export default async function handler(
   try {
     if (req.method === 'GET') {
       const meta = await getContentMeta(slug);
+      const metaSection = await getSectionMeta(slug);
       const reactionsDetail = await getReactions(slug);
       const reactionsDetailUser = await getReactionsBy(slug, sessionId);
 
@@ -34,6 +40,7 @@ export default async function handler(
         metaUser: {
           reactionsDetail: reactionsDetailUser,
         },
+        metaSection,
       });
     } else {
       res.status(405).json({ message: 'Method Not Allowed' });

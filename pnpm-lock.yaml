@@ -39,6 +39,7 @@ importers:
       eslint-config-next-typescript: workspace:*
       framer-motion: 7.7.0
       front-matter: ^4.0.2
+      jsonata: ^2.0.1
       mini-svg-data-uri: ^1.4.4
       next: ^13.1.1
       next-sitemap: ^3.1.43
@@ -73,6 +74,7 @@ importers:
       dayjs: 1.11.7
       framer-motion: 7.7.0_biqbaboplfbrettd7655fr4n2y
       front-matter: 4.0.2
+      jsonata: 2.0.1
       next: 13.1.1_biqbaboplfbrettd7655fr4n2y
       next-themes: 0.2.1_q76c2b4vyoegvsbrcwkfvimnai
       react: 18.2.0
@@ -2709,6 +2711,11 @@ packages:
     hasBin: true
     dependencies:
       minimist: 1.2.7
+
+  /jsonata/2.0.1:
+    resolution: {integrity: sha512-N6VlJPARx9+2+IvjkAuCz7JOh23kgk98EVRE3Xg8RZd9WhwoouR7v2lLpognSlTsMO/652KCGHfIOBn7NGOeyw==}
+    engines: {node: '>= 8'}
+    dev: false
 
   /jsx-ast-utils/3.3.3:
     resolution: {integrity: sha512-fYQHZTZ8jSfmWZ0iyzfwiU4WDX4HpHbMCZ3gPlWYiCl3BoeOTsqKBqnTVfH2rYT7eP5c3sVbeSPHnnJOaTrWiw==}
