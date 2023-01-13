@@ -1,6 +1,7 @@
 import { prisma } from '@/utils/prisma';
 
 import type { TContentMeta, TReaction } from '@/types';
+import type { ReactionType } from '@prisma/client';
 
 export const getAllContentMeta = async (): Promise<
   Record<string, TContentMeta>
@@ -20,9 +21,14 @@ export const getAllContentMeta = async (): Promise<
     ? result.reduce(
         (acc, cur) => ({
           ...acc,
-          [cur.slug]: cur,
+          [cur.slug]: {
+            meta: {
+              views: cur._count.views,
+              shares: cur._count.shares,
+            },
+          },
         }),
-        {}
+        {} as Record<string, TContentMeta>
       )
     : {};
 };
@@ -106,4 +112,47 @@ export const getReactionsBy = async (
         THINKING: 0,
         AMAZED: 0,
       };
+};
+
+export const setReaction = async ({
+  slug,
+  count,
+  section,
+  sessionId,
+  type,
+}: {
+  slug: string;
+  count: number;
+  section: string;
+  sessionId: string;
+  type: ReactionType;
+}) => {
+  const data = {
+    type,
+    section,
+    sessionId,
+  };
+
+  const result = await prisma.contentMeta.upsert({
+    where: {
+      slug,
+    },
+    create: {
+      slug,
+    },
+    update: {
+      reactions:
+        count > 1
+          ? {
+              createMany: {
+                data: Array(count).fill(data),
+              },
+            }
+          : {
+              create: data,
+            },
+    },
+  });
+
+  return result;
 };
