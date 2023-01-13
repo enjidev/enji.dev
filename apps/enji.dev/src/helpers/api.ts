@@ -1,4 +1,4 @@
-import { ReactionType } from '@prisma/client';
+import { ReactionType, ShareType } from '@prisma/client';
 import axios from 'axios';
 
 import { TApiResponse } from '@/types';
@@ -19,6 +19,22 @@ export const addReaction = async ({
       type,
       count,
       section,
+    });
+  } catch (err) {
+    //
+  }
+};
+
+export const addShare = async ({
+  slug,
+  type,
+}: {
+  slug: string;
+  type: ShareType;
+}) => {
+  try {
+    await axios.post<TApiResponse>(`/api/shares/${slug}`, {
+      type,
     });
   } catch (err) {
     //

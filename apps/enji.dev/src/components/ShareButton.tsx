@@ -1,4 +1,5 @@
 import { Menu } from '@headlessui/react';
+import { ShareType } from '@prisma/client';
 import clsx from 'clsx';
 import { m } from 'framer-motion';
 import { forwardRef } from 'react';
@@ -75,25 +76,25 @@ const animation = {
 };
 
 interface ShareButtonProps {
-  onItemClick?: () => void;
+  onItemClick?: (type: ShareType) => void;
 }
 
 function ShareButton({ onItemClick = () => {} }: ShareButtonProps) {
   const currentUrl = useCurrentUrl();
 
   const handleCopy = async () => {
-    onItemClick();
-
     try {
       const content = currentUrl;
       await navigator.clipboard.writeText(content);
+
+      onItemClick('CLIPBOARD');
     } catch (err) {
       //
     }
   };
 
-  const handleLink = () => {
-    onItemClick();
+  const handleTwitter = () => {
+    onItemClick('TWITTER');
   };
 
   return (
@@ -128,7 +129,7 @@ function ShareButton({ onItemClick = () => {} }: ShareButtonProps) {
                   <ShareItemLink
                     active={active}
                     href={`https://twitter.com/intent/tweet?via=enjidev&url=${currentUrl}`}
-                    onClick={handleLink}
+                    onClick={handleTwitter}
                   >
                     <TwitterIcon className={clsx('h-4 w-4')} />
                     <span className={clsx('flex items-center gap-2')}>

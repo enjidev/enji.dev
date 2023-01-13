@@ -1,3 +1,4 @@
+import { ShareType } from '@prisma/client';
 import clsx from 'clsx';
 import { m, useAnimationControls } from 'framer-motion';
 import Image from 'next/image';
@@ -7,7 +8,7 @@ import EmojiReaction from '@/components/EmojiReaction';
 import { ShareIcon } from '@/components/Icons';
 import ShareButton from '@/components/ShareButton';
 
-import { addReaction } from '@/helpers/api';
+import { addReaction, addShare } from '@/helpers/api';
 
 import { MAX_REACTIONS_PER_SESSION } from '@/constants/app';
 
@@ -110,6 +111,13 @@ function Reactions({ slug, meta, metaUser }: ReactionsProps) {
     });
   };
 
+  const handleShare = (type: ShareType) => {
+    addShare({
+      slug,
+      type,
+    });
+  };
+
   return (
     <div
       className={clsx(
@@ -174,8 +182,9 @@ function Reactions({ slug, meta, metaUser }: ReactionsProps) {
           </ReactionCounter>
         </div>
         <ShareButton
-          onItemClick={() => {
+          onItemClick={(type) => {
             setSharedCount((current) => current + 1);
+            handleShare(type);
           }}
         />
       </div>
