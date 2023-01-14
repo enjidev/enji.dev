@@ -9,9 +9,8 @@ import SkipNavigation from '@/components/navigations/SkipNavigation';
 import PageHeader from '@/components/PageHeader';
 import Reactions from '@/components/Reactions';
 
-import useContentMetaDetail from '@/hooks/useContentMetaDetail';
+import useInsight from '@/hooks/useInsight';
 
-import { postView } from '@/helpers/api';
 import { getPostOgImageUrl, getPostStructuredData } from '@/helpers/post';
 
 import PostFooter from '@/contents-layouts/Post/PostFooter';
@@ -29,15 +28,11 @@ function Post({
   tableOfContents,
   children = null,
 }: PropsWithChildren<PostProps>) {
-  // currently is not possible to pass `slug` via property
+  // currently, there is no way to get the 'slug' via a component property.
   const { pathname } = useRouter();
   const slug = pathname.replace('/blog/', '');
 
-  // increase the views count
-  postView(slug);
-
-  // get detailed content meta
-  const { data } = useContentMetaDetail(slug);
+  const { data } = useInsight(slug);
 
   // get og image urls
   const postOgImages = getPostOgImageUrl({
