@@ -50,6 +50,13 @@
         @apply md:-left-9;
         @apply dark:bg-slate-400;
       }
+
+      p {
+        & + p {
+          @apply mt-0;
+          @apply md:mt-0;
+        }
+      }
     }
   }
 
