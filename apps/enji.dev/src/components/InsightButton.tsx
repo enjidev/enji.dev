@@ -55,17 +55,19 @@ function InsightButton({ views, shares, reactions }: InsightButtonProps) {
               <div className={clsx('flex justify-evenly py-2 text-sm')}>
                 <div className={clsx('flex flex-col items-center gap-1')}>
                   <div>Views</div>
-                  <div className={clsx('font-mono')}>{formatNumber(views)}</div>
+                  <div className={clsx('font-mono text-xl')}>
+                    {formatNumber(views)}
+                  </div>
                 </div>
                 <div className={clsx('flex flex-col items-center gap-1')}>
                   <div>Shares</div>
-                  <div className={clsx('font-mono')}>
+                  <div className={clsx('font-mono text-xl')}>
                     {formatNumber(shares)}
                   </div>
                 </div>
                 <div className={clsx('flex flex-col items-center gap-1')}>
                   <div>Reactions</div>
-                  <div className={clsx('font-mono')}>
+                  <div className={clsx('font-mono text-xl')}>
                     {formatNumber(reactions)}
                   </div>
                 </div>
