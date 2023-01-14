@@ -73,7 +73,7 @@ function ReactionCounter({ count, children = null }: ReactionCounterProps) {
 function Reactions() {
   // currently, there is no way to get the 'slug' via a component property.
   const { pathname } = useRouter();
-  const slug = pathname.replace('/blog/', '');
+  const slug = pathname.split('/').reverse()[0];
 
   const {
     data: {

@@ -1,12 +1,10 @@
-import clsx from 'clsx';
 import { PropsWithChildren } from 'react';
 
+import WithReactions from '@/components/layouts/WithReactions';
 import WithTableOfContents from '@/components/layouts/WithTableOfContents';
-import WithTableOfContentsMock from '@/components/layouts/WithTableOfContentsMock';
 import Head from '@/components/meta/Head';
 import SkipNavigation from '@/components/navigations/SkipNavigation';
 import PageHeader from '@/components/PageHeader';
-import Reactions from '@/components/Reactions';
 
 import { getPostOgImageUrl, getPostStructuredData } from '@/helpers/post';
 
@@ -57,23 +55,7 @@ function Post({
         {children}
         <PostFooter tags={tags} category={category} />
       </WithTableOfContents>
-      <div
-        className={clsx(
-          'pointer-events-none sticky bottom-8 z-[902] mt-16',
-          'lg:bottom-8 lg:mt-24'
-        )}
-      >
-        <WithTableOfContentsMock>
-          <div
-            className={clsx(
-              'mx-auto max-w-[360px] px-4',
-              'sm:max-w-[420px] sm:px-0'
-            )}
-          >
-            <Reactions />
-          </div>
-        </WithTableOfContentsMock>
-      </div>
+      <WithReactions />
     </>
   );
 }
