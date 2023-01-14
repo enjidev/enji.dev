@@ -1,17 +1,26 @@
 import { ShareType } from '@prisma/client';
 import clsx from 'clsx';
 import { m, useAnimationControls } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { useEffect, useReducer } from 'react';
 
 import EmojiReaction from '@/components/EmojiReaction';
 import ShareButton from '@/components/ShareButton';
 
 import { addReaction, addShare } from '@/helpers/api';
 
-import { MAX_REACTIONS_PER_SESSION } from '@/constants/app';
+import {
+  createInitialState,
+  ReactionsActions,
+  reducer,
+} from '@/reducers/reactions';
 
+import type {
+  ReactionsAction,
+  ReactionsInitializer,
+  ReactionsState,
+} from '@/reducers/reactions';
 import type { TContentMetaDetail } from '@/types';
-import type { PropsWithChildren } from 'react';
+import type { PropsWithChildren, Reducer } from 'react';
 
 interface CounterProps {
   count: number;
@@ -75,28 +84,21 @@ type ReactionsProps = TContentMetaDetail & {
 };
 
 function Reactions({ slug, meta, metaUser }: ReactionsProps) {
-  const [clapCount, setClapCount] = useState<number>(
-    meta.reactionsDetail.CLAPPING
-  );
-  const [amazedCount, setAmazedCount] = useState<number>(
-    meta.reactionsDetail.AMAZED
-  );
-  const [thinkingCount, setThinkingCount] = useState<number>(
-    meta.reactionsDetail.THINKING
-  );
-  const [sharesCount, setSharesCount] = useState<number>(meta.shares);
-
-  const [clapQuota, setClapQuota] = useState<number>(
-    MAX_REACTIONS_PER_SESSION - metaUser.reactionsDetail.CLAPPING
-  );
-
-  const [amazedQuota, setAmazedQuota] = useState<number>(
-    MAX_REACTIONS_PER_SESSION - metaUser.reactionsDetail.AMAZED
-  );
-
-  const [thinkingQuota, setThinkingQuota] = useState<number>(
-    MAX_REACTIONS_PER_SESSION - metaUser.reactionsDetail.THINKING
-  );
+  const [
+    {
+      clapping,
+      thinking,
+      amazed,
+      shares,
+      clappingQuota,
+      thinkingQuota,
+      amazedQuota,
+    },
+    dispatch,
+  ] = useReducer<
+    Reducer<ReactionsState, ReactionsAction>,
+    ReactionsInitializer
+  >(reducer, { meta, metaUser }, createInitialState);
 
   const handleBatchClap = (count: number) => {
     addReaction({
@@ -142,18 +144,22 @@ function Reactions({ slug, meta, metaUser }: ReactionsProps) {
       <div className={clsx('flex items-center gap-4')}>
         <div className={clsx('flex flex-col items-center gap-2')}>
           <EmojiReaction
-            disabled={clapQuota <= 0}
+            disabled={clappingQuota <= 0}
             title="Claps"
             defaultImage="/assets/emojis/clapping-hands.png"
             animatedImage="/assets/emojis/clapping-hands-animated.png"
             disabledImage="/assets/emojis/love-you-gesture.png"
             onClick={() => {
-              setClapCount((current) => current + 1);
-              setClapQuota((current) => current - 1);
+              dispatch({
+                type: ReactionsActions.INCREASE_CLAPPING,
+              });
+              dispatch({
+                type: ReactionsActions.DECREASE_CLAPPING_QUOTA,
+              });
             }}
             onBatchClick={handleBatchClap}
           />
-          <ReactionCounter count={clapCount} />
+          <ReactionCounter count={clapping} />
         </div>
         <div className={clsx('flex flex-col items-center gap-2')}>
           <EmojiReaction
@@ -163,12 +169,16 @@ function Reactions({ slug, meta, metaUser }: ReactionsProps) {
             animatedImage="/assets/emojis/astonished-face-animated.png"
             disabledImage="/assets/emojis/star-struck.png"
             onClick={() => {
-              setAmazedCount((current) => current + 1);
-              setAmazedQuota((current) => current - 1);
+              dispatch({
+                type: ReactionsActions.INCREASE_AMAZED,
+              });
+              dispatch({
+                type: ReactionsActions.DECREASE_AMAZED_QUOTA,
+              });
             }}
             onBatchClick={handleBatchAmazed}
           />
-          <ReactionCounter count={amazedCount} />
+          <ReactionCounter count={amazed} />
         </div>
         <div className={clsx('flex flex-col items-center gap-2')}>
           <EmojiReaction
@@ -178,22 +188,28 @@ function Reactions({ slug, meta, metaUser }: ReactionsProps) {
             animatedImage="/assets/emojis/face-with-monocle-animated.png"
             disabledImage="/assets/emojis/nerd-face.png"
             onClick={() => {
-              setThinkingCount((current) => current + 1);
-              setThinkingQuota((current) => current - 1);
+              dispatch({
+                type: ReactionsActions.INCREASE_THINKING,
+              });
+              dispatch({
+                type: ReactionsActions.DECREASE_THINKING_QUOTA,
+              });
             }}
             onBatchClick={handleBatchThinking}
           />
-          <ReactionCounter count={thinkingCount} />
+          <ReactionCounter count={thinking} />
         </div>
       </div>
       <div className={clsx('flex flex-col items-center gap-2')}>
         <ShareButton
           onItemClick={(type) => {
-            setSharesCount((current) => current + 1);
+            dispatch({
+              type: ReactionsActions.INCREASE_SHARES,
+            });
             handleShare(type);
           }}
         />
-        <ReactionCounter count={sharesCount} />
+        <ReactionCounter count={shares} />
       </div>
     </div>
   );
