@@ -11,7 +11,8 @@
     "lint:types": "tsc --noEmit",
     "lint:style": "prettier --check .",
     "analyze": "cross-env ANALYZE=true yarn build",
-    "postbuild": "next-sitemap"
+    "postbuild": "next-sitemap",
+    "db:generate": "prisma generate"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.7",
