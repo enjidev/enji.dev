@@ -27,7 +27,8 @@ function InsightButton({ views, shares, reactions }: InsightButtonProps) {
             aria-label="Insight"
             className={clsx(
               'flex h-10 w-10 items-center justify-center rounded-full',
-              'hover:bg-slate-200 hover:dark:bg-[#1d263a]'
+              'hover:bg-slate-200 hover:dark:bg-[#1d263a]',
+              [open && ['bg-slate-200', 'dark:bg-[#1d263a]']]
             )}
           >
             <InsightIcon className={clsx('h-5 w-5')} />
