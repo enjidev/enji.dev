@@ -99,7 +99,7 @@ export default function useInsight({
         },
         metaUser: {
           reactionsDetail: {
-            [type]: data.meta.reactionsDetail[type] + 1,
+            [type]: data.metaUser.reactionsDetail[type] + 1,
           },
         },
       }),
