@@ -10,8 +10,8 @@ import PageHeader from '@/components/PageHeader';
 import Reactions from '@/components/Reactions';
 
 import useContentMetaDetail from '@/hooks/useContentMetaDetail';
-import useInsight from '@/hooks/useInsight';
 
+import { postView } from '@/helpers/api';
 import { getPostOgImageUrl, getPostStructuredData } from '@/helpers/post';
 
 import PostFooter from '@/contents-layouts/Post/PostFooter';
@@ -34,7 +34,7 @@ function Post({
   const slug = pathname.replace('/blog/', '');
 
   // increase the views count
-  useInsight(slug);
+  postView(slug);
 
   // get detailed content meta
   const { data } = useContentMetaDetail(slug);

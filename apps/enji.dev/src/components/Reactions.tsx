@@ -6,7 +6,7 @@ import { useEffect, useReducer } from 'react';
 import EmojiReaction from '@/components/EmojiReaction';
 import ShareButton from '@/components/ShareButton';
 
-import { addReaction, addShare } from '@/helpers/api';
+import { postReaction, postShare } from '@/helpers/api';
 
 import {
   createInitialState,
@@ -101,7 +101,7 @@ function Reactions({ slug, meta, metaUser }: ReactionsProps) {
   >(reducer, { meta, metaUser }, createInitialState);
 
   const handleBatchClap = (count: number) => {
-    addReaction({
+    postReaction({
       slug,
       type: 'CLAPPING',
       count,
@@ -110,7 +110,7 @@ function Reactions({ slug, meta, metaUser }: ReactionsProps) {
   };
 
   const handleBatchAmazed = (count: number) => {
-    addReaction({
+    postReaction({
       slug,
       type: 'AMAZED',
       count,
@@ -119,7 +119,7 @@ function Reactions({ slug, meta, metaUser }: ReactionsProps) {
   };
 
   const handleBatchThinking = (count: number) => {
-    addReaction({
+    postReaction({
       slug,
       type: 'THINKING',
       count,
@@ -128,7 +128,7 @@ function Reactions({ slug, meta, metaUser }: ReactionsProps) {
   };
 
   const handleShare = (type: ShareType) => {
-    addShare({
+    postShare({
       slug,
       type,
     });

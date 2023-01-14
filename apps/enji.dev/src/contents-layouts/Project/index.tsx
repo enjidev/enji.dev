@@ -9,8 +9,8 @@ import PageHeader from '@/components/PageHeader';
 import Reactions from '@/components/Reactions';
 
 import useContentMetaDetail from '@/hooks/useContentMetaDetail';
-import useInsight from '@/hooks/useInsight';
 
+import { postView } from '@/helpers/api';
 import { getPageOgImageUrl } from '@/helpers/page';
 
 import ProjectFooter from '@/contents-layouts/Project/ProjectFooter';
@@ -34,7 +34,7 @@ function ProjectLayout({
   const slug = pathname.replace('/docs/', '');
 
   // increase the views count
-  useInsight(slug);
+  postView(slug);
 
   // get detailed content meta
   const { data } = useContentMetaDetail(slug);

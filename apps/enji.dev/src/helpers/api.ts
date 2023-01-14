@@ -3,7 +3,7 @@ import axios from 'axios';
 
 import { TApiResponse } from '@/types';
 
-export const addReaction = async ({
+export const postReaction = async ({
   slug,
   type,
   count,
@@ -25,7 +25,7 @@ export const addReaction = async ({
   }
 };
 
-export const addShare = async ({
+export const postShare = async ({
   slug,
   type,
 }: {
@@ -36,6 +36,14 @@ export const addShare = async ({
     await axios.post<TApiResponse>(`/api/shares/${slug}`, {
       type,
     });
+  } catch (err) {
+    //
+  }
+};
+
+export const postView = async (slug: string) => {
+  try {
+    await axios.post<TApiResponse>(`/api/views/${slug}`);
   } catch (err) {
     //
   }
