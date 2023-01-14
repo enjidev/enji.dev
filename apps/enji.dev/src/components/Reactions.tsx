@@ -8,6 +8,7 @@ import InsightButton from '@/components/InsightButton';
 import ShareButton from '@/components/ShareButton';
 
 import useInsight from '@/hooks/useInsight';
+import useScrollSpy from '@/hooks/useScrollSpy';
 
 import { MAX_REACTIONS_PER_SESSION } from '@/constants/app';
 
@@ -75,6 +76,9 @@ function Reactions() {
   const { pathname } = useRouter();
   const slug = pathname.split('/').reverse()[0];
 
+  // current active section
+  const { currentSection } = useScrollSpy();
+
   const {
     data: {
       meta: {
@@ -109,7 +113,7 @@ function Reactions() {
             animatedImage="/assets/emojis/clapping-hands-animated.png"
             disabledImage="/assets/emojis/love-you-gesture.png"
             onClick={() => {
-              addReaction({ type: 'CLAPPING', section: undefined });
+              addReaction({ type: 'CLAPPING', section: currentSection });
             }}
           />
           <ReactionCounter count={CLAPPING} />
@@ -122,7 +126,7 @@ function Reactions() {
             animatedImage="/assets/emojis/astonished-face-animated.png"
             disabledImage="/assets/emojis/star-struck.png"
             onClick={() => {
-              addReaction({ type: 'AMAZED', section: undefined });
+              addReaction({ type: 'AMAZED', section: currentSection });
             }}
           />
           <ReactionCounter count={AMAZED} />
@@ -135,7 +139,7 @@ function Reactions() {
             animatedImage="/assets/emojis/face-with-monocle-animated.png"
             disabledImage="/assets/emojis/nerd-face.png"
             onClick={() => {
-              addReaction({ type: 'THINKING', section: undefined });
+              addReaction({ type: 'THINKING', section: currentSection });
             }}
           />
           <ReactionCounter count={THINKING} />
