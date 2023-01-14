@@ -1,27 +1,17 @@
-import { ShareType } from '@prisma/client';
 import clsx from 'clsx';
 import { m, useAnimationControls } from 'framer-motion';
-import { useEffect, useReducer } from 'react';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
 import EmojiReaction from '@/components/EmojiReaction';
 import Insight from '@/components/Insight';
 import ShareButton from '@/components/ShareButton';
 
-import { postReaction, postShare } from '@/helpers/api';
+import useInsight from '@/hooks/useInsight';
 
-import {
-  createInitialState,
-  ReactionsActions,
-  reducer,
-} from '@/reducers/reactions';
+import { MAX_REACTIONS_PER_SESSION } from '@/constants/app';
 
-import type {
-  ReactionsAction,
-  ReactionsInitializer,
-  ReactionsState,
-} from '@/reducers/reactions';
-import type { TContentMetaDetail } from '@/types';
-import type { PropsWithChildren, Reducer } from 'react';
+import type { PropsWithChildren } from 'react';
 
 interface CounterProps {
   count: number;
@@ -80,60 +70,28 @@ function ReactionCounter({ count, children = null }: ReactionCounterProps) {
   );
 }
 
-type ReactionsProps = TContentMetaDetail & {
-  slug: string;
-};
+function Reactions() {
+  // currently, there is no way to get the 'slug' via a component property.
+  const { pathname } = useRouter();
+  const slug = pathname.replace('/blog/', '');
 
-function Reactions({ slug, meta, metaUser }: ReactionsProps) {
-  const [
-    {
-      clapping,
-      thinking,
-      amazed,
-      shares,
-      clappingQuota,
-      thinkingQuota,
-      amazedQuota,
+  const {
+    data: {
+      meta: {
+        views,
+        shares,
+        reactions,
+        reactionsDetail: { THINKING, CLAPPING, AMAZED },
+      },
+      metaUser: { reactionsDetail: user },
     },
-    dispatch,
-  ] = useReducer<
-    Reducer<ReactionsState, ReactionsAction>,
-    ReactionsInitializer
-  >(reducer, { meta, metaUser }, createInitialState);
+    addShare,
+    addReaction,
+  } = useInsight({ slug });
 
-  const handleBatchClap = (count: number) => {
-    postReaction({
-      slug,
-      type: 'CLAPPING',
-      count,
-      section: undefined,
-    });
-  };
-
-  const handleBatchAmazed = (count: number) => {
-    postReaction({
-      slug,
-      type: 'AMAZED',
-      count,
-      section: undefined,
-    });
-  };
-
-  const handleBatchThinking = (count: number) => {
-    postReaction({
-      slug,
-      type: 'THINKING',
-      count,
-      section: undefined,
-    });
-  };
-
-  const handleShare = (type: ShareType) => {
-    postShare({
-      slug,
-      type,
-    });
-  };
+  const CLAPPING_QUOTA = MAX_REACTIONS_PER_SESSION - user.CLAPPING;
+  const THINKING_QUOTA = MAX_REACTIONS_PER_SESSION - user.THINKING;
+  const AMAZED_QUOTA = MAX_REACTIONS_PER_SESSION - user.AMAZED;
 
   return (
     <div
@@ -145,77 +103,52 @@ function Reactions({ slug, meta, metaUser }: ReactionsProps) {
       <div className={clsx('flex items-center gap-4')}>
         <div className={clsx('flex flex-col items-center gap-2')}>
           <EmojiReaction
-            disabled={clappingQuota <= 0}
+            disabled={CLAPPING_QUOTA <= 0}
             title="Claps"
             defaultImage="/assets/emojis/clapping-hands.png"
             animatedImage="/assets/emojis/clapping-hands-animated.png"
             disabledImage="/assets/emojis/love-you-gesture.png"
             onClick={() => {
-              dispatch({
-                type: ReactionsActions.INCREASE_CLAPPING,
-              });
-              dispatch({
-                type: ReactionsActions.DECREASE_CLAPPING_QUOTA,
-              });
+              addReaction({ type: 'CLAPPING', section: undefined });
             }}
-            onBatchClick={handleBatchClap}
           />
-          <ReactionCounter count={clapping} />
+          <ReactionCounter count={CLAPPING} />
         </div>
         <div className={clsx('flex flex-col items-center gap-2')}>
           <EmojiReaction
-            disabled={amazedQuota <= 0}
+            disabled={AMAZED_QUOTA <= 0}
             title="Wow"
             defaultImage="/assets/emojis/astonished-face.png"
             animatedImage="/assets/emojis/astonished-face-animated.png"
             disabledImage="/assets/emojis/star-struck.png"
             onClick={() => {
-              dispatch({
-                type: ReactionsActions.INCREASE_AMAZED,
-              });
-              dispatch({
-                type: ReactionsActions.DECREASE_AMAZED_QUOTA,
-              });
+              addReaction({ type: 'AMAZED', section: undefined });
             }}
-            onBatchClick={handleBatchAmazed}
           />
-          <ReactionCounter count={amazed} />
+          <ReactionCounter count={AMAZED} />
         </div>
         <div className={clsx('flex flex-col items-center gap-2')}>
           <EmojiReaction
-            disabled={thinkingQuota <= 0}
+            disabled={THINKING_QUOTA <= 0}
             title="Hmm"
             defaultImage="/assets/emojis/face-with-monocle.png"
             animatedImage="/assets/emojis/face-with-monocle-animated.png"
             disabledImage="/assets/emojis/nerd-face.png"
             onClick={() => {
-              dispatch({
-                type: ReactionsActions.INCREASE_THINKING,
-              });
-              dispatch({
-                type: ReactionsActions.DECREASE_THINKING_QUOTA,
-              });
+              addReaction({ type: 'THINKING', section: undefined });
             }}
-            onBatchClick={handleBatchThinking}
           />
-          <ReactionCounter count={thinking} />
+          <ReactionCounter count={THINKING} />
         </div>
       </div>
       <div className={clsx('flex items-start gap-2')}>
         <div className={clsx('flex flex-col items-center gap-2')}>
-          <Insight
-            views={meta.views}
-            shares={shares}
-            reactions={clapping + thinking + amazed}
-          />
+          <Insight views={views} shares={shares} reactions={reactions} />
         </div>
         <div className={clsx('flex flex-col items-center gap-2')}>
           <ShareButton
             onItemClick={(type) => {
-              dispatch({
-                type: ReactionsActions.INCREASE_SHARES,
-              });
-              handleShare(type);
+              addShare({ type });
             }}
           />
           <ReactionCounter count={shares} />

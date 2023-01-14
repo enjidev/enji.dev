@@ -1,21 +1,132 @@
-import { useEffect } from 'react';
+import { ReactionType, ShareType } from '@prisma/client';
+import merge from 'lodash/merge';
+import { useEffect, useRef } from 'react';
 import useSWR from 'swr';
 
 import fetcher from '@/utils/fetcher';
-import { postView } from '@/helpers/api';
+import { postReaction, postShare, postView } from '@/helpers/api';
 
 import type { TContentMetaDetail } from '@/types';
 
-export default function useInsight(slug: string) {
-  // get detailed content meta
-  const { data } = useSWR<TContentMetaDetail>(`/api/content/${slug}`, fetcher);
+const INITIAL_VALUE: TContentMetaDetail = {
+  meta: {
+    views: 0,
+    shares: 0,
+    reactions: 0,
+    reactionsDetail: {
+      CLAPPING: 0,
+      THINKING: 0,
+      AMAZED: 0,
+    },
+  },
+  metaUser: {
+    reactionsDetail: {
+      CLAPPING: 0,
+      THINKING: 0,
+      AMAZED: 0,
+    },
+  },
+  metaSection: {},
+};
 
-  // increase view
+export default function useInsight({
+  slug,
+  countView = true,
+}: {
+  slug: string;
+  countView?: boolean;
+}) {
+  // #region handle for batch click
+  const timer = useRef<Record<ReactionType, NodeJS.Timeout>>({
+    CLAPPING: null,
+    THINKING: null,
+    AMAZED: null,
+  });
+  const count = useRef<Record<ReactionType, number>>({
+    CLAPPING: 0,
+    THINKING: 0,
+    AMAZED: 0,
+  });
+  // #endregion
+
+  const { data, mutate } = useSWR<TContentMetaDetail>(
+    `/api/content/${slug}`,
+    fetcher,
+    {
+      fallbackData: INITIAL_VALUE,
+    }
+  );
+
+  // post view count
   useEffect(() => {
-    postView(slug);
-  }, [slug]);
+    if (countView) {
+      postView(slug);
+    }
+  }, [slug, countView]);
+
+  const addShare = ({ type }: { type: ShareType }) => {
+    // optimistic update
+    mutate(
+      merge({}, data, {
+        meta: {
+          shares: data.meta.shares + 1,
+        },
+      }),
+      false
+    );
+
+    postShare({
+      slug,
+      type,
+    });
+  };
+
+  const addReaction = ({
+    type,
+    section = undefined,
+  }: {
+    type: ReactionType;
+    section?: string;
+  }) => {
+    // optimistic update
+    mutate(
+      merge({}, data, {
+        meta: {
+          reactions: data.meta.reactions + 1,
+          reactionsDetail: {
+            [type]: data.meta.reactionsDetail[type] + 1,
+          },
+        },
+        metaUser: {
+          reactionsDetail: {
+            [type]: data.meta.reactionsDetail[type] + 1,
+          },
+        },
+      }),
+      false
+    );
+
+    // increment the current batch click count
+    count.current[type] += 1;
+
+    // debounce the batch click for sending the reaction data
+    clearTimeout(timer.current[type]);
+    timer.current[type] = setTimeout(() => {
+      postReaction({
+        slug,
+        type,
+        count: count.current[type],
+        section,
+      }).finally(() => {
+        // reset the batch click count to zero for the next batch
+        count.current[type] = 0;
+      });
+    }, 500);
+  };
 
   return {
     data,
+    addShare,
+    addReaction,
   };
 }

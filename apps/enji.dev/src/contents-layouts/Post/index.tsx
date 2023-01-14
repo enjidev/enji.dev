@@ -1,5 +1,4 @@
 import clsx from 'clsx';
-import { useRouter } from 'next/router';
 import { PropsWithChildren } from 'react';
 
 import WithTableOfContents from '@/components/layouts/WithTableOfContents';
@@ -8,8 +7,6 @@ import Head from '@/components/meta/Head';
 import SkipNavigation from '@/components/navigations/SkipNavigation';
 import PageHeader from '@/components/PageHeader';
 import Reactions from '@/components/Reactions';
-
-import useInsight from '@/hooks/useInsight';
 
 import { getPostOgImageUrl, getPostStructuredData } from '@/helpers/post';
 
@@ -28,12 +25,6 @@ function Post({
   tableOfContents,
   children = null,
 }: PropsWithChildren<PostProps>) {
-  // currently, there is no way to get the 'slug' via a component property.
-  const { pathname } = useRouter();
-  const slug = pathname.replace('/blog/', '');
-
-  const { data } = useInsight(slug);
-
   // get og image urls
   const postOgImages = getPostOgImageUrl({
     category,
@@ -66,31 +57,23 @@ function Post({
         {children}
         <PostFooter tags={tags} category={category} />
       </WithTableOfContents>
-      {data ? (
-        <div
-          className={clsx(
-            'pointer-events-none sticky bottom-8 z-[902] mt-16',
-            'lg:bottom-8 lg:mt-24'
-          )}
-        >
-          <WithTableOfContentsMock>
-            <div
-              className={clsx(
-                'mx-auto max-w-[360px] px-4',
-                'sm:max-w-[420px] sm:px-0'
-              )}
-            >
-              <Reactions
-                key={`${data.meta.reactions}-${data.meta.shares}-${data.meta.views}`}
-                slug={slug}
-                meta={data.meta}
-                metaUser={data.metaUser}
-                metaSection={data.metaSection}
-              />
-            </div>
-          </WithTableOfContentsMock>
-        </div>
-      ) : null}
+      <div
+        className={clsx(
+          'pointer-events-none sticky bottom-8 z-[902] mt-16',
+          'lg:bottom-8 lg:mt-24'
+        )}
+      >
+        <WithTableOfContentsMock>
+          <div
+            className={clsx(
+              'mx-auto max-w-[360px] px-4',
+              'sm:max-w-[420px] sm:px-0'
+            )}
+          >
+            <Reactions />
+          </div>
+        </WithTableOfContentsMock>
+      </div>
     </>
   );
 }
