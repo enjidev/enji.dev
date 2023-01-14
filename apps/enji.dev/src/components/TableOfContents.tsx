@@ -35,7 +35,7 @@ interface TableOfContensProps {
 
 function TableOfContents({ items = [] }: TableOfContensProps) {
   const isScrolled = useOnScroll(200);
-  const visibleItems = useScrollSpy();
+  const { currentVisibles } = useScrollSpy();
 
   const handleScrollToTopClick = () => {
     window.scrollTo({ top: 0 });
@@ -45,14 +45,14 @@ function TableOfContents({ items = [] }: TableOfContensProps) {
     <nav
       aria-label="Page table of contents"
       className={clsx(
-        'sticky top-24 z-[901] w-64 rounded-xl border border-divider-light bg-white',
+        'border-divider-light sticky top-24 z-[901] w-64 rounded-xl border bg-white',
         'xl:w-[272px]',
         'dark:border-divider-dark dark:bg-[#161e31]'
       )}
     >
       <div
         className={clsx(
-          'flex items-center justify-between border-b border-divider-light py-3 px-5 text-sm font-bold',
+          'border-divider-light flex items-center justify-between border-b py-3 px-5 text-sm font-bold',
           'dark:border-divider-dark'
         )}
       >
@@ -70,7 +70,7 @@ function TableOfContents({ items = [] }: TableOfContensProps) {
           <a
             href="#skip-navigation"
             className={clsx(
-              'flex h-6 cursor-pointer items-center rounded-full border border-divider-light px-2 text-xs font-normal text-accent-700',
+              'border-divider-light text-accent-700 flex h-6 cursor-pointer items-center rounded-full border px-2 text-xs font-normal',
               'dark:border-divider-dark dark:text-accent-400'
             )}
             tabIndex={isScrolled ? 0 : -1}
@@ -83,7 +83,7 @@ function TableOfContents({ items = [] }: TableOfContensProps) {
       <div className={clsx('relative p-3 py-4')}>
         <ol className={clsx('toc flex flex-col gap-2')}>
           {items.map(({ title, depth, slug }) => {
-            const isActive = visibleItems.includes(slug);
+            const isActive = currentVisibles && currentVisibles[slug];
 
             return (
               <li key={slug}>

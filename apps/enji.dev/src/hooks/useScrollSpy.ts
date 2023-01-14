@@ -1,6 +1,10 @@
 import { useEffect, useState } from 'react';
 
-export default function useScrollSpyV2(): Array<string> {
+export default function useScrollSpy(): {
+  currentVisibles: Record<string, boolean>;
+  currentSection: string;
+} {
+  const [currentSection, setCurrentSection] = useState<string>(undefined);
   const [currentVisibles, setCurrentVisibles] = useState<
     Record<string, boolean>
   >({});
@@ -17,6 +21,10 @@ export default function useScrollSpyV2(): Array<string> {
         ...prev,
         [slug]: isIntersecting,
       }));
+
+      if (isIntersecting) {
+        setCurrentSection(slug);
+      }
     };
 
     const observers: Array<IntersectionObserver> = [];
@@ -37,5 +45,8 @@ export default function useScrollSpyV2(): Array<string> {
     };
   }, []);
 
-  return Object.keys(currentVisibles).filter((key) => currentVisibles[key]);
+  return {
+    currentSection,
+    currentVisibles,
+  };
 }
