@@ -102,6 +102,8 @@ function ShareButton({ onItemClick = () => {} }: ShareButtonProps) {
       {({ open }) => (
         <>
           <Menu.Button
+            title="Share"
+            aria-label="Share"
             className={clsx(
               'flex h-10 w-10 items-center justify-center rounded-full bg-slate-200',
               'dark:bg-[#1d263a]'
@@ -117,12 +119,16 @@ function ShareButton({ onItemClick = () => {} }: ShareButtonProps) {
               initial="hide"
               animate="show"
               className={clsx(
-                'border-divider-light absolute bottom-24 -right-2 z-[902] flex w-56 flex-col overflow-hidden rounded-2xl border bg-white pb-2 pt-1',
+                'border-divider-light absolute bottom-24 right-2 z-[902] flex w-56 flex-col overflow-hidden rounded-2xl border bg-white pb-2 pt-1',
                 'dark:border-divider-dark dark:bg-[#161e31]'
               )}
             >
-              <div className={clsx('py-3 px-4 text-[13px] font-bold')}>
-                Share this on:
+              <div
+                className={clsx(
+                  'py-3 px-4 text-center text-[13px] text-lg font-bold'
+                )}
+              >
+                share this on
               </div>
               <Menu.Item>
                 {({ active }) => (

@@ -4,6 +4,7 @@ import { m, useAnimationControls } from 'framer-motion';
 import { useEffect, useReducer } from 'react';
 
 import EmojiReaction from '@/components/EmojiReaction';
+import Insight from '@/components/Insight';
 import ShareButton from '@/components/ShareButton';
 
 import { postReaction, postShare } from '@/helpers/api';
@@ -200,16 +201,25 @@ function Reactions({ slug, meta, metaUser }: ReactionsProps) {
           <ReactionCounter count={thinking} />
         </div>
       </div>
-      <div className={clsx('flex flex-col items-center gap-2')}>
-        <ShareButton
-          onItemClick={(type) => {
-            dispatch({
-              type: ReactionsActions.INCREASE_SHARES,
-            });
-            handleShare(type);
-          }}
-        />
-        <ReactionCounter count={shares} />
+      <div className={clsx('flex items-start gap-2')}>
+        <div className={clsx('flex flex-col items-center gap-2')}>
+          <Insight
+            views={meta.views}
+            shares={shares}
+            reactions={clapping + thinking + amazed}
+          />
+        </div>
+        <div className={clsx('flex flex-col items-center gap-2')}>
+          <ShareButton
+            onItemClick={(type) => {
+              dispatch({
+                type: ReactionsActions.INCREASE_SHARES,
+              });
+              handleShare(type);
+            }}
+          />
+          <ReactionCounter count={shares} />
+        </div>
       </div>
     </div>
   );
