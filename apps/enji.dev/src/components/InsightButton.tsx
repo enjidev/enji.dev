@@ -11,13 +11,13 @@ const animation = {
   show: { opacity: 1, y: 0, transition: { duration: 0.18 } },
 };
 
-interface InsightProps {
+interface InsightButtonProps {
   views: number;
   shares: number;
   reactions: number;
 }
 
-function Insight({ views, shares, reactions }: InsightProps) {
+function InsightButton({ views, shares, reactions }: InsightButtonProps) {
   return (
     <Popover>
       {({ open }) => (
@@ -49,21 +49,21 @@ function Insight({ views, shares, reactions }: InsightProps) {
                   'py-3 px-4 text-center text-[13px] text-lg font-bold'
                 )}
               >
-                insight
+                Insight
               </div>
               <div className={clsx('flex justify-evenly py-2 text-sm')}>
                 <div className={clsx('flex flex-col items-center gap-1')}>
-                  <div>views</div>
+                  <div>Views</div>
                   <div className={clsx('font-mono')}>{formatNumber(views)}</div>
                 </div>
                 <div className={clsx('flex flex-col items-center gap-1')}>
-                  <div>shares</div>
+                  <div>Shares</div>
                   <div className={clsx('font-mono')}>
                     {formatNumber(shares)}
                   </div>
                 </div>
                 <div className={clsx('flex flex-col items-center gap-1')}>
-                  <div>reactions</div>
+                  <div>Reactions</div>
                   <div className={clsx('font-mono')}>
                     {formatNumber(reactions)}
                   </div>
@@ -77,4 +77,4 @@ function Insight({ views, shares, reactions }: InsightProps) {
   );
 }
 
-export default Insight;
+export default InsightButton;

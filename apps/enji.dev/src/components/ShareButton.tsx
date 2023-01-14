@@ -128,7 +128,7 @@ function ShareButton({ onItemClick = () => {} }: ShareButtonProps) {
                   'py-3 px-4 text-center text-[13px] text-lg font-bold'
                 )}
               >
-                share this on
+                Share this on
               </div>
               <Menu.Item>
                 {({ active }) => (

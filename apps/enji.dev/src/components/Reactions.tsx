@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 
 import EmojiReaction from '@/components/EmojiReaction';
-import Insight from '@/components/Insight';
+import InsightButton from '@/components/InsightButton';
 import ShareButton from '@/components/ShareButton';
 
 import useInsight from '@/hooks/useInsight';
@@ -143,7 +143,7 @@ function Reactions() {
       </div>
       <div className={clsx('flex items-start gap-2')}>
         <div className={clsx('flex flex-col items-center gap-2')}>
-          <Insight views={views} shares={shares} reactions={reactions} />
+          <InsightButton views={views} shares={shares} reactions={reactions} />
         </div>
         <div className={clsx('flex flex-col items-center gap-2')}>
           <ShareButton
