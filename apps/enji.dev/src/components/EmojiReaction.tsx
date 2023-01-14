@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import { m } from 'framer-motion';
 import Head from 'next/head';
 import Image from 'next/image';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 type AnimationValue = {
   key: number;
@@ -60,7 +60,6 @@ interface EmojiReactionProps {
   animatedImage: string;
   disabledImage: string;
   onClick?: () => void;
-  onBatchClick?: (count: number) => void;
 }
 
 function EmojiReaction({
@@ -70,11 +69,7 @@ function EmojiReaction({
   animatedImage,
   disabledImage,
   onClick = () => {},
-  onBatchClick = () => {},
 }: EmojiReactionProps) {
-  const timer = useRef<NodeJS.Timeout>(null);
-  const batchClicksCount = useRef<number>(0);
-
   const [history, setHistory] = useState<Array<AnimationValue>>([]);
   const [src, setSrc] = useState<string>(
     disabled ? disabledImage : defaultImage
@@ -94,18 +89,6 @@ function EmojiReaction({
 
     // call click event
     onClick();
-
-    // increase the count for batch click
-    batchClicksCount.current += 1;
-
-    // call a batch click event, but with the debounce effect
-    clearTimeout(timer.current);
-    timer.current = setTimeout(() => {
-      onBatchClick(batchClicksCount.current);
-
-      // reset the batch click count to zero for the next batch click
-      batchClicksCount.current = 0;
-    }, 400);
   };
 
   return (
