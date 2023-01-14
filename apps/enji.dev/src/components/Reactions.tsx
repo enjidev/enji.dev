@@ -22,17 +22,17 @@ function Counter({ count }: CounterProps) {
 
   useEffect(() => {
     const startMotion = async () => {
-      controls.set({ y: -20 });
       await controls.start({
         y: [-20, 0],
         transition: {
           duration: 0.18,
         },
       });
-      controls.set({ y: 0 });
     };
 
-    startMotion();
+    if (count !== 0) {
+      startMotion();
+    }
   }, [count, controls]);
 
   return count === 0 ? (

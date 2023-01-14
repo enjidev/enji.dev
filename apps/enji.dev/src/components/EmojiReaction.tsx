@@ -76,7 +76,9 @@ function EmojiReaction({
   const batchClicksCount = useRef<number>(0);
 
   const [history, setHistory] = useState<Array<AnimationValue>>([]);
-  const [src, setSrc] = useState<string>(defaultImage);
+  const [src, setSrc] = useState<string>(
+    disabled ? disabledImage : defaultImage
+  );
 
   useEffect(() => {
     if (disabled) {
