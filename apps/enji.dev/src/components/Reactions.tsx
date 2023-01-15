@@ -71,7 +71,11 @@ function ReactionCounter({ count, children = null }: ReactionCounterProps) {
   );
 }
 
-function Reactions() {
+interface ReactionsProps {
+  withCountView?: boolean;
+}
+
+function Reactions({ withCountView = true }: ReactionsProps) {
   // currently, there is no way to get the 'slug' via a component property.
   const { pathname } = useRouter();
   const slug = pathname.split('/').reverse()[0];
@@ -91,7 +95,7 @@ function Reactions() {
     },
     addShare,
     addReaction,
-  } = useInsight({ slug });
+  } = useInsight({ slug, countView: withCountView });
 
   const CLAPPING_QUOTA = MAX_REACTIONS_PER_SESSION - user.CLAPPING;
   const THINKING_QUOTA = MAX_REACTIONS_PER_SESSION - user.THINKING;
