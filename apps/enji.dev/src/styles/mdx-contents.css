@@ -53,8 +53,8 @@
 
       p {
         & + p {
-          @apply mt-0;
-          @apply md:mt-0;
+          @apply mt-1;
+          @apply md:mt-1;
         }
       }
     }
