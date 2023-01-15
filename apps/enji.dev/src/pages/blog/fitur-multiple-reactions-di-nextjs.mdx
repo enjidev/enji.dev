@@ -255,7 +255,7 @@ Untuk animasi emojinya (point 2) saya ambil [disini](https://animated-fluent-emo
 
 Untuk urusan animasi masih setia pake framer motion ğŸ˜
 
-Pas user klik reaction, kan muncul animasi tuh, pas event `onClick` cuma push yang nilai animasi yang `x` sama `y` random. Nilai animasi tadi dirender jadi componentnya framer motion.
+Pas user klik reaction, kan muncul animasi tuh, pas event `onClick` cuma push yang nilai animasi `x` sama `y`-nya random. Nilai animasi tadi dirender jadi componentnya framer motion.
 
 Dengan nilai `x` dan `y` yang random, jadi pas klik beberapa kali tuh ngga monoton animasinya ke arah situ-situ aja.
 
@@ -275,7 +275,7 @@ Ini dia hasil akhirnya, coba kasih reactions, sampe limit, ada animasinya tuh ğŸ
     marginBottom: '32px',
   }}
 >
-  <Reactions />
+  <Reactions withCountView={false} />
 </div>
 
 Meskipun masih butuh banyak penyesuaian baik dari styles, gambar, layout ataupun performance, tapi saya senang dengan hasil akhir saat ini.
