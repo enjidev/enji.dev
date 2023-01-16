@@ -38,6 +38,10 @@ const validate = (schema, data) => {
 
 const withFrontMatter = () => (_tree, file) => {
   const data = getFrontMatter(file.value);
+
+  // skip front matter validation
+  if (Object.keys(data).length === 0) return;
+
   const base = validate(BaseFrontMatter, data);
 
   let frontMatter;
