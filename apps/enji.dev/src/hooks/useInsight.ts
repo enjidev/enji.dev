@@ -49,7 +49,7 @@ export default function useInsight({
   });
   // #endregion
 
-  const { data, mutate } = useSWR<TContentMetaDetail>(
+  const { isLoading, data, mutate } = useSWR<TContentMetaDetail>(
     `/api/content/${slug}`,
     fetcher,
     {
@@ -125,6 +125,7 @@ export default function useInsight({
   };
 
   return {
+    isLoading,
     data,
     addShare,
     addReaction,

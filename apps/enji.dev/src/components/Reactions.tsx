@@ -84,6 +84,7 @@ function Reactions({ withCountView = true }: ReactionsProps) {
   const { currentSection } = useScrollSpy();
 
   const {
+    isLoading,
     data: {
       meta: {
         views,
@@ -101,12 +102,34 @@ function Reactions({ withCountView = true }: ReactionsProps) {
   const THINKING_QUOTA = MAX_REACTIONS_PER_SESSION - user.THINKING;
   const AMAZED_QUOTA = MAX_REACTIONS_PER_SESSION - user.AMAZED;
 
+  const controls = useAnimationControls();
+
+  useEffect(() => {
+    if (!isLoading) {
+      controls.start({
+        y: 0,
+        opacity: 1,
+        pointerEvents: 'auto',
+        transition: {
+          delay: 0.24,
+          duration: 0.18,
+        },
+      });
+    }
+  }, [isLoading]);
+
   return (
-    <div
+    <m.div
       className={clsx(
         'border-divider-light pointer-events-auto relative flex items-center justify-between rounded-xl border bg-white/70 p-4 backdrop-blur',
         'dark:border-divider-dark dark:bg-slate-900/80'
       )}
+      initial={{
+        y: 16,
+        opacity: 0,
+        pointerEvents: 'none',
+      }}
+      animate={controls}
     >
       <div className={clsx('flex items-center gap-4')}>
         <div className={clsx('flex flex-col items-center gap-2')}>
@@ -162,7 +185,7 @@ function Reactions({ withCountView = true }: ReactionsProps) {
           <ReactionCounter count={shares} />
         </div>
       </div>
-    </div>
+    </m.div>
   );
 }
 
