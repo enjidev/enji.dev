@@ -116,7 +116,7 @@ function Reactions({ withCountView = true }: ReactionsProps) {
         },
       });
     }
-  }, [isLoading]);
+  }, [isLoading, controls]);
 
   return (
     <m.div

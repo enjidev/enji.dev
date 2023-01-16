@@ -18,9 +18,6 @@ function CountUp({ from, to }: CountUpProps) {
       onUpdate(value) {
         node.textContent = value.toFixed(0);
       },
-      onComplete() {
-        this.runningCount += 1;
-      },
     });
 
     return () => controls.stop();
