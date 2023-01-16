@@ -10,7 +10,7 @@
       "outputs": []
     },
     "dev": {
-      "dependsOn": ["^db:generate"],
+      "dependsOn": ["db:generate"],
       "cache": false
     },
     "clean": {
