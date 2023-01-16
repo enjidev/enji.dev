@@ -6,6 +6,7 @@ import { ChevronRightIcon, InsightIcon } from '@/components/Icons';
 import { formatDate, formatLang, formatNumber } from '@/helpers/post';
 
 import type { TPostFrontMatter } from '@/types';
+import CountUp from '@/components/CountUp';
 
 type PostPreviewProps = TPostFrontMatter & {
   slug: string;
@@ -75,14 +76,14 @@ function PostPreview({
               className={clsx('flex items-center gap-1.5')}
               title="Number of view(s)"
             >
-              {formatNumber(views)} Views
+              <CountUp from={0} to={views} /> Views
             </span>
             <span>&middot;</span>
             <span
               className={clsx('flex items-center gap-1.5')}
               title="Number of share(s)"
             >
-              {formatNumber(shares)} Shares
+              <CountUp from={0} to={shares} /> Shares
             </span>
           </span>
         </div>
