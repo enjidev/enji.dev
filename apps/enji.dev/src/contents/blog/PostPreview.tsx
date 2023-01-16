@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 import { ChevronRightIcon, InsightIcon } from '@/components/Icons';
 
-import { formatDate, formatLang, formatNumber } from '@/helpers/post';
+import { formatDate, formatLang } from '@/helpers/post';
 
 import type { TPostFrontMatter } from '@/types';
 import CountUp from '@/components/CountUp';
