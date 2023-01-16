@@ -36,3 +36,6 @@ yarn-error.log*
 # next-sitemap
 robots.txt
 sitemap.xml
+
+# prevent accidentally committing and pushing draft files/directories
+*((DRAFT))*
