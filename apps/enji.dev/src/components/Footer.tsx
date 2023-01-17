@@ -206,6 +206,11 @@ function Footer() {
                       title: 'Personal Blog',
                       href: '/blog',
                     },
+                    {
+                      title: 'T.I.L',
+                      href: '/today-i-learned',
+                      label: 'new',
+                    },
                   ]}
                 />
               </div>

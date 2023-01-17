@@ -430,6 +430,28 @@
   }
 }
 
+.mdx-dnd {
+  @apply mt-6;
+
+  .mdx-code {
+    @apply my-0;
+  }
+}
+
+.mdx-do {
+  .mdx-code {
+    @apply border-green-400/50;
+    @apply dark:border-green-900/50;
+  }
+}
+
+.mdx-dont {
+  .mdx-code {
+    @apply border-red-400/50;
+    @apply dark:border-red-900/50;
+  }
+}
+
 @keyframes heading-target {
   0%,
   44%,

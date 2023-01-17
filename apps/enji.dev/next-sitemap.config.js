@@ -25,6 +25,10 @@ module.exports = {
       return defaultValue(0.9);
     }
 
+    if (path === '/today-i-learned') {
+      return defaultValue(0.9);
+    }
+
     if (path.indexOf('/work') === 0) {
       return defaultValue(0.8);
     }
