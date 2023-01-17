@@ -102,15 +102,15 @@ export function Item({ children = null }: PropsWithChildren) {
       >
         <div
           className={clsx(
-            'absolute -ml-3 mt-2.5 h-4 w-4 rounded-full border-2 border-slate-700 bg-white',
+            'absolute -ml-0.5 mt-2.5 h-4 w-4 rounded-full border-2 border-slate-700 bg-white',
             'md:-ml-3 md:mt-2 md:h-5 md:w-5',
             'dark:border-slate-300 dark:bg-slate-900'
           )}
         />
         <div
           className={clsx(
-            'absolute z-[-1] mt-4 -ml-4 w-8 border border-slate-700',
-            'md:w-10 lg:w-12',
+            'absolute z-[-1] mt-4 -ml-2 w-8 border border-slate-700',
+            'md:-ml-4 md:w-10 lg:w-12',
             'dark:border-slate-300'
           )}
         />
@@ -130,7 +130,7 @@ export function Items({
   children = null,
 }: PropsWithChildren<ItemsProps>) {
   return (
-    <div className={clsx('flex flex-row gap-8', 'md:gap-12 lg:gap-24')}>
+    <div className={clsx('flex flex-row gap-6', 'md:gap-12 lg:gap-24')}>
       <div className={clsx('hidden', 'md:block md:pb-24')}>
         <div className={clsx('mt-4 pt-1.5 md:sticky md:top-[86px]')}>
           <div

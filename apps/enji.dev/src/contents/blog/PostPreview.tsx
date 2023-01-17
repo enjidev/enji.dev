@@ -29,8 +29,8 @@ function PostPreview({
         key={slug}
         href={`blog/${slug}`}
         className={clsx(
-          'group block rounded-xl bg-gradient-to-t ',
-          'sm:p-4 md:p-6'
+          'group mb-6 block rounded-xl bg-gradient-to-t',
+          'sm:mb-0 sm:p-4 md:p-6'
         )}
       >
         <div
