@@ -38,7 +38,14 @@ function Counter({ count }: CounterProps) {
 
   return count === 0 ? (
     <span className={clsx('flex flex-col font-mono text-sm')}>
-      <span className={clsx('flex h-5 items-center')}>0</span>
+      <span
+        className={clsx(
+          'flex h-5 items-center font-mono text-sm font-bold text-slate-600',
+          'dark:text-slate-300'
+        )}
+      >
+        0
+      </span>
     </span>
   ) : (
     <m.span
