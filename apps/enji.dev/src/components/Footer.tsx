@@ -228,6 +228,11 @@ function Footer() {
                       href: 'https://github.com/enjidev/enji.dev',
                       isInternal: false,
                     },
+                    {
+                      title: 'Credits',
+                      href: '/credits',
+                      label: 'new',
+                    },
                   ]}
                 />
               </div>
