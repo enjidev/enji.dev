@@ -10,11 +10,19 @@ datasource db {
 model ContentMeta {
   id String @id @default(auto()) @map("_id") @db.ObjectId
 
+  type      ContentType
+  title     String
   slug      String     @unique
   views     View[]
   shares    Share[]
   reactions Reaction[]
   createdAt DateTime   @default(now())
+}
+
+enum ContentType {
+  PAGE
+  POST
+  PROJECT
 }
 
 model View {

@@ -1,4 +1,4 @@
-import { ShareType } from '@prisma/client';
+import { ContentType, ShareType } from '@prisma/client';
 import { z } from 'zod';
 
 import { getSessionId } from '@/helpers/server';
@@ -17,12 +17,16 @@ export default async function handler(
 
   try {
     if (req.method === 'POST') {
+      const contentType = z.nativeEnum(ContentType).parse(req.body.contentType);
+      const contentTitle = z.string().parse(req.body.contentTitle);
       const type = z.nativeEnum(ShareType).parse(req.body.type);
       const currentShares = await getSharesBy(slug, sessionId);
 
       if (currentShares < MAX_SHARES_PER_SESSION) {
         await setShare({
           slug,
+          contentType,
+          contentTitle,
           sessionId,
           type,
         });

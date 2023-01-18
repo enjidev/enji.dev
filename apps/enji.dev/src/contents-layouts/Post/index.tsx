@@ -55,7 +55,7 @@ function Post({
         {children}
         <PostFooter tags={tags} category={category} />
       </WithTableOfContents>
-      <WithReactions />
+      <WithReactions contentTitle={title} contentType="POST" />
     </>
   );
 }

@@ -1,4 +1,4 @@
-import { ReactionType } from '@prisma/client';
+import { ContentType, ReactionType } from '@prisma/client';
 import { z } from 'zod';
 
 import { getSessionId } from '@/helpers/server';
@@ -18,6 +18,8 @@ export default async function handler(
 
   try {
     if (req.method === 'POST') {
+      const contentType = z.nativeEnum(ContentType).parse(req.body.contentType);
+      const contentTitle = z.string().parse(req.body.contentTitle);
       const type = z.nativeEnum(ReactionType).parse(req.body.type);
       const count = z.number().parse(req.body.count || 1);
       const section = z.string().nullish().parse(req.body.section);
@@ -35,6 +37,8 @@ export default async function handler(
 
         await setReaction({
           slug,
+          contentType,
+          contentTitle,
           sessionId,
           type,
           count: quota,

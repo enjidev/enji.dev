@@ -1,3 +1,4 @@
+import { ContentType } from '@prisma/client';
 import clsx from 'clsx';
 import { m, useAnimationControls } from 'framer-motion';
 import { useRouter } from 'next/router';
@@ -78,11 +79,17 @@ function ReactionCounter({ count, children = null }: ReactionCounterProps) {
   );
 }
 
-interface ReactionsProps {
+export type ReactionsProps = {
+  contentType: ContentType;
+  contentTitle: string;
   withCountView?: boolean;
-}
+};
 
-function Reactions({ withCountView = true }: ReactionsProps) {
+function Reactions({
+  contentType,
+  contentTitle,
+  withCountView = true,
+}: ReactionsProps) {
   // currently, there is no way to get the 'slug' via a component property.
   const { pathname } = useRouter();
   const slug = pathname.split('/').reverse()[0];
@@ -103,7 +110,7 @@ function Reactions({ withCountView = true }: ReactionsProps) {
     },
     addShare,
     addReaction,
-  } = useInsight({ slug, countView: withCountView });
+  } = useInsight({ slug, contentType, contentTitle, countView: withCountView });
 
   const CLAPPING_QUOTA = MAX_REACTIONS_PER_SESSION - user.CLAPPING;
   const THINKING_QUOTA = MAX_REACTIONS_PER_SESSION - user.THINKING;

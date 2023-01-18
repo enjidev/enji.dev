@@ -1,3 +1,4 @@
+import { ContentType } from '@prisma/client';
 import { z } from 'zod';
 
 import { getSessionId } from '@/helpers/server';
@@ -16,11 +17,15 @@ export default async function handler(
 
   try {
     if (req.method === 'POST') {
+      const contentType = z.nativeEnum(ContentType).parse(req.body.contentType);
+      const contentTitle = z.string().parse(req.body.contentTitle);
       const currentViews = await getViewsBy(slug, sessionId);
 
       if (currentViews < MAX_VIEWS_PER_SESSION) {
         await setView({
           slug,
+          contentType,
+          contentTitle,
           sessionId,
         });
 

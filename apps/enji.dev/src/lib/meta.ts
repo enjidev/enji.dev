@@ -5,7 +5,7 @@ import dayjs from '@/utils/dayjs';
 import { prisma } from '@/utils/prisma';
 
 import type { TContentActivity, TContentMeta, TReaction } from '@/types';
-import type { ReactionType, ShareType } from '@prisma/client';
+import type { ContentType, ReactionType, ShareType } from '@prisma/client';
 
 export const getAllContentMeta = async (): Promise<
   Record<string, TContentMeta>
@@ -251,12 +251,16 @@ export const getReactionsBy = async (
 
 export const setReaction = async ({
   slug,
+  contentType,
+  contentTitle,
   count,
   section,
   sessionId,
   type,
 }: {
   slug: string;
+  contentType: ContentType;
+  contentTitle: string;
   count: number;
   section: string;
   sessionId: string;
@@ -275,6 +279,8 @@ export const setReaction = async ({
           },
           create: {
             slug,
+            type: contentType,
+            title: contentTitle,
           },
         },
       },
@@ -302,10 +308,14 @@ export const getSharesBy = async (
 
 export const setShare = async ({
   slug,
+  contentType,
+  contentTitle,
   type,
   sessionId,
 }: {
   slug: string;
+  contentType: ContentType;
+  contentTitle: string;
   type: ShareType;
   sessionId: string;
 }) => {
@@ -320,6 +330,8 @@ export const setShare = async ({
           },
           create: {
             slug,
+            type: contentType,
+            title: contentTitle,
           },
         },
       },
@@ -347,9 +359,13 @@ export const getViewsBy = async (
 
 export const setView = async ({
   slug,
+  contentType,
+  contentTitle,
   sessionId,
 }: {
   slug: string;
+  contentType: ContentType;
+  contentTitle: string;
   sessionId: string;
 }) => {
   const result = await prisma.view.create({
@@ -362,6 +378,8 @@ export const setView = async ({
           },
           create: {
             slug,
+            type: contentType,
+            title: contentTitle,
           },
         },
       },

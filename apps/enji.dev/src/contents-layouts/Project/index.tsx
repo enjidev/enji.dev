@@ -39,7 +39,7 @@ function ProjectLayout({
         {children}
         <ProjectFooter githubUrl={githubUrl} />
       </WithTableOfContents>
-      <WithReactions />
+      <WithReactions contentTitle={title} contentType="PROJECT" />
     </>
   );
 }

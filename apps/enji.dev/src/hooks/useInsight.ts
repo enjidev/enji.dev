@@ -1,4 +1,4 @@
-import { ReactionType, ShareType } from '@prisma/client';
+import { ContentType, ReactionType, ShareType } from '@prisma/client';
 import merge from 'lodash/merge';
 import { useEffect, useRef } from 'react';
 import useSWR from 'swr';
@@ -31,9 +31,13 @@ const INITIAL_VALUE: TContentMetaDetail = {
 
 export default function useInsight({
   slug,
+  contentType,
+  contentTitle,
   countView = true,
 }: {
   slug: string;
+  contentType: ContentType;
+  contentTitle: string;
   countView?: boolean;
 }) {
   // #region handle for batch click
@@ -60,9 +64,9 @@ export default function useInsight({
   // post view count
   useEffect(() => {
     if (countView) {
-      postView(slug);
+      postView({ slug, contentType, contentTitle });
     }
-  }, [slug, countView]);
+  }, [slug, contentType, contentTitle, countView]);
 
   const addShare = ({ type }: { type: ShareType }) => {
     // optimistic update
@@ -77,6 +81,8 @@ export default function useInsight({
 
     postShare({
       slug,
+      contentType,
+      contentTitle,
       type,
     });
   };
@@ -114,6 +120,8 @@ export default function useInsight({
     timer.current[type] = setTimeout(() => {
       postReaction({
         slug,
+        contentType,
+        contentTitle,
         type,
         count: count.current[type],
         section,
