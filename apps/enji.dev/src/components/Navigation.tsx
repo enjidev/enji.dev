@@ -21,18 +21,19 @@ function Navbar() {
   const isScrolled = useOnScroll(86);
 
   return (
-    <header
-      className={clsx(
-        'border-divider-light fixed top-0 right-0 left-0 z-[1000] border-b bg-white/70 backdrop-blur',
-        'dark:border-divider-dark dark:bg-slate-900/80',
-        [
-          isScrolled === false && [
-            'border-none bg-transparent backdrop-blur-none',
-            'dark:bg-transparent',
-          ],
-        ]
-      )}
-    >
+    <header className={clsx('fixed top-0 right-0 left-0 z-[1000]')}>
+      <div
+        className={clsx(
+          'border-divider-light fixed inset-0 h-16 border-b bg-white/70 backdrop-blur',
+          'dark:border-divider-dark dark:bg-slate-900/80',
+          [
+            isScrolled === false && [
+              'border-none bg-transparent backdrop-blur-none',
+              'dark:bg-transparent',
+            ],
+          ]
+        )}
+      />
       <div className={clsx('h-0', [isScrolled === false && ['h-2']])} />
       <div className={clsx('content-wrapper-max')}>
         <div
