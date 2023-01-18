@@ -18,21 +18,22 @@ const workLinks = [
 ];
 
 function Navbar() {
-  const isScrolled = useOnScroll(0);
+  const isScrolled = useOnScroll(86);
 
   return (
     <header
-      className={clsx('fixed right-0 left-0 z-[1000] transition', [
-        isScrolled ? 'translate-y-0' : 'translate-y-2',
-      ])}
+      className={clsx(
+        'border-divider-light fixed top-0 right-0 left-0 z-[1000] border-b bg-white/70 backdrop-blur',
+        'dark:border-divider-dark dark:bg-slate-900/80',
+        [
+          isScrolled === false && [
+            'border-none bg-transparent backdrop-blur-none',
+            'dark:bg-transparent',
+          ],
+        ]
+      )}
     >
-      <div
-        className={clsx(
-          'border-divider-light pointer-events-none fixed top-0 left-0 right-0 h-16 border-b bg-white/70 backdrop-blur transition',
-          'dark:border-divider-dark dark:bg-slate-900/80',
-          [isScrolled ? 'translate-y-0 opacity-100' : 'translate-y-2 opacity-0']
-        )}
-      />
+      <div className={clsx('h-0', [isScrolled === false && ['h-2']])} />
       <div className={clsx('content-wrapper-max')}>
         <div
           className={clsx(
