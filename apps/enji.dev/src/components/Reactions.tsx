@@ -121,8 +121,8 @@ function Reactions({ withCountView = true }: ReactionsProps) {
   return (
     <m.div
       className={clsx(
-        'border-divider-light pointer-events-auto relative flex items-center justify-between rounded-xl border bg-white/70 p-4 backdrop-blur',
-        'dark:border-divider-dark dark:bg-slate-900/80'
+        'border-divider-light pointer-events-auto relative flex items-center justify-between rounded-xl border p-4 ',
+        'dark:border-divider-dark'
       )}
       initial={{
         y: 16,
@@ -131,6 +131,12 @@ function Reactions({ withCountView = true }: ReactionsProps) {
       }}
       animate={controls}
     >
+      <div
+        className={clsx(
+          'absolute inset-0 rounded-xl bg-white/70 backdrop-blur',
+          'dark:bg-slate-900/80'
+        )}
+      />
       <div className={clsx('flex items-center gap-4')}>
         <div className={clsx('flex flex-col items-center gap-2')}>
           <EmojiReaction

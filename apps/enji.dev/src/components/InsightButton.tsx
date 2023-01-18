@@ -26,7 +26,7 @@ function InsightButton({ views, shares, reactions }: InsightButtonProps) {
             title="Insight"
             aria-label="Insight"
             className={clsx(
-              'flex h-10 w-10 items-center justify-center rounded-full',
+              'relative z-10 flex h-10 w-10 items-center justify-center rounded-full',
               'hover:bg-slate-200 hover:dark:bg-[#1d263a]',
               [open && ['bg-slate-200', 'dark:bg-[#1d263a]']]
             )}
@@ -41,8 +41,8 @@ function InsightButton({ views, shares, reactions }: InsightButtonProps) {
               initial="hide"
               animate="show"
               className={clsx(
-                'border-divider-light absolute inset-x-2 bottom-24 z-[902] flex flex-col overflow-hidden rounded-2xl border bg-white pb-2 pt-1',
-                'dark:border-divider-dark dark:bg-[#161e31]'
+                'border-divider-light absolute inset-x-2 bottom-24 z-[902] flex flex-col overflow-hidden rounded-2xl border bg-white/70 pb-2 pt-1 backdrop-blur',
+                'dark:border-divider-dark dark:bg-slate-900/80'
               )}
             >
               <div
