@@ -34,4 +34,13 @@
     @apply bg-accent-200/60 text-accent-900;
     @apply dark:bg-accent-400/30 dark:text-accent-100;
   }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
 }
