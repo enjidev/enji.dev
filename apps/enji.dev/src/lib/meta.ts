@@ -112,14 +112,14 @@ export const getContentActivity = async (): Promise<TContentActivity[]> => {
   const expression = `
     $sort([
       $.reactions.{
-        'activity': 'REACTION',
+        'activityType': 'REACTION',
         'type': type,
         'count': count,
         'createdAt': createdAt,
         'slug': content.slug
       }, 
       $.shares.{
-        'activity': 'SHARES',
+        'activityType': 'SHARE',
         'type': type,
         'createdAt': createdAt,
         'slug': content.slug

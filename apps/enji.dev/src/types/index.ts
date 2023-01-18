@@ -69,17 +69,21 @@ export type TContentMetaDetail = {
   };
 };
 
+export type TContentActivityShares = {
+  activityType: 'SHARE';
+  type: ShareType;
+  createdAt: string;
+  slug: string;
+};
+
+export type TContentActivityReaction = {
+  activityType: 'REACTION';
+  type: ReactionType;
+  count: number;
+  createdAt: string;
+  slug: string;
+};
+
 export type TContentActivity =
-  | {
-      activity: 'SHARES';
-      type: ShareType;
-      createdAt: string;
-      slug: string;
-    }
-  | {
-      activity: 'REACTION';
-      type: ReactionType;
-      count: number;
-      createdAt: string;
-      slug: string;
-    };
+  | TContentActivityShares
+  | TContentActivityReaction;
