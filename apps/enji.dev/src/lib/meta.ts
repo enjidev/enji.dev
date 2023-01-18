@@ -1,9 +1,10 @@
 /* eslint-disable no-template-curly-in-string */
 import jsonata from 'jsonata';
 
+import dayjs from '@/utils/dayjs';
 import { prisma } from '@/utils/prisma';
 
-import type { TContentMeta, TReaction } from '@/types';
+import type { TContentActivity, TContentMeta, TReaction } from '@/types';
 import type { ReactionType, ShareType } from '@prisma/client';
 
 export const getAllContentMeta = async (): Promise<
@@ -60,6 +61,78 @@ export const getContentMeta = async (
     shares: result?._count.shares || 0,
     views: result?._count.views || 0,
   };
+};
+
+export const getContentActivity = async (): Promise<TContentActivity[]> => {
+  // last 24 hours
+  const date = dayjs().subtract(24, 'hours').toDate();
+
+  const result = await prisma.contentMeta.findMany({
+    include: {
+      reactions: {
+        select: {
+          type: true,
+          count: true,
+          createdAt: true,
+          content: {
+            select: { slug: true },
+          },
+        },
+        orderBy: {
+          createdAt: 'asc',
+        },
+        where: {
+          createdAt: {
+            gte: date,
+          },
+        },
+        take: 5,
+      },
+      shares: {
+        select: {
+          type: true,
+          createdAt: true,
+          content: {
+            select: { slug: true },
+          },
+        },
+        orderBy: {
+          createdAt: 'asc',
+        },
+        where: {
+          createdAt: {
+            gte: date,
+          },
+        },
+        take: 5,
+      },
+    },
+  });
+
+  const expression = `
+    $sort([
+      $.reactions.{
+        'activity': 'REACTION',
+        'type': type,
+        'count': count,
+        'createdAt': createdAt,
+        'slug': content.slug
+      }, 
+      $.shares.{
+        'activity': 'SHARES',
+        'type': type,
+        'createdAt': createdAt,
+        'slug': content.slug
+      }
+    ], function($l, $r) {
+      $string($l.createdAt) < $string($r.createdAt)
+    })[[0..4]]
+  `;
+
+  // transform result
+  const transformed = await jsonata(expression).evaluate(result);
+
+  return transformed;
 };
 
 export const getReactions = async (slug: string): Promise<TReaction> => {

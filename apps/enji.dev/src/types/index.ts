@@ -1,4 +1,4 @@
-import type { ReactionType } from '@prisma/client';
+import type { ReactionType, ShareType } from '@prisma/client';
 
 export type TApiResponse = {
   message: string;
@@ -68,3 +68,18 @@ export type TContentMetaDetail = {
     };
   };
 };
+
+export type TContentActivity =
+  | {
+      activity: 'SHARES';
+      type: ShareType;
+      createdAt: string;
+      slug: string;
+    }
+  | {
+      activity: 'REACTION';
+      type: ReactionType;
+      count: number;
+      createdAt: string;
+      slug: string;
+    };
