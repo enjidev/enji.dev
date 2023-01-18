@@ -75,7 +75,7 @@ export const getContentActivity = async (): Promise<TContentActivity[]> => {
           count: true,
           createdAt: true,
           content: {
-            select: { slug: true },
+            select: { slug: true, title: true, type: true },
           },
         },
         orderBy: {
@@ -93,7 +93,7 @@ export const getContentActivity = async (): Promise<TContentActivity[]> => {
           type: true,
           createdAt: true,
           content: {
-            select: { slug: true },
+            select: { slug: true, title: true, type: true },
           },
         },
         orderBy: {
@@ -116,13 +116,17 @@ export const getContentActivity = async (): Promise<TContentActivity[]> => {
         'type': type,
         'count': count,
         'createdAt': createdAt,
-        'slug': content.slug
+        'slug': content.slug,
+        'contentTitle': content.title,
+        'contentType': content.type
       }, 
       $.shares.{
         'activityType': 'SHARE',
         'type': type,
         'createdAt': createdAt,
-        'slug': content.slug
+        'slug': content.slug,
+        'contentTitle': content.title,
+        'contentType': content.type
       }
     ], function($l, $r) {
       $string($l.createdAt) < $string($r.createdAt)

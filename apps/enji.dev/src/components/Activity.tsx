@@ -12,7 +12,15 @@ interface ActivityItemProps {
 }
 
 function ActivityItem({
-  data: { activityType, type, slug, createdAt, ...rest },
+  data: {
+    activityType,
+    type,
+    slug,
+    contentTitle,
+    contentType,
+    createdAt,
+    ...rest
+  },
 }: ActivityItemProps) {
   if (activityType === 'REACTION') {
     const { count } = rest as Pick<TContentActivityReaction, 'count'>;
@@ -34,16 +42,19 @@ function ActivityItem({
 
     return (
       <div className={clsx('flex flex-wrap items-baseline gap-x-1')}>
+        <span>the</span>
         <span
           className={clsx(
             'text-accent-600 font-semibold',
             'dark:text-accent-400'
           )}
         >
-          {slug}
+          {contentTitle}
+        </span>
+        <span className={clsx('lowercase')}>
+          {contentType.replace('POST', 'BLOG POST')}
         </span>
         <span>received</span>
-        <span>{reactionType}</span>
         <span
           className={clsx(
             'border-divider-dark rounded-md border bg-slate-200 px-1 font-mono text-xs font-bold',
@@ -52,19 +63,24 @@ function ActivityItem({
         >
           x{count}
         </span>
+        <span>{reactionType}</span>
       </div>
     );
   }
 
   return (
     <div className={clsx('flex flex-wrap items-baseline gap-x-1')}>
+      <span>the</span>
       <span
         className={clsx(
           'text-accent-600 font-semibold',
           'dark:text-accent-400'
         )}
       >
-        {slug}
+        {contentTitle}
+      </span>
+      <span className={clsx('lowercase')}>
+        {contentType.replace('POST', 'BLOG POST')}
       </span>
       <span>was shared</span>
       {type === 'TWITTER' && <span>to Twitter!</span>}
@@ -87,30 +103,37 @@ function Activity({ closeActionCenter = () => {} }: ActivityProps) {
           'scrollbar-hide flex flex-1 basis-0 flex-col gap-2 overflow-y-auto'
         )}
       >
-        {data.map((activity) => (
-          <Link
-            key={activity.createdAt}
-            href={`/blog/${activity.slug}`}
-            onClick={() => {
-              closeActionCenter();
-            }}
-            className={clsx(
-              'border-divider-light rounded-xl border bg-white/40 p-4 text-sm backdrop-blur',
-              'dark:border-divider-dark dark:bg-slate-900/60'
-            )}
-          >
-            <div
+        {data.map((activity) => {
+          const { createdAt, contentType, slug } = activity;
+
+          const link =
+            contentType === 'POST' ? `/blog/${slug}` : `/docs/${slug}`;
+
+          return (
+            <Link
+              key={createdAt}
+              href={link}
+              onClick={() => {
+                closeActionCenter();
+              }}
               className={clsx(
-                'mb-1 flex justify-between text-xs text-slate-600',
-                'dark:text-slate-400'
+                'border-divider-light rounded-xl border bg-white/40 p-4 text-sm backdrop-blur',
+                'dark:border-divider-dark dark:bg-slate-900/60'
               )}
             >
-              <span>{activity.activityType}</span>
-              <span>{relativeTime(activity.createdAt)}</span>
-            </div>
-            <ActivityItem data={activity} />
-          </Link>
-        ))}
+              <div
+                className={clsx(
+                  'mb-1 flex justify-between text-xs text-slate-600',
+                  'dark:text-slate-400'
+                )}
+              >
+                <span>{activity.activityType}</span>
+                <span>{relativeTime(activity.createdAt)}</span>
+              </div>
+              <ActivityItem data={activity} />
+            </Link>
+          );
+        })}
       </div>
     </div>
   );
