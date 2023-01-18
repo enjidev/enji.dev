@@ -35,14 +35,18 @@ function PageHeader({
     >
       {headerImage && (
         <div
-          className={clsx(
-            'background-image background-image--fade-out pointer-events-none absolute inset-0 hidden select-none',
-            'lg:block'
-          )}
+          className={clsx('content-wrapper absolute inset-0 overflow-hidden')}
         >
-          <div className={clsx('content-wrapper relative h-full')}>
-            <div className={clsx('absolute right-0 -top-24 bottom-0')}>
-              {headerImage}
+          <div
+            className={clsx(
+              'background-image background-image--fade-out pointer-events-none absolute inset-0 hidden select-none',
+              'lg:block'
+            )}
+          >
+            <div className={clsx('content-wrapper relative h-full')}>
+              <div className={clsx('absolute right-0 -top-24 bottom-0')}>
+                {headerImage}
+              </div>
             </div>
           </div>
         </div>
