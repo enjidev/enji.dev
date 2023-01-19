@@ -2,7 +2,9 @@ import clsx from 'clsx';
 import { m } from 'framer-motion';
 import { useTheme } from 'next-themes';
 
-import { DarkIcon, LightIcon } from '@/components/Icons';
+import { DarkIcon, EyeIcon, EyeSlash, LightIcon } from '@/components/Icons';
+
+import useFocusMode from '@/hooks/useFocusMode';
 
 import type { PropsWithChildren, ReactElement } from 'react';
 
@@ -21,12 +23,14 @@ const animation = {
 interface ActionCenterButtonProps {
   icon: ReactElement;
   title: string;
+  active?: boolean;
   onClick?: () => void;
 }
 
 function ActionCenterButton({
   icon,
   title,
+  active = false,
   onClick = () => {},
 }: PropsWithChildren<ActionCenterButtonProps>) {
   return (
@@ -35,7 +39,8 @@ function ActionCenterButton({
       onClick={onClick}
       className={clsx(
         'border-divider-light flex flex-1 flex-col justify-between rounded-xl border bg-white p-4',
-        'dark:border-divider-dark dark:bg-[#1d263a]'
+        'dark:border-divider-dark dark:bg-[#1d263a]',
+        [active && ['bg-violet-200', 'dark:bg-slate-700']]
       )}
     >
       <div className={clsx('')}>{icon}</div>
@@ -48,6 +53,7 @@ function ActionCenterButton({
 
 function ActionCenter() {
   const { theme, setTheme } = useTheme();
+  const { focusMode, setFocusMode } = useFocusMode();
 
   const handleThemeChange = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark');
@@ -80,15 +86,18 @@ function ActionCenter() {
             }
           />
           <ActionCenterButton
-            title={theme === 'dark' ? 'Use Light Mode' : 'Use Dark Mode'}
-            onClick={handleThemeChange}
+            title={focusMode ? 'Focus: On' : 'Focus: Off'}
+            onClick={() => {
+              setFocusMode(!focusMode);
+            }}
+            active={focusMode}
             icon={
               <>
-                <div className={clsx('hidden', 'dark:block')}>
-                  <LightIcon className={clsx('h-5 w-5')} />
+                <div className={clsx('hidden', 'fm:block')}>
+                  <EyeIcon className={clsx('h-5 w-5')} />
                 </div>
-                <div className={clsx('dark:hidden')}>
-                  <DarkIcon className={clsx('h-5 w-5')} />
+                <div className={clsx('fm:hidden')}>
+                  <EyeSlash className={clsx('h-5 w-5')} />
                 </div>
               </>
             }
