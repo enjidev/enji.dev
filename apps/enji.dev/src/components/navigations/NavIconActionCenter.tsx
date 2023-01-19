@@ -25,8 +25,8 @@ function NavIconActionCenter() {
               'dark:bg-slate-800/50 dark:text-slate-100 dark:hover:bg-slate-700/50',
               [open && ['bg-slate-300/70', 'dark:bg-slate-700/50']]
             )}
-            aria-label="Open Action Center"
-            title="Open Action Center"
+            aria-label={open ? 'Close Action Center' : 'Open Action Center'}
+            title={open ? 'Close Action Center' : 'Open Action Center'}
           >
             <ActionCenterIcon className={clsx('h-5 w-5')} />
           </Popover.Button>
