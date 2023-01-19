@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import { m } from 'framer-motion';
 import Link from 'next/link';
 
 import useContentActivity from '@/hooks/useContentActivity';
@@ -54,15 +55,17 @@ function ActivityItem({
         <span className={clsx('lowercase')}>
           {contentType.replace('POST', 'BLOG POST')}
         </span>
-        <span>received</span>
-        <span
-          className={clsx(
-            'border-divider-dark rounded-md border bg-slate-200 px-1 font-mono text-xs font-bold',
-            'dark:border-divider-light dark:bg-slate-800'
-          )}
-        >
-          x{count}
-        </span>
+        <span>got new</span>
+        {count !== 1 && (
+          <span
+            className={clsx(
+              'border-divider-dark rounded-md border bg-slate-200 px-1 font-mono text-xs font-bold',
+              'dark:border-divider-light dark:bg-slate-800'
+            )}
+          >
+            x{count}
+          </span>
+        )}
         <span>{reactionType}</span>
       </div>
     );
@@ -88,6 +91,18 @@ function ActivityItem({
   );
 }
 
+const animation = {
+  hide: { y: -48, opacity: 0 },
+  show: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      ease: 'easeOut',
+      duration: 0.18,
+    },
+  },
+};
+
 interface ActivityProps {
   closeActionCenter?: () => void;
 }
@@ -95,47 +110,62 @@ interface ActivityProps {
 function Activity({ closeActionCenter = () => {} }: ActivityProps) {
   const { data } = useContentActivity();
 
+  if (data.length === 0) return null;
+
   return (
-    <div className={clsx('flex flex-1 flex-col gap-4')}>
-      <div className={clsx('text-xl font-bold')}>Latest Activities</div>
+    <m.div
+      initial="hide"
+      animate="show"
+      transition={{
+        delayChildren: 0.12,
+        staggerChildren: 0.06,
+      }}
+      className={clsx('flex flex-1 flex-col gap-4')}
+    >
+      <m.div variants={animation} className={clsx('text-xl font-bold')}>
+        Latest Activities
+      </m.div>
       <div
         className={clsx(
-          'scrollbar-hide flex flex-1 basis-0 flex-col gap-2 overflow-y-auto'
+          'scrollbar-hide flex flex-1 basis-0 flex-col gap-2 overflow-y-auto pb-4',
+          'lg:pb-6'
         )}
       >
-        {data.map((activity) => {
-          const { createdAt, contentType, slug } = activity;
+        {Array.isArray(data) &&
+          data.map((activity) => {
+            const { createdAt, contentType, slug } = activity;
 
-          const link =
-            contentType === 'POST' ? `/blog/${slug}` : `/docs/${slug}`;
+            const link =
+              contentType === 'POST' ? `/blog/${slug}` : `/docs/${slug}`;
 
-          return (
-            <Link
-              key={createdAt}
-              href={link}
-              onClick={() => {
-                closeActionCenter();
-              }}
-              className={clsx(
-                'border-divider-light rounded-xl border bg-white/40 p-4 text-sm backdrop-blur',
-                'dark:border-divider-dark dark:bg-slate-900/60'
-              )}
-            >
-              <div
-                className={clsx(
-                  'mb-1 flex justify-between text-xs text-slate-600',
-                  'dark:text-slate-400'
-                )}
-              >
-                <span>{activity.activityType}</span>
-                <span>{relativeTime(activity.createdAt)}</span>
-              </div>
-              <ActivityItem data={activity} />
-            </Link>
-          );
-        })}
+            return (
+              <m.div key={createdAt} variants={animation}>
+                <Link
+                  href={link}
+                  onClick={() => {
+                    closeActionCenter();
+                  }}
+                  className={clsx(
+                    'border-divider-light block rounded-xl border bg-white/40 p-4 text-[13px] backdrop-blur',
+                    'dark:border-divider-dark dark:bg-slate-900/60'
+                  )}
+                >
+                  <div
+                    className={clsx(
+                      'mb-1 flex justify-between text-xs text-slate-600',
+                      'dark:text-slate-400'
+                    )}
+                  >
+                    <span>{activity.activityType}</span>
+                    <span>{relativeTime(activity.createdAt)}</span>
+                  </div>
+                  <ActivityItem data={activity} />
+                </Link>
+              </m.div>
+            );
+          })}
       </div>
-    </div>
+    </m.div>
   );
 }
 

@@ -1,10 +1,17 @@
 import { Popover } from '@headlessui/react';
 import clsx from 'clsx';
+import { m } from 'framer-motion';
 import { Fragment } from 'react';
 
 import ActionCenter from '@/components/ActionCenter';
 import Activity from '@/components/Activity';
 import { ActionCenterIcon } from '@/components/Icons';
+import NewPosts from '@/components/NewPosts';
+
+const animation = {
+  hide: { opacity: 0 },
+  show: { opacity: 1, transition: { duration: 0.18 } },
+};
 
 function NavIconActionCenter() {
   return (
@@ -28,23 +35,29 @@ function NavIconActionCenter() {
               <Popover.Panel static>
                 <div
                   className={clsx(
-                    'fixed left-4 right-4 bottom-8 top-24 flex flex-col gap-8 overflow-hidden',
+                    'fixed left-4 right-4 bottom-0 top-24 flex flex-col gap-8',
                     'sm:left-auto sm:right-6 sm:w-[320px]'
                   )}
                 >
                   <div className={clsx('')}>
                     <ActionCenter />
                   </div>
+                  <div className={clsx('')}>
+                    <NewPosts closeActionCenter={close} />
+                  </div>
                   <div className={clsx('flex flex-1 flex-col')}>
                     <Activity closeActionCenter={close} />
                   </div>
                 </div>
               </Popover.Panel>
-              <div
+              <m.div
+                variants={animation}
+                initial="hide"
+                animate="show"
                 className={clsx(
                   'fixed inset-0 z-[-1] bg-white/95',
-                  'dark:bg-slate-900/95 sm:dark:bg-transparent',
-                  'sm:bg-transparent sm:bg-gradient-to-b sm:from-slate-100/80 sm:via-slate-100/95 sm:to-slate-100/95',
+                  'dark:bg-slate-900/95 sm:dark:bg-slate-900/60',
+                  'sm:bg-white/30 sm:bg-gradient-to-b sm:from-slate-100/80 sm:via-slate-100/95 sm:to-slate-100/95',
                   'dark:from-slate-900/90 dark:via-slate-900/95 dark:to-slate-900/95'
                 )}
               />

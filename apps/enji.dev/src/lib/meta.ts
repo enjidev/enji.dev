@@ -20,7 +20,7 @@ export const getAllContentMeta = async (): Promise<
       },
     },
     orderBy: {
-      slug: 'asc',
+      createdAt: 'asc',
     },
   });
 
@@ -137,6 +137,39 @@ export const getContentActivity = async (): Promise<TContentActivity[]> => {
   const transformed = await jsonata(expression).evaluate(result);
 
   return transformed;
+};
+
+export const getNewPosts = async (): Promise<
+  {
+    slug: string;
+    title: string;
+    createdAt: Date;
+  }[]
+> => {
+  // last 8 days
+  const date = dayjs().subtract(8, 'days').toDate();
+
+  const result = await prisma.contentMeta.findMany({
+    where: {
+      type: 'POST',
+      AND: {
+        createdAt: {
+          gte: date,
+        },
+      },
+    },
+    select: {
+      slug: true,
+      title: true,
+      createdAt: true,
+    },
+    orderBy: {
+      createdAt: 'desc',
+    },
+    take: 1,
+  });
+
+  return result;
 };
 
 export const getReactions = async (slug: string): Promise<TReaction> => {
