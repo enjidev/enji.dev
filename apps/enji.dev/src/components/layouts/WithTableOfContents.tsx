@@ -2,6 +2,8 @@ import clsx from 'clsx';
 
 import TableOfContents from '@/components/TableOfContents';
 
+import useFocusMode from '@/hooks/useFocusMode';
+
 import type { TTableOfContents } from '@/types';
 import type { PropsWithChildren } from 'react';
 
@@ -13,13 +15,19 @@ function PageWithMDX({
   tableOfContents,
   children = null,
 }: PropsWithChildren<PageWithMDXProps>) {
+  const { focusMode } = useFocusMode();
+
   return (
     <div
       className={clsx('content-wrapper overflow-hidden', 'lg:overflow-visible')}
     >
       <div className={clsx('flex flex-row-reverse gap-8', 'xl:gap-24')}>
         <div className={clsx('-mt-48 hidden', 'lg:block')}>
-          <TableOfContents items={tableOfContents} />
+          <div className={clsx('sticky top-24 z-[901] w-64', 'xl:w-[272px]')}>
+            <div className={clsx('fm:hidden')}>
+              {!focusMode && <TableOfContents items={tableOfContents} />}
+            </div>
+          </div>
         </div>
         <div
           className={clsx('mdx-contents min-w-0 flex-1 scroll-mt-[86px]')}

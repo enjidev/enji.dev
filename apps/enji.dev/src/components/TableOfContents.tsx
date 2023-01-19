@@ -45,8 +45,7 @@ function TableOfContents({ items = [] }: TableOfContensProps) {
     <nav
       aria-label="Page table of contents"
       className={clsx(
-        'border-divider-light sticky top-24 z-[901] w-64 rounded-xl border bg-white',
-        'xl:w-[272px]',
+        'border-divider-light rounded-xl border bg-white',
         'dark:border-divider-dark dark:bg-[#161e31]'
       )}
     >

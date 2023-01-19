@@ -142,7 +142,7 @@
   }
 
   .toc-visible {
-    @apply absolute -inset-x-3 -inset-y-1 z-[-1] bg-slate-50;
+    @apply absolute -inset-x-3 -inset-y-1 bg-slate-50;
     @apply dark:bg-[#1d263a];
   }
 
