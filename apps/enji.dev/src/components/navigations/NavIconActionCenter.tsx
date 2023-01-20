@@ -34,6 +34,7 @@ function NavIconActionCenter() {
             <>
               <Popover.Panel static>
                 <div
+                  data-accent="violet"
                   className={clsx(
                     'fixed left-4 right-4 bottom-0 top-24 flex flex-col gap-8',
                     'sm:left-auto sm:right-6 sm:w-[320px]'

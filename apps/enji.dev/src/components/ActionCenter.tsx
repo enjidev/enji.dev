@@ -40,7 +40,7 @@ function ActionCenterButton({
       className={clsx(
         'border-divider-light flex flex-1 flex-col justify-between rounded-xl border bg-white p-4',
         'dark:border-divider-dark dark:bg-[#1d263a]',
-        [active && ['bg-violet-200', 'dark:bg-slate-700']]
+        [active && ['bg-accent-200', 'dark:bg-slate-700']]
       )}
     >
       <div className={clsx('')}>{icon}</div>

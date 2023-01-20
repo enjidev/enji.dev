@@ -64,8 +64,8 @@ function NewPosts({ closeActionCenter = () => {} }: NewPostsProps) {
                   >
                     <span
                       className={clsx(
-                        'flex h-5 items-center rounded-md bg-violet-100 px-1.5 text-[10px] font-black text-violet-900',
-                        'dark:bg-violet-800 dark:text-violet-100'
+                        'bg-accent-100 text-accent-900 flex h-5 items-center rounded-md px-1.5 text-[10px] font-black',
+                        'dark:bg-accent-800 dark:text-accent-100'
                       )}
                     >
                       NEW POST &nbsp; 🔥
