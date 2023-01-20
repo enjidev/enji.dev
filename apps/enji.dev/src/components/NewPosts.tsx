@@ -19,10 +19,10 @@ const animation = {
 };
 
 interface NewPostsProps {
-  closeActionCenter?: () => void;
+  onItemClick?: () => void;
 }
 
-function NewPosts({ closeActionCenter = () => {} }: NewPostsProps) {
+function NewPosts({ onItemClick = () => {} }: NewPostsProps) {
   const { data } = useNewPosts();
 
   if (data.length === 0) return null;
@@ -49,7 +49,7 @@ function NewPosts({ closeActionCenter = () => {} }: NewPostsProps) {
                 <Link
                   href={link}
                   onClick={() => {
-                    closeActionCenter();
+                    onItemClick();
                   }}
                   className={clsx(
                     'border-divider-light block rounded-xl border bg-white/40 p-4 text-sm backdrop-blur',

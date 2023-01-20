@@ -104,10 +104,10 @@ const animation = {
 };
 
 interface ActivityProps {
-  closeActionCenter?: () => void;
+  onItemClick?: () => void;
 }
 
-function Activity({ closeActionCenter = () => {} }: ActivityProps) {
+function Activity({ onItemClick = () => {} }: ActivityProps) {
   const { data, isLoading } = useContentActivity();
 
   return (
@@ -126,7 +126,7 @@ function Activity({ closeActionCenter = () => {} }: ActivityProps) {
       <div
         className={clsx(
           'scrollbar-hide flex flex-1 basis-0 flex-col gap-2 overflow-y-auto pb-4',
-          'lg:pb-6'
+          'lg:pb-8'
         )}
       >
         {isLoading && (
@@ -146,7 +146,7 @@ function Activity({ closeActionCenter = () => {} }: ActivityProps) {
                 <Link
                   href={link}
                   onClick={() => {
-                    closeActionCenter();
+                    onItemClick();
                   }}
                   className={clsx(
                     'border-divider-light block rounded-xl border bg-white/40 p-4 text-[13px] backdrop-blur',

@@ -405,7 +405,7 @@ export function CheckCircleIcon(props: ComponentProps<'svg'>) {
   );
 }
 
-export function ActionCenterIcon(props: ComponentProps<'svg'>) {
+export function QuickAccessIcon(props: ComponentProps<'svg'>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

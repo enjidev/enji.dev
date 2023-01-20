@@ -2,7 +2,7 @@ import clsx from 'clsx';
 
 import { FigmaIcon, GitHubIcon, TwitterIcon } from '@/components/Icons';
 import NavIcon from '@/components/navigations/NavIcon';
-import NavIconActionCenter from '@/components/navigations/NavIconActionCenter';
+import NavIconQuickAccess from '@/components/navigations/NavIconQuickAccess';
 import NavLink from '@/components/navigations/NavLink';
 import NavLinkDropdown from '@/components/navigations/NavLinkDropdown';
 import NavLinkExpanded from '@/components/navigations/NavLinkExpanded';
@@ -96,7 +96,7 @@ function Navbar() {
               />
             </li>
             <li className={clsx('mr-2')}>
-              <NavIconActionCenter />
+              <NavIconQuickAccess />
             </li>
           </ul>
         </div>
