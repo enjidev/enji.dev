@@ -126,7 +126,7 @@ function Activity({ onItemClick = () => {} }: ActivityProps) {
       <div
         className={clsx(
           'scrollbar-hide flex flex-1 basis-0 flex-col gap-2 overflow-y-auto p-2 pb-4',
-          'lg:pb-8'
+          'sm:pb-8'
         )}
       >
         {isLoading && (
