@@ -149,7 +149,7 @@ function Activity({ onItemClick = () => {} }: ActivityProps) {
                     onItemClick();
                   }}
                   className={clsx(
-                    'border-divider-light block rounded-xl border bg-white/40 p-4 text-[13px] backdrop-blur',
+                    'border-divider-light block rounded-xl border bg-white/60 p-4 text-[13px] backdrop-blur',
                     'dark:border-divider-dark dark:bg-slate-900/60'
                   )}
                 >

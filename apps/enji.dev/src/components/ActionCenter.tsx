@@ -38,9 +38,9 @@ function ActionCenterButton({
       type="button"
       onClick={onClick}
       className={clsx(
-        'border-divider-light flex flex-1 flex-col justify-between rounded-xl border bg-white p-4',
+        'border-divider-light flex flex-1 flex-col justify-between rounded-xl bg-white/60 p-4 transition-colors',
         'dark:border-divider-dark dark:bg-[#1d263a]',
-        [active && ['bg-accent-200', 'dark:bg-slate-700']]
+        [active && ['bg-accent-300', 'dark:bg-slate-700']]
       )}
     >
       <div className={clsx('')}>{icon}</div>
