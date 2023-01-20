@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 
 import { QuickAccessIcon } from '@/components/Icons';
+import Kbd from '@/components/Kbd';
 
 import useGlobal from '@/hooks/useGlobal';
 
@@ -31,14 +32,7 @@ function NavIconQuickAccess() {
         )}
       >
         Quick Access
-        <kbd
-          className={clsx(
-            'rounded-[4px] border border-b-[3px] border-slate-400 bg-slate-300 px-1 py-0.5',
-            'dark:border-slate-900 dark:bg-slate-700'
-          )}
-        >
-          Q
-        </kbd>
+        <Kbd>Q</Kbd>
       </div>
     </button>
   );
