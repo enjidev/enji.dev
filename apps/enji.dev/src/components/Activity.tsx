@@ -110,6 +110,73 @@ interface ActivityProps {
 function Activity({ onItemClick = () => {} }: ActivityProps) {
   const { data, isLoading } = useContentActivity();
 
+  const renderData = () => {
+    if (isLoading) {
+      return (
+        <m.div
+          className={clsx('text-sm text-slate-700', 'dark:text-slate-400')}
+          variants={animation}
+        >
+          retrieving data..
+        </m.div>
+      );
+    }
+
+    if (Array.isArray(data) && data.length === 0) {
+      return (
+        <m.div
+          className={clsx('text-sm text-slate-700', 'dark:text-slate-400')}
+          variants={animation}
+        >
+          nothing new at the moment.
+        </m.div>
+      );
+    }
+
+    if (!Array.isArray(data)) {
+      return (
+        <m.div
+          className={clsx('text-sm text-slate-700', 'dark:text-slate-400')}
+          variants={animation}
+        >
+          an internal error occurred.
+        </m.div>
+      );
+    }
+
+    return data.map((activity) => {
+      const { createdAt, contentType, slug } = activity;
+
+      const link = contentType === 'POST' ? `/blog/${slug}` : `/docs/${slug}`;
+
+      return (
+        <m.div key={createdAt} variants={animation}>
+          <Link
+            href={link}
+            onClick={() => {
+              onItemClick();
+            }}
+            className={clsx(
+              'border-divider-light block rounded-xl border bg-white/60 p-4 text-[13px] backdrop-blur',
+              'dark:border-divider-dark dark:bg-slate-900/60'
+            )}
+          >
+            <div
+              className={clsx(
+                'mb-1 flex justify-between text-xs text-slate-600',
+                'dark:text-slate-400'
+              )}
+            >
+              <span>{activity.activityType}</span>
+              <span>{relativeTime(activity.createdAt)}</span>
+            </div>
+            <ActivityItem data={activity} />
+          </Link>
+        </m.div>
+      );
+    });
+  };
+
   return (
     <m.div
       initial="hide"
@@ -129,49 +196,7 @@ function Activity({ onItemClick = () => {} }: ActivityProps) {
           'sm:pb-8'
         )}
       >
-        {isLoading && (
-          <m.div className={clsx('')} variants={animation}>
-            retrieving details..
-          </m.div>
-        )}
-        {Array.isArray(data) && data.length !== 0 ? (
-          data.map((activity) => {
-            const { createdAt, contentType, slug } = activity;
-
-            const link =
-              contentType === 'POST' ? `/blog/${slug}` : `/docs/${slug}`;
-
-            return (
-              <m.div key={createdAt} variants={animation}>
-                <Link
-                  href={link}
-                  onClick={() => {
-                    onItemClick();
-                  }}
-                  className={clsx(
-                    'border-divider-light block rounded-xl border bg-white/60 p-4 text-[13px] backdrop-blur',
-                    'dark:border-divider-dark dark:bg-slate-900/60'
-                  )}
-                >
-                  <div
-                    className={clsx(
-                      'mb-1 flex justify-between text-xs text-slate-600',
-                      'dark:text-slate-400'
-                    )}
-                  >
-                    <span>{activity.activityType}</span>
-                    <span>{relativeTime(activity.createdAt)}</span>
-                  </div>
-                  <ActivityItem data={activity} />
-                </Link>
-              </m.div>
-            );
-          })
-        ) : (
-          <m.div className={clsx('')} variants={animation}>
-            nothing new at the moment.
-          </m.div>
-        )}
+        {renderData()}
       </div>
     </m.div>
   );
