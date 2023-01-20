@@ -37,7 +37,7 @@ function NewPosts({ onItemClick = () => {} }: NewPostsProps) {
           staggerChildren: 0.12,
         }}
         className={clsx(
-          'scrollbar-hide flex flex-1 flex-col gap-2 overflow-y-auto'
+          'scrollbar-hide flex flex-1 flex-col gap-2 overflow-y-auto p-2'
         )}
       >
         {Array.isArray(data) &&

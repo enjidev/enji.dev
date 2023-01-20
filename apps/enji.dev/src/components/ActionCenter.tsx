@@ -61,15 +61,15 @@ function ActionCenter() {
 
   return (
     <m.div
-      className={clsx('flex flex-col gap-4')}
+      className={clsx('flex flex-col gap-2')}
       initial="hide"
       animate="show"
       transition={{ staggerChildren: 0.06 }}
     >
-      <m.div className={clsx('text-xl font-bold')} variants={animation}>
+      <m.div className={clsx('px-2 text-xl font-bold')} variants={animation}>
         Action Center
       </m.div>
-      <div className={clsx('flex flex-1 flex-col gap-8')}>
+      <div className={clsx('flex flex-1 flex-col gap-8 p-2')}>
         <m.div className={clsx('flex h-24 gap-4')} variants={animation}>
           <ActionCenterButton
             title={theme === 'dark' ? 'Use Light Mode' : 'Use Dark Mode'}
