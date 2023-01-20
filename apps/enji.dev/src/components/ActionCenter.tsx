@@ -38,9 +38,9 @@ function ActionCenterButton({
       type="button"
       onClick={onClick}
       className={clsx(
-        'border-divider-light flex flex-1 flex-col justify-between rounded-xl bg-white/60 p-4 transition-colors',
-        'dark:border-divider-dark dark:bg-[#1d263a]',
-        [active && ['bg-accent-300', 'dark:bg-slate-700']]
+        'relative flex flex-1 flex-col justify-between overflow-hidden rounded-xl p-4 transition-colors',
+        'dark:bg-[#1d263a]',
+        [active ? ['bg-white', 'dark:bg-slate-700'] : 'bg-white/50']
       )}
     >
       <div className={clsx('')}>{icon}</div>
@@ -72,17 +72,47 @@ function ActionCenter() {
       <div className={clsx('flex flex-1 flex-col gap-8 p-2')}>
         <m.div className={clsx('flex h-24 gap-4')} variants={animation}>
           <ActionCenterButton
-            title={theme === 'dark' ? 'Use Light Mode' : 'Use Dark Mode'}
+            active={theme === 'dark'}
+            title={theme === 'dark' ? 'Dark Mode: On' : 'Dark Mode: Off'}
             onClick={handleThemeChange}
             icon={
-              <>
-                <div className={clsx('hidden', 'dark:block')}>
+              <m.div
+                animate={
+                  theme === 'dark' ? { rotate: [0, 90] } : { rotate: [-90, 0] }
+                }
+                transition={{ ease: 'easeOut', duration: 0.48 }}
+                className={clsx(
+                  'absolute top-4 left-4 z-[10000] h-36 w-36 rounded-full'
+                )}
+              >
+                <m.div
+                  initial={{ opacity: 1 }}
+                  animate={theme === 'dark' ? { opacity: 0 } : { opacity: 1 }}
+                  transition={{ ease: 'easeOut', duration: 0.48 }}
+                  className={clsx('absolute top-0')}
+                >
                   <LightIcon className={clsx('h-5 w-5')} />
-                </div>
-                <div className={clsx('dark:hidden')}>
-                  <DarkIcon className={clsx('h-5 w-5')} />
-                </div>
-              </>
+                </m.div>
+                <m.div
+                  initial={{ opacity: 1 }}
+                  animate={theme !== 'dark' ? { opacity: 0 } : { opacity: 1 }}
+                  transition={{ ease: 'easeOut', duration: 0.48 }}
+                  className={clsx('absolute top-0 right-0')}
+                >
+                  <DarkIcon className={clsx('h-5 w-5 rotate-90')} />
+                </m.div>
+                <m.div
+                  initial={{ opacity: 1 }}
+                  animate={theme !== 'dark' ? { opacity: 0 } : { opacity: 1 }}
+                  className={clsx('absolute bottom-0')}
+                >
+                  {theme === 'dark' ? (
+                    <DarkIcon className={clsx('h-5 w-5 -rotate-90')} />
+                  ) : (
+                    <LightIcon className={clsx('h-5 w-5 -rotate-90')} />
+                  )}
+                </m.div>
+              </m.div>
             }
           />
           <ActionCenterButton
