@@ -108,9 +108,7 @@ interface ActivityProps {
 }
 
 function Activity({ closeActionCenter = () => {} }: ActivityProps) {
-  const { data } = useContentActivity();
-
-  if (data.length === 0) return null;
+  const { data, isLoading } = useContentActivity();
 
   return (
     <m.div
@@ -123,7 +121,7 @@ function Activity({ closeActionCenter = () => {} }: ActivityProps) {
       className={clsx('flex flex-1 flex-col gap-4')}
     >
       <m.div variants={animation} className={clsx('text-xl font-bold')}>
-        Latest Activities
+        Recent Activities
       </m.div>
       <div
         className={clsx(
@@ -131,7 +129,12 @@ function Activity({ closeActionCenter = () => {} }: ActivityProps) {
           'lg:pb-6'
         )}
       >
-        {Array.isArray(data) &&
+        {isLoading && (
+          <m.div className={clsx('')} variants={animation}>
+            loading data..
+          </m.div>
+        )}
+        {Array.isArray(data) && data.length !== 0 ? (
           data.map((activity) => {
             const { createdAt, contentType, slug } = activity;
 
@@ -163,7 +166,12 @@ function Activity({ closeActionCenter = () => {} }: ActivityProps) {
                 </Link>
               </m.div>
             );
-          })}
+          })
+        ) : (
+          <m.div className={clsx('')} variants={animation}>
+            no recent activity.
+          </m.div>
+        )}
       </div>
     </m.div>
   );
