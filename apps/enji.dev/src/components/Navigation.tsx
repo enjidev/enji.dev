@@ -18,7 +18,7 @@ const workLinks = [
 ];
 
 function Navbar() {
-  const isScrolled = useOnScroll(86);
+  const isScrolled = useOnScroll(0);
 
   return (
     <header
