@@ -1,7 +1,7 @@
 import { Dialog } from '@headlessui/react';
 import clsx from 'clsx';
 import { m } from 'framer-motion';
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 
 import ActionCenter from '@/components/ActionCenter';
 import Activity from '@/components/Activity';
@@ -18,20 +18,6 @@ const animation = {
 function QuickAccess() {
   const closeButtonRef = useRef(null);
   const { isQuickAccessOpen, setQuickAccessOpen } = useGlobal();
-
-  useEffect(() => {
-    const handlePress = (e: KeyboardEvent) => {
-      if (e.code === 'KeyQ') {
-        setQuickAccessOpen(!isQuickAccessOpen);
-      }
-    };
-
-    document.addEventListener('keyup', handlePress);
-
-    return () => {
-      document.removeEventListener('keyup', handlePress);
-    };
-  }, [isQuickAccessOpen, setQuickAccessOpen]);
 
   return isQuickAccessOpen ? (
     <Dialog
