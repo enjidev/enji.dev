@@ -4,7 +4,7 @@ import Link from 'next/link';
 import CountUp from '@/components/CountUp';
 import { ChevronRightIcon, InsightIcon } from '@/components/Icons';
 
-import { formatDate, formatLang } from '@/helpers/post';
+import { formatDateRelative, formatLang } from '@/helpers/post';
 
 import type { TPostFrontMatter } from '@/types';
 
@@ -40,7 +40,7 @@ function PostPreview({
           )}
         >
           <div className={clsx('flex gap-1')}>
-            <time dateTime={date}>{formatDate(date)}</time>
+            <time dateTime={date}>{formatDateRelative(date)}</time>
             <span>&middot;</span>
             <span>{formatLang(lang)}</span>
           </div>
