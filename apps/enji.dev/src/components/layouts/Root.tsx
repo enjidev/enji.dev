@@ -3,8 +3,7 @@ import {
   Plus_Jakarta_Sans as PlusJakartaSans,
 } from '@next/font/google';
 import clsx from 'clsx';
-
-import type { PropsWithChildren } from 'react';
+import { PropsWithChildren, useEffect } from 'react';
 
 const jetbrainsMono = JetBrainsMono({
   subsets: ['latin'],
@@ -17,6 +16,13 @@ const plusJakartaSans = PlusJakartaSans({
 });
 
 function Root({ children }: PropsWithChildren) {
+  useEffect(() => {
+    document.documentElement.classList.add(
+      jetbrainsMono.variable,
+      plusJakartaSans.variable
+    );
+  }, []);
+
   return (
     <div
       id="__root"
