@@ -7,6 +7,7 @@ import ActionCenter from '@/components/ActionCenter';
 import Activity from '@/components/Activity';
 import { XIcon } from '@/components/Icons';
 import NewPosts from '@/components/NewPosts';
+import TipShortcuts from '@/components/TipShortcuts';
 
 import useGlobal from '@/hooks/useGlobal';
 
@@ -75,6 +76,23 @@ function QuickAccess() {
             </div>
             <div className={clsx('flex flex-1 flex-col')}>
               <Activity onItemClick={() => setQuickAccessOpen(false)} />
+            </div>
+            <div
+              className={clsx(
+                'fixed left-8 bottom-10 hidden w-[320px]',
+                'md:block'
+              )}
+            >
+              <m.div
+                initial={{ x: -36, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{
+                  ease: 'easeOut',
+                  delay: 0.8,
+                }}
+              >
+                <TipShortcuts />
+              </m.div>
             </div>
           </div>
         </Dialog.Panel>
