@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import { Fragment } from 'react';
 
 import { KeyboardIcon } from '@/components/Icons';
 import Kbd from '@/components/Kbd';
@@ -38,6 +39,7 @@ function TipShortcuts() {
       <div className={clsx('flex flex-col text-[13px]')}>
         {shortcuts.map(({ title, keys }) => (
           <div
+            key={title}
             className={clsx(
               'flex items-center justify-between border-b border-slate-300 py-2',
               'dark:border-divider-dark'
@@ -48,10 +50,10 @@ function TipShortcuts() {
             </div>
             <div className={clsx('flex items-center gap-2 text-[12px]')}>
               {keys.map((key, i) => (
-                <>
+                <Fragment key={key}>
                   <Kbd>{key}</Kbd>
                   {i !== keys.length - 1 && <span>or</span>}
-                </>
+                </Fragment>
               ))}
             </div>
           </div>
