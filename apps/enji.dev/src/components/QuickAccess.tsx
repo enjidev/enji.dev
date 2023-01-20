@@ -1,12 +1,14 @@
 import { Dialog } from '@headlessui/react';
 import clsx from 'clsx';
 import { m } from 'framer-motion';
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 
 import ActionCenter from '@/components/ActionCenter';
 import Activity from '@/components/Activity';
 import { XIcon } from '@/components/Icons';
 import NewPosts from '@/components/NewPosts';
+
+import useGlobal from '@/hooks/useGlobal';
 
 const animation = {
   hide: { opacity: 0 },
@@ -14,15 +16,15 @@ const animation = {
 };
 
 function QuickAccess() {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
   const closeButtonRef = useRef(null);
+  const { isQuickAccessOpen, setQuickAccessOpen } = useGlobal();
 
-  return isOpen ? (
+  return isQuickAccessOpen ? (
     <Dialog
       static
       initialFocus={closeButtonRef}
-      open={isOpen}
-      onClose={() => setIsOpen(false)}
+      open={isQuickAccessOpen}
+      onClose={() => setQuickAccessOpen(false)}
       className={clsx('relative z-[1001]')}
     >
       <m.div
@@ -33,7 +35,7 @@ function QuickAccess() {
           'fixed inset-0 z-[-1] bg-slate-200/[.95]',
           'dark:bg-slate-900/[.98]'
         )}
-        aria-hidden={!isOpen}
+        aria-hidden={!isQuickAccessOpen}
       />
       <div className={clsx('fixed inset-0')}>
         <Dialog.Panel>
@@ -53,7 +55,7 @@ function QuickAccess() {
               )}
               aria-label="Close Quick Access"
               title="Close Quick Access"
-              onClick={() => setIsOpen(false)}
+              onClick={() => setQuickAccessOpen(false)}
             >
               <XIcon className={clsx('h-5 w-5')} />
             </button>
@@ -69,10 +71,10 @@ function QuickAccess() {
               <ActionCenter />
             </div>
             <div className={clsx('')}>
-              <NewPosts onItemClick={() => setIsOpen(false)} />
+              <NewPosts onItemClick={() => setQuickAccessOpen(false)} />
             </div>
             <div className={clsx('flex flex-1 flex-col')}>
-              <Activity onItemClick={() => setIsOpen(false)} />
+              <Activity onItemClick={() => setQuickAccessOpen(false)} />
             </div>
           </div>
         </Dialog.Panel>
