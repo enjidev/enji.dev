@@ -8,9 +8,9 @@ export default function useShortcut(code: string, handler: () => void) {
       }
     };
 
-    document.addEventListener('keydown', handlePress);
+    document.addEventListener('keyup', handlePress);
     return () => {
-      document.removeEventListener('keydown', handlePress);
+      document.removeEventListener('keyup', handlePress);
     };
   }, [code, handler]);
 }
