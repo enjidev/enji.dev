@@ -3,9 +3,9 @@ import { ThemeProvider } from 'next-themes';
 
 import mdxCustomComponents from '@/components/mdx/custom-components';
 import ColorAccentProvider from '@/providers/ColorAccentProvider';
+import FocusModeProvider from '@/providers/FocusModeProvider';
 import FramerMotionProvider from '@/providers/FramerMotionProvider';
-
-import FocusModeProvider from './FocusModeProvider';
+import GlobalStateProvider from '@/providers/GlobalStateProvider';
 
 import type { PropsWithChildren } from 'react';
 
@@ -15,9 +15,11 @@ function Provider({ children = null }: PropsWithChildren) {
       <ThemeProvider attribute="class" disableTransitionOnChange>
         <FocusModeProvider>
           <ColorAccentProvider defaultScheme="violet">
-            <MDXProvider components={mdxCustomComponents}>
-              {children}
-            </MDXProvider>
+            <GlobalStateProvider>
+              <MDXProvider components={mdxCustomComponents}>
+                {children}
+              </MDXProvider>
+            </GlobalStateProvider>
           </ColorAccentProvider>
         </FocusModeProvider>
       </ThemeProvider>
