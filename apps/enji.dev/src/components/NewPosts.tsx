@@ -52,7 +52,7 @@ function NewPosts({ onItemClick = () => {} }: NewPostsProps) {
                     onItemClick();
                   }}
                   className={clsx(
-                    'border-divider-light block rounded-xl border bg-white/60 p-4 text-sm backdrop-blur',
+                    'border-divider-light block rounded-xl border bg-white/50 p-4 text-sm backdrop-blur',
                     'dark:border-divider-dark dark:bg-slate-900/60'
                   )}
                 >
