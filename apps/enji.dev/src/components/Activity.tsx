@@ -131,7 +131,7 @@ function Activity({ closeActionCenter = () => {} }: ActivityProps) {
       >
         {isLoading && (
           <m.div className={clsx('')} variants={animation}>
-            loading data..
+            retrieving details..
           </m.div>
         )}
         {Array.isArray(data) && data.length !== 0 ? (
@@ -169,7 +169,7 @@ function Activity({ closeActionCenter = () => {} }: ActivityProps) {
           })
         ) : (
           <m.div className={clsx('')} variants={animation}>
-            no recent activity.
+            nothing new at the moment.
           </m.div>
         )}
       </div>
