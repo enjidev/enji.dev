@@ -1,5 +1,4 @@
 import dayjs from '@/utils/dayjs';
-import { relativeTime } from '@/helpers/date';
 import { getBaseUrl, getParams } from '@/helpers/url';
 
 import type { TPostFrontMatter, TPostOgImage } from '@/types';
@@ -14,13 +13,23 @@ export const formatDate = (date: string) => {
 
 export const formatDateRelative = (date: string) => {
   if (dayjs(date).isValid()) {
-    const days = dayjs().diff(dayjs(date), 'days');
+    const days = dayjs().diff(date, 'days');
 
-    if (days >= 6) {
+    if (days > 6) {
       return formatDate(date);
     }
 
-    return relativeTime(date);
+    if (days > 1) {
+      return `${days} days ago`;
+    }
+
+    if (days === 1) {
+      return `Yesterday`;
+    }
+
+    if (days === 0) {
+      return `Today`;
+    }
   }
 
   return date;
