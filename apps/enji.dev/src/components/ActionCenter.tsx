@@ -78,12 +78,10 @@ function ActionCenter() {
             icon={
               <m.div
                 animate={
-                  theme === 'dark' ? { rotate: [0, 90] } : { rotate: [-90, 0] }
+                  theme === 'dark' ? { rotate: [0, -90] } : { rotate: [90, 0] }
                 }
                 transition={{ ease: 'easeOut', duration: 0.48 }}
-                className={clsx(
-                  'absolute top-4 left-4 z-[10000] h-36 w-36 rounded-full'
-                )}
+                className={clsx('absolute top-4 left-4 h-36 w-36 rounded-full')}
               >
                 <m.div
                   initial={{ opacity: 1 }}
@@ -97,19 +95,19 @@ function ActionCenter() {
                   initial={{ opacity: 1 }}
                   animate={theme !== 'dark' ? { opacity: 0 } : { opacity: 1 }}
                   transition={{ ease: 'easeOut', duration: 0.48 }}
-                  className={clsx('absolute top-0 right-0')}
+                  className={clsx('absolute bottom-0')}
                 >
-                  <DarkIcon className={clsx('h-5 w-5 rotate-90')} />
+                  <DarkIcon className={clsx('h-5 w-5 -rotate-90')} />
                 </m.div>
                 <m.div
                   initial={{ opacity: 1 }}
                   animate={theme !== 'dark' ? { opacity: 0 } : { opacity: 1 }}
-                  className={clsx('absolute bottom-0')}
+                  className={clsx('absolute top-0 right-0')}
                 >
                   {theme === 'dark' ? (
-                    <DarkIcon className={clsx('h-5 w-5 -rotate-90')} />
+                    <DarkIcon className={clsx('h-5 w-5 rotate-90')} />
                   ) : (
-                    <LightIcon className={clsx('h-5 w-5 -rotate-90')} />
+                    <LightIcon className={clsx('h-5 w-5 rotate-90')} />
                   )}
                 </m.div>
               </m.div>
