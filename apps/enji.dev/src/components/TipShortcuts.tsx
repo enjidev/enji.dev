@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import { m } from 'framer-motion';
 import { Fragment } from 'react';
 
 import { KeyboardIcon } from '@/components/Icons';
@@ -26,9 +27,26 @@ const shortcuts: Array<{
   },
 ];
 
+const animation = {
+  hide: { x: -24, opacity: 0 },
+  show: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      ease: 'easeOut',
+      duration: 0.12,
+    },
+  },
+};
+
 function TipShortcuts() {
   return (
-    <div className={clsx('')}>
+    <m.div
+      initial="hide"
+      animate="show"
+      transition={{ delayChildren: 0.7, staggerChildren: 0.14 }}
+      className={clsx('')}
+    >
       <div className={clsx('mb-4 flex items-center gap-4 text-xl font-bold')}>
         <KeyboardIcon className={clsx('h-8 w-8')} />
         TIP: Shortcuts
@@ -38,8 +56,9 @@ function TipShortcuts() {
       </p>
       <div className={clsx('flex flex-col text-[13px]')}>
         {shortcuts.map(({ title, keys }) => (
-          <div
+          <m.div
             key={title}
+            variants={animation}
             className={clsx(
               'flex items-center justify-between border-b border-slate-300 py-2',
               'dark:border-divider-dark'
@@ -56,10 +75,10 @@ function TipShortcuts() {
                 </Fragment>
               ))}
             </div>
-          </div>
+          </m.div>
         ))}
       </div>
-    </div>
+    </m.div>
   );
 }
 

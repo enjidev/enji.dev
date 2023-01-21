@@ -13,7 +13,7 @@ const animation = {
     opacity: 1,
     transition: {
       ease: 'easeOut',
-      duration: 0.16,
+      duration: 0.084,
     },
   },
 };

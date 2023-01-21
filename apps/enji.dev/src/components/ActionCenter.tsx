@@ -15,7 +15,7 @@ const animation = {
     opacity: 1,
     transition: {
       ease: 'easeOut',
-      duration: 0.12,
+      duration: 0.084,
     },
   },
 };

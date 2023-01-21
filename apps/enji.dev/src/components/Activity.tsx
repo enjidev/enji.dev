@@ -98,7 +98,7 @@ const animation = {
     opacity: 1,
     transition: {
       ease: 'easeOut',
-      duration: 0.18,
+      duration: 0.12,
     },
   },
 };

@@ -88,7 +88,7 @@ function QuickAccess() {
                 animate={{ x: 0, opacity: 1 }}
                 transition={{
                   ease: 'easeOut',
-                  delay: 0.8,
+                  delay: 0.6,
                 }}
               >
                 <TipShortcuts />
