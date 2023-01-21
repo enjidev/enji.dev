@@ -97,7 +97,8 @@ export function Item({ children = null }: PropsWithChildren) {
       <div
         className={clsx(
           'pointer-events-none sticky top-[86px] -ml-8 pb-12',
-          'md:-ml-12 lg:-ml-24'
+          'md:-ml-12 lg:-ml-24',
+          'fm:relative fm:top-0'
         )}
       >
         <div
@@ -132,7 +133,12 @@ export function Items({
   return (
     <div className={clsx('flex flex-row gap-6', 'md:gap-12 lg:gap-24')}>
       <div className={clsx('hidden', 'md:block md:pb-24')}>
-        <div className={clsx('mt-4 pt-1.5 md:sticky md:top-[86px]')}>
+        <div
+          className={clsx(
+            'mt-4 pt-1.5 md:sticky md:top-[86px]',
+            'fm:relative fm:top-0'
+          )}
+        >
           <div
             className={clsx(
               'font-mono font-bold text-slate-700',
