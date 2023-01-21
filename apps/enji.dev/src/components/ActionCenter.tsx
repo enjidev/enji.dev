@@ -104,11 +104,7 @@ function ActionCenter() {
                   animate={theme !== 'dark' ? { opacity: 0 } : { opacity: 1 }}
                   className={clsx('absolute top-0 right-0')}
                 >
-                  {theme === 'dark' ? (
-                    <DarkIcon className={clsx('h-5 w-5 rotate-90')} />
-                  ) : (
-                    <LightIcon className={clsx('h-5 w-5 rotate-90')} />
-                  )}
+                  <DarkIcon className={clsx('h-5 w-5 rotate-90')} />
                 </m.div>
               </m.div>
             }
