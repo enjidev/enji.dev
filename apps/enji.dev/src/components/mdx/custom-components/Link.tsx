@@ -25,7 +25,7 @@ export function Link({ children, href }: Props) {
         <a
           href={href}
           target="_blank"
-          rel="noreferrer"
+          rel="noreferrer nofollow"
           className={clsx('link')}
         >
           {children}

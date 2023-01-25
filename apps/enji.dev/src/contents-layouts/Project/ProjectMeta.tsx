@@ -24,7 +24,7 @@ function ProjectMeta({ githubUrl = '', npmUrl = '' }: ProjectMetaProps) {
           <a
             href={githubUrl}
             target="_blank"
-            rel="noreferrer"
+            rel="noreferrer nofollow"
             className={clsx('button button--soft')}
           >
             <GitHubIcon className={clsx('h-5 w-5')} />
@@ -35,7 +35,7 @@ function ProjectMeta({ githubUrl = '', npmUrl = '' }: ProjectMetaProps) {
           <a
             href={npmUrl}
             target="_blank"
-            rel="noreferrer"
+            rel="noreferrer nofollow"
             className={clsx('button button--soft')}
           >
             <NpmIcon className={clsx('h-5 w-5')} />

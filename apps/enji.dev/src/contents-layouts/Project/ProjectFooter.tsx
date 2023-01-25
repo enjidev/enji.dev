@@ -23,7 +23,7 @@ function ProjectFooter({ githubUrl = '' }: ProjectFooterProps) {
           <a
             href={githubUrl}
             target="_blank"
-            rel="noreferrer"
+            rel="noreferrer nofollow"
             className={clsx('link')}
           >
             open an issue / discussion here.

@@ -29,7 +29,7 @@ function NavIcon({ href, icon, title, label = '' }: NavIconProps) {
       aria-label={`My ${title} profile`}
       title={`My ${title} profile`}
       target="_blank"
-      rel="noreferrer"
+      rel="noreferrer nofollow"
     >
       <span
         className={clsx('flex h-9 w-9 items-center justify-center rounded-xl')}

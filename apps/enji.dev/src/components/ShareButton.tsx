@@ -58,7 +58,7 @@ const ShareItemLink = forwardRef(
       href={href}
       onClick={onClick}
       target="_blank"
-      rel="noreferrer"
+      rel="noreferrer nofollow"
       className={clsx(
         'flex w-full items-center gap-3 px-4 py-2 text-[13px]',
         ['hover:bg-slate-100', 'hover:dark:bg-[#1d263a]'],

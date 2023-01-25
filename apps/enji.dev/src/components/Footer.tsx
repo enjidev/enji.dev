@@ -15,7 +15,7 @@ function LastUpdate() {
     <a
       href="https://github.com/enjidev/enji.dev"
       target="_blank"
-      rel="noreferrer"
+      rel="noreferrer nofollow"
       className={clsx('hover:underline')}
     >
       <span>see the recent update on GitHub</span>
@@ -58,7 +58,7 @@ function FooterLink({
     <a
       href={href}
       target="_blank"
-      rel="noreferrer"
+      rel="noreferrer nofollow"
       className={clsx('footer-link')}
     >
       {title}
@@ -120,7 +120,7 @@ function FooterDescription() {
           <a
             href="https://twitter.com/enjidev"
             target="_blank"
-            rel="noreferrer"
+            rel="noreferrer nofollow"
             className={clsx('flex h-9 w-9 items-center justify-center')}
             aria-label="My Twitter profile"
             title="My Twitter profile"
@@ -132,7 +132,7 @@ function FooterDescription() {
           <a
             href="https://github.com/enjidev"
             target="_blank"
-            rel="noreferrer"
+            rel="noreferrer nofollow"
             className={clsx('flex h-9 w-9 items-center justify-center')}
             aria-label="My GitHub profile"
             title="My GitHub profile"
@@ -144,7 +144,7 @@ function FooterDescription() {
           <a
             href="https://figma.com/@enjidev"
             target="_blank"
-            rel="noreferrer"
+            rel="noreferrer nofollow"
             className={clsx('flex h-9 w-9 items-center justify-center')}
             aria-label="My Figma profile"
             title="My Figma profile"
