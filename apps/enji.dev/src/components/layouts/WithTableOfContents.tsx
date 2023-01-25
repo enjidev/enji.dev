@@ -15,7 +15,10 @@ function PageWithMDX({
 }: PropsWithChildren<PageWithMDXProps>) {
   return (
     <div
-      className={clsx('content-wrapper overflow-hidden', 'lg:overflow-visible')}
+      className={clsx(
+        'content-wrapper flex-shrink-0 overflow-hidden',
+        'lg:overflow-visible'
+      )}
     >
       <div className={clsx('flex flex-row-reverse gap-8', 'xl:gap-24')}>
         <div className={clsx('-mt-48 hidden', 'lg:block')}>
