@@ -39,6 +39,12 @@ export function Link({ children, href }: Props) {
           {children}
         </a>
       );
+    case 'hash':
+      return (
+        <a href={href} className={clsx('link')}>
+          {children}
+        </a>
+      );
     default:
       return (
         <NextLink href={href} className={clsx('link')}>

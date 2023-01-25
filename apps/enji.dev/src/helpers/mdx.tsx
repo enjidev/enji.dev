@@ -23,8 +23,12 @@ export const getSlug = (children: ReactNode) => {
 };
 
 export const urlType = (url: string) => {
-  if (['/', '#'].includes(url[0])) {
+  if (['/'].includes(url[0])) {
     return 'internal';
+  }
+
+  if (['#'].includes(url[0])) {
+    return 'hash';
   }
 
   if (url.indexOf('mailto') === 0) {
