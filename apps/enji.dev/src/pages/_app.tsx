@@ -22,8 +22,16 @@ function getDefaultLayout(page: ReactElement): ReactNode {
   return <WithNavigationFooter>{page}</WithNavigationFooter>;
 }
 
-function App({ Component, pageProps }: AppPropsWithLayout) {
-  const getLayout = Component.getLayout ?? getDefaultLayout;
+function App({ Component, pageProps, router }: AppPropsWithLayout) {
+  let getLayout;
+
+  if (router.query.simpleLayout) {
+    getLayout = (page: ReactElement) => <main>{page}</main>;
+  } else if (Component.getLayout) {
+    getLayout = Component.getLayout;
+  } else {
+    getLayout = getDefaultLayout;
+  }
 
   return (
     <Provider>
