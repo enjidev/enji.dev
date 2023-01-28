@@ -44,7 +44,12 @@ function ActionCenterButton({
       )}
     >
       <div className={clsx('')}>{icon}</div>
-      <div className={clsx('text-[13px] font-medium', 'dark:font-normal')}>
+      <div
+        className={clsx(
+          'text-left text-[13px] font-medium',
+          'dark:font-normal'
+        )}
+      >
         {title}
       </div>
     </button>
