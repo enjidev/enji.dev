@@ -9,6 +9,6 @@
     "@typescript-eslint/parser": "^5.47.1",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-airbnb-typescript": "^17.0.0",
-    "eslint-plugin-simple-import-sort": "^8.0.0"
+    "eslint-plugin-simple-import-sort": "^10.0.0"
   }
 }
