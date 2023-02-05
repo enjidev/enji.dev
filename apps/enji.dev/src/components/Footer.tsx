@@ -231,7 +231,6 @@ function Footer() {
                     {
                       title: 'Credits',
                       href: '/credits',
-                      label: 'new',
                     },
                   ]}
                 />
