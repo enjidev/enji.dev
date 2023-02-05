@@ -1,7 +1,7 @@
 ---
 title: Tailwind CSS Best Practices
 description: Tailwind CSS best practices, tips, and coding style that I always use.
-lang: en
+lang: id
 date: '2023-02-06'
 tags:
   - tailwindcss
@@ -13,21 +13,21 @@ import { DnD, Dont, Do } from '@/components/mdx/TIL';
 import { QuickView } from '@/components/mdx/Link';
 import CodeGroup from '@/components/mdx/CodeGroup';
 
-Hello! Have you tried or want to try **Tailwind CSS**? Perfect, I'll be sharing some important things about Tailwind CSS.
+Halo! Sudah atau mau mencoba **Tailwind CSS**? pas banget kesini! saya akan membagikan beberapa hal yang cukup penting seputar Tailwind CSS.
 
-It's not exactly the '**best practices**' either. It's more about coding style and some tips that make me comfortable using Tailwind CSS.
+Sebenarnya bukan '**best practices**' juga sih. Lebih ke coding style dan beberapa tips yang membuat saya nyaman dalam menggunakan Tailwind CSS.
 
-It's opinionated, but who knows, i hope something positive can be taken from it.
+Opiniated sih jatuhnya, tapi siapa tau ada yang bisa diambil, positifnya, ya kan.
 
 ---
 
 ## Coding Style
 
-Here is the coding style for writing Tailwind CSS classes that I often use, divided into 3 important points: sorting, splitting and grouping.
+Berikut coding style untuk penulisan Tailwind CSS classes yang sering saya gunakan, dibagi menjadi 3 point penting: sorting, splitting dan grouping.
 
 ### Sorting
 
-Try to take a look at the following Button component example, so many classess 😂
+Coba liat dulu contoh komponen `Button` berikut, panjang banget classnya 😂
 
 ```html
 <button
@@ -37,21 +37,21 @@ Try to take a look at the following Button component example, so many classess �
 </button>
 ```
 
-Because dealing with a large number of classes for just single element, class sorting is quite important.
+Karena berurusan dengan nama class yang akan sangat banyak hanya untuk sebuah element, sorting class cukup penting.
 
-Fortunately, Tailwind CSS itself has provided the [Prettier plugin](https://github.com/tailwindlabs/prettier-plugin-tailwindcss) to handle this matter.
+Untungnya, Tailwind CSS sendiri sudah menyiapkan [plugin](https://github.com/tailwindlabs/prettier-plugin-tailwindcss) Prettier untuk menghandle urusan ini.
 
-Consistent class order will make the maintenance process easier in the future.
+Konsistensi urutan class akan memudahkan dalam proses maintenance kedepannya.
 
-For example, in the sample, with the classes already sorted, we can easily change the `border` and `border-transparent` because they are next to each other.
+Misal, yang ada dalam contoh, dengan class yang sudah di sortir, kita bisa dengan mudah mengubah `border` dan `border-transparent` karena saling berdampingan.
 
-Or easily change the `hover:` styles or **breakpoints** because they usually appear at the end of the class.
+Atau dapat dengan mudah mengubah styles `hover:` atau **breakpoints** karena biasanya muncul di bagian akhir class.
 
 ### Splitting
 
-To make it neater, we can split the class into several strings or lines. I usually use [clsx](https://github.com/lukeed/clsx) for this.
+Untuk membuatnya lebih rapi, kita bisa split classnya jadi beberapa string atau line (agar tidak terlihat terlalu panjang). Kalau saya sih biasa pake [clsx](https://github.com/lukeed/clsx).
 
-An example of a `Button` component that has already used `clsx`:
+Contoh sebuah komponen `Button` yang sudah menggunakan `clsx`:
 
 ```tsx
 function Button({ children }) {
@@ -70,16 +70,16 @@ function Button({ children }) {
 
 ### Grouping
 
-After the classes have been splitted, we can 'group' them to make it neater and more readable.
+Setelah classnya terpisah, kita bisa 'grouping' untuk membuatnya lebih rapi dan juga nyaman dibaca.
 
-The pattern I usually apply is:
+Biasanya, pattern yang saya terapkan adalah:
 
-- `group 1`: default utilities
-- `group 2`: breakpoint utilities
-- `group 3`: dark mode utilities
-- `group 4`: other variants utilities
+- `group 1`: default utilites
+- `group 2`: breakpoints utilities
+- `group 3`: dark mode utilites
+- `group 4`: other variants utilites
 
-Let's implement this into previous `Button` component:
+Kita implementasikan menggunakan komponen `Button` tadi:
 
 ```tsx
 function Button({ children }) {
@@ -102,7 +102,7 @@ function Button({ children }) {
 }
 ```
 
-Or with the CSS component:
+Sama halnya dengan komponen CSS:
 
 ```css
 .button {
@@ -117,17 +117,17 @@ Or with the CSS component:
 }
 ```
 
-Much better, I think. Groups 2, 3, and 4 can still be improved or adjusted to your preferences, just make sure to maintain consistency in writing.
+Group 2,3 dan 4 sebenarnya masih bisa di improve atau disesuaikan lagi sesuai keinginan, hanya pastikan untuk membuatnya konsisten di setiap penulisan.
 
 ---
 
 ## Tips
 
-### Use Component
+### Gunakan Komponen
 
-If you feel that some elements have same styles, they can be split into separate components, such as buttons.
+Jika dirasa beberapa element mempunyai styles yang sama, bisa di split jadi komponen tersendiri, seperti button yang biasanya memiliki styles yang sama.
 
-Since I'm using React, I can create the component like:
+Karena saya menggunakan React, saya bisa saja membuat komponen seperti:
 
 ```tsx
 function Button({ children }) {
@@ -146,11 +146,13 @@ function Button({ children }) {
 }
 ```
 
-### Use Class Component
+### Gunakan Class Component
 
-Just like components, but this method is used for optimizing the size or output of the HTML file.
+Sama seperti komponen, tapi cara ini digunakan untuk optimasi ukuran atau output file html.
 
-Because many class names from Tailwind CSS will also add a load on the HTML. So we can transform it to CSS component instead, like:
+Karena nama class yang banyak dari Tailwind CSS akan menambahkan beban juga pada HTML.
+
+Kurang lebih penggunaannya seperti ini:
 
 <CodeGroup variant="file">
 
@@ -171,15 +173,15 @@ function Button({ children }) {
 
 </CodeGroup>
 
-I have already wrote about this <QuickView href="/blog/tentang-nextjs-tailwind-css-dan-framer-motion#tailwind-css">here</QuickView> (under the "Beban ke HTML makin berat" section).
+Sudah pernah saya bahas <QuickView href="/blog/tentang-nextjs-tailwind-css-dan-framer-motion#tailwind-css">disini</QuickView> (point "Beban ke HTML makin berat").
 
-### !important Usage
+### Penggunaan !important
 
-Like vanilla CSS, try to avoid using `!important`.
+Layaknya CSS pada umumnya, sebisa mungkin hindari penggunaan `!important`.
 
-In Tailwind CSS, `!important` can be added by adding the `!` prefix to the utility class, for example, `!p-2 !px-3`.
+Di Tailwind CSS, `!important` sendiri bisa dengan menambahkan prefix `!` pada setiap utility class, contoh `!p-2 !px-3`.
 
-Try to avoid it as much as possible! Once trapped into using it, all your utilities may end up with many `!important` and it will be very difficult to make style changes in the future.
+Sebisa mungkin hindari! Sekali terjebak menggunakan, mungkin semua utility kita akan berakhir dengan banyaknya `!important` dan sangat sulit untuk melakukan perubahan styles kedepannya.
 
 ### Conditional Class
 
@@ -204,13 +206,13 @@ Try to avoid it as much as possible! Once trapped into using it, all your utilit
 
 Let me explain a bit.
 
-If we use the first method and the value of `dark` is set to true, then the class would be `text-black text-white`.
+Katakanlah kita pake cara yang pertama dan `dark` nilainya `true`, maka classnya akan jadi seperti ini `text-black text-white`.
 
-In some cases, the result might be as expected. However, in some cases, it might cause a problem.
+Dalam beberapa kasus, mungkin hasilnya ya sesuai harapan. Tapi, ketika beberapa kasus juga, mungkin bisa jadi masalah!
 
-It's possible that the text remains black even when the value of `dark` is true.
+Bisa saja, teks tetap berwarna hitam meski nilai `dark`nya true.
 
-Let the code speak:
+Ko bisa? Let the code speak:
 
 ```html
 <!-- Some elements within the project. -->
