@@ -60,7 +60,7 @@ function BlogContents({ posts }: BlogContentsProps) {
             <div
               className={clsx(
                 'mb-8 flex items-start gap-4',
-                'md:mb-6 md:gap-6'
+                'md:mb-12 md:gap-6'
               )}
             >
               <div className={clsx('flex-1')}>
