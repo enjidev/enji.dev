@@ -67,7 +67,8 @@ function PostPreview({
           <div
             className={clsx(
               'relative mb-4 flex items-center gap-2 font-semibold text-slate-500',
-              'dark:text-slate-400'
+              'sm:text-slate-500',
+              'dark:sm:text-accent-400 dark:text-slate-400'
             )}
           >
             <PinIcon className={clsx('h-5 w-5')} />
