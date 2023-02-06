@@ -1,8 +1,9 @@
 import clsx from 'clsx';
+import { m } from 'framer-motion';
 import Link from 'next/link';
 
 import CountUp from '@/components/CountUp';
-import { ChevronRightIcon, InsightIcon } from '@/components/Icons';
+import { ChevronRightIcon, InsightIcon, PinIcon } from '@/components/Icons';
 
 import { formatDateRelative, formatLang } from '@/helpers/post';
 
@@ -12,6 +13,7 @@ type PostPreviewProps = TPostFrontMatter & {
   slug: string;
   views: number;
   shares: number;
+  pinned?: boolean;
 };
 
 function PostPreview({
@@ -22,6 +24,7 @@ function PostPreview({
   lang,
   views,
   shares,
+  pinned = false,
 }: PostPreviewProps) {
   return (
     <article lang={lang}>
@@ -29,10 +32,44 @@ function PostPreview({
         key={slug}
         href={`blog/${slug}`}
         className={clsx(
-          'group mb-6 block rounded-xl bg-gradient-to-t',
-          'sm:mb-0 sm:p-4 md:p-6'
+          'group relative mb-6 block overflow-hidden bg-gradient-to-t',
+          'sm:mb-0 sm:rounded-2xl',
+          pinned
+            ? [
+                'border-divider-light',
+                'sm:border sm:p-4 md:mt-6 md:p-6',
+                'dark:border-divider-dark',
+              ]
+            : ['sm:p-4 md:p-6']
         )}
       >
+        {/* shine effect */}
+        {pinned && (
+          <m.div
+            initial={{ x: 0, opacity: 0 }}
+            animate={{ x: '100%', opacity: [0, 1, 0] }}
+            transition={{ delay: 1.4, duration: 0.84, ease: 'easeInOut' }}
+            className="absolute -inset-x-16 inset-y-0 z-[-1]"
+          >
+            <div
+              className={clsx(
+                'absolute inset-y-0 w-10 -rotate-45 scale-[4] bg-black opacity-[0.08]',
+                'dark:bg-white dark:opacity-[0.14]'
+              )}
+            />
+          </m.div>
+        )}
+        {pinned && (
+          <div
+            className={clsx(
+              'relative mb-4 flex items-center gap-2 font-semibold text-slate-500',
+              'dark:text-slate-400'
+            )}
+          >
+            <PinIcon className={clsx('h-5 w-5')} />
+            Pinned Post
+          </div>
+        )}
         <div
           className={clsx(
             'text-slate mb-2 flex flex-col gap-2 text-xs text-slate-500',
@@ -68,8 +105,9 @@ function PostPreview({
         </p>
         <div
           className={clsx(
-            'mb-4 flex items-center gap-2 text-xs text-slate-600',
-            'dark:text-slate-400'
+            'flex items-center gap-2 text-xs text-slate-600',
+            'dark:text-slate-400',
+            pinned ? 'mb-1' : 'mb-4'
           )}
         >
           <InsightIcon className={clsx('-mt-0.5 h-4 w-4')} />
@@ -89,15 +127,17 @@ function PostPreview({
             </span>
           </span>
         </div>
-        <div
-          className={clsx(
-            'text-accent-600 flex items-center gap-1 text-sm font-semibold',
-            'dark:text-accent-400'
-          )}
-        >
-          read more{' '}
-          <ChevronRightIcon className="group-hover:animate-bounce-x mt-1 h-3 w-3 transition" />
-        </div>
+        {!pinned && (
+          <div
+            className={clsx(
+              'text-accent-600 flex items-center gap-1 text-sm font-semibold',
+              'dark:text-accent-400'
+            )}
+          >
+            read more{' '}
+            <ChevronRightIcon className="group-hover:animate-bounce-x mt-1 h-3 w-3 transition" />
+          </div>
+        )}
       </Link>
     </article>
   );
