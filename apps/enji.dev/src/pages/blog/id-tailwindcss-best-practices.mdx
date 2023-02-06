@@ -149,22 +149,62 @@ function Button({ children }) {
 
 ### Gunakan Class Component
 
-Sama seperti komponen, tapi cara ini digunakan untuk optimasi ukuran atau output file html.
+Sama seperti komponen, tapi cara ini digunakan untuk optimasi ukuran atau output file html, khususnya untuk static site.
 
 Karena nama class yang banyak dari Tailwind CSS akan menambahkan beban juga pada HTML.
 
-Kurang lebih penggunaannya seperti ini:
+Coba lihat contoh sederhana, penggunaan set utility yang sama pada button pagination berikut:
+
+```html {copy:false} {footer:false}
+<button
+  class="inline-flex h-10 items-center justify-center gap-1.5 rounded-md border border-transparent bg-purple-600 px-4 text-center text-sm font-bold text-white transition duration-150 hover:bg-purple-700 dark:bg-purple-600 dark:hover:bg-purple-500 md:rounded-xl"
+>
+  Previous
+</button>
+<button
+  class="inline-flex h-10 items-center justify-center gap-1.5 rounded-md border border-transparent bg-purple-600 px-4 text-center text-sm font-bold text-white transition duration-150 hover:bg-purple-700 dark:bg-purple-600 dark:hover:bg-purple-500 md:rounded-xl"
+>
+  1
+</button>
+<button
+  class="inline-flex h-10 items-center justify-center gap-1.5 rounded-md border border-transparent bg-purple-600 px-4 text-center text-sm font-bold text-white transition duration-150 hover:bg-purple-700 dark:bg-purple-600 dark:hover:bg-purple-500 md:rounded-xl"
+>
+  2
+</button>
+<button
+  class="inline-flex h-10 items-center justify-center gap-1.5 rounded-md border border-transparent bg-purple-600 px-4 text-center text-sm font-bold text-white transition duration-150 hover:bg-purple-700 dark:bg-purple-600 dark:hover:bg-purple-500 md:rounded-xl"
+>
+  3
+</button>
+<button
+  class="inline-flex h-10 items-center justify-center gap-1.5 rounded-md border border-transparent bg-purple-600 px-4 text-center text-sm font-bold text-white transition duration-150 hover:bg-purple-700 dark:bg-purple-600 dark:hover:bg-purple-500 md:rounded-xl"
+>
+  4
+</button>
+<button
+  class="inline-flex h-10 items-center justify-center gap-1.5 rounded-md border border-transparent bg-purple-600 px-4 text-center text-sm font-bold text-white transition duration-150 hover:bg-purple-700 dark:bg-purple-600 dark:hover:bg-purple-500 md:rounded-xl"
+>
+  Next
+</button>
+```
+
+Bayangkan jika dalam satu file HTML memiliki beberapa pagination juga, ukuran file HTMLnya pasti akan lebih besar!
+
+Untuk mengurangi ukuran file size dari HTML, kita bisa ubah jadi class component. Kurang lebih penggunaannya seperti ini:
 
 <CodeGroup variant="file">
 
-```tsx {copy:false} {footer:false} {title:Button.tsx}
-function Button({ children }) {
-  return <button className="button">{children}</button>;
-}
+```html {copy:false} {footer:false} {title:index.html}
+<button class="pagination-button">Previous</button>
+<button class="pagination-button">1</button>
+<button class="pagination-button">2</button>
+<button class="pagination-button">3</button>
+<button class="pagination-button">4</button>
+<button class="pagination-button">Next</button>
 ```
 
 ```css {copy:false} {footer:false} {title:styles.css}
-.button {
+.pagination-button {
   @apply inline-flex h-10 items-center justify-center gap-1.5 rounded-md border;@apply border-transparent bg-purple-600 px-4 text-center text-sm font-bold;@apply text-white transition duration-150';
   @apply md:rounded-xl;
   @apply dark:bg-purple-600 dark:hover:bg-purple-500;

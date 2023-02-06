@@ -11,7 +11,6 @@ caption: Best Practices
 ---
 
 import { DnD, Dont, Do } from '@/components/mdx/TIL';
-import { QuickView } from '@/components/mdx/Link';
 import CodeGroup from '@/components/mdx/CodeGroup';
 
 Hello! Have you tried or want to try **Tailwind CSS**? Perfect, I'll be sharing some important things about Tailwind CSS.
@@ -149,20 +148,60 @@ function Button({ children }) {
 
 ### Use Class Component
 
-Just like components, but this method is used for optimizing the size or output of the HTML file.
+In a static site, classes are served as is. Therefore, if we have elements that use the same set of utilities multiple times, it will increase the size of our HTML file.
 
-Because many class names from Tailwind CSS will also add a load on the HTML. So we can transform it to CSS component instead, like:
+For example, see this repeated utilities on these pagination buttons:
+
+```html {copy:false} {footer:false}
+<button
+  class="inline-flex h-10 items-center justify-center gap-1.5 rounded-md border border-transparent bg-purple-600 px-4 text-center text-sm font-bold text-white transition duration-150 hover:bg-purple-700 dark:bg-purple-600 dark:hover:bg-purple-500 md:rounded-xl"
+>
+  Previous
+</button>
+<button
+  class="inline-flex h-10 items-center justify-center gap-1.5 rounded-md border border-transparent bg-purple-600 px-4 text-center text-sm font-bold text-white transition duration-150 hover:bg-purple-700 dark:bg-purple-600 dark:hover:bg-purple-500 md:rounded-xl"
+>
+  1
+</button>
+<button
+  class="inline-flex h-10 items-center justify-center gap-1.5 rounded-md border border-transparent bg-purple-600 px-4 text-center text-sm font-bold text-white transition duration-150 hover:bg-purple-700 dark:bg-purple-600 dark:hover:bg-purple-500 md:rounded-xl"
+>
+  2
+</button>
+<button
+  class="inline-flex h-10 items-center justify-center gap-1.5 rounded-md border border-transparent bg-purple-600 px-4 text-center text-sm font-bold text-white transition duration-150 hover:bg-purple-700 dark:bg-purple-600 dark:hover:bg-purple-500 md:rounded-xl"
+>
+  3
+</button>
+<button
+  class="inline-flex h-10 items-center justify-center gap-1.5 rounded-md border border-transparent bg-purple-600 px-4 text-center text-sm font-bold text-white transition duration-150 hover:bg-purple-700 dark:bg-purple-600 dark:hover:bg-purple-500 md:rounded-xl"
+>
+  4
+</button>
+<button
+  class="inline-flex h-10 items-center justify-center gap-1.5 rounded-md border border-transparent bg-purple-600 px-4 text-center text-sm font-bold text-white transition duration-150 hover:bg-purple-700 dark:bg-purple-600 dark:hover:bg-purple-500 md:rounded-xl"
+>
+  Next
+</button>
+```
+
+Imagine if in one HTML file there are **several** paginations as well, the size of the HTML file will definitely be bigger!
+
+To reduce it, we can abstract or create CSS components instead. So, we can transform the element utilities to CSS component, like:
 
 <CodeGroup variant="file">
 
-```tsx {copy:false} {footer:false} {title:Button.tsx}
-function Button({ children }) {
-  return <button className="button">{children}</button>;
-}
+```html {copy:false} {footer:false} {title:index.html}
+<button class="pagination-button">Previous</button>
+<button class="pagination-button">1</button>
+<button class="pagination-button">2</button>
+<button class="pagination-button">3</button>
+<button class="pagination-button">4</button>
+<button class="pagination-button">Next</button>
 ```
 
 ```css {copy:false} {footer:false} {title:styles.css}
-.button {
+.pagination-button {
   @apply inline-flex h-10 items-center justify-center gap-1.5 rounded-md border;@apply border-transparent bg-purple-600 px-4 text-center text-sm font-bold;@apply text-white transition duration-150';
   @apply md:rounded-xl;
   @apply dark:bg-purple-600 dark:hover:bg-purple-500;
@@ -171,8 +210,6 @@ function Button({ children }) {
 ```
 
 </CodeGroup>
-
-I have already wrote about this <QuickView href="/blog/tentang-nextjs-tailwind-css-dan-framer-motion#tailwind-css">here</QuickView> (under the "Beban ke HTML makin berat" section).
 
 ### !important Usage
 
