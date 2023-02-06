@@ -13,7 +13,7 @@ function CountUp({ from, to }: CountUpProps) {
     const node = nodeRef.current;
 
     const controls = animate(from, to, {
-      duration: 2.4,
+      duration: 1.4,
       ease: 'easeOut',
       onUpdate(value) {
         node.textContent = value.toFixed(0);
