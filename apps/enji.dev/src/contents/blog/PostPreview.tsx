@@ -47,9 +47,13 @@ function PostPreview({
         {pinned && (
           <m.div
             initial={{ x: 0, opacity: 0 }}
-            animate={{ x: '100%', opacity: [0, 1, 0] }}
-            transition={{ delay: 1.4, duration: 0.84, ease: 'easeInOut' }}
-            className="absolute -inset-x-16 inset-y-0 z-[-1]"
+            animate={{ x: '100%', opacity: [0, 1, 0, 0] }}
+            transition={{
+              delay: 1.4,
+              duration: 1.84,
+              ease: [0.85, 0, 0.15, 1],
+            }}
+            className="absolute -inset-x-64 inset-y-0 z-[-1]"
           >
             <div
               className={clsx(
@@ -107,7 +111,7 @@ function PostPreview({
           className={clsx(
             'flex items-center gap-2 text-xs text-slate-600',
             'dark:text-slate-400',
-            pinned ? 'mb-1' : 'mb-4'
+            pinned ? ['mb-4', 'sm:mb-1'] : 'mb-4'
           )}
         >
           <InsightIcon className={clsx('-mt-0.5 h-4 w-4')} />
@@ -127,17 +131,16 @@ function PostPreview({
             </span>
           </span>
         </div>
-        {!pinned && (
-          <div
-            className={clsx(
-              'text-accent-600 flex items-center gap-1 text-sm font-semibold',
-              'dark:text-accent-400'
-            )}
-          >
-            read more{' '}
-            <ChevronRightIcon className="group-hover:animate-bounce-x mt-1 h-3 w-3 transition" />
-          </div>
-        )}
+        <div
+          className={clsx(
+            'text-accent-600 items-center gap-1 text-sm font-semibold',
+            'dark:text-accent-400',
+            pinned ? ['flex', 'sm:hidden'] : 'flex'
+          )}
+        >
+          read more{' '}
+          <ChevronRightIcon className="group-hover:animate-bounce-x mt-1 h-3 w-3 transition" />
+        </div>
       </Link>
     </article>
   );
