@@ -25,7 +25,7 @@ function Post({
 }: PropsWithChildren<PostProps>) {
   // get og image urls
   const postOgImages = getPostOgImageUrl({
-    category,
+    category: caption || category,
     title,
     date,
     lang,
