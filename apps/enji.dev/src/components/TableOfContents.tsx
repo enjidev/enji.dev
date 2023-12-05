@@ -5,6 +5,7 @@ import useOnScroll from '@/hooks/useOnScroll';
 import useScrollSpy from '@/hooks/useScrollSpy';
 
 import type { TTableOfContentsItem } from '@/types';
+import Link from 'next/link';
 
 interface TableOfContentsLinkProps extends TTableOfContentsItem {
   active?: boolean;
@@ -17,7 +18,7 @@ function TableOfContentsLink({
   active = false,
 }: TableOfContentsLinkProps) {
   return (
-    <a
+    <Link
       className={clsx('toc-link', {
         'toc-link--depth-2': depth === 2,
         'toc-link--active': active,
@@ -25,7 +26,7 @@ function TableOfContentsLink({
       href={`#${slug}`}
     >
       {title}
-    </a>
+    </Link>
   );
 }
 
@@ -66,7 +67,7 @@ function TableOfContents({ items = [] }: TableOfContensProps) {
           initial={{ x: 16, opacity: 0 }}
           animate={isScrolled ? { x: 0, opacity: 1 } : { x: 16, opacity: 0 }}
         >
-          <a
+          <Link
             href="#skip-navigation"
             className={clsx(
               'border-divider-light text-accent-700 flex h-6 cursor-pointer items-center rounded-full border px-2 text-xs font-normal',
@@ -76,7 +77,7 @@ function TableOfContents({ items = [] }: TableOfContensProps) {
             onClick={handleScrollToTopClick}
           >
             scroll to top
-          </a>
+          </Link>
         </m.div>
       </div>
       <div className={clsx('relative p-3 py-4')}>

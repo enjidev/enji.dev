@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import Link from "next/link";
 
 import { TProjectFrontMatter } from '@/types';
 
@@ -20,14 +21,14 @@ function ProjectFooter({ githubUrl = '' }: ProjectFooterProps) {
       <div className={clsx('flex flex-wrap gap-x-1 gap-y-2')}>
         <div className={clsx('')}>
           Got any feedback?{' '}
-          <a
+          <Link
             href={githubUrl}
             target="_blank"
             rel="noreferrer nofollow"
             className={clsx('link')}
           >
             open an issue / discussion here.
-          </a>
+          </Link>
         </div>
       </div>
     </div>

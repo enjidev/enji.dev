@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import Link from "next/link";
 
 import Portal from '@/components/Portal';
 
@@ -9,7 +10,7 @@ interface SkipNavigationLinkProps {
 
 function SkipNavigationLink({ title, slug }: SkipNavigationLinkProps) {
   return (
-    <a
+    <Link
       href={slug}
       className={clsx(
         'absolute -mt-0.5 inline-flex h-9 items-center rounded-xl bg-slate-900 px-4 align-bottom text-[13px] font-semibold text-slate-200 transition',
@@ -21,7 +22,7 @@ function SkipNavigationLink({ title, slug }: SkipNavigationLinkProps) {
       )}
     >
       {title}
-    </a>
+    </Link>
   );
 }
 

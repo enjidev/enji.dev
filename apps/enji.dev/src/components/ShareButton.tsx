@@ -2,6 +2,7 @@ import { Menu } from '@headlessui/react';
 import { ShareType } from '@prisma/client';
 import clsx from 'clsx';
 import { m } from 'framer-motion';
+import Link from 'next/link';
 import { forwardRef } from 'react';
 
 import {
@@ -53,7 +54,7 @@ const ShareItemLink = forwardRef(
     { href, active, onClick, children }: ShareItemLinkProps,
     ref: Ref<HTMLAnchorElement>
   ) => (
-    <a
+    <Link
       ref={ref}
       href={href}
       onClick={onClick}
@@ -66,7 +67,7 @@ const ShareItemLink = forwardRef(
       )}
     >
       {children}
-    </a>
+    </Link>
   )
 );
 

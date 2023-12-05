@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import Link from "next/link";
 
 import { GitHubIcon, NpmIcon } from '@/components/Icons';
 
@@ -21,7 +22,7 @@ function ProjectMeta({ githubUrl = '', npmUrl = '' }: ProjectMetaProps) {
         )}
       >
         {githubUrl && (
-          <a
+          <Link
             href={githubUrl}
             target="_blank"
             rel="noreferrer nofollow"
@@ -29,10 +30,10 @@ function ProjectMeta({ githubUrl = '', npmUrl = '' }: ProjectMetaProps) {
           >
             <GitHubIcon className={clsx('h-5 w-5')} />
             GitHub
-          </a>
+          </Link>
         )}
         {npmUrl && (
-          <a
+          <Link
             href={npmUrl}
             target="_blank"
             rel="noreferrer nofollow"
@@ -40,7 +41,7 @@ function ProjectMeta({ githubUrl = '', npmUrl = '' }: ProjectMetaProps) {
           >
             <NpmIcon className={clsx('h-5 w-5')} />
             npm
-          </a>
+          </Link>
         )}
       </div>
     </div>
