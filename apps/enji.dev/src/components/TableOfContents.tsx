@@ -1,11 +1,11 @@
 import clsx from 'clsx';
 import { m } from 'framer-motion';
+import Link from 'next/link';
 
 import useOnScroll from '@/hooks/useOnScroll';
 import useScrollSpy from '@/hooks/useScrollSpy';
 
 import type { TTableOfContentsItem } from '@/types';
-import Link from 'next/link';
 
 interface TableOfContentsLinkProps extends TTableOfContentsItem {
   active?: boolean;
@@ -52,7 +52,7 @@ function TableOfContents({ items = [] }: TableOfContensProps) {
     >
       <div
         className={clsx(
-          'border-divider-light flex items-center justify-between border-b py-3 px-5 text-sm font-bold',
+          'border-divider-light flex items-center justify-between border-b px-5 py-3 text-sm font-bold',
           'dark:border-divider-dark'
         )}
       >
