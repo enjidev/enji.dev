@@ -5,12 +5,7 @@ import { m } from 'framer-motion';
 import Link from 'next/link';
 import { forwardRef } from 'react';
 
-import {
-  ExternalLink,
-  NoteIcon,
-  ShareIcon,
-  TwitterIcon,
-} from '@/components/Icons';
+import { ExternalLink, NoteIcon, ShareIcon, XIcon } from '@/components/Icons';
 
 import useCurrentUrl from '@/hooks/useCurrentUrl';
 
@@ -94,8 +89,8 @@ function ShareButton({ onItemClick = () => {} }: ShareButtonProps) {
     }
   };
 
-  const handleTwitter = () => {
-    onItemClick('TWITTER');
+  const handleX = () => {
+    onItemClick('X');
   };
 
   return (
@@ -126,7 +121,7 @@ function ShareButton({ onItemClick = () => {} }: ShareButtonProps) {
             >
               <div
                 className={clsx(
-                  'py-3 px-4 text-center text-[13px] text-lg font-bold'
+                  'px-4 py-3 text-center text-[13px] text-lg font-bold'
                 )}
               >
                 Share this on
@@ -135,12 +130,12 @@ function ShareButton({ onItemClick = () => {} }: ShareButtonProps) {
                 {({ active }) => (
                   <ShareItemLink
                     active={active}
-                    href={`https://twitter.com/intent/tweet?via=enjidev&url=${currentUrl}`}
-                    onClick={handleTwitter}
+                    href={`https://x.com/intent/tweet?via=enjidev&url=${currentUrl}`}
+                    onClick={handleX}
                   >
-                    <TwitterIcon className={clsx('h-4 w-4')} />
+                    <XIcon className={clsx('h-4 w-4')} />
                     <span className={clsx('flex items-center gap-2')}>
-                      Twitter
+                      X
                       <ExternalLink className={clsx('h-3 w-3')} />
                     </span>
                   </ShareItemLink>

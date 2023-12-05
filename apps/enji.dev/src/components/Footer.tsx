@@ -1,12 +1,7 @@
 import clsx from 'clsx';
 import Link from 'next/link';
 
-import {
-  ExternalLink,
-  FigmaIcon,
-  GitHubIcon,
-  TwitterIcon,
-} from '@/components/Icons';
+import { ExternalLink, FigmaIcon, GitHubIcon, XIcon } from '@/components/Icons';
 
 import dayjs from '@/utils/dayjs';
 
@@ -118,14 +113,14 @@ function FooterDescription() {
       <ul className={clsx('-ml-2 flex gap-1')}>
         <li>
           <Link
-            href="https://twitter.com/enjidev"
+            href="https://x.com/enjidev"
             target="_blank"
             rel="noreferrer nofollow"
             className={clsx('flex h-9 w-9 items-center justify-center')}
-            aria-label="My Twitter profile"
-            title="My Twitter profile"
+            aria-label="My X profile"
+            title="My X profile"
           >
-            <TwitterIcon className={clsx('h-5 w-5')} />
+            <XIcon className={clsx('h-5 w-5')} />
           </Link>
         </li>
         <li>

@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 
-import { GitHubIcon, TwitterIcon } from '@/components/Icons';
+import { GitHubIcon, XIcon } from '@/components/Icons';
 import NavIcon from '@/components/navigations/NavIcon';
 import NavIconQuickAccess from '@/components/navigations/NavIconQuickAccess';
 import NavLink from '@/components/navigations/NavLink';
@@ -22,7 +22,7 @@ function Navbar() {
 
   return (
     <header
-      className={clsx('fixed top-0 right-0 left-0 z-[1000]', 'fm:absolute')}
+      className={clsx('fixed left-0 right-0 top-0 z-[1000]', 'fm:absolute')}
     >
       <div
         className={clsx(
@@ -67,9 +67,9 @@ function Navbar() {
           <ul className={clsx('flex items-center')}>
             <li className={clsx('hidden', 'sm:block')}>
               <NavIcon
-                href="https://twitter.com/enjidev"
-                icon={<TwitterIcon className={clsx('h-5 w-5')} />}
-                title="Twitter"
+                href="https://x.com/enjidev"
+                icon={<XIcon className={clsx('h-5 w-5')} />}
+                title="X"
               />
             </li>
             <li className={clsx('hidden', 'sm:block')}>
