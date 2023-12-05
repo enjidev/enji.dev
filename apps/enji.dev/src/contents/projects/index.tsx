@@ -1,7 +1,8 @@
 import clsx from 'clsx';
+import Image from 'next/image';
 import { useState } from 'react';
 
-import { GitHubIcon, NpmIcon } from '@/components/Icons';
+import { ExternalLink, GitHubIcon, NpmIcon, WebIcon } from '@/components/Icons';
 import { SectionButton } from '@/components/sections/SectionButton';
 import SectionContent from '@/components/sections/SectionContent';
 import SectionTitle from '@/components/sections/SectionTitle';
@@ -10,7 +11,7 @@ import GitHubWireframe from '@/components/wireframes/GitHub';
 import NpmWireframe from '@/components/wireframes/Npm';
 
 function ProjectsContents() {
-  const [currentState, setCurrentState] = useState<'npm' | 'github'>('github');
+  const [currentState, setCurrentState] = useState<'npm' | 'github' | 'web'>('github');
 
   return (
     <>
@@ -41,6 +42,13 @@ function ProjectsContents() {
                 active={currentState === 'npm'}
                 onClick={() => setCurrentState('npm')}
               />
+              <SectionButton
+                title="Website"
+                icon={<WebIcon className={clsx('my-2 h-16 w-16')} />}
+                description="Visit the website to learn more about the package and its features."
+                active={currentState === 'web'}
+                onClick={() => setCurrentState('web')}
+              />
             </div>
           </div>
           <div className={clsx('w-full', 'lg:w-auto')}>
@@ -59,6 +67,11 @@ function ProjectsContents() {
                       title: 'tailwindcss-accent - npm',
                       isActive: currentState === 'npm',
                     },
+                    {
+                      icon: <WebIcon className="h-4 w-4" />,
+                      title: 'tailwindcss-accent.com',
+                      isActive: currentState === 'web',
+                    },
                   ]}
                 >
                   {currentState === 'github' && (
@@ -74,6 +87,14 @@ function ProjectsContents() {
                       packageName="tailwindcss-accent"
                       description="Adds accent colors for more dynamic and flexible color utilization."
                       isWithTypeScript
+                    />
+                  )}
+                  {currentState === 'web' && (
+                    <Image 
+                      src="/assets/images/placeholder.svg"
+                      alt="tailwindcss-accent"
+                      width={598}
+                      height={318}
                     />
                   )}
                 </AppWindow>
