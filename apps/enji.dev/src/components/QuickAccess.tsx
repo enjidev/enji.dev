@@ -5,7 +5,7 @@ import { useRef } from 'react';
 
 import ActionCenter from '@/components/ActionCenter';
 import Activity from '@/components/Activity';
-import { XIcon } from '@/components/Icons';
+import { CloseIcon } from '@/components/Icons';
 import NewPosts from '@/components/NewPosts';
 import TipShortcuts from '@/components/TipShortcuts';
 
