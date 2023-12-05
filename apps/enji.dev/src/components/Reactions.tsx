@@ -1,7 +1,7 @@
 import { ContentType } from '@prisma/client';
 import clsx from 'clsx';
 import { m, useAnimationControls } from 'framer-motion';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 import { useEffect } from 'react';
 
 import EmojiReaction from '@/components/EmojiReaction';
@@ -91,7 +91,7 @@ function Reactions({
   withCountView = true,
 }: ReactionsProps) {
   // currently, there is no way to get the 'slug' via a component property.
-  const { pathname } = useRouter();
+  const pathname = usePathname();
   const slug = pathname.split('/').reverse()[0];
 
   // current active section

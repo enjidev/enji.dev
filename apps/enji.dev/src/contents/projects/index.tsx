@@ -1,7 +1,8 @@
 import clsx from 'clsx';
+import Image from 'next/image';
 import { useState } from 'react';
 
-import { GitHubIcon, NpmIcon } from '@/components/Icons';
+import { GitHubIcon, NpmIcon, WebIcon } from '@/components/Icons';
 import { SectionButton } from '@/components/sections/SectionButton';
 import SectionContent from '@/components/sections/SectionContent';
 import SectionTitle from '@/components/sections/SectionTitle';
@@ -9,38 +10,89 @@ import AppWindow from '@/components/wireframes/AppWindow';
 import GitHubWireframe from '@/components/wireframes/GitHub';
 import NpmWireframe from '@/components/wireframes/Npm';
 
-function ProjectsContents() {
-  const [currentState, setCurrentState] = useState<'npm' | 'github'>('github');
+type TState = Exclude<
+  keyof NonNullable<TProjectsContentsProps>,
+  'sectionTitle'
+>;
+
+type TProjectsContentsProps = {
+  sectionTitle: {
+    title: string;
+    caption: string;
+    description: string;
+    button: {
+      title: string;
+      href: string;
+    };
+  };
+  github?: {
+    author: string;
+    license: string;
+    repository: string;
+    description?: string;
+  };
+  npm?: {
+    packageName: string;
+    description?: string;
+    isWithTypeScript?: boolean;
+  };
+  web?: {
+    image: string;
+    alt: string;
+    href?: string;
+  };
+};
+
+function ProjectsContents({
+  sectionTitle,
+  npm = undefined,
+  github = undefined,
+  web = undefined,
+}: TProjectsContentsProps) {
+  const [currentState, setCurrentState] = useState<TState>('github');
 
   return (
     <>
       <SectionTitle
-        title="The dynamic accent colors."
-        caption="tailwindcss-accent"
-        description="Add accent colors for dynamic, flexible color use in your Tailwind CSS project."
+        title={sectionTitle.title}
+        caption={sectionTitle.caption}
+        description={sectionTitle.description}
         button={{
-          title: 'learn more',
-          href: '/docs/tailwindcss-accent',
+          title: sectionTitle.button.title,
+          href: sectionTitle.button.href,
         }}
       />
       <SectionContent>
         <div className={clsx('flex', 'lg:gap-12')}>
           <div className={clsx('hidden flex-1 flex-col gap-3 pt-8', 'lg:flex')}>
             <div className={clsx('flex flex-col gap-3')}>
-              <SectionButton
-                title="Available on GitHub"
-                icon={<GitHubIcon className={clsx('my-2 h-16 w-16')} />}
-                description="Access powerful and flexible package on GitHub with MIT license."
-                active={currentState === 'github'}
-                onClick={() => setCurrentState('github')}
-              />
-              <SectionButton
-                title="npm package"
-                icon={<NpmIcon className={clsx('my-2 h-16 w-16')} />}
-                description="Install and use the package with ease thanks to its typed options."
-                active={currentState === 'npm'}
-                onClick={() => setCurrentState('npm')}
-              />
+              {github && (
+                <SectionButton
+                  title="Available on GitHub"
+                  icon={<GitHubIcon className={clsx('my-2 h-16 w-16')} />}
+                  description="Access powerful and flexible package on GitHub with MIT license."
+                  active={currentState === 'github'}
+                  onClick={() => setCurrentState('github')}
+                />
+              )}
+              {npm && (
+                <SectionButton
+                  title="npm package"
+                  icon={<NpmIcon className={clsx('my-2 h-16 w-16')} />}
+                  description="Install and use the package with ease thanks to its typed options."
+                  active={currentState === 'npm'}
+                  onClick={() => setCurrentState('npm')}
+                />
+              )}
+              {web && (
+                <SectionButton
+                  title="Website"
+                  icon={<WebIcon className={clsx('my-2 h-16 w-16')} />}
+                  description="Visit the website to learn more about the package and its features."
+                  active={currentState === 'web'}
+                  onClick={() => setCurrentState('web')}
+                />
+              )}
             </div>
           </div>
           <div className={clsx('w-full', 'lg:w-auto')}>
@@ -49,31 +101,46 @@ function ProjectsContents() {
                 <AppWindow
                   type="browser"
                   browserTabs={[
-                    {
+                    github !== undefined && {
+                      title: `${github.author}/${github.repository} - GitHub`,
                       icon: <GitHubIcon className="h-4 w-4" />,
-                      title: 'enjidev/tailwindcss-accent - GitHub',
                       isActive: currentState === 'github',
                     },
-                    {
+                    npm !== undefined && {
+                      title: `${npm.packageName} - npm`,
                       icon: <NpmIcon className="h-4 w-4" />,
-                      title: 'tailwindcss-accent - npm',
                       isActive: currentState === 'npm',
+                    },
+                    web !== undefined && {
+                      title: `${web.href ?? web.alt}`,
+                      icon: <WebIcon className="h-4 w-4" />,
+                      isActive: currentState === 'web',
                     },
                   ]}
                 >
-                  {currentState === 'github' && (
+                  {github && currentState === 'github' && (
                     <GitHubWireframe
-                      author="enjidev"
-                      license="MIT"
-                      repository="tailwindcss-accent"
-                      description="Adds accent colors for more dynamic and flexible color utilization."
+                      author={github.author}
+                      license={github.license}
+                      repository={github.repository}
+                      description={
+                        github.description ?? sectionTitle.description
+                      }
                     />
                   )}
-                  {currentState === 'npm' && (
+                  {npm && currentState === 'npm' && (
                     <NpmWireframe
-                      packageName="tailwindcss-accent"
-                      description="Adds accent colors for more dynamic and flexible color utilization."
-                      isWithTypeScript
+                      packageName={npm.packageName}
+                      description={npm.description ?? sectionTitle.description}
+                      isWithTypeScript={npm.isWithTypeScript}
+                    />
+                  )}
+                  {web && currentState === 'web' && (
+                    <Image
+                      src={web.image}
+                      alt={web.alt}
+                      width={598}
+                      height={318}
                     />
                   )}
                 </AppWindow>

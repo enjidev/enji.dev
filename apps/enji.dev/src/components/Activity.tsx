@@ -86,7 +86,7 @@ function ActivityItem({
         {contentType.replace('POST', 'BLOG POST')}
       </span>
       <span>was shared</span>
-      {type === 'TWITTER' && <span>to Twitter!</span>}
+      {type === 'TWITTER' && <span>to X!</span>}
     </div>
   );
 }

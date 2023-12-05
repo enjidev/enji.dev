@@ -33,7 +33,7 @@ function ButtonContactMe() {
 
 function ButtonResume() {
   return (
-    <a
+    <Link
       target="_blank"
       rel="noreferrer nofollow"
       href="https://www.figma.com/community/file/1176377524040948926"
@@ -41,7 +41,7 @@ function ButtonResume() {
     >
       <DocumentIcon className={clsx('h-5 w-5')} />
       RESUME
-    </a>
+    </Link>
   );
 }
 

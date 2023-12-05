@@ -11,7 +11,31 @@ function Projects() {
       }}
       headerImage={<HeaderImage />}
     >
-      <ProjectsContents />
+      <ProjectsContents
+        sectionTitle={{
+          title: 'The dynamic accent colors.',
+          caption: 'tailwindcss-accent',
+          description:
+            'Add accent colors for dynamic, flexible color use in your Tailwind CSS project.',
+          button: {
+            title: 'learn more',
+            href: '/docs/tailwindcss-accent',
+          },
+        }}
+        github={{
+          author: 'enjidev',
+          license: 'MIT',
+          repository: 'tailwindcss-accent',
+          description:
+            'Adds accent colors for more dynamic and flexible color utilization.',
+        }}
+        npm={{
+          packageName: 'tailwindcss-accent',
+          description:
+            'Adds accent colors for more dynamic and flexible color utilization.',
+          isWithTypeScript: true,
+        }}
+      />
     </Page>
   );
 }

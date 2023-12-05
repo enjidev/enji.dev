@@ -1,6 +1,8 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
 
+import Image from 'next/image';
+
 import { formatLang } from '@/helpers/post';
 
 import type { TPageOgImage, TPostOgImage } from '@/types';
@@ -145,11 +147,12 @@ export function PostOgImage({
       )}
 
       <div style={styles.author}>
-        <img
-          width="48"
-          height="48"
+        <Image
           src="https://github.com/enjidev.png?size=48"
           style={styles.authorAvatar}
+          width={48}
+          height={48}
+          alt="enjidev"
         />
         <div style={styles.authorName}>@enjidev</div>
 
@@ -211,11 +214,12 @@ export function PageOgImage({
       )}
 
       <div style={styles.author}>
-        <img
-          width="48"
-          height="48"
+        <Image
           src="https://github.com/enjidev.png?size=48"
           style={styles.authorAvatar}
+          width={48}
+          height={48}
+          alt="enjidev"
         />
         <div style={styles.authorName}>@enjidev</div>
       </div>

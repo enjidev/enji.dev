@@ -5,7 +5,7 @@ import { useRef } from 'react';
 
 import ActionCenter from '@/components/ActionCenter';
 import Activity from '@/components/Activity';
-import { XIcon } from '@/components/Icons';
+import { CloseIcon } from '@/components/Icons';
 import NewPosts from '@/components/NewPosts';
 import TipShortcuts from '@/components/TipShortcuts';
 
@@ -58,13 +58,13 @@ function QuickAccess() {
               title="Close Quick Access"
               onClick={() => setQuickAccessOpen(false)}
             >
-              <XIcon className={clsx('h-5 w-5')} />
+              <CloseIcon className={clsx('h-5 w-5')} />
             </button>
           </div>
           <div
             data-accent="violet"
             className={clsx(
-              'fixed left-2 right-2 bottom-0 top-20 flex flex-col gap-6',
+              'fixed bottom-0 left-2 right-2 top-20 flex flex-col gap-6',
               'sm:left-auto sm:right-6 sm:top-24 sm:w-[320px]'
             )}
           >
@@ -79,7 +79,7 @@ function QuickAccess() {
             </div>
             <div
               className={clsx(
-                'fixed left-8 bottom-10 hidden w-[320px]',
+                'fixed bottom-10 left-8 hidden w-[320px]',
                 'md:block'
               )}
             >

@@ -1,25 +1,20 @@
 import clsx from 'clsx';
 import Link from 'next/link';
 
-import {
-  ExternalLink,
-  FigmaIcon,
-  GitHubIcon,
-  TwitterIcon,
-} from '@/components/Icons';
+import { ExternalLink, FigmaIcon, GitHubIcon, XIcon } from '@/components/Icons';
 
 import dayjs from '@/utils/dayjs';
 
 function LastUpdate() {
   return (
-    <a
+    <Link
       href="https://github.com/enjidev/enji.dev"
       target="_blank"
       rel="noreferrer nofollow"
       className={clsx('hover:underline')}
     >
       <span>see the recent update on GitHub</span>
-    </a>
+    </Link>
   );
 }
 
@@ -55,7 +50,7 @@ function FooterLink({
   }
 
   return (
-    <a
+    <Link
       href={href}
       target="_blank"
       rel="noreferrer nofollow"
@@ -64,7 +59,7 @@ function FooterLink({
       {title}
       <ExternalLink className={clsx('h-3.5 w-3.5')} />
       {label && <span className={clsx('footer-link__label')}>{label}</span>}
-    </a>
+    </Link>
   );
 }
 
@@ -117,19 +112,19 @@ function FooterDescription() {
       </p>
       <ul className={clsx('-ml-2 flex gap-1')}>
         <li>
-          <a
-            href="https://twitter.com/enjidev"
+          <Link
+            href="https://x.com/enjidev"
             target="_blank"
             rel="noreferrer nofollow"
             className={clsx('flex h-9 w-9 items-center justify-center')}
-            aria-label="My Twitter profile"
-            title="My Twitter profile"
+            aria-label="My X profile"
+            title="My X profile"
           >
-            <TwitterIcon className={clsx('h-5 w-5')} />
-          </a>
+            <XIcon className={clsx('h-5 w-5')} />
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="https://github.com/enjidev"
             target="_blank"
             rel="noreferrer nofollow"
@@ -138,10 +133,10 @@ function FooterDescription() {
             title="My GitHub profile"
           >
             <GitHubIcon className={clsx('h-5 w-5')} />
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="https://figma.com/@enjidev"
             target="_blank"
             rel="noreferrer nofollow"
@@ -150,7 +145,7 @@ function FooterDescription() {
             title="My Figma profile"
           >
             <FigmaIcon className={clsx('h-5 w-5')} />
-          </a>
+          </Link>
         </li>
       </ul>
     </div>

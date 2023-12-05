@@ -11,19 +11,19 @@
     "lint": "eslint src"
   },
   "dependencies": {
-    "acorn": "^8.8.1",
+    "acorn": "^8.11.2",
     "acorn-jsx": "^5.3.2",
     "front-matter": "^4.0.2",
-    "remark-frontmatter": "^4.0.1",
-    "remark-gfm": "^3.0.1",
-    "slug": "^8.2.2",
-    "zod": "^3.20.2"
+    "remark-frontmatter": "^5.0.0",
+    "remark-gfm": "^4.0.0",
+    "slug": "^8.2.3",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
-    "@types/slug": "^5.0.3",
+    "@types/slug": "^5.0.7",
     "eslint-config-typescript": "workspace:*",
     "tsconfig": "workspace:*",
-    "tsup": "^6.5.0",
-    "unified": "^10.1.2"
+    "tsup": "^8.0.1",
+    "unified": "^11.0.4"
   }
 }

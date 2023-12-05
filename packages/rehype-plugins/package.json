@@ -11,13 +11,13 @@
     "lint": "eslint src"
   },
   "dependencies": {
-    "rehype-prism-plus": "^1.5.0",
-    "unist-util-visit": "^4.1.1"
+    "rehype-prism-plus": "^1.6.3",
+    "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
     "eslint-config-typescript": "workspace:*",
     "tsconfig": "workspace:*",
-    "tsup": "^6.5.0",
-    "unified": "^10.1.2"
+    "tsup": "^8.0.1",
+    "unified": "^11.0.4"
   }
 }

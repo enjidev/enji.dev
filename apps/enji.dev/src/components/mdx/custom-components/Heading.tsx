@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import Link from "next/link";
 
 import { HashtagIcon } from '@/components/Icons';
 
@@ -21,14 +22,14 @@ export function H2({ children }: Props) {
       data-ss-mt={96}
       className={clsx('mdx-heading mdx-heading--h2 group')}
     >
-      <a
+      <Link
         href={`#${slug}`}
         className={clsx('mdx-heading__anchor group-hover:opacity-100')}
         aria-labelledby={slug}
         title={`Link to ${children}`}
       >
         <HashtagIcon />
-      </a>
+      </Link>
       <span>{children}</span>
     </h2>
   );
@@ -44,13 +45,13 @@ export function H3({ children }: Props) {
       data-ss-mt={96}
       className={clsx('mdx-heading mdx-heading--h3 group')}
     >
-      <a
+      <Link
         href={`#${slug}`}
         className={clsx('mdx-heading__anchor group-hover:opacity-100')}
         aria-labelledby={slug}
       >
         <HashtagIcon />
-      </a>
+      </Link>
       <span>{children}</span>
     </h3>
   );
