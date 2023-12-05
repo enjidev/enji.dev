@@ -4,7 +4,7 @@ import { useState } from 'react';
 function AccentDemo() {
   const accents = ['violet', 'red', 'blue', 'orange', 'green', 'pink'] as const;
 
-  const [accent, setAccent] = useState<typeof accents[number]>('violet');
+  const [accent, setAccent] = useState<(typeof accents)[number]>('violet');
 
   const handleClick = () => {
     const newAccent = accents[accents.indexOf(accent) + 1] || accents[0];
@@ -16,7 +16,7 @@ function AccentDemo() {
     setAccent(newAccent);
   };
 
-  const getButtonText = (color: typeof accents[number]): string => {
+  const getButtonText = (color: (typeof accents)[number]): string => {
     switch (color) {
       case 'violet':
         return `This is perfect 👌`;
