@@ -1,0 +1,100 @@
+---
+title: Mastering Object-Oriented CSS (OOCSS) 🎨
+description: Proyek freelance, workspace, content creation, personal website dan lain-lain.
+date: '2023-01-02'
+lang: id
+tags:
+  - endofyear
+  - retrospective
+category: story
+caption: Best Practices
+---
+
+import { DnD, Dont, Do } from '@/components/mdx/TIL';
+import CodeGroup from '@/components/mdx/CodeGroup';
+
+## Introduction
+
+As a full stack developer dedicated to crafting scalable and maintainable front-end code, I have found Object-Oriented CSS (OOCSS) to be a game-changer in modern web development.
+
+In this blog post, I will provide a comprehensive exploration of OOCSS, including its principles, practical examples, and its usage in real-world scenarios.
+
+By the end of this guide, you'll have a solid understanding of how OOCSS can revolutionize your CSS workflow and boost your productivity.
+
+---
+
+## Understanding OOCSS
+
+Object-Oriented CSS (OOCSS) is a methodology that promotes a modular and reusable approach to styling web interfaces.
+
+It emphasizes the separation of concerns by dividing the structural components (objects) from their visual aspects (skins).
+
+This separation allows for greater flexibility, code efficiency, and easier maintenance.
+
+---
+
+## Example of OOCSS usage
+
+Let's consider a common UI component: a button.
+
+In OOCSS, we would define a button object class that encapsulates the structural properties, such as `padding`, `borders`, and `positioning`.
+
+We would then create separate skin classes to style the button, such as `primary`, `secondary`, and `outlined`.
+
+This separation allows us to reuse the button object with different skins throughout the application.
+
+<CodeGroup variant="file">
+
+```html {title:index.html}
+<button class="button button--primary">Submit</button>
+<button class="button button--secondary">Cancel</button>
+```
+
+```css {title:styles.css}
+.button {
+  /* Object styles (structure) */
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.button--primary {
+  /* Skin styles (visual) */
+  background-color: #3498db;
+  color: #fff;
+}
+
+.button--secondary {
+  /* Skin styles (visual) */
+  background-color: #e74c3c;
+  color: #fff;
+}
+```
+
+</CodeGroup>
+
+---
+
+## Practical Usage of OOCSS
+
+OOCSS provides several benefits in real-world scenarios:
+
+- **Code Reusability**: OOCSS promotes the creation of modular, reusable code. By separating structure from skin, we can easily reuse object classes across different components, reducing code duplication and improving efficiency.
+- **Consistency and Scalability**: With OOCSS, we establish a consistent approach to styling. By defining reusable object classes and separate skin classes, we ensure uniformity and maintainability throughout the project. OOCSS allows for easy scalability, enabling developers to add or modify styles without affecting the underlying structure.
+- **Collaboration and Teamwork**: OOCSS fosters collaboration among developers by promoting a modular and organized code structure. With shared naming conventions and separation of concerns, team members can work efficiently on different components without conflicts or unwanted side effects.
+
+---
+
+## Conclusion
+
+Object-Oriented CSS (OOCSS) offers a powerful methodology for creating scalable and maintainable CSS code.
+
+By separating structure and skin, we achieve code reusability, consistency, and collaboration.
+
+OOCSS is widely used in modern web development, empowering developers to build flexible and efficient UI components.
+
+Embrace OOCSS and elevate your CSS workflow to new heights of productivity and code quality.
