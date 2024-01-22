@@ -20,7 +20,7 @@ function Header() {
             <HeaderTitle />
           </div>
           <div className={clsx('mt-6 md:mt-8')}>
-            <HeaderCta />
+            <HeaderCta isFree={false} />
           </div>
           <div className={clsx('mt-20 lg:mt-36')}>
             <HeaderTechStack />
