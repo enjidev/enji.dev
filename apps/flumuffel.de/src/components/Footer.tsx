@@ -13,7 +13,7 @@ import dayjs from '@/utils/dayjs';
 function LastUpdate() {
   return (
     <a
-      href="https://github.com/enjidev/enji.dev"
+      href="https://github.com/enjidev/flumuffel.de"
       target="_blank"
       rel="noreferrer nofollow"
       className={clsx('hover:underline')}
@@ -225,7 +225,7 @@ function Footer() {
                     },
                     {
                       title: 'Source Code',
-                      href: 'https://github.com/enjidev/enji.dev',
+                      href: 'https://github.com/enjidev/flumuffel.de',
                       isInternal: false,
                     },
                     {

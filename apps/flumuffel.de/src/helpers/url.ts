@@ -1,7 +1,7 @@
 export const getBaseUrl = () => {
   switch (process.env.NEXT_PUBLIC_VERCEL_ENV) {
     case 'production':
-      return 'https://www.enji.dev';
+      return 'https://www.flumuffel.de';
     case 'preview':
       return `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`;
     default:
