@@ -28,7 +28,7 @@ function HeaderTechStack() {
         animate={animation.show}
         transition={{ delay: 0.6 }}
       >
-        current favorite tech stack/tools:
+        aktueller Lieblings-Tech-Stack/-Tools:
       </m.p>
       <m.ul
         className={clsx(

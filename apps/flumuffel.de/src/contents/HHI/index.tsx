@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 
-import Contents from '@/contents/TIL/Contents.mdx';
+import Contents from '@/contents/HHI/Contents.mdx';
 
 function TILContents() {
   return (

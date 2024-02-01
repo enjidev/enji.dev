@@ -43,7 +43,7 @@ function ActivityItem({
 
     return (
       <div className={clsx('flex flex-wrap items-baseline gap-x-1')}>
-        <span>the</span>
+        <span>Es wurde</span>
         <span
           className={clsx(
             'text-accent-600 font-semibold',
@@ -52,10 +52,7 @@ function ActivityItem({
         >
           {contentTitle}
         </span>
-        <span className={clsx('lowercase')}>
-          {contentType.replace('POST', 'BLOG POST')}
-        </span>
-        <span>got new</span>
+        <span>mit folgender Reaktion</span>
         {count !== 1 && (
           <span
             className={clsx(
@@ -67,13 +64,14 @@ function ActivityItem({
           </span>
         )}
         <span>{reactionType}</span>
+        <span>geliked!</span>
       </div>
     );
   }
 
   return (
     <div className={clsx('flex flex-wrap items-baseline gap-x-1')}>
-      <span>the</span>
+      <span>der</span>
       <span
         className={clsx(
           'text-accent-600 font-semibold',
@@ -85,8 +83,8 @@ function ActivityItem({
       <span className={clsx('lowercase')}>
         {contentType.replace('POST', 'BLOG POST')}
       </span>
-      <span>was shared</span>
-      {type === 'TWITTER' && <span>to Twitter!</span>}
+      <span>wurde gerade</span>
+      {type === 'TWITTER' && <span>auf Twitter geteilt!</span>}
     </div>
   );
 }
@@ -128,10 +126,12 @@ function Activity({ onItemClick = () => {} }: ActivityProps) {
           className={clsx('text-sm text-slate-700', 'dark:text-slate-400')}
           variants={animation}
         >
-          nothing new at the moment.
+          Derzeit nichts neues.
         </m.div>
       );
     }
+
+    console.log(data);
 
     if (!Array.isArray(data)) {
       return (
@@ -139,7 +139,7 @@ function Activity({ onItemClick = () => {} }: ActivityProps) {
           className={clsx('text-sm text-slate-700', 'dark:text-slate-400')}
           variants={animation}
         >
-          an internal error occurred.
+          Ein Interner fehler ist aufgetreten.
         </m.div>
       );
     }
@@ -188,7 +188,7 @@ function Activity({ onItemClick = () => {} }: ActivityProps) {
       className={clsx('flex flex-1 flex-col gap-2')}
     >
       <m.div variants={animation} className={clsx('px-2 text-xl font-bold')}>
-        Recent Activities
+        Letzten Aktivitäten
       </m.div>
       <div
         className={clsx(

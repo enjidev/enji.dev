@@ -8,7 +8,7 @@ function Error404() {
   return (
     <>
       <Head>
-        <title>Page Not Found</title>
+        <title>Seite nicht gefunden</title>
         <link rel="icon" href="/favicon.ico" />
         <meta name="robots" content="noindex" />
       </Head>

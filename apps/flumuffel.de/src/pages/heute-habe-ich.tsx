@@ -1,5 +1,5 @@
-import TILContents from '@/contents/TIL';
-import HeaderImage from '@/contents/TIL/HeaderImage';
+import TILContents from '@/contents/HHI';
+import HeaderImage from '@/contents/HHI/HeaderImage';
 import Page from '@/contents-layouts/Page';
 
 function TIL() {

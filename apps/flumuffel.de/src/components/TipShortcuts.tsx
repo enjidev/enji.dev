@@ -10,19 +10,19 @@ const shortcuts: Array<{
   keys: Array<string>;
 }> = [
   {
-    title: 'Open Quick Access',
+    title: 'Öffne Quick Menu',
     keys: ['Q'],
   },
   {
-    title: 'Close Quick Access',
+    title: 'Schliesse Quick Menü',
     keys: ['Q', 'Esc'],
   },
   {
-    title: 'Toggle Dark Mode',
+    title: 'Dark Modus ändern',
     keys: ['D'],
   },
   {
-    title: 'Toggle Focus',
+    title: 'Focus Modus ändern',
     keys: ['F'],
   },
 ];
@@ -49,10 +49,10 @@ function TipShortcuts() {
     >
       <div className={clsx('mb-4 flex items-center gap-4 text-xl font-bold')}>
         <KeyboardIcon className={clsx('h-8 w-8')} />
-        TIP: Shortcuts
+        TIPP: Tastenkürzel
       </div>
       <p className={clsx('mb-4 text-sm text-slate-700', 'dark:text-slate-400')}>
-        Navigate the site with ease using keyboard shortcuts.
+        Navigiere mithilfe von Tastaturkürzeln ganz einfach auf der Website.
       </p>
       <div className={clsx('flex flex-col text-[13px]')}>
         {shortcuts.map(({ title, keys }) => (
@@ -71,7 +71,7 @@ function TipShortcuts() {
               {keys.map((key, i) => (
                 <Fragment key={key}>
                   <Kbd>{key}</Kbd>
-                  {i !== keys.length - 1 && <span>or</span>}
+                  {i !== keys.length - 1 && <span>oder</span>}
                 </Fragment>
               ))}
             </div>

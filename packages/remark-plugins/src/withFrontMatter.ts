@@ -13,7 +13,7 @@ const BaseFrontMatter = z.object({
 
 const PostFrontMatter = z.object({
   date: z.string().regex(dateRegex, 'Date format MUST be YYYY-MM-DD'),
-  lang: z.enum(['id', 'en']),
+  lang: z.enum(['de', 'en']),
   tags: z.array(z.string()).min(2).max(5),
   category: z.string(),
 });

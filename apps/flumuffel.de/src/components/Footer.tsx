@@ -13,7 +13,7 @@ import dayjs from '@/utils/dayjs';
 function LastUpdate() {
   return (
     <a
-      href="https://github.com/enjidev/flumuffel.de"
+      href="https://github.com/flumuffel/flumuffel.de"
       target="_blank"
       rel="noreferrer nofollow"
       className={clsx('hover:underline')}
@@ -26,7 +26,7 @@ function LastUpdate() {
 interface FooterLinkProps {
   title: string;
   href: string;
-  label?: 'new' | 'soon';
+  label?: 'neu' | 'bald';
   isInternal?: boolean;
 }
 
@@ -36,7 +36,7 @@ function FooterLink({
   label = undefined,
   isInternal = true,
 }: FooterLinkProps) {
-  if (label === 'soon') {
+  if (label === 'bald') {
     return (
       <span className={clsx('footer-link footer-link--soon')}>
         {title}
@@ -109,47 +109,35 @@ function FooterDescription() {
           'dark:text-slate-400'
         )}
       >
-        About Me
+        Über mich
       </div>
       <p className={clsx('mb-4 font-normal leading-relaxed')}>
-        I&apos;m Enji, a <strong>front-end developer</strong> who loves
-        intuitive, clean and modern UI design.
+        Ich bin Flumuffel, ein <strong>Hobby Entwickler</strong> und <strong>Community Owner</strong>, welcher es liebt,
+neue Dinge zu erschaffen, die anderen eine Freude macht.
       </p>
       <ul className={clsx('-ml-2 flex gap-1')}>
         <li>
           <a
-            href="https://twitter.com/enjidev"
+            href="https://twitter.com/flumuffel"
             target="_blank"
             rel="noreferrer nofollow"
             className={clsx('flex h-9 w-9 items-center justify-center')}
-            aria-label="My Twitter profile"
-            title="My Twitter profile"
+            aria-label="Mein Twitter Profil"
+            title="Mein Twitter Profil"
           >
             <TwitterIcon className={clsx('h-5 w-5')} />
           </a>
         </li>
         <li>
           <a
-            href="https://github.com/enjidev"
+            href="https://github.com/flumuffel"
             target="_blank"
             rel="noreferrer nofollow"
             className={clsx('flex h-9 w-9 items-center justify-center')}
-            aria-label="My GitHub profile"
-            title="My GitHub profile"
+            aria-label="Mein GitHub Profil"
+            title="Mein GitHub Profil"
           >
             <GitHubIcon className={clsx('h-5 w-5')} />
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://figma.com/@enjidev"
-            target="_blank"
-            rel="noreferrer nofollow"
-            className={clsx('flex h-9 w-9 items-center justify-center')}
-            aria-label="My Figma profile"
-            title="My Figma profile"
-          >
-            <FigmaIcon className={clsx('h-5 w-5')} />
           </a>
         </li>
       </ul>
@@ -178,60 +166,65 @@ function Footer() {
               )}
             >
               <div className={clsx('flex', 'sm:gap-16')}>
-                <FooterGroup
-                  title="Work"
+                {/* <FooterGroup
+                  title="Ich"
                   links={[
-                    { title: 'Contact', href: '/work/contact' },
-                    { title: 'Experience', href: '/work/experience' },
+                    { title: 'Kontaktieren', href: '/ich/kontaktieren' },
+                    { title: 'Erfahrungen', href: '/ich/erfahrungen' },
                     {
                       title: 'Services',
-                      href: '/work/services',
-                      label: 'soon',
+                      href: '/ich/services',
+                      label: 'bald',
                     },
                     {
                       title: 'Skills and Tools',
-                      href: '/work/skills-and-tools',
+                      href: '/ich/skills-and-tools',
                     },
-                    { title: 'Studio', href: '/work/studio' },
                   ]}
-                />
+                /> */}
                 <FooterGroup
-                  title="Learn"
+                  title="flumuffel.de"
                   links={[
+                    // {
+                    //   title: 'Docs',
+                    //   href: '/docs',
+                    // },
                     {
-                      title: 'Docs',
-                      href: '/docs',
+                      title: 'Projekte',
+                      href: '/projekte',
                     },
                     {
-                      title: 'Personal Blog',
+                      title: 'Persönlicher Blog',
                       href: '/blog',
                     },
                     {
-                      title: 'T.I.L',
-                      href: '/today-i-learned',
-                      label: 'new',
+                      title: 'HHI',
+                      href: '/heute-habe-ich',
+                      label: 'neu',
                     },
                   ]}
                 />
               </div>
               <div className={clsx('flex', 'sm:gap-16')}>
                 <FooterGroup
-                  title="This Site"
+                  title="Andere Seiten"
                   links={[
                     {
-                      title: 'Design Concept',
-                      href: 'https://www.figma.com/community/file/1176392613303840973',
+                      title: 'PiriFlix',
+                      href: 'https://piriflix.flumuffe.de',
                       isInternal: false,
+                      label: 'neu',
                     },
                     {
-                      title: 'Source Code',
-                      href: 'https://github.com/enjidev/flumuffel.de',
+                      title: 'Watch Together',
+                      href: 'https://watch.flumuffe.de',
                       isInternal: false,
+                      label: 'neu',
                     },
-                    {
-                      title: 'Credits',
-                      href: '/credits',
-                    },
+                    // {
+                    //   title: 'Credits',
+                    //   href: '/credits',
+                    // },
                   ]}
                 />
               </div>
@@ -245,10 +238,10 @@ function Footer() {
           )}
         >
           <div className={clsx('font-semibold')}>
-            &copy; {dayjs().format('YYYY')}, Enji Kusnadi
+            &copy; {dayjs().format('YYYY')}, Flumuffel
           </div>
           <div className={clsx('text-slate-500', 'dark:text-slate-400')}>
-            <LastUpdate />
+            {/* <LastUpdate /> */}
           </div>
         </div>
       </div>

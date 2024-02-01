@@ -43,7 +43,7 @@ function TableOfContents({ items = [] }: TableOfContensProps) {
 
   return (
     <nav
-      aria-label="Page table of contents"
+      aria-label="Inhaltsverzeichnis der Seite"
       className={clsx(
         'border-divider-light rounded-xl border bg-white',
         'dark:border-divider-dark dark:bg-[#161e31]'
@@ -59,8 +59,7 @@ function TableOfContents({ items = [] }: TableOfContensProps) {
           className={clsx('text-slate-700', 'dark:text-slate-300')}
           id="table-of-contents"
         >
-          <span className={clsx('lg:hidden', 'xl:inline')}>Table of </span>
-          Contents
+          Inhalt
         </h2>
         <m.div
           initial={{ x: 16, opacity: 0 }}
@@ -75,7 +74,7 @@ function TableOfContents({ items = [] }: TableOfContensProps) {
             tabIndex={isScrolled ? 0 : -1}
             onClick={handleScrollToTopClick}
           >
-            scroll to top
+            nach ganz oben
           </a>
         </m.div>
       </div>

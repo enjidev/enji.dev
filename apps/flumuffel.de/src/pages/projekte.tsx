@@ -1,13 +1,13 @@
-import ProjectsContents from '@/contents/projects';
-import HeaderImage from '@/contents/projects/HeaderImage';
+import ProjectsContents from '@/contents/projekte';
+import HeaderImage from '@/contents/projekte/HeaderImage';
 import Page from '@/contents-layouts/Page';
 
 function Projects() {
   return (
     <Page
       frontMatter={{
-        title: 'Projects',
-        description: 'Showcase of my front-end related work.',
+        title: 'Projekte',
+        description: 'Hier findest du eine Übersicht über meine Projekte.',
       }}
       headerImage={<HeaderImage />}
     >

@@ -21,17 +21,17 @@ module.exports = {
       return defaultValue(0.9);
     }
 
-    if (path === '/projects') {
+    if (path === '/projekte') {
       return defaultValue(0.9);
     }
 
-    if (path === '/today-i-learned') {
+    if (path === '/heute-habe-ich') {
       return defaultValue(0.9);
     }
 
-    if (path.indexOf('/work') === 0) {
-      return defaultValue(0.8);
-    }
+    // if (path.indexOf('/ich') === 0) {
+    //   return defaultValue(0.8);
+    // }
 
     return defaultValue();
   },

@@ -68,7 +68,7 @@ function NewPosts({ onItemClick = () => {} }: NewPostsProps) {
                         'dark:bg-accent-800 dark:text-accent-100'
                       )}
                     >
-                      NEW POST &nbsp; 🔥
+                      NEUER POST &nbsp; 🔥
                     </span>
                     <span>{relativeTime(createdAt)}</span>
                   </div>

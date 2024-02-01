@@ -128,13 +128,13 @@ function ShareButton({ onItemClick = () => {} }: ShareButtonProps) {
                   'py-3 px-4 text-center text-[13px] text-lg font-bold'
                 )}
               >
-                Share this on
+                Teile das auf
               </div>
               <Menu.Item>
                 {({ active }) => (
                   <ShareItemLink
                     active={active}
-                    href={`https://twitter.com/intent/tweet?via=enjidev&url=${currentUrl}`}
+                    href={`https://twitter.com/intent/tweet?via=flumuffel&url=${currentUrl}`}
                     onClick={handleTwitter}
                   >
                     <TwitterIcon className={clsx('h-4 w-4')} />
@@ -155,7 +155,7 @@ function ShareButton({ onItemClick = () => {} }: ShareButtonProps) {
                 {({ active }) => (
                   <ShareItemButton active={active} onClick={handleCopy}>
                     <NoteIcon className={clsx('h-4 w-4')} />
-                    Copy link
+                    Kopiere den link
                   </ShareItemButton>
                 )}
               </Menu.Item>

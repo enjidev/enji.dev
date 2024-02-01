@@ -72,7 +72,7 @@ function PostPreview({
             )}
           >
             <PinIcon className={clsx('h-5 w-5')} />
-            Pinned Post
+            Angepinnter Beitrag
           </div>
         )}
         <div
@@ -121,14 +121,14 @@ function PostPreview({
               className={clsx('flex items-center gap-1.5')}
               title="Number of view(s)"
             >
-              <CountUp from={0} to={views} /> Views
+              <CountUp from={0} to={views} /> Aufrufe
             </span>
             <span>&middot;</span>
             <span
               className={clsx('flex items-center gap-1.5')}
               title="Number of share(s)"
             >
-              <CountUp from={0} to={shares} /> Shares
+              <CountUp from={0} to={shares} /> geteilt
             </span>
           </span>
         </div>
@@ -139,7 +139,7 @@ function PostPreview({
             pinned ? ['flex', 'sm:hidden'] : 'flex'
           )}
         >
-          read more{' '}
+          lies mehr{' '}
           <ChevronRightIcon className="group-hover:animate-bounce-x mt-1 h-3 w-3 transition" />
         </div>
       </Link>

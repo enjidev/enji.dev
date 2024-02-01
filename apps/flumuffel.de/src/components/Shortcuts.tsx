@@ -9,9 +9,9 @@ import useShortcut from '@/hooks/useShortcut';
 import useTheme from '@/hooks/useTheme';
 
 const focusToast = {
-  title: 'Focus Turned {STATUS}',
+  title: 'Focus Modus {STATUS}',
   message:
-    'Focus helps reduce distractions by hiding floating components, like navigation and reactions.',
+    'Focus trägt dazu bei, Ablenkungen zu reduzieren, indem schwebende Komponenten wie Navigation und Reaktionen ausgeblendet werden.',
 };
 
 function Shortcuts() {
@@ -39,7 +39,7 @@ function Shortcuts() {
     if (focusMode) {
       toastRef.current = toast.custom((t) => (
         <Toast
-          title={focusToast.title.replace('{STATUS}', 'On')}
+          title={focusToast.title.replace('{STATUS}', 'an')}
           message={focusToast.message}
           t={t}
         />
@@ -47,7 +47,7 @@ function Shortcuts() {
     } else {
       toastRef.current = toast.custom((t) => (
         <Toast
-          title={focusToast.title.replace('{STATUS}', 'Off')}
+          title={focusToast.title.replace('{STATUS}', 'aus')}
           message={focusToast.message}
           t={t}
         />

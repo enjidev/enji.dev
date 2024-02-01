@@ -4,6 +4,7 @@ import { getBaseUrl, getParams } from '@/helpers/url';
 import type { TPostFrontMatter, TPostOgImage } from '@/types';
 
 export const formatDate = (date: string) => {
+  dayjs.locale('de');
   if (dayjs(date).isValid()) {
     return dayjs(date, 'YYYY-MM-DD').format('MMMM D, YYYY');
   }
@@ -12,6 +13,7 @@ export const formatDate = (date: string) => {
 };
 
 export const formatDateRelative = (date: string) => {
+  dayjs.locale('de');
   if (dayjs(date).isValid()) {
     const days = dayjs().diff(date, 'days');
 
@@ -20,15 +22,15 @@ export const formatDateRelative = (date: string) => {
     }
 
     if (days > 1) {
-      return `${days} days ago`;
+      return `vor ${days} Tagen`;
     }
 
     if (days === 1) {
-      return `Yesterday`;
+      return `Gestern`;
     }
 
     if (days === 0) {
-      return `Today`;
+      return `Heute`;
     }
   }
 
@@ -36,6 +38,7 @@ export const formatDateRelative = (date: string) => {
 };
 
 export const formatDateISO = (date: string) => {
+  dayjs.locale('de');
   if (dayjs(date).isValid()) {
     return dayjs(date, 'YYYY-MM-DD').format();
   }
@@ -45,10 +48,10 @@ export const formatDateISO = (date: string) => {
 
 export const formatLang = (lang: TPostFrontMatter['lang']) => {
   switch (lang) {
-    case 'id':
-      return 'Bahasa Indonesia';
     case 'en':
       return 'English';
+    case 'de':
+      return 'Deutsch';
     default:
       return '';
   }
@@ -94,8 +97,8 @@ export const getPostStructuredData = ({
     author: [
       {
         '@type': 'Person',
-        name: 'Enji Kusnadi',
-        jobTitle: 'Front-End Developer',
+        name: 'Flumuffel',
+        jobTitle: 'Hobby Entwickler und Community Owner',
         url: 'https://www.flumuffel.de/about',
       },
     ],

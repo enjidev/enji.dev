@@ -6,7 +6,7 @@ import PostPreview from '@/contents/blog/PostPreview';
 
 import type { TPostFrontMatter } from '@/types';
 
-const PINNED_POST = 'tailwindcss-best-practices';
+const PINNED_POST = 'meine-neue-homepage';
 
 export type BlogContentsProps = {
   posts: Array<{

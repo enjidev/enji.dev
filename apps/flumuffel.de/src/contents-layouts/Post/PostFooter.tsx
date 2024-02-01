@@ -37,14 +37,14 @@ function PostFooter({ tags, category }: PostFooterProps) {
       )}
     >
       <div className={clsx('flex flex-wrap gap-x-1 gap-y-2')}>
-        Posted on
+        Gepostet auf
         <Link
           href="/blog"
           className={clsx('text-accent-600 font-bold', 'dark:text-accent-400')}
         >
           {category}
         </Link>
-        with tags:
+        mit den Tags:
         <div className={clsx('flex flex-wrap gap-1')}>
           {tags.map((tag) => (
             <Chip href="/blog" key={tag}>
