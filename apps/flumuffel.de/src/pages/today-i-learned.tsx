@@ -6,8 +6,8 @@ function TIL() {
   return (
     <Page
       frontMatter={{
-        title: 'Today I Learned',
-        description: `Short notes on front-end related topics.`,
+        title: 'Heute habe ich gelernt',
+        description: `Kurze Posts zu Themen die ich am Tag gemacht habe.`,
       }}
       headerImage={<HeaderImage />}
     >
