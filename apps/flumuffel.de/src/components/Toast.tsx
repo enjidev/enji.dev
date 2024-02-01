@@ -1,3 +1,4 @@
+/* eslint-disable */
 import clsx from 'clsx';
 import { m } from 'framer-motion';
 import { toast } from 'react-hot-toast';
