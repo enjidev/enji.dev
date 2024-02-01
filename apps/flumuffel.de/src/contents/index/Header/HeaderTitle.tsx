@@ -25,7 +25,7 @@ function HeaderTitle() {
         animate={animation.show}
         transition={{ delay: 0.1 }}
       >
-        Hey!
+        Heyho!
         <m.div
           initial={{
             opacity: 0,
