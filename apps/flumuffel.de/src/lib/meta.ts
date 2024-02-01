@@ -137,7 +137,7 @@ export const getContentActivity = async (): Promise<TContentActivity[]> => {
   const transformed = await jsonata(expression).evaluate(result);
 
 
-  return [transformed];
+  return transformed;
 };
 
 export const getNewPosts = async (): Promise<
