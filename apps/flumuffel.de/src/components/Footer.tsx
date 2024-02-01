@@ -211,13 +211,13 @@ function Footer() {
                   links={[
                     {
                       title: 'PiriFlix',
-                      href: 'https://piriflix.flumuffe.de',
+                      href: 'https://piriflix.flumuffel.de',
                       isInternal: false,
                       label: 'neu',
                     },
                     {
                       title: 'Watch Together',
-                      href: 'https://watch.flumuffe.de',
+                      href: 'https://watch.flumuffel.de',
                       isInternal: false,
                       label: 'neu',
                     },
