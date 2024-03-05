@@ -18,7 +18,7 @@ function LastUpdate() {
       rel="noreferrer nofollow"
       className={clsx('hover:underline')}
     >
-      <span>see the recent update on GitHub</span>
+      <span>This site created with Enjidevs repo on Github.com</span>
     </a>
   );
 }
@@ -245,7 +245,7 @@ function Footer() {
           )}
         >
           <div className={clsx('font-semibold')}>
-            &copy; {dayjs().format('YYYY')}, Enji Kusnadi
+            &copy; {dayjs().format('YYYY')}, Cryptodist.com
           </div>
           <div className={clsx('text-slate-500', 'dark:text-slate-400')}>
             <LastUpdate />
