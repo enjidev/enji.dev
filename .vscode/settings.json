@@ -1,7 +1,7 @@
 {
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll": true
+    "source.fixAll": "explicit"
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "files.associations": {
@@ -11,5 +11,10 @@
     "**/.next": true,
     "**/.turbo": true,
     "**/node_modules": true
+  },
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#46232F",
+    "titleBar.activeBackground": "#613041",
+    "titleBar.activeForeground": "#FCF9FA"
   }
 }
