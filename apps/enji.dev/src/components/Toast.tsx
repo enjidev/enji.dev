@@ -39,6 +39,7 @@ function Toast({ title, message, t }: ToastProps) {
       <div className={clsx('')}>
         <button
           type="button"
+          aria-label="Close"
           className={clsx('flex items-center justify-center rounded-lg')}
           onClick={() => toast.remove(t.id)}
         >
