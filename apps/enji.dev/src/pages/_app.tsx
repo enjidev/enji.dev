@@ -1,3 +1,5 @@
+import { GoogleAnalytics } from '@next/third-parties/google';
+
 import RootLayout from '@/components/layouts/Root';
 import WithNavigationFooter from '@/components/layouts/WithNavigationFooter';
 import Provider from '@/providers';
@@ -36,6 +38,7 @@ function App({ Component, pageProps, router }: AppPropsWithLayout) {
       <RootLayout>
         {/* eslint-disable-next-line react/jsx-props-no-spreading */}
         {getLayout(<Component {...pageProps} />)}
+        <GoogleAnalytics gaId="G-FB9QLDNKNN" />
       </RootLayout>
     </Provider>
   );
