@@ -1,5 +1,3 @@
-import { Analytics } from '@vercel/analytics/react';
-
 import RootLayout from '@/components/layouts/Root';
 import WithNavigationFooter from '@/components/layouts/WithNavigationFooter';
 import Provider from '@/providers';
@@ -38,7 +36,6 @@ function App({ Component, pageProps, router }: AppPropsWithLayout) {
       <RootLayout>
         {/* eslint-disable-next-line react/jsx-props-no-spreading */}
         {getLayout(<Component {...pageProps} />)}
-        <Analytics />
       </RootLayout>
     </Provider>
   );
