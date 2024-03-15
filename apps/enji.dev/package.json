@@ -57,7 +57,7 @@
     "cross-env": "^7.0.3",
     "eslint-config-next-typescript": "workspace:*",
     "mini-svg-data-uri": "^1.4.4",
-    "next-sitemap": "^3.1.43",
+    "next-sitemap": "^4.0.0",
     "postcss": "^8.4.20",
     "postcss-import": "^15.1.0",
     "prisma": "^4.8.1",
