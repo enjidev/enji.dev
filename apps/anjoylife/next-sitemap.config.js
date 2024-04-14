@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: 'https://www.enji.dev',
+  siteUrl: 'https://www.anjoylife.me',
   priority: 0.6,
   generateRobotsTxt: true,
   generateIndexSitemap: false,
