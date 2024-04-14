@@ -18,21 +18,22 @@ function Logo({ active = false }: LogoProps) {
           ]
         )}
       >
-        <div
+        <img src="assets/images/svgs/logo.svg" alt="Logo" />
+        {/* <div
           className={clsx(
             'h-3.5 w-0.5 rotate-12 rounded-full',
             'sm:h-3 sm:w-0.5',
             [active ? 'bg-white' : 'bg-accent-600 dark:bg-accent-400']
           )}
-        />
+        /> */}
       </div>
       <div className={clsx('-mt-1 hidden text-xl', 'sm:block')}>
         <span className={clsx('text-slate-900', 'dark:text-slate-200')}>
-          enji
+          anjoylife
         </span>
-        <span className={clsx('text-accent-600', 'dark:text-accent-500')}>
-          dev
-        </span>
+        {/* <span className={clsx('text-accent-600', 'dark:text-accent-500')}>
+          anjoylife
+        </span> */}
       </div>
     </div>
   );

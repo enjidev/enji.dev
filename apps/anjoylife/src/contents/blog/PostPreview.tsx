@@ -36,10 +36,10 @@ function PostPreview({
           'sm:mb-0 sm:rounded-2xl',
           pinned
             ? [
-                'border-divider-light',
-                'sm:border sm:p-4 md:mt-6 md:p-6',
-                'dark:border-divider-dark',
-              ]
+              'border-divider-light',
+              'sm:border sm:p-4 md:mt-6 md:p-6',
+              'dark:border-divider-dark',
+            ]
             : ['sm:p-4 md:p-6']
         )}
       >
