@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build --output public",
     "start": "next start",
     "lint": "next lint",
     "lint:all": "concurrently \"yarn:lint\" \"yarn:lint:types\" \"yarn:lint:style\"",
