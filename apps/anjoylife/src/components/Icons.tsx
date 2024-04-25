@@ -646,3 +646,36 @@ export function PnpmIcon(props: ComponentProps<'svg'>) {
     </svg>
   );
 }
+
+export function FlutterIcon(props: ComponentProps<'svg'>) {
+  return (
+    <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={100}
+    height={100}
+    viewBox="0 0 48 48"
+    fill="currentColor"
+    {...props}
+  >
+    <linearGradient
+      id="a"
+      x1={34.31}
+      x2={21.223}
+      y1={47.31}
+      y2={34.223}
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop offset={0} stopColor="#0176d0" />
+      <stop offset={0.454} stopColor="#0275ce" />
+      <stop offset={0.617} stopColor="#0472c7" />
+      <stop offset={0.733} stopColor="#076bbc" />
+      <stop offset={0.827} stopColor="#0d63ab" />
+      <stop offset={0.907} stopColor="#135895" />
+      <stop offset={0.933} stopColor="#16538c" />
+    </linearGradient>
+    <path fill="url(#a)" d="M37 44H25L14 33l6-6z" />
+    <path fill="#50e6ff" d="M5 24 25 4h12L11 30zM37 22 20 39l-6-6 11-11z" />
+    <path fill="#35c1f1" d="m14 33 6-6 6 6-6 6z" />
+  </svg>
+  );
+}

@@ -3,6 +3,7 @@ import { m } from 'framer-motion';
 
 import {
   FigmaIcon,
+  FlutterIcon,
   FramerMotionIcon,
   NextJsIcon,
   ReactIcon,
@@ -46,7 +47,7 @@ function HeaderTechStack() {
         </m.li>
         <m.li variants={animation}>
           <div className={clsx('transition duration-200 hover:text-[#61DAFB]')}>
-            <ReactIcon className={clsx('h-6 w-6')} />
+            <FlutterIcon className={clsx('h-6 w-6')} />
           </div>
         </m.li>
         <m.li variants={animation}>
