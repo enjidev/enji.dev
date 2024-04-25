@@ -6,7 +6,6 @@ import {
   FlutterIcon,
   FramerMotionIcon,
   NextJsIcon,
-  ReactIcon,
   TailwindCssIcon,
   TypeScriptIcon,
   VSCodeIcon,
