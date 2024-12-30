@@ -78,7 +78,7 @@ function PostPreview({
         <div
           className={clsx(
             'text-slate mb-2 flex flex-col gap-2 text-xs text-slate-500',
-            'dark:text-slate-400 md:mb-1'
+            'md:mb-1 dark:text-slate-400'
           )}
         >
           <div className={clsx('flex gap-1')}>

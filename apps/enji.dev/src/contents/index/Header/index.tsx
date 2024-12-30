@@ -10,7 +10,7 @@ function Header() {
     <header
       id="page-header"
       className={clsx(
-        'background-grid background-grid--fade-out pt-36 pb-20',
+        'background-grid background-grid--fade-out pb-20 pt-36',
         'lg:pb-28 lg:pt-52'
       )}
     >

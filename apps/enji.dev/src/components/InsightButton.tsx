@@ -47,7 +47,7 @@ function InsightButton({ views, shares, reactions }: InsightButtonProps) {
             >
               <div
                 className={clsx(
-                  'py-3 px-4 text-center text-[13px] text-lg font-bold'
+                  'px-4 py-3 text-center text-[13px] text-lg font-bold'
                 )}
               >
                 Insight

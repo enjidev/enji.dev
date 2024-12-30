@@ -26,7 +26,7 @@ function TodoItem({
       className={clsx(
         'pointer-events-none w-full select-none border p-6',
         'lg:w-96',
-        state.includes('effects') && ['rounded-xl '],
+        state.includes('effects') && ['rounded-xl'],
         state.includes('spacing') && [''],
         state.includes('typography') ? ['text-sm'] : ['font-serif'],
         state.includes('colors')
@@ -142,7 +142,7 @@ function TodoItem({
       <div
         className={clsx(
           'flex items-center',
-          state.includes('spacing') && ['gap-1 '],
+          state.includes('spacing') && ['gap-1'],
           state.includes('typography') && ['text-xs font-medium'],
           state.includes('colors') && ['']
         )}

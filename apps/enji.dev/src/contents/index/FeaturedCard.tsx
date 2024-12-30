@@ -24,14 +24,14 @@ function FeaturedCard({ icon, title, desc }: FeaturedCardProps) {
       />
       <div
         className={clsx(
-          'border-divider-light absolute inset-y-0 inset-x-8 z-[-1] border-l',
+          'border-divider-light absolute inset-x-8 inset-y-0 z-[-1] border-l',
           'dark:border-divider-dark'
         )}
       />
       <div className={clsx('-mt-0.5')}>
         <div
           className={clsx(
-            'mt-4 mr-2 ml-4 flex items-center gap-6 rounded-full bg-slate-100',
+            'ml-4 mr-2 mt-4 flex items-center gap-6 rounded-full bg-slate-100',
             'dark:bg-slate-800'
           )}
         >

@@ -69,8 +69,8 @@ function Quote() {
           >
             <span
               className={clsx(
-                'absolute -left-0.5 right-0 top-1 bottom-0 z-[-1] rounded-md bg-slate-100 px-1',
-                'lg:-left-1.5 lg:-right-0.5 lg:top-2 lg:bottom-0',
+                'absolute -left-0.5 bottom-0 right-0 top-1 z-[-1] rounded-md bg-slate-100 px-1',
+                'lg:-left-1.5 lg:-right-0.5 lg:bottom-0 lg:top-2',
                 'dark:bg-slate-800'
               )}
             />

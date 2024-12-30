@@ -89,7 +89,7 @@
       @apply relative;
 
       &::after {
-        @apply absolute left-2 right-2 bottom-1 border-b-2 border-dotted border-slate-600/50 content-[''];
+        @apply absolute bottom-1 left-2 right-2 border-b-2 border-dotted border-slate-600/50 content-[''];
         @apply dark:border-slate-400/50;
       }
     }
@@ -130,7 +130,7 @@
     @apply dark:bg-slate-800;
 
     &__indicator {
-      @apply absolute inset-x-0 bottom-0 h-0.5 rounded-full bg-accent-400;
+      @apply bg-accent-400 absolute inset-x-0 bottom-0 h-0.5 rounded-full;
       @apply dark:bg-accent-800;
     }
   }

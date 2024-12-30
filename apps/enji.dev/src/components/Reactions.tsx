@@ -69,7 +69,7 @@ function ReactionCounter({ count, children = null }: ReactionCounterProps) {
   return (
     <div
       className={clsx(
-        'relative flex h-6 items-center gap-1 overflow-hidden rounded-full bg-slate-200 py-1 px-2',
+        'relative flex h-6 items-center gap-1 overflow-hidden rounded-full bg-slate-200 px-2 py-1',
         'dark:bg-[#1d263a]'
       )}
     >
@@ -135,7 +135,7 @@ function Reactions({
   return (
     <m.div
       className={clsx(
-        'border-divider-light pointer-events-auto relative flex items-center justify-between rounded-xl border p-4 ',
+        'border-divider-light pointer-events-auto relative flex items-center justify-between rounded-xl border p-4',
         'dark:border-divider-dark'
       )}
       initial={{

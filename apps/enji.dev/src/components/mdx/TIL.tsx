@@ -110,7 +110,7 @@ export function Item({ children = null }: PropsWithChildren) {
         />
         <div
           className={clsx(
-            'absolute z-[-1] mt-4 -ml-2 w-8 border border-slate-700',
+            'absolute z-[-1] -ml-2 mt-4 w-8 border border-slate-700',
             'md:-ml-4 md:w-10 lg:w-12',
             'dark:border-slate-300'
           )}

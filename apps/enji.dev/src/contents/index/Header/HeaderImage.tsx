@@ -18,11 +18,11 @@ function HeaderImage() {
     >
       <div
         className={clsx(
-          'from-accent-400/20 via-accent-400/0 absolute top-0 right-0 h-[590px] w-[375px] rounded-full bg-gradient-to-t',
+          'from-accent-400/20 via-accent-400/0 absolute right-0 top-0 h-[590px] w-[375px] rounded-full bg-gradient-to-t',
           'dark:from-accent-600/10 dark:via-accent-600/0'
         )}
       >
-        <div className={clsx('absolute right-0 bottom-0 overflow-hidden')}>
+        <div className={clsx('absolute bottom-0 right-0 overflow-hidden')}>
           <m.div
             className={clsx('absolute z-[10]')}
             initial={{ opacity: 1 }}

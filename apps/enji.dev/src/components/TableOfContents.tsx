@@ -51,7 +51,7 @@ function TableOfContents({ items = [] }: TableOfContensProps) {
     >
       <div
         className={clsx(
-          'border-divider-light flex items-center justify-between border-b py-3 px-5 text-sm font-bold',
+          'border-divider-light flex items-center justify-between border-b px-5 py-3 text-sm font-bold',
           'dark:border-divider-dark'
         )}
       >

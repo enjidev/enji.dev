@@ -25,7 +25,7 @@ export function SectionButton({
         'dark:bg-slate-900',
         active
           ? ['border-accent-400', 'dark:border-accent-400']
-          : ['border-divider-light ', 'dark:border-divider-dark']
+          : ['border-divider-light', 'dark:border-divider-dark']
       )}
       onClick={onClick}
     >

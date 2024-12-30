@@ -34,7 +34,7 @@ function SkipNavigation({ skipTableOfContents = true }: SkipNavigationProps) {
     <Portal selector="#skip-navigation">
       <div
         className={clsx(
-          'pointer-events-none fixed left-0 right-0 -top-2 z-[1001] h-24 bg-gradient-to-b from-white px-4 pt-6 transition',
+          'pointer-events-none fixed -top-2 left-0 right-0 z-[1001] h-24 bg-gradient-to-b from-white px-4 pt-6 transition',
           ['opacity-0', 'focus-within:opacity-100'],
           'md:px-6',
           'dark:from-slate-900'

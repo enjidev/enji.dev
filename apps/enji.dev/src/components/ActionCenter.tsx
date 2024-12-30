@@ -88,7 +88,7 @@ function ActionCenter() {
                     : { rotate: [90.01, 0] }
                 }
                 transition={{ ease: 'easeOut', duration: 0.8 }}
-                className={clsx('absolute top-4 left-4 h-36 w-36 rounded-full')}
+                className={clsx('absolute left-4 top-4 h-36 w-36 rounded-full')}
               >
                 <m.div
                   animate={

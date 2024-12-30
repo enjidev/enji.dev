@@ -28,7 +28,7 @@ function PageHeader({
     <header
       id="page-header"
       className={clsx(
-        'background-grid background-grid--fade-out border-divider-light z-[900] mb-10 border-b pt-32 pb-10',
+        'background-grid background-grid--fade-out border-divider-light z-[900] mb-10 border-b pb-10 pt-32',
         'md:mb-0 md:border-none md:pb-20 md:pt-40',
         'dark:border-divider-dark'
       )}
@@ -44,7 +44,7 @@ function PageHeader({
             )}
           >
             <div className={clsx('content-wrapper relative h-full')}>
-              <div className={clsx('absolute right-0 -top-24 bottom-0')}>
+              <div className={clsx('absolute -top-24 bottom-0 right-0')}>
                 {headerImage}
               </div>
             </div>
