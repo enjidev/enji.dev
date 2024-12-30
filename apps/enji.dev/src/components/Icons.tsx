@@ -1,6 +1,6 @@
 import type { ComponentProps } from 'react';
 
-export function LightIcon(props: ComponentProps<'svg'>) {
+export function LightIcon({ ...props }: ComponentProps<'svg'>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -14,7 +14,7 @@ export function LightIcon(props: ComponentProps<'svg'>) {
   );
 }
 
-export function DarkIcon(props: ComponentProps<'svg'>) {
+export function DarkIcon({ ...props }: ComponentProps<'svg'>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -33,7 +33,7 @@ export function DarkIcon(props: ComponentProps<'svg'>) {
   );
 }
 
-export function SparklesIcon(props: ComponentProps<'svg'>) {
+export function SparklesIcon({ ...props }: ComponentProps<'svg'>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -46,7 +46,7 @@ export function SparklesIcon(props: ComponentProps<'svg'>) {
   );
 }
 
-export function HashtagIcon(props: ComponentProps<'svg'>) {
+export function HashtagIcon({ ...props }: ComponentProps<'svg'>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -64,7 +64,7 @@ export function HashtagIcon(props: ComponentProps<'svg'>) {
   );
 }
 
-export function ExternalLink(props: ComponentProps<'svg'>) {
+export function ExternalLink({ ...props }: ComponentProps<'svg'>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -86,7 +86,7 @@ export function ExternalLink(props: ComponentProps<'svg'>) {
   );
 }
 
-export function MailIcon(props: ComponentProps<'svg'>) {
+export function MailIcon({ ...props }: ComponentProps<'svg'>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -100,7 +100,7 @@ export function MailIcon(props: ComponentProps<'svg'>) {
   );
 }
 
-export function HeartIcon(props: ComponentProps<'svg'>) {
+export function HeartIcon({ ...props }: ComponentProps<'svg'>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -113,7 +113,7 @@ export function HeartIcon(props: ComponentProps<'svg'>) {
   );
 }
 
-export function ChevronRightIcon(props: ComponentProps<'svg'>) {
+export function ChevronRightIcon({ ...props }: ComponentProps<'svg'>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -126,7 +126,7 @@ export function ChevronRightIcon(props: ComponentProps<'svg'>) {
   );
 }
 
-export function CodeIcon(props: ComponentProps<'svg'>) {
+export function CodeIcon({ ...props }: ComponentProps<'svg'>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -143,7 +143,7 @@ export function CodeIcon(props: ComponentProps<'svg'>) {
   );
 }
 
-export function DocumentIcon(props: ComponentProps<'svg'>) {
+export function DocumentIcon({ ...props }: ComponentProps<'svg'>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -160,7 +160,7 @@ export function DocumentIcon(props: ComponentProps<'svg'>) {
   );
 }
 
-export function CalendarIcon(props: ComponentProps<'svg'>) {
+export function CalendarIcon({ ...props }: ComponentProps<'svg'>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -178,7 +178,7 @@ export function CalendarIcon(props: ComponentProps<'svg'>) {
   );
 }
 
-export function LanguageIcon(props: ComponentProps<'svg'>) {
+export function LanguageIcon({ ...props }: ComponentProps<'svg'>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -196,7 +196,7 @@ export function LanguageIcon(props: ComponentProps<'svg'>) {
   );
 }
 
-export function ClipboardIcon(props: ComponentProps<'svg'>) {
+export function ClipboardIcon({ ...props }: ComponentProps<'svg'>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -216,7 +216,7 @@ export function ClipboardIcon(props: ComponentProps<'svg'>) {
   );
 }
 
-export function NoteIcon(props: ComponentProps<'svg'>) {
+export function NoteIcon({ ...props }: ComponentProps<'svg'>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -233,7 +233,7 @@ export function NoteIcon(props: ComponentProps<'svg'>) {
   );
 }
 
-export function InfoIcon(props: ComponentProps<'svg'>) {
+export function InfoIcon({ ...props }: ComponentProps<'svg'>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -250,7 +250,7 @@ export function InfoIcon(props: ComponentProps<'svg'>) {
   );
 }
 
-export function WarningIcon(props: ComponentProps<'svg'>) {
+export function WarningIcon({ ...props }: ComponentProps<'svg'>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -267,7 +267,7 @@ export function WarningIcon(props: ComponentProps<'svg'>) {
   );
 }
 
-export function ErrorIcon(props: ComponentProps<'svg'>) {
+export function ErrorIcon({ ...props }: ComponentProps<'svg'>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -284,7 +284,7 @@ export function ErrorIcon(props: ComponentProps<'svg'>) {
   );
 }
 
-export function ShareIcon(props: ComponentProps<'svg'>) {
+export function ShareIcon({ ...props }: ComponentProps<'svg'>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -303,7 +303,7 @@ export function ShareIcon(props: ComponentProps<'svg'>) {
   );
 }
 
-export function InsightIcon(props: ComponentProps<'svg'>) {
+export function InsightIcon({ ...props }: ComponentProps<'svg'>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -322,7 +322,7 @@ export function InsightIcon(props: ComponentProps<'svg'>) {
   );
 }
 
-export function PinIcon(props: ComponentProps<'svg'>) {
+export function PinIcon({ ...props }: ComponentProps<'svg'>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -337,7 +337,7 @@ export function PinIcon(props: ComponentProps<'svg'>) {
   );
 }
 
-export function EyeSlash(props: ComponentProps<'svg'>) {
+export function EyeSlash({ ...props }: ComponentProps<'svg'>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -355,7 +355,7 @@ export function EyeSlash(props: ComponentProps<'svg'>) {
   );
 }
 
-export function EyeIcon(props: ComponentProps<'svg'>) {
+export function EyeIcon({ ...props }: ComponentProps<'svg'>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -373,7 +373,7 @@ export function EyeIcon(props: ComponentProps<'svg'>) {
   );
 }
 
-export function XCircleIcon(props: ComponentProps<'svg'>) {
+export function XCircleIcon({ ...props }: ComponentProps<'svg'>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -390,7 +390,7 @@ export function XCircleIcon(props: ComponentProps<'svg'>) {
   );
 }
 
-export function XIcon(props: ComponentProps<'svg'>) {
+export function XIcon({ ...props }: ComponentProps<'svg'>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -403,7 +403,7 @@ export function XIcon(props: ComponentProps<'svg'>) {
   );
 }
 
-export function CheckCircleIcon(props: ComponentProps<'svg'>) {
+export function CheckCircleIcon({ ...props }: ComponentProps<'svg'>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -420,7 +420,7 @@ export function CheckCircleIcon(props: ComponentProps<'svg'>) {
   );
 }
 
-export function QuickAccessIcon(props: ComponentProps<'svg'>) {
+export function QuickAccessIcon({ ...props }: ComponentProps<'svg'>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -437,7 +437,7 @@ export function QuickAccessIcon(props: ComponentProps<'svg'>) {
   );
 }
 
-export function KeyboardIcon(props: ComponentProps<'svg'>) {
+export function KeyboardIcon({ ...props }: ComponentProps<'svg'>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -453,7 +453,7 @@ export function KeyboardIcon(props: ComponentProps<'svg'>) {
   );
 }
 
-export function QuoteIcon(props: ComponentProps<'svg'>) {
+export function QuoteIcon({ ...props }: ComponentProps<'svg'>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -467,7 +467,7 @@ export function QuoteIcon(props: ComponentProps<'svg'>) {
   );
 }
 
-export function GitHubIcon(props: ComponentProps<'svg'>) {
+export function GitHubIcon({ ...props }: ComponentProps<'svg'>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -482,7 +482,7 @@ export function GitHubIcon(props: ComponentProps<'svg'>) {
   );
 }
 
-export function NpmIcon(props: ComponentProps<'svg'>) {
+export function NpmIcon({ ...props }: ComponentProps<'svg'>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -497,7 +497,7 @@ export function NpmIcon(props: ComponentProps<'svg'>) {
   );
 }
 
-export function TwitterIcon(props: ComponentProps<'svg'>) {
+export function TwitterIcon({ ...props }: ComponentProps<'svg'>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -512,7 +512,7 @@ export function TwitterIcon(props: ComponentProps<'svg'>) {
   );
 }
 
-export function TypeScriptIcon(props: ComponentProps<'svg'>) {
+export function TypeScriptIcon({ ...props }: ComponentProps<'svg'>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -527,7 +527,7 @@ export function TypeScriptIcon(props: ComponentProps<'svg'>) {
   );
 }
 
-export function ReactIcon(props: ComponentProps<'svg'>) {
+export function ReactIcon({ ...props }: ComponentProps<'svg'>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -542,7 +542,7 @@ export function ReactIcon(props: ComponentProps<'svg'>) {
   );
 }
 
-export function TailwindCssIcon(props: ComponentProps<'svg'>) {
+export function TailwindCssIcon({ ...props }: ComponentProps<'svg'>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -557,7 +557,7 @@ export function TailwindCssIcon(props: ComponentProps<'svg'>) {
   );
 }
 
-export function FramerMotionIcon(props: ComponentProps<'svg'>) {
+export function FramerMotionIcon({ ...props }: ComponentProps<'svg'>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -572,7 +572,7 @@ export function FramerMotionIcon(props: ComponentProps<'svg'>) {
   );
 }
 
-export function NextJsIcon(props: ComponentProps<'svg'>) {
+export function NextJsIcon({ ...props }: ComponentProps<'svg'>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -587,7 +587,7 @@ export function NextJsIcon(props: ComponentProps<'svg'>) {
   );
 }
 
-export function VSCodeIcon(props: ComponentProps<'svg'>) {
+export function VSCodeIcon({ ...props }: ComponentProps<'svg'>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -602,7 +602,7 @@ export function VSCodeIcon(props: ComponentProps<'svg'>) {
   );
 }
 
-export function FigmaIcon(props: ComponentProps<'svg'>) {
+export function FigmaIcon({ ...props }: ComponentProps<'svg'>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -617,7 +617,7 @@ export function FigmaIcon(props: ComponentProps<'svg'>) {
   );
 }
 
-export function YarnIcon(props: ComponentProps<'svg'>) {
+export function YarnIcon({ ...props }: ComponentProps<'svg'>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -632,7 +632,7 @@ export function YarnIcon(props: ComponentProps<'svg'>) {
   );
 }
 
-export function PnpmIcon(props: ComponentProps<'svg'>) {
+export function PnpmIcon({ ...props }: ComponentProps<'svg'>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

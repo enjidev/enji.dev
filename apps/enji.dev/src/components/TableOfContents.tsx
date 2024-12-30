@@ -30,7 +30,7 @@ function TableOfContentsLink({
 }
 
 interface TableOfContensProps {
-  items: Array<TTableOfContentsItem>;
+  items?: Array<TTableOfContentsItem>;
 }
 
 function TableOfContents({ items = [] }: TableOfContensProps) {

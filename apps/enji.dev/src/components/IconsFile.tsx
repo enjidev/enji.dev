@@ -1,6 +1,6 @@
 import type { ComponentProps } from 'react';
 
-export function JavaScriptIcon(props: ComponentProps<'svg'>) {
+export function JavaScriptIcon({ ...props }: ComponentProps<'svg'>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -15,7 +15,7 @@ export function JavaScriptIcon(props: ComponentProps<'svg'>) {
   );
 }
 
-export function TypeScriptIcon(props: ComponentProps<'svg'>) {
+export function TypeScriptIcon({ ...props }: ComponentProps<'svg'>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -30,7 +30,7 @@ export function TypeScriptIcon(props: ComponentProps<'svg'>) {
   );
 }
 
-export function HtmlIcon(props: ComponentProps<'svg'>) {
+export function HtmlIcon({ ...props }: ComponentProps<'svg'>) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" {...props}>
       <polyline
@@ -55,7 +55,7 @@ export function HtmlIcon(props: ComponentProps<'svg'>) {
   );
 }
 
-export function CssIcon(props: ComponentProps<'svg'>) {
+export function CssIcon({ ...props }: ComponentProps<'svg'>) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 232" {...props}>
       <path
@@ -66,7 +66,7 @@ export function CssIcon(props: ComponentProps<'svg'>) {
   );
 }
 
-export function ReactIcon(props: ComponentProps<'svg'>) {
+export function ReactIcon({ ...props }: ComponentProps<'svg'>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -81,7 +81,7 @@ export function ReactIcon(props: ComponentProps<'svg'>) {
   );
 }
 
-export function TailwindIcon(props: ComponentProps<'svg'>) {
+export function TailwindIcon({ ...props }: ComponentProps<'svg'>) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" {...props}>
       <path
@@ -92,7 +92,7 @@ export function TailwindIcon(props: ComponentProps<'svg'>) {
   );
 }
 
-export function NpmFileIcon(props: ComponentProps<'svg'>) {
+export function NpmFileIcon({ ...props }: ComponentProps<'svg'>) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 100" {...props}>
       <path
@@ -107,7 +107,7 @@ export function NpmFileIcon(props: ComponentProps<'svg'>) {
   );
 }
 
-export function FileIcon(props: ComponentProps<'svg'>) {
+export function FileIcon({ ...props }: ComponentProps<'svg'>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
