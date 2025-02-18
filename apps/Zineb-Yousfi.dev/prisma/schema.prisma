@@ -1,0 +1,72 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model ContentMeta {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  type      ContentType
+  title     String
+  slug      String     @unique
+  views     View[]
+  shares    Share[]
+  reactions Reaction[]
+  createdAt DateTime   @default(now())
+}
+
+enum ContentType {
+  PAGE
+  POST
+  PROJECT
+}
+
+model View {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  createdAt DateTime @default(now())
+  sessionId String
+
+  contentId String      @db.ObjectId
+  content   ContentMeta @relation(fields: [contentId], references: [id], onDelete: Cascade)
+}
+
+model Share {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  type      ShareType? @default(OTHERS)
+  createdAt DateTime   @default(now())
+  sessionId String
+
+  contentId String      @db.ObjectId
+  content   ContentMeta @relation(fields: [contentId], references: [id], onDelete: Cascade)
+}
+
+enum ShareType {
+  TWITTER
+  CLIPBOARD
+  OTHERS
+}
+
+model Reaction {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  count     Int?          @default(1)
+  section   String?
+  type      ReactionType? @default(CLAPPING)
+  createdAt DateTime      @default(now())
+  sessionId String
+
+  contentId String      @db.ObjectId
+  content   ContentMeta @relation(fields: [contentId], references: [id], onDelete: Cascade)
+}
+
+enum ReactionType {
+  CLAPPING
+  THINKING
+  AMAZED
+}

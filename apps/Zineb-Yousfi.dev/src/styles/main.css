@@ -1,0 +1,10 @@
+@import 'tailwindcss/base';
+@import './base.css';
+
+@import 'tailwindcss/components';
+@import './components.css';
+@import './prism-colors.css';
+@import './mdx-contents.css';
+@import './mdx-components.css';
+
+@import 'tailwindcss/utilities';

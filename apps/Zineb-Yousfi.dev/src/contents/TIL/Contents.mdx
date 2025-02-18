@@ -1,0 +1,166 @@
+import TIL from '@/components/mdx/TIL';
+
+<TIL.Items date="2023-01-29">
+
+  <TIL.Item>
+    
+    ## Tailwind CSS !important modifier
+
+    <TIL.ItemTags>
+      <TIL.ItemTag>tailwindcss</TIL.ItemTag>
+      <TIL.ItemTag>css</TIL.ItemTag>
+    </TIL.ItemTags>
+
+    Make any utility important by adding a `!` character to the beginning:
+
+    ```html
+    <p class="font-bold !font-medium">
+      This will be medium even though bold comes later in the CSS.
+    </p>
+    ```
+
+    [Official Docs](https://tailwindcss.com/docs/configuration#important-modifier)
+
+  </TIL.Item>
+
+</TIL.Items>
+
+<TIL.Items date="2023-01-18">
+
+  <TIL.Item>
+    
+    ## nested backdrop-filter
+
+    <TIL.ItemTags>
+      <TIL.ItemTag>css</TIL.ItemTag>
+    </TIL.ItemTags>
+
+    Backdrop filter tidak akan berhasil jika parent memiliki efek backdrop-filter juga.
+
+    [issue](https://bugs.chromium.org/p/chromium/issues/detail?id=993644) &mdash; [workaround](https://stackoverflow.com/questions/60997948/backdrop-filter-not-working-for-nested-elements-in-chrome)
+
+  </TIL.Item>
+
+</TIL.Items>
+
+<TIL.Items date="2023-01-17">
+
+  <TIL.Item>
+
+    ## pre overflow: scroll inside flex
+
+    <TIL.ItemTags>
+      <TIL.ItemTag>css</TIL.ItemTag>
+      <TIL.ItemTag>pre</TIL.ItemTag>
+      <TIL.ItemTag>flex</TIL.ItemTag>
+    </TIL.ItemTags>
+
+    Pernah pake `overflow-x: scroll` pada `pre` element tapi ngga ngaruh, malah parent yang ada scrollnya?
+
+    Mungkin parentnya didalem `display: flex`. Kalau iya, coba tambahin `min-width: 0` pada parentnya.
+
+    [Credit](https://weblog.west-wind.com/posts/2016/feb/15/flexbox-containers-pre-tags-and-managing-overflow)
+
+  </TIL.Item>
+
+  <TIL.Item>
+
+    ## import mdx file sebagai component
+
+    <TIL.ItemTags>
+      <TIL.ItemTag>react</TIL.ItemTag>
+      <TIL.ItemTag>mdx</TIL.ItemTag>
+    </TIL.ItemTags>
+
+    Import mdx file di component, caranya mirip seperti import component biasa:
+
+    ```ts {copy:false} {footer:false}
+    import Contents from '@/mdx/Contents.mdx';
+
+    // Penggunaan
+    <Contents />
+    ```
+
+    Ternyata ada di [dokumentasinya](https://mdxjs.com/docs/using-mdx/#mdx-content). Biasakan membaca dulu ya gais jangan kaya saya wkwk.
+
+  </TIL.Item>
+
+  <TIL.Item>
+
+    ## :not() pseudo-class
+
+    <TIL.ItemTags>
+      <TIL.ItemTag>css</TIL.ItemTag>
+      <TIL.ItemTag>selector</TIL.ItemTag>
+    </TIL.ItemTags>
+
+    Pake `:not()` ini emang agak tricky, salah penggunaan hasilnya juga bisa ngga sesuai harapan.
+
+    Contoh, styling inline `code` dimana bukan children dari `pre` ataupun `.code-block`. Penggunaannya:
+
+    <TIL.DnD>
+      <TIL.Dont>
+        ```css {copy:false} {footer:false}
+        :not(pre), :not(.code-block) {
+          > code {
+            background-color: 'red';
+          }
+        }
+        ```
+      </TIL.Dont>
+      <TIL.Do>
+        ```css {copy:false} {footer:false}
+        :not(pre, .code-block) {
+          > code {
+            background-color: 'red';
+          }
+        }
+        ```
+      </TIL.Do>
+    </TIL.DnD>
+
+  </TIL.Item>
+
+</TIL.Items>
+
+<TIL.Items date="2023-01-16">
+
+  <TIL.Item>
+
+    ## Turborepo dependsOn
+
+    <TIL.ItemTags>
+      <TIL.ItemTag>turborepo</TIL.ItemTag>
+      <TIL.ItemTag>monorepo</TIL.ItemTag>
+    </TIL.ItemTags>
+
+    ```json {copy:false} {footer:false}
+    "build": {
+      "dependsOn": ["^lint", "test"]
+    },
+    ```
+
+    `dependsOn` dengan ^ menandakan task dari package lain, sedangkan yang tanpa ^ task dari package itu sendiri.
+
+    Misal: app A pas mau build harus running tasks `lint` di semua package dependenciesnya, dan juga harus running task `test` app A itu sendiri.
+
+  </TIL.Item>
+
+</TIL.Items>
+
+<TIL.Items date="2023-01-15">
+
+  <TIL.Item>
+    
+    ## e.target.valueAsNumber
+
+    <TIL.ItemTags>
+      <TIL.ItemTag>html</TIL.ItemTag>
+      <TIL.ItemTag>js</TIL.ItemTag>
+    </TIL.ItemTags>
+
+    Pakai `e.target.valueAsNumber` untuk otomatis mengembalikan nilai input sebagai number. Tidak perlu `parseInt(e.target.value)` lagi.
+
+  </TIL.Item>
+
+</TIL.Items>

@@ -1,0 +1,202 @@
+:root {
+  /* background color */
+  --prism-color-background: theme(colors.slate.50);
+
+  /* base color */
+  --prism-color-base-primary: theme(colors.slate.700);
+  --prism-color-base-secondary: theme(colors.slate.500);
+
+  /* tokens color */
+  --prism-color-function: theme(colors.purple.700);
+  --prism-color-keyword: theme(colors.red.700);
+  --prism-color-number: theme(colors.violet.600);
+  --prism-color-string: theme(colors.blue.600);
+  --prism-color-tag: theme(colors.green.700);
+  --prism-color-parameter: theme(colors.orange.700);
+  --prism-color-property-access: theme(colors.blue.700);
+
+  /* tokens color, from base */
+  --prism-color-comment: var(--prism-color-base-secondary);
+  --prism-color-property: var(--prism-color-base-primary);
+  --prism-color-punctuation: var(--prism-color-base-secondary);
+}
+
+.dark {
+  /* background color */
+  --prism-color-background: #161e31;
+
+  /* base color */
+  --prism-color-base-primary: theme(colors.slate.300);
+  --prism-color-base-secondary: theme(colors.slate.400);
+
+  /* tokens color */
+  --prism-color-function: theme(colors.purple.400);
+  --prism-color-keyword: theme(colors.red.400);
+  --prism-color-number: theme(colors.violet.300);
+  --prism-color-string: theme(colors.blue.300);
+  --prism-color-tag: theme(colors.green.400);
+  --prism-color-parameter: theme(colors.orange.400);
+  --prism-color-property-access: theme(colors.blue.400);
+
+  /* tokens color, from base */
+  --prism-color-comment: var(--prism-color-base-secondary);
+  --prism-color-property: var(--prism-color-base-primary);
+  --prism-color-punctuation: var(--prism-color-base-secondary);
+}
+
+/**
+ * Base
+ */
+pre > code,
+[class*='language-*'] {
+  .code-line {
+    @apply text-[var(--prism-color-base-primary)];
+  }
+
+  .token {
+    &.tag,
+    &.selector {
+      @apply text-[var(--prism-color-tag)];
+    }
+
+    &.punctuation,
+    &.operator {
+      @apply text-[var(--prism-color-punctuation)];
+    }
+
+    &.attr-name {
+      @apply text-[var(--prism-color-property-access)];
+    }
+
+    &.string,
+    &.attr-value {
+      @apply text-[var(--prism-color-string)];
+    }
+
+    &.number {
+      @apply text-[var(--prism-color-number)];
+    }
+
+    &.property {
+      @apply text-[var(--prism-color-property)];
+    }
+
+    &.function {
+      @apply text-[var(--prism-color-function)];
+    }
+
+    &.parameter {
+      @apply text-[var(--prism-color-parameter)];
+    }
+
+    &.comment {
+      @apply text-[var(--prism-color-comment)];
+    }
+
+    &.rule,
+    &.keyword {
+      @apply text-[var(--prism-color-keyword)];
+    }
+  }
+}
+
+/** 
+ * Some adjustments for specific languages
+ */
+
+.language-js,
+.language-javascript {
+  .code-line {
+    @apply text-[var(--prism-color-property-access)];
+  }
+
+  .token {
+    .property-access {
+      @apply text-[var(--prism-color-string)];
+    }
+  }
+
+  &.script {
+    &.language-javascript {
+      @apply text-[var(--prism-color-base-primary)];
+    }
+  }
+}
+
+.language-ts,
+.language-typescript {
+  .code-line {
+    @apply text-[var(--prism-color-property-access)];
+  }
+
+  &.script {
+    &.language-javascript {
+      @apply text-[var(--prism-color-base-primary)];
+    }
+  }
+}
+
+.language-bash {
+  @apply text-[var(--prism-color-base-primary)];
+
+  .token {
+    &.parameter {
+      @apply text-[var(--prism-color-base-primary)];
+    }
+  }
+}
+
+.language-css,
+.language-scss {
+  .code-line {
+    @apply text-[var(--prism-color-string)];
+  }
+
+  .token {
+    &.property,
+    &.number,
+    &.function,
+    &.selector .class {
+      @apply text-[var(--prism-color-string)];
+    }
+
+    &.unit {
+      @apply text-[var(--prism-color-keyword)];
+    }
+  }
+}
+
+.language-json {
+  .code-line {
+    @apply text-[var(--prism-color-string)];
+  }
+
+  .token {
+    &.property,
+    &.number,
+    &.function,
+    &.selector .class {
+      @apply text-[var(--prism-color-tag)];
+    }
+  }
+}
+
+/**
+ * Extensions
+ */
+
+.code-highlight {
+  .code-line {
+    &.line-number {
+      &::before {
+        @apply text-[var(--prism-color-base-secondary)];
+      }
+
+      &.highlight-line {
+        &::before {
+          @apply text-[var(--prism-color-base-primary)];
+        }
+      }
+    }
+  }
+}

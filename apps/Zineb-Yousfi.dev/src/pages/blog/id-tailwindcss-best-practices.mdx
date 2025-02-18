@@ -1,0 +1,288 @@
+---
+title: Tailwind CSS Best Practices
+description: Tailwind CSS best practices, tips dan coding style yang sering saya implementasikan.
+lang: id
+date: '2023-02-06'
+tags:
+  - tailwindcss
+  - best-practices
+category: tailwindcss
+caption: Best Practices
+---
+
+import { DnD, Dont, Do } from '@/components/mdx/TIL';
+import { QuickView } from '@/components/mdx/Link';
+import CodeGroup from '@/components/mdx/CodeGroup';
+
+Halo! Sudah atau mau mencoba **Tailwind CSS**? pas banget kesini! saya akan membagikan beberapa hal yang cukup penting seputar Tailwind CSS.
+
+Sebenarnya bukan '**best practices**' juga sih. Lebih ke coding style dan beberapa tips yang membuat saya nyaman dalam menggunakan Tailwind CSS.
+
+Opiniated sih jatuhnya, tapi siapa tau ada yang bisa diambil, positifnya, ya kan.
+
+---
+
+## Coding Style
+
+Berikut coding style untuk penulisan Tailwind CSS classes yang sering saya gunakan, dibagi menjadi 3 point penting: sorting, splitting dan grouping.
+
+### Sorting
+
+Coba liat dulu contoh komponen `Button` berikut, panjang banget classnya 😂
+
+```html
+<button
+  class="inline-flex h-10 items-center justify-center gap-1.5 rounded-md border border-transparent bg-purple-600 px-4 text-center text-sm font-bold text-white transition duration-150 hover:bg-purple-700 md:rounded-xl dark:bg-purple-600 dark:hover:bg-purple-500"
+>
+  Button Text
+</button>
+```
+
+Karena berurusan dengan nama class yang akan sangat banyak hanya untuk sebuah element, sorting class cukup penting.
+
+Untungnya, Tailwind CSS sendiri sudah menyiapkan [plugin](https://github.com/tailwindlabs/prettier-plugin-tailwindcss) Prettier untuk menghandle urusan ini.
+
+Konsistensi urutan class akan memudahkan dalam proses maintenance kedepannya.
+
+Misal, yang ada dalam contoh, dengan class yang sudah di sortir, kita bisa dengan mudah mengubah `border` dan `border-transparent` karena saling berdampingan.
+
+Atau dapat dengan mudah mengubah styles `hover:` atau **breakpoints** karena biasanya muncul di bagian akhir class.
+
+### Splitting
+
+Untuk membuatnya lebih rapi, kita bisa split classnya jadi beberapa string atau line (agar tidak terlihat terlalu panjang). Kalau saya sih biasa pake [clsx](https://github.com/lukeed/clsx).
+
+Contoh sebuah komponen `Button` yang sudah menggunakan `clsx`:
+
+```tsx
+function Button({ children }) {
+  return (
+    <button
+      className={clsx(
+        'inline-flex h-10 items-center justify-center gap-1.5 rounded-md border border-transparent bg-purple-600 px-4 text-center text-sm font-bold text-white transition duration-150 hover:bg-purple-700 md:rounded-xl',
+        'dark:bg-purple-600 dark:hover:bg-purple-500'
+      )}
+    >
+      {children}
+    </button>
+  );
+}
+```
+
+### Grouping
+
+Setelah classnya terpisah, kita bisa 'grouping' untuk membuatnya lebih rapi dan juga nyaman dibaca.
+
+Biasanya, pattern yang saya terapkan adalah:
+
+- `group 1`: default utilites
+- `group 2`: breakpoints utilities
+- `group 3`: dark mode utilites
+- `group 4`: other variants utilites
+
+Kita implementasikan menggunakan komponen `Button` tadi:
+
+```tsx
+function Button({ children }) {
+  return (
+    <button
+      className={clsx(
+        // group 1
+        'inline-flex h-10 items-center justify-center gap-1.5 rounded-md border border-transparent bg-purple-600 px-4 text-center text-sm font-bold text-white transition duration-150',
+        // group 2
+        'md:rounded-xl',
+        // group 3
+        'dark:bg-purple-600 dark:hover:bg-purple-500',
+        // group 4
+        'hover:bg-purple-700'
+      )}
+    >
+      {children}
+    </button>
+  );
+}
+```
+
+Sama halnya dengan komponen CSS:
+
+```css
+.button {
+  /* group 1 */
+  @apply inline-flex h-10 items-center justify-center gap-1.5 rounded-md border border-transparent bg-purple-600 px-4 text-center text-sm font-bold text-white transition duration-150;
+  /* group 2 */
+  @apply md:rounded-xl;
+  /* group 3 */
+  @apply dark:bg-purple-600 dark:hover:bg-purple-500;
+  /* group 4 */
+  @apply hover:bg-purple-700;
+}
+```
+
+Group 2,3 dan 4 sebenarnya masih bisa di improve atau disesuaikan lagi sesuai keinginan, hanya pastikan untuk membuatnya konsisten di setiap penulisan.
+
+---
+
+## Tips
+
+### Gunakan Komponen
+
+Jika dirasa beberapa element mempunyai styles yang sama, bisa di split jadi komponen tersendiri, seperti button yang biasanya memiliki styles yang sama.
+
+Karena saya menggunakan React, saya bisa saja membuat komponen seperti:
+
+```tsx
+function Button({ children }) {
+  return (
+    <button
+      className={clsx(
+        'inline-flex h-10 items-center justify-center gap-1.5 rounded-md border border-transparent bg-purple-600 px-4 text-center text-sm font-bold text-white transition duration-150',
+        'md:rounded-xl',
+        'dark:bg-purple-600 dark:hover:bg-purple-500',
+        'hover:bg-purple-700'
+      )}
+    >
+      {children}
+    </button>
+  );
+}
+```
+
+### Gunakan Class Component
+
+Sama seperti komponen, tapi cara ini digunakan untuk optimasi ukuran atau output file html, khususnya untuk static site.
+
+Karena nama class yang banyak dari Tailwind CSS akan menambahkan beban juga pada HTML.
+
+Coba lihat contoh sederhana, penggunaan set utility yang sama pada button pagination berikut:
+
+```html {copy:false} {footer:false}
+<button
+  class="inline-flex h-10 items-center justify-center gap-1.5 rounded-md border border-transparent bg-purple-600 px-4 text-center text-sm font-bold text-white transition duration-150 hover:bg-purple-700 md:rounded-xl dark:bg-purple-600 dark:hover:bg-purple-500"
+>
+  Previous
+</button>
+<button
+  class="inline-flex h-10 items-center justify-center gap-1.5 rounded-md border border-transparent bg-purple-600 px-4 text-center text-sm font-bold text-white transition duration-150 hover:bg-purple-700 md:rounded-xl dark:bg-purple-600 dark:hover:bg-purple-500"
+>
+  1
+</button>
+<button
+  class="inline-flex h-10 items-center justify-center gap-1.5 rounded-md border border-transparent bg-purple-600 px-4 text-center text-sm font-bold text-white transition duration-150 hover:bg-purple-700 md:rounded-xl dark:bg-purple-600 dark:hover:bg-purple-500"
+>
+  2
+</button>
+<button
+  class="inline-flex h-10 items-center justify-center gap-1.5 rounded-md border border-transparent bg-purple-600 px-4 text-center text-sm font-bold text-white transition duration-150 hover:bg-purple-700 md:rounded-xl dark:bg-purple-600 dark:hover:bg-purple-500"
+>
+  3
+</button>
+<button
+  class="inline-flex h-10 items-center justify-center gap-1.5 rounded-md border border-transparent bg-purple-600 px-4 text-center text-sm font-bold text-white transition duration-150 hover:bg-purple-700 md:rounded-xl dark:bg-purple-600 dark:hover:bg-purple-500"
+>
+  4
+</button>
+<button
+  class="inline-flex h-10 items-center justify-center gap-1.5 rounded-md border border-transparent bg-purple-600 px-4 text-center text-sm font-bold text-white transition duration-150 hover:bg-purple-700 md:rounded-xl dark:bg-purple-600 dark:hover:bg-purple-500"
+>
+  Next
+</button>
+```
+
+Bayangkan jika dalam satu file HTML memiliki beberapa pagination juga, ukuran file HTMLnya pasti akan lebih besar!
+
+Untuk mengurangi ukuran file size dari HTML, kita bisa ubah jadi class component. Kurang lebih penggunaannya seperti ini:
+
+<CodeGroup variant="file">
+
+```html {copy:false} {footer:false} {title:index.html}
+<button class="pagination-button">Previous</button>
+<button class="pagination-button">1</button>
+<button class="pagination-button">2</button>
+<button class="pagination-button">3</button>
+<button class="pagination-button">4</button>
+<button class="pagination-button">Next</button>
+```
+
+```css {copy:false} {footer:false} {title:styles.css}
+.pagination-button {
+  @apply inline-flex h-10 items-center justify-center gap-1.5 rounded-md border;@apply border-transparent bg-purple-600 px-4 text-center text-sm font-bold;@apply text-white transition duration-150';
+  @apply md:rounded-xl;
+  @apply dark:bg-purple-600 dark:hover:bg-purple-500;
+  @apply hover:bg-purple-700;
+}
+```
+
+</CodeGroup>
+
+Sudah pernah saya bahas <QuickView href="/blog/tentang-nextjs-tailwind-css-dan-framer-motion#tailwind-css">disini</QuickView> (point "Beban ke HTML makin berat").
+
+### Penggunaan !important
+
+Layaknya CSS pada umumnya, sebisa mungkin hindari penggunaan `!important`.
+
+Di Tailwind CSS, `!important` sendiri bisa dengan menambahkan prefix `!` pada setiap utility class, contoh `!p-2 !px-3`.
+
+Sebisa mungkin hindari! Sekali terjebak menggunakan, mungkin semua utility kita akan berakhir dengan banyaknya `!important` dan sangat sulit untuk melakukan perubahan styles kedepannya.
+
+### Conditional Class
+
+{/* prettier-ignore-start */}
+
+<Dont>
+  ```tsx {copy:false} {footer:false}
+  <div className={`text-black ${dark && 'text-white'}`}>
+    Hello, World!
+  </div>
+  ```
+</Dont>
+<Do>
+  ```tsx {copy:false} {footer:false}
+  <div className={dark ? 'text-white' : 'text-black'}>
+    Hello, World!
+  </div>
+  ```
+</Do>
+
+{/* prettier-ignore-end */}
+
+Let me explain a bit.
+
+Katakanlah kita pake cara yang pertama dan `dark` nilainya `true`, maka classnya akan jadi seperti ini `text-black text-white`.
+
+Dalam beberapa kasus, mungkin hasilnya ya sesuai harapan. Tapi, ketika beberapa kasus juga, mungkin bisa jadi masalah!
+
+Bisa saja, teks tetap berwarna hitam meski nilai `dark`nya true.
+
+Ko bisa? Let the code speak:
+
+```html
+<!-- Some elements within the project. -->
+
+<div class="text-white">White!</div>
+<div class="text-black">Black!</div>
+
+<!-- 
+  The above elements will generate CSS in the following order:
+
+  .text-white {
+    ...
+  }
+  .text-black {
+    ...
+  }
+-->
+
+<!--
+  Imagine that "dark" is set to true, and use a class defined as follows for conditional class:
+      class={`text-black ${dark && 'text-white'}`}
+-->
+<div class="text-black text-white">Still black? CSS Specificity!</div>
+
+<!-- 
+  That's because, in this example, both "text-black" and "text-white" have the same CSS properties and specificity.
+  
+  On the other hand, the last one defined in the CSS file (in the previously generated CSS) will take precedence!
+-->
+```
+
+[Tailwind Play](https://play.tailwindcss.com/iGRNZh3mOT)

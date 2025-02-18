@@ -1,0 +1,153 @@
+---
+title: tailwindcss-accent
+description: Add accent colors for dynamic, flexible color use in your Tailwind CSS project.
+caption: Plugin
+githubUrl: https://github.com/enjidev/tailwindcss-accent
+npmUrl: https://www.npmjs.com/package/tailwindcss-accent
+layout: Project
+---
+
+import AccentDemo from '@/components/mdx/AccentDemo';
+import Callout from '@/components/mdx/Callout';
+import CodeGroup from '@/components/mdx/CodeGroup';
+import InlineHighlight from '@/components/mdx/InlineHighlight';
+
+A Tailwind CSS plugin that provides **accent** color utilities using CSS custom properties based on the Tailwind CSS default color palette.
+
+> This plugin has been tested with Tailwind CSS **v2** and **v3**.
+
+---
+
+## Installation
+
+Install the plugin from npm:
+
+<CodeGroup>
+
+```bash {title:npm}
+npm install -D tailwindcss-accent
+```
+
+```bash {title:yarn}
+yarn add -D tailwindcss-accent
+```
+
+```bash {title:pnpm}
+pnpm add -D tailwindcss-accent
+```
+
+</CodeGroup>
+
+Then add the plugin to your `tailwind.config.js` file:
+
+<CodeGroup variant="files">
+
+```js {6-10} showLineNumbers {selected:6-10} {title:tailwind.config.js}
+module.exports = {
+  theme: {
+    // ...
+  },
+  plugins: [
+    require('tailwindcss-accent')({
+      colors: ['violet', 'blue'],
+      root: 'blue',
+      cssVarsPrefix: 'tw-plugin', // result: --tw-plugin-accent-200
+    }),
+    // ...
+  ],
+};
+```
+
+</CodeGroup>
+
+### Plugin Options
+
+| Option              | Description                                                                        |
+| ------------------- | ---------------------------------------------------------------------------------- |
+| `colors` (REQUIRED) | Include specific color(s). View the [available colors](#available-colors) section. |
+| `root`              | Set color from colors option as `:root` accent color.                              |
+| `cssVarsPrefix`     | Set prefix for css variables name. default to 'tw-ta' (e.g: `--tw-ta-accent-200`)  |
+
+<Callout>
+
+The `cssVarsPrefix` option can help prevent naming conflicts and make it easier for you to use accent CSS variables in your styles.
+
+</Callout>
+
+### Available Colors
+
+Check the default color palettes for [the Tailwind CSS v2](https://v2.tailwindcss.com/docs/customizing-colors#color-palette-reference) and [the Tailwind CSS v3](https://tailwindcss.com/docs/customizing-colors#default-color-palette).
+
+---
+
+## Basic Usage
+
+Add the `data-accent` attribute to your root/html element (or simply set the `root` plugin option).
+
+```html {footer:false}
+<html data-accent="blue">
+  <!-- ... -->
+</html>
+```
+
+Now, instead of writing `text-blue-600`, with this plugin you can write `text-accent-600`.
+
+The **accent** color will follow the value of the **nearest parent** element's <InlineHighlight>`data-accent`</InlineHighlight> attribute, or the **element itself**.
+
+Let the code speak:
+
+```html {footer:false} {inlineHighlight:violet|1|violet} {inlineHighlight:text-accent-600|2,3|violet} {inlineHighlight:blue|1|blue} {inlineHighlight:text-accent-600|4|blue}
+<!-- default to :root -->
+<p class="text-accent-600">this text has a blue (:root) accent color.</p>
+
+<div data-accent="violet">
+  <!-- based on nearest parent element: violet. -->
+  <p class="text-accent-600">this text has a violet accent color.</p>
+
+  <!-- based on nearest parent element: violet. -->
+  <p class="text-accent-600">
+    this text has a violet
+
+    <!-- overrides the parent's accent color to blue. -->
+    <span data-accent="blue" class="text-accent-600">and blue</span>
+
+    accent color!
+  </p>
+</div>
+```
+
+[Try it out on Tailwind Play](https://play.tailwindcss.com/D1HDP9fJhF)
+
+---
+
+## Examples
+
+### Real-world Example
+
+This website uses this plugin. By default, all pages use the `violet` accent color, except for pages under the `work/` path, which have a `blue` accent color.
+
+You can see the difference in the table of contents, header caption, text selection, links, etc.
+
+See the [configuration](https://github.com/enjidev/enji.dev/blob/a6078ba395ea65cc9c1a7ea524adb29b9580406d/apps/enji.dev/tailwind.config.js#L54-L57) file and [implementation](https://github.com/enjidev/enji.dev/blob/a6078ba395ea65cc9c1a7ea524adb29b9580406d/apps/enji.dev/src/providers/ColorAccentProvider.tsx#L18-L20) code for details.
+
+### Live Example
+
+Want to see something cool? Click this button and watch the accent color on this page change.
+
+<AccentDemo />
+
+You should already know that the button doesn't change the color classes of all components. This single line of code&mdash;
+
+```js {copy:false}
+document.documentElement.setAttribute('data-accent', newAccent);
+```
+
+&mdash;does the magic by simply changing the html `data-accent` attribute value to the new accent color, and components that use the `-accent-*` color will follow the changes.
+
+Changing your website's accent color has never been this easy 🔥
+
+---
+
+## License
+
+`tailwindcss-accent` is licensed under the MIT License.

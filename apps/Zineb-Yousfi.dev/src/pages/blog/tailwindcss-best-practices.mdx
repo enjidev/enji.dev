@@ -1,0 +1,283 @@
+---
+title: Tailwind CSS Best Practices
+description: Tailwind CSS best practices, tips, and coding style that I always use.
+lang: en
+date: '2023-02-06'
+tags:
+  - tailwindcss
+  - best-practices
+category: tailwindcss
+caption: Best Practices
+---
+
+import { DnD, Dont, Do } from '@/components/mdx/TIL';
+import CodeGroup from '@/components/mdx/CodeGroup';
+
+Hello! Have you tried or want to try **Tailwind CSS**? Perfect, I'll be sharing some important things about Tailwind CSS.
+
+It's not exactly the '**best practices**' either. It's more about coding style and some tips that make me comfortable using Tailwind CSS.
+
+It's opinionated, but who knows, i hope something positive can be taken from it.
+
+---
+
+## Coding Style
+
+Here is the coding style for writing Tailwind CSS classes that I often use, divided into 3 important points: sorting, splitting and grouping.
+
+### Sorting
+
+Try to take a look at the following Button component example, so many classess 😂
+
+```html
+<button
+  class="inline-flex h-10 items-center justify-center gap-1.5 rounded-md border border-transparent bg-purple-600 px-4 text-center text-sm font-bold text-white transition duration-150 hover:bg-purple-700 md:rounded-xl dark:bg-purple-600 dark:hover:bg-purple-500"
+>
+  Button Text
+</button>
+```
+
+Because dealing with a large number of classes for just single element, class sorting is quite important.
+
+Fortunately, Tailwind CSS itself has provided the [Prettier plugin](https://github.com/tailwindlabs/prettier-plugin-tailwindcss) to handle this matter.
+
+Consistent class order will make the maintenance process easier in the future.
+
+For example, in the sample, with the classes already sorted, we can easily change the `border` and `border-transparent` because they are next to each other.
+
+Or easily change the `hover:` styles or **breakpoints** because they usually appear at the end of the class.
+
+### Splitting
+
+To make it neater, we can split the class into several strings or lines. I usually use [clsx](https://github.com/lukeed/clsx) for this.
+
+An example of a `Button` component that has already used `clsx`:
+
+```tsx
+function Button({ children }) {
+  return (
+    <button
+      className={clsx(
+        'inline-flex h-10 items-center justify-center gap-1.5 rounded-md border border-transparent bg-purple-600 px-4 text-center text-sm font-bold text-white transition duration-150 hover:bg-purple-700 md:rounded-xl',
+        'dark:bg-purple-600 dark:hover:bg-purple-500'
+      )}
+    >
+      {children}
+    </button>
+  );
+}
+```
+
+### Grouping
+
+After the classes have been splitted, we can 'group' them to make it neater and more readable.
+
+The pattern I usually apply is:
+
+- `group 1`: default utilities
+- `group 2`: breakpoint utilities
+- `group 3`: dark mode utilities
+- `group 4`: other variants utilities
+
+Let's implement this into previous `Button` component:
+
+```tsx
+function Button({ children }) {
+  return (
+    <button
+      className={clsx(
+        // group 1
+        'inline-flex h-10 items-center justify-center gap-1.5 rounded-md border border-transparent bg-purple-600 px-4 text-center text-sm font-bold text-white transition duration-150',
+        // group 2
+        'md:rounded-xl',
+        // group 3
+        'dark:bg-purple-600 dark:hover:bg-purple-500',
+        // group 4
+        'hover:bg-purple-700'
+      )}
+    >
+      {children}
+    </button>
+  );
+}
+```
+
+Or with the CSS component:
+
+```css
+.button {
+  /* group 1 */
+  @apply inline-flex h-10 items-center justify-center gap-1.5 rounded-md border border-transparent bg-purple-600 px-4 text-center text-sm font-bold text-white transition duration-150;
+  /* group 2 */
+  @apply md:rounded-xl;
+  /* group 3 */
+  @apply dark:bg-purple-600 dark:hover:bg-purple-500;
+  /* group 4 */
+  @apply hover:bg-purple-700;
+}
+```
+
+Much better, I think. Groups 2, 3, and 4 can still be improved or adjusted to your preferences, just make sure to maintain consistency in writing.
+
+---
+
+## Tips
+
+### Use Component
+
+If you feel that some elements have same styles, they can be split into separate components, such as buttons.
+
+Since I'm using React, I can create the component like:
+
+```tsx
+function Button({ children }) {
+  return (
+    <button
+      className={clsx(
+        'inline-flex h-10 items-center justify-center gap-1.5 rounded-md border border-transparent bg-purple-600 px-4 text-center text-sm font-bold text-white transition duration-150',
+        'md:rounded-xl',
+        'dark:bg-purple-600 dark:hover:bg-purple-500',
+        'hover:bg-purple-700'
+      )}
+    >
+      {children}
+    </button>
+  );
+}
+```
+
+### Use Class Component
+
+In a static site, classes are served as is. Therefore, if we have elements that use the same set of utilities multiple times, it will increase the size of our HTML file.
+
+For example, see this repeated utilities on these pagination buttons:
+
+```html {copy:false} {footer:false}
+<button
+  class="inline-flex h-10 items-center justify-center gap-1.5 rounded-md border border-transparent bg-purple-600 px-4 text-center text-sm font-bold text-white transition duration-150 hover:bg-purple-700 md:rounded-xl dark:bg-purple-600 dark:hover:bg-purple-500"
+>
+  Previous
+</button>
+<button
+  class="inline-flex h-10 items-center justify-center gap-1.5 rounded-md border border-transparent bg-purple-600 px-4 text-center text-sm font-bold text-white transition duration-150 hover:bg-purple-700 md:rounded-xl dark:bg-purple-600 dark:hover:bg-purple-500"
+>
+  1
+</button>
+<button
+  class="inline-flex h-10 items-center justify-center gap-1.5 rounded-md border border-transparent bg-purple-600 px-4 text-center text-sm font-bold text-white transition duration-150 hover:bg-purple-700 md:rounded-xl dark:bg-purple-600 dark:hover:bg-purple-500"
+>
+  2
+</button>
+<button
+  class="inline-flex h-10 items-center justify-center gap-1.5 rounded-md border border-transparent bg-purple-600 px-4 text-center text-sm font-bold text-white transition duration-150 hover:bg-purple-700 md:rounded-xl dark:bg-purple-600 dark:hover:bg-purple-500"
+>
+  3
+</button>
+<button
+  class="inline-flex h-10 items-center justify-center gap-1.5 rounded-md border border-transparent bg-purple-600 px-4 text-center text-sm font-bold text-white transition duration-150 hover:bg-purple-700 md:rounded-xl dark:bg-purple-600 dark:hover:bg-purple-500"
+>
+  4
+</button>
+<button
+  class="inline-flex h-10 items-center justify-center gap-1.5 rounded-md border border-transparent bg-purple-600 px-4 text-center text-sm font-bold text-white transition duration-150 hover:bg-purple-700 md:rounded-xl dark:bg-purple-600 dark:hover:bg-purple-500"
+>
+  Next
+</button>
+```
+
+Imagine if in one HTML file there are **several** paginations as well, the size of the HTML file will definitely be bigger!
+
+To reduce it, we can abstract or create CSS components instead. So, we can transform the element utilities to CSS component, like:
+
+<CodeGroup variant="file">
+
+```html {copy:false} {footer:false} {title:index.html}
+<button class="pagination-button">Previous</button>
+<button class="pagination-button">1</button>
+<button class="pagination-button">2</button>
+<button class="pagination-button">3</button>
+<button class="pagination-button">4</button>
+<button class="pagination-button">Next</button>
+```
+
+```css {copy:false} {footer:false} {title:styles.css}
+.pagination-button {
+  @apply inline-flex h-10 items-center justify-center gap-1.5 rounded-md border;@apply border-transparent bg-purple-600 px-4 text-center text-sm font-bold;@apply text-white transition duration-150';
+  @apply md:rounded-xl;
+  @apply dark:bg-purple-600 dark:hover:bg-purple-500;
+  @apply hover:bg-purple-700;
+}
+```
+
+</CodeGroup>
+
+### !important Usage
+
+Like vanilla CSS, try to avoid using `!important`.
+
+In Tailwind CSS, `!important` can be added by adding the `!` prefix to the utility class, for example, `!p-2 !px-3`.
+
+Try to avoid it as much as possible! Once trapped into using it, all your utilities may end up with many `!important` and it will be very difficult to make style changes in the future.
+
+### Conditional Class
+
+{/* prettier-ignore-start */}
+
+<Dont>
+  ```tsx {copy:false} {footer:false}
+  <div className={`text-black ${dark && 'text-white'}`}>
+    Hello, World!
+  </div>
+  ```
+</Dont>
+<Do>
+  ```tsx {copy:false} {footer:false}
+  <div className={dark ? 'text-white' : 'text-black'}>
+    Hello, World!
+  </div>
+  ```
+</Do>
+
+{/* prettier-ignore-end */}
+
+Let me explain a bit.
+
+If we use the first method and the value of `dark` is set to true, then the class would be `text-black text-white`.
+
+In some cases, the result might be as expected. However, in some cases, it might cause a problem.
+
+It's possible that the text remains black even when the value of `dark` is true.
+
+Let the code speak:
+
+```html
+<!-- Some elements within the project. -->
+
+<div class="text-white">White!</div>
+<div class="text-black">Black!</div>
+
+<!-- 
+  The above elements will generate CSS in the following order:
+
+  .text-white {
+    ...
+  }
+  .text-black {
+    ...
+  }
+-->
+
+<!--
+  Imagine that "dark" is set to true, and use a class defined as follows for conditional class:
+      class={`text-black ${dark && 'text-white'}`}
+-->
+<div class="text-black text-white">Still black? CSS Specificity!</div>
+
+<!-- 
+  That's because, in this example, both "text-black" and "text-white" have the same CSS properties and specificity.
+  
+  On the other hand, the last one defined in the CSS file (in the previously generated CSS) will take precedence!
+-->
+```
+
+[Tailwind Play](https://play.tailwindcss.com/iGRNZh3mOT)
