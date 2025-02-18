@@ -14,7 +14,7 @@ A monorepo for my personal website and projects, built with Turborepo and pnpm.
 
 A personal website with a blog, project showcase, and work information.
 
-https://github.com/Zineb-Yousfi/portfolio/apps/Zineb-Yousfi.dev/public/assets/videos/portfolio
+https://github.com/Zineb-Yousfi/portfolio/apps/Zineb-Yousfi.dev/public/assets/videos/portfolio.mp4
 
 ### Tech Stack
 
