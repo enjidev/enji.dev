@@ -1,6 +1,6 @@
 <div>
   <h1>
-    Enji Kusnadi
+    Zineb Yousfi
     &middot;
     <img src="https://img.shields.io/website?style=flat-square&url=https%3A%2F%2Fwww.enji.dev"/>
     <img src="https://img.shields.io/github/deployments/enjidev/enji.dev/production?label=production&style=flat-square"/>
@@ -14,7 +14,7 @@ A monorepo for my personal website and projects, built with Turborepo and pnpm.
 
 A personal website with a blog, project showcase, and work information.
 
-https://user-images.githubusercontent.com/95107212/210668021-fd49431f-85a3-4bd7-bf9e-09639cb38922.mp4
+https://github.com/Zineb-Yousfi/portfolio/apps/Zineb-Yousfi.dev/public/assets/videos/Yousfi Zineb _ Fullstack Developer - Google Chrome 2025-02-18 09-08-56
 
 ### Tech Stack
 
