@@ -10,11 +10,11 @@
 
 A monorepo for my personal website and projects, built with Turborepo and pnpm.
 
-## 📘 [enji.dev](https://www.enji.dev)
+## 📘 [Zineb-Yousfi.dev](https://www.Zineb-Yousfi.dev)
 
 A personal website with a blog, project showcase, and work information.
 
-https://github.com/Zineb-Yousfi/portfolio/apps/Zineb-Yousfi.dev/public/assets/videos/Yousfi Zineb _ Fullstack Developer - Google Chrome 2025-02-18 09-08-56
+https://github.com/Zineb-Yousfi/portfolio/apps/Zineb-Yousfi.dev/public/assets/videos/portfolio
 
 ### Tech Stack
 
