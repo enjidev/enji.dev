@@ -9,9 +9,8 @@ import useShortcut from '@/hooks/useShortcut';
 import useTheme from '@/hooks/useTheme';
 
 const focusToast = {
-  title: 'Focus Turned {STATUS}',
-  message:
-    'Focus helps reduce distractions by hiding floating components, like navigation and reactions.',
+  title: '专注模式 {STATUS}',
+  message: 'Focus 通过隐藏浮动组件（如导航和表情）来帮助减少干扰。',
 };
 
 function Shortcuts() {
@@ -39,7 +38,7 @@ function Shortcuts() {
     if (focusMode) {
       toastRef.current = toast.custom((t) => (
         <Toast
-          title={focusToast.title.replace('{STATUS}', 'On')}
+          title={focusToast.title.replace('{STATUS}', '开启')}
           message={focusToast.message}
           t={t}
         />
@@ -47,7 +46,7 @@ function Shortcuts() {
     } else {
       toastRef.current = toast.custom((t) => (
         <Toast
-          title={focusToast.title.replace('{STATUS}', 'Off')}
+          title={focusToast.title.replace('{STATUS}', '关闭')}
           message={focusToast.message}
           t={t}
         />

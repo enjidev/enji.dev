@@ -53,9 +53,9 @@ function ActivityItem({
           {contentTitle}
         </span>
         <span className={clsx('lowercase')}>
-          {contentType.replace('POST', 'BLOG POST')}
+          {contentType.replace('POST', '文章')}
         </span>
-        <span>got new</span>
+        <span>收到了</span>
         {count !== 1 && (
           <span
             className={clsx(
@@ -73,7 +73,7 @@ function ActivityItem({
 
   return (
     <div className={clsx('flex flex-wrap items-baseline gap-x-1')}>
-      <span>the</span>
+      <span>{contentType.replace('POST', '文章')}</span>
       <span
         className={clsx(
           'text-accent-600 font-semibold',
@@ -82,11 +82,8 @@ function ActivityItem({
       >
         {contentTitle}
       </span>
-      <span className={clsx('lowercase')}>
-        {contentType.replace('POST', 'BLOG POST')}
-      </span>
-      <span>was shared</span>
-      {type === 'TWITTER' && <span>to Twitter!</span>}
+      <span>被分享了</span>
+      {/* {type === 'TWITTER' && <span>to Twitter!</span>} */}
     </div>
   );
 }
@@ -117,7 +114,7 @@ function Activity({ onItemClick = () => {} }: ActivityProps) {
           className={clsx('text-sm text-slate-700', 'dark:text-slate-400')}
           variants={animation}
         >
-          retrieving data..
+          正在检索数据..
         </m.div>
       );
     }
@@ -128,7 +125,7 @@ function Activity({ onItemClick = () => {} }: ActivityProps) {
           className={clsx('text-sm text-slate-700', 'dark:text-slate-400')}
           variants={animation}
         >
-          nothing new at the moment.
+          目前没有什么新鲜事。
         </m.div>
       );
     }
@@ -139,7 +136,7 @@ function Activity({ onItemClick = () => {} }: ActivityProps) {
           className={clsx('text-sm text-slate-700', 'dark:text-slate-400')}
           variants={animation}
         >
-          an internal error occurred.
+          发生内部错误，刷新试试。
         </m.div>
       );
     }
@@ -188,7 +185,7 @@ function Activity({ onItemClick = () => {} }: ActivityProps) {
       className={clsx('flex flex-1 flex-col gap-2')}
     >
       <m.div variants={animation} className={clsx('px-2 text-xl font-bold')}>
-        Recent Activities
+        近期活动
       </m.div>
       <div
         className={clsx(
