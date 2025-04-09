@@ -2,13 +2,13 @@ import clsx from 'clsx';
 import { m } from 'framer-motion';
 
 import {
-  FigmaIcon,
   FramerMotionIcon,
   NextJsIcon,
   ReactIcon,
   TailwindCssIcon,
   TypeScriptIcon,
   VSCodeIcon,
+  VueIcon,
 } from '@/components/Icons';
 
 const animation = {
@@ -28,7 +28,7 @@ function HeaderTechStack() {
         animate={animation.show}
         transition={{ delay: 0.6 }}
       >
-        current favorite tech stack/tools:
+        目前最喜欢的技术栈/工具：
       </m.p>
       <m.ul
         className={clsx(
@@ -40,13 +40,18 @@ function HeaderTechStack() {
         transition={{ delayChildren: 0.6, staggerChildren: 0.025 }}
       >
         <m.li variants={animation}>
-          <div className={clsx('transition duration-200 hover:text-[#3178C6]')}>
-            <TypeScriptIcon className={clsx('h-6 w-6')} />
+          <div className={clsx('transition duration-200 hover:text-[#42B883]')}>
+            <VueIcon className={clsx('h-6 w-6')} />
           </div>
         </m.li>
         <m.li variants={animation}>
           <div className={clsx('transition duration-200 hover:text-[#61DAFB]')}>
             <ReactIcon className={clsx('h-6 w-6')} />
+          </div>
+        </m.li>
+        <m.li variants={animation}>
+          <div className={clsx('transition duration-200 hover:text-[#3178C6]')}>
+            <TypeScriptIcon className={clsx('h-6 w-6')} />
           </div>
         </m.li>
         <m.li variants={animation}>
@@ -74,11 +79,6 @@ function HeaderTechStack() {
         <m.li variants={animation}>
           <div className={clsx('transition duration-200 hover:text-[#007ACC]')}>
             <VSCodeIcon className={clsx('h-6 w-6')} />
-          </div>
-        </m.li>
-        <m.li variants={animation}>
-          <div className={clsx('transition duration-200 hover:text-[#F24E1E]')}>
-            <FigmaIcon className={clsx('h-6 w-6')} />
           </div>
         </m.li>
       </m.ul>

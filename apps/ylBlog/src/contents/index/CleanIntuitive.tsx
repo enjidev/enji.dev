@@ -20,26 +20,26 @@ const content: Array<Content> = [
   {
     state: 'typography',
     shows: ['typography'],
-    title: 'Typography',
-    description: 'Selecting the font type, font size, and font weight.',
+    title: '排版',
+    description: '选择字体类型、字体大小和字体粗细。',
   },
   {
     state: 'spacing',
     shows: ['typography', 'spacing'],
-    title: 'Spacing',
-    description: 'Positioning and adding spacing between elements.',
+    title: '间距',
+    description: '定位并添加元素之间的间距。',
   },
   {
     state: 'colors',
     shows: ['typography', 'spacing', 'colors'],
-    title: 'Colors',
-    description: 'Choosing a color scheme with sufficient contrast.',
+    title: '颜色',
+    description: '选择具有足够对比度的配色方案。',
   },
   {
     state: 'effects',
     shows: ['typography', 'spacing', 'colors', 'effects'],
-    title: 'Effects',
-    description: 'Add effects like borders, shadows, rounded corners, etc.',
+    title: '效果',
+    description: '添加边框、阴影、圆角等效果。',
   },
 ];
 
@@ -50,10 +50,9 @@ function CleanIntuitive() {
     <>
       <header className={clsx('mb-8')}>
         <SectionTitle
-          title="Eye Catching, Modern & Minimalist Design."
-          caption="Clean & Intuitive"
-          description="Keep the User Interface clean with a modern touch without
-            compromising the User Experience."
+          title="引人注目、现代而简约的设计。"
+          caption="简洁直观"
+          description="保持用户界面简洁且具有现代感，同时又不影响用户体验。"
         />
       </header>
       <SectionContent>

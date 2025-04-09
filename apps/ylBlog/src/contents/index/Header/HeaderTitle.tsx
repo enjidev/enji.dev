@@ -25,7 +25,7 @@ function HeaderTitle() {
         animate={animation.show}
         transition={{ delay: 0.1 }}
       >
-        hi!
+        嗨!
         <m.div
           initial={{
             opacity: 0,
@@ -68,11 +68,11 @@ function HeaderTitle() {
           animate={animation.show}
           transition={{ delay: 0.2 }}
         >
-          I&apos;m{' '}
+          我是{' '}
           <strong className={clsx('text-accent-600', 'dark:text-accent-500')}>
-            Enji
+            Yulo
           </strong>{' '}
-          Kusnadi,{' '}
+          Han，{' '}
         </m.span>
         <m.h1
           className={clsx(
@@ -84,17 +84,19 @@ function HeaderTitle() {
           animate={animation.show}
           transition={{ delay: 0.3 }}
         >
-          <span className={clsx('lowercase')}>A</span>{' '}
+          <span className={clsx('lowercase')}>一名</span>{' '}
           <strong
             className={clsx(
               'font-bold lowercase text-slate-700',
               'dark:text-slate-300'
             )}
           >
-            Front-End Developer
-          </strong>{' '}
-          who loves intuitive,{' '}
-          <span className={clsx('block')}>clean and modern UI design.</span>
+            前端开发
+          </strong>
+          ， 专注于
+          <span className={clsx('block')}>
+            简洁、可复用和易维护的代码编程。
+          </span>
         </m.h1>
       </span>
     </div>

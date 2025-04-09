@@ -26,7 +26,7 @@ function ButtonContactMe() {
       href="/work/contact"
       className={clsx('button button--solid min-w-[128px]', 'md:button--big')}
     >
-      Get in Touch
+      联系我
     </Link>
   );
 }
@@ -40,7 +40,7 @@ function ButtonResume() {
       className={clsx('button button--ghost px-2', 'md:button--big md:px-2')}
     >
       <DocumentIcon className={clsx('h-5 w-5')} />
-      RESUME
+      简历
     </a>
   );
 }
@@ -68,7 +68,7 @@ function AvailableForHire() {
           )}
         />
       </span>
-      AVAILABLE FOR HIRE
+      正在寻找工作机会
     </div>
   );
 }
