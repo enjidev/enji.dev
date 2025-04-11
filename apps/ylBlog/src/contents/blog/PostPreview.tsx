@@ -37,7 +37,7 @@ function PostPreview({
           pinned
             ? [
                 'border-divider-light',
-                'sm:border sm:p-4 md:mt-6 md:p-6',
+                'sm:border sm:p-4 md:p-6',
                 'dark:border-divider-dark',
               ]
             : ['sm:p-4 md:p-6']
@@ -121,14 +121,14 @@ function PostPreview({
               className={clsx('flex items-center gap-1.5')}
               title="Number of view(s)"
             >
-              <CountUp from={0} to={views} /> Views
+              <CountUp from={0} to={views} /> 浏览
             </span>
             <span>&middot;</span>
             <span
               className={clsx('flex items-center gap-1.5')}
               title="Number of share(s)"
             >
-              <CountUp from={0} to={shares} /> Shares
+              <CountUp from={0} to={shares} /> 分享
             </span>
           </span>
         </div>
@@ -139,7 +139,7 @@ function PostPreview({
             pinned ? ['flex', 'sm:hidden'] : 'flex'
           )}
         >
-          read more{' '}
+          查看更多{' '}
           <ChevronRightIcon className="group-hover:animate-bounce-x mt-1 h-3 w-3 transition" />
         </div>
       </Link>

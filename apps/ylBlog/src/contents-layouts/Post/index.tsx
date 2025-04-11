@@ -1,6 +1,6 @@
 import { PropsWithChildren } from 'react';
 
-import WithReactions from '@/components/layouts/WithReactions';
+// import WithReactions from '@/components/layouts/WithReactions';
 import WithTableOfContents from '@/components/layouts/WithTableOfContents';
 import Head from '@/components/meta/Head';
 import SkipNavigation from '@/components/navigations/SkipNavigation';
@@ -55,7 +55,7 @@ function Post({
         {children}
         <PostFooter tags={tags} category={category} />
       </WithTableOfContents>
-      <WithReactions contentTitle={title} contentType="POST" />
+      {/* <WithReactions contentTitle={title} contentType="POST" /> */}
     </>
   );
 }

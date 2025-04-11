@@ -9,15 +9,21 @@ const postsDirectory = path.join(process.cwd(), 'src/pages/blog');
 export const getPostSlugs = () => {
   const fileNames = fs.readdirSync(postsDirectory);
 
-  return fileNames.map((fileName) => fileName.replace(/\.mdx$/, ''));
+  return fileNames
+    .filter((fileName) => {
+      const dirPath = path.join(postsDirectory, fileName);
+
+      return fs.statSync(dirPath).isFile();
+    })
+    .map((fileName) => fileName.replace(/\.mdx$/, ''));
 };
 
 export const getPostFrontMatter = (slug: string): TPostFrontMatter => {
-  // read markdown file as string
+  // 读取markdown文件
   const fullPath = path.join(postsDirectory, `${slug}.mdx`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
 
-  // use front-matter to parse the post metadata section
+  // 使用 front-matter 解析文件头部的元数据
   const { attributes } = frontMatter<TPostFrontMatter>(fileContents);
 
   return attributes;
@@ -47,4 +53,16 @@ export const getSortedPosts = () => {
       return 0;
     }
   );
+};
+
+// 根据分类获取文章
+export const getPostsByCategory = (category: string) => {
+  const posts = getSortedPosts();
+  return posts.filter((post) => post.frontMatter.category === category);
+};
+
+// 根据标签获取文章
+export const getPostsByTag = (tag: string) => {
+  const posts = getSortedPosts();
+  return posts.filter((post) => post.frontMatter.tags?.includes(tag));
 };
