@@ -1,143 +1,119 @@
 ---
-title: Skills and Tools
-description: A look at all the programming languages, libraries, and tools I've worked with.
-caption: Work
+title: 技能和工具
+description: 一览我使用过的所有编程语言、库和工具。
+caption: 工作
 layout: PageWithMDX
 ---
 
 import { Label } from '@/components/mdx/Labels';
 import { VStack, HStack } from '@/components/mdx/Stack';
 
-I started my career as a web developer about **{new Date().getFullYear() - 2016} years ago**. I've tried some programming languages and tech stack, both Back-End, and Front-End.
+大约5年前，我以Web开发者的身份开启职业生涯，期间了解和尝试过多种编程语言和技术栈，涵盖后端与前端开发。
 
-Even though the scope of web development is broad, I was very interested and focused on **Front-End Development** and **UI/UX Design**.
+尽管Web开发的领域非常广泛，但我对前端开发产生了浓厚兴趣并一直专注于这一方向。
 
 ---
 
-## Front-End Developer
+## 前端开发
 
-I love creating something that is clean and minimalistic, attractive and has value, and of course, easy to use.
+我热衷于创造简洁优雅、视觉吸睛且具备实用价值的产品——最重要的是，它们必须易于使用。
 
-I really enjoy creating websites with **rich UI components**, including:
+我尤其喜欢构建 **富含UI组件** 的网站类型，例如：
 
-- **Web application**,
-- **Documentation pages**,
-- **CMS contents layout**,
-- **Dashboard layout**,
-- and others.
-
-But I still like to make simple website pages like **landing pages**. So, what tools did I feel comfortable using during the website creation?
-
-### TypeScript
-
-First of all, the programming language. I'm very used to using **TypeScript**, although website creation can be done using PHP, Python, etc.
-
-The JavaScript superset—TypeScript—has accompanied me for **about {new Date().getFullYear() - 2018} years**.
-
-### React
-
-I really enjoy building single page application websites and React is my go-to library.
-
-I've been using it **since 2018 ({2022 - 2018} years)** and have become quite proficient with it.
+- **Web应用程序**，
+- **技术文档页面**，
+- **CMS内容管理系统**，
+- **仪表盘**，
+- 以及其他。
 
 ### Vue.js
 
-Single-page websites are my thing, and Vue.js is like my magic wand. Been waving it for a year now, and things are getting pretty cool!
+我比较喜欢构建**单页面**应用程序网站，而Vue是我的首选库。
 
-### Tailwind CSS
+自2020年工作以来，我一直在使用它，不管是Vue2还是Vue3，都比较熟练。
 
-For now, I love using Tailwind CSS for styling, even though I've been using SCSS for a longer time ({2020 - 2016} years).
+### React
 
-**I'm really comfortable** using it and I think it's a great tool.
+2024年5月——2024年7月，利用闲暇时间，我自学了React。
 
-### Framer Motion
-
-For animations, I am more comfortable using Framer Motion. Creating animations using JavaScript has **never been as easy as using Framer Motion**.
+但遗憾的是，一直未有机会在工作中实际使用，对Reacr的理解还有待加强。
 
 ### Next.js
 
-I've been using CRA for a few years, but since discovering Next.js, I don't think I would want to use any other web framework. **It's just that good!**
+在学习React的过程中，我有幸了解到了Next.js，并且深陷其中。为了加深对它的理解，我的博客网站主要技术栈，选的就是Next.js。
+
+### TypeScript
+
+TypeScript我使用了{new Date().getFullYear() - 2023}年多，它给我带来的最大感受是**清晰、可靠、易维护**。
+
+### Tailwind CSS
+
+目前，我喜欢使用Tailwind CSS进行样式设计，尽管我使用scss/less的时间更长（{new Date().getFullYear() - 2020}年）。
+
+其**原子化CSS模式**显著提升了开发效率，不用花心思去命名class类名，使用起来非常顺滑。
+
+### Framer Motion
+
+关于动画，我更青睐于使用Framer Motion。创建交互动画，使用Framer Motion来比使用JavaScript**更容易方便**。
 
 ---
 
-## UI/UX Designer
+## 详情纪要
 
-Designing user interfaces is something I'm really good at and I've been a UI/UX designer **from 2018 to present ({new Date().getFullYear() - 2018} years)**.
-
-I'm always thinking about how to create the best possible user experience, in addition to creating visually appealing user interfaces.
-
-The biggest challenge is finding the balance between creating a great user interface and an amazing user experience.
-
----
-
-## Detail and Summary
-
-I represent all data in labels to make it easier to read. The **underline indicator** shows how often I used the related item, e.g.:
+我将所有数据以标签化形式呈现以提升可读性。通过**下划线**的长度变化，可直观识别相关技术项的使用频率，例如：
 
 <br />
 <HStack spacing={8}>
-  <Label indicator={100}>Frequently Used</Label>
-  <Label indicator={25}>Occasionally</Label>
+  <Label indicator={100}>频繁使用</Label>
+  <Label indicator={25}>偶尔</Label>
 </HStack>
 
-### Programming Languages
+### 编程语言
 
 <VStack spacing={12}>
   <HStack spacing={8}>
-    <Label indicator={100}>TypeScript</Label>
-    <Label indicator={100}>JavaScript</Label>
     <Label indicator={100}>HTML</Label>
     <Label indicator={100}>CSS/SCSS</Label>
-  </HStack>
-  <HStack spacing={8}>
-    <Label indicator={50}>PHP</Label>
-    <Label indicator={25}>SQL</Label>
+    <Label indicator={100}>JavaScript</Label>
+    <Label indicator={60}>TypeScript</Label>
   </HStack>
 </VStack>
 
-### Technologies
+### 技术栈
 
 <VStack spacing={12}>
   <HStack spacing={8}>
-    <Label indicator={100}>Tailwind CSS</Label>
-    <Label indicator={75}>Material UI</Label>
-    <Label indicator={50}>Chakra UI</Label>
-    <Label indicator={50}>Bootstrap</Label>
-    <Label indicator={50}>Zurb Foundation</Label>
-  </HStack>
-  <HStack spacing={8}>
-    <Label indicator={90}>React</Label>
     <Label indicator={90}>Vue.js</Label>
+    <Label indicator={50}>React</Label>
     <Label indicator={50}>Next.js</Label>
-    <Label indicator={50}>Framer Motion</Label>
-    <Label indicator={50}>Storybook</Label>
-    <Label indicator={50}>Framework7</Label>
-    <Label indicator={25}>Redux</Label>
-    <Label indicator={25}>Webpack</Label>
-    <Label indicator={25}>Gulp</Label>
-    <Label indicator={25}>Backbone.js</Label>
-    <Label indicator={25}>Marionette.js</Label>
-    <Label indicator={25}>WordPress</Label>
+    <Label indicator={25}>jQuery</Label>
   </HStack>
   <HStack spacing={8}>
-    <Label indicator={25}>Express</Label>
-    <Label indicator={25}>Redis</Label>
-    <Label indicator={25}>MongoDB</Label>
+    <Label indicator={100}>Tailwind CSS</Label>
+    <Label indicator={75}>Element UI</Label>
+    <Label indicator={50}>Ant Design</Label>
+    <Label indicator={25}>shadcn/ui</Label>
+    <Label indicator={25}>Framer Motion</Label>
+  </HStack>
+  <HStack spacing={8}>
+    <Label indicator={50}>ECharts</Label>
+    <Label indicator={25}>openlayers</Label>
   </HStack>
 </VStack>
 
-### Softwares and Tools
+### 软件工具
 
 <VStack spacing={12}>
   <HStack spacing={8}>
     <Label indicator={100}>VS Code</Label>
+    <Label indicator={100}>NVM</Label>
     <Label indicator={100}>Node.js</Label>
     <Label indicator={100}>Git</Label>
-    <Label indicator={25}>Sourcetree</Label>
+    <Label indicator={25}>WindTerm</Label>
   </HStack>
   <HStack spacing={8}>
-    <Label indicator={100}>Figma</Label>
-    <Label indicator={50}>Inkscape</Label>
-    <Label indicator={50}>Photoshop</Label>
+    <Label indicator={60}>Deepseek</Label>
+    <Label indicator={60}>Typora</Label>
+    <Label indicator={25}>Photoshop</Label>
   </HStack>
 </VStack>
