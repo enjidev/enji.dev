@@ -1,25 +1,40 @@
 import clsx from 'clsx';
+import Image from 'next/image';
 import Link from 'next/link';
 
-import {
-  ExternalLink,
-  FigmaIcon,
-  GitHubIcon,
-  TwitterIcon,
-} from '@/components/Icons';
+import { ExternalLink, GitHubIcon } from '@/components/Icons';
 
 import dayjs from '@/utils/dayjs';
 
 function LastUpdate() {
   return (
-    <a
-      href="https://github.com/enjidev/enji.dev"
-      target="_blank"
-      rel="noreferrer nofollow"
-      className={clsx('hover:underline')}
-    >
-      <span>see the recent update on GitHub</span>
-    </a>
+    <>
+      <a
+        href="https://github.com/enjidev/enji.dev"
+        target="_blank"
+        rel="noreferrer nofollow"
+        className={clsx('hover:underline')}
+      >
+        <span>查看作者原仓库</span>
+      </a>
+      <br />
+      <Link
+        href="/update"
+        rel="noreferrer nofollow"
+        className={clsx('hover:underline')}
+      >
+        <span>查看 ylBlog 更新</span>
+      </Link>
+      <br />
+      <a
+        href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh-hans"
+        target="_blank"
+        rel="noreferrer nofollow"
+        className={clsx('hover:underline')}
+      >
+        <span>CC BY-NC-ND</span>
+      </a>
+    </>
   );
 }
 
@@ -109,28 +124,16 @@ function FooterDescription() {
           'dark:text-slate-400'
         )}
       >
-        About Me
+        关于我
       </div>
       <p className={clsx('mb-4 font-normal leading-relaxed')}>
-        I&apos;m Enji, a <strong>front-end developer</strong> who loves
-        intuitive, clean and modern UI design.
+        我是 Yulo Han, 一名 <strong>前端开发</strong>{' '}
+        ，专注于简洁、可复用和易维护的代码编程。
       </p>
       <ul className={clsx('-ml-2 flex gap-1')}>
         <li>
           <a
-            href="https://twitter.com/enjidev"
-            target="_blank"
-            rel="noreferrer nofollow"
-            className={clsx('flex h-9 w-9 items-center justify-center')}
-            aria-label="My Twitter profile"
-            title="My Twitter profile"
-          >
-            <TwitterIcon className={clsx('h-5 w-5')} />
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://github.com/enjidev"
+            href="https://github.com/Yulo7281"
             target="_blank"
             rel="noreferrer nofollow"
             className={clsx('flex h-9 w-9 items-center justify-center')}
@@ -138,18 +141,6 @@ function FooterDescription() {
             title="My GitHub profile"
           >
             <GitHubIcon className={clsx('h-5 w-5')} />
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://figma.com/@enjidev"
-            target="_blank"
-            rel="noreferrer nofollow"
-            className={clsx('flex h-9 w-9 items-center justify-center')}
-            aria-label="My Figma profile"
-            title="My Figma profile"
-          >
-            <FigmaIcon className={clsx('h-5 w-5')} />
           </a>
         </li>
       </ul>
@@ -179,58 +170,61 @@ function Footer() {
             >
               <div className={clsx('flex', 'sm:gap-16')}>
                 <FooterGroup
-                  title="Work"
+                  title="导航"
                   links={[
-                    { title: 'Contact', href: '/work/contact' },
-                    { title: 'Experience', href: '/work/experience' },
-                    {
-                      title: 'Services',
-                      href: '/work/services',
-                      label: 'soon',
-                    },
-                    {
-                      title: 'Skills and Tools',
-                      href: '/work/skills-and-tools',
-                    },
-                    { title: 'Studio', href: '/work/studio' },
+                    { title: '博客', href: '/blog' },
+                    { title: '日记', href: '/today-i-learned' },
+                    { title: '统计', href: '/stats' },
                   ]}
                 />
                 <FooterGroup
-                  title="Learn"
+                  title="工作"
                   links={[
-                    {
-                      title: 'Docs',
-                      href: '/docs',
-                    },
-                    {
-                      title: 'Personal Blog',
-                      href: '/blog',
-                    },
-                    {
-                      title: 'T.I.L',
-                      href: '/today-i-learned',
-                      label: 'new',
-                    },
+                    { title: '技能和工具', href: '/work/skills-and-tools' },
+                    { title: '经验', href: '/work/experience' },
+                    { title: '设备', href: '/work/studio' },
+                    { title: '联系方式', href: '/work/contact' },
+                  ]}
+                />
+                <FooterGroup
+                  title="更多"
+                  links={[
+                    { title: '宝藏项目', href: '/projects' },
+                    { title: '友情链接', href: '/links' },
+                    { title: '留言反馈', href: '/feedback' },
                   ]}
                 />
               </div>
               <div className={clsx('flex', 'sm:gap-16')}>
                 <FooterGroup
-                  title="This Site"
+                  title="协议"
                   links={[
                     {
-                      title: 'Design Concept',
-                      href: 'https://www.figma.com/community/file/1176392613303840973',
+                      title: '版权信息',
+                      href: '/copyright',
+                    },
+                    {
+                      title: '隐私政策',
+                      href: '/privacy-policy',
+                    },
+                    {
+                      title: 'Cookies',
+                      href: '/cookies',
+                    },
+                  ]}
+                />
+                <FooterGroup
+                  title="此网站"
+                  links={[
+                    {
+                      title: '开往',
+                      href: 'https://www.travellings.cn/go.html',
                       isInternal: false,
                     },
                     {
-                      title: 'Source Code',
-                      href: 'https://github.com/enjidev/enji.dev',
+                      title: '源代码',
+                      href: 'https://github.com/Yulo7281/ylBlog',
                       isInternal: false,
-                    },
-                    {
-                      title: 'Credits',
-                      href: '/credits',
                     },
                   ]}
                 />
@@ -245,7 +239,38 @@ function Footer() {
           )}
         >
           <div className={clsx('font-semibold')}>
-            &copy; {dayjs().format('YYYY')}, Enji Kusnadi
+            &copy; {dayjs().format('YYYY')}, yulo.com 版权所有
+            <div>
+              <span>
+                ICP:
+                <a
+                  href="https://beian.miit.gov.cn/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ margin: '0 5px' }}
+                >
+                  陕ICP备xxxxxxxxxx号-1
+                </a>
+              </span>
+              <br />
+              <span style={{ display: 'inline-flex', alignItems: 'center' }}>
+                公安:
+                <Image
+                  src="/assets/images/cdn/beian.png"
+                  alt="备案图标"
+                  width={15}
+                  height={15}
+                  style={{ margin: '0 5px' }}
+                />
+                <a
+                  href="https://beian.mps.gov.cn/#/query/webSearch?code=61072102000193"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  陕公网安备xxxxxxxx
+                </a>
+              </span>
+            </div>
           </div>
           <div className={clsx('text-slate-500', 'dark:text-slate-400')}>
             <LastUpdate />
