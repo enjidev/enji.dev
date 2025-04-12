@@ -8,9 +8,15 @@ interface BrowserTabProps {
   icon: ReactNode;
   title: string;
   isActive: boolean;
+  onClick?: () => void;
 }
 
-function BrowserTab({ icon, title, isActive }: BrowserTabProps) {
+function BrowserTab({
+  icon,
+  title,
+  isActive,
+  onClick = () => {},
+}: BrowserTabProps) {
   return (
     <div
       className={clsx('flex h-6 items-center truncate rounded-lg', [
@@ -22,6 +28,12 @@ function BrowserTab({ icon, title, isActive }: BrowserTabProps) {
           : ['bg-slate-200/50 text-slate-500', 'dark:bg-slate-100/5'],
       ])}
       style={{ width: 200 }}
+      role="button" // 设置角色为按钮
+      tabIndex={0} // 使其可聚焦
+      onClick={onClick} // 将 onClick 绑定到 div
+      onKeyDown={(e) => {
+        if (e.key === 'Enter') onClick();
+      }} // 解决Eslint报错
     >
       <div className={clsx('flex w-full gap-2 px-2 text-xs')}>
         {icon}
@@ -41,13 +53,13 @@ function AppWindow({
   type = 'app',
   browserTabs = [],
 }: PropsWithChildren<AppWindowProps>) {
-  const isWithBrowserTabs = type === 'browser' && browserTabs;
+  const isWithBrowserTabs = type === 'browser' && browserTabs.length;
 
   return (
     <div
       role="presentation"
       className={clsx(
-        'border-divider-light pointer-events-none flex h-full w-full select-none flex-col overflow-hidden rounded-xl border bg-white',
+        'border-divider-light flex h-full w-full select-none flex-col overflow-hidden rounded-xl border bg-white',
         'dark:border-divider-dark dark:bg-[#0c1222]'
       )}
     >
@@ -89,12 +101,13 @@ function AppWindow({
             </div>
             {isWithBrowserTabs && (
               <div className={clsx('mt-2 flex gap-2 px-3')}>
-                {browserTabs.map(({ icon, title, isActive }) => (
+                {browserTabs.map(({ icon, title, isActive, onClick }) => (
                   <BrowserTab
                     key={title}
                     icon={icon}
                     title={title}
                     isActive={isActive}
+                    onClick={onClick}
                   />
                 ))}
               </div>

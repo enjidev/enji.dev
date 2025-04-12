@@ -10,10 +10,7 @@ interface SectionTitleProps {
   title: string;
   caption: string;
   description: string | ReactNode;
-  button?: {
-    title: string;
-    href: string;
-  } | null;
+  buttons?: Array<{ title: string; href: string }> | null;
 }
 
 function SectionTitle({
@@ -21,7 +18,7 @@ function SectionTitle({
   title,
   caption,
   description,
-  button = null,
+  buttons = null,
 }: SectionTitleProps) {
   const Heading = as;
 
@@ -48,14 +45,15 @@ function SectionTitle({
       <p className={clsx('max-w-lg text-slate-600', 'dark:text-slate-400')}>
         {description}
       </p>
-      {button && (
-        <div className={clsx('mt-4', 'md:mt-6')}>
-          <Link href={button.href} className={clsx('button button--soft')}>
-            {button.title}
-            <ChevronRightIcon className="mt-0.5 h-3 w-3" />
-          </Link>
-        </div>
-      )}
+      {buttons &&
+        buttons.map((button) => (
+          <div className={clsx('mt-4', 'md:mt-6')}>
+            <Link href={button.href} className={clsx('button button--soft')}>
+              {button.title}
+              <ChevronRightIcon className="mt-0.5 h-3 w-3" />
+            </Link>
+          </div>
+        ))}
     </div>
   );
 }

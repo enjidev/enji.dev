@@ -6,8 +6,9 @@ function Projects() {
   return (
     <Page
       frontMatter={{
-        title: 'Projects',
-        description: 'Showcase of my front-end related work.',
+        title: '宝藏项目',
+        description: '一些项目的展示。',
+        caption: 'More',
       }}
       headerImage={<HeaderImage />}
     >
