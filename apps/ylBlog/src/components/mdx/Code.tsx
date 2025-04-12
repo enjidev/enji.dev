@@ -71,15 +71,15 @@ function Code({
           type="button"
           className={clsx('mdx-code__copy-button')}
           onClick={copyToClipboard}
-          title="Copy to Clipboard"
-          aria-label="Copy to Clipboard"
+          title="复制"
+          aria-label="复制"
         >
           <div
             className={clsx('mdx-code__copy-button-message', [
               isCopied ? 'mdx-code__copy-button-message-copied' : '',
             ])}
           >
-            Copied!
+            已复制!
           </div>
           <ClipboardIcon />
         </button>

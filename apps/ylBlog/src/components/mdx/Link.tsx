@@ -40,7 +40,7 @@ export function QuickView({ href, children }: QuickViewProps) {
             'dark:text-accent-400 dark:dark:bg-accent-400/10 dark:font-normal'
           )}
         >
-          Quick View
+          快速查看
           <ExternalLink className={clsx('h-3.5 w-3.5')} />
         </button>
       </span>

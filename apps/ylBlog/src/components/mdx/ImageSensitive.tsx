@@ -47,9 +47,7 @@ export default function ImageSensitive({
             <div className={clsx('font-bold')}>
               {message || 'Sensitive Content'}
             </div>
-            <p className={clsx('text-sm')}>
-              WARNING: This image is flagged as sensitive content.
-            </p>
+            <p className={clsx('text-sm')}>警告：此图像被标记为敏感内容。</p>
           </div>
         </div>
       )}

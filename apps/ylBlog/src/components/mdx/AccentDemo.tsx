@@ -1,42 +1,55 @@
 import clsx from 'clsx';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function AccentDemo() {
-  const accents = ['violet', 'red', 'blue', 'orange', 'green', 'pink'] as const;
+  const accents = [
+    'violet',
+    'red',
+    'amber',
+    'orange',
+    'green',
+    'pink',
+    'default',
+  ] as const;
 
-  const [accent, setAccent] = useState<(typeof accents)[number]>('violet');
+  const [accent, setAccent] = useState<(typeof accents)[number] | null>(null);
+
+  useEffect(() => {
+    const initialAccent = 'default';
+    setAccent(initialAccent);
+    document.documentElement.setAttribute('data-accent', initialAccent);
+  }, []);
 
   const handleClick = () => {
-    const newAccent = accents[accents.indexOf(accent) + 1] || accents[0];
-
-    // change the html data-accent
-    document.documentElement.setAttribute('data-accent', newAccent);
-
-    // set new active accent
+    if (accent === null) return;
+    const newAccent = accents[(accents.indexOf(accent) + 1) % accents.length];
     setAccent(newAccent);
+    document.documentElement.setAttribute('data-accent', newAccent);
   };
 
   const getButtonText = (color: (typeof accents)[number]): string => {
     switch (color) {
       case 'violet':
-        return `This is perfect 👌`;
+        return `你觉得紫色怎么样？🤔`;
       case 'red':
-        return `I look brave, don't I? 😡`;
-      case 'blue':
-        return `This is good 🤩`;
+        return `红色怎么样？😡`;
+      case 'amber':
+        return `琥珀色很好哦 🤩`;
       case 'orange':
-        return `Are you serious? 👀`;
+        return `你喜欢橙色吗？🍊`;
       case 'green':
-        return `Ah green, not bad 😁`;
+        return `啊，绿色，不错的选择！😁`;
       case 'pink':
-        return `Okay, bring me back to violet! 😭`;
+        return `粉色！🌸`;
       default:
-        return `Change the accent color!`;
+        return `✦ 想要换个颜色吗？✦`;
     }
   };
 
+  if (accent === null) return null;
+
   return (
-    <div className={clsx('my-12 flex items-center justify-center')}>
+    <div>
       {/* eslint-disable-next-line react/no-unknown-property */}
       <style jsx global>
         {`
@@ -93,11 +106,7 @@ function AccentDemo() {
           }
         `}
       </style>
-      <button
-        type="button"
-        className={clsx('button button--solid button--big')}
-        onClick={handleClick}
-      >
+      <button type="button" className={clsx('button')} onClick={handleClick}>
         {getButtonText(accent)}
       </button>
     </div>
