@@ -90,7 +90,7 @@ interface FooterGroupProps {
 
 function FooterGroup({ title, links }: FooterGroupProps) {
   return (
-    <div className={clsx('flex-1')}>
+    <div className={clsx('flex-none basis-1/3', 'sm:flex-1 sm:basis-1')}>
       <div
         className={clsx(
           'mb-2 px-2 text-[13px] text-slate-600',
@@ -158,17 +158,17 @@ function Footer() {
     >
       <div className={clsx('content-wrapper')}>
         <div className={clsx('py-10 font-semibold')}>
-          <div className={clsx('flex flex-col-reverse gap-16', 'lg:flex-row')}>
+          <div className={clsx('flex flex-col-reverse gap-14', 'lg:flex-row')}>
             <div className={clsx('flex-1')}>
               <FooterDescription />
             </div>
             <div
               className={clsx(
                 '-mx-2 flex flex-1 flex-col gap-8',
-                'sm:flex-row sm:gap-16 lg:mx-0'
+                'sm:flex-row sm:gap-14 lg:mx-0'
               )}
             >
-              <div className={clsx('flex', 'sm:gap-16')}>
+              <div className={clsx('flex', 'sm:gap-14')}>
                 <FooterGroup
                   title="导航"
                   links={[
@@ -195,21 +195,21 @@ function Footer() {
                   ]}
                 />
               </div>
-              <div className={clsx('flex', 'sm:gap-16')}>
+              <div className={clsx('flex', 'sm:gap-14')}>
                 <FooterGroup
                   title="协议"
                   links={[
                     {
                       title: '版权信息',
-                      href: '/copyright',
+                      href: '/agreement/copyright',
                     },
                     {
                       title: '隐私政策',
-                      href: '/privacy-policy',
+                      href: '/agreement/privacy-policy',
                     },
                     {
                       title: 'Cookies',
-                      href: '/cookies',
+                      href: '/agreement/cookies',
                     },
                   ]}
                 />
