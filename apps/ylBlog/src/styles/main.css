@@ -6,5 +6,6 @@
 @import './prism-colors.css';
 @import './mdx-contents.css';
 @import './mdx-components.css';
+@import './twikoo.css';
 
 @import 'tailwindcss/utilities';

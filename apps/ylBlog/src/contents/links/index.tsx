@@ -2,8 +2,9 @@ import clsx from 'clsx';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
+import TwikooComments from '@/components/TwikooComments';
+
 import ApplyFormat from './ApplyFormat';
-// import TwikooComments from "@/components/TwikooComments";
 import AvatarCircles from './AvatarCircles';
 import Disclaimer from './Disclaimer';
 
@@ -141,7 +142,7 @@ function LinksContents() {
         <Disclaimer />
       </div>
 
-      {/* <TwikooComments /> */}
+      <TwikooComments />
     </div>
   );
 }

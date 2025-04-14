@@ -1,0 +1,606 @@
+/* 颜色 */
+:root {
+  --twikoo-theme-op: #4259ef23;
+  --twikoo-white: #fff;
+  --twikoo-main: var(--twikoo-theme);
+  --twikoo-shadow-black: 0 0 12px 4px rgba(0, 0, 0, 0.05);
+  --twikoo-shadow-border: 0 8px 16px -4px #2c2d300c;
+  --style-border: 1px solid var(--twikoo-card-border);
+  --style-border-hover: 2px solid var(--twikoo-main);
+  --style-border-dashed: 1px dashed var(--twikoo-theme-op);
+  --style-border-avatar: 4px solid var(--twikoo-background);
+  --style-border-always: 2px solid var(--twikoo-card-border);
+}
+
+.light {
+  --twikoo-theme: #a78bfa;
+  --twikoo-theme-op: #a78bfa23;
+  --twikoo-green: #57bd6a;
+  --twikoo-fontcolor: #363636;
+  --twikoo-background: #f7f9fe;
+  --twikoo-maskbg: rgba(255, 255, 255, 0.6);
+  --twikoo-lighttext: var(--twikoo-main);
+  --twikoo-secondtext: rgba(60, 60, 67, 0.6);
+  --twikoo-secondbg: #edf0f7;
+  --twikoo-card-bg: #fff;
+  --twikoo-shadow-lightblack: 0 5px 12px -5px rgba(102, 68, 68, 0);
+  --twikoo-card-border: #c0c6d8;
+}
+
+.dark {
+  --twikoo-theme: #a78bfa;
+  --twikoo-theme-op: #a78bfa23;
+  --twikoo-green: #57bd6a;
+  --twikoo-fontcolor: #f7f7fa;
+  --twikoo-background: #18171d;
+  --twikoo-maskbg: rgba(0, 0, 0, 0.6);
+  --twikoo-lighttext: #f2b94b;
+  --twikoo-secondtext: #a1a2b8;
+  --twikoo-secondbg: #30343f;
+  --twikoo-card-bg: #1d1b26;
+  --twikoo-shadow-lightblack: 0 5px 12px -5px rgba(102, 68, 68, 0);
+  --twikoo-card-border: #42444a;
+}
+
+.OwO .OwO-body {
+  min-width: 31.25rem;
+}
+.twikoo svg {
+  color: var(--twikoo-fontcolor);
+}
+/* 评论区表情放大 */
+@keyframes owoIn {
+  0% {
+    transform: translate(0, -95%);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0, -112%);
+    opacity: 1;
+  }
+}
+
+#owo-big {
+  position: fixed;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  border: 1px #aaa solid;
+  border-radius: 10px;
+  z-index: 9999;
+  display: none;
+  transform: translate(0, -112%);
+  overflow: hidden;
+  animation: owoIn 0.3s cubic-bezier(0.42, 0, 0.3, 1.11);
+}
+#owo-big img {
+  width: 100%;
+}
+
+.tk-expand {
+  width: 100%;
+  cursor: pointer;
+  padding: 0.75em;
+  text-align: center;
+  transition: all 0.5s;
+  border: var(--style-border);
+  box-shadow: 0 8px 16px -4px #2c2d300c;
+  border-radius: 50px;
+  letter-spacing: 5px;
+  background-color: var(--twikoo-card-bg);
+}
+
+#twikoo .tk-comments > .tk-submit {
+  overflow: visible !important;
+  margin-top: 1.5rem;
+}
+#twikoo .tk-comments .OwO .OwO-body {
+  border: var(--style-border-always) !important;
+  border-radius: 8px !important;
+  overflow: hidden;
+  background-color: var(--twikoo-maskbg) !important;
+  backdrop-filter: saturate(180%) blur(10px);
+  cursor: auto;
+  top: 2.1em !important;
+  transform: translateZ(0);
+  animation: 0.3s ease 0.1s 1 normal both running donate_effcet;
+}
+#twikoo .tk-comments .OwO .OwO-body .OwO-items-show {
+  margin: 12px 8px;
+}
+#twikoo
+  .tk-comments
+  button.el-button.tk-cancel.el-button--default.el-button--small {
+  background: var(--twikoo-secondbg);
+  border-radius: 8px;
+  color: var(--twikoo-fontcolor);
+}
+#twikoo
+  .tk-comments
+  button.el-button.tk-cancel.el-button--default.el-button--small:hover {
+  background: var(--twikoo-lighttext);
+  color: var(--twikoo-white);
+}
+#twikoo .tk-comments a.tk-submit-action-icon.__markdown {
+  display: none;
+}
+#twikoo .tk-comments > div.tk-submit > div.tk-row.actions > a {
+  display: none;
+}
+#twikoo .tk-comments .el-button.tk-preview {
+  display: none;
+}
+#twikoo .tk-comments .el-button--primary.is-disabled,
+#twikoo .tk-comments .el-button--primary.is-disabled:active,
+#twikoo .tk-comments .el-button--primary.is-disabled:focus,
+#twikoo .tk-comments .el-button--primary.is-disabled:hover {
+  opacity: 0.2;
+}
+#twikoo .tk-comments .el-button--primary {
+  border-color: var(--twikoo-fontcolor);
+  color: var(--twikoo-card-bg);
+  border-radius: 12px;
+  box-shadow: var(--twikoo-shadow-black);
+  transition: 0.3s;
+  width: 6.25rem;
+  position: absolute;
+  top: -44px;
+  right: 0;
+  margin-left: 0.5rem !important;
+  height: 36px;
+}
+#twikoo .tk-comments .tk-input .el-textarea__inner {
+  min-height: 130px !important;
+  border-radius: 15px;
+  display: block;
+  resize: vertical;
+  padding: 16px 16px 40px 16px;
+  line-height: 1.5;
+  box-sizing: border-box;
+  width: 100%;
+  font-size: inherit;
+  color: var(--twikoo-fontcolor);
+  background-color: var(--twikoo-secondbg);
+  border: var(--style-border-always);
+  transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+#twikoo .tk-comments .el-input__inner {
+  background: var(--twikoo-secondbg) !important;
+  border: none !important;
+  color: var(--twikoo-fontcolor) !important;
+  padding-left: 8px;
+}
+#twikoo .tk-comments .el-input__inner:focus {
+  border: none;
+}
+#twikoo .tk-comments .el-input-group__append,
+#twikoo .tk-comments .el-input-group__prepend {
+  background-color: var(--twikoo-card-bg);
+  color: var(--twikoo-fontcolor);
+  border-color: var(--twikoo-card-border);
+  border: none;
+  font-weight: 700;
+}
+#twikoo .tk-comments .el-input-group--prepend .el-input__inner,
+#twikoo .tk-comments .el-input-group__append {
+  border-radius: 0 10px 10px 0;
+}
+#twikoo .tk-comments .el-input--small .el-input__inner {
+  padding: 8px;
+  padding-left: 16px;
+}
+#twikoo .tk-comments .el-input-group--prepend .el-input__inner,
+#twikoo .tk-comments .el-input-group__append {
+  border-left-width: 0 !important;
+}
+#twikoo .tk-comments .tk-meta-input {
+  position: relative;
+  margin-top: 8px;
+  width: calc(100% - 6.875rem);
+}
+#twikoo
+  .tk-comments
+  .tk-meta-input
+  .el-input.el-input--small.el-input-group.el-input-group--prepend {
+  border-radius: 12px;
+  background: var(--twikoo-secondbg);
+  border: var(--style-border-always);
+}
+#twikoo .tk-comments .tk-meta-input .el-input .el-input-group__prepend {
+  user-select: none;
+  border-radius: 12px 0 0 12px;
+}
+#twikoo
+  .tk-comments
+  .tk-meta-input
+  .el-input--small.el-input-group.el-input-group--prepend:focus-within {
+  border: var(--style-border-hover);
+}
+#twikoo .tk-comments .tk-row .tk-avatar {
+  display: none;
+}
+#twikoo .tk-comments .tk-row .tk-col {
+  flex-direction: column-reverse;
+}
+#twikoo .tk-comments .tk-row.actions {
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-top: 0;
+  justify-content: space-around;
+}
+#twikoo .tk-comments .tk-admin {
+  backdrop-filter: blur(5px);
+}
+#twikoo .tk-comments .el-button {
+  background-color: var(--twikoo-fontcolor);
+  border: 0 solid var(--twikoo-main);
+  color: var(--twikoo-background);
+}
+#twikoo .tk-comments .tk-tag-green {
+  background-color: var(--twikoo-main);
+  border: none;
+  border-radius: 4px;
+  color: var(--twikoo-white);
+}
+#twikoo .tk-comments .tk-action-icon {
+  color: var(--twikoo-main);
+  cursor: pointer;
+}
+#twikoo .tk-comments .tk-icon.__comments {
+  color: var(--twikoo-main);
+}
+#twikoo .tk-comments .tk-actions a {
+  cursor: pointer;
+}
+#twikoo .tk-comments .tk-nick {
+  line-height: 40px;
+}
+#twikoo .tk-comments .tk-extras {
+  margin-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+#twikoo .tk-comments .tk-expand:hover {
+  color: #fff;
+  background-color: var(--twikoo-main);
+  border: var(--style-border-none);
+}
+
+#twikoo .tk-comments .tk-content p {
+  margin: 0;
+}
+#twikoo .tk-comments .tk-admin-config-input .el-input__inner {
+  background: transparent !important;
+}
+#twikoo pre code {
+  background: none;
+}
+#twikoo code {
+  padding: 2px 4px;
+  background: var(--twikoo-secondbg);
+  color: #f47466;
+}
+#twikoo .tk-comment .tk-submit .tk-avatar,
+#twikoo .tk-replies .tk-avatar {
+  height: 2.5rem !important;
+  width: 2.5rem !important;
+}
+#twikoo .tk-comment pre {
+  background: #272822;
+  padding: 1em;
+  margin: 0.5em 0;
+  overflow: auto;
+  border-radius: 0.3em;
+}
+
+@media screen and (max-width: 768px) {
+  #twikoo .tk-comments-container .tk-comment {
+    padding: 1rem;
+    border: var(--style-border-always);
+    box-shadow: var(--twikoo-shadow-border);
+    background: var(--twikoo-card-bg);
+  }
+  #twikoo .tk-replies .tk-comment {
+    border: none;
+  }
+}
+
+#twikoo .tk-avatar {
+  border-radius: 50px;
+}
+#twikoo .tk-avatar .tk-avatar-img {
+  height: 2.5rem !important;
+}
+
+#twikoo .tk-replies {
+  max-height: 10rem !important;
+}
+#twikoo .tk-replies.tk-replies-expand {
+  max-height: none !important;
+}
+#twikoo .tk-replies .tk-comment {
+  border-top: var(--style-border-dashed);
+  border-radius: 12px;
+  padding: 1rem 0px 0px;
+  margin-top: 0;
+  transition: all 0.3s ease 0s;
+}
+#twikoo .tk-replies .tk-content span:first-child:not(.token) {
+  font-size: 0.75rem;
+  color: var(--twikoo-secondtext);
+}
+
+[data-theme='dark'] #owo-big {
+  background-color: #4a4a4a;
+}
+.tk-comments-container .tk-submit {
+  opacity: 1;
+  height: auto;
+  overflow: visible;
+}
+/* 输入提示 */
+/* 设置文字内容 :nth-child(1)的作用是选择第几个 */
+.el-input.el-input--small.el-input-group.el-input-group--prepend:nth-child(
+    1
+  ):before {
+  content: '输入QQ号会自动获取昵称和头像🐧';
+}
+
+.el-input.el-input--small.el-input-group.el-input-group--prepend:nth-child(
+    2
+  ):before {
+  content: '收到回复将会发送到您的邮箱📧';
+}
+
+.el-input.el-input--small.el-input-group.el-input-group--prepend:nth-child(
+    3
+  ):before {
+  content: '可以通过昵称访问您的网站🔗';
+}
+
+/* 当用户点击输入框时显示 */
+.el-input.el-input--small.el-input-group.el-input-group--prepend:focus-within::before {
+  display: block;
+  animation: commonTipsIn 0.3s;
+  z-index: 2;
+}
+
+.el-input.el-input--small.el-input-group.el-input-group--prepend:focus-within::after {
+  display: block;
+  animation: commonTriangleIn 0.3s;
+}
+
+/* 主内容区 */
+.el-input.el-input--small.el-input-group.el-input-group--prepend::before {
+  display: none;
+  position: absolute;
+  top: -60px;
+  white-space: nowrap;
+  border-radius: 10px;
+  left: 50%;
+  transform: translate(-50%);
+  padding: 14px 18px;
+  background: #444;
+  color: #fff;
+  z-index: 100;
+}
+
+/* 小角标 */
+.el-input.el-input--small.el-input-group.el-input-group--prepend::after {
+  display: none;
+  content: '';
+  position: absolute;
+  border: 12px solid transparent;
+  border-top-color: #444;
+  left: 50%;
+  transform: translate(-50%, -46px);
+}
+
+/* 评论框 */
+.vwrap {
+  box-shadow: 2px 2px 5px #bbb;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  padding: 30px;
+  margin: 30px 0px 30px 0px;
+}
+
+/* 设置评论框 */
+.vcard {
+  box-shadow: 2px 2px 5px #bbb;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  padding: 30px;
+  margin: 30px 0px 0px 0px;
+}
+
+#twikoo .tk-extra {
+  background: var(--twikoo-card-bg);
+  border: var(--style-border-always);
+  padding: 4px 8px;
+  border-radius: 8px;
+  margin-right: 4px;
+  color: var(--twikoo-secondtext);
+  margin-top: 6px;
+  font-size: 0.8rem;
+}
+#twikoo .tk-extra-text {
+  font-size: 0.75rem;
+}
+#twikoo .tk-replies .tk-content {
+  font-size: 0.9rem;
+}
+#twikoo .tk-content {
+  margin-top: 0;
+}
+.tk-content span a:not([data-fancybox='gallery']) {
+  font-weight: 500;
+  border-bottom: solid 2px var(--twikoo-lighttext);
+  color: var(--twikoo-fontcolor);
+  padding: 0 0.2em;
+  text-decoration: none;
+}
+.tk-content span a:not([data-fancybox='gallery']):hover {
+  color: var(--twikoo-white);
+  background-color: var(--twikoo-theme);
+  border-radius: 4px;
+}
+.tk-main .tk-content span > a {
+  border-bottom: none;
+}
+#post-comment .comment-head {
+  font-size: 0.8em !important;
+  margin-bottom: 0.5rem;
+}
+
+@keyframes commonTipsIn {
+  0% {
+    top: -50px;
+    opacity: 0;
+  }
+  100% {
+    top: -60px;
+    opacity: 1;
+  }
+}
+
+@keyframes commonTriangleIn {
+  0% {
+    transform: translate(-50%, -36px);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, -46px);
+    opacity: 1;
+  }
+}
+@keyframes donate_effcet {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    filter: none;
+    transform: translateY(0);
+  }
+}
+
+#body-wrap.page .el-input__inner {
+  background: var(--twikoo-card-bg);
+  box-shadow: var(--twikoo-shadow-border);
+  color: var(--twikoo-fontcolor);
+}
+#body-wrap.page .tk-admin-config .el-input__inner {
+  color: currentColor;
+}
+
+#twikoo.twikoo .el-input__inner:focus,
+#twikoo.twikoo .el-textarea__inner:focus {
+  /* border-color: var(--twikoo-main); */
+}
+
+.tk-comments-container
+  > .tk-comments-title
+  > span:last-child
+  > .tk-icon.__comments:nth-child(2) {
+  display: none;
+}
+
+.tk-comments-container > .tk-comment {
+  margin-top: 0 !important;
+  margin-bottom: 1rem !important;
+  transition: 0.3s;
+  border-radius: 12px;
+  padding: 0;
+  padding-top: 1rem;
+  border: none;
+  border-top: var(--style-border-dashed);
+}
+
+.tk-comments-container .el-loading-mask .el-loading-spinner {
+  display: flex;
+  justify-content: center;
+}
+
+#post-comment .comment-tips {
+  background-color: rgba(103, 194, 58, 0.13);
+  border: var(--style-border-always);
+  border-color: var(--twikoo-green);
+  color: var(--twikoo-green);
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin-top: 0.5rem;
+  display: none;
+  width: 100%;
+}
+
+#post-comment .comment-tips.show {
+  display: flex;
+}
+
+#page .tk-comments-container > .tk-comment {
+  background: var(--twikoo-card-bg);
+  padding: 1rem;
+  padding-bottom: 1rem;
+  border: var(--style-border);
+  border-top: var(--style-border);
+  box-shadow: var(--twikoo-shadow-border);
+}
+@media (prefers-reduced-motion: no-preference) {
+  #page .tk-comments-container > .tk-comment {
+    animation: animate-in-and-out 1s linear forwards;
+    animation-timeline: view();
+  }
+  #page .tk-comments-container > .tk-comment:has(.OwO-open) {
+    z-index: 1;
+  }
+}
+
+.tk-content {
+  margin-top: 0.5rem;
+  overflow: auto;
+  max-height: 500px;
+}
+
+.tk-comments .tk-row-actions-start {
+  position: absolute;
+  top: -84px;
+  left: 17px;
+}
+
+@media screen and (max-width: 768px) {
+  .OwO .OwO-body {
+    min-width: 260px;
+  }
+  .tk-comments .tk-row-actions-start {
+    top: -176px;
+  }
+  #twikoo .tk-comments .tk-submit .el-button--primary {
+    height: 123px;
+    top: -131px;
+  }
+  #twikoo .el-textarea__inner {
+    background: var(--twikoo-card-bg) !important;
+    overflow: hidden;
+    resize: none !important;
+  }
+
+  .tk-comments button.el-button.tk-preview.el-button--default.el-button--small {
+    display: none;
+  }
+  .tk-comments .tk-main .tk-submit .tk-row.actions {
+    justify-content: center;
+  }
+  .tk-comments button.el-button.tk-send,
+  .tk-comments button.el-button.tk-cancel {
+    width: 100%;
+  }
+  .tk-comments .tk-row-actions-start {
+    position: absolute;
+  }
+}
+
+.OwO .OwO-body .OwO-items .OwO-item:hover {
+  box-shadow: var(--twikoo-shadow-lightblack) !important;
+  border-radius: 8px;
+}

@@ -7,7 +7,7 @@ export default function Letter() {
       <div
         className={clsx(
           'transition-all delay-300 duration-1000 ease-in-out',
-          'md:relative md:top-0 md:h-[28rem] md:overflow-hidden md:hover:-top-48 md:hover:h-[65rem]'
+          'md:relative md:top-0 md:h-[28rem] md:overflow-hidden md:hover:-top-20 md:hover:h-[65rem]'
         )}
       >
         <Image
