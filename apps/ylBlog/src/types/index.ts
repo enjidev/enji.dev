@@ -25,10 +25,12 @@ export type TPageOgImage = Partial<
 >;
 
 export type TPostFrontMatter = TBaseFrontMatter & {
+  title: string;
   date: string;
   lang: 'id' | 'en';
   tags: Array<string>;
   category: string;
+  wordCount?: number;
 };
 
 export type TPostOgImage = Partial<

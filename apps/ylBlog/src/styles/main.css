@@ -7,5 +7,6 @@
 @import './mdx-contents.css';
 @import './mdx-components.css';
 @import './twikoo.css';
+@import './stats.css';
 
 @import 'tailwindcss/utilities';

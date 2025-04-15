@@ -24,9 +24,11 @@ export const getPostFrontMatter = (slug: string): TPostFrontMatter => {
   const fileContents = fs.readFileSync(fullPath, 'utf8');
 
   // 使用 front-matter 解析文件头部的元数据
-  const { attributes } = frontMatter<TPostFrontMatter>(fileContents);
+  const { attributes, body } = frontMatter<TPostFrontMatter>(fileContents);
 
-  return attributes;
+  const wordCount = body.replace(/\s+/g, '').length;
+
+  return { ...attributes, wordCount };
 };
 
 export const getSortedPosts = () => {

@@ -1,5 +1,4 @@
 import ProjectsContents from '@/contents/projects';
-import HeaderImage from '@/contents/projects/HeaderImage';
 import Page from '@/contents-layouts/Page';
 
 function Projects() {
@@ -10,7 +9,6 @@ function Projects() {
         description: '一些项目的展示。',
         caption: 'More',
       }}
-      headerImage={<HeaderImage />}
     >
       <ProjectsContents />
     </Page>

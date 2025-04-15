@@ -1,0 +1,184 @@
+/* 热力图样式 */
+.heatmap-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+}
+
+.heatmap_week {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-right: 2px;
+}
+
+.heatmap_day {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  position: relative;
+}
+
+.heatmap_day:hover {
+  z-index: 10;
+  filter: brightness(150%);
+}
+.heatmap_day:hover .heatmap_tooltip {
+  filter: brightness(70%);
+}
+
+.heatmap_day_level_0 {
+  background-color: #ebedf0;
+}
+
+.dark .heatmap_day_level_0 {
+  background-color: #2d333b;
+}
+
+.heatmap_day_level_1 {
+  background-color: #9be9a8;
+}
+
+.dark .heatmap_day_level_1 {
+  background-color: #0e6e33;
+}
+
+.heatmap_day_level_2 {
+  background-color: #40c463;
+}
+
+.dark .heatmap_day_level_2 {
+  background-color: #18a957;
+}
+
+.heatmap_day_level_3 {
+  background-color: #30a14e;
+}
+
+.dark .heatmap_day_level_3 {
+  background-color: #2ed16c;
+}
+
+.heatmap_day_level_4 {
+  background-color: #216e39;
+}
+
+.dark .heatmap_day_level_4 {
+  background-color: #4ae883;
+}
+
+.heatmap_tooltip {
+  position: fixed;
+  transform: translate(calc(-50% + 6px), calc(-100% - 6px));
+  width: fit-content;
+  margin-bottom: 5px;
+  padding: 10px;
+  background-color: #24292e;
+  color: white;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  z-index: 20;
+  pointer-events: none;
+}
+
+.heatmap_tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: #24292e transparent transparent transparent;
+}
+
+.heatmap_tooltip .heatmap_tooltip_header,
+.heatmap_tooltip_post_item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.heatmap_tooltip_post_item {
+  margin-top: 4px;
+}
+
+/* 柱形图样式 */
+.bar-chart-container {
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.bar-chart-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.bar-chart-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.bar-chart-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.bar-chart-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+@media (prefers-color-scheme: dark) {
+  .bar-chart-container::-webkit-scrollbar-track {
+    background: #1a1a1a;
+  }
+
+  .bar-chart-container::-webkit-scrollbar-thumb {
+    background: #666;
+  }
+
+  .bar-chart-container::-webkit-scrollbar-thumb:hover {
+    background: #888;
+  }
+}
+
+/* 扇形图容器样式 */
+.pie-chart-container {
+  display: flex;
+  align-items: start;
+  gap: 2rem;
+}
+
+.pie-chart-container path {
+  transition: all 0.3s ease;
+}
+
+.pie-chart-container path:hover {
+  transform: scale(1.05);
+  transform-origin: center;
+}
+
+/* Tag Cloud Styles */
+.tag-cloud-tags {
+  transition: 0.3s;
+}
+
+.tag-cloud-tags a {
+  transition: all 0.2s ease;
+}
+
+.tag-cloud-tags a:hover {
+  transform: scale(1.05);
+}
+
+.tags-shields {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s ease;
+}
+
+.tags-shields:hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}

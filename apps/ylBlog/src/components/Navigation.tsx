@@ -87,6 +87,9 @@ function Navbar() {
             <li>
               <NavLink title="T.I.L" href="/today-i-learned" />
             </li>
+            <li>
+              <NavLink title="统计" href="/stats" />
+            </li>
             <li className={clsx('hidden md:block')} data-accent="blue">
               <NavLinkDropdown title="工作" items={workLinks} />
             </li>
