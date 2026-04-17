@@ -59,7 +59,7 @@ function HeaderTitle() {
           I&apos;m <strong className="text-accent-600 dark:text-accent-500">Duy</strong> Thái,
         </m.span>
 
-        {/* Thêm h-8 hoặc h-10 để cố định chiều cao, ngăn nút bấm bị nhảy */}
+        {/* Fix chiều cao cố định và thẳng hàng sudo $ */}
         <m.h1
           className={clsx(
             'block text-base text-slate-600 font-mono leading-relaxed h-8 md:h-10', 
@@ -71,7 +71,8 @@ function HeaderTitle() {
           transition={{ delay: 0.3 }}
         >
           <div className="flex gap-2 items-center">
-            <span className="text-accent-600 dark:text-accent-500 font-bold shrink-0 mt-1">sudo $</span>
+            {/* Bỏ mt-1 và dùng items-center ở div cha để sudo $ không bị lệch */}
+            <span className="text-accent-600 dark:text-accent-500 font-bold shrink-0">sudo $</span>
             
             <Typewriter
               options={{
@@ -89,17 +90,16 @@ function HeaderTitle() {
                   
                   .typeString('I am a <strong class="text-accent-600">Store Manager</strong>')
                   .pauseFor(1000)
-                  .deleteChars(20)
-                  .typeString('I am a <strong class="text-accent-600">Operations Expert</strong>')
+                  // Chỉ xóa cụm "Store Manager" (13 ký tự), giữ lại "I am a "
+                  .deleteChars(13)
+                  .typeString('<strong class="text-accent-600">Operations Expert</strong>')
                   .pauseFor(1000)
                   .deleteAll(30)
 
-                  // 1 hàng text tránh tràn khung
                   .typeString('A <strong class="text-accent-600">Self-Learner</strong> loving VPS & Docker.')
                   .pauseFor(1500)
                   .deleteAll(40)
 
-                  // Rút gọn chỉ còn Photographer
                   .typeString('Also a <strong class="text-accent-600">Photographer.</strong>')
                   .pauseFor(3500)
                   .start();
