@@ -70,7 +70,7 @@ function HeaderTitle() {
           animate={animation.show}
           transition={{ delay: 0.3 }}
         >
-          <div className="flex gap-2 items-start">
+          <div className="flex gap-2 items-center">
             <span className="text-accent-600 dark:text-accent-500 font-bold shrink-0 mt-1">sudo $</span>
             
             <Typewriter
@@ -90,7 +90,7 @@ function HeaderTitle() {
                   .typeString('I am a <strong class="text-accent-600">Store Manager</strong>')
                   .pauseFor(1000)
                   .deleteChars(20)
-                  .typeString('<strong class="text-accent-600">Operations Expert</strong>')
+                  .typeString('I am a <strong class="text-accent-600">Operations Expert</strong>')
                   .pauseFor(1000)
                   .deleteAll(30)
 
