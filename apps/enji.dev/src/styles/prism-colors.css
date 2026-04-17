@@ -9,7 +9,7 @@
   /* tokens color */
   --prism-color-function: theme(colors.purple.700);
   --prism-color-keyword: theme(colors.red.700);
-  --prism-color-number: theme(colors.violet.600);
+  --prism-color-number: theme(colors.orange.600);
   --prism-color-string: theme(colors.blue.600);
   --prism-color-tag: theme(colors.green.700);
   --prism-color-parameter: theme(colors.orange.700);

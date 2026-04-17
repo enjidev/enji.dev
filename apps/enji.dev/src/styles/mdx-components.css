@@ -300,8 +300,8 @@
     @apply border-blue-300 bg-blue-500/30 text-blue-300;
   }
 
-  &.violet {
-    @apply border-violet-300 bg-violet-500/30 text-violet-300;
+  &.orange {
+    @apply border-orange-300 bg-orange-500/30 text-orange-300;
   }
 }
 
@@ -315,9 +315,9 @@
     @apply dark:text-blue-300;
   }
 
-  &.violet {
-    @apply bg-violet-500/10 text-violet-700;
-    @apply dark:text-violet-300;
+  &.orange {
+    @apply bg-orange-500/10 text-orange-700;
+    @apply dark:text-orange-300;
   }
 }
 
