@@ -5,6 +5,7 @@ import remarkPlugins from 'remark-plugins';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'standalone',
   redirects: async () => [
     {
       source: '/work',
