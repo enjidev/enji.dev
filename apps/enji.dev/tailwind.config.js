@@ -47,7 +47,13 @@ module.exports = {
         {
           'bg-grid': (value) => ({
             backgroundImage: `url("${svgToDataUri(
-              `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="${value}" stroke-dasharray="5 3" transform="scale(1, -1)"><path d="M0 .5H31.5V32"/></svg>`
+              `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="${value}" transform="scale(1, -1)">
+  <path stroke-dasharray="5 3" d="M0 .5H31.5V32"/>
+
+  <path d="M31.5 5V0.5H27 M31.5 0.5V32" stroke-dasharray="none" /> 
+  
+  <path d="M31.5 4V0.5H28 M31.5 0.5V4" />
+</svg>`
             )}")`,
           }),
         },
