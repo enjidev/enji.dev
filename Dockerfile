@@ -31,7 +31,7 @@ RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
 # LƯU Ý: Enji.dev build standalone sẽ nằm trong apps/enji.dev/.next/standalone
-COPY --from=builder /app/apps/enji.dev/public ./public
+COPY --from=builder /app/apps/enji.dev/public ./apps/enji.dev/public
 COPY --from=builder --chown=nextjs:nodejs /app/apps/enji.dev/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/apps/enji.dev/.next/static ./apps/enji.dev/.next/static
 
