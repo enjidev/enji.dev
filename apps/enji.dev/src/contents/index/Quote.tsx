@@ -37,7 +37,7 @@ function Quote() {
                   'dark:bg-slate-800' // Giữ nguyên màu nền xám mặc định
                 )}
               />
-              automated,
+              automated
             </strong>
           </span>
           {/* Thanh gạch ngang bên phải */}
@@ -46,7 +46,7 @@ function Quote() {
 
         {/* Hàng 3: it's not done. */}
         <span className={clsx('leading-[1.15]')}>
-          it&apos;s not{' '}
+          ,it&apos;s not{' '}
           <strong className={clsx('relative font-extrabold text-slate-600', 'dark:text-slate-300')}>
             done.
           </strong>
