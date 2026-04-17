@@ -16,7 +16,7 @@ function HeaderTitle() {
 
   return (
     <div>
-      {/* Phần Hi và Emoji */}
+      {/* Hi & Emoji */}
       <m.div
         className={clsx(
           'mb-1 flex items-center gap-1 text-2xl text-slate-600',
@@ -29,39 +29,23 @@ function HeaderTitle() {
       >
         hi!
         <m.div
-          initial={{
-            opacity: 0,
-            y: 16,
-            rotate: 30,
-            transformOrigin: 'right center',
-          }}
+          initial={{ opacity: 0, y: 16, rotate: 30 }}
           animate={controls}
-          transition={{
-            type: 'spring',
-            delay: 0.35,
-            bounce: 0.7,
-            duration: 0.7,
-          }}
+          transition={{ type: 'spring', delay: 0.35, bounce: 0.7, duration: 0.7 }}
         >
           <Image
-            className={clsx('w-7 md:w-10')}
+            className="w-7 md:w-10"
             alt="Love-you Gesture"
             src="/assets/emojis/love-you-gesture.png"
             width={48}
             height={48}
-            onLoadingComplete={() => {
-              controls.start({
-                opacity: 1,
-                y: 0,
-                rotate: 0,
-              });
-            }}
+            onLoadingComplete={() => controls.start({ opacity: 1, y: 0, rotate: 0 })}
             priority
           />
         </m.div>
       </m.div>
 
-      {/* Phần Tên và Nội dung gõ chữ */}
+      {/* Tên Duy Thái */}
       <span className={clsx('text-slate-700', 'dark:text-slate-300')}>
         <m.span
           className={clsx(
@@ -72,17 +56,14 @@ function HeaderTitle() {
           animate={animation.show}
           transition={{ delay: 0.2 }}
         >
-          I&apos;m{' '}
-          <strong className={clsx('text-accent-600', 'dark:text-accent-500')}>
-            Duy
-          </strong>{' '}
-          Thái,{' '}
+          I&apos;m <strong className="text-accent-600 dark:text-accent-500">Duy</strong> Thái,
         </m.span>
 
+        {/* Khu vực Typewriter - Fix cứng chiều cao để không giật nút */}
         <m.h1
           className={clsx(
-            'block text-base text-slate-600 font-mono leading-relaxed', 
-            'md:text-xl',
+            'block text-base text-slate-600 font-mono leading-relaxed min-h-[3.5rem]', 
+            'md:text-xl md:min-h-[4rem]',
             'dark:text-slate-400'
           )}
           initial={animation.hide}
@@ -97,35 +78,25 @@ function HeaderTitle() {
                 autoStart: true,
                 loop: true,
                 cursor: '_',
-                delay: 60,
+                delay: 40,
                 wrapperClassName: 'text-slate-700 dark:text-slate-300 block',
               }}
               onInit={(typewriter) => {
                 typewriter
-                  // Khởi động
-                  .typeString('systemctl start thaiduy.digital')
+                  // Kịch bản 2 hàng - Ngắn gọn cho AI Training & Remote job
+                  .typeString('init --mode remote-work')
                   .pauseFor(1000)
-                  .deleteAll(30)
+                  .deleteAll(20)
                   
-                  // Chuyên môn Manager & Operations
-                  .typeString('I am a <strong class="text-accent-600 dark:text-accent-500">Store Manager</strong>')
-                  .pauseFor(1000)
-                  .deleteChars(13)
-                  .typeString('<strong class="text-accent-600 dark:text-accent-500">Operations Expert</strong>')
-                  .pauseFor(1000)
-                  .deleteAll(30)
-
-                  // Đam mê Self-Learner & Server (Đã xuống dòng để tránh tràn hình)
-                  .typeString('A <strong class="text-accent-600 dark:text-accent-500">Technical Self-Learner</strong>')
-                  .typeString('<br />')
-                  .typeString('who loves servers, VPS, and clean code.')
+                  .typeString('Operations Expert &<br />AI Training Enthusiast')
                   .pauseFor(2000)
-                  .deleteAll(30)
+                  .deleteAll(20)
 
-                  // Khoe thêm chất nghệ sĩ (Photographer & Designer)
-                  .typeString('also a <strong class="text-accent-600 dark:text-accent-500">Photographer</strong>')
-                  .pauseFor(500)
-                  .typeString(' & <br />Graphic Designer by heart.')
+                  .typeString('Technical Self-Learner<br />loving Docker & VPS')
+                  .pauseFor(2000)
+                  .deleteAll(20)
+
+                  .typeString('Graphic Designer &<br />Photographer by heart')
                   .pauseFor(5000)
                   .start();
               }}
