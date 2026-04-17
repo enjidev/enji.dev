@@ -16,7 +16,7 @@ function HeaderTitle() {
 
   return (
     <div>
-      {/* 1. Phần Hi và Emoji vẫy tay - Giữ đúng bản sắc Enji */}
+      {/* Phần Hi và Emoji */}
       <m.div
         className={clsx(
           'mb-1 flex items-center gap-1 text-2xl text-slate-600',
@@ -61,7 +61,7 @@ function HeaderTitle() {
         </m.div>
       </m.div>
 
-      {/* 2. Phần Tên và Dòng Sudo Typewriter */}
+      {/* Phần Tên và Nội dung gõ chữ */}
       <span className={clsx('text-slate-700', 'dark:text-slate-300')}>
         <m.span
           className={clsx(
@@ -81,7 +81,7 @@ function HeaderTitle() {
 
         <m.h1
           className={clsx(
-            'block text-base text-slate-600 font-mono', 
+            'block text-base text-slate-600 font-mono leading-relaxed', 
             'md:text-xl',
             'dark:text-slate-400'
           )}
@@ -89,8 +89,8 @@ function HeaderTitle() {
           animate={animation.show}
           transition={{ delay: 0.3 }}
         >
-          <div className="flex gap-2 items-center">
-            <span className="text-accent-600 dark:text-accent-500 font-bold shrink-0">sudo &gt;</span>
+          <div className="flex gap-2 items-start">
+            <span className="text-accent-600 dark:text-accent-500 font-bold shrink-0 mt-1">sudo &gt;</span>
             
             <Typewriter
               options={{
@@ -98,22 +98,34 @@ function HeaderTitle() {
                 loop: true,
                 cursor: '_',
                 delay: 60,
-                wrapperClassName: 'text-slate-700 dark:text-slate-300',
+                wrapperClassName: 'text-slate-700 dark:text-slate-300 block',
               }}
               onInit={(typewriter) => {
                 typewriter
+                  // Khởi động
                   .typeString('systemctl start thaiduy.digital')
                   .pauseFor(1000)
                   .deleteAll(30)
+                  
+                  // Chuyên môn Manager & Operations
                   .typeString('I am a <strong class="text-accent-600 dark:text-accent-500">Store Manager</strong>')
                   .pauseFor(1000)
                   .deleteChars(13)
                   .typeString('<strong class="text-accent-600 dark:text-accent-500">Operations Expert</strong>')
                   .pauseFor(1000)
                   .deleteAll(30)
+
+                  // Đam mê Self-Learner & Server (Đã xuống dòng để tránh tràn hình)
                   .typeString('A <strong class="text-accent-600 dark:text-accent-500">Technical Self-Learner</strong>')
+                  .typeString('<br />')
+                  .typeString('who loves servers, VPS, and clean code.')
+                  .pauseFor(2000)
+                  .deleteAll(30)
+
+                  // Khoe thêm chất nghệ sĩ (Photographer & Designer)
+                  .typeString('also a <strong class="text-accent-600 dark:text-accent-500">Photographer</strong>')
                   .pauseFor(500)
-                  .typeString(' who loves servers, VPS, and clean code.')
+                  .typeString(' & <br />Graphic Designer by heart.')
                   .pauseFor(5000)
                   .start();
               }}
