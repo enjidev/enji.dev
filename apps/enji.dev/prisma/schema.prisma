@@ -7,16 +7,32 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+// --- MODEL CHÍNH CHO BLOG (Sếp bắn dữ liệu n8n vào đây) ---
+model Post {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  ghostId     String   @unique
+  title       String
+  slug        String   @unique
+  summary     String
+  content     String
+  image       String
+  category    String   @default("General")
+  publishedAt DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  status      String   @default("published")
+}
+
+// --- CÁC MODEL METADATA CÓ SẴN CỦA SẾP ---
 model ContentMeta {
   id String @id @default(auto()) @map("_id") @db.ObjectId
 
   type      ContentType
   title     String
-  slug      String     @unique
+  slug      String      @unique
   views     View[]
   shares    Share[]
   reactions Reaction[]
-  createdAt DateTime   @default(now())
+  createdAt DateTime    @default(now())
 }
 
 enum ContentType {
