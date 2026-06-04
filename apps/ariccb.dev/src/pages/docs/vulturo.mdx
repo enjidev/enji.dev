@@ -1,0 +1,56 @@
+---
+title: Vulturo
+description: A Swift dice roguelike prototype with deterministic scoring and run progression.
+caption: Dice Roguelike Game Prototype
+layout: Project
+---
+
+import InlineHighlight from '@/components/mdx/InlineHighlight';
+
+Vulturo is a Swift game experiment about building a five-die scoring engine over the course of a run. The prototype combines dice rolls, collectible modifiers, escalating score targets, and risk/reward decisions into a deterministic roguelike structure.
+
+The design goal is to make each run feel readable and replayable: the same seed should produce the same outcomes, scoring should be explainable, and player decisions should matter through dice selection, modifier order, and market choices.
+
+---
+
+## Product image area
+
+<div className="my-8 rounded-3xl border border-dashed border-slate-300 bg-slate-50/80 p-10 text-center dark:border-slate-700 dark:bg-slate-900/60">
+  <p className="text-xs font-black uppercase tracking-[0.24em] text-slate-500 dark:text-slate-400">
+    Product images coming soon
+  </p>
+  <p className="mt-3 text-sm text-slate-600 dark:text-slate-400">
+    Reserved for gameplay screenshots, dice UI, market scenes, and scoring
+    breakdowns.
+  </p>
+</div>
+
+## Core loop
+
+- Build and modify a persistent set of owned dice during a run.
+- Choose which five dice to play into each scoring attempt.
+- Clear escalating Wagers across Antes, including Small, Large, and Boss-style targets.
+- Improve the run through Tomes, Chits, Crates, Tools, Charts, Marks, and Anomalies.
+- Use deterministic seeds so outcomes can be reproduced and tested.
+
+## Design pillars
+
+- **Synergy density** — items should connect to other systems and create build-around moments.
+- **Determinism** — the same seed should produce the same result for testing and replayability.
+- **Readable scoring** — the scoring pipeline should be explainable rather than a black box.
+- **Player agency** — die choice, modifier order, and risk/reward decisions should shape the run.
+- **Escalating pressure** — runs should feel like rising stakes rather than flat repeated rolls.
+
+## Technical direction
+
+Vulturo is built in Swift with a split between the core game logic and the Apple-platform app. The core package supports deterministic tests and a console loop, while the app layer can focus on SwiftUI/SpriteKit presentation, interactions, haptics, and game feel.
+
+That separation keeps the scoring and run systems testable while leaving room to evolve the visual product experience.
+
+<div className="flex flex-wrap gap-2">
+  <InlineHighlight>`Swift`</InlineHighlight>
+  <InlineHighlight>`Dice roguelike`</InlineHighlight>
+  <InlineHighlight>`Deterministic scoring`</InlineHighlight>
+  <InlineHighlight>`Run progression`</InlineHighlight>
+  <InlineHighlight>`Apple platforms`</InlineHighlight>
+</div>

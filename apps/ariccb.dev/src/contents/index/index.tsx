@@ -240,21 +240,29 @@ function ExploreNextSection() {
                 repeatCount="indefinite"
               />
             </path>
-            <path
-              d="M704 28 L728 42 L706 58"
+            <g
+              transform="translate(720 42) rotate(-8)"
               fill="none"
               stroke="currentColor"
-              strokeWidth="5"
               strokeLinecap="round"
-              strokeLinejoin="round"
             >
-              <animate
-                attributeName="opacity"
-                values="0.35;1;0.35"
-                dur="1.4s"
-                repeatCount="indefinite"
-              />
-            </path>
+              <path d="M-13 -13 L13 13" strokeWidth="5">
+                <animate
+                  attributeName="opacity"
+                  values="0.35;1;0.35"
+                  dur="1.4s"
+                  repeatCount="indefinite"
+                />
+              </path>
+              <path d="M13 -13 L-13 13" strokeWidth="5">
+                <animate
+                  attributeName="opacity"
+                  values="0.35;1;0.35"
+                  dur="1.4s"
+                  repeatCount="indefinite"
+                />
+              </path>
+            </g>
             <circle cx="38" cy="50" r="7" fill="currentColor">
               <animate
                 attributeName="r"

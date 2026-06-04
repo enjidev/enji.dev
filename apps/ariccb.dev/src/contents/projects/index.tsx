@@ -416,18 +416,21 @@ function HelixirProjectCards() {
       caption: 'AI-assisted task and knowledge workflows',
       description:
         'A productivity app exploring the overlap between notes, tasks, calendars, and local markdown-first work across Apple platforms.',
+      href: '/docs/defttask',
     },
     {
       title: 'Vulturo',
       caption: 'Dice roguelike game prototype',
       description:
         'A Swift game experiment built around deterministic scoring, collectible modifiers, wagers, and run progression systems.',
+      href: '/docs/vulturo',
     },
     {
       title: 'Omni-gamer Leaderboard',
       caption: 'Cross-game ranking system',
       description:
         'A backend API for tracking game, category, and overall leaderboards across games using Elo-style scoring.',
+      href: '/docs/omni-gamer-leaderboard',
     },
   ];
 
@@ -463,6 +466,16 @@ function HelixirProjectCards() {
             >
               {project.description}
             </p>
+            <a
+              href={project.href}
+              className={clsx(
+                'mt-5 inline-flex rounded-full bg-amber-100 px-4 py-2 text-xs font-black uppercase tracking-[0.14em] text-amber-700 transition',
+                'hover:-translate-y-0.5 hover:bg-amber-200 hover:shadow-md',
+                'dark:bg-amber-500/15 dark:text-amber-200 dark:hover:bg-amber-500/25'
+              )}
+            >
+              Learn More
+            </a>
           </div>
         ))}
       </div>

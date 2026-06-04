@@ -1,0 +1,51 @@
+---
+title: Omni-gamer Leaderboard
+description: A backend API for cross-game leaderboards using Elo-style scoring.
+caption: Cross-Game Ranking System
+layout: Project
+---
+
+import InlineHighlight from '@/components/mdx/InlineHighlight';
+
+Omni-gamer Leaderboard is a backend API prototype for tracking competitive results across different games, sports, and categories. The idea is to make friendly competition easier to organize by recording game sessions once, then rolling those results into game-specific, category-specific, and overall leaderboard views.
+
+The project explores how Elo-style scoring can work beyond a single game: chess, ping pong, pinball, board games, sports, or any repeatable competition where players want a shared ranking history.
+
+---
+
+## Product image area
+
+<div className="my-8 rounded-3xl border border-dashed border-slate-300 bg-slate-50/80 p-10 text-center dark:border-slate-700 dark:bg-slate-900/60">
+  <p className="text-xs font-black uppercase tracking-[0.24em] text-slate-500 dark:text-slate-400">
+    Product images coming soon
+  </p>
+  <p className="mt-3 text-sm text-slate-600 dark:text-slate-400">
+    Reserved for leaderboard UI concepts, API diagrams, and ranking dashboards.
+  </p>
+</div>
+
+## What it tracks
+
+- Users and teams participating in recorded game sessions.
+- Games and categories, so rankings can exist at multiple levels.
+- Versus outcomes, ties, high-score, low-score, and time-based scoring shapes.
+- Game-level Elo, category-level Elo, and overall Omni Elo.
+- Leaderboard endpoints for game and category ranking views.
+
+## Backend shape
+
+The prototype is an Express and MongoDB/Mongoose API. It models users, games, game categories, game sessions, game Elo records, category Elo records, and overall Omni Elo records.
+
+A recorded session can contain different scoring fields depending on the game type, then controller logic updates the relevant leaderboard records. The current API includes routes for users, games, sessions, seeds, and leaderboard lookups.
+
+## Product direction
+
+The larger product idea is a flexible ranking layer for real friend groups or communities: record results from many different competitions, compare performance inside a single game, then surface broader “who is best overall?” rankings without forcing every activity into the same scoring model.
+
+<div className="flex flex-wrap gap-2">
+  <InlineHighlight>`Express API`</InlineHighlight>
+  <InlineHighlight>`MongoDB`</InlineHighlight>
+  <InlineHighlight>`Elo-style scoring`</InlineHighlight>
+  <InlineHighlight>`Game leaderboards`</InlineHighlight>
+  <InlineHighlight>`Cross-game rankings`</InlineHighlight>
+</div>

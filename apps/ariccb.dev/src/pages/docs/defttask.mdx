@@ -1,0 +1,54 @@
+---
+title: DeftTask
+description: A markdown-first productivity app for tasks, notes, calendars, and local knowledge work.
+caption: AI-Assisted Task and Knowledge Workflows
+layout: Project
+---
+
+import InlineHighlight from '@/components/mdx/InlineHighlight';
+
+DeftTask is a native Swift productivity app for people who want their tasks, notes, calendar context, and working knowledge to live closer together. It explores a local, markdown-first workflow across iPhone, iPad, and Mac, where structured task data can stay queryable while notes remain durable, editable files.
+
+The product direction is intentionally practical: keep the source material human-readable, make capture and review fast, and use AI assistance where it helps connect scattered work into clearer next actions.
+
+---
+
+## Product image area
+
+<div className="my-8 rounded-3xl border border-dashed border-slate-300 bg-slate-50/80 p-10 text-center dark:border-slate-700 dark:bg-slate-900/60">
+  <p className="text-xs font-black uppercase tracking-[0.24em] text-slate-500 dark:text-slate-400">
+    Product images coming soon
+  </p>
+  <p className="mt-3 text-sm text-slate-600 dark:text-slate-400">
+    Reserved for DeftTask screenshots, Apple-platform mockups, or workflow
+    diagrams.
+  </p>
+</div>
+
+## What it explores
+
+- A native SwiftUI productivity experience for iPhone, iPad, and macOS.
+- A bridge between tasks, calendar planning, local notes, and knowledge objects.
+- Markdown-backed workspaces where files remain portable and human-readable.
+- AI-assisted review and organization without making the AI system the source of truth.
+
+## Architecture direction
+
+DeftTask is being built as a native Apple-platform app. The current direction combines SwiftUI for the app experience, local structured storage for tasks and indexes, and markdown files for notes and workspace content.
+
+The underlying model is intentionally hybrid: structured entities like tasks can be synced and queried, while notes and workspace files remain ordinary `.md` documents. That supports a workflow where the app can provide richer task/calendar/productivity affordances without trapping the user’s knowledge in an opaque database.
+
+## Key product ideas
+
+- **Markdown-first knowledge** — notes stay as files that can be edited outside the app.
+- **Task/file connection** — tasks can carry context back to the note, folder, or workspace where the work lives.
+- **Apple-native surfaces** — optimized for the device in hand rather than treating mobile and desktop as the same screen.
+- **Local-first feel** — fast capture, review, and navigation around the user’s real working files.
+
+<div className="flex flex-wrap gap-2">
+  <InlineHighlight>`SwiftUI`</InlineHighlight>
+  <InlineHighlight>`Markdown-first`</InlineHighlight>
+  <InlineHighlight>`Local workspaces`</InlineHighlight>
+  <InlineHighlight>`Tasks + notes`</InlineHighlight>
+  <InlineHighlight>`Apple platforms`</InlineHighlight>
+</div>
