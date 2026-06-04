@@ -92,11 +92,11 @@ function HeaderTitle() {
               'dark:text-slate-300'
             )}
           >
-            Full-Stack Developer &middot;
+            Full-Stack AI Engineer &middot;
           </strong>{' '}
-          Passionate, and motivated{' '}
+          Building software and AI workflows{' '}
           <span className={clsx('block')}>
-            by providing{' '}
+            that create{' '}
             <strong
               className={clsx(
                 'font-bold lowercase text-yellow-600',
@@ -105,7 +105,7 @@ function HeaderTitle() {
             >
               value
             </strong>{' '}
-            to others - while knowing that good design
+            for teams — while knowing that good design
           </span>
           <span className={clsx('block')}>
             is the{' '}
@@ -117,7 +117,7 @@ function HeaderTitle() {
             >
               key
             </strong>{' '}
-            to the whole experience.
+            to reliable product experiences.
           </span>
         </m.h1>
       </span>

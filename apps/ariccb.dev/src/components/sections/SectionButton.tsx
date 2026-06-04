@@ -21,10 +21,14 @@ export function SectionButton({
     <button
       type="button"
       className={clsx(
-        'flex flex-1 items-center gap-4 rounded-2xl border-2 bg-white px-4 py-4 text-left',
+        'flex flex-1 items-center gap-4 rounded-2xl border-2 bg-white px-4 py-4 text-left transition duration-300',
+        'hover:-translate-y-0.5 hover:shadow-lg',
         'dark:bg-slate-900',
         active
-          ? ['border-accent-400', 'dark:border-accent-400']
+          ? [
+              'border-accent-400 bg-accent-50 shadow-accent-900/10 shadow-lg',
+              'dark:border-accent-400 dark:bg-accent-500/10',
+            ]
           : ['border-divider-light ', 'dark:border-divider-dark']
       )}
       onClick={onClick}

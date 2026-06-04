@@ -31,16 +31,17 @@ const content: Array<Content> = [
     state: 'professional-skills',
     shows: ['professional-skills'],
     title: 'Professional Skills',
-    description: 'Important skills that compliment any position.',
-    tag1: 'public speaking',
+    description:
+      'Important skills that complement product and engineering teams.',
+    tag1: 'workflow mapping',
     tag2: 'teamwork',
     tag3: 'clear communication',
-    tag4: 'critical thinking',
+    tag4: 'technical planning',
     tag5: 'system and design thinking',
-    tag6: 'conflit resolution',
+    tag6: 'problem solving',
     tag7: 'coordinating',
-    tag8: '',
-    tag9: '',
+    tag8: 'teaching',
+    tag9: 'critical thinking',
     tag10: '',
   },
   {
@@ -94,7 +95,7 @@ const content: Array<Content> = [
 ];
 
 function WhoIAm() {
-  const [currentState, setCurrentState] = useState<Content | null>(null);
+  const [currentState, setCurrentState] = useState<Content>(content[0]);
 
   return (
     <>
@@ -102,16 +103,16 @@ function WhoIAm() {
         <SectionTitle
           title="Let Me Show You A Little Bit About Me"
           caption="Who I Am + Soft Skills"
-          description="Everyone has their own set of skills, outlook on life, and personality. It's the sum of these things together create the individual."
+          description="Everyone has their own set of skills, outlook on life, and personality. The best work comes from combining technical judgment, communication, curiosity, and follow-through."
         />
       </header>
       <SectionContent>
         {/* move the whole section down in the y direction */}
-        <div className={clsx('flex gap-4')}>
+        <div className={clsx('flex flex-col gap-4 md:flex-row')}>
           <div
             className={clsx(
-              'mt-6 flex-1 flex-col gap-3',
-              'flex md:-mt-8',
+              'mt-6 grid flex-1 grid-cols-1 gap-3 sm:grid-cols-2',
+              'md:-mt-8 md:flex md:flex-col',
               'lg:flex'
             )}
           >
@@ -133,13 +134,7 @@ function WhoIAm() {
           >
             {' '}
             {currentState === null ? null : (
-              <div
-                className={clsx(
-                  'mt-6 flex gap-4',
-                  '-mt-8 md:gap-6',
-                  'lg:top-8 lg:mt-0'
-                )}
-              >
+              <div className={clsx('flex gap-4', 'md:gap-6', 'lg:top-8')}>
                 <div>
                   <TodoItem
                     state={currentState ? currentState.shows : null}

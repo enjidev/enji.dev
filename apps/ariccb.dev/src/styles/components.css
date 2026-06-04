@@ -89,7 +89,7 @@
       @apply relative;
 
       &::after {
-        @apply absolute left-2 right-2 bottom-1 border-b-2 border-dotted border-slate-600/50 content-[''];
+        @apply absolute bottom-1 left-2 right-2 border-b-2 border-dotted border-slate-600/50 content-[''];
         @apply dark:border-slate-400/50;
       }
     }
@@ -193,5 +193,25 @@
       @apply cursor-not-allowed text-slate-600;
       @apply dark:text-slate-400;
     }
+  }
+}
+
+@keyframes tag-pop {
+  0% {
+    opacity: 0;
+    transform: translateY(12px) scale(0.92);
+    filter: blur(4px);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translateY(-2px) scale(1.03);
+    filter: blur(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
   }
 }

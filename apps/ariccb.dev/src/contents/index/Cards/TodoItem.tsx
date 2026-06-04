@@ -23,6 +23,19 @@ interface TodoItemProps {
   tag10?: string;
 }
 
+const tagDelayClasses = [
+  'delay-75',
+  'delay-100',
+  'delay-150',
+  'delay-200',
+  'delay-300',
+  'delay-[350ms]',
+  'delay-[400ms]',
+  'delay-[450ms]',
+  'delay-[500ms]',
+  'delay-[550ms]',
+];
+
 function TodoItem({
   state,
   title = '',
@@ -38,152 +51,69 @@ function TodoItem({
   tag9 = '',
   tag10 = '',
 }: TodoItemProps) {
+  const tags = [
+    tag1,
+    tag2,
+    tag3,
+    tag4,
+    tag5,
+    tag6,
+    tag7,
+    tag8,
+    tag9,
+    tag10,
+  ].filter((tag) => tag !== '' && !state.includes(''));
+
   return (
     <div
       className={clsx(
-        'pointer-events-none w-full select-none border p-6',
-        'lg:w-96',
-        'rounded-xl'
+        'shadow-accent-950/5 pointer-events-none w-full select-none overflow-hidden rounded-[1.75rem] border p-5 shadow-2xl',
+        'border-accent-200/70 via-accent-50/60 bg-gradient-to-br from-white to-white',
+        'dark:border-accent-500/30 dark:via-accent-950/20 dark:from-slate-950 dark:to-slate-900',
+        'lg:w-[28rem] lg:p-7'
       )}
       role="presentation"
+      key={title}
     >
       <div
-        className={clsx(['text-slate-700', 'dark:text-slate-300'], 'font-bold')}
-      >
-        {title}:
-      </div>
-      <div className={clsx(['text-slate-600', 'dark:text-slate-400'])}>
-        {description}
-      </div>
+        aria-hidden="true"
+        className={clsx(
+          'from-accent-400 mb-5 h-1.5 w-24 rounded-full bg-gradient-to-r via-orange-300 to-transparent'
+        )}
+      />
       <div
         className={clsx(
-          'flex',
-          'flex-wrap',
-          ['m-3 gap-2'],
-          ['text-xs font-bold']
+          'text-xl font-black tracking-tight text-slate-800',
+          'dark:text-white'
         )}
       >
-        {' '}
-        {tag1 !== '' ? (
+        {title}
+      </div>
+      {description && (
+        <div
+          className={clsx(
+            'mt-2 text-sm leading-6 text-slate-600',
+            'dark:text-slate-400'
+          )}
+        >
+          {description}
+        </div>
+      )}
+      <div className={clsx('mt-6 flex flex-wrap gap-2.5 text-xs font-black')}>
+        {tags.map((tag, index) => (
           <div
+            key={tag}
             className={clsx(
-              'rounded-full',
-              ['px-3 py-2'],
-              'bg-accent-200 text-accent-700',
-              'dark:bg-accent-600/20 dark:text-accent-400'
+              'animate-[tag-pop_560ms_cubic-bezier(.2,.8,.2,1)_both] rounded-full border px-3.5 py-2 uppercase tracking-[0.08em]',
+              'border-accent-300/70 bg-accent-100 text-accent-900 shadow-accent-900/5 shadow-sm',
+              'dark:border-accent-400/25 dark:bg-accent-500/15 dark:text-amber-100',
+              'motion-reduce:animate-none',
+              tagDelayClasses[index]
             )}
           >
-            {tag1}
+            {tag}
           </div>
-        ) : null}
-        {tag2 !== '' ? (
-          <div
-            className={clsx(
-              'rounded-full',
-              ['px-3 py-2'],
-              'bg-accent-200 text-accent-700',
-              'dark:bg-accent-600/20 dark:text-accent-400'
-            )}
-          >
-            {tag2}
-          </div>
-        ) : null}
-        {tag3 !== '' ? (
-          <div
-            className={clsx(
-              'rounded-full',
-              ['px-3 py-2'],
-              'bg-accent-200 text-accent-700',
-              'dark:bg-accent-600/20 dark:text-accent-400'
-            )}
-          >
-            {tag3}
-          </div>
-        ) : null}
-        {tag4 !== '' ? (
-          <div
-            className={clsx(
-              'rounded-full',
-              ['px-3 py-2'],
-              'bg-accent-200 text-accent-700',
-              'dark:bg-accent-600/20 dark:text-accent-400'
-            )}
-          >
-            {tag4}
-          </div>
-        ) : null}
-        {tag5 !== '' ? (
-          <div
-            className={clsx(
-              'rounded-full',
-              ['px-3 py-2'],
-              'bg-accent-200 text-accent-700',
-              'dark:bg-accent-600/20 dark:text-accent-400'
-            )}
-          >
-            {tag5}
-          </div>
-        ) : null}
-        {tag6 !== '' ? (
-          <div
-            className={clsx(
-              'rounded-full',
-              ['px-3 py-2'],
-              'bg-accent-200 text-accent-700',
-              'dark:bg-accent-600/20 dark:text-accent-400'
-            )}
-          >
-            {tag6}
-          </div>
-        ) : null}
-        {tag7 !== '' ? (
-          <div
-            className={clsx(
-              'rounded-full',
-              ['px-3 py-2'],
-              'bg-accent-200 text-accent-700',
-              'dark:bg-accent-600/20 dark:text-accent-400'
-            )}
-          >
-            {tag7}
-          </div>
-        ) : null}
-        {tag8 !== '' ? (
-          <div
-            className={clsx(
-              'rounded-full',
-              ['px-3 py-2'],
-              'bg-accent-200 text-accent-700',
-              'dark:bg-accent-600/20 dark:text-accent-400'
-            )}
-          >
-            {tag8}
-          </div>
-        ) : null}
-        {tag9 !== '' ? (
-          <div
-            className={clsx(
-              'rounded-full',
-              ['px-3 py-2'],
-              'bg-accent-200 text-accent-700',
-              'dark:bg-accent-600/20 dark:text-accent-400'
-            )}
-          >
-            {tag9}
-          </div>
-        ) : null}
-        {tag10 !== '' && !state.includes('') ? (
-          <div
-            className={clsx(
-              'rounded-full',
-              ['px-3 py-2'],
-              'bg-accent-200 text-accent-700',
-              'dark:bg-accent-600/20 dark:text-accent-400'
-            )}
-          >
-            {tag10}
-          </div>
-        ) : null}
+        ))}
       </div>
     </div>
   );

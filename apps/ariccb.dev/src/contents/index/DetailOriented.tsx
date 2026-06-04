@@ -11,7 +11,7 @@ function DetailOriented() {
         description={[
           'A (healthy) dose of',
           <strong> obsession </strong>,
-          'over alignment and balance, user interface consistency, and spotting the areas that need more thought in a UI.',
+          'over alignment, balance, user interface consistency, and spotting the areas that need more thought in a UI.',
           <br />,
           <br />,
           ' I have the ability to zero in on the little things that bring an application from',

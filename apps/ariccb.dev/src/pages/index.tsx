@@ -8,8 +8,8 @@ function Index() {
   return (
     <>
       <Head
-        title="Aric Crosson Bouwers · Full-Stack Developer"
-        description="An online portfolio featuring a showcase of my projects as a Full Stack Developer."
+        title="Aric Crosson Bouwers · Full-Stack AI Engineer"
+        description="An online portfolio featuring my full-stack, AI workflow, automation, and product engineering work."
         ogImage={`${getBaseUrl()}/assets/images/og-image.png`}
         overrideTitle
       />
