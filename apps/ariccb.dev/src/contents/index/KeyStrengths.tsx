@@ -23,7 +23,7 @@ function KeyStrengths() {
             'dark:text-amber-300'
           )}
         >
-          Key Strengths
+          The operating habits behind the work
         </p>
         <h2
           className={clsx(
@@ -32,7 +32,7 @@ function KeyStrengths() {
             'dark:text-white'
           )}
         >
-          The operating habits behind the work.
+          Key Strengths
         </h2>
         <p
           className={clsx(
