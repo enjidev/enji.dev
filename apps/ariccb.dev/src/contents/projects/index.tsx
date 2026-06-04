@@ -4,7 +4,6 @@ import { ReactNode, useEffect, useRef, useState } from 'react';
 
 import { GitHubIcon, ReactIcon } from '@/components/Icons';
 import ConnectCauseLandingPageImg from '@/components/images/connect-cause/connect-cause-landing-page.png';
-import LandingPageImg from '@/components/images/unstuck/unstuck-landingpage.png';
 import { SectionButton } from '@/components/sections/SectionButton';
 import SectionTitle from '@/components/sections/SectionTitle';
 import AppWindow from '@/components/wireframes/AppWindow';
@@ -261,10 +260,21 @@ function ProjectSection({
 }
 
 function ProjectQuickLinks() {
-  const links = [
+  const links: Array<{
+    title: string;
+    caption: string;
+    href: string;
+    tone: 'professional' | 'helixir' | 'personal';
+  }> = [
+    {
+      title: 'Company & Client Work',
+      caption: 'Professional engagements',
+      href: '#company-client-work',
+      tone: 'professional',
+    },
     {
       title: 'Helixir Labs Inc',
-      caption: 'AI products & product experiments',
+      caption: 'AI products & experiments',
       href: '#helixir-labs',
       tone: 'helixir',
     },
@@ -277,29 +287,31 @@ function ProjectQuickLinks() {
   ];
 
   return (
-    <div className={clsx('content-wrapper mb-4 mt-10')}>
+    <div className={clsx('content-wrapper mb-2 mt-8')}>
       <div
         className={clsx(
-          'rounded-3xl border border-slate-200 bg-white/70 p-4 shadow-sm backdrop-blur',
+          'rounded-2xl border border-slate-200 bg-white/70 p-3 shadow-sm backdrop-blur',
           'dark:border-slate-800 dark:bg-slate-950/60'
         )}
       >
         <p
           className={clsx(
-            'mb-3 px-2 text-xs font-black uppercase tracking-[0.22em] text-slate-500',
+            'mb-2 px-2 text-[0.68rem] font-black uppercase tracking-[0.22em] text-slate-500',
             'dark:text-slate-400'
           )}
         >
           Jump to section
         </p>
-        <div className={clsx('grid gap-3', 'md:grid-cols-2')}>
+        <div className={clsx('grid gap-2', 'md:grid-cols-3')}>
           {links.map((link) => (
             <a
               key={link.href}
               href={link.href}
               className={clsx(
-                'group relative overflow-hidden rounded-2xl border p-5 transition',
-                'hover:-translate-y-0.5 hover:shadow-lg',
+                'group relative overflow-hidden rounded-xl border px-3 py-3 transition',
+                'hover:-translate-y-0.5 hover:shadow-md',
+                link.tone === 'professional' &&
+                  'border-sky-200 bg-gradient-to-br from-sky-50 via-white to-slate-100 dark:border-sky-900/60 dark:from-sky-950/50 dark:via-slate-950 dark:to-slate-900',
                 link.tone === 'helixir' &&
                   'border-amber-200 bg-gradient-to-br from-amber-50 via-white to-orange-100 dark:border-amber-900/60 dark:from-amber-950/50 dark:via-slate-950 dark:to-orange-950/40',
                 link.tone === 'personal' &&
@@ -308,7 +320,9 @@ function ProjectQuickLinks() {
             >
               <div
                 className={clsx(
-                  'absolute right-0 top-0 h-24 w-24 -translate-y-8 translate-x-8 rounded-full blur-3xl transition group-hover:scale-125',
+                  'absolute right-0 top-0 h-16 w-16 -translate-y-6 translate-x-6 rounded-full blur-2xl transition group-hover:scale-125',
+                  link.tone === 'professional' &&
+                    'bg-sky-300/40 dark:bg-sky-500/20',
                   link.tone === 'helixir' &&
                     'bg-amber-300/50 dark:bg-amber-500/20',
                   link.tone === 'personal' &&
@@ -318,6 +332,8 @@ function ProjectQuickLinks() {
               <p
                 className={clsx(
                   'relative mb-2 text-xs font-black uppercase tracking-[0.18em]',
+                  link.tone === 'professional' &&
+                    'text-sky-700 dark:text-sky-300',
                   link.tone === 'helixir' &&
                     'text-amber-700 dark:text-amber-300',
                   link.tone === 'personal' &&
@@ -333,7 +349,7 @@ function ProjectQuickLinks() {
               >
                 <h2
                   className={clsx(
-                    'text-2xl font-black text-slate-800',
+                    'text-base font-black text-slate-800 md:text-lg',
                     'dark:text-white'
                   )}
                 >
@@ -341,7 +357,9 @@ function ProjectQuickLinks() {
                 </h2>
                 <span
                   className={clsx(
-                    'flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-lg font-black transition group-hover:translate-x-1',
+                    'flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-sm font-black transition group-hover:translate-y-0.5',
+                    link.tone === 'professional' &&
+                      'dark:bg-sky-500/15 bg-sky-100 text-sky-700 dark:text-sky-200',
                     link.tone === 'helixir' &&
                       'dark:bg-amber-500/15 bg-amber-100 text-amber-700 dark:text-amber-200',
                     link.tone === 'personal' &&
@@ -496,6 +514,7 @@ function ProjectsContents() {
       <ProjectQuickLinks />
 
       <ProjectSection
+        id="company-client-work"
         title="Company & Client Work"
         caption="Production systems and professional engagements"
         description="Selected work from full-time and contract roles, spanning marketplace operations, internal tools, construction management workflows, and business-critical product delivery."
@@ -563,10 +582,12 @@ function ProjectsContents() {
             >
               <a href="/docs/collegium-platform">
                 <Image
-                  src="/assets/images/collegium/Screenshot_Arc_2025-12-03_112514AM@2x.png"
+                  src="/assets/images/collegium/collegium-platform-preview.jpg"
                   alt="Collegium platform screenshot"
-                  width={3220}
-                  height={2014}
+                  width={1600}
+                  height={997}
+                  loading="eager"
+                  unoptimized
                   style={{ width: '100%', height: 'auto' }}
                   sizes="100vw"
                 />
@@ -748,11 +769,14 @@ function ProjectsContents() {
                       >
                         {currentState === 'unstuck' && (
                           <Image
-                            src={LandingPageImg}
-                            // width={500}
-                            // height={500}
+                            src="/assets/images/unstuck/unstuck-landingpage-preview.jpg"
                             alt="Unstuck Landing Page"
-                            placeholder="blur" // Optional blur-up while loading
+                            width={1600}
+                            height={900}
+                            style={{ width: '100%', height: 'auto' }}
+                            sizes="100vw"
+                            loading="eager"
+                            unoptimized
                           />
                         )}
                       </AppWindow>
